@@ -1,4 +1,5 @@
-baseURL = 'http://hugo-quickstart-template.netlify.com'
+#baseURL = 'http://hugo-quickstart-template.netlify.com'
+baseURL = 'http://ricc.rocks'
 languageCode = 'en-us'
-title = 'Netlify + Hugo Quickstart'
+title = 'Ricc.rocks - Riccardo 2023 Blog'
 theme = 'netlify-basic'
