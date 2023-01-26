@@ -1,5 +1,9 @@
  [![hugo + netlify](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1656562989/template_1_edyp8b.png)](https://ntl.fyi/3P9w1mr)
 
+# Ciao da Riccardo
+
+This my 2023 attempt at an auto-managed Hugo website.
+I might be porting soon my [personal website](http://www.palladius.it/) here.
 # Hugo Quickstart Template   
 
 This is a bare-bones Hugo project that has everything you need to quickly deploy it to [Netlify](https://netlify.com). 
