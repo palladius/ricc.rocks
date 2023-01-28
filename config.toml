@@ -3,4 +3,5 @@ baseURL = 'http://ricc.rocks'
 languageCode = 'en-us'
 title = 'Ricc.rocks - Riccardo 2023 Blog'
 #theme = 'netlify-basic'
-theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+#theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+theme = 'ananke'
