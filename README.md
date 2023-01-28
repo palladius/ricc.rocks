@@ -6,10 +6,14 @@ This my 2023 attempt at an auto-managed Hugo website.
 I might be porting soon my [personal website](http://www.palladius.it/) here.
 
 
-* changed module part in config.toml.
+* changed module part in `config.toml`.
 
 ## customization
 
 * following this free course: https://www.youtube.com/watch?v=hjD9jTi_DQ4
 * `hugo new posts/first.md`
+
+## moving to PaperMod
+
+* git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
 

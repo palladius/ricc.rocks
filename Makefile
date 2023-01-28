@@ -10,8 +10,11 @@ commands-sample:
 
 ##############################################
 # modules: https://gohugo.io/hugo-modules/use-modules/
+# https://github.com/adityatelange/hugo-PaperMod/wiki/Installation
 modules-update:
 	hugo mod get -u
+	cd themes/PaperMod/ && git pull
+
 modules-show:
 	hugo mod graph
 modules-optimize:
