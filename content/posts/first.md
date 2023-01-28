@@ -14,4 +14,3 @@ featured_image: img/riccardo-scuba-shrimps.png
 
 This is a front matter.
 Taking the egtting started with hugio video [here](https://www.youtube.com/watch?v=hjD9jTi_DQ4).
-

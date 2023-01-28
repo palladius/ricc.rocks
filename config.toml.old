@@ -6,4 +6,6 @@ title = 'Ricc Blog'
 #theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 theme = 'ananke'
 
+# Ananke config: https://github.com/theNewDynamic/gohugo-theme-ananke
 background_color_class = "bg-blue"
+

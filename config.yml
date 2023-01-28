@@ -1,0 +1,40 @@
+baseURL: 'http://ricc.rocks'
+languageCode: 'en-us'
+title: 'Ricc Blog'
+#theme = 'netlify-basic'
+#theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+theme: 'ananke'
+background_color_class: "bg-blue"
+# example from https://gohugo.io/hugo-modules/use-modules/
+# module:
+#   imports:
+#   - path: github.com/spf13/hyde
+menu:
+  main:
+  - identifier: cats
+    name: Categz
+    url: /categories/
+    weight: 10
+  - identifier: posts
+    name: Posts
+    url: /posts/
+    weight: 20
+  - identifier: archives
+    name: archives
+    url: /archives/
+    weight: 20
+
+# doesnt work for Ananke I guess.. oh yes it does:
+params:
+  read_more_copy: Read more about this entry for Ananke
+  # description: "Your custom description for Hyde"
+  # themeColor: "theme-base-0a" # Hyde
+
+
+# Hyde
+Menus:
+  main:
+    - Name: "Github"
+      URL: "https://github.com/username/"
+    - Name: "LinkedIn"
+      URL: "https://www.linkedin.com/in/username/"
