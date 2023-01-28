@@ -1,6 +1,6 @@
 
 run-p1313-prod:
-	hugo server
+	HUGO_ENV=production hugo server
 
 run-p1313-dev:
 	hugo server --disableFastRender
