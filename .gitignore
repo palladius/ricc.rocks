@@ -4,3 +4,4 @@
 # Package Files
 node_modules/
 .DS_Store
+resources/
