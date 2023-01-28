@@ -25,7 +25,8 @@ ShowWordCount: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: imagez/riccardo-turtle.jpg
+#    image: /imagez/riccardo-turtle.jpg
+    image: /riccardo-turtle.jpg
     #image: "<image path/url>" # image path/url
     alt: "<alt text>" # alt text
     caption: "<text>" # display caption under cover
@@ -38,4 +39,11 @@ editPost:
 ---
 Very complex page
 
-<img src='/imagez/riccardo-turtle.jpg' />
+immahine non funge..
+
+![Scenario 1: Across columns](/images/cloud-connect.png)
+
+
+/Users/ricc/git/ricc.rocks/papermod.ricc.rocks/static
+
+![Scenario 1: Across columns](/images/riccardo-giallo-raja-ampat.jpeg)
