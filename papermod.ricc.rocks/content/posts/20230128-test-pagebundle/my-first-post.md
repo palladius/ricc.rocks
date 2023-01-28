@@ -5,13 +5,16 @@ draft: false
 tags: [test, image]
 cover:
   #image: /riccardo-turtle.jpg
-  image: /images/yellow-desktop-wallpaper.jpg
-  #image: images/riccardo-giallo-raja-ampat.jpg
+  #image: /images/yellow-desktop-wallpaper.jpg
+  #image: /imagez/riccardo-turtle.jpg
+  #image: riccardo-giallo-raja-ampat.jpg
+  image: images/riccardo-giallo-raja-ampat.jpg
   #image: images/screenshot.png
-#image: /imagez/riccardo-turtle.jpg
+  relative: true
+  hidden: false
 ---
-Ciao a tutti
-prova image
+Ciao a tutti - img doesnt work..
 
-<!--
-![riccardo-turtle](/imagez/riccardo-turtle.jpg) -->
+## prova imagez
+
+<!-- ![riccardo-turtle](/imagez/riccardo-turtle.jpg) -->

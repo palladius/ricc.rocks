@@ -63,9 +63,10 @@ params:
     title: Riccardo Site
     subtitle: "This is Riccardo subtitle"
 #    imageUrl: /imagez/riccardo-giallo-raja-ampat.jpeg # riccardo-turtle.jpg
-    imageUrl: /images/riccardo.png # riccardo-turtle.jpg
-    imageWidth: 120
-    imageHeight: 120
+    #imageUrl: /images/riccardo.png # riccardo-turtle.jpg
+    imageUrl: images/riccardo-giallo-raja-ampat.jpg
+    imageWidth: 1200
+    imageHeight: 1200
     imageTitle: my image
     buttons:
       - name: Posts
@@ -85,6 +86,10 @@ params:
       url: "https://stackoverflow.com/users/362420/riccardo"
     - name: github
       url: "https://github.com/palladius"
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/riccardocarlesso/'
+    - name: facebook
+      url: facebook.com/palladius
 
   analytics:
     google:
