@@ -116,19 +116,19 @@ params:
 menu:
   main:
     - identifier: categories
-      name: categories
+      name: 🍱categories
       url: /categories/
       weight: 10
     - identifier: tags
-      name: tags
+      name: 🏷️tags
       url: /tags/
       weight: 20
     - identifier: archive
-      name: Archive
+      name: 🏛️archive
       url: /archives/
       weight: 30
-    - identifier: example
-      name: ricc.rocks
+    - identifier: ricc-rocks
+      name: 🪨ricc.rocks
       url: https://ricc.rocks
       weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
