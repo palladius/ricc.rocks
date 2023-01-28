@@ -1,7 +1,9 @@
 #baseURL = 'http://hugo-quickstart-template.netlify.com'
 baseURL = 'http://ricc.rocks'
 languageCode = 'en-us'
-title = 'Ricc.rocks - Riccardo 2023 Blog'
-theme = 'netlify-basic'
+title = 'Ricc Blog'
+#theme = 'netlify-basic'
 #theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
-#theme = 'ananke'
+theme = 'ananke'
+
+background_color_class = "bg-blue"
