@@ -3,7 +3,7 @@ run-p1313-prod:
 	HUGO_ENV=production hugo server
 
 run-p1313-dev:
-	hugo server --disableFastRender
+	HUGO_RICCARDO_HOSTING='RiccardoMakefile' hugo server --disableFastRender
 
 run-p1313-with-drafts:
 	hugo server --buildDrafts
