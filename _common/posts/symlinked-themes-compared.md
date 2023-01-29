@@ -4,6 +4,7 @@
 title: "💦 Symlinked Themes Compared"
 date: 2023-01-28T21:17:43+01:00
 draft: false
+tags: [symlink]
 # ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
@@ -29,7 +30,7 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Theme  | Website     | Stars | Description |
 | ----------- | ----------- | ------ | ----------- |
 | Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)        | ⭐️⭐️⭐️ | Historically the first ive tried. Havent explored much |
-| PaperMod    | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️⭐️      | Very little effort done here |
+| PaperMod    | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️      | Very little effort done here |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
 
@@ -67,3 +68,4 @@ NEUTRAL:
 
 * supports [many icons](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons), but unsure how to use them
 * [Supports Maths](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/), but unsure on how to make it work/
+* emoji are nice, once enaled you can do 🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil:

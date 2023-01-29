@@ -3,12 +3,12 @@ title: "Sample page 2"
 date: 2020-09-15T11:30:03+00:00
 # weight: 1
 aliases: ["/first"]
-tags: [rich, test]
+tags: [test]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
 TocOpen: false
-draft: false
+draft: true
 hidemeta: false
 comments: false
 description: "Just a sample page"

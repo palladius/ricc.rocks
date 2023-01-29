@@ -19,6 +19,7 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: ExampleSite
   description: "ExampleSite description"
+  enableEmoji: true
   keywords: [Blog, Portfolio, PaperMod, Riccardo Carlesso, Hugo, 2023]
   author: Riccardo
   # author: ["Me", "You"] # multiple authors
