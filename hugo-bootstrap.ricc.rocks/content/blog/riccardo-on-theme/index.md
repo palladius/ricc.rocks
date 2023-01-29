@@ -53,16 +53,15 @@ Riccardo trying out icons as per [LookNFeel](https://hbs.razonyang.com/v1/en/doc
 <i class="far fa-address-book"></i>
 <i class="fab fa-amazon"></i>
 <i class="fab fa-google"></i>
-and again Gugol
-<i class="fab fa-google"></i>
 
-icon colors (non va 😭):
-<i class="fas fa-clock text-success"></i>
-<i class="fas fa-clock text-danger"></i>
-<i class="far fa-clock" style="color: blue"></i>
-<i class="far fa-clock" style="color: pink"></i>
-<i class="fa fa-clock text-success"></i>
-<i class="far far-clock text-danger"></i>
+Icon colors (non va 😭):
+
+<i class="fab fa-clock text-success"></i>
+<i class="fab fa-clock text-danger"></i>
+<i class="fab fa-clock" style="color: blue"></i>
+<i class="fas fa-clock" style="color: pink"></i>
+<i class="far fa-clock text-success"></i>
+<i class="fa fa-clock text-danger"></i>
 
 <i class="fab fa-google"  style="color: #4285F4"></i>
 <i class="fab fa-google"  style="color: #DB4437"></i>
@@ -86,11 +85,7 @@ it works! I just had to enable unsafe thingy in config :)
 
 Docs in here: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
 
-Files:
-
-<i class="fab fa-google">G</i>
-<i class="fab fa-google"></i>
-
+Files: <i class="fab fa-google"></i>
 
 ```
 RiccardoGoogleyBike.png           riccardo-giallo-raja-ampat.jpeg   riccardo-raja-ampat.jpeg
@@ -101,7 +96,7 @@ riccardo-canary-ravenna.jpeg      riccardo-kids-christmas.jpeg      riccardo-smi
 
 {{< gallery images="images/riccardo/RiccardoGoogleyBike.png,images/riccardo/riccardo-giallo-raja-ampat.jpeg,/images/riccardo/riccardo-2022.png,/images/riccardo/riccardo-jogging-telaviv.jpeg,/images/riccardo/riccardo-rajaampat.png,/images/riccardo/riccardo-bicicletta-gugol.jpg,/images/riccardo/riccardo-jump-ironman.jpeg,/images/riccardo/riccardo-scuba-in-google.jpeg,/images/riccardo/riccardo-canary-ravenna.jpeg,/images/riccardo/riccardo-kids-christmas.jpeg,/images/riccardo/riccardo-smiles-swim-ironman.jpeg" >}}
 
-## Videos.
+## Videos and Colorful Alerts
 
 
 
