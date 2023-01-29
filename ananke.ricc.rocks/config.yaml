@@ -60,7 +60,13 @@ disqusShortname: disqus_7JS1PTrMOB
 # Hyde
 Menus:
   main:
-    - Name: "🧑🏻‍💻Github"
-      URL: "https://github.com/palladius/"
-    - Name: "💼 LinkedIn"
-      URL: "https://www.linkedin.com/in/riccardocarlesso/ "
+    # - Name: "🧑🏻‍💻Github"
+    #   URL: "https://github.com/palladius/"
+    # - Name: "💼 LinkedIn"
+    #   URL: "https://www.linkedin.com/in/riccardocarlesso/"
+    - Name: "PaperMod"
+      URL: https://ricc.rocks
+    - Name: "Stack"
+      URL: https://hugo-stack.ricc.rocks
+    - Name: Bootstrap
+      URL:      https://hugo-bootstrap-ricc-rocks.netlify.app/

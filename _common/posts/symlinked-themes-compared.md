@@ -1,11 +1,14 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "Symlinked Themes Compared"
+title: "💦 Symlinked Themes Compared"
 date: 2023-01-28T21:17:43+01:00
 draft: false
+# ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
+image: /images/mtg-clone.jpg
 ---
+
 
 I tried many modules this weekend. Let's see how [Ananke](https://github.com/theNewDynamic/gohugo-theme-ananke) goes.
 
@@ -21,6 +24,8 @@ What I've tried so far:
 *
 ## My Hugo websites I've tried so far
 
+All the code is in different directories of my GH repo: https://github.com/palladius/ricc.rocks/
+
 | Theme  | Website     | Stars | Description |
 | ----------- | ----------- | ------ | ----------- |
 | Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)        | ⭐️⭐️⭐️ | Historically the first ive tried. Havent explored much |
@@ -30,9 +35,9 @@ What I've tried so far:
 
 
 * **PaperMod**: https://hugo-stack.ricc.rocks it works!
-* **Stack**:
+* **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). then I just love it!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
-
+* **Coder**: Naah, too simple for me.
 
 ## Photo Albyums
 
@@ -44,7 +49,21 @@ What I've tried so far:
 
 ## Ananke
 
-GOOD:
-*
-BAD:
-* too simple. congtact form is amongst posts (seriously?)
+GOOD 😍:
+
+* TODO
+
+BAD 😩:
+
+* **too simple**. Eg, contact form is amongst posts (seriously?)
+
+## PaperMod
+
+I spent little time so far - but its just my fault, not his :)
+
+Docs: https://github.com/adityatelange/hugo-PaperMod/
+
+NEUTRAL:
+
+* supports [many icons](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons), but unsure how to use them
+* [Supports Maths](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/), but unsure on how to make it work/

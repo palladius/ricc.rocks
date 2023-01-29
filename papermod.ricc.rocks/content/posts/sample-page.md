@@ -1,5 +1,5 @@
 ---
-title: "Sample page"
+title: "Sample page 2"
 date: 2020-09-15T11:30:03+00:00
 # weight: 1
 aliases: ["/first"]
@@ -11,9 +11,10 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Desc Text."
+description: "Just a sample page"
+# awesome!
 canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
+disableHLJS: false # to disable highlightjs
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -46,6 +47,4 @@ immahine non funge..
 ![Scenario 1: Across columns](/images/cloud-connect.png)
 
 
-/Users/ricc/git/ricc.rocks/papermod.ricc.rocks/static
-
-![Scenario 1: Across columns](/images/riccardo-giallo-raja-ampat.jpeg)
+![Scenario 2: Across columns](/images/riccardo-giallo-raja-ampat.jpg)
