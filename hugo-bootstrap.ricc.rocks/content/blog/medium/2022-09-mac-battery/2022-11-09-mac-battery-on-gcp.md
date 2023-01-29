@@ -12,7 +12,8 @@ carousel: false
 series:
 categories: []
 tags: [GCP, macbook, SMS, pager]
-#images:
+images:
+- /images/articles/london-airport.jpg
 #- /images/battery-life-cli.webp
 #- /images/london-airport.jpg
 # original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
