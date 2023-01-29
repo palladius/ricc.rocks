@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://ricc.rocks/posts/contact/</loc>
+    <lastmod>2023-01-28T06:54:58+01:00</lastmod>
+  </url><url>
+    <loc>http://ricc.rocks/posts/</loc>
+    <lastmod>2023-01-28T06:54:58+01:00</lastmod>
+  </url><url>
+    <loc>http://ricc.rocks/</loc>
+    <lastmod>2023-01-28T06:54:58+01:00</lastmod>
+  </url><url>
+    <loc>http://ricc.rocks/posts/first/</loc>
+    <lastmod>2023-01-28T06:42:41+01:00</lastmod>
+  </url><url>
+    <loc>http://ricc.rocks/archives/</loc>
+  </url><url>
+    <loc>http://ricc.rocks/categories/</loc>
+  </url><url>
+    <loc>http://ricc.rocks/tags/</loc>
+  </url>
+</urlset>
