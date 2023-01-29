@@ -25,6 +25,7 @@ ShowPostNavLinks: true
 ShowWordCount: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
+#math: true
 cover:
     image: /imagez/riccardo-turtle.jpg
 #    image: /riccardo-turtle.jpg
@@ -47,9 +48,32 @@ Very complex page
 testing emojis: :see_no_evil:
 :hear_no_evil: :speak_no_evil:
 
+## Test Math
+
+Math poorly documented here: https://github.com/adityatelange/hugo-PaperMod/blob/exampleSite/content/posts/math-typesetting.md
+
+See inline:
+
+{{< math.inline >}}
+    Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
+{{}}
+
+<!-- this does NOT work.
+{ { < math.inline > } }
+    Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
+{ { } }
+-->
 
 
-## test Youtube
+Finish inline.
+
+
+## test Youtube (ok)
+
+Piaynemo:
+{{< youtube QW4XBtibFnk >}}
+
+Firth of fifth on piano:
 
 {{< youtube 4VBxd9n1dSU >}}
 
