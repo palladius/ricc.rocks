@@ -3,3 +3,4 @@ public/
 hugo-PaperMod/
 layouts-old/
 public/
+.hugo_build.lock
