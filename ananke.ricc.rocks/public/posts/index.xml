@@ -13,16 +13,27 @@
       <pubDate>Sat, 28 Jan 2023 06:54:58 +0100</pubDate>
       
       <guid>http://ricc.rocks/posts/contact/</guid>
-      <description>Contact me If you want to get in touch, just drop me an email!
+      <description>Contact Riccardo If you want to get in touch, just drop me an 📧 email!
 Your Name Email Address An email address is required. Message </description>
     </item>
     
     <item>
-      <title>My First post</title>
-      <link>http://ricc.rocks/posts/first/</link>
+      <title>Ananke vs the other Hugoes</title>
+      <link>http://ricc.rocks/posts/second-ananke/</link>
+      <pubDate>Sat, 28 Jan 2023 06:46:41 +0100</pubDate>
+      
+      <guid>http://ricc.rocks/posts/second-ananke/</guid>
+      <description>I tried many modules this weekend. Let&amp;rsquo;s see how Ananke goes.
+seems SUPER simple. So featureless wrt to others, but also so easier to use. Uses FormSpree for contact form [contact]. Works like a charm. images. See [/posts/first-scuba/](Scuba diving) Scuba2 page to see if it works. aa What I&amp;rsquo;ve tried so far:
+My Hugo websites I&amp;rsquo;ve tried so far Theme Website Stars Description Ananke TODO ⭐️⭐️⭐️ Historically the first ive tried.</description>
+    </item>
+    
+    <item>
+      <title>Riccardo Scuba diving.. test gallery</title>
+      <link>http://ricc.rocks/posts/first-scuba/</link>
       <pubDate>Sat, 28 Jan 2023 06:42:41 +0100</pubDate>
       
-      <guid>http://ricc.rocks/posts/first/</guid>
+      <guid>http://ricc.rocks/posts/first-scuba/</guid>
       <description>Hi everyone! This is a front matter. Taking the egtting started with hugio video here.</description>
     </item>
     
