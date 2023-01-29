@@ -13,7 +13,8 @@ keywords: Hugo, Bootstrap, Blog Theme
 # metaRobots: noindex, nofollow # Default value for Meta Tag robots
 # metaRobots:  # disable Meta Tag robots
 
-# logo: images/logo.png # Logo image. Default to images/logo.webp.
+logo: images/powered_mini.jpg # Logo image. Default to images/logo.webp.
+#logo: images/logo.webp
 # logo: false # Disable Logo
 brand: Riccardo Bootstrap Blog
 
