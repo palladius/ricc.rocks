@@ -1,6 +1,6 @@
 ---
-title: "My 1st Post in a bundle/folder"
-date: 2023-01-28T20:45:18+01:00
+title: "My first Post in a bundle/folder"
+date: 2023-01-29T20:45:18+01:00
 draft: false
 tags: [test, image]
 cover:
