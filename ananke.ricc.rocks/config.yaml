@@ -48,6 +48,7 @@ params:
       url: https://www.youtube.com/palladiusbonton
       #follow: false
   body_classes: "avenir bg-near-white"
+  site_logo: "img/powered_mini.jpg"
 
 
 disqusShortname: disqus_7JS1PTrMOB
