@@ -3,4 +3,4 @@ run-dev:
 	hugo server --disableFastRender
 
 run-prod:
-	hugo server
+	HUGO_ENV=production hugo server
