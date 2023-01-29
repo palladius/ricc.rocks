@@ -27,14 +27,15 @@ menu:
 # doesnt work for Ananke I guess.. oh yes it does:
 params:
   read_more_copy: Read more about this entry for Ananke
-  # description: "Your custom description for Hyde"
-  # themeColor: "theme-base-0a" # Hyde
-
+  description: "Your custom description for Hyde"
+  themeColor: "theme-base-0a" # Hyde
+  #commentoEnable: true
+disqusShortname: disqus_7JS1PTrMOB
 
 # Hyde
 Menus:
   main:
-    - Name: "Github"
-      URL: "https://github.com/username/"
-    - Name: "LinkedIn"
-      URL: "https://www.linkedin.com/in/username/"
+    - Name: "🧑🏻‍💻Github"
+      URL: "https://github.com/palladius/"
+    - Name: "💼 LinkedIn"
+      URL: "https://www.linkedin.com/in/riccardocarlesso/ "

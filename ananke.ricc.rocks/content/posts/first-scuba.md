@@ -1,5 +1,5 @@
 ---
-title: "My First post"
+title: Riccardo Scuba diving.. test gallery
 date: 2023-01-28T06:42:41+01:00
 draft: false
 # tizio: doesnt work
