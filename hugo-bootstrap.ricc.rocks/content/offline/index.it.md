@@ -1,4 +1,4 @@
 +++
-title = 'Offline'
+title = 'Sei disconnesso'
 layout = 'offline'
 +++

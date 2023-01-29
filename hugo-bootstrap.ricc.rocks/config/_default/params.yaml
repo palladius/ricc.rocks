@@ -20,21 +20,22 @@ brand: Riccardo Bootstrap Blog
 
 palette: yellow # Default palette. Optional. You'll need to clear the browser cache after modifying this.
 # Available palettes. Default to ALL. Empty array means disable.
-# palettes:
-#  - blue
-#  - blue-gray
+palettes:
+ - blue
+ - blue-gray
 #  - brown
-#  - cyan
+# - cyan
 #  - green
-#  - indigo
+ - indigo
 #  - orange
 #  - pink
 #  - purple
 #  - red
 #  - teal
-#  - yellow
+ - yellow
 
 # color: dark # light, dark or auto. Default to auto.
+color: light
 
 # fullWidth: true # Full width.
 # fixedHeader: false # Turn on/off fixed header.
@@ -106,7 +107,7 @@ codeBlock:
 post:
   # excerpt: description
   # excerptMaxLength: 120
-  # copyright: false # Whether to display copyright section on each post.
+  copyright: false # Whether to display copyright section on each post.
   # plainifyExcerpt: false # Format excerpt in HTML if false.
   featuredImage: true # Show the featured image above the content.
   numberifyHeadings: true # Count headings automatically.

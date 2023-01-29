@@ -8,3 +8,6 @@ run-p1313-dev:
 
 npm-fix:
 	npm audit fix --force
+
+install:
+	npm install

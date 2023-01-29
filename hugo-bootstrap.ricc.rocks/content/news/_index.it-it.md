@@ -1,5 +1,5 @@
 ---
-title: 新闻
+title: Notizie (credo)
 menu:
   main:
     weight: 1

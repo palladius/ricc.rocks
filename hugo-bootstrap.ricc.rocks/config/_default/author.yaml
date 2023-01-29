@@ -3,7 +3,8 @@ avatar: images/riccardo.jpg # Avatar image. Default to "images/profile.webp".
 bio: |
   🦄 Googler, 💎 Rubyist, 🍷 Half-Stack Engineer
   (I'm an optimist: I like to see the 🔋 stack half-full).
-company: Company # HTML markup are supported, such as: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
+company: | #  https://careers.google.com/jobs/ Google # HTML markup are supported, such as: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
+   <a href="https://careers.google.com/jobs/" target="_blank" rel="noopener noreferrer">🇨🇭Google</a>
 location: Zurich, Switzerland # HTML markup are supported, such as: <a href='https://www.openstreetmap.org/search?query=Earth'>Earth</a>.
 about: https://ricc.rocks/ # The external about page. The internal about page will be used if not set.
 params: {
