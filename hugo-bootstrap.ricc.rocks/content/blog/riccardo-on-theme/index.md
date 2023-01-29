@@ -7,6 +7,14 @@ tags:
   - Riccardo
 #images:
 #- /images/riccardo/riccardo-smiles-swim-ironman.jpeg
+images:
+- /images/riccardo/riccardo-2022.png
+- /images/riccardo/riccardo-jogging-telaviv.jpeg
+- /images/riccardo/riccardo-rajaampat.png- /images/riccardo/riccardo-bicicletta-gugol.jpg
+- /images/riccardo/riccardo-jump-ironman.jpeg
+- /images/riccardo/riccardo-scuba-in-google.jpeg- /images/riccardo/riccardo-canary-ravenna.jpeg
+- /images/riccardo/riccardo-kids-christmas.jpeg
+- /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 ---
 <!-- ![boh](/images/riccardo/riccardo-smiles-swim-ironman.jpeg) -->
 
@@ -66,3 +74,11 @@ icon colors (non va 😭):
         "maxLines": 10
     }
 }{{</ code-toggle >}}
+
+## Test Gallery
+RiccardoGoogleyBike.png           riccardo-giallo-raja-ampat.jpeg   riccardo-raja-ampat.jpeg
+riccardo-2022.png                 riccardo-jogging-telaviv.jpeg     riccardo-rajaampat.png
+riccardo-bicicletta-gugol.jpg     riccardo-jump-ironman.jpeg        riccardo-scuba-in-google.jpeg
+riccardo-canary-ravenna.jpeg      riccardo-kids-christmas.jpeg      riccardo-smiles-swim-ironman.jpeg
+
+{{< gallery images="images/riccardo/RiccardoGoogleyBike.png,images/riccardo/riccardo-giallo-raja-ampat.jpeg,/images/riccardo/riccardo-2022.png,/images/riccardo/riccardo-jogging-telaviv.jpeg,/images/riccardo/riccardo-rajaampat.png,/images/riccardo/riccardo-bicicletta-gugol.jpg,/images/riccardo/riccardo-jump-ironman.jpeg,/images/riccardo/riccardo-scuba-in-google.jpeg,/images/riccardo/riccardo-canary-ravenna.jpeg,/images/riccardo/riccardo-kids-christmas.jpeg,/images/riccardo/riccardo-smiles-swim-ironman.jpeg" >}}
