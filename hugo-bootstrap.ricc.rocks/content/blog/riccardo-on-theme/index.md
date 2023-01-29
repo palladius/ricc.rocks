@@ -53,3 +53,16 @@ icon colors (non va 😭):
 <i class="fas fa-clock text-danger">dang</i>
 <i class="far fa-clock" style="color: blue">blue</i>
 <i class="far fa-clock" style="color: pink">pink</i>
+<i class="fa fa-clock text-success">ok2</i>
+<i class="far far-clock text-danger">dang2</i>
+
+## Code tests
+
+{{< code-toggle >}}
+{
+    "logo": "/images/logo.png",
+    "customCSS": ["foo.css", "bar.css"],
+    "codeBlock": {
+        "maxLines": 10
+    }
+}{{</ code-toggle >}}
