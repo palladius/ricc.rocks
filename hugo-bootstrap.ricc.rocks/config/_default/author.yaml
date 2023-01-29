@@ -1,11 +1,11 @@
-name: Riccardo Carlesso
+name: Riccardo 💛 Carlesso
 # avatar: images/profile.png # Avatar image. Default to "images/profile.webp".
 bio: |
-  Googler, Rubyist, Half-Stack Engineer
-  (I'm an optimist: I like to see the stcack half-full).
+  🦄 Googler, 💎 Rubyist, 🍷 Half-Stack Engineer
+  (I'm an optimist: I like to see the 🔋 stack half-full).
 company: Company # HTML markup are supported, such as: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
-location: Earth # HTML markup are supported, such as: <a href='https://www.openstreetmap.org/search?query=Earth'>Earth</a>.
-# about: https://razonyang.com # The external about page. The internal about page will be used if not set.
+location: Zurich, Switzerland # HTML markup are supported, such as: <a href='https://www.openstreetmap.org/search?query=Earth'>Earth</a>.
+about: https://ricc.rocks/ # The external about page. The internal about page will be used if not set.
 params: {
   # layout: compact
 }
