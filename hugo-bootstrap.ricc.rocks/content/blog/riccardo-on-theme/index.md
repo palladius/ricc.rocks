@@ -49,20 +49,27 @@ anche la float end spinge. Boh I'm unable
 
 
 Riccardo trying out icons as per [LookNFeel](https://hbs.razonyang.com/v1/en/docs/look-and-feel) docs:
-<i class="fas fa-clock">aa</i>
-<i class="far fa-address-book">AB</i>
-<i class="fab fa-amazon">a</i>
-<i class="fab fa-google">G</i>
+<i class="fas fa-clock"></i>
+<i class="far fa-address-book"></i>
+<i class="fab fa-amazon"></i>
+<i class="fab fa-google"></i>
 and again Gugol
 <i class="fab fa-google"></i>
 
 icon colors (non va 😭):
-<i class="fas fa-clock text-success">ok</i>
-<i class="fas fa-clock text-danger">dang</i>
-<i class="far fa-clock" style="color: blue">blue</i>
-<i class="far fa-clock" style="color: pink">pink</i>
-<i class="fa fa-clock text-success">ok2</i>
-<i class="far far-clock text-danger">dang2</i>
+<i class="fas fa-clock text-success"></i>
+<i class="fas fa-clock text-danger"></i>
+<i class="far fa-clock" style="color: blue"></i>
+<i class="far fa-clock" style="color: pink"></i>
+<i class="fa fa-clock text-success"></i>
+<i class="far far-clock text-danger"></i>
+
+<i class="fab fa-google"  style="color: #4285F4"></i>
+<i class="fab fa-google"  style="color: #DB4437"></i>
+<i class="fab fa-google"  style="color: #F4B400"></i>
+<i class="fab fa-google"  style="color: #0F9D58"></i>
+
+it works! I just had to enable unsafe thingy in config :)
 
 ## Code tests
 
@@ -76,9 +83,88 @@ icon colors (non va 😭):
 }{{</ code-toggle >}}
 
 ## Test Gallery
+
+Docs in here: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
+
+Files:
+
+<i class="fab fa-google">G</i>
+<i class="fab fa-google"></i>
+
+
+```
 RiccardoGoogleyBike.png           riccardo-giallo-raja-ampat.jpeg   riccardo-raja-ampat.jpeg
 riccardo-2022.png                 riccardo-jogging-telaviv.jpeg     riccardo-rajaampat.png
 riccardo-bicicletta-gugol.jpg     riccardo-jump-ironman.jpeg        riccardo-scuba-in-google.jpeg
 riccardo-canary-ravenna.jpeg      riccardo-kids-christmas.jpeg      riccardo-smiles-swim-ironman.jpeg
+```
 
 {{< gallery images="images/riccardo/RiccardoGoogleyBike.png,images/riccardo/riccardo-giallo-raja-ampat.jpeg,/images/riccardo/riccardo-2022.png,/images/riccardo/riccardo-jogging-telaviv.jpeg,/images/riccardo/riccardo-rajaampat.png,/images/riccardo/riccardo-bicicletta-gugol.jpg,/images/riccardo/riccardo-jump-ironman.jpeg,/images/riccardo/riccardo-scuba-in-google.jpeg,/images/riccardo/riccardo-canary-ravenna.jpeg,/images/riccardo/riccardo-kids-christmas.jpeg,/images/riccardo/riccardo-smiles-swim-ironman.jpeg" >}}
+
+## Videos.
+
+
+
+{{% alert warning %}}
+[WARNING] Doesn’t support Youtube embedding amongst [Media shortcodes](https://hbs.razonyang.com/v1/en/docs/shortcodes/media/) 🤦🏻 : Only Bilibili
+Tencent
+Youku
+iQiyi
+Netease Music
+asciinema
+{{% /alert %}}
+
+<!-- {{% alert warning %}}
+Alert Shortcode with Markdown Syntax:
+```bash
+$ echo 'An example of alert shortcode with the Markdown syntax'
+```
+{{% /alert %}} -->
+
+{{% alert danger %}}
+[danger] This is danger
+{{% /alert %}}
+
+{{% alert info %}}
+[info] This is info
+{{% /alert %}}
+
+{{% alert success %}}
+[success] This is ok
+{{% /alert %}}
+
+{{% alert cazzibuffi %}}
+[cazzibuffi] This is cazzibuffi
+{{% /alert %}}
+
+
+
+{{< alert success >}}
+{{< alert-heading >}}Well Done!{{< /alert-heading >}}
+ALERT MESSAGE with heading
+{{< /alert >}}
+
+### Toggle
+
+{{< toggle myToggleName >}}
+Sobenme:
+  {{< toggle-item Ruby >}}
+    CONTENT HERE, MARKDOWN and SHORTCODE are support.
+  {{< /toggle-item >}}
+  {{< toggle-item SQL >}}
+    SELECT "hello world"
+  {{< /toggle-item >}}
+  {{< toggle-item More.. >}}
+    <tt>Toggle Shortcode</tt> is documented here:   https://hbs.razonyang.com/v1/en/docs/shortcodes/toggle/
+  {{< /toggle-item >}}
+
+  ...
+{{< /toggle >}}
+
+## Iframe
+
+<!-- Got the embed copy and paste form Youtube :) -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E3ReKuJ8ewA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This doesnt work:
+{{< iframe "[URL](https://www.youtube.com/embed/E3ReKuJ8ewA)" >}}

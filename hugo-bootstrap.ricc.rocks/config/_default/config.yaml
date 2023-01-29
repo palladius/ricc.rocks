@@ -37,3 +37,9 @@ permalinks:
 
 # module:
   # proxy: https://goproxy.cn
+
+# for warnings to work: https://hbs.razonyang.com/v1/en/docs/shortcodes/alert/
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
