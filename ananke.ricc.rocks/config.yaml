@@ -4,7 +4,8 @@ title: 'Ricc 💛 Blog (Ananke)'
 #theme = 'netlify-basic'
 #theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 theme: 'ananke'
-background_color_class: "bg-yellow"
+#background_color_class: "bg-yellow"
+background_color_class: "bg-blue"
 # example from https://gohugo.io/hugo-modules/use-modules/
 # module:
 #   imports:

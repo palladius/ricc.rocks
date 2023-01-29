@@ -1,7 +1,7 @@
 ---
-title: Ananke vs the other Hugoes
+title: Ananke vs the other Hugoes (deprecated by symlinked one)
 date: 2023-01-28T06:46:41+01:00
-draft: false
+draft: true
 # Wow, dflt image :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 ---
@@ -11,7 +11,6 @@ I tried many modules this weekend. Let's see how [Ananke](https://github.com/the
 * seems SUPER simple. So featureless wrt to others, but also so easier to use.
 * Uses FormSpree for contact form [contact]. Works like a charm.
 * images. See [/posts/first-scuba/](Scuba diving) <a href="/posts/first-scuba/">Scuba2</a> page to see if it works.
-aa
 
 What I've tried so far:
 
