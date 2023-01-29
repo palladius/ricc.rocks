@@ -30,6 +30,26 @@ params:
   description: "Your custom description for Hyde"
   themeColor: "theme-base-0a" # Hyde
   #commentoEnable: true
+  ananke_socials:
+    - name: twitter
+      url: https://twitter.com/palladius
+    - name: github
+      url: https://github.com/palladius
+      color: '#ff6800'
+    - name: mastodon
+      url: https://bologna.one/@riccardo # https://social.example.com/@username
+      rel: me noopener
+    - name: linkedin
+      url: https://www.linkedin.com/in/riccardocarlesso/
+    # - name: facebook
+    #   label: Facebook
+    #   url: https://www.facebook.com/palladius
+    - name: youtube
+      url: https://www.youtube.com/palladiusbonton
+      #follow: false
+  body_classes: "avenir bg-near-white"
+
+
 disqusShortname: disqus_7JS1PTrMOB
 
 # Hyde
