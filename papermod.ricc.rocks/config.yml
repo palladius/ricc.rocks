@@ -1,6 +1,6 @@
 baseURL: https://ricc.rocks/
 languageCode: en-us
-title: Riccardo is Hugo Boss (paperClip)
+title: Riccardo 💛 Hugo (paperMod)
 theme: PaperMod
 paginate: 5
 
@@ -135,6 +135,10 @@ menu:
     - identifier: archive
       name: 🏛️archive
       url: /archives/
+      weight: 30
+    - identifier: papermod
+      name: 📜PaperMod Docs
+      url: https://github.com/adityatelange/hugo-PaperMod
       weight: 30
     - identifier: ricc-rocks
       name: 🪨ricc.rocks

@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "💦 Symlinked Themes Compared"
+title: "💦 Symlinked Themes Compared (🏆)"
 date: 2023-01-28T21:17:43+01:00
 draft: false
 tags: [symlink]
@@ -35,12 +35,12 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
 
 
-* **PaperMod**: https://hugo-stack.ricc.rocks it works!
-* **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). then I just love it!
+* **PaperMod**: it works! https://ricc.rocks/ not explored much yet
+* **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  then I just love it!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
 * **Coder**: Naah, too simple for me.
 
-## Photo Albyums
+## Photo Albums
 
 * Only XXX seems to have decent photo albums. However, people are saying "i wish your theme was as good as Photoswipe" so I believe I might just get [**PhotoSwipe**](https://photoswipe.com/) to work with anything else: see [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe).
 * maybe check https://github.com/liwenyip/hugo-easy-gallery but i dont think its worht it. (505 ⭐️).

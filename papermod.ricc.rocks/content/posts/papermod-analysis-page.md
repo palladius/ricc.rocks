@@ -1,17 +1,17 @@
 ---
-title: "Sample page 2"
+title: "🏆 PaperMod comparative analysis"
 date: 2020-09-15T11:30:03+00:00
-# weight: 1
+weight: 1
 aliases: ["/first"]
-tags: [test]
+tags: [test, paperMod]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
 TocOpen: false
-draft: true
+draft: false
 hidemeta: false
 comments: false
-description: "Just a sample page"
+description: "Just a sample page on PaperMod"
 # awesome!
 canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
@@ -42,9 +42,18 @@ editPost:
 ---
 Very complex page
 
-immahine non funge..
+## test emoji (failed)
+
+testing emojis: :see_no_evil:
+:hear_no_evil: :speak_no_evil:
+
+
+
+## test Youtube
+
+{{< youtube 4VBxd9n1dSU >}}
+
+## test images (ok)
 
 ![Scenario 1: Across columns](/images/cloud-connect.png)
-
-
 ![Scenario 2: Across columns](/images/riccardo-giallo-raja-ampat.jpg)
