@@ -1,4 +1,4 @@
-baseURL: 'http://ricc.rocks'
+baseURL: 'https://hugo-ananke.netlify.app'
 languageCode: 'en-us'
 title: 'Ricc 💛 Blog (Ananke)'
 #theme = 'netlify-basic'
