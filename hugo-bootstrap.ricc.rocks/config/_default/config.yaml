@@ -1,7 +1,10 @@
 baseURL: "https://hugo-bootstrap.ricc.rocks"
 title: Hugo Bootstrap Skeleton Riccardo
 theme: hugo-theme-bootstrap
-copyright: 'Copyright © 2016-{year} Razon Yang. All Rights Reserved.'
+copyright: |
+  Copyright © 2016-{year} Razon Yang. Respectfully edited by Riccardo.
+# See it in <a href="https://hugo-bootstrap-ricc-rocks.netlify.app/ ">
+# PROD:hugo-bootstrap-ricc-rocks</a>
 defaultContentLanguage: en
 # hasCJKLanguage: true # Uncomment it if your content contains Chinese/Japanese/Korean Languages.
 # defaultContentLanguageInSubdir: true
@@ -15,7 +18,7 @@ enableRobotsTXT: true
 enableEmoji: true
 pygmentsUseClasses: true
 # googleAnalytics: UA-123-45
-# disqusShortname: yourdiscussshortname
+disqusShortname: disqus_7JS1PTrMOB
 
 blackfriday:
   hrefTargetBlank: true

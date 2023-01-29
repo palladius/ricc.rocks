@@ -36,3 +36,20 @@ Yes, exactly.
 
 anche la float end spinge. Boh I'm unable
 
+
+## test CSS / JS
+
+
+Riccardo trying out icons as per [LookNFeel](https://hbs.razonyang.com/v1/en/docs/look-and-feel) docs:
+<i class="fas fa-clock">aa</i>
+<i class="far fa-address-book">AB</i>
+<i class="fab fa-amazon">a</i>
+<i class="fab fa-google">G</i>
+and again Gugol
+<i class="fab fa-google"></i>
+
+icon colors (non va 😭):
+<i class="fas fa-clock text-success">ok</i>
+<i class="fas fa-clock text-danger">dang</i>
+<i class="far fa-clock" style="color: blue">blue</i>
+<i class="far fa-clock" style="color: pink">pink</i>
