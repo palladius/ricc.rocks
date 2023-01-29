@@ -12,15 +12,15 @@ carousel: false
 series:
 categories: []
 tags: [GCP, macbook, SMS, pager]
-images:
-- battery-life-cli.webp
-- london-airport.jpg
+#images:
+#- /images/battery-life-cli.webp
+#- /images/london-airport.jpg
 # original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
 ---
 
-## TODO image doesnt work..
+<!-- this works: ![Image Caption](/images/riccardo.jpg "Use Image Title as Caption aeroporto") -->
+![Image Caption](/images/london-airport.jpg "Taking a train to City Airport, my fav airport in London")
 
-[london ariport](london-airport.jpg)
 
 This article shows how you can easily inject a generic key/value into Google Cloud Monitoring and set up alerts on it. I use it to alert on disk space, and now also low battery!
 
@@ -85,3 +85,7 @@ I know, I call the same command 10 times and I could cache it. This is for the n
 The best part of this is, not only I get my battery life, it also gives me my battery durability — so when I need to change battery. Woohoo!
 
 There you go, let’s try it out, let me just remove the cable so you dont get a boring 100%.
+
+![Image Caption](/images/battery-life-cli.webp "Here is my Battery Life and my Battery health")
+
+todo finish
