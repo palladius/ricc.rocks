@@ -22,7 +22,8 @@ My code is here: https://github.com/palladius/pulumi/tree/main/examples/python-g
 
 Note: 👍 Code is finally building correctly. Yay!
 
-TODO image: 01-cb-trigger-list.webp
+![cb-trigger-list](01-cb-trigger-list.webp)
+
 
 ## What is so special about the code?
 
@@ -30,17 +31,14 @@ The code allows any Pulumi project you might have on GCP (in Python 🐍) to set
 
 So if, for instance, you commit a change that adds a GCS bucket to the code, in a couple of minutes that GCS bucket will be created and the README.md will be updated with builder parameters:
 
-TODO
-02-pulumi-commands.webp
-in bold you can see 3 parameters updated by Cloud Build itself!
+![cb-trigger-list](02-pulumi-commands.webp)
+In bold you can see 3 parameters updated by Cloud Build itself!
 
 My code supports **Github** (as is) and **Bitbucket** (code 99% there as it was working first!) for the moment.
 
 I’ve also customized the message as per Laura article, prepending a “[built with Cloud Build]” to the git message (”slash N fix”, in this case):
 
-TODO `03-trigger-build-on-pulumi-site.webp`
-
-
+![View on Pulumi website](03-trigger-build-on-pulumi-site.webp)
 
 ## What does Pulumi mean?
 
