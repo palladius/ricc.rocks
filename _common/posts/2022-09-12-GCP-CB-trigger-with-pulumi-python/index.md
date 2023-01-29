@@ -12,6 +12,8 @@ featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
 ---
 
+Original article here:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
+
 A couple of weeks ago, I fell in love with **Pulumi**. it has everything I wanted from Terraform: easy to set up, easy config management, a nice UI for free, and most importantly… language Support! Pulumi is the best invention after Buffalo Pizza and has only a problem.. [no Ruby support](https://github.com/pulumi/pulumi/issues/132) :/
 
 Anyway, I’m so in love with ⬣ GCP (which happens to pay my salary, I got to admit), Cloud Build, Cloud Deploy, and in general CI/CD pipelines on Google Cloud that I wanted to give it a try. Googling “Cloud Build Pulumi” I got to this nice article for JavaScript, which is not in my chords.
