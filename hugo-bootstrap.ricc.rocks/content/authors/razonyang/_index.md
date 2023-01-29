@@ -1,11 +1,11 @@
 ---
-title: Razon Yang
-description: Gopher, PHPer, Full Stack Engineer.
+title: Riccardo Carlesso
+description: Triathlete, Rubyist, Half-🍷 Stack Developer, SRE at heart, Engineer.
 social:
-  github: razonyang
-  twitter: razonyang
+  github: palladius
+  twitter: palladius
   email: razonyang@gmail.com
-  website: https://razonyang.com/
-  patreon: razonyang
-  paypal: razonyang
+  website: https://palladius.it/
+#  patreon: razonyang
+  paypal: riccrocks
 ---

@@ -1,6 +1,6 @@
 ---
 title: Razon Yang
-description: Gopher, PHPer, Full Stack Engineer.
+description: La stessa cosa, ma in italiano
 social:
   github: razonyang
   twitter: razonyang
