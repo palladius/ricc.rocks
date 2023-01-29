@@ -51,18 +51,25 @@ testing emojis: :see_no_evil:
 ## Test Math
 
 Math poorly documented here: https://github.com/adityatelange/hugo-PaperMod/blob/exampleSite/content/posts/math-typesetting.md
+Finally this site fixed it for me: https://discourse.gohugo.io/t/how-to-render-math-equations-properly-with-katex/40998
 
 See inline:
 
-{{< math.inline >}}
-    Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
-{{}}
+ $$\int_{-\infty}^{\infty} e^{-x^2} dx$$  <!-- works -->
+
+Inline math:
+
+$$\(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)$$
+
 
 <!-- this does NOT work.
 { { < math.inline > } }
-    Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
 { { } }
 -->
+
+$${a}^{b} - \overbrace{c}^{d}$$  <!-- works-->
+
+$$\underbrace{a}_{b} - \underbrace{c}_{d}$$  <!--does not work -->
 
 
 Finish inline.
