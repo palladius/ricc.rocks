@@ -34,6 +34,8 @@ Riccardo trying out icons as per [LookNFeel](https://hbs.razonyang.com/v1/en/doc
 <i class="far fa-address-book">AB</i>
 <i class="fab fa-amazon">a</i>
 <i class="fab fa-google">G</i>
+and again Gugol
+<i class="fab fa-google"></i>
 
 icon colors (non va 😭):
 <i class="fas fa-clock text-success">ok</i>
