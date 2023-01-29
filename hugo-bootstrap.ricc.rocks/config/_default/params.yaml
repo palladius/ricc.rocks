@@ -5,7 +5,7 @@ mainSections:
 
 # titleSeparator: '|' # Title separator. Default to -.
 
-description: An extreme fast, responsive and feature-rich blog theme for Hugo
+description: Riccardo Hugo/Bootstrap Blog
 keywords: Hugo, Bootstrap, Blog Theme
 # images:
 #   - site-feature-image.jpg
@@ -15,9 +15,9 @@ keywords: Hugo, Bootstrap, Blog Theme
 
 # logo: images/logo.png # Logo image. Default to images/logo.webp.
 # logo: false # Disable Logo
-brand: HBS
+brand: Riccardo Bootstrap Blog
 
-palette: purple # Default palette. Optional. You'll need to clear the browser cache after modifying this.
+palette: yellow # Default palette. Optional. You'll need to clear the browser cache after modifying this.
 # Available palettes. Default to ALL. Empty array means disable.
 # palettes:
 #  - blue
@@ -41,14 +41,14 @@ palette: purple # Default palette. Optional. You'll need to clear the browser ca
 # dateFormat: Jan 2, 2006
 
 # Google Adsense
-googleAdsense: 
+#googleAdsense:
 
-# math: true # Enable math globally.
+math: true # Enable math globally.
 # toc: false # Disable TOC globally.
 # tocPosition: content
 # breadcrumb: false # Disable breadcrumb
 # breadcrumbDivider: > # Breadcrumb divider
-# diagram: true
+diagram: true
 # socialShare: false # disable social network sharing
 # searchBar: false # disable search-bar
 
@@ -73,8 +73,8 @@ countTaxonomyPosts: true # Count posts of taxonomy.
 pinnedPostCount: 3 # The number of pinned posts.
 
 # Custom CSS and JS
-customCSS:
-customJS:
+# customCSS:
+# customJS:
 
 tocWordCount: 1 # TOC is displayed only if the post's word count exceeds this value.
 
@@ -129,13 +129,13 @@ analytics:
 
 # Site verification
 siteVerification:
-  google: 
-  bing: 
-  baidu: 
+  google:
+  bing:
+  baidu:
   baiduUnion:  # Baidu Union
-  so: 
-  sogou: 
-  shenma: 
+  so:
+  sogou:
+  shenma:
 
 creativeCommons:
   # by: true # Credit must be given to you, the creator.
@@ -144,12 +144,12 @@ creativeCommons:
   # sa: true # Adaptations must be shared under the same terms.
 
 utterances:
-  repo: razonyang/hugo-theme-bootstrap-skeleton # Replace with your repository.
+  repo: palladius/ricc.rocks # Replace with your repository.
   #issueTerm: pathname # pathname, url, title, og:title
   label: comment
   # By default, light and dark mode correspond to github-light and github-dark, respectively.
   # Optional values: github-light, github-dark, preferred-color-scheme, github-dark-orange, icy-dark, dark-blue, photon-dark.
-  #theme:  
+  #theme:
 
 #staticman:
   #endpoint: https://yourstaticmaninstance # Required, replace with your own Staticman instance.
@@ -182,7 +182,7 @@ utterances:
   # lazyLoading: false # Default to true.
 
 search:
-  paginate: 5 # Pagination. Default to 10.
+  paginate: 8 # Pagination. Default to 10.
   # resultContentWordCount: 240 # The maximum word count of result content for displaying.
   # Fuse.js options. See https://fusejs.io/api/options.html.
   fuse:
@@ -203,9 +203,9 @@ search:
   # debug: true
 
 reward:
-  alipay: images/reward/alipay.png
-  wechat: images/reward/wechat.png
-  #paypal: images/reward/paypal.png
+  #alipay: images/reward/alipay.png
+  #wechat: images/reward/wechat.png
+  paypal: images/reward/paypal.png
   #patreon: images/reward/patreon.png
   #liberapay: images/reward/liberapay.png
 
@@ -225,11 +225,11 @@ fontSize:
 pwa:
   manifest:
     # name:  # Default to site title.
-    short_name: HBS
+    short_name: Riccardo 💛 Blog
     # display: fullscreen # Default to standalone.
     # description:  # Default to site description.
-    # theme_color: 
-    # background_color: 
+    theme_color: yellow
+    background_color: yellow
 
     # Icons
     # [[pwa.manifest.icons]]
@@ -240,14 +240,14 @@ pwa:
     #   src: /images/icons/icon-144x144.png
 
 contact:
-  endpoint: https://getform.io/f/56041c81-9e03-4c24-b9c5-61238854d4cd # Backend endpoint, remove this line if you're using Netlify.
+  endpoint: https://getform.io/f/9f752053-a73d-414a-8c32-19a21d326062 # Riccardo gwt-in-touch
   # file: true # Enable file upload
   # fileField: image # The name of file field.
   # reCaptcha:
     # siteKey: ""
 
 repo:
-  url: https://github.com/razonyang/hugo-theme-bootstrap-skeleton
+  url: https://github.com/palladius/ricc.rocks/
   branch: main
   # subPath: exampleSite
   # dateFormat: 02/01/2006, 15:04:05 PM
@@ -255,9 +255,9 @@ repo:
 topAppBar:
   # See https://hbs.razonyang.com/v1/en/docs/widgets/social-links/.
   social:
-    github: razonyang/hugo-theme-bootstrap
-    patreon: razonyang
-    paypal: razonyang
+    github: palladius/ricc.rocks # /hugo-theme-bootstrap
+    #patreon: razonyang
+    paypal: riccrocks
 
 #docs:
   # nav:

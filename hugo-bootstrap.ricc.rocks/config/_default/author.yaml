@@ -1,6 +1,8 @@
-name: Razon Yang
+name: Riccardo Carlesso
 # avatar: images/profile.png # Avatar image. Default to "images/profile.webp".
-bio: 'Gopher, PHPer, Full Stack Engineer.'
+bio: |
+  Googler, Rubyist, Half-Stack Engineer
+  (I'm an optimist: I like to see the stcack half-full).
 company: Company # HTML markup are supported, such as: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
 location: Earth # HTML markup are supported, such as: <a href='https://www.openstreetmap.org/search?query=Earth'>Earth</a>.
 # about: https://razonyang.com # The external about page. The internal about page will be used if not set.
@@ -9,9 +11,9 @@ params: {
 }
 # See https://hbs.razonyang.com/v1/en/docs/widgets/social-links/.
 social:
-  email: razonyang@gmail.com
-  github: razonyang/hugo-theme-bootstrap
-  twitter: razonyang
-  patreon: razonyang
-  paypal: razonyang
+  email: palladius.bonton+hugoboostrap@gmail.com
+  github: palladius/pasta
+  twitter: palladius
+#  patreon: razonyang
+  paypal: riccrocks
   rss: "" # Remove RSS

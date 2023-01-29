@@ -2,12 +2,22 @@ en:
   languageName: English
   weight: 1
 
-zh-cn:
-  languageName: 简体中文
-  weight: 4
+# zh-cn:
+#   languageName: 简体中文
+#   weight: 4
+#   params:
+#     dateFormat: '2006-01-02'
+#     description: 一个快速、响应式和功能丰富的 Hugo 博客主题
+#     keywords: 'Hugo, Bootstrap, 博客主题'
+#     archive:
+#       dateFormat: 01-02
+
+it-it:
+  languageName: Italiano
+  weight: 2
   params:
-    dateFormat: '2006-01-02'
-    description: 一个快速、响应式和功能丰富的 Hugo 博客主题
-    keywords: 'Hugo, Bootstrap, 博客主题'
+    dateFormat: '2006-12-29'
+    description: Riccardo Carlesso 💛 Blog in Italiano
+    keywords: 'Hugo, Bootstrap, Riccardo Carlesso'
     archive:
-      dateFormat: 01-02
+      dateFormat: 12-29

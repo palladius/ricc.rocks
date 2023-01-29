@@ -1,2 +1,3 @@
-baseURL: https://hbs-skeleton.netlify.app/
-googleAnalytics: 
+# https://github.com/razonyang/hugo-theme-bootstrap-skeleton
+baseURL: https://bootstrap-ricc-rocks.netlify.app/
+googleAnalytics:

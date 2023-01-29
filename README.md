@@ -34,5 +34,7 @@ sed -i "s/theme:.*/theme: hugo-theme-bootstrap/g" config/_default/config.yaml
 hugo mod npm pack
 npm install
 hugo server
-
 ```
+
+doesnt work -> tried `1. Create a New Site from Scratch` instead.
+
