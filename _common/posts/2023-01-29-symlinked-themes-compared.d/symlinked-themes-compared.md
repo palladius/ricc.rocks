@@ -34,7 +34,7 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
 
 
-* **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: /posts/papermod-analysis-page/
+* **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: https://ricc.rocks/posts/papermod-analysis-page/
 * **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  then I just love it!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
 * **Coder**: Naah, too simple for me.
@@ -68,3 +68,7 @@ NEUTRAL:
 * supports [many icons](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons), but unsure how to use them
 * [Supports Maths](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/), but unsure on how to make it work/
 * emoji are nice, once enaled you can do 🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil:
+
+BAD 😩:
+
+* too simple. Doesnt have something about me as a blogger, its just a pure (sleek) container for news. Nothing about Riccardo, just my articles.

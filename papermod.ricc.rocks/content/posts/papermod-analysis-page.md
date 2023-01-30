@@ -36,8 +36,8 @@ cover:
     #caption: "<text>" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
+# Works thanks to config.yaml - ignore here its just automagical.
 editPost:
-    URL: "https://github.com/palladius/ricc.rocks/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 cover:
@@ -49,6 +49,10 @@ cover:
   image: /images/riccardo-simpson-black.jpg
 ---
 Very complex page
+
+## Suggest Changes
+
+It works! Try it here on top! Goes directly to github! (https://github.com/palladius/ricc.rocks/tree/main/papermod.ricc.rocks/content/posts/papermod-analysis-page.md in this case). Just fails with symilnks, but you cant have it all :P
 
 ## test emoji (failed)
 

@@ -57,7 +57,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
+    text: "PaperMod Home"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -80,7 +80,7 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Bella lì da PaperMod! \U0001F44B" # this is the hand
+    Title: "🇮🇹 Bella lì! \U0001F44B" # this is the hand
     Content: Welcome to Riccardo 💛 blog in PaperMod!
 
   socialIcons:
@@ -109,7 +109,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/palladius/ricc.rocks/tree/main/papermod.ricc.rocks/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
