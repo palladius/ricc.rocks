@@ -5,6 +5,8 @@ draft: false
 tags:
   - README
   - Riccardo
+Categories:
+- bootstrap
 #images:
 #- /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 images:
@@ -22,6 +24,8 @@ images:
 **HBS (Hugo Bootstrap Theme)** is a spectacular Theme leveraging Bootstrap.
 
 See also [README.md](https://github.com/razonyang/hugo-theme-bootstrap-skeleton/blob/main/README.md).
+
+~This is the end of the introduction, Kate.
 
 <!--more-->
 
