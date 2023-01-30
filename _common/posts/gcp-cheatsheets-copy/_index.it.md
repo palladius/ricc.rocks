@@ -15,7 +15,6 @@ Welcome to my CheatSheet, finally.
 
 ![image alt text](/images/cheatsheet-dark.png)
 
-
 Most cheatsheets are under `gcloud/` folder.
 Some are local here, like Docker, Kubectl, ..
 
