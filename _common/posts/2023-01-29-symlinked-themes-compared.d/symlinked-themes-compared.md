@@ -49,6 +49,8 @@ All the code is in different directories of my GH repo: https://github.com/palla
 
 ## Ananke
 
+Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
+
 GOOD 😍:
 
 * TODO
