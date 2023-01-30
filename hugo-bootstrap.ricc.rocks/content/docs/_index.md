@@ -6,5 +6,4 @@ menu:
     params:
       icon: '<i class="fas fa-fw fa-file text-success"></i>'
 ---
-
-The example of Docs layout.
+The example of Docs layout. Awesome Layout, let me add.
