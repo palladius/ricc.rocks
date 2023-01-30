@@ -7,6 +7,7 @@ run-prod:
 	hugo server
 
 modules-blah:
+	#go install github.com/CaiJimmy/hugo-theme-stack/v3@latest
 	hugo mod get -u github.com/CaiJimmy/hugo-theme-stack/v3
 	hugo mod tidy
 

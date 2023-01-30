@@ -1,2 +1,4 @@
+# Riccardo: disabled in symlink see https://stack.jimmycai.com/guide/getting-started
+
 imports:
   path: "github.com/CaiJimmy/hugo-theme-stack/v3"
