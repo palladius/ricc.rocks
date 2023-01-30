@@ -40,8 +40,11 @@ features: [
 min_version: "0.83.0"
 
 author:
-  name: "Aditya Telange"
-  homepage: "https://github.com/adityatelange/"
+  name: "Riccardo Carlesso"
+  homepage: "https://github.com/palladius/"
+# author:
+#   name: "Aditya Telange"
+#   homepage: "https://github.com/adityatelange/"
 
 # If porting an existing theme
 original:
