@@ -1,7 +1,7 @@
 ---
 title: "My first Post in a bundle/folder"
 date: 2023-01-29T20:45:18+01:00
-draft: false
+draft: true
 tags: [test, image]
 cover:
   #image: /riccardo-turtle.jpg

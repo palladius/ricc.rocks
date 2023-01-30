@@ -71,7 +71,7 @@ params:
     imageUrl: images/riccardo-giallo-raja-ampat.jpg
     imageWidth: 1200
     imageHeight: 1200
-    imageTitle: my image
+    imageTitle: my image title sobenme
     buttons:
       - name: Posts
         url: posts
@@ -80,8 +80,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Bella lì! \U0001F44B" # this is the hand
-    Content: Welcome to Riccardo blog in PaperMod!
+    Title: "Bella lì da PaperMod! \U0001F44B" # this is the hand
+    Content: Welcome to Riccardo 💛 blog in PaperMod!
 
   socialIcons:
     - name: twitter

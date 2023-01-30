@@ -34,7 +34,7 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
 
 
-* **PaperMod**: it works! https://ricc.rocks/ not explored much yet
+* **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: /posts/papermod-analysis-page/
 * **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  then I just love it!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
 * **Coder**: Naah, too simple for me.

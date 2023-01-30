@@ -3,7 +3,7 @@ title: "🏆 PaperMod comparative analysis"
 date: 2020-09-15T11:30:03+00:00
 weight: 1
 aliases: ["/first"]
-tags: [test, paperMod]
+tags: [test, paperMod, image]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
@@ -13,7 +13,7 @@ hidemeta: false
 comments: false
 description: "Just a sample page on PaperMod"
 # awesome!
-canonicalURL: "https://canonical.url/to/page"
+#canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
 disableShare: false
 disableHLJS: false
@@ -37,9 +37,16 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
 editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/palladius/ricc.rocks/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
+cover:
+  #image: /riccardo-turtle.jpg
+  #image: /images/yellow-desktop-wallpaper.jpg
+  #image: /imagez/riccardo-turtle.jpg
+  #image: riccardo-giallo-raja-ampat.jpg
+  image: images/riccardo-giallo-raja-ampat.jpg
+  image: /images/riccardo-simpson-black.jpg
 ---
 Very complex page
 
@@ -86,5 +93,8 @@ Firth of fifth on piano:
 
 ## test images (ok)
 
-![Scenario 1: Across columns](/images/cloud-connect.png)
+A few images in /images/ mode.
+
 ![Scenario 2: Across columns](/images/riccardo-giallo-raja-ampat.jpg)
+![Riccardo Simpson](/images/riccardo-simpson-black.jpg)
+![Scenario 1: Across columns](/images/cloud-connect.png)
