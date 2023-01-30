@@ -18,11 +18,14 @@ images:
 - /images/riccardo/riccardo-kids-christmas.jpeg
 - /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 ---
-<!-- ![boh](/images/riccardo/riccardo-smiles-swim-ironman.jpeg) -->
+
+**HBS (Hugo Bootstrap Theme)** is a spectacular Theme leveraging Bootstrap.
 
 See also [README.md](https://github.com/razonyang/hugo-theme-bootstrap-skeleton/blob/main/README.md).
 
 <!--more-->
+
+<!-- ![boh](/images/riccardo/riccardo-smiles-swim-ironman.jpeg) -->
 
 ## Useful links
 
