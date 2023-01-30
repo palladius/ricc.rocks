@@ -24,3 +24,7 @@ modules-optimize:
 
 hugo-bootstrap:
 	git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
+
+install:
+	sudo apt install hugo
+	git submodule update --init --recursive

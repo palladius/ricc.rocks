@@ -1,1 +1,0 @@
-../../../_common/posts/symlinked-themes-compared.md
