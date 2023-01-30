@@ -12,3 +12,15 @@ tags:
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
 ---
+
+## Install
+
+On a New repo, you need to first do:
+
+```bash
+make install
+make run-p1313-dev
+```
+
+which install NPM packages. Complicated one :)
+
