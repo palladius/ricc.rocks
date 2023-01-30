@@ -4,15 +4,20 @@
 title: "💦 Symlinked Themes Compared (🏆)"
 date: 2023-01-28T21:17:43+01:00
 draft: false
-tags: 
+tags:
 - symlink
 - hugo
+- WOW
+# Categories is feinitely used by STACK framework:
+categories:
+- symlink
+- hugo
+- category
+- WOW
 # ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
 ---
-
-
 I tried many modules this weekend. Note that different themes have different words and key/vals in the above stanza so I better not confuse them.
 For instance, this page has a `featured_image` which only works with Ananke, and a `image` which probably works with other themes.
 
@@ -21,17 +26,19 @@ What I've tried so far:
 ## Symlinking across all pages.
 
 * so far only tried one - definitely golang won't notice the changed symlinked file.
-*
+* Notice that STACK is currently in a DIFFEERENT place. Let me move it for a second.
+
 ## My Hugo websites I've tried so far
 
 All the code is in different directories of my GH repo: https://github.com/palladius/ricc.rocks/
 
 | Theme + Comparison | Website     | Stars |  Description |
 | ----------- | ----------- | ------ | ---- | ----------- |
-| Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)   (broken)     | ⭐️⭐️ | Historically the first ive tried. Havent explored much |
+| Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)    | ⭐️⭐️ | Historically the first ive tried. Havent explored much |
 | [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️   | Very little effort done here |
-| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
+| ----------- | ----------- | ------ | ---- | ----------- |
+| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
 
 
 * **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: https://ricc.rocks/posts/papermod-analysis-page/
