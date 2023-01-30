@@ -1,5 +1,5 @@
 ---
-title: 专栏
+title: Serie TV
 menu:
   main:
     parent: blog

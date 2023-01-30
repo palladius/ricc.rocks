@@ -54,7 +54,7 @@ Yes, exactly.
 anche la float end spinge. Boh I'm unable
 
 
-## test CSS / JS
+## test CSS / JS / bottstrap icons
 
 
 Riccardo trying out icons as per [LookNFeel](https://hbs.razonyang.com/v1/en/docs/look-and-feel) docs:
@@ -65,19 +65,39 @@ Riccardo trying out icons as per [LookNFeel](https://hbs.razonyang.com/v1/en/doc
 
 Icon colors (non va 😭):
 
-<i class="fab fa-clock text-success"></i>
+<!-- <i class="fab fa-clock text-success"></i>
 <i class="fab fa-clock text-danger"></i>
 <i class="fab fa-clock" style="color: blue"></i>
 <i class="fas fa-clock" style="color: pink"></i>
 <i class="far fa-clock text-success"></i>
-<i class="fa fa-clock text-danger"></i>
+<i class="fa fa-clock text-danger"></i> -->
 
 <i class="fab fa-google"  style="color: #4285F4"></i>
 <i class="fab fa-google"  style="color: #DB4437"></i>
 <i class="fab fa-google"  style="color: #F4B400"></i>
 <i class="fab fa-google"  style="color: #0F9D58"></i>
 
+Yellow google code is:
+```html
+<i class="fab fa-google"  style="color: #F4B400"></i>
+```
+
 it works! I just had to enable unsafe thingy in config :)
+
+<i class="bi bi-gem"></i>
+<i class="far fa-gem"></i>
+<i class="fab fa-gem"></i>
+aaa
+<i class="fa  fa-clock"></i>
+<i class="far fa-clock"></i>
+<i class="fab fa-clock"></i>
+<i class="far fa-address-book"></i>
+<i class="fab fa-amazon"></i>
+<i class="fab fa-google"></i>
+<i class="fa  fa-gem"></i>
+<i class="far fa-gem"></i>
+<i class="fab fa-gem"></i>
+<i class="fas fa-gem"></i>
 
 ## Code tests
 
