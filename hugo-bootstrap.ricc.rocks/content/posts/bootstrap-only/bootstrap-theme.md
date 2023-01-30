@@ -1,5 +1,5 @@
 ---
-title: "Riccardo: what I learnt on HBS"
+title: "Riccardo: what I learnt on Bootstrap (HBS)"
 date: 2023-01-17T16:35:29+08:00
 draft: false
 tags:
@@ -77,9 +77,18 @@ Icon colors (non va 😭):
 <i class="fab fa-google"  style="color: #F4B400"></i>
 <i class="fab fa-google"  style="color: #0F9D58"></i>
 
-Yellow google code is:
+Ruby logo: https://www.schemecolor.com/ruby-logo-colors.php
+
+<i class="fas fa-gem"  style="color: #820C02"></i>
+<i class="fas fa-gem"  style="color: #A91401"></i>
+<i class="fas fa-gem"  style="color: #D51F06"></i>
+<i class="fas fa-gem"  style="color: #DE3F24"></i>
+
+Yellow google code and red Ruby gem is:
+
 ```html
 <i class="fab fa-google"  style="color: #F4B400"></i>
+<i class="fas fa-gem"  style="color: #A91401"></i>
 ```
 
 it works! I just had to enable unsafe thingy in config :)
@@ -87,7 +96,7 @@ it works! I just had to enable unsafe thingy in config :)
 <i class="bi bi-gem"></i>
 <i class="far fa-gem"></i>
 <i class="fab fa-gem"></i>
-aaa
+Clock:
 <i class="fa  fa-clock"></i>
 <i class="far fa-clock"></i>
 <i class="fab fa-clock"></i>
@@ -95,17 +104,28 @@ aaa
 <i class="fab fa-amazon"></i>
 <i class="fab fa-google"></i>
 <i class="fa  fa-gem"></i>
-FARFAGEM: <i class="far fa-gem"></i>
+GEM:
 <i class="far fa-gem"></i>
-<i class="fab fa-gem"></i>
+<i class="far fa-clock"></i>
+<i class="fab fa-heart"></i>
 <i class="fas fa-gem"></i>
-
-<i class="fab fa-x"  style="color: #F4B400"></i>
 <i class="fab fa-diamond"></i>
-<i class="fab fa-home"></i>
+X:
+<i class="fab fa-x"  style="color: #F4B400"></i>
+<i class="fab fa-blog"></i>
+<i class="fab fa-facebook"></i>
 <i class="fab fa-tree"></i>
-<i class="fab fa-glass"></i>
-Gem:
+<i class="fab fa-car"></i>
+
+End of icons :/
+
+From https://fontawesome.com/docs/web/setup/get-started :
+
+  <!-- solid style -->
+  <i class="fa-solid fa-user"></i>
+
+  <!-- regular style -->
+  <i class="fa-regular fa-user"></i>
 
 ## Code tests
 
