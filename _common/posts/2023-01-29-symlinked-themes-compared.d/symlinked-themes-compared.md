@@ -26,10 +26,10 @@ What I've tried so far:
 
 All the code is in different directories of my GH repo: https://github.com/palladius/ricc.rocks/
 
-| Theme  | Website     | Stars | Description |
-| ----------- | ----------- | ------ | ----------- |
+| Theme + Comparison | Website     | Stars |  Description |
+| ----------- | ----------- | ------ | ---- | ----------- |
 | Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)   (broken)     | ⭐️⭐️⭐️ | Historically the first ive tried. Havent explored much |
-| PaperMod    | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️      | Very little effort done here |
+| [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️   | Very little effort done here |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
 
