@@ -95,9 +95,17 @@ aaa
 <i class="fab fa-amazon"></i>
 <i class="fab fa-google"></i>
 <i class="fa  fa-gem"></i>
+FARFAGEM: <i class="far fa-gem"></i>
 <i class="far fa-gem"></i>
 <i class="fab fa-gem"></i>
 <i class="fas fa-gem"></i>
+
+<i class="fab fa-x"  style="color: #F4B400"></i>
+<i class="fab fa-diamond"></i>
+<i class="fab fa-home"></i>
+<i class="fab fa-tree"></i>
+<i class="fab fa-glass"></i>
+Gem:
 
 ## Code tests
 
