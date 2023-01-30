@@ -11,3 +11,6 @@ run-p1313-with-drafts:
 commands-sample:
 	hugo new posts/my-first-post.md
 	hugo new --kind post 2023-01-28-prova123.md
+
+clean:
+	rm -rf resources/_gen/
