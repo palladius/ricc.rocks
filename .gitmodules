@@ -7,3 +7,6 @@
 [submodule "themes/hugo-theme-bootstrap"]
 	path = themes/hugo-theme-bootstrap
 	url = https://github.com/razonyang/hugo-theme-bootstrap
+[submodule "ricc-hugo-stack-copy/themes/hugo-theme-stack"]
+	path = ricc-hugo-stack-copy/themes/hugo-theme-stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack/

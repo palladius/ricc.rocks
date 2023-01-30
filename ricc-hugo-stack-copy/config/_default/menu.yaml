@@ -1,0 +1,49 @@
+# Configure main menu and social menu
+# https://stack.jimmycai.com/config/menu#custom-menu
+main:
+  - identifier: contact
+    name: Contact
+    url: /contact
+    weight: 600
+    params:
+      icon: messages
+      newTab: true
+
+social:
+  - identifier: "github"
+    name: "GitHub"
+    url: "https://github.com/palladius"
+    params:
+      icon: "brand-github"
+      #icon: icons8-github
+
+  - identifier: "twitter"
+    name: "Twitter"
+    url: "https://twitter.com/palladius"
+    params:
+#      icon: "brand-twitter"
+      icon: icons8-twitter
+
+  # - identifier: "facebook"
+  #   name: "Facebook"
+  #   url: "https://www.facebook.com/palladius"
+  #   params:
+  #     icon: "messages"
+
+  - identifier: "linkedin"
+    name: Linkedin
+    url: "https://www.linkedin.com/in/riccardocarlesso/"
+    params:
+      #icon: "link"
+      icon: icons8-linkedin-circled
+      # TODO Riccardo Icon
+
+
+  - identifier: "medium"
+    name: Medium 🖕🏻
+    url: https://medium.com/@palladiusbonton
+    params:
+      #icon: "link"
+      icon: icons8-medium
+      # TODO Riccardo Icon
+

@@ -1,0 +1,146 @@
+# Pages placed under these sections will be shown on homepage and archive page.
+mainSections: ["post"]
+# Output page's full content in RSS.
+rssFullContent: true
+
+footer:
+  since: 2023
+  customText: "🌎 <a href='https://hugo-stack.ricc.rocks/'>hugo-stack.ricc.rocks/</a>"
+
+dateFormat:
+  published: "02 Jan 2006"
+  lastUpdated: "02 Jan 2006 15:04 (MST)"
+
+sidebar:
+  emoji: "💛"
+  #subtitle: "Developer Advocate, Google Cloud"
+  # too tired to do it now :)
+  subtitle: "Testing out my first Hugo STACK template. Riccardo IMPORTANT: move this under the ricc.rocks repo in a folder so you can leverage the symlinks.."
+  # Docs: https://stack.jimmycai.com/config/sidebar#avatar
+  avatar:
+    enabled: true
+    local: true
+    #src: "img/avatar.png"
+    #src: "static/images/riccardo-2022.png"
+    #src: "img/riccardo-2022.png"
+    #src: "riccardo-bicicletta-gugol.jpg"
+    src: "riccardo-bicicletta-gugol.jpg"
+
+
+article:
+  math: false
+  readingTime: true
+  license:
+    enabled: true
+    default: "Licensed under CC BY-NC-SA 4.0"
+
+## Widgets
+widgets:
+  homepage:
+    - type: "search"
+      params:
+        limit: 5
+    - type: "archives"
+      params:
+        limit: 5
+    - type: "categories"
+      params:
+        limit: 10
+    - type: "tag-cloud"
+      params:
+        limit: 10
+    - type: "toc"
+
+opengraph:
+  twitter:
+    site: ""
+    card: "summary_large_image"
+
+defaultImage:
+  opengraph:
+    enabled: false
+    local: false
+    src: ""
+
+colorScheme:
+  toggle: true
+  default: "auto"
+
+imageProcessing:
+  cover:
+    enabled: true
+  content:
+    enabled: true
+
+## Comments
+comments:
+  enabled: true
+  provider: "disqus"
+  disqusjs:
+    shortname: ""
+    apiUrl: ""
+    apiKey: ""
+    admin: ""
+    adminLabel: ""
+  utterances:
+    repo: ""
+    issueTerm: "pathname"
+    label: ""
+
+  remark42:
+    host: ""
+    site: ""
+    locale: ""
+
+  vssue:
+    platform: ""
+    owner: ""
+    repo: ""
+    clientId: ""
+    clientSecret: ""
+    autoCreateIssue: false
+
+  waline:
+    serverURL: ""
+    lang: ""
+    visitor: ""
+    avatar: ""
+    emoji: ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
+    requiredMeta: ["name", "email", "url"]
+    placeholder: ""
+
+# [comments.waline.locale]
+# admin: "Admin"
+
+# [comments.twikoo]
+# envId: ""
+# region: ""
+# path: ""
+# lang: ""
+
+# [comments.cactus]
+# defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+# serverName: "cactus.chat"
+# siteName: ""
+
+# [comments.giscus]
+# repo: ""
+# repoID: ""
+# category: ""
+# categoryID: ""
+# mapping: ""
+# lightTheme: ""
+# darkTheme: ""
+# reactionsEnabled: 1
+# emitMetadata: 0
+
+# [comments.gitalk]
+# owner: ""
+# admin: ""
+# repo: ""
+# clientID: ""
+# clientSecret: ""
+
+# [comments.cusdis]
+# host: ""
+# id: ""

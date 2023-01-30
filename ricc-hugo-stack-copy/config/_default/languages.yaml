@@ -1,0 +1,12 @@
+
+# Uncomment this file to enable multilanguage site support
+en:
+    languageName: "🇬🇧 English"
+    languagedirection: "ltr"
+    title: "Riccardo 💛 Blog (on its own repo)"
+    weight: 1
+it:
+    languageName: "🇮🇹 Italiano"
+    languagedirection: "ltr"
+    title: "Il Blog 💛 di Riccardo"
+    weight: 2
