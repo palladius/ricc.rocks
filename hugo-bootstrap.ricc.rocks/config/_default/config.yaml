@@ -1,8 +1,7 @@
 baseURL: "https://hugo-bootstrap.ricc.rocks"
 title: Hugo Bootstrap Skeleton Riccardo
 theme: hugo-theme-bootstrap
-copyright: |
-  Copyright © 2016-{year} Razon Yang. Respectfully edited by Riccardo.
+#copyright: Copyright © 2016-{year} Razon Yang. Respectfully edited by Riccardo.
 # See it in <a href="https://hugo-bootstrap-ricc-rocks.netlify.app/ ">
 # PROD:hugo-bootstrap-ricc-rocks</a>
 defaultContentLanguage: en
@@ -28,6 +27,7 @@ taxonomies:
   series: series
   tag: tags
   authors: authors
+  #riccardo_entities: riccardo_entities
 
 build:
   writeStats: true

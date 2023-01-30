@@ -10,9 +10,11 @@ tags:
 images:
 - /images/riccardo/riccardo-2022.png
 - /images/riccardo/riccardo-jogging-telaviv.jpeg
-- /images/riccardo/riccardo-rajaampat.png- /images/riccardo/riccardo-bicicletta-gugol.jpg
+- /images/riccardo/riccardo-rajaampat.png
+- /images/riccardo/riccardo-bicicletta-gugol.jpg
 - /images/riccardo/riccardo-jump-ironman.jpeg
-- /images/riccardo/riccardo-scuba-in-google.jpeg- /images/riccardo/riccardo-canary-ravenna.jpeg
+- /images/riccardo/riccardo-scuba-in-google.jpeg
+- /images/riccardo/riccardo-canary-ravenna.jpeg
 - /images/riccardo/riccardo-kids-christmas.jpeg
 - /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 ---

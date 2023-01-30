@@ -1,4 +1,5 @@
 
+dev: run-p1313-dev
 
 run-p1313-prod:
 	HUGO_ENV=production hugo server
