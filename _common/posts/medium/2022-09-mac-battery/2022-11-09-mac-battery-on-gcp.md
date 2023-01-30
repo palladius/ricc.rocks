@@ -80,7 +80,6 @@ main(__FILE__)
 ```
 
 
-
 I know, I call the same command 10 times and I could cache it. This is for the next iteration!
 
 The best part of this is, not only I get my battery life, it also gives me my battery durability — so when I need to change battery. Woohoo!
