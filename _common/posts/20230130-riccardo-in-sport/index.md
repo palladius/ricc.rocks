@@ -35,3 +35,13 @@ The gym wasn't, enough, I decided I would do the most incredible thing in my lif
 
 
 ## 2017: My first (full) Ironman
+
+## 2019: My second (full) Ironman
+
+## June 2022: A mediocre half-Ironman (Rapperswil, 🇨🇭)
+
+Here I was tranquil like a peak; however, my performance was SO BAD that I was able to swim 2km in more than 30m (!).
+
+![image](/images/riccardo/riccardo-smiles-swim-ironman.jpeg)
+
+Luckily, I got a green cap for free :)

@@ -15,7 +15,7 @@
 baseURL = "https://tranquilpeak.netlify.app/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "Riccardo tranquilpeak theme"
+title = "Riccardo tranquilpeak 🏔️ theme"
 #theme = "hugo-tranquilpeak-theme"
 theme = "../theme/tranquilpeak"
 disqusShortname = "hugo-tranquilpeak-theme"
