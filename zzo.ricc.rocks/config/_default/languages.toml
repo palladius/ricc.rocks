@@ -11,3 +11,10 @@
   weight = 2
   languagedir = "ltr"
   contentdir = "content/ko"
+
+[it]
+  title = "Stoka ZZO"
+  languageName = "Italiano"
+  weight = 2
+  languagedir = "ltr"
+  contentdir = "content/it"
