@@ -10,3 +10,6 @@
 [submodule "ricc-hugo-stack-copy/themes/hugo-theme-stack"]
 	path = ricc-hugo-stack-copy/themes/hugo-theme-stack
 	url = https://github.com/CaiJimmy/hugo-theme-stack/
+[submodule "themes/tranquilpeak"]
+	path = themes/tranquilpeak
+	url = https://github.com/kakawait/hugo-tranquilpeak-theme.git
