@@ -18,11 +18,10 @@ What I've tried so far:
 
 | Theme  | Website     | Stars | Description |
 | ----------- | ----------- | ------ | ----------- |
-| Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)        | ⭐️⭐️⭐️ | Historically the first ive tried. Havent explored much |
 | PaperMod    | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️⭐️      | Very little effort done here |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
-
+| zzo
 
 * **PaperMod**:
 Theme: PaperMod
@@ -42,3 +41,7 @@ Theme: Bootstrap
 * Or just code it (I wish it was Ruby and not Golang): https://hugocodex.org/add-ons/image-gallery/
 * or use this [awesome library](https://github.com/mfg92/hugo-shortcode-gallery): demo in https://matze.rocks/images/#gallery-filter=Landscape
 
+
+# Old useless stuff
+
+| Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)        | ⭐️⭐️⭐️ | Historically the first ive tried. Havent explored much |

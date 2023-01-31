@@ -14,9 +14,7 @@ featured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 Categories:
 - symlink
-- GCP
-- pulumi
-- Medium
+- GDoc
 images:
 - /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 ---

@@ -13,7 +13,7 @@ categories:
 - symlink
 - hugo
 - category
-- WOW
+- important
 # ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
@@ -34,12 +34,12 @@ All the code is in different directories of my GH repo: https://github.com/palla
 
 | Theme + Comparison | Website     | Stars |  Description |
 | ----------- | ----------- | ------ | ---- | ----------- |
-| Ananke      | [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)    | ⭐️⭐️ | Historically the first ive tried. Havent explored much |
 | [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️   | Very little effort done here |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
-| ----------- | ----------- | ------ | ---- | ----------- |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
-
+| ----------- | ----------- | ------ | ---- | ----------- |
+| ZZO | TODO | ------ | ---- | ----------- |
+|
 
 * **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: https://ricc.rocks/posts/papermod-analysis-page/
 * **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  then I just love it!
@@ -53,19 +53,31 @@ All the code is in different directories of my GH repo: https://github.com/palla
 * Or just code it (I wish it was Ruby and not Golang): https://hugocodex.org/add-ons/image-gallery/
 * or use this [awesome library](https://github.com/mfg92/hugo-shortcode-gallery): demo in https://matze.rocks/images/#gallery-filter=Landscape
 
+## ZZO
 
-## Ananke
+![image](zzo-screenshot.png)
 
-Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
+* install: https://zzo-docs.vercel.app/
+* GH theme: https://github.com/zzossig/hugo-theme-zzo
 
-GOOD 😍:
+Features:
 
-* TODO
+Multiple Skins(dark, light, solarized, ...)
+Mobile menu
+Search
+Search Engine Optimization(SEO)
+Multilingual (i18n)
+Responsive design
+Customizable UI
+RSS
+Gallery
+Fast code highlighting
+Talks page
+Showcase page
+Publication Page
+Resume Page
+Presentation Page
 
-BAD 😩:
-
-* **too simple**. Eg, contact form is amongst posts (seriously?)
-* no image gallery Im afraid
 ## PaperMod
 
 I spent little time so far - but its just my fault, not his :)
@@ -81,3 +93,25 @@ NEUTRAL:
 BAD 😩:
 
 * too simple. Doesnt have something about me as a blogger, its just a pure (sleek) container for news. Nothing about Riccardo, just my articles.
+
+
+
+
+# Old stuff
+
+
+## Ananke ⭐️⭐️
+
+Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
+Old:
+* [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)
+* Historically the first ive tried. Havent explored much
+
+GOOD 😍:
+
+* TODO
+
+BAD 😩:
+
+* **too simple**. Eg, contact form is amongst posts (seriously?)
+* no image gallery Im afraid
