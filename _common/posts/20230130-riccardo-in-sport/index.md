@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: 💦 Riccardo Sport history
+title: SYML 💦 Riccardo Sport history 2
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
@@ -11,7 +11,8 @@ tags:
 #canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 # ANANKE :)
 featured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
-image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
+#image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
+image: imagez/riccardo-smiles-swim-ironman.jpeg
 Categories:
 - symlink
 - GDoc
@@ -19,6 +20,8 @@ images:
 - /images/riccardo/riccardo-smiles-swim-ironman.jpeg
 ---
 Since I was a kiddo, I thouroughly sucked at sport.
+
+![image](imagez/riccardo-smiles-swim-ironman.jpeg)
 
 Then, one day, something changed.
 
