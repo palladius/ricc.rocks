@@ -14,12 +14,21 @@ categories:
 - hugo
 - category
 - important
+keywords:
+- tech
+- hugo
+- symlink
+- comparative
+- theme
+- themes
 # ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
 images:
 - tranquilpeak-showcase.png
 - zzo-screenshot.png
+# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
+thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
 ---
 I tried many modules this weekend. Note that different themes have different words and key/vals in the above stanza so I better not confuse them.
 For instance, this page has a `featured_image` which only works with Ananke, and a `image` which probably works with other themes.
@@ -104,6 +113,8 @@ Presentation Page
 * GH code: https://github.com/kakawait/hugo-tranquilpeak-theme
 * 861 stars / 515 forks
 * install: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md
+
+How to sue the image btag (finally!): https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
 
 
 

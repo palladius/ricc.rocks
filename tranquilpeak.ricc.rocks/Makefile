@@ -1,3 +1,3 @@
 
 run:
-	hugo server -D
+	hugo server --disableFastRender
