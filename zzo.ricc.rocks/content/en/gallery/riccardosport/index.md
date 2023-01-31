@@ -16,6 +16,7 @@ images:
   - image: ricc-bike-waterfalls.jpeg
   - image: riccardo-green-bike-bw.jpeg
   - image: ricc-foto-albero.jpeg
+    caption: Believe or not, this was just a pic with my Pixel 5 or 6 on a nice sunny day. Came out pretty awesome!
   - image: riccardo-ironman-2019-run.jpeg
   - image: ricc-ironman-finisher.jpeg
   - image: riccardo-ironman-2022-rappi.jpeg
