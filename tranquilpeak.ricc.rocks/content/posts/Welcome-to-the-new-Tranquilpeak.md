@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Tranquilpeak 0.5.3-BETA"
-date: 2015-06-15
+title: "Welcome to Tranquilpeak 0.5.3-BETA Riccardo"
+date: 2022-06-15
 categories:
 - tranquilpeak
 - releases
@@ -16,14 +16,19 @@ keywords:
 - gravatar
 autoThumbnailImage: false
 thumbnailImagePosition: "top"
-thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg
-coverImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city.jpg
+#thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg
+coverImage: /img/2022-10-19-riccardo-tartaruga.jpg # //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city.jpg
 metaAlignment: center
 ---
 Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
+
 <!--more-->
 
+![TranquilpeakRiccardo](/img/2022-10-19-riccardo-tartaruga.jpg)
+
+
 ![Tranquilpeak](/img/showcase.png)
+
 
 {{< toc >}}
 

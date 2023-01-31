@@ -53,7 +53,8 @@ canonifyurls = true
   gravatarEmail = "palladiusbonton@gmail.com"
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  #picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+#  picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+  picture = "/img/2022-10-19-riccardo-tartaruga.jpg"
   # Your Twitter username without the @. E.g : thibaudlepretre
   twitter = "palladius"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
@@ -98,13 +99,13 @@ canonifyurls = true
   identifier = "github"
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fab fa-lg fa-github\" aria-hidden=\"true\"></i>"
-  url = "https://github.com/kakawait"
+  url = "https://github.com/palladius"
 [[menu.links]]
   weight = 2
   identifier = "stackoverflow"
   name = "Stack Overflow"
   pre = "<i class=\"sidebar-button-icon fab fa-lg fa-stack-overflow\" aria-hidden=\"true\"></i>"
-  url = "https://stackoverflow.com/users/636472/kakawait"
+  url = "https://stackoverflow.com/users/362420/riccardo"
 
 [[menu.misc]]
   weight = 1
@@ -136,7 +137,7 @@ canonifyurls = true
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
   # Default format is: January 2, 2006
-  #  dateFormat = "2 January 2006"
+  dateFormat = "2 January 2006"
 
   # ---------------------------
   # Posts related configuration
