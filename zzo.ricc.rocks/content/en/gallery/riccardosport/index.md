@@ -1,10 +1,10 @@
 ---
-title: RiccardoSport
+title: Riccardo 🏊🚵🏃🏻 Sport
 date: 2019-10-31T10:20:16+09:00
 description: Photo Gallery
 type: gallery
 mode: one-by-one
-description: "photo gallery"
+description: Some random pics to demonstrate this Theme..
 images:
   - image: ricc-bike-gletscher-iconic-furka.jpeg
     caption: Iconic trip with Michele to Furkapass
@@ -22,7 +22,7 @@ images:
   - image: ricc-scream-bike.jpeg
   - image: riccardo-ironman2017-run2.jpeg
   - image: ricc-ski-toblerone.jpeg
-image: images/feature2/gallery.png
+image: gallery/riccardosport/riccardo-aegerisee-bike.jpg # images/feature2/gallery.png
 ---
 
 Riccardo pics

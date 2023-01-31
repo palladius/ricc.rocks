@@ -18,7 +18,9 @@ images:
   #   caption: man
   # - image: child.jpg
   #   caption: child
-image: images/feature2/gallery.png
+#image: images/feature2/gallery.png
+image: gallery/family/ricc-bimbi-casa.jpeg
+
 ---
 
 Family pictures..
