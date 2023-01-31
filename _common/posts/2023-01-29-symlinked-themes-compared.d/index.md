@@ -17,6 +17,9 @@ categories:
 # ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
+images:
+- tranquilpeak-showcase.png
+- zzo-screenshot.png
 ---
 I tried many modules this weekend. Note that different themes have different words and key/vals in the above stanza so I better not confuse them.
 For instance, this page has a `featured_image` which only works with Ananke, and a `image` which probably works with other themes.
@@ -32,19 +35,27 @@ What I've tried so far:
 
 All the code is in different directories of my GH repo: https://github.com/palladius/ricc.rocks/
 
-| Theme + Comparison | Website     | Stars |  Description |
-| ----------- | ----------- | ------ | ---- | ----------- |
-| [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️   | Very little effort done here |
-| Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
+| Theme + PermaCompare | Website     | Stars |  Description |
+| ----------- | ----------- | ------ | ---- |
+| [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️   | Super sleek. Essential but damn, so good in its essence! |
+| Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | Just amazing |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
-| ----------- | ----------- | ------ | ---- | ----------- |
-| ZZO | TODO | ------ | ---- | ----------- |
-|
+| ----------- | ----------- | ------ | ----  |
+| ZZO         | TODO | ⭐️? |  |
+|TranquilPeak | todo | ⭐️? | |
+
+(*) Permacompare: permalink in prod to the comparison page :)
 
 * **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: https://ricc.rocks/posts/papermod-analysis-page/
 * **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  then I just love it!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
+* ZZO: TODO
+* TranquilPeak TODO
+Lost the battle:
+
 * **Coder**: Naah, too simple for me.
+* Ananke. Too simple
+
 
 ## Photo Albums
 
@@ -53,9 +64,18 @@ All the code is in different directories of my GH repo: https://github.com/palla
 * Or just code it (I wish it was Ruby and not Golang): https://hugocodex.org/add-ons/image-gallery/
 * or use this [awesome library](https://github.com/mfg92/hugo-shortcode-gallery): demo in https://matze.rocks/images/#gallery-filter=Landscape
 
+
+## TranquilPeak
+
+![image](tranquilpeak-showcase.png)
+
+* GH: https://github.com/kakawait/hugo-tranquilpeak-theme
+* DemoSite:
+
+
 ## ZZO
 
-![image](zzo-screenshot.png)
+![Resize](zzo-screenshot.png?width=300px)
 
 * install: https://zzo-docs.vercel.app/
 * GH theme: https://github.com/zzossig/hugo-theme-zzo
@@ -78,6 +98,16 @@ Publication Page
 Resume Page
 Presentation Page
 
+## TranquilPeak
+
+* license: GPL
+* GH code: https://github.com/kakawait/hugo-tranquilpeak-theme
+* 861 stars / 515 forks
+* install: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md
+
+
+
+
 ## PaperMod
 
 I spent little time so far - but its just my fault, not his :)
@@ -93,6 +123,11 @@ NEUTRAL:
 BAD 😩:
 
 * too simple. Doesnt have something about me as a blogger, its just a pure (sleek) container for news. Nothing about Riccardo, just my articles.
+
+## Bootstrap
+
+* Image docs: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images Plenty of good stuff here, also I found a bug and the guy fixed it in 24h - AMAZING.
+* Gallery docs: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
 
 
 

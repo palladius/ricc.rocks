@@ -21,7 +21,6 @@ What I've tried so far:
 | PaperMod    | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️⭐️      | Very little effort done here |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | played a lot |
-| zzo
 
 * **PaperMod**:
 Theme: PaperMod
