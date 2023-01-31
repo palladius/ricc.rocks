@@ -48,7 +48,7 @@ canonifyurls = true
   name = "Riccardo 💛 C"
   bio = "Hugo **TranquilPeak** Loves Ruby 💎"
   job = "GCP Developer Advocate"
-  location = "Switzerland"
+  location = "Switzerland 🇨🇭"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "palladiusbonton@gmail.com"
   # Your profile picture
