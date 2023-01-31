@@ -50,7 +50,7 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | Just amazing |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
 | ----------- | ----------- | ------ | ----  |
-| ZZO         | TODO | ⭐️? |  |
+| ZZO         | [TODO](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma essenziale. Mi piace un tot!  |
 |TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | testing on 2nd wave.. |
 
 (*) Permacompare: permalink in prod to the comparison page :)
@@ -81,6 +81,16 @@ Lost the battle:
 * GH: https://github.com/kakawait/hugo-tranquilpeak-theme
 * DemoSite:
 
+PLUS
+
+* nice graphics
+* built in galleries
+
+MINUS
+
+* says FS doesnt support symlinks for images. But it does support them for posts
+* Fishy in content/posts/ organization. If I move content in or out dirs, it disappears. Weird. (Maybe there's a good reason for it, but seems like a bug wrt to other themes where you can move things accross EVERYTHING within content/ )
+
 
 ## ZZO
 
@@ -88,6 +98,7 @@ Lost the battle:
 
 * install: https://zzo-docs.vercel.app/
 * GH theme: https://github.com/zzossig/hugo-theme-zzo
+* Ricc version: https://ricc-zzo.netlify.app/
 
 Features:
 
