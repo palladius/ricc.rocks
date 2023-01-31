@@ -11,8 +11,9 @@ tags:
 #canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 # ANANKE :)
 featured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
-#image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
-image: imagez/riccardo-smiles-swim-ironman.jpeg
+image: /images/riccardo/riccardo-bike-mallorca.jpg
+#image: imagez/riccardo-smiles-swim-ironman.jpeg
+#image: images/feature2/color-palette.png
 Categories:
 - symlink
 - GDoc
