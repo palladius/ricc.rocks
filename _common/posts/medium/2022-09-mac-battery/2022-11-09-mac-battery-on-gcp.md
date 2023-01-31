@@ -1,6 +1,6 @@
 ---
 # type: docs
-title: My Mac’s battery🔋 on Google Cloud Monitoring — send SMS if low 🪫
+title: 💦 Symlinked My Mac’s battery🔋 on Google Cloud Monitoring — send SMS if low 🪫
 date: 2022-11-09T11:48:51+01:00
 featured: false
 draft: false

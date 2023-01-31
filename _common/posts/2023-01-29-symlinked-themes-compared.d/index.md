@@ -51,7 +51,7 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
 | ----------- | ----------- | ------ | ----  |
 | ZZO         | TODO | ⭐️? |  |
-|TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | |
+|TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | testing on 2nd wave.. |
 
 (*) Permacompare: permalink in prod to the comparison page :)
 
