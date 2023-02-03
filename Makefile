@@ -24,6 +24,8 @@ modules-optimize:
 
 hugo-bootstrap:
 	git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
+	git submodule add https://github.com/kakawait/hugo-tranquilpeak-theme.git themes/tranquilpeak
+	git submodule add https://github.com/zzossig/hugo-theme-zzo themes/zzo
 
 install:
 	sudo apt install hugo

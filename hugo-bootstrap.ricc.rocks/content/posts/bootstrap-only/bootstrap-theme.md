@@ -153,6 +153,10 @@ riccardo-canary-ravenna.jpeg      riccardo-kids-christmas.jpeg      riccardo-smi
 
 {{< gallery images="images/riccardo/RiccardoGoogleyBike.png,images/riccardo/riccardo-giallo-raja-ampat.jpeg,/images/riccardo/riccardo-2022.png,/images/riccardo/riccardo-jogging-telaviv.jpeg,/images/riccardo/riccardo-rajaampat.png,/images/riccardo/riccardo-bicicletta-gugol.jpg,/images/riccardo/riccardo-jump-ironman.jpeg,/images/riccardo/riccardo-scuba-in-google.jpeg,/images/riccardo/riccardo-canary-ravenna.jpeg,/images/riccardo/riccardo-kids-christmas.jpeg,/images/riccardo/riccardo-smiles-swim-ironman.jpeg" >}}
 
+## Hooks TODO
+
+https://hbs.razonyang.com/v1/en/docs/advanced/hooks/
+
 ## Videos and Colorful Alerts
 
 

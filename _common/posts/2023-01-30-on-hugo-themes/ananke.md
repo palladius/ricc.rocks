@@ -3,8 +3,8 @@
 # initial HEADER :) Lets try to keep it small :)
 title: "💦 Symlinked on Ananke"
 date: 2023-01-28T21:17:43+01:00
-draft: false
-tags: 
+draft: true
+tags:
 - symlink
 - hugo
 - ananke
@@ -16,7 +16,7 @@ image: /images/mtg-clone.jpg
 Note: I woudl expect this page to ONLY works on Ananke.
 
 
-## Ananke 
+## Ananke
 
 TODO(ricc): move this to Ananke - or bring back here.
 
