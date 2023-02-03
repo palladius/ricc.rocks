@@ -20,7 +20,8 @@ Still evaulating:
 * 😩 **Papermod**: https://ricc.rocks/
 * 😩 **Coder**: Naah, too simple for me.
 
-* [WIP]
+* 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/
+* 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
 
 # customization
 
