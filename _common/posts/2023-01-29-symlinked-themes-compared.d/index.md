@@ -50,8 +50,8 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | Just amazing |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
 | ----------- | ----------- | ------ | ----  |
-| 🚧 ZZO         | [TODO](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma essenziale. Mi piace un tot!  |
-|🚧 TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | testing on 2nd wave.. |
+| ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma essenziale. Mi piace un tot!  |
+| TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | testing on 2nd wave.. |
 
 (*) Permacompare: permalink in prod to the comparison page :)
 
