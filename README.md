@@ -4,20 +4,34 @@
 
 This my 2023 attempt at an auto-managed Hugo website.
 I might be porting soon my [personal website](http://www.palladius.it/) here.
+Since I can't decide among a few different modules, I'm testing a number of those in terms of:
 
+* Look and feel
+* Functionalities
 
-* changed module part in `config.toml`.
+Current Hugo installations [comparison](https://ricc.rocks/posts/posts-symlink/2023-01-29-symlinked-themes-compared.d/symlinked-themes-compared/).
 
-## customization
+Still evaulating: 
+
+* 😍 **Boostrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
+* 😍 **Stack**:    https://hugo-stack.ricc.rocks/
+
+* 😩 **Ananke**: https://hugo-ananke.netlify.app/
+* 😩 **Papermod**: https://ricc.rocks/
+* 😩 **Coder**: Naah, too simple for me.
+
+* [WIP]
+
+# customization
 
 * following this free course: https://www.youtube.com/watch?v=hjD9jTi_DQ4
 * `hugo new posts/first.md`
 
-## moving to PaperMod
+## PaperMod
 
 * git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
 
-## Creating a Bootstrap one
+## Bootstrap
 
 $ git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
 $ mkdir hugo-bootstrap.ricc.rocks
@@ -38,3 +52,10 @@ hugo server
 
 doesnt work -> tried `1. Create a New Site from Scratch` instead.
 
+## Ananke
+
+Abandoned
+
+## Other 2
+
+Currently reviewing/testing also ...
