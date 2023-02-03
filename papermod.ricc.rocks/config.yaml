@@ -81,7 +81,9 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "🇮🇹 Bella lì! \U0001F44B" # this is the hand
-    Content: Welcome to Riccardo 💛 blog in PaperMod!
+    Content: |
+      Welcome to Riccardo 💛 blog in PaperMod! Note this site is still under construction 🚧: 
+      see https://github.com/palladius/ricc.rocks for more info
 
   socialIcons:
     - name: twitter

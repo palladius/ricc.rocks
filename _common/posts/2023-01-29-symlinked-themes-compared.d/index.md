@@ -64,7 +64,7 @@ All the code is in different directories of my GH repo: https://github.com/palla
 Lost the battle:
 
 * **Coder**: Naah, too simple for me.
-* Ananke. Too simple
+* Ananke. Too simple - https://hugo-ananke.netlify.app/
 
 ## Latest info
 
