@@ -11,14 +11,13 @@ Since I can't decide among a few different modules, I'm testing a number of thos
 
 Current Hugo installations [comparison](https://ricc.rocks/posts/posts-symlink/2023-01-29-symlinked-themes-compared.d/symlinked-themes-compared/).
 
-Still evaulating: 
+Still evaulating, hence I've created a RING of many versions, and use symlinks to recycle some articels (although the metadata is sometimes incompatible among them, yielding to unexpected *NxM* errors): 
 
-* 😍 **Boostrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
-* 😍 **Stack**:    https://hugo-stack.ricc.rocks/
-
-* 😩 **Ananke**: https://hugo-ananke.netlify.app/
-* 😩 **Papermod**: https://ricc.rocks/
-* 😩 **Coder**: Naah, too simple for me.
+* 😍 ⭐️⭐️⭐️⭐️⭐️ **Boostrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
+* 😍 ⭐️⭐️⭐️⭐️⭐️ **Stack**:    https://hugo-stack.ricc.rocks/
+* 😐 ⭐️⭐️⭐️ **Papermod**: https://ricc.rocks/ (a bit simplistic although has some [**amazing functionalities**](https://ricc.rocks/posts/papermod-analysis-page/).
+* 😩 ⭐️⭐️ **Ananke**: https://hugo-ananke.netlify.app/ Too simple.
+* 😩 ⭐️ **Coder**: Naah, too simple for me.
 
 * 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/
 * 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
