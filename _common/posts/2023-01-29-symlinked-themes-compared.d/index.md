@@ -85,23 +85,6 @@ Here: https://github.com/palladius/ricc.rocks
 * or use this [awesome library](https://github.com/mfg92/hugo-shortcode-gallery): demo in https://matze.rocks/images/#gallery-filter=Landscape
 
 
-## TranquilPeak
-
-![image](tranquilpeak-showcase.png)
-
-* GH: https://github.com/kakawait/hugo-tranquilpeak-theme
-* DemoSite:
-
-PLUS
-
-* nice graphics
-* built in galleries
-
-MINUS
-
-* says FS doesnt support symlinks for images. But it does support them for posts
-* Fishy in content/posts/ organization. If I move content in or out dirs, it disappears. Weird. (Maybe there's a good reason for it, but seems like a bug wrt to other themes where you can move things accross EVERYTHING within content/ )
-
 
 ## ZZO
 
@@ -113,6 +96,7 @@ MINUS
 
 Features:
 
+```
 Multiple Skins(dark, light, solarized, ...)
 Mobile menu
 Search
@@ -128,15 +112,31 @@ Showcase page
 Publication Page
 Resume Page
 Presentation Page
+```
 
 ## TranquilPeak
 
-* license: GPL
-* GH code: https://github.com/kakawait/hugo-tranquilpeak-theme
+![image](tranquilpeak-showcase.png)
+
+* GH: https://github.com/kakawait/hugo-tranquilpeak-theme
 * 861 stars / 515 forks
+* DemoSite:
+* license: GPL
 * install: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md
 
 How to sue the image btag (finally!): https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
+
+
+PLUS
+
+* nice graphics
+* built in galleries
+
+MINUS
+
+* says FS doesnt support symlinks for images. But it does support them for posts
+* Fishy in content/posts/ organization. If I move content in or out dirs, it disappears. Weird. (Maybe there's a good reason for it, but seems like a bug wrt to other themes where you can move things accross EVERYTHING within content/ )
+
 
 
 

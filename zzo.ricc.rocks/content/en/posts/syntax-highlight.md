@@ -2,7 +2,7 @@
 title: "Syntax highlighting"
 date: 2019-12-18T10:33:41+09:00
 description: "Syntax highlighting test"
-draft: false
+draft: true
 hideToc: false
 enableToc: true
 enableTocContent: false
@@ -20,7 +20,7 @@ image: images/feature2/color-palette.png
 
 ## Code Syntax Highlighting
 
-Verify the following code blocks render as code blocks and highlight properly. 
+Verify the following code blocks render as code blocks and highlight properly.
 
 More about tuning syntax highlighting is the [Hugo documentation](https://gohugo.io/content-management/syntax-highlighting/).
 
@@ -81,8 +81,8 @@ hellomake: hellomake.o hellofunc.o
 ### Markdown
 
 ``` markdown
-**bold** 
-*italics* 
+**bold**
+*italics*
 [link](www.example.com)
 ```
 
@@ -142,7 +142,7 @@ echo "Hello World"
 ### PHP
 
 ``` php
- <?php echo '<p>Hello World</p>'; ?> 
+ <?php echo '<p>Hello World</p>'; ?>
 ```
 
 ### CoffeeScript
@@ -176,7 +176,7 @@ main()
 }
 ```
 
-### SQL 
+### SQL
 
 ``` sql
 SELECT column_name,column_name
