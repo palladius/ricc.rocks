@@ -15,7 +15,8 @@ categories:
 keywords:
 - hugo
 - zzo
-image: /images/mtg-clone.jpg
+#image: /images/mtg-clone.jpg
+image: /images/clone-mtg-vintage.png
 pinned: true
 images:
 - zzo-screenshot.png
