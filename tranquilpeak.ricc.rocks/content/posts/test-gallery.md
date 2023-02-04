@@ -16,3 +16,7 @@ thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-sca
 Ciao da Riccardo
 <!--more-->
 More here..
+
+## valutazione
+
+* MINUS: missing dark mode, and the author is very unresponsive. see https://github.com/kakawait/hugo-tranquilpeak-theme/issues/384 and beautiful dark mode from  https://anceret-matthieu.fr/

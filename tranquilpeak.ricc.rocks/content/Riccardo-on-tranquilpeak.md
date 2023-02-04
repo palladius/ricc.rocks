@@ -14,7 +14,8 @@ tags:
 ---
 
 
-
 todo
 
 img/2022-10-19-riccardo-tartaruga.jpg
+
+![Image](img/2022-10-19-riccardo-tartaruga.jpg)
