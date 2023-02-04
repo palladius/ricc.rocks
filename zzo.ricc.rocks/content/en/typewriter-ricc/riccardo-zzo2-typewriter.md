@@ -1,5 +1,5 @@
 ---
-title: "Riccardo ZZO Test: typewriter"
+#title: "Riccardo ZZO Test: typewriter"
 header:
   - type: typewriter
     methods:
@@ -19,7 +19,7 @@ header:
     align: center
     fontSize: 44
     fontColor: yellow
-pinned: true
+#pinned: true
 #prova typewriter
 #https://zzo-docs.vercel.app/zzo/userguide/typewriteheader/
 ---
