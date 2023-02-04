@@ -11,7 +11,7 @@ Since I can't decide among a few different modules, I'm testing a number of thos
 
 Current Hugo installations [comparison](https://ricc.rocks/posts/posts-symlink/2023-01-29-symlinked-themes-compared.d/symlinked-themes-compared/).
 
-Still evaulating, hence I've created a RING of many versions, and use symlinks to recycle some articels (although the metadata is sometimes incompatible among them, yielding to unexpected *NxM* errors): 
+Still evaulating, hence I've created a RING of many versions, and use symlinks to recycle some articels (although the metadata is sometimes incompatible among them, yielding to unexpected *NxM* errors):
 
 * 😍 ⭐️⭐️⭐️⭐️⭐️ **Boostrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
 * 😍 ⭐️⭐️⭐️⭐️⭐️ **Stack**:    https://hugo-stack.ricc.rocks/
@@ -52,10 +52,9 @@ hugo server
 
 doesnt work -> tried `1. Create a New Site from Scratch` instead.
 
-## Ananke
+## Ananke (deprecated)
 
-Abandoned
+Abandoned. Moved to .vecchiume/ .
+Still populated here: https://hugo-ananke-vecchiume.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke-vecchiume/deploys)
 
-## Other 2
-
-Currently reviewing/testing also ...
