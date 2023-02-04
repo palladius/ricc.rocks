@@ -18,7 +18,15 @@ keywords:
 image: /images/mtg-clone.jpg
 images:
 - zzo-screenshot.png
-
+author: Pinco Pallino Joe # author name
+authorEmoji: 🤖 # emoji for subtitle, summary meta data
+authorImage: "/images/whoami/avatar.jpg" # image path in the static folder
+authorImageUrl: "/gallery/riccardo-at-once/pinco-pallino-joe.png"
+#  your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.
+authorDesc: an average writer # author description
+socialOptions: # override params.toml file socialOptions
+  email: ""
+  facebook: ""
 ---
 
 I'm playing around with ZZO here. And this is my ZZO-only page test.
@@ -27,6 +35,7 @@ I'm playing around with ZZO here. And this is my ZZO-only page test.
 * 👍: pinned pages on top
 * 👍: features below: tabs, markdown, ... lot of goodies
 * 👍: mulltilanguage support for IT.
+* 🎾 Supports Author metadayta, wow
 * 👎🏾: font seems a bit ugly. Too playful, not serious.
 
 

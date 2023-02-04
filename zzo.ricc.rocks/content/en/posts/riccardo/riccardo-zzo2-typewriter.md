@@ -4,12 +4,12 @@ header:
   - type: typewriter
     methods:
       - typeString: Hi.
-      - pauseFor: 2500
+      - pauseFor: 1500
       - deleteAll: true
       - typeString: I'm Riccardo.
       - pauseFor: 2500
       - deleteChars: 9
-      - typeString: <strong>SRE</strong>ccardo
+      - typeString: <strong>SRE</strong>ccardo!
       - pauseFor: 2500
     options:
       loop: true

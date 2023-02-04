@@ -74,7 +74,8 @@ pubPaginate: 20
 writtenTimeIcon: "\U0001F4C5"
 modifiedTimeIcon: "\U0001F4DD"
 readingTimeIcon: ☕
-authorIcon: ✍️
+#authorIcon: ✍️
+authorIcon: 💛
 pagePvIcon: "\U0001F440"
 pinIcon: "\U0001F4CC"
 tagIcon: "\U0001F3F7️"
