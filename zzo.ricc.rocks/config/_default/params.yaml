@@ -48,7 +48,8 @@ enableAppbarSearchIcon: false
 enableAppbarLangIcon: false
 # important: https://zzo-docs.vercel.app/zzo/customization/customheader/
 # You may want to change home page header. There are 4 options which is slider, image, text, empty.
-homeHeaderType: text
+#homeHeaderType: text
+homeHeaderType: typewriter
 hideHomeHeaderWhenMobile: false
 showMobileMenuTerms:
   - tags

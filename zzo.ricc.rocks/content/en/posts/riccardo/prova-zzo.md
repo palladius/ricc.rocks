@@ -23,8 +23,12 @@ images:
 
 I'm playing around with ZZO here. And this is my ZZO-only page test.
 
-* 👍: [at-once pictures](https://zzo-docs.vercel.app/zzo/pages/gallery/) for easy peasy album
-*
+* 👍👍: [at-once pictures](https://zzo-docs.vercel.app/zzo/pages/gallery/) for easy peasy album
+* 👍: pinned pages on top
+* 👍: features below: tabs, markdown, ... lot of goodies
+* 👍: mulltilanguage support for IT.
+* 👎🏾: font seems a bit ugly. Too playful, not serious.
+
 
 ## img
 
