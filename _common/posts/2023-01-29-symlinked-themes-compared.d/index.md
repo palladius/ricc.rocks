@@ -52,12 +52,12 @@ All the code is in different directories of my GH repo: https://github.com/palla
 
 | Theme + PermaCompare | Website     | Stars |  Description |
 | ----------- | ----------- | ------ | ---- |
-| [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️   | Super sleek. Essential but damn, so good in its essence! |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | Just amazing |
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
 | ----------- | ----------- | ------ | ----  |
-| ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma essenziale. Mi piace un tot!  |
+| [🙉](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/) ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma pieno di feature splendide. Mi piace un tot!  |
 | TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | testing on 2nd wave.. |
+| [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️   | Super sleek. Essential but damn, so good in its essence! |
 
 (*) Permacompare: permalink in prod to the comparison page :)
 
@@ -90,6 +90,7 @@ Here: https://github.com/palladius/ricc.rocks
 
 ![Resize](zzo-screenshot.png?width=300px)
 
+* **Comparison page**: https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/
 * install: https://zzo-docs.vercel.app/
 * GH theme: https://github.com/zzossig/hugo-theme-zzo
 * Ricc version: https://ricc-zzo.netlify.app/
