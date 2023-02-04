@@ -6,4 +6,4 @@ description: Archive Page
 titleWrap: wrap
 ---
 
-archive page
+I really love how the archive page is rendered.

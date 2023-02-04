@@ -80,7 +80,7 @@ typeIcon: "\U0001F3AF"
 myname: Riccardo
 email: palladiusbonton@gmail.com
 whoami: 'Developer Advocate, Google Cloud'
-bioImageUrl: ''
+bioImageUrl: '/images/ricc-logo.png'
 useGravatar: false
 location: "Zurich, \U0001F1E8\U0001F1ED"
 organization: Google Cloud
@@ -159,14 +159,14 @@ isso:
   dataAttrs: ''
 socialOptions:
   email: 'mailto:your@email.com'
-  phone: ''
-  facebook: 'http://example.org/'
-  twitter: 'http://example.org/'
-  github: 'https://github.com/zzossig/hugo-theme-zzo'
+  #phone: '+41-79-8787000'
+  #facebook: palladius # 'http://example.org/'
+  twitter: palladius # 'http://example.org/'
+  github: 'https://github.com/palladius/'
   stack-overflow: ''
   instagram: ''
-  google-plus: ''
-  youtube: ''
+  google-plus: 'riccardocarlesso'
+  youtube: 'palladiusbonton'
   medium: ''
   tumblr: ''
   linkedin: ''
