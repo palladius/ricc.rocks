@@ -1,4 +1,4 @@
-logoText: 'ZZO vuoi? yaml'
+logoText: 'ZZO vuoi?'
 logoType: short
 description: Riccardo - stoka ZZO theme
 custom_css: []
@@ -46,6 +46,8 @@ enablePinnedPosts: true
 minItemsToShowInTagCloud: 1
 enableAppbarSearchIcon: false
 enableAppbarLangIcon: false
+# important: https://zzo-docs.vercel.app/zzo/customization/customheader/
+# You may want to change home page header. There are 4 options which is slider, image, text, empty.
 homeHeaderType: text
 hideHomeHeaderWhenMobile: false
 showMobileMenuTerms:

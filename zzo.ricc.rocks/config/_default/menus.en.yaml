@@ -1,0 +1,41 @@
+main:
+  - identifier: about
+    name: About
+    url: about
+    weight: 1
+  - identifier: archive
+    name: Archive
+    url: archive
+    weight: 2
+  - identifier: presentation
+    name: Pt
+    url: presentation
+    weight: 3
+  - identifier: gallery
+    name: Gallery
+    url: gallery
+    weight: 4
+  - parent: gallery
+    name: Riccardo family
+    url: gallery/family
+  - parent: gallery
+    name: Riccardo sport
+    url: gallery/riccardosport
+  - parent: gallery
+    name: Riccardo at-once
+    url: gallery/riccardo-at-once
+  - parent: gallery
+    name: Photo
+    url: gallery/photo
+  - identifier: posts
+    name: Posts
+    url: posts
+    weight: 5
+  - identifier: showcase
+    name: Showcase
+    url: showcase
+    weight: 6
+  - identifier: publication
+    name: Pub
+    url: publication
+    weight: 7

@@ -21,11 +21,11 @@
   name = "Gallery"
   url = "gallery"
   weight = 4
-    
+
 [[main]]
   parent = "gallery"
-  name = "Cartoon"
-  url = "gallery/cartoon"
+  name = "Roccardp family"
+  url = "gallery/family"
 
 [[main]]
   parent = "gallery"
