@@ -40,7 +40,7 @@ A beautiful and rare animal who could be extinct in a few decades, and beside hi
 
 ![image](/scuba--rn7opz2oo.jpg)
 
-{{< image classes="[classes]" src="/scuba--rn7opz2oo.jpg" thumbnail="[/path/to/thumbnail]" group="[group-name]" thumbnail-width="[width of thumbnail]" thumbnail-height="[height of thumbnail]" title="[title text]" >}}
+
 
 
 This is Raja Ampat, west of Indonesia
