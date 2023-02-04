@@ -16,6 +16,7 @@ keywords:
 - hugo
 - zzo
 image: /images/mtg-clone.jpg
+pinned: true
 images:
 - zzo-screenshot.png
 author: Pinco Pallino Joe # author name
