@@ -1,4 +1,5 @@
-baseURL: https://ricc.rocks/
+#baseURL: https://ricc.rocks/
+baseURL: https://ricc-papermod.netlify.app/
 languageCode: en-us
 title: Riccardo 💛 Hugo (paperMod)
 theme: PaperMod
@@ -82,7 +83,7 @@ params:
   homeInfoParams:
     Title: "🇮🇹 Bella lì! \U0001F44B" # this is the hand
     Content: |
-      Welcome to Riccardo 💛 blog in PaperMod! Note this site is still **under construction** 🚧: 
+      Welcome to Riccardo 💛 blog in PaperMod! Note this site is still **under construction** 🚧:
       -> [more info](https://github.com/palladius/ricc.rocks)
 
   socialIcons:
