@@ -1,4 +1,5 @@
-baseURL = "https://ricc-zzo.netlify.app/"
+#baseURL = "https://ricc-zzo.netlify.app/"
+baseURL = "https://ricc.rocks/"
 title = 'Riccardo 💛 Hugo (ZZO)'
 theme = "zzo"
 
