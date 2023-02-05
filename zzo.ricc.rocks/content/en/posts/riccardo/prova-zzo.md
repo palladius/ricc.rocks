@@ -24,6 +24,7 @@ libraries:
 - mathjax
 images:
 - zzo-screenshot.png
+- st-oca-zzo.jpeg
 author: Pinco Pallino Joe # author name
 authorEmoji: 🤖 # emoji for subtitle, summary meta data
 authorImage: "/images/whoami/avatar.jpg" # image path in the static folder
@@ -34,6 +35,8 @@ socialOptions: # override params.toml file socialOptions
   email: ""
   facebook: ""
 ---
+
+![Image](/st-oca-zzo.jpeg)
 
 I'm playing around with ZZO here. And this is my ZZO-only page test.
 
