@@ -31,11 +31,15 @@ main:
     name: Posts
     url: posts
     weight: 5
-  - identifier: showcase
-    name: Showcase
-    url: showcase
-    weight: 6
-  - identifier: publication
-    name: Pub
-    url: publication
-    weight: 7
+
+    # [Riccardo] This is AMAZING but still nothing to show.
+  # - identifier: showcase
+  #   name: Showcase
+  #   url: showcase
+  #   weight: 6
+
+    # [Riccardo] This is AMAZING but still nothing to show.
+  # - identifier: publication
+  #   name: Pub
+  #   url: publication
+  #   weight: 7
