@@ -3,7 +3,8 @@ title: Riccardo 🏊🚵🏃🏻 Sport
 date: 2019-10-31T10:20:16+09:00
 description: Photo Gallery
 type: gallery
-mode: one-by-one
+#mode: one-by-one
+mode: at-once
 description: Some random pics to demonstrate this Theme..
 images:
   - image: ricc-bike-gletscher-iconic-furka.jpeg
@@ -26,4 +27,4 @@ images:
 image: gallery/riccardosport/riccardo-aegerisee-bike.jpg # images/feature2/gallery.png
 ---
 
-Riccardo pics
+Riccardo pics (at once)

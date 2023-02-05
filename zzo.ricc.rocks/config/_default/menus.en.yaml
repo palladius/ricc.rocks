@@ -17,17 +17,21 @@ main:
     url: gallery
     weight: 4
   - parent: gallery
-    name: Riccardo family
-    url: gallery/family
+    name: Ricc family
+    url: gallery/riccardo-family
   - parent: gallery
-    name: Riccardo sport
+    name: Ricc sport
     url: gallery/riccardosport
   - parent: gallery
-    name: Riccardo at-once
+    name: Ricc at-once
     url: gallery/riccardo-at-once
   - parent: gallery
-    name: Photo
-    url: gallery/photo
+    name: Ricc Work
+    url: gallery/riccardo-work
+    # My wife doesnt like this
+  # - parent: gallery
+  #   name: Photo
+  #   url: gallery/photo
   - identifier: posts
     name: 📪Posts
     url: posts

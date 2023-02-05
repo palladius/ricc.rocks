@@ -3,7 +3,8 @@ title: Riccardo Family
 date: 2019-10-31T10:20:16+09:00
 description: Pix of Kate, Ale and Seby
 type: gallery
-mode: one-by-one
+#mode: one-by-one
+mode: at-once
 description: "photo gallery"
 images:
   - image: ricc-bimbi-casa.jpeg
@@ -23,4 +24,4 @@ image: gallery/family/ricc-bimbi-casa.jpeg
 
 ---
 
-Family pictures..
+Family pictures.. (at once)
