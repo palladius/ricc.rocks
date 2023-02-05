@@ -36,7 +36,6 @@ socialOptions: # override params.toml file socialOptions
   facebook: ""
 ---
 
-![Image](/st-oca-zzo.jpeg)
 
 I'm playing around with ZZO here. And this is my ZZO-only page test.
 
@@ -134,4 +133,27 @@ documented here: https://zzo-docs.vercel.app/zzo/shortcodes/button/
 
 
 ## Images
+
+![Image](/st-oca-zzo.jpeg)
+
+
+## Twitter Youtuibe
+
+See rich content page but anyway:
+
+YouTube Aos Ricc
+
+{{< youtube E3ReKuJ8ewA >}}
+
+<br>
+
+---
+
+Twitter Simple Shortcode
+
+{{< twitter_simple 1617900746967773190 >}}
+
+Riccardo tweet: https://twitter.com/palladius/status/1617900746967773190
+
+<br>
 
