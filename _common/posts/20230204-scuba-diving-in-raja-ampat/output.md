@@ -32,7 +32,7 @@ Version: **0.1**
 
 ---
 
-In October '22, my ❤️ wife allowed me to go scuba diving by myself in Raja Ampat, consider the paradise for divers.![image]([article]scuba--jo09uvup59g.jpg)
+In October '22, my ❤️ wife allowed me to go scuba diving by myself in Raja Ampat, consider the paradise for divers.![image](scuba--jo09uvup59g.jpg)
 
 A beautiful and rare animal who could be extinct in a few decades, and beside him a beautiful sea turtle in[ Sauwandarek](https://www.google.com/maps/place/Sauwandarek+Village/@-0.5858766,130.6122214,13.42z/data=!4m13!1m7!3m6!1s0x2d5c3eaaccb47097:0x7851bd844c4cdf44!2sIsole+Raja+Ampat!3b1!8m2!3d-1.0320468!4d130.5052176!3m4!1s0x0:0xf11684dad6130be3!8m2!3d-0.5903592!4d130.6023098) village
 
@@ -47,7 +47,7 @@ This is Raja Ampat, west of Indonesia
 
 ### The bungalow
 
-![image]([article]scuba--tnomzk5zfnr.jpg)
+![image](scuba--tnomzk5zfnr.jpg)
 
 This is Wai island
 
@@ -63,30 +63,30 @@ I started scuba diving in the morning and
 
 #### The diving
 
-![image]([article]scuba--4rx3qr0wnkk.jpg)
+![image](scuba--4rx3qr0wnkk.jpg)
 
-![image]([article]scuba--4kl75dqag8l.jpg)
+![image](scuba--4kl75dqag8l.jpg)
 
 Riccardo saying hi to a Wobbegong!
 
 #### Around Wai island
 
-aaa![image]([article]scuba--7qqeh3owtge.jpg)
+aaa![image](scuba--7qqeh3owtge.jpg)
 
 Congee and I in Piaynemo
 
-![image]([article]scuba--92kef42brna.jpg)
+![image](scuba--92kef42brna.jpg)
 
 Pyaynemo, the must go-to destination for your RA trip.
 
-![image]([article]scuba--4s5obbog0je.jpg)
+![image](scuba--4s5obbog0je.jpg)
 
-![image]([article]scuba--ks67tanqqui.jpg)
+![image](scuba--ks67tanqqui.jpg)
 
 #### The learning
 
-![image]([article]scuba--jo2nuuxek58.jpg)
+![image](scuba--jo2nuuxek58.jpg)
 
 #### Conclusions
 
-![image]([article]scuba--n82h94fc7s.jpg)
+![image](scuba--n82h94fc7s.jpg)
