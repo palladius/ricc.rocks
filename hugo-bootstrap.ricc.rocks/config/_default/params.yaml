@@ -5,7 +5,7 @@ mainSections:
 
 # titleSeparator: '|' # Title separator. Default to -.
 
-description: Riccardo Hugo/Bootstrap Blog
+description: Riccardo 💛 Bootstrap Blog
 keywords: Hugo, Bootstrap, Blog Theme
 # images:
 #   - site-feature-image.jpg
@@ -16,7 +16,7 @@ keywords: Hugo, Bootstrap, Blog Theme
 logo: images/powered_mini.jpg # Logo image. Default to images/logo.webp.
 #logo: images/logo.webp
 # logo: false # Disable Logo
-brand: Riccardo Bootstrap Blog
+brand: Riccardo 💛 Bootstrap Blog
 
 palette: teal # Default palette. Optional. You'll need to clear the browser cache after modifying this.
 # Available palettes. Default to ALL. Empty array means disable.
@@ -35,7 +35,7 @@ palette: teal # Default palette. Optional. You'll need to clear the browser cach
 #  - yellow
 
 # color: dark # light, dark or auto. Default to auto.
-color: light
+color: dark
 
 # fullWidth: true # Full width.
 # fixedHeader: false # Turn on/off fixed header.
