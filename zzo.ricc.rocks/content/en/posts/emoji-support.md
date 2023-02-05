@@ -12,7 +12,6 @@ authorEmoji: 👻
 tags:
 - emoji
 ---
-{{< time.inline >}}{{ now }}{{< /time.inline >}}
 
 Emoji can be enabled in a Hugo project in a number of ways.
 <!--more-->
