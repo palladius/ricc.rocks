@@ -23,8 +23,8 @@ main:
     name: Ricc sport
     url: gallery/riccardosport
   - parent: gallery
-    name: Ricc at-once
-    url: gallery/riccardo-at-once
+    name: Ricc Zibaldone
+    url: gallery/riccardo-zibaldone
   - parent: gallery
     name: Ricc Work
     url: gallery/riccardo-work
