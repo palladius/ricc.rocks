@@ -3,7 +3,7 @@
 header:
   - type: typewriter
     methods:
-      - typeString: Hi.
+      - typeString: 👋 Hi2.
       - pauseFor: 1500
       - deleteAll: true
       - typeString: I'm Riccardo.

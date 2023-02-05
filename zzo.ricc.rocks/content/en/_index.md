@@ -2,10 +2,10 @@
 header:
   - type: typewriter
     methods:
-      - typeString: "Hi. "
+      - typeString: 'Hi 👋 '
       - pauseFor: 1000
       #- deleteAll: true
-      - typeString: I'm Riccardo.
+      - typeString: "I'm Riccardo."
       - pauseFor: 2500
       - deleteChars: 9
       - typeString: <strong>SRE</strong>ccardo! 🦄
