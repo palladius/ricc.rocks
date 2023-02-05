@@ -1,10 +1,10 @@
 ---
 #type: docs
 type: posts
-title: "[NEWS_Riccardo] DRAFT On Hugo Image Processing Methods"
+title: "[NEWS_Riccardo] On Hugo Image Processing Methods"
 date: 2022-07-08T11:34:47+08:00
 featured: true
-draft: true
+draft: false
 comment: true
 toc: true
 reward: true

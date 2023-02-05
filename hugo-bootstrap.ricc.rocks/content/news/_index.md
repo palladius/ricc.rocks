@@ -6,3 +6,5 @@ menu:
     params:
       icon: '<i class="fas fa-fw fa-newspaper" style="color: skyblue;"></i>'
 ---
+
+News of the world is a great album.
