@@ -74,7 +74,7 @@ warning text
 error text
 {{< /notice >}}
 
-## MAth
+## Math
 
 ### MathJax
 
