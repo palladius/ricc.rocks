@@ -2,7 +2,7 @@
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
 title: "💦 Symlinked Themes Compared (🏆)"
-date: 2023-01-28T21:17:43+01:00
+date: 2023-02-05T21:17:43+01:00
 draft: false
 tags:
 - symlink
@@ -56,26 +56,19 @@ All the code is in different directories of my GH repo: https://github.com/palla
 | Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |
 | ----------- | ----------- | ------ | ----  |
 | [🙉](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/) ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma pieno di feature splendide. Mi piace un tot!  |
-| TranquilPeak | https://tranquilpeak.netlify.app/ | ⭐️⭐️⭐️⭐️? | testing on 2nd wave.. |
-| [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod | [ricc.rocks](https://ricc.rocks/) |⭐️⭐️⭐️⭐️   | Super sleek. Essential but damn, so good in its essence! |
 
 (*) Permacompare: permalink in prod to the comparison page :)
 
-* **PaperMod**: it works! https://ricc.rocks/ not explored much yet. Comparison page: https://ricc.rocks/posts/papermod-analysis-page/
+* **PaperMod**: it works! https://papermod.ricc.rocks	 not explored much yet. Comparison page: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | Super sleek. Essential but damn, so good in its essence! |
 * **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  then I just love it!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
-* 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/
+* 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ Has Math
 * 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
 
 Lost the battle:
 
 * **Coder**: Naah, too simple for me.
 * Ananke. Too simple - https://hugo-ananke.netlify.app/
-
-## Latest info
-
-Here: https://github.com/palladius/ricc.rocks
-
 
 ## Photo Albums
 
@@ -115,6 +108,53 @@ Resume Page
 Presentation Page
 ```
 
+
+
+
+## Bootstrap
+
+* Image docs: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images Plenty of good stuff here, also I found a bug and the guy fixed it in 24h - AMAZING.
+* Gallery docs: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
+
+
+
+
+# Old stuff
+
+## PaperMod
+
+I spent little time so far - but its just my fault, not his :)
+
+Docs: https://github.com/adityatelange/hugo-PaperMod/
+
+NEUTRAL:
+
+* supports [many icons](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons), but unsure how to use them
+* [Supports Maths](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/), but unsure on how to make it work/
+* emoji are nice, once enaled you can do 🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil:
+
+BAD 😩:
+
+* too simple. Doesnt have something about me as a blogger, its just a pure (sleek) container for news. Nothing about Riccardo, just my articles.
+
+
+## Ananke ⭐️⭐️
+
+Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
+Old:
+* [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)
+* Historically the first ive tried. Havent explored much
+
+GOOD 😍:
+
+* TODO
+
+BAD 😩:
+
+* **too simple**. Eg, contact form is amongst posts (seriously?)
+* no image gallery Im afraid
+
+
 ## TranquilPeak
 
 ![image](tranquilpeak-showcase.png)
@@ -139,48 +179,3 @@ MINUS
 * Fishy in content/posts/ organization. If I move content in or out dirs, it disappears. Weird. (Maybe there's a good reason for it, but seems like a bug wrt to other themes where you can move things accross EVERYTHING within content/ )
 
 
-
-
-
-## PaperMod
-
-I spent little time so far - but its just my fault, not his :)
-
-Docs: https://github.com/adityatelange/hugo-PaperMod/
-
-NEUTRAL:
-
-* supports [many icons](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons), but unsure how to use them
-* [Supports Maths](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/), but unsure on how to make it work/
-* emoji are nice, once enaled you can do 🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil:
-
-BAD 😩:
-
-* too simple. Doesnt have something about me as a blogger, its just a pure (sleek) container for news. Nothing about Riccardo, just my articles.
-
-## Bootstrap
-
-* Image docs: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images Plenty of good stuff here, also I found a bug and the guy fixed it in 24h - AMAZING.
-* Gallery docs: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
-
-
-
-
-# Old stuff
-
-
-## Ananke ⭐️⭐️
-
-Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
-Old:
-* [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)
-* Historically the first ive tried. Havent explored much
-
-GOOD 😍:
-
-* TODO
-
-BAD 😩:
-
-* **too simple**. Eg, contact form is amongst posts (seriously?)
-* no image gallery Im afraid
