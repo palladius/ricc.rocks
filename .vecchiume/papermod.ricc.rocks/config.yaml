@@ -147,6 +147,10 @@ menu:
     - identifier: ricc-rocks
       name: 🪨ricc.rocks
       url: https://ricc.rocks
+      weight: 50
+    - identifier: papermod-prod
+      name: 📜papermod.ricc.rocks
+      url: https://papermod.ricc.rocks
       weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
