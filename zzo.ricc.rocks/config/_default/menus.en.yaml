@@ -39,7 +39,7 @@ main:
 
   - identifier: ricc_zzo_prod
     name: 🌍Blog
-    url: https://ricc-zzo.netlify.app/en/
+    url: https://ricc-zzo.netlify.app/
     weight: 10
 
 
