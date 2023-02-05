@@ -14,7 +14,7 @@ libraries:
 ---
 
 {{< box >}}
-We need goldmark katex entension which is not yet we have: 
+We need goldmark katex entension which is not yet we have:
 [https://github.com/gohugoio/hugo/issues/6544](https://github.com/gohugoio/hugo/issues/6544)
 {{< /box >}}
 
@@ -25,13 +25,13 @@ In this example we will be using [KaTeX](https://katex.org/)
 
 - Create a partial under `/layouts/partials/math.html`
 - Within this partial reference the [Auto-render Extension](https://katex.org/docs/autorender.html) or host these scripts locally.
-- Include the partial in your templates like so:  
+- Include the partial in your templates like so:
 
 ```
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
-```  
+```
 - To enable KaTex globally set the parameter `math` to `true` in a project's configuration
 - To enable KaTex on a per page basis include the parameter `math: true` in content files.
 
@@ -39,10 +39,12 @@ In this example we will be using [KaTeX](https://katex.org/)
 
 ### Examples
 
-Inline math: $$ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $$
+Inline math1: $$ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $$
 
-Block math:
+Inline math2: $$ \varphi_{riccardo} = \dfrac{1+\sqrt5}{3}= 1.6180339887… $$
+
+Block math (doesnt work):
 
 $$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
 $$
