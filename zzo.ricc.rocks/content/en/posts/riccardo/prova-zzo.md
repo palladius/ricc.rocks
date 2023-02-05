@@ -18,6 +18,10 @@ keywords:
 #image: /images/mtg-clone.jpg
 image: /images/clone-mtg-vintage.png
 pinned: true
+#math: true
+# enables Maths on ZZO
+libraries:
+- mathjax
 images:
 - zzo-screenshot.png
 author: Pinco Pallino Joe # author name
@@ -34,10 +38,11 @@ socialOptions: # override params.toml file socialOptions
 I'm playing around with ZZO here. And this is my ZZO-only page test.
 
 * 👍👍: [at-once pictures](https://zzo-docs.vercel.app/zzo/pages/gallery/) for easy peasy album
-* 👍: pinned pages on top
-* 👍: features below: tabs, markdown, ... lot of goodies
-* 👍: mulltilanguage support for IT.
-* 🎾 Supports Author metadayta, wow
+* 👍 pinned pages on top
+* 👍 features below: tabs, markdown, ... lot of goodies
+* 👍 mulltilanguage support for IT.
+* 👍 Supports Author metadayta, wow
+* 👍 Supports Maths
 * 👎🏾: font seems a bit ugly. Too playful, not serious.
 
 
@@ -68,6 +73,15 @@ warning text
 {{< notice error "This is a error type of notice" >}}
 error text
 {{< /notice >}}
+
+## MAth
+
+### MathJax
+
+By enabling mathjax in libraries on front matter, you get this!!!
+
+When $a \ne 0$, there are two solutions to $\(ax^2 + bx + c = 0\)\$ and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
 ## Tabs
 

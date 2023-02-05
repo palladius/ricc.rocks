@@ -7,3 +7,4 @@ node_modules/
 resources/
 .echodo_history
 public/
+*.code-workspace
