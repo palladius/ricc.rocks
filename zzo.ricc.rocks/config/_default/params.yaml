@@ -6,7 +6,9 @@ custom_js: []
 useFaviconGenerator: true
 meta_image: ''
 themecolor: ''
-themeOptions: ["dark", "hacker",  "light",  "solarized", "kimbie"] # metto hacker per primo.
+#themeOptions: ["dark", "hacker",  "light",  "solarized", "kimbie"] # metto hacker per primo.
+themeOptions:
+- "dark"
 notAllowedTypesInHome:
   - contact
   - talks
