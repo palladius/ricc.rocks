@@ -17,7 +17,7 @@ main:
     url: gallery
     weight: 4
   - parent: gallery
-    name: Ricc family
+    name: My Family
     url: gallery/riccardo-family
   - parent: gallery
     name: Ricc sport
