@@ -21,7 +21,7 @@ main:
     url: gallery/riccardo-family
   - parent: gallery
     name: Ricc sport
-    url: gallery/riccardosport
+    url: gallery/riccardo-sport
   - parent: gallery
     name: Ricc Zibaldone
     url: gallery/riccardo-zibaldone
