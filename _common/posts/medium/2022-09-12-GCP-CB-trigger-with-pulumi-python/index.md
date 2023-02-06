@@ -14,7 +14,7 @@ image: /images/mtg-clone.jpg
 
 The Original article here:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 
-TODO(7feb23): add this video as
+TODO(7feb23): add this video as embedded: https://www.youtube.com/watch?v=5jhWVNN8P_M (created on 6feb23)
 
 A couple of weeks ago, I fell in love with **Pulumi**. it has everything I wanted from Terraform: easy to set up, easy config management, a nice UI for free, and most importantly… language Support! Pulumi is the best invention after Buffalo Pizza and has only a problem.. [no Ruby support](https://github.com/pulumi/pulumi/issues/132) :/
 

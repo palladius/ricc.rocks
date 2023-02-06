@@ -30,6 +30,10 @@ Version: **0.1**
 
 .. and how I couldn't resist coding a Ruby on Rails scooby app
 
+Add these two awesome videos
+
+* https://studio.youtube.com/video/QW4XBtibFnk/edit 
+* https://studio.youtube.com/video/AG_IYhYl5u0/edit
 ---
 
 In October '22, my ❤️ wife allowed me to go scuba diving by myself in Raja Ampat, consider the paradise for divers.![image](scuba--jo09uvup59g.jpg)
