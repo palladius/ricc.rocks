@@ -3,9 +3,10 @@ aliases = ["posts","articles","blog","showcase","docs"]
 title = "Posts"
 author = "Hugo Authors"
 tags = ["index"]
+#draft = true
 description = "Post page"
+# ricc-logo.png
 +++
 
-
-ricc-logo.png
-
+# toglimi
+dlfdksdljfk

@@ -8,6 +8,7 @@ enableToc: true
 enableTocContent: false
 author: Riccardo
 authorEmoji: 🇮🇹
+image: /en/posts/www.palladius.it/spaghetti-bolognese-dont-exist/spaghetti-bolognese.jpg
 tags:
 - italy
 - pasta

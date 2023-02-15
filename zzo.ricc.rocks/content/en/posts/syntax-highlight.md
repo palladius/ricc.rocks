@@ -12,7 +12,7 @@ pinned: true
 tags:
 - hugo
 series:
--
+- todo
 categories:
 - hugo
 image: images/feature2/color-palette.png
