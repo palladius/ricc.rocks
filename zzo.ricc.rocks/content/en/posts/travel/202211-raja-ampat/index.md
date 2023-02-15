@@ -1,8 +1,8 @@
 ---
-title: "🚧 Scuba in Raja"
-date: 2023-02-15T12:20:22Z
+title: "🚧 Scuba in Raja Ampat"
+date: 2022-11-05T12:20:22Z
 draft: false
-#pinned: true
+image: /gallery/202211-raja-ampat/Screen%20Shot%202022-10-19%20at%2006.57.26.jpg
 #image: /en/posts/travel/20230210-madeira/riccardo-madeira.jpg # So stupid not to autodetect...
 tags:
 - travel
@@ -15,8 +15,11 @@ categories:
 #- scuba
 ---
 
-*( 🚧 Work in progress )*
+{{< notice warning "This is 🚧 Work in progress" >}}
+{{< /notice >}}
 
 ## TODO
 
 find another place where you wrote the article..
+
+{{< youtube QW4XBtibFnk >}}
