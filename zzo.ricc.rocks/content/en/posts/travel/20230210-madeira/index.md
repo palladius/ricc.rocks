@@ -1,8 +1,9 @@
 ---
-title: "Cycling in Madeira"
+title: "🚧 Cycling in Madeira"
 date: 2023-02-15T12:20:22Z
 draft: false
 pinned: true
+image: /en/posts/travel/20230210-madeira/riccardo-madeira.jpg # So stupid not to autodetect...
 tags:
 - travel
 - madeira
@@ -12,6 +13,8 @@ categories:
 - travel
 - cycling
 ---
+
+*( 🚧 Work in progress )*
 
 ## Why Madeira in February?
 
@@ -35,7 +38,7 @@ I land
 
 ## Wed: lonely, rainy east-side
 
-Riccardo left early this morning, leaving me alone with a fully charged ebike.
+Ridge left early this morning, leaving me alone with a fully charged ebike.
 
 Today I take thr 70km ride east to the airport; it's expected to rain after 13:00 so I have 3+ hours of dry ride.
 
@@ -44,9 +47,13 @@ The views are absolutely majestic, but after 30m it starts raining and it's gett
 So I get to this amazing cliff, and at my third shower I decide to go back to the hotel and call it a day. I'm not hugely into rain, particularly in a terrain I dont know, a bike I dont know, too much
 to test for a wet terrain with 15% descents.
 
-<video src="madeira-merc-scogliera.mp4" controls="yes" >
+Note: Video embedding does work, but then page stops afterwards.
+
+<video src="madeira-merc-scogliera.mp4" controls="no" />
+
 
 Non va l'embed di MP4 ma [su youtube](https://youtu.be/wTq28Y1GIRM) si.
 
+## Thu: TODO
 
 
