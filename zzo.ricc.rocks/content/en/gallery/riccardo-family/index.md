@@ -20,8 +20,8 @@ images:
   # - image: child.jpg
   #   caption: child
 #image: images/feature2/gallery.png
-image: gallery/family/ricc-bimbi-casa.jpeg
-
+#image: gallery/family/ricc-bimbi-casa.jpeg
+image: /gallery/riccardo-family/riccardo-plitvice-famiglia.jpeg
 ---
 
 Family pictures.. (at once)

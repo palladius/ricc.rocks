@@ -17,17 +17,17 @@ main:
     url: gallery
     weight: 4
   - parent: gallery
-    name: My Family
+    name: Family
     url: gallery/riccardo-family
   - parent: gallery
-    name: Ricc sport
+    name: Sport
     url: gallery/riccardo-sport
   - parent: gallery
-    name: Ricc Zibaldone
+    name: Zibaldone
     url: gallery/riccardo-zibaldone
-  - parent: gallery
-    name: Ricc Work
-    url: gallery/riccardo-work
+  # - parent: gallery
+  #   name: Ricc Work
+  #   url: gallery/riccardo-work
     # My wife doesnt like this
   # - parent: gallery
   #   name: Photo
