@@ -5,7 +5,9 @@ description: Pix of Kate, Ale and Seby
 type: gallery
 #mode: one-by-one
 mode: at-once
-description: "photo gallery"
+description: |
+  My wonderous family: my wife (Kate), and my two kids (Alessandro and Sebastian)
+
 images:
   - image: ricc-bimbi-casa.jpeg
     caption: Ricc and kids at home
