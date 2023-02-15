@@ -9,6 +9,7 @@ enableToc: true
 enableTocContent: false
 author: Riccardo
 pinned: true
+draft: true
 authorEmoji: 🇮🇹
 tags:
 - personal
