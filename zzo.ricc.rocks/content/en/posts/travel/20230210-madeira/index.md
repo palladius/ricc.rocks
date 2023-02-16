@@ -39,6 +39,8 @@ for a nice place to go and he suggested Madeira.
 
 On Xmas and my friend Riccardo ('Ridge') decided to join me.
 
+Mallorca is still low season and a wee too cold, so Madeira seemed the perfect choice - except for the climbs. Gosh, the climbs!
+
 ![image](riccardo-madeira.jpg)
 
 ## Saturday: just a look around
@@ -54,13 +56,27 @@ Next step, I go to visit [Blandy's](https://www.google.com/maps/place/Blandy's+W
 Finally I go to eat at **[Terra](https://www.google.com/maps/place/TERRA+-+Food+Concept/@32.6489523,-16.9112022,17z/data=!3m1!4b1!4m6!3m5!1s0xc606167302d50ed:0xb4be6622c761d352!8m2!3d32.6489523!4d-16.9090135!16s%2Fg%2F11rvdjk0jg)**'s, the only super-expensive restaurant in Madeira, but also so bloody worht it :) Check pics on my my [instagram post](https://www.instagram.com/p/Coje6JRsBGh/).
 
 
-
-
 ## Sunday: muddy mountain-biking
+
+Strava activity: https://www.strava.com/activities/8550514540 (52,28km in 4h47m)
 
 We go with Helvio and Helder from [madeiraaltitude](https://madeiraaltitude.com/) (they did a great job, so i feel like giving them some free publicity if you dont mind). Weather is total crap.
 
-## Mon: go west!
+We start driving super-high to a restaurant ITMON, *Abrigo do Poiso*. There we drink coffee, *undrink*, and get changed. Finally we are drive to the top of the island, *Vereda do Areeiro*. It rains like hell, it's windy, the weather couldn't be miserabler. Helvio teaches me (the freshman) how to descend on a MTB, how to use the gyroscopic saddle, and basically survive with mud and crazy descents. This is NOT what I signed up for, this is what you get when you ask your sadistic friend to take care of the cycling on day 1.
+
+The weather will stay miserable for 3-4 hours until around 2pm we reach a beautiful view, the [Miradour da Portela](https://www.google.com/maps/place/Miradouro+da+Portela/@32.7359716,-16.8670002,13.46z/data=!4m6!3m5!1s0xc6066a5847f65b7:0xc8615cd8407ff70a!8m2!3d32.7471903!4d-16.8259209!16s%2Fg%2F11c74xx22v). The view is amazing, and we see the firts sun. Nearby there's an amazing restaurant (Restaurant Portela a Vista) where we all eat more meat and chips than our stomach can process for just 66eur. AMAZING. This is the first moment I start enjoying life. We're so dirty that all customers look at us like we carried leper or pestilence. I'm delighted by it.
+
+We do then a final (drunk) descent to Praya do Machico, back to the Ocean. Helvio's son is waiting for us to drive us home. Ridge and I are DEAD. Happily dead. What we did today is absolutely incredible.
+
+I then realize I only have a pair of shoes which are now completely soaked in mud, and so is my other equipment. I shower in the hotel with my shoes and I was them with my bare hands (no soap, just a long massage on the whole surface), then I spend 60min watching Dawson Creek on iPad (don't judge me!) while my hair dryer dries my shoes up.
+
+We'll then have a nice drinks and food with Ridge before dying in bed.
+
+## Mon: go west! Cabo Girao
+
+I was able to get some GPX on my horrible Garmin 830 (I mean, my 520 is old, but works perfectly - my fancy 820 is waiting since 2020 to sync 13 apps and its still there clogged) given me by good old **Rui** from Happy Bikes.
+
+We decide to go west in the direction of **Riberira Grande**, until e-bike battery goes to 50% and then to cycle back. Fair enough! Luckily for us, battery got to 50% close to a beautiful cliff, the highest cliff in Europe, I hear (and Google confirms): *The Cape Girão to the west of Funchal is known to be the highest seacliff in Europe and the second highest in the world!*
 
 ## Tue: go up!
 
@@ -81,6 +97,8 @@ I take the afternoon off, bring back my 3 bottle sof Madeira fortified wine to t
 I then bring back my e-bike to [Happy Bikes](https://www.happybikes.pt/). I have to say, they
 really did a great job!
 
-## Thu: TODO
+## Thu: sunny chill
 
+Today it seems to be raining around 13:00, and I don't want to rush a 2h cycle ride again. I decided then to just walk around the town, and take nice sunny pics to show my family.
 
+This is my only possibility to get them to come to Funchal: just see a sunny day :)
