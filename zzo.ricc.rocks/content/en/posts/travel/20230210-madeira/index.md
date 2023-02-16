@@ -76,7 +76,7 @@ I then realize I only have a pair of shoes which are now completely soaked in mu
 
 We'll then have a nice drinks and food with Ridge before dying in bed.
 
-## Mon 13: go west! Cabo Girao
+## Mon 13: go west! Cabo Girão
 
 I was able to get some GPX on my horrible Garmin 830 (I mean, my 520 is old, but works perfectly - my fancy 820 is waiting since 2020 to sync 13 apps and its still there clogged) given me by good old **Rui** from Happy Bikes.
 
