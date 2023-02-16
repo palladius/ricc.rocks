@@ -90,6 +90,8 @@ Back home, we shower and have lunch, little nap, and we hit the city for party t
 
 ## Tue 14: Ridge leads
 
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="8559709988"></div><script src="https://strava-embeds.com/embed.js"></script>
+
 Today I make the mistake of letting Ridge decide the route. It starts with totally unfeasible 15% just while digesting my breakfast which make me curse Riccardo until thr 15th generation up (yup, the generational cursing is proportional to the gradient, we're Italian after all!).
 
 To be completely fair, after this initial turmoil, things get a lot better and we see amazing views and few cars. Well done, Ridge!
@@ -102,6 +104,9 @@ To thank Riccardo for the great ride, I bring him to Terra for a small and roman
 * two lovely Russian/Kazako family with a wonderful 1yr-old daughter who also live here and traffic Pelmeni (just kidding, they just have a friend who delivers pelmeni home).
 
 ## Wed 15: lonely, rainy east-side
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="8564581089"></div><script src="https://strava-embeds.com/embed.js"></script>
+
 
 Ridge left early this morning, leaving me alone with a fully charged ebike.
 
