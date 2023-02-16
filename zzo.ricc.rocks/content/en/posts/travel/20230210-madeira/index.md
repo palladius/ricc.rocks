@@ -19,7 +19,17 @@ categories:
 # { { < instagram Coje6JRsBGh > } }
 ---
 
-*( 🚧 Work in progress )*
+{{< notice warning "🚧 This article is Work in progress" >}}
+{{< /notice >}}
+
+<!-- this works too!
+![image](Riccardo_A_beautiful_muscly_yellow_man_cycling_in_a_mountainous_midjourney.png)
+-->
+{{< img src="/en/posts/travel/20230210-madeira/Riccardo_A_beautiful_muscly_yellow_man_cycling_in_a_mountainous_midjourney.png" title="A cyclist in Madeira" caption="midjourney: A beautiful, muscly yellow man cycling in a mountainous island with rainy weather. Cinematic" alt="image alt" width="400px" position="center" >}}
+
+
+(Image built with [Midjourney](https://cdn.discordapp.com/attachments/1008571102328541215/1075832031499534436/Riccardo_A_beautiful_muscly_yellow_man_cycling_in_a_mountainous_6a0f25ff-c910-4842-80d0-16f6a74f6026.png) )
+
 
 ## Why Madeira in February?
 
@@ -27,7 +37,7 @@ I married a saint woman (Kate) who from time to time allows me to travel solo fo
 Zurich and help with kids. This year it happened in February: too early to cycle in Mallorca, so I asked my friend Mike
 for a nice place to go and he suggested Madeira.
 
-I told my friends on Xmas and my friend Riccardo (yep, you're not seeing double yet, it's just another Riccardo, 'Ridge').
+On Xmas and my friend Riccardo ('Ridge') decided to join me.
 
 ![image](riccardo-madeira.jpg)
 
