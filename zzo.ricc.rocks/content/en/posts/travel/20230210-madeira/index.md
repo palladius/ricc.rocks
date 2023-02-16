@@ -1,5 +1,5 @@
 ---
-title: "🚧 🚵 Cycling in Madeira"
+title: "🚧 🚵 Cycling in Madeira (Feb 23)"
 date: 2023-02-15T12:20:22Z
 draft: false
 pinned: true
@@ -43,7 +43,7 @@ Mallorca is still low season and a wee too cold, so Madeira seemed the perfect c
 
 ![image](riccardo-madeira.jpg)
 
-## Saturday: just a look around
+## Sat 11: just a look around
 
 I land around 11 and I'm immediately welcomed by a Pastel de Nata at the local bar (geniusly located between the plane and the luggage claim), and I see publicity of "Blandey's wine tasting". It will be my next quest to involve Ridge into wine tasting and bringing home some bottles of Madeiras "porto" (it's not porto! Just to make it easy for you, it's fortified wine with acidity and oxidized, so it survives opening for years, differently from porto which needs be consumed within weeks from opening).
 
@@ -55,10 +55,14 @@ Next step, I go to visit [Blandy's](https://www.google.com/maps/place/Blandy's+W
 
 Finally I go to eat at **[Terra](https://www.google.com/maps/place/TERRA+-+Food+Concept/@32.6489523,-16.9112022,17z/data=!3m1!4b1!4m6!3m5!1s0xc606167302d50ed:0xb4be6622c761d352!8m2!3d32.6489523!4d-16.9090135!16s%2Fg%2F11rvdjk0jg)**'s, the only super-expensive restaurant in Madeira, but also so bloody worht it :) Check pics on my my [instagram post](https://www.instagram.com/p/Coje6JRsBGh/).
 
+Then I sleep a bit drunk from amazing wine I just had, and meet Ridge around 21:30 for a small drink before going to sleep. Big day tomorrow!
 
-## Sunday: muddy mountain-biking
+## Sun 12: muddy mountain-biking
 
-Strava activity: https://www.strava.com/activities/8550514540 (52,28km in 4h47m)
+<!-- Strava activity: https://www.strava.com/activities/8550514540 (52,28km in 4h47m) -->
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="8550514540"></div><script src="https://strava-embeds.com/embed.js"></script>
+
 
 We go with Helvio and Helder from [madeiraaltitude](https://madeiraaltitude.com/) (they did a great job, so i feel like giving them some free publicity if you dont mind). Weather is total crap.
 
@@ -72,15 +76,32 @@ I then realize I only have a pair of shoes which are now completely soaked in mu
 
 We'll then have a nice drinks and food with Ridge before dying in bed.
 
-## Mon: go west! Cabo Girao
+## Mon 13: go west! Cabo Girao
 
 I was able to get some GPX on my horrible Garmin 830 (I mean, my 520 is old, but works perfectly - my fancy 820 is waiting since 2020 to sync 13 apps and its still there clogged) given me by good old **Rui** from Happy Bikes.
 
 We decide to go west in the direction of **Riberira Grande**, until e-bike battery goes to 50% and then to cycle back. Fair enough! Luckily for us, battery got to 50% close to a beautiful cliff, the highest cliff in Europe, I hear (and Google confirms): *The Cape Girão to the west of Funchal is known to be the highest seacliff in Europe and the second highest in the world!*
 
-## Tue: go up!
+We stop for a few pics, we can't believe it's free. The only negative note is, a horrible singer asks for money outside - he sings worse than a *banshee*. We know what the money is for, now.
 
-## Wed: lonely, rainy east-side
+Back home, we shower and have lunch, little nap, and we hit the city for party time!
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="8553706157"></div><script src="https://strava-embeds.com/embed.js"></script>
+
+## Tue 14: Ridge leads
+
+Today I make the mistake of letting Ridge decide the route. It starts with totally unfeasible 15% just while digesting my breakfast which make me curse Riccardo until thr 15th generation up (yup, the generational cursing is proportional to the gradient, we're Italian after all!).
+
+To be completely fair, after this initial turmoil, things get a lot better and we see amazing views and few cars. Well done, Ridge!
+
+Meanwhile, I text my wife's mum to unpack the romantic present I hid for Kate and put it on her cushion. Damn, romantic yet bragging Italians! 🤪
+
+To thank Riccardo for the great ride, I bring him to Terra for a small and romantic lunch. We meet two very interesting couples:
+
+* two lovely Germans who lived in Luxembourg and now want to try living in Madeira (WFH). Jan knows Italian culture pretty well, as his mum lives in Padoa.
+* two lovely Russian/Kazako family with a wonderful 1yr-old daughter who also live here and traffic Pelmeni (just kidding, they just have a friend who delivers pelmeni home).
+
+## Wed 15: lonely, rainy east-side
 
 Ridge left early this morning, leaving me alone with a fully charged ebike.
 
@@ -97,8 +118,15 @@ I take the afternoon off, bring back my 3 bottle sof Madeira fortified wine to t
 I then bring back my e-bike to [Happy Bikes](https://www.happybikes.pt/). I have to say, they
 really did a great job!
 
-## Thu: sunny chill
+## Thu 16: Funchal sunny chill
 
 Today it seems to be raining around 13:00, and I don't want to rush a 2h cycle ride again. I decided then to just walk around the town, and take nice sunny pics to show my family.
 
 This is my only possibility to get them to come to Funchal: just see a sunny day :)
+
+## Fri 17: ???
+
+## Sat 18: Carnival starts, I go home
+
+Sadly, today the city starts seriously partying, and it's time for me to go home.
+
