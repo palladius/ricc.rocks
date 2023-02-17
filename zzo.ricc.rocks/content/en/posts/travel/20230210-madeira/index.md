@@ -20,6 +20,7 @@ categories:
 ---
 
 {{< notice warning "🚧 This article is Work in progress" >}}
+In this article you'll learn all about cycling in Madeira, my crazy friend Riccardo, and how I got my first pair of glasses in 30 years.
 {{< /notice >}}
 
 <!-- this works too!
@@ -84,9 +85,17 @@ We decide to go west in the direction of **Riberira Grande**, until e-bike batte
 
 We stop for a few pics, we can't believe it's free. The only negative note is, a horrible singer asks for money outside - he sings worse than a *banshee*. We know what the money is for, now.
 
-Back home, we shower and have lunch, little nap, and we hit the city for party time!
 
 <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="8553706157"></div><script src="https://strava-embeds.com/embed.js"></script>
+
+Back home, we have a super quick/cheap lunch in center, then we head to Blandy's for some serious wine tasting and discovering the history of wine-making in Madeira. A few striking facts:
+
+* Madeira fortified wine, unlike Porto, survives for years once opened, more like a gin. This is because it's already oxidized and lives bvery well with Oxygen (just like my lungs)
+* One of the 7 grapes of Madeira wine is Verdelho. Tour guide tells me that this is a different grape from spanish Verdejo or Italian Verdicchio. I don't believe her, so I google it: she's right 🤓.
+
+
+Finally, little nap, and we hit the city for party time!
+
 
 ## Tue 14: Ridge leads
 
@@ -103,7 +112,12 @@ To thank Riccardo for the great ride, I bring him to Terra for a small and roman
 * two lovely Germans who lived in Luxembourg and now want to try living in Madeira (WFH). Jan knows Italian culture pretty well, as his mum lives in Padoa.
 * two lovely Russian/Kazako family with a wonderful 1yr-old daughter who also live here and traffic Pelmeni (just kidding, they just have a friend who delivers pelmeni home).
 
+In the afternoon we have a little sleep, and tonight we ROCK! It's our last night together, so we want it to be meaningful. We meet in *zona velha* for aperitives, then we hit a nice cozy restaurant for some fish.
+
+
 ## Wed 15: lonely, rainy east-side
+
+I woke up a lonely man
 
 <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="8564581089"></div><script src="https://strava-embeds.com/embed.js"></script>
 
@@ -129,7 +143,13 @@ Today it seems to be raining around 13:00, and I don't want to rush a 2h cycle r
 
 This is my only possibility to get them to come to Funchal: just see a sunny day :)
 
-## Fri 17: ???
+## Fri 17: Take it easy
+
+<!-- midjourney
+
+/imagine Brazillian muscly software engineer types on his Mac laptop in a foresty island watching the sunset by the port. realistic, cinematic
+
+-->
 
 ## Sat 18: Carnival starts, I go home
 
