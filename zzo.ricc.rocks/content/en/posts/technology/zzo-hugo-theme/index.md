@@ -1,8 +1,8 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "Hugo ZZO theme: goods and bads"
-date: 2023-05-20T21:17:43+01:00
+title: "About ⬢ Hugo ZZO theme"
+date: 2023-01-31T21:17:43+01:00
 draft: false
 pinned: false # (ZZO) lo voglio in cima
 tags:
