@@ -30,9 +30,12 @@ What the hell, you may be wondering... Italy is famous for spaghetti and bologne
 1. First, they come from two different cultures. Spaghetti come from the south, where a simpler tomato, basil, and veg sauce would seem more appropriate.
 2. Second, spaghetti are slippery, so they're not as good to 'retain' a demanding sauce as a beef ragout is. As every bolognese person can tell you, appropriate pastas for bolognese ragout can be: **tagliatelle** (first choice), *pennette/penne/mezzepenne*, *conchiglie*, *fusilli*, *maccheroni*, ... in general every form of 'pasta rigata' (**ribbed** pasta). Pasta rigata is a pasta that is not smooth, so thas sauce is more likely to stay with the pasta, instead of slipping down. I think the main reason why every person from Bologna is horrified by the mere idea of associating spaghetti with our proud ragout is that we perfectly know (because everyone has made that mistake once in their life) what happens if you do that: spaghetti would ruthlessly come up your fork completely naked of any red or meaty trace... just to leave a gloomy surprise in the very end: a bloody pool of meat and tomato just looking at you as if asking "Now what?". And unless you are Italian, you don't know what scarpetta is. but that's another story.
 
-As wikipedia (as of 19dec09) says about Bolognese_sauce:
+As [wikipedia](https://en.wikipedia.org/wiki/Bolognese_sauce) (as of 19dec09) says about *Bolognese sauce*:
 
-*[...] Spaghetti alla Bolognese, Spaghetti Bolognese, or Spaghetti Bolognaise in a form popular outside of Italy, consists of a meat sauce served on a bed of spaghetti with a good sprinkling of grated Parmigiano cheese. Although Spaghetti alla Bolognese is very popular outside of Italy, it never existed in Bologna, where ragout is served always with the local egg pastas tagliatelle or lasagne. Spaghetti is a drum wheat pasta from Naples, and the Naples Ragout of a meat flavoured thick tomato sauce clings much better to slippery spaghetti than Bologna's ground beef ragout. [...]*
+> [...] Spaghetti alla Bolognese, Spaghetti Bolognese, or Spaghetti Bolognaise in a form popular outside of Italy, consists of a meat sauce served on a bed of spaghetti with a good sprinkling of grated Parmigiano cheese. Although Spaghetti alla Bolognese is very popular outside of Italy, it never existed in Bologna, where ragout is served always with the local egg pastas tagliatelle or lasagne. Spaghetti is a drum wheat pasta from Naples, and the Naples Ragout of a meat flavoured thick tomato sauce clings much better to slippery spaghetti than Bologna's ground beef ragout. [...]
+>
+> From: <cite>[wikipedia](https://en.wikipedia.org/wiki/Bolognese_sauce)</cite>
+
 
 ## Script for Linux/Mac
 
