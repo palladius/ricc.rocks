@@ -3,7 +3,9 @@ title: "🚧 🚵 Cycling in Madeira (Feb 23)"
 date: 2023-02-15T12:20:22Z
 draft: false
 pinned: true
-image: /en/posts/travel/20230210-madeira/riccardo-madeira.jpg # So stupid not to autodetect...
+#image: /en/posts/travel/20230210-madeira/riccardo-madeira.jpg # So stupid not to autodetect...
+image: /en/posts/travel/20230210-madeira/Riccardo Heapster col Mac.png
+
 tags:
 - travel
 - madeira
@@ -32,7 +34,7 @@ In this article you'll learn all about cycling in Madeira, my crazy friend Ricca
 (Image built with [Midjourney](https://cdn.discordapp.com/attachments/1008571102328541215/1075832031499534436/Riccardo_A_beautiful_muscly_yellow_man_cycling_in_a_mountainous_6a0f25ff-c910-4842-80d0-16f6a74f6026.png) )
 
 
-## Why Madeira in February?
+<!-- ## Why Madeira in February? -->
 
 I married a saint woman (Kate) who from time to time allows me to travel solo for a week while her family comes to
 Zurich and help with kids. This year it happened in February: too early to cycle in Mallorca, so I asked my friend Mike
@@ -42,6 +44,7 @@ On Xmas and my friend Riccardo ('Ridge') decided to join me.
 
 Mallorca is still low season and a wee too cold, so Madeira seemed the perfect choice - except for the climbs. Gosh, the climbs!
 
+![image](Riccardo%20Heapster%20col%20Mac.png)
 ![image](riccardo-madeira.jpg)
 
 ## Sat 11: just a look around
