@@ -45,6 +45,11 @@ On Xmas and my friend Riccardo ('Ridge') decided to join me.
 Mallorca is still low season and a wee too cold, so Madeira seemed the perfect choice - except for the climbs. Gosh, the climbs!
 
 ![image](Riccardo%20Heapster%20col%20Mac.png)
+
+From midjourney:
+
+<tt>/imagine Brazillian muscly software engineer types on his Mac laptop in a foresty island watching the sunset by the port. realistic, cinematic</tt>
+
 ![image](riccardo-madeira.jpg)
 
 ## Sat 11: just a look around
@@ -158,3 +163,6 @@ This is my only possibility to get them to come to Funchal: just see a sunny day
 
 Sadly, today the city starts seriously partying, and it's time for me to go home.
 
+I wake up, have breakfast, get a taxi to the airport, and fly back.
+
+I was able to get my 3 bottles of Malvasia Landy's at the airport, saving 14eur, plus I bu6 six *pasteis de nata* for the family.

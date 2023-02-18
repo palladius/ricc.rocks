@@ -19,6 +19,7 @@ Jokes apart, the top complexity here is to pass an exam in German (Swiss German 
 This article describes my steps and struggles. Luckily, I have super smart colleagues in Google who helped me. This is my trying to give back :)
 
 ![image](Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png)
+
 <!--more-->
 
 
@@ -45,6 +46,8 @@ Now:
 * OST says "Internationally recognized German language exams and certificates for children, young learners and adults", and since it starts with Children I have a feeling I won't be treated like a complete idiot (*how long have you been living in Sweitzerland? What, 10 years? And you still don't speak German?* - followed by a compassion gaze). they do have centers in [Frauenfeld](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/Frauenfeld,+Svizzera/@47.550191,8.9002971,13.83z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479a922b7ac416d5:0xabd5ea8c4a738dc7!2m2!1d8.8987541!2d47.5535997!3e3) (36m from HB) and [Niederurnen](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/8867+Niederurnen,+Svizzera/@47.1837248,8.744133,11.39z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479acd0b21f91dfd:0x6eb928b1714053f3!2m2!1d9.0531505!2d47.125507!3e3) (50m from HB). Ok, Frauenfeld wins :) Ok, there's [one](https://www.osd.at/en/take-tests/find-exam-dates/?country=167&tests=00001100000&land=null&stadt=Frauenfeld&datefrom=01.06.2023&dateto=31.08.2023&centernr=null) **B1 exam on June 24th** - should be good! I wrote to the organizer and will tell you more close to the date about https://www.osd.at/en/take-tests/find-exam-dates/pruefung/?tid=29224ZB1
 
 # 2. Studying for the B1 exam
+
+![image](man-in-yellow-studies-by-lake-zurich.png)
 
 Now, I've got a lot of tips from colleagues. Some random tips:
 
