@@ -9,6 +9,8 @@ tags:
 # self: go/ricc-passaporto-svizzero
 categories:
 - life
+image: images/feature2/color-palette.png
+
 ---
 
 I've been in Ziurich for 10 years, so now I can apply for swiss passport (I heard once you do, you get a free gold lingot from a Nazi *caveau*).
@@ -16,6 +18,8 @@ I've been in Ziurich for 10 years, so now I can apply for swiss passport (I hear
 Jokes apart, the top complexity here is to pass an exam in German (Swiss German oder Hoch Deutsch, your choice).
 
 This article describes my steps and struggles. Luckily, I have super smart colleagues in Google who helped me. This is my trying to give back :)
+
+<!--more-->
 
 
 # 1. Back to School!
@@ -46,6 +50,10 @@ Now, I've got a lot of tips from colleagues. Some random tips:
 
 * do passive listening. They suggest this website: TBD
 * use a card system to learn the words. You can create your own and sync from a repo to your system. [Anki](https://apps.ankiweb.net/) is the name: you have an App for Mac, an app for Android, and you can edit your own cards and sync them to your ankiWeb account :) You can download cards, for example the [Goethe B1](https://ankiweb.net/shared/info/1586166030) cards or the [Goethe A1](https://ankiweb.net/shared/info/1386119660), conveniently on github for you to Fork and auto-build/sync/push :P
+
+## Anki
+
+After an initial frustration using the tgool, I came to like it. I have the app installed on my Mac, downloaded the A1 and B1 word list (A1 is quite easy and fun, while B2 is like a cat attached to your testicles, as we say in Bologna). Word list is in alpha order, so tghe first 2 days I've leafrnt all about *ab-something* (which reminds me of Young Frankenstein 😬).
 
 # 3. The B1 exam in Frauenfeld
 
