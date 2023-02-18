@@ -6,6 +6,9 @@ tags:
 - language
 - switzerland
 - Google
+# self: go/ricc-passaporto-svizzero
+categories:
+- life
 ---
 
 I've been in Ziurich for 10 years, so now I can apply for swiss passport (I heard once you do, you get a free gold lingot from a Nazi *caveau*).
@@ -37,12 +40,21 @@ Now:
 * TELC has a pre-Christ website with still events from 2013-2014 (wow), still I contected them for more info.
 * OST says "Internationally recognized German language exams and certificates for children, young learners and adults", and since it starts with Children I have a feeling I won't be treated like a complete idiot (*how long have you been living in Sweitzerland? What, 10 years? And you still don't speak German?* - followed by a compassion gaze). they do have centers in [Frauenfeld](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/Frauenfeld,+Svizzera/@47.550191,8.9002971,13.83z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479a922b7ac416d5:0xabd5ea8c4a738dc7!2m2!1d8.8987541!2d47.5535997!3e3) (36m from HB) and [Niederurnen](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/8867+Niederurnen,+Svizzera/@47.1837248,8.744133,11.39z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479acd0b21f91dfd:0x6eb928b1714053f3!2m2!1d9.0531505!2d47.125507!3e3) (50m from HB). Ok, Frauenfeld wins :) Ok, there's [one](https://www.osd.at/en/take-tests/find-exam-dates/?country=167&tests=00001100000&land=null&stadt=Frauenfeld&datefrom=01.06.2023&dateto=31.08.2023&centernr=null) **B1 exam on June 24th** - should be good! I wrote to the organizer and will tell you more close to the date about https://www.osd.at/en/take-tests/find-exam-dates/pruefung/?tid=29224ZB1
 
-# 2. The B1 exam
+# 2. Studying for the B1 exam
 
-TBD
+Now, I've got a lot of tips from colleagues. Some random tips:
 
-# 3. The Stadt Zurich exam
+* do passive listening. They suggest this website: TBD
+* use a card system to learn the words. You can create your own and sync from a repo to your system. [Anki](https://apps.ankiweb.net/) is the name: you have an App for Mac, an app for Android, and you can edit your own cards and sync them to your ankiWeb account :) You can download cards, for example the [Goethe B1](https://ankiweb.net/shared/info/1586166030) cards or the [Goethe A1](https://ankiweb.net/shared/info/1386119660), conveniently on github for you to Fork and auto-build/sync/push :P
+
+# 3. The B1 exam in Frauenfeld
+
+# 4. The Stadt Zurich exam
 
 I've heard a lot of rumors which I'm going to write here:
 
 * It's much easier to get your certificate in Zurich than in small mountain towns where the local shaman vets you and decide if you fit in with the culture (I love fondue, cook [Cuchaule](https://cookidoo.ch/recipes/recipe/fr-CH/r434981) and can pronounce *Cuchicaschli*, and called the police on a noisy neighbour - hello?!?)
+
+#  5. The aftermath, sorry! .. after German
+
+TBD
