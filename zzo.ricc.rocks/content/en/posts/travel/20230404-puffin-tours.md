@@ -30,6 +30,8 @@ Here's the company Logo (created with MidJourney of course)
     caption="Company logo since 2021..." alt="image alt" width="40%" position="left" style='vertical-align:middle;' >}}
 
 
+## Japan 2006
+
 {{< img src="/gallery/midjourney/PalladiusFigata_a_puffin_walking_in_an_ancient_Japanese_town_mi_90659013-0b4d-4a52-a5fb-fe46999f2ba8.png" title="a_puffin_walking_in_an_ancient_Japanese_town_mi" caption="Image with title, caption, alt, ..." alt="image alt" width="40%" position="center" >}}
 
 
