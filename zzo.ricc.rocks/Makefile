@@ -9,3 +9,6 @@ new-post:
 
 clean:
 	rm -rf resources/_gen/
+
+midjourney-move:
+	bin/move-midjourney-pics-to-here.sh
