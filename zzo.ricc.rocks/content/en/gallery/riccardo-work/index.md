@@ -5,7 +5,7 @@ description: Some pictures I took at work..
 type: gallery
 mode: at-once
 #description: Some random pics to demonstrate this Theme..
-#image: gallery/riccardosport/riccardo-aegerisee-bike.jpg # images/feature2/gallery.png
+#image: gallery/riccardo-sport/riccardo-aegerisee-bike.jpg # images/feature2/gallery.png
 ---
 
 Riccardo Random work pics (at once)

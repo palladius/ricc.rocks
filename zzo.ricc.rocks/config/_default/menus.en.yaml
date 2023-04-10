@@ -25,6 +25,9 @@ main:
   - parent: gallery
     name: Zibaldone
     url: gallery/riccardo-zibaldone
+  - parent: gallery
+    name: MidJourney
+    url: gallery/midjourney
   # - parent: gallery
   #   name: Ricc Work
   #   url: gallery/riccardo-work

@@ -24,7 +24,7 @@ images:
   - image: ricc-scream-bike.jpeg
   - image: riccardo-ironman2017-run2.jpeg
   - image: ricc-ski-toblerone.jpeg
-image: gallery/riccardosport/riccardo-aegerisee-bike.jpg # images/feature2/gallery.png
+image: gallery/riccardo-sport/riccardo-aegerisee-bike.jpg # images/feature2/gallery.png
 ---
 
 Riccardo pics (at once)
