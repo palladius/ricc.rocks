@@ -8,4 +8,6 @@ description: Various pics that don't fit in any other folder particularly..
 image: /gallery/midjourney/PalladiusFigata_a_puffin_walking_in_an_ancient_Japanese_town_mi_1b0ec3d7-168f-41ba-a537-cd26141f995a.png
 ---
 
-My MY at once pics..
+My MJ at once pics..
+
+My Profile is here: https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/

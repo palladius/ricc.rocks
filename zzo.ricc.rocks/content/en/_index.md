@@ -27,7 +27,7 @@ header:
     title:
       - Riccardo ZZO site
     subtitle:
-      - The world’s fastest man to run, swim, cycle, and get weight.
+      - The world’s fastest man to run, swim, cycle, and still gain all the weight back.
     titleColor:
     titleShadow: true
     titleFontSize: 44
