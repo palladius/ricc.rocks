@@ -42,6 +42,8 @@ cycling:
 
 ![image](/gallery/midjourney/PalladiusPacans_a_puffin_eating_spaghetti_al_pesto_e71089ff-00b4-4bba-ad15-a04f284d5d27.png)
 
+sofa: PalladiusPacans_puffin_lying_comfortable_on_a_Ikea_sofa_cc083cc5-b504-482d-8067-c371ec6840f1
+
 ## Japan 2006
 
 {{< img src="/gallery/midjourney/PalladiusFigata_a_puffin_walking_in_an_ancient_Japanese_town_mi_90659013-0b4d-4a52-a5fb-fe46999f2ba8.png" title="a_puffin_walking_in_an_ancient_Japanese_town_mi" caption="Image with title, caption, alt, ..." alt="image alt" width="40%" position="center" >}}

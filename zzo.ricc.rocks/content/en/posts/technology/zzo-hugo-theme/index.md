@@ -15,8 +15,8 @@ categories:
 keywords:
 - hugo
 - zzo
-#image: /images/mtg-clone.jpg
-image: /images/clone-mtg-vintage.png
+#image: /images/clone-mtg-vintage.png
+image: /gallery/midjourney/PalladiusPacans_hugo_github_theme_abstract_logo_website_logo_co_cec2f356-2b55-4ef0-be71-b3bdccde2f0f.png
 pinned: true
 #math: true
 # enables Maths on ZZO
