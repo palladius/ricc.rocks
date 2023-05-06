@@ -10,4 +10,4 @@ image: /gallery/midjourney/PalladiusFigata_a_puffin_walking_in_an_ancient_Japane
 
 My MJ at once pics..
 
-My Profile is here: https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/
+My Profile is [https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/](here). 
