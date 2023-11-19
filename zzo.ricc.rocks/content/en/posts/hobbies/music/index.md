@@ -46,6 +46,8 @@ My favorite songs are (note I'm a pianist):
 
 My favourite songs (I can play most of these):
 
+![image](/gallery/midjourney/JPetrucci%20painting.png)
+
 * Surrounded
 * Take the time
 * Another day
