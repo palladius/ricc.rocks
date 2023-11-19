@@ -12,4 +12,4 @@ tags:
 
 My MJ at once pics..
 
-My Profile is [https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/](here).
+My Profile is [here](https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/).
