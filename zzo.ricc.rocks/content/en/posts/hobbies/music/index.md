@@ -4,7 +4,7 @@
 title: "Music I like / play"
 date: 2023-04-10T21:17:43+01:00
 #draft: true
-image: /gallery/midjourneyPalladiusFigata_king_Canute_standing_on_the_shore_and_speaking__dd781f09-c2c5-48bd-9e1c-d6bcbed9bd6a.png
+image: /gallery/midjourney/PalladiusFigata_king_Canute_standing_on_the_shore_and_speaking__dd781f09-c2c5-48bd-9e1c-d6bcbed9bd6a.png
 tags:
 - midjourney
 - music
@@ -18,6 +18,7 @@ categories:
 
 ![image](/gallery/midjourney/PalladiusFigata_Floor_plan_sketch_watercolor_style_grand_piano_7023fc60-189f-4f02-83dd-b7df0974f25e.png)
 
+If you have a strong stomach, see some of my recordings on YouTube: <https://www.youtube.com/playlist?list=PL8D88F687A9626E5C>.
 
 ## Genesis
 
@@ -38,6 +39,7 @@ My favorite songs are (note I'm a pianist):
 * Supper's ready
 * The knife
 * The Lamb lies down on Broadway
+* Firth of fifth (this is me playing MANY years and KG ago: <https://www.youtube.com/watch?v=4VBxd9n1dSU>)
 * Dance on a Volcano
 
 ## Dream Theater
