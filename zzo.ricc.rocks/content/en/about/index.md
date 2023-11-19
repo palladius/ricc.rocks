@@ -1,5 +1,6 @@
 ---
-title: "🚧 About me"
+#🚧
+title: "About me"
 description: "This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/"
 type: "about"
 date: "2023-02-01"
@@ -17,7 +18,7 @@ tags:
 ---
 
 
-Hi! I'm Riccardo, and I go for <tt>Palladius</tt> or just Ricc.
+Hi! I'm Riccardo, and I go by <tt>Palladius</tt> or just Ricc.
 
 ## Work
 
@@ -34,7 +35,7 @@ I speak about SRE, Operations, Culture at Google, GenAI, and Ruby.
 
 ## Personal
 
-I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland, and in 2011 I moved to Switzerland where I currently live with my wife Kate and two amazeballs kids: *AJ* and *Sebowski*. You can find us on Instagram, or in the family gallery.
+I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland, and in 2011 I moved to Switzerland where I currently live with my kind and caring wife Kate and two amazeballs kids: *AJ* and *Sebowski*. You can find us on Instagram, or in the family gallery.
 
 Of course, I live in Switzerland.
 
