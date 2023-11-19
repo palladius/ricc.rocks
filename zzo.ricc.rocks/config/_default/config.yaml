@@ -1,12 +1,12 @@
 baseURL: 'https://ricc.rocks/'
-title: "Riccardo \U0001F49B Hugo"
+title: "Riccardo \U0001F49B Blog"
 theme: zzo
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 hasCJKLanguage: true
 summaryLength: 70
 buildFuture: true
-copyright: '&copy;{year}, Riccardo Carlesso, Some Rights Reserved (github code: https://github.com/palladius/ricc.rocks )'
+copyright: '&copy;{year}, Riccardo Carlesso, Some Rights Reserved (github code: https://github.com/palladius/ricc.rocks ): Hugo+ZZO+Netlify'
 timeout: 10000
 enableEmoji: true
 paginate: 13

@@ -18,6 +18,12 @@ categories:
 - midjourney
 ---
 
+Note: after this I've actyally created a Ruby on Rails application called Puffin Tours, for my wife to be able to add
+content and vote/rate it:
+
+* Code: <https://github.com/palladius/ror7-tailwind-puffintours>
+* App in PROD: <https://puffintours-prod-rjjr63dzrq-ew.a.run.app/>
+
 ## About Puffin tours
 
 Puffin tours organizes event for the whole Carlesso family since 2021, when the term was coined.
