@@ -1,12 +1,12 @@
 baseURL: 'https://ricc.rocks/'
-title: "Riccardo \U0001F49B Blog"
+title: "Ricc \U0001F49B Blog"
 theme: zzo
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 hasCJKLanguage: true
 summaryLength: 70
 buildFuture: true
-copyright: '&copy;{year}, Riccardo Carlesso, few Rights Reserved'
+copyright: '&copy;{year}, Ricky C, few Rights Reserved'
 timeout: 10000
 enableEmoji: true
 paginate: 13
