@@ -33,8 +33,31 @@ And what about this?
 
 My favorite songs are (note I'm a pianist):
 
-* The Musical Box (also my favorite Cover Band!)
 * Can-Utility and the Costaliners
+* The Musical Box (also my favorite Cover Band!)
+* Supper's ready
 * The knife
-* Dance on a Volcano
 * The Lamb lies down on Broadway
+* Dance on a Volcano
+
+## Dream Theater
+
+My favourite songs (I can play most of these):
+
+* Surrounded
+* Take the time
+* Another day
+* Lifting Shadows off a dream
+* Wait for sleep
+* The count of Tuscany
+* The Killing Hand (and Ytse's jam, of course)
+* Erotomania
+* The silent man
+
+## Others
+
+* Elio e le storie tese
+* Francesco Guccini
+* Red hot chili peppers
+* Imagine Dragons
+* Kings of Leons
