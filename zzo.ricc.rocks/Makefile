@@ -9,7 +9,7 @@ new-post:
 	hugo new posts/my-first-post.md
 
 clean:
-	rm -rf resources/_gen/
+	rm -rf resources/_gen/ public/
 
 midjourney-move:
 	bin/move-midjourney-pics-to-here.sh

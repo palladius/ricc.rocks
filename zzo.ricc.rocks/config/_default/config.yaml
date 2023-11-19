@@ -6,7 +6,7 @@ defaultContentLanguageInSubdir: true
 hasCJKLanguage: true
 summaryLength: 70
 buildFuture: true
-copyright: '&copy;{year}, Riccardo Carlesso, Some Rights Reserved (github code: https://github.com/palladius/ricc.rocks ): Hugo+ZZO+Netlify'
+copyright: '&copy;{year}, Riccardo Carlesso, few Rights Reserved'
 timeout: 10000
 enableEmoji: true
 paginate: 13
