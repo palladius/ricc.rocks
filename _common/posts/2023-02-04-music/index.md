@@ -20,6 +20,7 @@ keywords:
 - Riccardo
 - Carlesso
 - palladius
+- symlink
 #image: /images/mtg-clone.jpg
 #images:
 #- tranquilpeak-showcase.png

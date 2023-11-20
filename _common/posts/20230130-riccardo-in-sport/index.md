@@ -7,6 +7,7 @@ draft: false
 tags:
 - personal
 - sport
+- symlink
 # paperMod
 #canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 # ANANKE :)

@@ -11,16 +11,17 @@ pinned: false
 carousel: false
 series:
 categories: []
-tags: [GCP, macbook, SMS, pager]
+tags: [GCP, macbook, SMS, pager, medium, symlink]
 images:
 - /images/articles/london-airport.jpg
+meta_image: featured-sample.jpg # This is for ZZO
 #- /images/battery-life-cli.webp
 #- /images/london-airport.jpg
 # original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
 ---
 
 <!-- this works: ![Image Caption](/images/riccardo.jpg "Use Image Title as Caption aeroporto") -->
-![Image Caption](/images/articles/london-airport.jpg "Taking a train to City Airport, my fav airport in London")
+![Image Caption](/images/articles/london-airport.jpg "[HUGO] Taking a train to City Airport, my fav airport in London")
 
 
 This article shows how you can easily inject a generic key/value into Google Cloud Monitoring and set up alerts on it. I use it to alert on disk space, and now also low battery!

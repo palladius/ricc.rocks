@@ -6,6 +6,7 @@ type: "about"
 date: "2023-02-01"
 #This is the ZZO version of Riccardo Rocks ring: https://ricc.rocks/
 image: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg
+meta_image: image.png
 tags:
 - personal
 - site
