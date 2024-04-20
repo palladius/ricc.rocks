@@ -1,5 +1,4 @@
 ---
-# type: docs
 title: 🚈 Sebastian l'intrepido tramviere zurighese 🏴󠁧󠁢󠁳󠁣󠁴󠁿 and  🦒 Rara
 date: 2024-04-20T11:48:51+01:00
 featured: true

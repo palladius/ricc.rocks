@@ -12,7 +12,7 @@ images:
   - image: ricc-bimbi-casa.jpeg
     caption: Ricc and kids at home
   - image: ricc-family-xmas-piano.jpg
-  - image:       riccardo-aj-ironman-zurigo.jpeg
+  - image: riccardo-aj-ironman-zurigo.jpeg
   - image: riccardo-plitvice-famiglia.jpeg
 
   # - image: beautiful.jpg
