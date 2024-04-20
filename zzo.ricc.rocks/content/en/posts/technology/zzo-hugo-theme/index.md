@@ -151,7 +151,7 @@ YouTube Aos Ricc
 
 Twitter Simple Shortcode
 
-{{< twitter_simple 1617900746967773190 >}}
+{{< twitter_simple user="palladius" id="1617900746967773190" >}}
 
 Riccardo tweet: https://twitter.com/palladius/status/1617900746967773190
 

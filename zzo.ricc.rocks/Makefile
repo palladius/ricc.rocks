@@ -1,6 +1,11 @@
 
+build:
+	echo Riccardo questo e quel che Netlify runna..
+	hugo --minify
+
 help:
 	echo Read the docs for Hugo and recipe for cocktail.
+
 
 run:
 	hugo server --disableFastRender
