@@ -2,7 +2,7 @@
 # type: docs
 title: 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭
 date: 2024-04-20T11:48:51+01:00
-featured: false
+featured: true
 draft: false
 comment: true
 toc: true
@@ -11,14 +11,16 @@ pinned: false
 carousel: false
 series:
 categories: []
-tags: [Gemini, genai, family]
+tags: [Gemini, genai, family, pbt, switzerland]
 images:
 - /images/articles/london-airport.jpg
 meta_image: featured-sample.jpg # This is for ZZO
-# (generated with Gemini Ultra)
+# (generated with Gemini Pro as pbt)
 # Write an opening scene for a fantasy fiction novel set in a steampunk 18th century. Be descriptive and historically accurate. Avoid anachronism. The scene should involve Sebastian, a veryyoung tram driver in Zurich on a quest to understand the nature of knowledge and learning. Write in the style of Douglas Adams. Build mystery throughout the scene and end with an unexpected revelation. Write in Italian.
 # Generated with Gemini Ultra.
 ---
+
+## Prima parte
 
 Un odore acre di carbone e olio di balena invadeva le narici di Sebastian mentre si issava sul predellino del tram a vapore, ancora un bambino con la curiosità che gli scintillava negli occhi color ambra. Zurigo, avvolta nella nebbia mattutina, pareva una distesa di merletti vaporosi. In lontananza, il rintocco delle campane della chiesa di Grossmünster si mescolava al sibilo continuo delle macchine a vapore, un canto metallico che pulsava al cuore della città.
 
@@ -30,6 +32,7 @@ Guidando il tram lungo la Limmatquai, Sebastian sfiorò con lo sguardo la biblio
 
 Saltellò giù dal predellino e corse verso la biblioteca, la pergamena stretta nella mano come un talismano. Raggiunta l'imponente scalinata d'ingresso, si fermò un attimo. Un brivido gli percorse la schiena, ma non era il freddo dell'aprile zurighese. Era la sensazione di essere sull'orlo di qualcosa di immensamente importante. Spingendo la pesante porta di quercia, Sebastian entrò nell'antro del sapere, ignaro del fatto che la conoscenza che cercava non si trovava sui polverosi scaffali, ma pulsava già in suo possesso, segretamente nascosta all'interno della misteriosa pergamena.
 
+## Seconda parte
 
 La pesante porta di quercia si aprì con un gemito, inghiottendo Sebastian in un vortice di silenzio e polvere. L'aria era densa di odore di carta vecchia e inchiostro, come se le stesse mura sussurrassero storie dimenticate da secoli. Sebastian, con la sua pergamena stretta al petto come un tesoro, si avventurò tra i labirinti di scaffali carichi di volumi, i suoi piccoli passi che risuonavano nella vastità della biblioteca.
 
