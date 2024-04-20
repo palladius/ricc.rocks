@@ -32,7 +32,7 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 ## Twitter Simple Shortcode
 
-{{< twitter_simple user="palladius" id="1617900746967773190" >}}
+removed: 5:02:38 PM: ERROR 2024/04/20 15:02:38 Failed to get JSON resource "https://api.twitter.com/1/statuses/oembed.json?id=&omit_script=true": Failed to retrieve remote file: Not Found, body: "{\"errors\":[{\"message\":\"Sorry, that page does not exist\",\"code\":34}]}"
 
 ==> https://twitter.com/palladius/status/1617900746967773190
 
