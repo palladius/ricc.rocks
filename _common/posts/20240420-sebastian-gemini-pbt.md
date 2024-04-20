@@ -1,6 +1,6 @@
 ---
 # type: docs
-title: 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭
+title: 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt)
 date: 2024-04-20T11:48:51+01:00
 featured: true
 draft: false
