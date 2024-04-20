@@ -20,6 +20,9 @@ meta_image: featured-sample.jpg # This is for ZZO
 # Generated with Gemini Ultra.
 ---
 
+**Note**: *This was created with Gemini*.
+**Prompt**: *Write an opening scene for a fantasy fiction novel set in a steampunk 18th century. Be descriptive and historically accurate. Avoid anachronism. The scene should involve Sebastian, a veryyoung tram driver in Zurich on a quest to understand the nature of knowledge and learning. Write in the style of Douglas Adams. Build mystery throughout the scene and end with an unexpected revelation. Write in Italian.*
+
 ## Prima parte
 
 Un odore acre di carbone e olio di balena invadeva le narici di Sebastian mentre si issava sul predellino del tram a vapore, ancora un bambino con la curiosità che gli scintillava negli occhi color ambra. Zurigo, avvolta nella nebbia mattutina, pareva una distesa di merletti vaporosi. In lontananza, il rintocco delle campane della chiesa di Grossmünster si mescolava al sibilo continuo delle macchine a vapore, un canto metallico che pulsava al cuore della città.

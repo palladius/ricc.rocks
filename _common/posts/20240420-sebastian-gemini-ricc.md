@@ -15,11 +15,12 @@ tags: [Gemini, genai, family, ricc, switzerland]
 images:
 #- /images/articles/london-airport.jpg
 - /gallery/riccardo-family/Screen%20Shot%202021-04-07%20at%204.00.10%20PM.png
-meta_image: featured-sample.jpg # This is for ZZO
+meta_image: gallery/riccardo-family/Screen%20Shot%202021-04-07%20at%204.00.10%20PM.png # This is for ZZO
 # (generated with Gemini Ultra as ricc)
 # Write an opening scene for a fantasy fiction novel set in a steampunk 18th century. Be descriptive and historically accurate. Avoid anachronism. The scene should involve Sebastian, a veryyoung tram driver in Zurich on a quest to understand the nature of knowledge and learning. Write in the style of Douglas Adams. Build mystery throughout the scene and end with an unexpected revelation. Write in Italian.
-
 ---
+
+**Note**: *This was created with Gemini*.
 
 ## Scena di apertura: Sebastian e il Tram Misterioso (Ispirazione Steampunk/Adams)
 
