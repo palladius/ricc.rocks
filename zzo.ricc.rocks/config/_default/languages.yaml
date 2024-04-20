@@ -2,11 +2,11 @@ en:
   title: Riccardo's 💛 Blog
   languageName: English
   weight: 1
-  languagedir: ltr
+  #languagedir: ltr
   contentdir: content/en
 it:
   title: "Riccardo 💛 ZZO Blog"
   languageName: Italiano
   weight: 2
-  languagedir: ltr
+  #languagedir: ltr
   contentdir: content/it
