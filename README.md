@@ -1,5 +1,7 @@
  [![hugo + netlify](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1656562989/template_1_edyp8b.png)](https://ntl.fyi/3P9w1mr)
 
+ [![ricc.rocks Netlify Status](https://api.netlify.com/api/v1/badges/444a5ada-1134-4e5c-9691-3a4a33799ab4/deploy-status)](https://app.netlify.com/sites/ricc-zzo/deploys)
+
 # Ciao da Riccardo
 
 This my 2023 attempt at an auto-managed Hugo website.
@@ -58,3 +60,9 @@ Abandoned. Moved to .vecchiume/ .
 Still populated here: https://hugo-ananke-vecchiume.netlify.app/
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke-vecchiume/deploys)
 
+
+
+## Does it compile?
+
+*  [![ZZO ricc.rocks Netlify Status](https://api.netlify.com/api/v1/badges/444a5ada-1134-4e5c-9691-3a4a33799ab4/deploy-status)](https://app.netlify.com/sites/ricc-zzo/deploys)
+* [![Hugo Bootstrap Netlify Status](https://api.netlify.com/api/v1/badges/0441c68e-204c-4020-aebf-1a2afa7420e4/deploy-status)](https://app.netlify.com/sites/hugo-bootstrap-ricc-rocks/deploys)
