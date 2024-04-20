@@ -1,6 +1,6 @@
 ---
 title: "Getting Swiss 🇨🇭 nationality: learning German 🇩🇪"
-date: 2023-02-17T10:51:52Z
+date: 2024-04-17T10:51:52Z
 draft: false
 tags:
 - language
@@ -56,9 +56,19 @@ Now, I've got a lot of tips from colleagues. Some random tips:
 
 ## Anki
 
-After an initial frustration using the tgool, I came to like it. I have the app installed on my Mac, downloaded the A1 and B1 word list (A1 is quite easy and fun, while B2 is like a cat attached to your testicles, as we say in Bologna). Word list is in alpha order, so tghe first 2 days I've leafrnt all about *ab-something* (which reminds me of Young Frankenstein 😬).
+After an initial frustration using the tgool, I came to like it. I have the app installed on my Mac, downloaded the A1 and B1 word list (A1 is quite easy and fun, while B2 is like a cat attached to your testicles, as we say in Bologna). Word list is in alpha order, so the first 2 days I've learnt all about *ab-something* (which reminds me of Young Frankenstein 😬): *ab-holen*, *ab-fall*, *ab-sendung*, *ab-norme* 🧌 - and so on.
+
+I found out I learn more by looking at the etimology (eg, etimology of [*holen*](https://en.wiktionary.org/wiki/holen#German) is the same of *to haul* - I'll never forget that!)
 
 # 3. The B1 exam in Frauenfeld
+
+This went well. I was paired to an asian lady who could barely speak English and German but worked A LOT to prepare.
+I kind of improvised all. We were asked to organize together a trip with our family to the Bodensee
+and I just applied common sense which the teachers seemed to appreciate, while her German was much better but she was clesarly repeating something she memorized. She didn't like me improvising, I can tell you!
+
+Anyhow, I got promoted with 70%, close to the minimum to pass.
+
+Overall it was a terrible and a lovely experience at the same time.
 
 # 4. The Stadt Zurich exam
 

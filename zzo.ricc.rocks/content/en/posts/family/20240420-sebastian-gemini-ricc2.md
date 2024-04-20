@@ -104,3 +104,4 @@ Rara insegnava a Sebastian l'importanza della fantasia e della creatività, ment
 
 Sembra che ZZO tagli il secondo H2.
 
+Se la storia vi piace, ditemi come continuarla :)
