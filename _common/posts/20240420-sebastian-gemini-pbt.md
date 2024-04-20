@@ -1,15 +1,15 @@
 ---
 # type: docs
-title: 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt)
+title: 💦 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt)
 date: 2024-04-20T11:48:51+01:00
-featured: true
+featured: false
 draft: false
 comment: true
 toc: true
 reward: true
 pinned: false
 carousel: false
-series:
+#series:
 categories: []
 tags: [Gemini, genai, family, pbt, switzerland]
 images:
