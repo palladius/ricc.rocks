@@ -8,3 +8,4 @@ resources/
 .echodo_history
 public/
 *.code-workspace
+.ondir.was.here.touch
