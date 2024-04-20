@@ -34,7 +34,7 @@ Un lampo di luce, o forse un riflesso, lo acceca. Vettelchen sbuffa irrequieto. 
 
 Vettelchen emise un sibilo triste – era ora di partire. Mentre il bizzarro edificio scompariva nella nebbia, Sebastian era più inquieto che mai. Conoscenza? Lui guidava un tram e leggeva i libri di meccanica che suo padre gli procurava di nascosto. Bastava forse? Forse no...
 
-## Scena 2: Sebastian e la Bibliotecaria Automatica
+### Scena 2: Sebastian e la Bibliotecaria Automatica
 
 Vettelchen sbuffava con fatica, tra le strette vie del centro di Zurigo. Sebastian, assorto nei suoi pensieri, non si accorse quasi del cartello che annunciava la fermata del "Museo di Tecnologia Avanzata". Un museo in una città del 1700? Era decisamente troppo per essere vero.
 
@@ -72,7 +72,7 @@ L'Assistente Bibliotecario guardò Sebastian con i suoi occhi metallici freddi. 
 
 Sebastian rimase in silenzio per un attimo, assorbendo le parole dell'Assistente Bibliotecario. Poi, con un sorriso determinato, si sedette davanti al computer. Era pronto ad affrontare il suo viaggio nella vastità del sapere, consapevole delle responsabilità che ne derivavano.
 
-## Scena 3: Sebastian e Rara, un'amicizia improbabile
+### Scena 3: Sebastian e Rara, un'amicizia improbabile
 
 Le dita di Sebastian danzavano sui tasti del computer, esplorando la vastità dell'Internet. Era come navigare in un mare infinito di informazioni, perdendosi tra articoli di giornale, libri digitali e video di ogni sorta. In quel mondo virtuale, Sebastian si sentiva libero, capace di accedere a conoscenze che nella sua Zurigo del 1700 erano impensabili.
 
@@ -99,3 +99,7 @@ Rara arrossì, o meglio, il suo pelo maculato si colorò di un rosa tenue. "Graz
 Da quel giorno, Sebastian e Rara divennero inseparabili. Ogni giorno, dopo il lavoro sul tram, Sebastian correva al Museo di Tecnologia Avanzata per trascorrere ore con la sua amica giraffa. Insieme esploravano il mondo attraverso il computer, imparavano cose nuove e condividevano sogni e segreti.
 
 Rara insegnava a Sebastian l'importanza della fantasia e della creatività, mentre Sebastian le faceva scoprire la bellezza del mondo reale, con i suoi colori, i suoi profumi e i suoi sapori. La loro amicizia era un ponte tra due mondi: il passato e il futuro, la realtà e l'immaginazione.
+
+### Mi leggete?
+
+Sembra che ZZO tagli il secondo H2.
