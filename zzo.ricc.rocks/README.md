@@ -12,3 +12,8 @@ Final examples for MJ
 
 *  content/en/gallery/midjourney/ : gallery article.
 *  static/gallery/midjourney/ : has all the pics.
+
+## Does it compile?
+
+* ZZO TODO
+* [![Hugo Bootstrap Netlify Status](https://api.netlify.com/api/v1/badges/0441c68e-204c-4020-aebf-1a2afa7420e4/deploy-status)](https://app.netlify.com/sites/hugo-bootstrap-ricc-rocks/deploys)
