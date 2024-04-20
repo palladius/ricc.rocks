@@ -31,3 +31,6 @@
 [submodule "zzo.ricc.rocks/themes/zzo"]
 	path = zzo.ricc.rocks/themes/zzo
 	url = https://github.com/zzossig/hugo-theme-zzo
+[submodule "themes/zzo"]
+	path = themes/zzo
+	url = https://github.com/zzossig/hugo-theme-zzo
