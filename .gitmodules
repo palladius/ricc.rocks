@@ -13,3 +13,6 @@
 [submodule "themes/tranquilpeak"]
 	path = themes/tranquilpeak
 	url = https://github.com/kakawait/hugo-tranquilpeak-theme.git
+[submodule "themes/zzo"]
+	path = zzo.ricc.rocks/themes/zzo
+	url = https://github.com/zzossig/hugo-theme-zzo
