@@ -1,6 +1,10 @@
 # git submodule add https://github.com/zzossig/hugo-theme-zzo themes/zzo
-# git submodule add https://github.com/zzossig/hugo-theme-zzo zzo.rick.rocks/themes/zzo
+# git submodule add https://github.com/zzossig/hugo-theme-zzo zzo.ricc.rocks/themes/zzo
 # git submodule update --recursive
+# If you make mistake: https://gist.github.com/myusuf3/7f645819ded92bda6677
+# git submodule deinit -f  zzo.rick.rocks/themes/zzo
+# rm -rf .git/modules/zzo.rick.rocks/themes/zzo
+# git rm -f zzo.rick.rocks/themes/zzo
 
 [submodule "themes/ananke"]
 	path = themes/ananke
@@ -22,4 +26,7 @@
 # 	url = https://github.com/zzossig/hugo-theme-zzo
 [submodule "zzo.rick.rocks/themes/zzo"]
 	path = zzo.rick.rocks/themes/zzo
+	url = https://github.com/zzossig/hugo-theme-zzo
+[submodule "zzo.ricc.rocks/themes/zzo"]
+	path = zzo.ricc.rocks/themes/zzo
 	url = https://github.com/zzossig/hugo-theme-zzo
