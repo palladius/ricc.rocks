@@ -2,6 +2,8 @@
 
  [![ricc.rocks Netlify Status](https://api.netlify.com/api/v1/badges/444a5ada-1134-4e5c-9691-3a4a33799ab4/deploy-status)](https://app.netlify.com/sites/ricc-zzo/deploys)
 
+TODO: add Sessionize: https://sessionize.com/riccardo-carlesso
+
 # Ciao da Riccardo
 
 This my 2023 attempt at an auto-managed Hugo website.
