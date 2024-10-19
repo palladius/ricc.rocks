@@ -12,13 +12,13 @@ A big thanks to my amazing wife ❤️ for letting me take a solo scuba diving t
 
 **Raja Ampat's Beauty**
 
-  # Replace with actual image (check ZZO documentation for image syntax)
+<!-- Replace with actual image (check ZZO documentation for image syntax) -->
 
 I encountered some incredible marine life, including a rare animal facing extinction in the coming decades. I also spotted a beautiful sea turtle while diving near Sauwandarek village.
 
 **Life on Wai Island**
 
-  # Replace with actual image (check ZZO documentation for image syntax)
+  <!-- Replace with actual image (check ZZO documentation for image syntax) -->
 
 This is my temporary home on Wai Island, a beautiful spot to explore.
 
@@ -34,13 +34,13 @@ After a morning of diving, I found myself drawn to coding.  I stumbled upon the 
 
 Check out Riccardo greeting this Wobbegong!
 
-  # Replace with actual image (check ZZO documentation for image syntax)
+  <!-- Replace with actual image (check ZZO documentation for image syntax) -->
 
 **Exploring Wai Island**
 
 Exploring the stunning Wai Island with Congee by my side. PiaynemoPyaynemo is a must-visit for any Raja Ampat trip!
 
-  # Replace with actual image (check ZZO documentation for image syntax)
+  <!-- Replace with actual image (check ZZO documentation for image syntax) -->
 
 **Post-Trip Ponderings**
 
