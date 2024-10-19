@@ -7,7 +7,7 @@ author: Riccardo Carlesso
 read_time: 3  # Minutes
 # categories: Add categories if applicable (e.g., ruby, rails, gcp)
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
-Tags: qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain
+#Tags: qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain
 ---
 ([Original article on Medium](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b))
 
