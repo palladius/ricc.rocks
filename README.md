@@ -2,7 +2,9 @@
 
  [![ricc.rocks Netlify Status](https://api.netlify.com/api/v1/badges/444a5ada-1134-4e5c-9691-3a4a33799ab4/deploy-status)](https://app.netlify.com/sites/ricc-zzo/deploys)
 
-TODO: add Sessionize: https://sessionize.com/riccardo-carlesso
+Sessionize: https://sessionize.com/riccardo-carlesso
+
+Self: https://github.com/palladius/ricc.rocks/
 
 # Ciao da Riccardo
 
