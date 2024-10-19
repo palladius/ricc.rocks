@@ -6,6 +6,8 @@ TODO: add Sessionize: https://sessionize.com/riccardo-carlesso
 
 # Ciao da Riccardo
 
+Self: https://github.com/palladius/ricc.rocks
+
 This my 2023 attempt at an auto-managed Hugo website.
 I might be porting soon my [personal website](http://www.palladius.it/) here.
 Since I can't decide among a few different modules, I'm testing a number of those in terms of:
