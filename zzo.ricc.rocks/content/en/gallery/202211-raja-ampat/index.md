@@ -1,6 +1,6 @@
 ---
 title: Scuba diving in Raja Ampat (Indonesia)
-date: 2022-11-31T10:20:16+09:00
+date: '2022-11-31T10:20:16'
 #description: Ridge and I in Madeira..
 type: gallery
 mode: at-once
