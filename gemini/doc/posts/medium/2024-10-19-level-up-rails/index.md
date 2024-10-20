@@ -1,5 +1,5 @@
 ---
-title: "💦♊ [Geminocks] Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive"
+title: "♊ [Geminocks] Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive"
 date: 2024-10-19  # Today's date
 layout: single  # Assuming single.html for blog posts in ZZO theme
 # Optional fields (change as needed)
@@ -8,6 +8,7 @@ read_time: 3  # Minutes
 # categories: Add categories if applicable (e.g., ruby, rails, gcp)
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
 #Tags: qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain
+canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
 ---
 ([Original article on Medium](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b))
 

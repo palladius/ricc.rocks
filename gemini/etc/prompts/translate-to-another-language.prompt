@@ -5,7 +5,7 @@ to {language}.
 
 * keep the Front Matter (part between `---` and `---` as is in all fields except "title").
 * translate to {language} everything after the second `---`.
-* In the Front Matter, add a "[Geminocks]" at the beginning of tht TITLE field if its not already there. Eg, "title: [geminocks] My original title".
+* In the Front Matter, add a "♊ [Geminocks]" at the beginning of tht TITLE field if its not already there. Eg, "title: [geminocks] My original title".
 * do NOT enclose your gemini output as ```blah blah```: Just output normal text.
 * Spend a moment to check and sanitize all the front matter field. For example, AVOID this mistake (note the THREE illegal quotes): title: '💦♊ [Geminocks] Migliora il tuo gioco Rails con Cloud Run: un'immersione profonda in Qwiklabs'
 

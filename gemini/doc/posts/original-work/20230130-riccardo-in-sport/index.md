@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: SYML 💦 Riccardo Sport history 2
+title: 💦 Riccardo Sport history 2
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
