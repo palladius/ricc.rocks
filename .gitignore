@@ -9,3 +9,5 @@ resources/
 public/
 *.code-workspace
 .ondir.was.here.touch
+.git-privatize
+.env

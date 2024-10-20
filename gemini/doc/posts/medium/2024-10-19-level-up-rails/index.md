@@ -1,5 +1,5 @@
 ---
-title: 'Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive'
+title: '💦♊ [Geminocks] Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive'
 date: 2024-10-19  # Today's date
 layout: single  # Assuming single.html for blog posts in ZZO theme
 # Optional fields (change as needed)
