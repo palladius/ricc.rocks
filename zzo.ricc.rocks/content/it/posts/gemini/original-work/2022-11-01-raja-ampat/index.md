@@ -1,6 +1,6 @@
 ---
 # ce ne sono 2 di queste maledette indonesie
-title: "🇮🇹♊ [Geminocks] La mia vacanza subacquea 🤿 in Indonesia nel 2022"
+title: "🇮🇹 ♊ [Geminocks] La mia vacanza subacquea 🤿 in Indonesia (deduplicata!)"
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
@@ -13,11 +13,8 @@ tags:
 canonicalURL: https://medium.com/p/cf851f0f588/edit
 hidden: false
 # ANANKE :)
-#featured_image: /images/hugo-cocktail.jpg
 featured_image: "scuba--jo09uvup59g.jpg"
-# /images/scuba--tnomzk5zfnr.jpg
-#image: images/scuba--tnomzk5zfnr.jpg
-image: "scuba--jo09uvup59g.jpg" # tartaruyga
+image: "scuba--jo09uvup59g.jpg" # tartaruga
 #image: images/hugo-cocktail.jpg
 #image: imagez/riccardo-smiles-swim-ironman.jpeg
 #image: images/feature2/color-palette.png
@@ -60,13 +57,20 @@ Nota: questa è un'esportazione da [GDoc].
 
 
 
+
 # La mia esperienza subacquea a Raja Ampat..
 
 .. e come non ho potuto resistere a programmare un'app scooby con Ruby on Rails
 
+
+`TODO(ricc): Aggiungi questi due fantastici video in qualche modo`
+
+* https://studio.youtube.com/video/QW4XBtibFnk/edit
+* https://studio.youtube.com/video/AG_IYhYl5u0/edit
+
 ---
 
-Nell'ottobre del 2022, la mia ❤️ moglie mi ha permesso di andare a fare immersioni subacquee da solo a Raja Ampat, considerato il paradiso per i subacquei.![image](scuba--jo09uvup59g.jpg)
+Nell'ottobre del 2022, la mia ❤️ moglie mi ha permesso di andare a fare immersioni subacquee da solo a Raja Ampat, considerato il paradiso dei subacquei.![image](scuba--jo09uvup59g.jpg)
 
 Un animale bellissimo e raro che potrebbe estinguersi tra qualche decennio, e accanto a lui una bellissima tartaruga marina nel villaggio di [Sauwandarek](https://www.google.com/maps/place/Sauwandarek+Village/@-0.5858766,130.6122214,13.42z/data=!4m13!1m7!3m6!1s0x2d5c3eaaccb47097:0x7851bd844c4cdf44!2sIsole+Raja+Ampat!3b1!8m2!3d-1.0320468!4d130.5052176!3m4!1s0x0:0xf11684dad6130be3!8m2!3d-0.5903592!4d130.6023098)
 
@@ -91,7 +95,7 @@ Mi svegliavo tra le 5 e le 6. Alle 5 la luce iniziava a diffondersi e alle 5:30 
 
 #### L'app
 
-Ho iniziato a fare immersioni al mattino e
+Ho iniziato a fare immersioni la mattina e
 
 #### Le immersioni
 

@@ -17,7 +17,8 @@ extensions = ['zzo']
 
 #languages = ['en', 'it', 'fr', 'de]
 #languages = ['it', 'fr']
-languages = ['it']
+#languages = ['it']
+languages = ['it', 'de']
 
 many_articles = MAX_ARTICLES > 5
 

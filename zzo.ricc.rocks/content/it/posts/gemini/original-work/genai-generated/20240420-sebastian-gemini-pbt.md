@@ -1,6 +1,6 @@
 ---
 # type: docs
-title: ♊ [Geminocks] Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt symlink)
+title: 🇮🇹 ♊ [Geminocks] Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt symlink)
 date: 2024-04-20T11:48:51+01:00
 featured: false
 draft: false
@@ -11,14 +11,20 @@ pinned: false
 carousel: false
 #series:
 categories: []
-tags: [Gemini, genai, family, pbt, switzerland, symlink]
+tags: [Gemini, genai, family, pbt, switzerland, geminocks, Italian]
 images:
 - /images/articles/london-airport.jpg
 meta_image: featured-sample.jpg # This is for ZZO
+image: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png
+
+# (generated with Gemini Pro as pbt)
+# Write an opening scene for a fantasy fiction novel set in a steampunk 18th century. Be descriptive and historically accurate. Avoid anachronism. The scene should involve Sebastian, a veryyoung tram driver in Zurich on a quest to understand the nature of knowledge and learning. Write in the style of Douglas Adams. Build mystery throughout the scene and end with an unexpected revelation. Write in Italian.
+# Generated with Gemini Ultra.
 ---
 
 **Nota**: *Questo è stato creato con Gemini*.
-**Prompt**: *Scrivi una scena di apertura per un romanzo fantasy ambientato in un'epoca steampunk del XVIII secolo. Sii descrittivo e storicamente accurato. Evita gli anacronismi. La scena dovrebbe coinvolgere Sebastian, un giovanissimo conducente di tram a Zurigo in cerca di comprendere la natura della conoscenza e dell'apprendimento. Scrivi nello stile di Douglas Adams. Costruisci mistero durante la scena e termina con una rivelazione inaspettata. Scrivi in italiano.*
+
+**Prompt**: *Scrivi una scena di apertura per un romanzo fantasy ambientato in un XVIII secolo steampunk. Sii descrittivo e storicamente accurato. Evita anacronismi. La scena dovrebbe coinvolgere Sebastian, un giovanissimo conducente di tram a Zurigo in cerca di comprendere la natura della conoscenza e dell'apprendimento. Scrivi nello stile di Douglas Adams. Costruisci il mistero durante la scena e concludi con una rivelazione inaspettata. Scrivi in italiano.*
 
 ## Prima parte
 

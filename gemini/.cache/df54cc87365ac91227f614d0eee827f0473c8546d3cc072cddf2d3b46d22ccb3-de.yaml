@@ -1,0 +1,38 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F4A6 Family \U0001F468‍\U0001F469‍\U0001F467‍\U0001F466\"\ndate:
+  2021-05-20T21:17:43+01:00\ndraft: false\ntags:\n- symlink\n- family\n# Categories
+  is feinitely used by STACK framework:\ncategories:\n- symlink\n- family\n- personal\nkeywords:\n-
+  personal\n- family\n- Riccardo\n- Carlesso\n- famiglia\n#image: /images/mtg-clone.jpg\n#images:\n#-
+  tranquilpeak-showcase.png\n#- zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n---\n\nTODO
+  embed local video:  2023-02-03 Capriola as a Service.mp4\n\n* [Silly video with
+  my kid](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi)
+  (so silly, but they get lots of positive votes)\n\n## Book\n\nI've also started
+  writing a Book of maths a few years back, when in Calabria with no internet, and
+  I just wanted to dump\nmemoery and ideas in a LateX document, and here's the output:\n\n*
+  My book on github: [palladius/libromate](https://github.com/palladius/libromate)
+  Mathematical Analysis in LaTEX:\n\nNumbers, Derivation/Limits/Integrals, Taylor,
+  the usual stuff, but in Italian, sorry)\n\n## Podcast\n\n* I'm investigating the
+  idea of starting a podcast.\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1E9\U0001F1EA ♊ [Geminocks] Familie \U0001F468‍\U0001F469‍\U0001F467‍\U0001F466\"\ndate:
+  2021-05-20T21:17:43+01:00\ndraft: false\ntags:\n- geminocks\n- German\n- symlink\n-
+  family\n# Categories is feinitely used by STACK framework:\ncategories:\n- symlink\n-
+  family\n- personal\nkeywords:\n- personal\n- family\n- Riccardo\n- Carlesso\n- famiglia\n#image:
+  /images/mtg-clone.jpg\n#images:\n#- tranquilpeak-showcase.png\n#- zzo-screenshot.png\n#
+  tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n---\n\nTODO
+  Lokales Video einbetten:  2023-02-03 Capriola as a Service.mp4\n\n* [ Albernes Video
+  mit meinem Kind](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi)
+  (sehr albern, aber sie bekommen viele positive Stimmen)\n\n## Buch\n\nIch habe vor
+  ein paar Jahren angefangen, ein Mathematikbuch zu schreiben, als ich in Kalabrien
+  ohne Internet war und nur Erinnerungen und Ideen in einem LateX-Dokument speichern
+  wollte, und hier ist das Ergebnis:\n\n* Mein Buch auf Github: [palladius/libromate](https://github.com/palladius/libromate)
+  Mathematische Analysis in LaTEX:\n\nZahlen, Ableitung/Grenzwerte/Integrale, Taylor,
+  die üblichen Dinge, aber auf Italienisch, sorry)\n\n## Podcast\n\n* Ich beschäftige
+  mich mit der Idee, einen Podcast zu starten.\n"
+model: gemini-1.5-pro
+code_version: '1.1'

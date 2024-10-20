@@ -33,6 +33,7 @@ def short_lang_to_long(lang:)
   return 'Italian' if lang == 'it'
   return 'English' if lang == 'en'
   return 'French' if lang == 'fr'
+  return 'German' if lang == 'de'
   raise "Unknown language: #{lang}"
 end
 

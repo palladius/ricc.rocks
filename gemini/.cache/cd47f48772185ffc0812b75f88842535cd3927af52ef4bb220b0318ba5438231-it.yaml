@@ -1,0 +1,69 @@
+---
+input: "---\n# ce ne sono 2 di queste maledette indonesie\ntitle: \"My Scuba \U0001F93F
+  holiday in Indonesia (deduplicated!)\"\ndate: 2023-01-30T21:17:43+01:00\ndraft:
+  false\ntags:\n- personal\n- sport\n- scuba\n- rubyonrails\ncanonicalURL: https://medium.com/p/cf851f0f588/edit\nhidden:
+  false\n# ANANKE :)\nfeatured_image: \"scuba--jo09uvup59g.jpg\"\nimage: \"scuba--jo09uvup59g.jpg\"
+  # tartaruga\n#image: images/hugo-cocktail.jpg\n#image: imagez/riccardo-smiles-swim-ironman.jpeg\n#image:
+  images/feature2/color-palette.png\nCategories:\n#- symlink\n- holidays\n#- rajaamapt\n-
+  rubyonrails\n- code\nimages:\n- scuba--rn7opz2oo.jpg\n# - /scuba--rn7opz2oo.jpg\n#
+  - images/scuba--tnomzk5zfnr.jpg\n# - /images/scuba--tnomzk5zfnr.jpg\n# - hugo-cocktail.jpg\n#
+  - /images/riccardo/riccardo-smiles-swim-ironman.jpeg\n# - \"scuba--4kl75dqag8l.jpg\"\n#
+  - \"scuba--4rx3qr0wnkk.jpg\"\n# - \"scuba--4s5obbog0je.jpg\"\n# - \"scuba--7qqeh3owtge.jpg\"\n#
+  - \"scuba--92kef42brna.jpg\"\n# - \"scuba--jo2nuuxek58.jpg\"\n# - \"scuba--jo09uvup59g.jpg\"\n#
+  - \"scuba--ks67tanqqui.jpg\"\n# - \"scuba--n82h94fc7s.jpg\"\n# - \"scuba--tnomzk5zfnr.jpg\"\n---\nSelf:
+  [https://medium.com/p/cf851f0f588/edit](https://medium.com/p/cf851f0f588/edit)\nStatus:
+  draft\nVersion: **0.1**\n\nNote: this is a [GDoc export].\n---\n\n<!--\n{{with .Resources.GetMatch
+  \"scuba--rn7opz2oo.jpg\"}}\n  <img src=\"{{ .RelPermalink }}\" width=\"{{ .Width
+  }}\" height=\"{{ .Height }}\">\n{{end}}\n-->\n\n\n\n\n# My Scuba Diving experience
+  in Raja Ampat..\n\n.. and how I couldn't resist coding a Ruby on Rails scooby app\n\n\n`TODO(ricc):
+  Add these two awesome videos somewhat`\n\n* https://studio.youtube.com/video/QW4XBtibFnk/edit\n*
+  https://studio.youtube.com/video/AG_IYhYl5u0/edit\n\n---\n\nIn October '22, my ❤️
+  wife allowed me to go scuba diving by myself in Raja Ampat, consider the paradise
+  for divers.![image](scuba--jo09uvup59g.jpg)\n\nA beautiful and rare animal who could
+  be extinct in a few decades, and beside him a beautiful sea turtle in[ Sauwandarek](https://www.google.com/maps/place/Sauwandarek+Village/@-0.5858766,130.6122214,13.42z/data=!4m13!1m7!3m6!1s0x2d5c3eaaccb47097:0x7851bd844c4cdf44!2sIsole+Raja+Ampat!3b1!8m2!3d-1.0320468!4d130.5052176!3m4!1s0x0:0xf11684dad6130be3!8m2!3d-0.5903592!4d130.6023098)
+  village\n\n### The trip\n\n![image](scuba--rn7opz2oo.jpg)\n\n\nThis is Raja Ampat,
+  west of Indonesia\n\n### The bungalow\n\n![image](scuba--tnomzk5zfnr.jpg)\n\nThis
+  is Wai island\n\n## My typical day\n\nI would wake up between 5 and 6. At 5, the
+  light would strat spreading, and at 530 the electricity would be available\n\n-
+  \ 05:00\n\n#### The app\n\nI started scuba diving in the morning and\n\n#### The
+  diving\n\n![image](scuba--4rx3qr0wnkk.jpg)\n\n![image](scuba--4kl75dqag8l.jpg)\n\nRiccardo
+  saying hi to a Wobbegong!\n\n#### Around Wai island\n\naaa![image](scuba--7qqeh3owtge.jpg)\n\nCongee
+  and I in Piaynemo\n\n![image](scuba--92kef42brna.jpg)\n\nPyaynemo, the must go-to
+  destination for your RA trip.\n\n![image](scuba--4s5obbog0je.jpg)\n\n![image](scuba--ks67tanqqui.jpg)\n\n####
+  The learning\n\n![image](scuba--jo2nuuxek58.jpg)\n\n#### Conclusions\n\n![image](scuba--n82h94fc7s.jpg)\n"
+output: "---\n# ce ne sono 2 di queste maledette indonesie\ntitle: \"\U0001F1EE\U0001F1F9
+  ♊ [Geminocks] La mia vacanza subacquea \U0001F93F in Indonesia (deduplicata!)\"\ndate:
+  2023-01-30T21:17:43+01:00\ndraft: false\ntags:\n- personal\n- sport\n- scuba\n-
+  rubyonrails\n- geminocks\n- Italian\ncanonicalURL: https://medium.com/p/cf851f0f588/edit\nhidden:
+  false\n# ANANKE :)\nfeatured_image: \"scuba--jo09uvup59g.jpg\"\nimage: \"scuba--jo09uvup59g.jpg\"
+  # tartaruga\n#image: images/hugo-cocktail.jpg\n#image: imagez/riccardo-smiles-swim-ironman.jpeg\n#image:
+  images/feature2/color-palette.png\nCategories:\n#- symlink\n- holidays\n#- rajaamapt\n-
+  rubyonrails\n- code\nimages:\n- scuba--rn7opz2oo.jpg\n# - /scuba--rn7opz2oo.jpg\n#
+  - images/scuba--tnomzk5zfnr.jpg\n# - /images/scuba--tnomzk5zfnr.jpg\n# - hugo-cocktail.jpg\n#
+  - /images/riccardo/riccardo-smiles-swim-ironman.jpeg\n# - \"scuba--4kl75dqag8l.jpg\"\n#
+  - \"scuba--4rx3qr0wnkk.jpg\"\n# - \"scuba--4s5obbog0je.jpg\"\n# - \"scuba--7qqeh3owtge.jpg\"\n#
+  - \"scuba--92kef42brna.jpg\"\n# - \"scuba--jo2nuuxek58.jpg\"\n# - \"scuba--jo09uvup59g.jpg\"\n#
+  - \"scuba--ks67tanqqui.jpg\"\n# - \"scuba--n82h94fc7s.jpg\"\n# - \"scuba--tnomzk5zfnr.jpg\"\n---\nSelf:
+  [https://medium.com/p/cf851f0f588/edit](https://medium.com/p/cf851f0f588/edit)\nStatus:
+  bozza\nVersion: **0.1**\n\nNota: questa è un'esportazione da [GDoc].\n---\n\n<!--\n{{with
+  .Resources.GetMatch \"scuba--rn7opz2oo.jpg\"}}\n  <img src=\"{{ .RelPermalink }}\"
+  width=\"{{ .Width }}\" height=\"{{ .Height }}\">\n{{end}}\n-->\n\n\n\n\n# La mia
+  esperienza subacquea a Raja Ampat..\n\n.. e come non ho potuto resistere a programmare
+  un'app scooby con Ruby on Rails\n\n\n`TODO(ricc): Aggiungi questi due fantastici
+  video in qualche modo`\n\n* https://studio.youtube.com/video/QW4XBtibFnk/edit\n*
+  https://studio.youtube.com/video/AG_IYhYl5u0/edit\n\n---\n\nNell'ottobre del 2022,
+  la mia ❤️ moglie mi ha permesso di andare a fare immersioni subacquee da solo a
+  Raja Ampat, considerato il paradiso dei subacquei.![image](scuba--jo09uvup59g.jpg)\n\nUn
+  animale bellissimo e raro che potrebbe estinguersi tra qualche decennio, e accanto
+  a lui una bellissima tartaruga marina nel villaggio di [Sauwandarek](https://www.google.com/maps/place/Sauwandarek+Village/@-0.5858766,130.6122214,13.42z/data=!4m13!1m7!3m6!1s0x2d5c3eaaccb47097:0x7851bd844c4cdf44!2sIsole+Raja+Ampat!3b1!8m2!3d-1.0320468!4d130.5052176!3m4!1s0x0:0xf11684dad6130be3!8m2!3d-0.5903592!4d130.6023098)\n\n###
+  Il viaggio\n\n![image](scuba--rn7opz2oo.jpg)\n\n\nQuesta è Raja Ampat, a ovest dell'Indonesia\n\n###
+  Il bungalow\n\n![image](scuba--tnomzk5zfnr.jpg)\n\nQuesta è l'isola di Wai\n\n##
+  La mia giornata tipo\n\nMi svegliavo tra le 5 e le 6. Alle 5 la luce iniziava a
+  diffondersi e alle 5:30 l'elettricità era disponibile\n\n-  05:00\n\n#### L'app\n\nHo
+  iniziato a fare immersioni la mattina e\n\n#### Le immersioni\n\n![image](scuba--4rx3qr0wnkk.jpg)\n\n![image](scuba--4kl75dqag8l.jpg)\n\nRiccardo
+  saluta uno squalo tappeto!\n\n#### Intorno all'isola di Wai\n\naaa![image](scuba--7qqeh3owtge.jpg)\n\nCongee
+  e io a Piaynemo\n\n![image](scuba--92kef42brna.jpg)\n\nPyaynemo, la destinazione
+  da non perdere per il tuo viaggio a RA.\n\n![image](scuba--4s5obbog0je.jpg)\n\n![image](scuba--ks67tanqqui.jpg)\n\n####
+  L'apprendimento\n\n![image](scuba--jo2nuuxek58.jpg)\n\n#### Conclusioni\n\n![image](scuba--n82h94fc7s.jpg)\n"
+model: gemini-1.5-pro
+code_version: '1.1'
