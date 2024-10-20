@@ -1,9 +1,10 @@
 ---
-# TODO🚧
-title: Su di me
+#🚧 Testing moving ABOUT from singleton to translated.
+title: "About me" # It / EN
 description: "This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/"
 type: "about"
 date: "2023-02-01"
+#This is the ZZO version of Riccardo Rocks ring: https://ricc.rocks/
 image: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg
 meta_image: image.png
 tags:
@@ -11,10 +12,13 @@ tags:
 - site
 - italy
 - ricc
-
+- me
+# {{< box >}}
+# 🚧 under construction 🚧
+# {{< /box >}}
 ---
 
-Bella regaz
+`TODO(Ricc): This is currently under post. You ned to add the logic to copy this under ZZO/{LANG}/about/ Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.`
 
 Hi! I'm Riccardo, and I go by <tt>Palladius</tt> or just Ricc.
 

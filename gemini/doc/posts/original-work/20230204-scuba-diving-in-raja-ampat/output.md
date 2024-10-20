@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: SYML 💦 My Scuba 🤿 holiday in Indonesia
+title: "My Scuba 🤿 holiday in Indonesia"
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
@@ -32,7 +32,7 @@ Version: **0.1**
 
 Add these two awesome videos
 
-* https://studio.youtube.com/video/QW4XBtibFnk/edit 
+* https://studio.youtube.com/video/QW4XBtibFnk/edit
 * https://studio.youtube.com/video/AG_IYhYl5u0/edit
 ---
 
