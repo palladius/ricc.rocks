@@ -37,4 +37,5 @@ gemini-cp:
 	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
 	mkdir -p zzo.ricc.rocks/content/de/posts/gemini/
 	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/
+	rsync -avz gemini/doc/posts/medium/ zzo.ricc.rocks/content/en/posts/medium/
 
