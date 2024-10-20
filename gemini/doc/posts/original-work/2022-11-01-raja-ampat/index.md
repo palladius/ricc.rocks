@@ -11,11 +11,8 @@ tags:
 canonicalURL: https://medium.com/p/cf851f0f588/edit
 hidden: false
 # ANANKE :)
-#featured_image: /images/hugo-cocktail.jpg
 featured_image: "scuba--jo09uvup59g.jpg"
-# /images/scuba--tnomzk5zfnr.jpg
-#image: images/scuba--tnomzk5zfnr.jpg
-image: "scuba--jo09uvup59g.jpg" # tartaruyga
+image: "scuba--jo09uvup59g.jpg" # tartaruga
 #image: images/hugo-cocktail.jpg
 #image: imagez/riccardo-smiles-swim-ironman.jpeg
 #image: images/feature2/color-palette.png
@@ -55,6 +52,7 @@ Note: this is a [GDoc export].
   <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
 {{end}}
 -->
+
 
 
 

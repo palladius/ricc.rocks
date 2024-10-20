@@ -14,6 +14,8 @@ canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-
 
 Are you familiar with Cloud Skills Boost (formerly known as Qwiklabs)?
 
+![Riccardo Video on Youtube](<ricc qwiklab video.png>)
+
 In this video, I walk you through me executing the steps described in Ruby on Rails with PostgreSQL on Cloud Run on cloudskillsboost website, encountering a few bumps along the road, and fixing them.
 
 Plus, I’m going to demonstrate my particular and personal ToolChain, as a former bash/perl dev, so it might look peculiar to you.
