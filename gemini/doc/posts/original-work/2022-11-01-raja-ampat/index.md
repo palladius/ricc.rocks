@@ -1,6 +1,6 @@
 ---
 # ce ne sono 2 di queste maledette indonesie
-title: "My Scuba 🤿 holiday in Indonesia 2022"
+title: "My Scuba 🤿 holiday in Indonesia (deduplicated!)"
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
@@ -59,6 +59,12 @@ Note: this is a [GDoc export].
 # My Scuba Diving experience in Raja Ampat..
 
 .. and how I couldn't resist coding a Ruby on Rails scooby app
+
+
+`TODO(ricc): Add these two awesome videos somewhat`
+
+* https://studio.youtube.com/video/QW4XBtibFnk/edit
+* https://studio.youtube.com/video/AG_IYhYl5u0/edit
 
 ---
 
