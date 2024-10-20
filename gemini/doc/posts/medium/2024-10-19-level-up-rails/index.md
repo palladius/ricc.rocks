@@ -1,5 +1,5 @@
 ---
-title: "♊ [Geminocks] Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive"
+title: "Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive"
 date: 2024-08-15  # Today's date
 layout: single  # Assuming single.html for blog posts in ZZO theme
 # Optional fields (change as needed)
@@ -9,18 +9,18 @@ read_time: 3  # Minutes
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
 Tags: [qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain, skillsboost, cloudskillsboost ]
 canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
+
+# ![Riccardo Video on Youtube](/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png)
 ---
 
 ([Original article on Medium](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b))
 
-Are you familiar with Cloud Skills Boost (formerly known as Qwiklabs)?
+Are you familiar with [Cloud Skills Boost](https://www.cloudskillsboost.google/) (formerly known as Qwiklabs)?
 
 ![Riccardo Video on Youtube](ricc-qwiklab-video.png)
 
-![Riccardo Video on Youtube](/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png)
 
-
-In this video, I walk you through me executing the steps described in Ruby on Rails with PostgreSQL on Cloud Run on cloudskillsboost website, encountering a few bumps along the road, and fixing them.
+In **[this video](https://www.youtube.com/watch?v=vpPftSHE9kM)**, I walk you through me executing the steps described in Ruby on Rails with PostgreSQL on Cloud Run on cloudskillsboost website, encountering a few bumps along the road, and fixing them.
 
 Plus, I’m going to demonstrate my particular and personal ToolChain, as a former bash/perl dev, so it might look peculiar to you.
 

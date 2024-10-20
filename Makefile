@@ -38,4 +38,6 @@ gemini-cp:
 	mkdir -p zzo.ricc.rocks/content/de/posts/gemini/
 	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/
 	rsync -avz gemini/doc/posts/medium/ zzo.ricc.rocks/content/en/posts/medium/
-
+# TODO quando te la senti rwynca TUTTO e poi togli doppioni tipo Musica Famiglia etc..
+#rsync -avz gemini/doc/posts/TUTTO zzo.ricc.rocks/content/en/posts/TUTTO/
+# Magari prima crea scriptino per togliere chirurgicamente roba copincollata prima che bloati di brutto.
