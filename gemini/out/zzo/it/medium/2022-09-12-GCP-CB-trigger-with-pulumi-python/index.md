@@ -1,6 +1,6 @@
 ---
-title: "♊ [Geminocks] Setting a ⬣ Cloud Build trigger with \U0001F9F9Pulumi in \U0001F40D
-  Python"
+title: "[TODO] [it] ♊ [\U0001F38CGemiNoTrnsl] Setting a ⬣ Cloud Build trigger with
+  \U0001F9F9Pulumi in \U0001F40D Python"
 date: 2022-09-22 21:17:43.000000000 +01:00
 draft: false
 tags:

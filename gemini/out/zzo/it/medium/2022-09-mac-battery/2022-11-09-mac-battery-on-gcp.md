@@ -1,6 +1,6 @@
 ---
-title: "♊ [Geminocks] My Mac’s battery\U0001F50B on Google Cloud Monitoring — send
-  SMS if low \U0001FAAB"
+title: "[TODO] [it] ♊ [\U0001F38CGemiNoTrnsl] My Mac’s battery\U0001F50B on Google
+  Cloud Monitoring — send SMS if low \U0001FAAB"
 date: 2022-11-09 11:48:51.000000000 +01:00
 featured: false
 draft: false

@@ -47,10 +47,10 @@ def add_markdown_comment(comment:)
 end
 #parsed = FrontMatterParser::Parser.parse_file('example.md')
 def translate_title(title:, lang: )
-  "[TODO] [#{lang}] #{title}"
+  "[TODO] [#{lang}] #{title}".gsub('Geminocks', '🎌GemiNoTrnsl')
 end
 
-def alter_front_matter(file_name:,  extension:)
+def alter_front_matter(file_name:,  extension:, lang:)
   alter_front_matter_version = '1.0'
 
   puts("alter_front_matter:: file_name: #{file_name}")
@@ -63,6 +63,9 @@ def alter_front_matter(file_name:,  extension:)
     'alter_front_matter_version': alter_front_matter_version,
     'notes': 'Riccardo - todo make this variable per extension and calla  proper class to get it. So you can have a single thingie for Main picture, and then transform it for all extensions.'
   }
+  altered_fm['title'] = translate_title(
+    title: parsed.front_matter['title'],
+    lang:)
   return altered_fm
 end
 
@@ -78,7 +81,7 @@ def translate_with_gemini(file_name:, extension:, lang:, output_file: , overwrit
   markdown_content = File.read(file_name)
   comment_ad_minchiam = "translate_with_gemini(file_name: #{file_name}, extension: #{extension}, lang: #{lang}). MD_content: #{markdown_content.length/1024}KB. prompt_version=#{prompt_version}"
 
-  new_matter = alter_front_matter(file_name:,  extension:, )
+  new_matter = alter_front_matter(file_name:,  extension:, lang:)
 
   # Geminize the whole stuff
   if ENABLE_GEMINI
