@@ -27,7 +27,7 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false)
           if File.exist?(output_file) and (not overwrite)
             puts(Rainbow("Output File exists ('#{output_file}') and overwrite=false => skipping Geminization").darkslategray)
           else
-            puts("Either OutputFile doesnt exist or overwrite=false => doing Geminization!!")
+            puts("Either OutputFile '#{output_file}' doesnt exist or overwrite=false => doing Geminization!!")
             # Call your Gemini function (replace with your actual implementation)
             translate_with_gemini(file_name: file, extension:, lang:, output_file: , overwrite:)
             #puts("result: #{ret}")
