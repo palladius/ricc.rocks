@@ -42,8 +42,3 @@ Numbers, Derivation/Limits/Integrals, Taylor, the usual stuff, but in Italian, s
 ## Podcast
 
 * I'm investigating the idea of starting a podcast.
-
-
-<!--
-    From: go/ricc-math
--->

@@ -1,7 +1,7 @@
 ---
 # The idea here is to have gemini copy it to
-# Self: https://github.com/palladius/my-sessions-and-bio
-
+title: "🗣️ My sessions and 🇮🇹🇮🇪🇨🇭 Bio"
+canonicalURL: https://github.com/palladius/my-sessions-and-bio
 ---
 
 Original doc: https://github.com/palladius/my-sessions-and-bio

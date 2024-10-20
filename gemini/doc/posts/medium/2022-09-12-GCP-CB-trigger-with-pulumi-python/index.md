@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "♊ [Geminocks] Setting a ⬣ Cloud Build trigger with 🧹Pulumi in 🐍 Python"
+title: "💦 Symlinked: Setting a ⬣ Cloud Build trigger with 🧹Pulumi in 🐍 Python"
 date: 2022-09-22T21:17:43+01:00
 draft: false
 tags: [symlink, GCP, pulumi, CloudBuild, Medium]

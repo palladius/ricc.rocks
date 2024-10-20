@@ -1,4 +1,5 @@
 ---
+# RIcc: sembra che sto "Note this is SUPER weird" non sia in Gemini code, ma sia copincollato dal passato sotto common..
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
 title: "[Medium] Setting a ⬣ Cloud Build trigger with 🧹Pulumi in 🐍 Python"

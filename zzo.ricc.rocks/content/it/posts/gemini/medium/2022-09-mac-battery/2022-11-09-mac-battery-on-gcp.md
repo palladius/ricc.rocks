@@ -1,6 +1,6 @@
 ---
 # type: docs
-title: ♊ [Geminocks] La batteria del mio Mac🔋 su Google Cloud Monitoring — invia SMS se bassa 🪫
+title: "🇮🇹♊ [Geminocks] La batteria🔋 del mio Mac su Google Cloud Monitoring — invio di SMS se scarica 🪫"
 date: 2022-11-09T11:48:51+01:00
 featured: false
 draft: false
@@ -21,28 +21,28 @@ meta_image: featured-sample.jpg # This is for ZZO
 ---
 
 <!-- this works: ![Image Caption](/images/riccardo.jpg "Use Image Title as Caption aeroporto") -->
-![Image Caption](/images/articles/london-airport.jpg "[HUGO] Prendendo un treno per l'aeroporto cittadino, il mio aeroporto preferito a Londra")
+![Image Caption](/images/articles/london-airport.jpg "[HUGO] Prendendo un treno per il City Airport, il mio aeroporto preferito a Londra")
 
 
-Questo articolo mostra come puoi facilmente iniettare una chiave/valore generica in Google Cloud Monitoring e impostare avvisi su di essa. Lo uso per avvisare sullo spazio su disco e ora anche sulla batteria scarica!
+Questo articolo mostra come iniettare facilmente una chiave/valore generico in Google Cloud Monitoring e impostare avvisi su di esso. Lo uso per ricevere avvisi sullo spazio su disco e ora anche sulla batteria scarica!
 
-Stamattina ero a Londra e mi sono dimenticato il caricabatterie a casa. Con un sacco di tempo ma 🪫 poca batteria, ho pensato: ehi! Devo avere un modo per prevedere quando la mia batteria è scarica! E devo farlo in un modo totalmente esagerato!
+Stamattina ero a Londra e ho dimenticato il caricabatterie a casa. Con molto tempo a disposizione ma 🪫 poca batteria, ho pensato: ehi! Ho bisogno di un modo per prevedere quando la mia batteria è scarica! E devo farlo in un modo totalmente esagerato!
 
 <!--more-->
 
-La mia batteria era al 42%, il che sembrava una sottile indicazione che la mia idea valeva la pena di essere pubblicata sul blog. Cercando su Google, ho trovato un articolo che mi ha dato il suggerimento su come scrivere la batteria del mio Mac (nota che questo funziona solo per un Macbook).
+La mia batteria era al 42%, il che mi è sembrato un sottile indizio che la mia idea valesse la pena di essere pubblicata su un blog. Cercando su Google, ho trovato un articolo che mi ha dato il suggerimento su come scrivere uno script per la batteria del mio Mac (nota che questo funziona solo per un Macbook).
 
-Codice brutto qui (ehi! Sono in un aeroporto senza caricabatterie, vuoi anche i test unitari?!?)
+Codice brutto qui (ehi! Sono in un aeroporto senza caricabatterie, vuoi anche i test Unit?!?)
 
 ```ruby
 #!/usr/bin/env ruby
 
-# Note1. buridone is currently not used. It's for a more efficient use to extrapolate all info from a single file read.
-# Note2. This does NOT work on M1. I've just fixed this in the github repo sakura. Find the updated 0.2 code there.
+# Nota 1. buridone non è attualmente utilizzato. È per un uso più efficiente per estrapolare tutte le informazioni da un singolo file letto.
+# Nota 2. Questo NON funziona su M1. Ho appena risolto questo problema nel repository github sakura. Trova il codice 0.2 aggiornato lì.
 def processMacCapacity(buridone)
   ret = {}
-  ret[:debug] = 'Will fill numerator and denominator until I nail it.'
-  ret[:capacity_pct] = 142 # clearlly wrong
+  ret[:debug] = 'Riempirà numeratore e denominatore finché non lo capisco.'
+  ret[:capacity_pct] = 142 # chiaramente sbagliato
   # `ioreg -l -w0 | grep AppleRawMaxCapacity`.split
   # => ["|", "|", "\"AppleRawMaxCapacity\"", "=", "4320"]
   ret[:AppleRawMaxCapacity] = `ioreg -l -w0 | grep AppleRawMaxCapacity`.split[4].to_i
@@ -51,8 +51,8 @@ def processMacCapacity(buridone)
   ret[:StateOfCharge] = `ioreg -l -w0 | grep BatteryData`.split(',').select{|e| e.match /StateOfCharge/ }[0].split('=')[1].to_i
   ret[:AppleDesignCapacity] = `ioreg -l -w0 | grep BatteryData`.split(',').select{|e| e.match /DesignCapacity/ }[0].split('=')[1].to_i
 
-  # derived values..
-  # this should be your battery life i guess?x
+  # valori derivati..
+  # questa dovrebbe essere la durata della batteria, immagino?x
   ret[:BatteryCapacityPercent] = ret[:AppleRawCurrentCapacity]*100.0/ret[:AppleRawMaxCapacity]
   ret[:battery_health] =  ret[:AppleRawMaxCapacity]*100.0/ret[:AppleDesignCapacity]
 
@@ -67,13 +67,13 @@ def real_program
       puts "[DEB] #{k}:\t#{v}"
   }
   end
-  puts "1. 🔋 BatteryLife % 🔌🪫: #{capacity_hash[:BatteryCapacityPercent].round(2)}"
-  puts "2. 🔋 BatteryHealth % 🛟: #{capacity_hash[:battery_health].round(2)}"
+  puts "1. 🔋 Durata batteria % 🔌🪫: #{capacity_hash[:BatteryCapacityPercent].round(2)}"
+  puts "2. 🔋 Stato batteria % 🛟: #{capacity_hash[:battery_health].round(2)}"
 end
 
 def main(filename)
-  deb "I'm called by #{white filename}"
-  init        # Enable this to have command line parsing capabilities!
+  deb "Sono chiamato da #{white filename}"
+  init        # Abilita questo per avere capacità di analisi della riga di comando!
   real_program
 end
 
@@ -81,20 +81,18 @@ main(__FILE__)
 ```
 
 
-Lo so, chiamo lo stesso comando 10 volte e potrei metterlo in cache. Questo è per la prossima iterazione!
+Lo so, chiamo lo stesso comando 10 volte e potrei metterlo nella cache. Questo è per la prossima iterazione!
 
-La parte migliore di questo è che non solo ottengo la durata della batteria, ma mi fornisce anche la durata della batteria, quindi quando devo cambiare la batteria. Woohoo!
+La parte migliore di questo è che non solo ottengo la durata della batteria, ma mi dà anche la sua durata - così quando ho bisogno di cambiare la batteria. Woohoo!
 
-Ecco fatto, proviamolo, lasciami solo rimuovere il cavo in modo che tu non abbia un noioso 100%.
+Ecco fatto, proviamolo, fammi solo togliere il cavo così non ottieni un noioso 100%.
 
-![Image Caption](/images/articles/battery-life-cli.webp "Ecco la durata della mia batteria e la salute della mia batteria")
+![Image Caption](/images/articles/battery-life-cli.webp "Ecco la durata della mia batteria e lo stato della mia batteria")
 
-TODO(ricc): finish
+TODO(ricc): finire
 
 
 [Vedi articolo su Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)
-
-
 
 
 *(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.3)*

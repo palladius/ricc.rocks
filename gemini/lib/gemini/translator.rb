@@ -59,6 +59,9 @@ def alter_front_matter(file_name:,  extension:, lang:)
   parsed = FrontMatterParser::Parser.parse_file(file_name, loader: FMPLoader)
   # front_matter to hash
   altered_fm = parsed.front_matter
+  #altered_fm ||= {} # Sometimes its empty - so be it
+  raise "Empty FrontMatter for '#{file_name}'. Before ROCKING it, please add some --- stuff ---, thanks!" if altered_fm.nil?
+  binding.pry if altered_fm.nil?
   altered_fm['geminock'] = {
     'alter_front_matter_version': alter_front_matter_version,
     'notes': 'Riccardo - todo make this variable per extension and calla  proper class to get it. So you can have a single thingie for Main picture, and then transform it for all extensions.'
