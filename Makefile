@@ -30,3 +30,8 @@ hugo-bootstrap:
 install:
 	sudo apt install hugo
 	git submodule update --init --recursive
+
+
+gemini-cp:
+	echo These are manually maintained yet quite easy to redo.
+	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
