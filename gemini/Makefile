@@ -8,6 +8,10 @@ force-rebuild:
 	OVERWRITE_FILES=true ruby bin/build-all.rb
 	make push-to-local-code
 
+force-rebuild-two-locally:
+	OVERWRITE_FILES=true MAX_ARTICLES='2' ruby bin/build-all.rb
+	yellow Not pushing.. For that do a:  make push-to-local-code
+
 push-to-local-code:
 	echo Copying all my files to the proper local folder for ZZO..
 	cd .. && make gemini-cp

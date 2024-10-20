@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "[Geminocks] My Scuba 🤿 holiday in Indonesia"
+title: ♊ [Geminocks] "My Scuba 🤿 holiday in Indonesia"
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
@@ -19,7 +19,7 @@ image: "scuba--jo09uvup59g.jpg" # tartaruyga
 #image: images/hugo-cocktail.jpg
 #image: imagez/riccardo-smiles-swim-ironman.jpeg
 #image: images/feature2/color-palette.png
-Categories:
+categories:
 #- symlink
 - holidays
 #- rajaamapt
@@ -64,9 +64,9 @@ Nota: questa è un'esportazione da [GDoc].
 
 ---
 
-Nell'ottobre del 2022, la mia ❤️ moglie mi ha permesso di andare a fare immersioni subacquee da solo a Raja Ampat, considerato il paradiso dei subacquei! [image](scuba--jo09uvup59g.jpg)
+Nell'ottobre del 2022, la mia ❤️ moglie mi ha permesso di andare a fare immersioni subacquee da solo a Raja Ampat, considerato il paradiso dei subacquei! ![image](scuba--jo09uvup59g.jpg)
 
-Un bellissimo e raro animale che potrebbe estinguersi tra qualche decennio, e accanto a lui una bellissima tartaruga marina nel villaggio di [Sauwandarek](https://www.google.com/maps/place/Sauwandarek+Village/@-0.5858766,130.6122214,13.42z/data=!4m13!1m7!3m6!1s0x2d5c3eaaccb47097:0x7851bd844c4cdf44!2sIsole+Raja+Ampat!3b1!8m2!3d-1.0320468!4d130.5052176!3m4!1s0x0:0xf11684dad6130be3!8m2!3d-0.5903592!4d130.6023098)
+Un animale bellissimo e raro che potrebbe estinguersi tra qualche decennio, e accanto a lui una bellissima tartaruga marina nel villaggio di [Sauwandarek](https://www.google.com/maps/place/Sauwandarek+Village/@-0.5858766,130.6122214,13.42z/data=!4m13!1m7!3m6!1s0x2d5c3eaaccb47097:0x7851bd844c4cdf44!2sIsole+Raja+Ampat!3b1!8m2!3d-1.0320468!4d130.5052176!3m4!1s0x0:0xf11684dad6130be3!8m2!3d-0.5903592!4d130.6023098)
 
 ### Il viaggio
 
@@ -107,7 +107,7 @@ Congee e io a Piaynemo
 
 ![image](scuba--92kef42brna.jpg)
 
-Pyaynemo, la meta imperdibile per il tuo viaggio a RA.
+Pyaynemo, la destinazione da non perdere per il tuo viaggio a RA.
 
 ![image](scuba--4s5obbog0je.jpg)
 

@@ -1,8 +1,9 @@
 
 
 
-def iterate_through(input_folder:, extensions:, languages:, overwrite: false)
+def iterate_through(input_folder:, extensions:, languages:, overwrite: false, max_articles: )
 
+  n_articles = 0
   # Iterate through each extension and language
   extensions.each do |extension|
     languages.each do |lang|
@@ -27,10 +28,16 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false)
           if File.exist?(output_file) and (not overwrite)
             puts(Rainbow("Output File exists ('#{output_file}') and overwrite=false => skipping Geminization").darkslategray)
           else
+            # Exit if too many files.
+            if n_articles >= max_articles
+              puts("[ERROR] Max Articles reached (#{n_articles}) - refusing to use Gemini on #{file}")
+              break
+            end
+            # Normal flow: Gemini is ON! :)
             puts("Either OutputFile '#{output_file}' doesnt exist or overwrite=false => doing Geminization!!")
             # Call your Gemini function (replace with your actual implementation)
             translate_with_gemini(file_name: file, extension:, lang:, output_file: , overwrite:)
-            #puts("result: #{ret}")
+            n_articles += 1
           end
         else
           # Copy file to output folder

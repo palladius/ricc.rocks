@@ -1,6 +1,6 @@
 ---
 # type: docs
-title: 🦒 [Geminocks] Sebastian l'intrepido tramviere zurighese 🏴󠁧󠁢󠁳󠁣󠁴󠁿 e  🦒 Rara (ricc symlink)
+title: "[Geminocks] Sebastian l'intrepido tramviere zurighese 🏴󠁧󠁢󠁳󠁣󠁴󠁿 e  🦒 Rara (ricc symlink)"
 date: 2024-04-20T11:48:51+01:00
 featured: true
 draft: false
