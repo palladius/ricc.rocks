@@ -1,23 +1,23 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "♊ [Geminocks] Temi con Symlink a Confronto (🏆)"
+title: "🇮🇹♊ [Geminocks] Temi a confronto (🏆)"
 date: 2023-02-05T21:17:43+01:00
 draft: false
 tags:
 - symlink
 - hugo
 - WOW
+- geminocks
+- Italian
 # Categories is feinitely used by STACK framework:
 categories:
-- symlink
 - hugo
 - category
 - important
 keywords:
 - tech
 - hugo
-- symlink
 - comparative
 - theme
 - themes
@@ -41,10 +41,10 @@ Ad esempio, questa pagina ha una `featured_image` che funziona solo con Ananke e
 
 Cosa ho provato finora:
 
-## Collegamento simbolico su tutte le pagine.
+## Collegamenti simbolici in tutte le pagine.
 
 * finora ne ho provato solo uno: sicuramente golang non noterà il file con collegamento simbolico modificato.
-* Nota che STACK è attualmente in un posto DIVERSO. Lasciamelo spostare per un secondo.
+* Nota che STACK si trova attualmente in un posto DIVERSO. Lasciamelo spostare per un secondo.
 
 ## I miei siti Web Hugo che ho provato finora
 
@@ -53,22 +53,22 @@ Tutto il codice si trova in diverse directory del mio repository GH: https://git
 | Tema + PermaCompare | Sito web     | Stelle |  Descrizione |
 | ----------- | ----------- | ------ | ---- |
 | Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | Semplicemente fantastico |
-| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | ci ho giocato UN SACCO. Nota che è in un repository diverso |
+| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | ci ho giocato MOLTO. Nota che è in un repository diverso |
 | ----------- | ----------- | ------ | ----  |
 | [🙉](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/) ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️ | Ha le icone come le voglio io, molto giocoso, ma pieno di funzionalità splendide. Mi piace un tot!  |
 
 (*) Permacompare: permalink in produzione alla pagina di confronto :)
 
-* **PaperMod**: funziona! https://papermod.ricc.rocks	 non ancora esplorato molto. Pagina di confronto: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | Super elegante. Essenziale ma dannatamente, così buono nella sua essenza! |
-* **Stack**: Innanzitutto, ha [matematica](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  poi lo adoro e basta!
+* **PaperMod**: funziona! https://papermod.ricc.rocks	 non ancora esplorato molto. Pagina di confronto: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | Super elegante. Essenziale ma dannatamente buono nella sua essenza! |
+* **Stack**: Innanzitutto, ha la [matematica](https://dev.stack.jimmycai.com/p/math-typesetting/). https://hugo-stack.ricc.rocks  poi lo adoro e basta!
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
 * 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ Ha la matematica
 * 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
 
-Ha perso la battaglia:
+Ho perso la battaglia:
 
 * **Coder**: Nah, troppo semplice per me.
-* Ananke. Troppo semplice: https://hugo-ananke.netlify.app/
+* Ananke. Troppo semplice - https://hugo-ananke.netlify.app/
 
 ## Album fotografici
 
@@ -92,7 +92,7 @@ Caratteristiche:
 
 ```
 Skin multiple (scuro, chiaro, solarizzato, ...)
-Menu mobile
+Menu per cellulare
 Ricerca
 Ottimizzazione per i motori di ricerca (SEO)
 Multilingue (i18n)
@@ -100,9 +100,9 @@ Design reattivo
 Interfaccia utente personalizzabile
 RSS
 Galleria
-Evidenziazione rapida del codice
+Evidenziazione del codice veloce
 Pagina dei discorsi
-Pagina vetrina
+Pagina della vetrina
 Pagina della pubblicazione
 Pagina del curriculum
 Pagina di presentazione
@@ -152,7 +152,7 @@ BUONO 😍:
 CATTIVO 😩:
 
 * **troppo semplice**. Ad esempio, il modulo di contatto è tra i post (seriamente?)
-* Temo che non ci sia una galleria di immagini
+* nessuna galleria di immagini temo
 
 
 ## TranquilPeak
@@ -176,11 +176,11 @@ PIÙ
 MENO
 
 * dice che FS non supporta i collegamenti simbolici per le immagini. Ma li supporta per i post
-* Pesce nell'organizzazione di contenuti/post/. Se sposto i contenuti dentro o fuori dalle directory, questo scompare. Strano. (Forse c'è una buona ragione per questo, ma sembra un bug rispetto ad altri temi in cui puoi spostare le cose su TUTTO all'interno di content/)
+* Sospetto nell'organizzazione di contenuti/post/. Se sposto i contenuti dentro o fuori dalle directory, scompare. Strano. (Forse c'è una buona ragione per questo, ma sembra un bug rispetto ad altri temi in cui puoi spostare le cose su TUTTO all'interno di content/)
 
 
 
 
 
 
-*(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.3)*
+*(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.4)*

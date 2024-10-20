@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "💦 Symlinked Family 👨‍👩‍👧‍👦"
+title: "💦 Family 👨‍👩‍👧‍👦"
 date: 2021-05-20T21:17:43+01:00
 draft: false
 tags:

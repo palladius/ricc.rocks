@@ -21,12 +21,14 @@ keywords:
 - Carlesso
 - palladius
 - symlink
-#image: /images/mtg-clone.jpg
+image: petrucci.png
 #images:
 #- tranquilpeak-showcase.png
 #- zzo-screenshot.png
 # tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
 #thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
+thumbnailImage: petrucci.png
+featured_image:  petrucci.png
 ---
 
 I love a few bands which I'm happy to share.

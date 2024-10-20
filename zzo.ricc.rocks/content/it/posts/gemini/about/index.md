@@ -1,6 +1,6 @@
 ---
 #🚧 Testing moving ABOUT from singleton to translated.
-title: "♊ [Geminocks] About me" # It / EN
+title: "🇮🇹 ♊ [Geminocks] Chi sono" # It / EN
 description: "This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/"
 type: "about"
 date: "2023-02-01"
@@ -18,55 +18,55 @@ tags:
 # {{< /box >}}
 ---
 
-`TODO(Ricc): This is currently under post. You ned to add the logic to copy this under ZZO/{LANG}/about/ Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.`
+*TODO(Ricc): Questo è attualmente sotto `posts/`. Devi aggiungere la logica per copiare questo sotto ZZO/{LANG}/about/ . Forse potresti aggiungere una carlessian-geminocks-target-folder ma potrebbe aggiungere troppa complessità.*
 
-Ciao! Sono Riccardo, e mi chiamo <tt>Palladius</tt> o semplicemente Ricc.
+Ciao! Sono Riccardo, e mi faccio chiamare <tt>Palladius</tt> o semplicemente Ricc.
 
 ## Lavoro
 
-![Riccardo innaturally handsome at his wedding](image.png)
+![Riccardo innaturalmente bello al suo matrimonio](image.png)
 
-Sono Developer Advocate per [Google Cloud](http://cloud.google.com/). Questo blog contiene un po' di cose personali e lavorative: dallo sport ai viaggi, alla famiglia e alla tecnologia.
+Sono Developer Advocate per [Google Cloud](http://cloud.google.com/). Questo blog contiene un po' di cose personali e lavorative: dallo sport ai viaggi, dalla famiglia alla tecnologia.
 
-Sono in Google da 11 anni e non ho mai trovato un modo per scrivere di tutto questo fantastico viaggio. Deve avere contenuti fruttuosi, dramma italiano e foto fantastiche. Quest'ultimo mi sta prendendo tempo per scriverlo. Alcuni dei miei
+Sono in Google da 11 anni e non ho mai trovato il modo di raccontare questo fantastico viaggio. Deve avere contenuti fruttuosi, dramma italiano e foto fantastiche. Quest'ultimo mi sta prendendo tempo per scrivere. Alcuni dei miei
 
 * Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>
 * Pagina ufficiale di Google: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
 
-Parlo di SRE, Operations, Culture at Google, GenAI e Ruby.
+Parlo di SRE, Operations, Culture in Google, GenAI e Ruby.
 
 ## Personale
 
-Sono italiano, tranne che sono per lo più puntuale. Ho vissuto in Italia per 32 anni, poi mi sono trasferito in Irlanda e nel 2011 mi sono trasferito in Svizzera dove attualmente vivo con mia moglie Kate, gentile e premurosa, e due figli fantastici: *AJ* e *Sebowski*. Puoi trovarci su Instagram o nella galleria di famiglia.
+Sono italiano, solo che sono per lo più puntuale. Ho vissuto in Italia per 32 anni, poi mi sono trasferito in Irlanda (2008) e nel 2011 mi sono trasferito in Svizzera dove attualmente vivo con mia moglie Kate, gentile e premurosa, e due bambini fantastici: *AJ* e *Sebowski*. Potete trovarci su [Instagram](https://www.instagram.com/palladius/), o nella [galleria di famiglia](/it/gallery/riccardo-family/).
 
-Naturalmente, vivo in Svizzera.
+Certo, vivo in Svizzera.
 
-{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="Adoro andare in bicicletta, nuotare, il vino e Zurigo. Tranne che non puoi vedere la bici che sto tenendo mentre scatto questa foto." alt="wineyard in Zurich" width="800px" position="center" >}}
+{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vigneto a Meilen (Lago di Zurigo)" caption="Amo andare in bicicletta, nuotare, il vino e Zurigo. Puoi vedere tutto qui, tranne la bici che tengo in mano mentre scatto questa foto." alt="vigneto a Zurigo" width="800px" position="center" >}}
 
 ## Hobby
 
-Per citare Graham, *avevo hobby, ora ho figli*. I miei hobby erano incentrati sullo sport, la musica, i viaggi, la nerdaggine e includevano:
+Per citare Graham, *prima avevo degli hobby, ora ho dei figli*. I miei hobby erano lo sport, la musica, i viaggi, l'essere nerd e includono:
 
-* Suonare il **pianoforte** (principalmente suonando Genesis dell'era di Peter Gabriel o Dream Theater)
-* Fare **triatlon** (ho completato due **Ironman** completi, entrambi a Zurigo, e 5-6 mezze distanze in giro per l'EMEA).
-* Giocare a **Magic the Gathering** (su Arena o con i miei figli, con effetti disastrosi - ma almeno Ale sta imparando a contare fino a 20!)
-* **Cucinare** con il mio Thermomix (dicono che è barare). E scrivere un blog sulla cucina americana con cose italiane.
-* **Viaggiare**. Tengo un foglio di calcolo dei paesi visitati per me e il mio amico Andrea. Attualmente intorno a 61. Andrea mi odia da quando sono andato in crociera nei Caraibi e ho preso +5 in una settimana.
-* **Computer**. Adoro Ruby on Rails, Linux, bash scripting e mescolare la famiglia con la mia codifica. Non mi credi?
-  * Guarda [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait) su come insegnare le lettere dell'alfabeto ai tuoi figli con immagini note.
-  * Guarda 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧 dove archivio i nostri viaggi (WIP) e la possibilità per mia moglie di votare per me. (Mi chiama puffin).
+* Suonare il **pianoforte** (soprattutto suonando i Genesis dell'epoca di Peter Gabriel, o i Dream Theater)
+* Fare **triathlon** (ho completato due **Ironman** completi, entrambi a Zurigo, e 5-6 mezze distanze in EMEA).
+* Giocare a **Magic the Gathering** (in Arena o con i miei figli, con effetti disastrosi - ma almeno Ale sta imparando a contare fino a 20!)
+* **Cucinare** con il mio Bimby (dicono che sia barare). E scrivere sul blog di cucina americana roba italiana.
+* **Viaggiare**. Tengo un foglio di calcolo dei paesi visitati per me e il mio amico Andrea. Attualmente siamo intorno ai 61. Andrea mi odia da quando sono andato in crociera ai Caraibi e ne ho ottenuti +5 in una settimana.
+* **Computer**. Adoro Ruby on Rails, Linux, gli script bash e mescolare la famiglia con la mia programmazione. Non ci credi?
+  * Guarda [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait) su come insegnare le lettere dell'alfabeto ai tuoi figli con immagini conosciute.
+  * Guarda 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧 dove memorizzo i nostri viaggi (WIP) e la possibilità per mia moglie di votarmi. (Mi chiama puffo).
 
 ## Questo sito
 
 
 {{< boxmd >}}
-Questo sito è costruito in Hugo (ovviamente preferirei Jekyll, ma ho seguito l'esempio dei miei colleghi) con [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([docs](https://zzo-docs.vercel.app/zzo)). Se ti chiedi perché ho scelto questo, sono stati un paio di fine settimana a provare 5 cose diverse. Le lezioni imparate sono qui:
+Questo sito è costruito in Hugo (certo preferirei Jekyll, ma ho seguito l'esempio dei miei colleghi) con [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([documentazione](https://zzo-docs.vercel.app/zzo)). Se vi chiedete perché ho scelto questo, è stato un paio di fine settimana a provare 5 cose diverse. Le lezioni apprese sono qui:
 {{< /boxmd >}}
 
-Lezioni imparate:
+Lezioni apprese:
 
-* <https://github.com/palladius/ricc.rocks>. Il Readme contiene link a tutti i siti alternativi, come Ananke,
-  Boostrap, Stack, Papermod e Coder. Stack era il preferito di mia moglie, Bootstrap era il mio preferito, fino a quando non ho scoperto che aveva una cosa mancante di cui non riesco a ricordare. Quindi sono andato per ZZO, che mi ricorda l'italiano **zzo vuoi?**, che è divertente.
+* <https://github.com/palladius/ricc.rocks>. Il file Readme contiene i link a tutti i siti alternativi, come Ananke,
+  Boostrap, Stack, Papermod e Coder. Stack era il preferito di mia moglie, Bootstrap era il mio preferito, finché non ho scoperto che aveva una cosa smishing che non ricordo. Così ho optato per ZZO, che mi ricorda l'italiano **zzo vuoi?**, che è divertente.
 
 Siti alternativi:
 
@@ -78,4 +78,4 @@ Siti alternativi:
 
 
 
-*(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.3)*
+*(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.4)*

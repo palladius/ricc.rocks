@@ -12,7 +12,10 @@ require 'date' # For psych :: Date to import from YAML..
 
 FMPLoader ||= FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Time, Date])
 
-TranslatorVersion = '1.0'
+# CHANGELOG
+#  2024-10-20 v1.0 first stesure
+#  2024-10-20 v1.1 Added geminocks+lang to prompt => into tags.
+TranslatorVersion = '1.1'
 
 def llm
   Langchain.logger.level = Logger::INFO
@@ -132,12 +135,12 @@ end
 # This translates EVERYTHING, matter and content. Maybe I should just translate the content.
 # TODO(rename to sth without translate..)
 def translate_with_gemini(file_name:, extension:, lang:, output_file: , overwrite: false)
-
   # CHANGELOG:
   # 2024-10-20 v1.0 First iteration
   # 2024-10-20 v1.1 Add a "[Geminocks]" to title:
   # 2024-10-20 v1.2 Try to avoid the ``` output.
-  prompt_version = '1.3'
+  # 2024-10-20 v1.4 Added geminocks to tags
+  prompt_version = '1.4'
   puts(Rainbow("WARNING! overwrite is TRUE! Gemini will now overwrite markdown file '#{output_file}' !!").red) if overwrite
   markdown_content = File.read(file_name)
   comment_ad_minchiam = "translate_with_gemini(file_name: #{file_name}, extension: #{extension}, lang: #{lang}). MD_content: #{markdown_content.length/1024}KB. prompt_version=#{prompt_version}"

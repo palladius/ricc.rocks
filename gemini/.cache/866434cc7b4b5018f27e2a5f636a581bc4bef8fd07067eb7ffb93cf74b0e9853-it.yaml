@@ -1,0 +1,109 @@
+---
+input: "---\n#\U0001F6A7 Testing moving ABOUT from singleton to translated.\ntitle:
+  \"About me\" # It / EN\ndescription: \"This is the Hugo/ZZO version of Riccardo
+  Rocks ring: https://ricc.rocks/\"\ntype: \"about\"\ndate: \"2023-02-01\"\n#This
+  is the ZZO version of Riccardo Rocks ring: https://ricc.rocks/\nimage: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg\nmeta_image:
+  image.png\ntags:\n- personal\n- site\n- italy\n- ricc\n- me\n# {{< box >}}\n# \U0001F6A7
+  under construction \U0001F6A7\n# {{< /box >}}\n---\n\n*TODO(Ricc): This is currently
+  under `posts/`. You ned to add the logic to copy this under ZZO/{LANG}/about/ .
+  Maybe you could add a carlessian-geminocks-target-folder but it might add too much
+  to complexity.*\n\nHi! I'm Riccardo, and I go by <tt>Palladius</tt> or just Ricc.\n\n##
+  Work\n\n![Riccardo innaturally handsome at his wedding](image.png)\n\nI'm Developer
+  Advocate for [Google Cloud](http://cloud.google.com/). This blog has a bit of personal
+  and work-related stuff: from sports to travel, family and technology.\n\nBeen in
+  Google for 11 years, and I've never found a way to write up all this amazing journey.
+  It has to have fruitful content, italian drama and cool pics. The latter is taking
+  me time to write. Some of my\n\n* Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>\n*
+  Google official page: <https://cloud.google.com/developers/advocates/riccardo-carlesso>\n\nI
+  speak about SRE, Operations, Culture at Google, GenAI, and Ruby.\n\n## Personal\n\nI'm
+  Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to
+  Ireland (2008), and in 2011 I moved to Switzerland where I currently live with my
+  kind and caring wife Kate and two amazing kids: *AJ* and *Sebowski*. You can find
+  us on [Instagram](https://www.instagram.com/palladius/), or in the [family gallery](/en/gallery/riccardo-family/).\n\nOf
+  course, I live in Switzerland.\n\n{{< img src=\"/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg\"
+  title=\"Vineyard in Meilen (Zurisee)\" caption=\"I love cycling, swimming, wine
+  and Zurich. You can see everything here, except the bike I'm holding while taking
+  this pic.\" alt=\"wineyard in Zurich\" width=\"800px\" position=\"center\" >}}\n\n##
+  Hobbies\n\nTo quote Graham, *I used to have hobbies, now I have kids*. My hobbies
+  used to be around sport, music, travel, nerdiness and include:\n\n* **Piano** playing
+  (mostly playing Genesis of Peter Gabriel era, or Dream Theater)\n* Doing **triathlons**
+  (I completed two full **Ironman**, both in Zurich, and 5-6 half-distance around
+  EMEA).\n* Playing **Magic the Gathering** (on Arena or with my kids, with disastrous
+  effects - but at least Ale is learning to count to 20!)\n* **Cooking** with my Thermomix
+  (they say it's cheating). And blogging about American cooking Italian stuff.\n*
+  **Travel**. I hold a spreadsheet of countries visited for me and my buddy Andrea.
+  Currently around 61. Andrea hates me since I went on a cruise around caribbeans
+  and got +5 in a week.\n* **Computers**. I love Ruby on Rails, Linux, bash scripting
+  and mixing family with my coding. Dont believe me?\n  * See [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait)
+  on how to teach alphabet letters to your kids with known images.\n  * See \U0001F6A7
+  [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) \U0001F6A7 where
+  I store our trips (WIP) and ability for my wife to vote for me. (She calls me puffin).\n\n##
+  This site\n\n\n{{< boxmd >}}\nThis site is built in Hugo (of course I'd prefer Jekyll,
+  but I followed the lead from my colleagues) with [ZZO](https://github.com/zzossig/hugo-theme-zzo)
+  ([docs](https://zzo-docs.vercel.app/zzo)). If you wonder why I chose this, it was
+  a couple of weekends trying out 5 differnt things. The lessons learnt are here:\n{{<
+  /boxmd >}}\n\nLessons learnt:\n\n* <https://github.com/palladius/ricc.rocks>. Readme
+  contains links to all alternative sites, like Ananke,\n  Boostrap, Stack, Papermod,
+  and Coder. Stack was my wife's favorite, Bootstrap was my favorite, until I found
+  out it had a smissing thing which I can't remember. So I went for ZZO, which reminds
+  me of the Italian **zzo vuoi?**, which is fun.\n\nAlternative sites:\n\n* Ananke:
+  <https://hugo-ananke-vecchiume.netlify.app/>\n* Bootstrap: <https://hugo-bootstrap-ricc-rocks.netlify.app/>\n*
+  Comparison symlink: <https://hugo-bootstrap-ricc-rocks.netlify.app/posts/posts/2023-01-29-symlinked-themes-compared.d/>\n\n"
+output: "---\n#\U0001F6A7 Testing moving ABOUT from singleton to translated.\ntitle:
+  \"\U0001F1EE\U0001F1F9 ♊ [Geminocks] Chi sono\" # It / EN\ndescription: \"This is
+  the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/\"\ntype: \"about\"\ndate:
+  \"2023-02-01\"\n#This is the ZZO version of Riccardo Rocks ring: https://ricc.rocks/\nimage:
+  /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg\nmeta_image: image.png\ntags:\n-
+  personal\n- site\n- italy\n- ricc\n- me\n# {{< box >}}\n# \U0001F6A7 under construction
+  \U0001F6A7\n# {{< /box >}}\n---\n\n*TODO(Ricc): Questo è attualmente sotto `posts/`.
+  Devi aggiungere la logica per copiare questo sotto ZZO/{LANG}/about/ . Forse potresti
+  aggiungere una carlessian-geminocks-target-folder ma potrebbe aggiungere troppa
+  complessità.*\n\nCiao! Sono Riccardo, e mi faccio chiamare <tt>Palladius</tt> o
+  semplicemente Ricc.\n\n## Lavoro\n\n![Riccardo innaturalmente bello al suo matrimonio](image.png)\n\nSono
+  Developer Advocate per [Google Cloud](http://cloud.google.com/). Questo blog contiene
+  un po' di cose personali e lavorative: dallo sport ai viaggi, dalla famiglia alla
+  tecnologia.\n\nSono in Google da 11 anni e non ho mai trovato il modo di raccontare
+  questo fantastico viaggio. Deve avere contenuti fruttuosi, dramma italiano e foto
+  fantastiche. Quest'ultimo mi sta prendendo tempo per scrivere. Alcuni dei miei\n\n*
+  Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>\n* Pagina ufficiale di
+  Google: <https://cloud.google.com/developers/advocates/riccardo-carlesso>\n\nParlo
+  di SRE, Operations, Culture in Google, GenAI e Ruby.\n\n## Personale\n\nSono italiano,
+  solo che sono per lo più puntuale. Ho vissuto in Italia per 32 anni, poi mi sono
+  trasferito in Irlanda (2008) e nel 2011 mi sono trasferito in Svizzera dove attualmente
+  vivo con mia moglie Kate, gentile e premurosa, e due bambini fantastici: *AJ* e
+  *Sebowski*. Potete trovarci su [Instagram](https://www.instagram.com/palladius/),
+  o nella [galleria di famiglia](/it/gallery/riccardo-family/).\n\nCerto, vivo in
+  Svizzera.\n\n{{< img src=\"/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg\"
+  title=\"Vigneto a Meilen (Lago di Zurigo)\" caption=\"Amo andare in bicicletta,
+  nuotare, il vino e Zurigo. Puoi vedere tutto qui, tranne la bici che tengo in mano
+  mentre scatto questa foto.\" alt=\"vigneto a Zurigo\" width=\"800px\" position=\"center\"
+  >}}\n\n## Hobby\n\nPer citare Graham, *prima avevo degli hobby, ora ho dei figli*.
+  I miei hobby erano lo sport, la musica, i viaggi, l'essere nerd e includono:\n\n*
+  Suonare il **pianoforte** (soprattutto suonando i Genesis dell'epoca di Peter Gabriel,
+  o i Dream Theater)\n* Fare **triathlon** (ho completato due **Ironman** completi,
+  entrambi a Zurigo, e 5-6 mezze distanze in EMEA).\n* Giocare a **Magic the Gathering**
+  (in Arena o con i miei figli, con effetti disastrosi - ma almeno Ale sta imparando
+  a contare fino a 20!)\n* **Cucinare** con il mio Bimby (dicono che sia barare).
+  E scrivere sul blog di cucina americana roba italiana.\n* **Viaggiare**. Tengo un
+  foglio di calcolo dei paesi visitati per me e il mio amico Andrea. Attualmente siamo
+  intorno ai 61. Andrea mi odia da quando sono andato in crociera ai Caraibi e ne
+  ho ottenuti +5 in una settimana.\n* **Computer**. Adoro Ruby on Rails, Linux, gli
+  script bash e mescolare la famiglia con la mia programmazione. Non ci credi?\n  *
+  Guarda [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait)
+  su come insegnare le lettere dell'alfabeto ai tuoi figli con immagini conosciute.\n
+  \ * Guarda \U0001F6A7 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/)
+  \U0001F6A7 dove memorizzo i nostri viaggi (WIP) e la possibilità per mia moglie
+  di votarmi. (Mi chiama puffo).\n\n## Questo sito\n\n\n{{< boxmd >}}\nQuesto sito
+  è costruito in Hugo (certo preferirei Jekyll, ma ho seguito l'esempio dei miei colleghi)
+  con [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([documentazione](https://zzo-docs.vercel.app/zzo)).
+  Se vi chiedete perché ho scelto questo, è stato un paio di fine settimana a provare
+  5 cose diverse. Le lezioni apprese sono qui:\n{{< /boxmd >}}\n\nLezioni apprese:\n\n*
+  <https://github.com/palladius/ricc.rocks>. Il file Readme contiene i link a tutti
+  i siti alternativi, come Ananke,\n  Boostrap, Stack, Papermod e Coder. Stack era
+  il preferito di mia moglie, Bootstrap era il mio preferito, finché non ho scoperto
+  che aveva una cosa smishing che non ricordo. Così ho optato per ZZO, che mi ricorda
+  l'italiano **zzo vuoi?**, che è divertente.\n\nSiti alternativi:\n\n* Ananke: <https://hugo-ananke-vecchiume.netlify.app/>\n*
+  Bootstrap: <https://hugo-bootstrap-ricc-rocks.netlify.app/>\n* Confronto symlink:
+  <https://hugo-bootstrap-ricc-rocks.netlify.app/posts/posts/2023-01-29-symlinked-themes-compared.d/>\n\n\n\n"
+model: gemini-1.5-pro
+code_version: '1.0'

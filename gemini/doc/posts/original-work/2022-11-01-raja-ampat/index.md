@@ -1,7 +1,6 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "My Scuba 🤿 holiday in Indonesia"
+# ce ne sono 2 di queste maledette indonesie
+title: "My Scuba 🤿 holiday in Indonesia 2022"
 date: 2023-01-30T21:17:43+01:00
 draft: false
 tags:
@@ -12,7 +11,8 @@ tags:
 canonicalURL: https://medium.com/p/cf851f0f588/edit
 hidden: false
 # ANANKE :)
-featured_image: /images/hugo-cocktail.jpg
+#featured_image: /images/hugo-cocktail.jpg
+featured_image: "scuba--jo09uvup59g.jpg"
 # /images/scuba--tnomzk5zfnr.jpg
 #image: images/scuba--tnomzk5zfnr.jpg
 image: "scuba--jo09uvup59g.jpg" # tartaruyga

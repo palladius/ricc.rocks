@@ -7,7 +7,7 @@ author: Riccardo Carlesso
 read_time: 3  # Minutes
 # categories: Add categories if applicable (e.g., ruby, rails, gcp)
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
-#Tags: qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain
+Tags: [qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain]
 canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
 ---
 ([Original article on Medium](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b))
@@ -22,7 +22,7 @@ If you’re eager to start, here are my final Code on GitHub [link to code](http
 
 Here’s my Rails video!
 
-**About Skillsboost**
+## **About Skillsboost**
 
 Skillsboost (formerly known as Qwiklabs) is a way to train yourself to Google Cloud by executing “labs”. These labs are time constrained, Google creates all the resouerces for you, and deletes them at the end of the lab.
 
@@ -30,7 +30,7 @@ To do the labs, you have a credits-based system. You can pay $$ to get them, or 
 
 Our Codelab is here: https://www.cloudskillsboost.google/focuses/20047
 
-**Riccardo’s approach to Skillsboost**
+## **Riccardo’s approach to Skillsboost**
 
 There are a number of ways to execute a Lab, but I see mostly two:
 
@@ -39,16 +39,17 @@ There are a number of ways to execute a Lab, but I see mostly two:
 
 As you can see in my video, I do both to show you both approaches, and good and bads.
 
-**What’s a friction log?**
+## **What’s a friction log?**
 
 A Friction Log is a Google Doc where you describe in text your experience, your emotions, and even your level of anger (using color codes) to the developer of some code/resources. The idea is to then share your doc with the implementor, tracking code and doc bugs in it. My crazy idea is to make a video out of it!
 
-**My “codelabba” ToolChain**
+## **My “codelabba” ToolChain**
 
 The time has come to explain my personal toolchain. Usually I have a number of git repos under `~/git/`, one of them being Open Source. Of course I’m talking about palladius/sakura.
 
-* 00-init.sh: The initialization script, common to all my codelabba projects, it refers to ENV variables like PROJECT_ID, REGION and so on.
-* .envrc: This is powered by direnv, tool suggested to me by Rob Edwards and it contains all my ENV vars. You can think of it as the hydration part of the 00-init and everything else, thanks to Ruby/Python libraries to manage .env* files. I’ve also made an effort to make this file work out of the box with Pulumi (adopting Pulumi standard ENV names) and to be as compatible as possible with Google Cloud codelabs.
+* `00-init.sh`: The initialization script, common to all my codelabba projects, it refers to ENV variables like PROJECT_ID, REGION and so on.
+
+* `.envrc`: This is powered by `direnv`, tool suggested to me by Rob Edwards and it contains all my ENV vars. You can think of it as the hydration part of the 00-init and everything else, thanks to Ruby/Python libraries to manage .env* files. I’ve also made an effort to make this file work out of the box with Pulumi (adopting Pulumi standard ENV names) and to be as compatible as possible with Google Cloud codelabs.
 
 * `proceed_if_error_matches`: This is the simplest smartest script I’ve ever written. It transforms sequential bash scripts with `set -euo pipefail` into bash terraform-looking scripts. Imagine you need to: (1) create a bucket (2) set an ACL on it (3) upload files onto it. It’s reasonable to think you have three sequential scripts, which might fail from time to time and it takes time for you to fix each line. Once you do you want to proceed to the next, but guess what? you cant work on (2) because (1) will start failing with something annoying like “bucket already exists”. So I thought — what if I could filter ONLY certain error messages, which I capture as strings? Here’s the reason for this file.
 

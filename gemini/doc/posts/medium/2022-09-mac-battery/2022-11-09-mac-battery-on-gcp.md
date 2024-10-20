@@ -10,8 +10,9 @@ reward: true
 pinned: false
 carousel: false
 series:
-categories: []
-tags: [GCP, macbook, SMS, pager, medium, symlink]
+categories: [ GCP, Work ]
+#tags: [GCP, macbook, SMS, pager, medium, symlink ]
+tags: [GCP, macbook, SMS, pager, medium, geminocks ]
 images:
 - /images/articles/london-airport.jpg
 meta_image: featured-sample.jpg # This is for ZZO

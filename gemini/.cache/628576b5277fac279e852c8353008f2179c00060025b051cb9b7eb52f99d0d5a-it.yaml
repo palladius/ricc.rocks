@@ -1,0 +1,98 @@
+---
+input: "---\n# type: docs\ntitle: \"My Mac’s battery\U0001F50B on Google Cloud Monitoring
+  — send SMS if low \U0001FAAB\"\ndate: 2022-11-09T11:48:51+01:00\nfeatured: false\ndraft:
+  false\ncomment: true\ntoc: true\nreward: true\npinned: false\ncarousel: false\nseries:\ncategories:
+  []\ntags: [GCP, macbook, SMS, pager, medium, symlink]\nimages:\n- /images/articles/london-airport.jpg\nmeta_image:
+  featured-sample.jpg # This is for ZZO\n#- /images/battery-life-cli.webp\n#- /images/london-airport.jpg\n#
+  original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe\n---\n\n<!--
+  this works: ![Image Caption](/images/riccardo.jpg \"Use Image Title as Caption aeroporto\")
+  -->\n![Image Caption](/images/articles/london-airport.jpg \"[HUGO] Taking a train
+  to City Airport, my fav airport in London\")\n\n\nThis article shows how you can
+  easily inject a generic key/value into Google Cloud Monitoring and set up alerts
+  on it. I use it to alert on disk space, and now also low battery!\n\nThis morning
+  I was in London, and I forgot my charger at home. With plenty of time but \U0001FAAB
+  little battery, I thought: hey! I need to have a way to predict when my battery
+  is low! And I need to do it in a totally overkill way!\n\n<!--more-->\n\nMy battery
+  was at 42%, which seemed a subtle indication my idea was worth blogging. Googling
+  around, I found an article which gave me the tip on how to script my Mac’s battery
+  (note this only works for a Macbook).\n\nUgly code here (hey! I’m in an airport
+  with no charger, do you want Unit tests too?!?)\n\n```ruby\n#!/usr/bin/env ruby\n\n#
+  Note1. buridone is currently not used. It's for a more efficient use to extrapolate
+  all info from a single file read.\n# Note2. This does NOT work on M1. I've just
+  fixed this in the github repo sakura. Find the updated 0.2 code there.\ndef processMacCapacity(buridone)\n
+  \ ret = {}\n  ret[:debug] = 'Will fill numerator and denominator until I nail it.'\n
+  \ ret[:capacity_pct] = 142 # clearlly wrong\n  # `ioreg -l -w0 | grep AppleRawMaxCapacity`.split\n
+  \ # => [\"|\", \"|\", \"\\\"AppleRawMaxCapacity\\\"\", \"=\", \"4320\"]\n  ret[:AppleRawMaxCapacity]
+  = `ioreg -l -w0 | grep AppleRawMaxCapacity`.split[4].to_i\n  ret[:AppleRawCurrentCapacity]
+  = `ioreg -l -w0 | grep AppleRawCurrentCapacity`.split[4].to_i\n  #  => [\"\\\"StateOfCharge\\\"=41\"]\n
+  \ ret[:StateOfCharge] = `ioreg -l -w0 | grep BatteryData`.split(',').select{|e|
+  e.match /StateOfCharge/ }[0].split('=')[1].to_i\n  ret[:AppleDesignCapacity] = `ioreg
+  -l -w0 | grep BatteryData`.split(',').select{|e| e.match /DesignCapacity/ }[0].split('=')[1].to_i\n\n
+  \ # derived values..\n  # this should be your battery life i guess?x\n  ret[:BatteryCapacityPercent]
+  = ret[:AppleRawCurrentCapacity]*100.0/ret[:AppleRawMaxCapacity]\n  ret[:battery_health]
+  =  ret[:AppleRawMaxCapacity]*100.0/ret[:AppleDesignCapacity]\n\n  return ret\nend\n\ndef
+  real_program\n  capacity_hash = processMacCapacity(`ioreg -l -w0 | grep Capacity`)\n
+  \ deb \"capacity_hash: '''#{white capacity_hash}'''\"\n  if $DEBUG\n    capacity_hash.each{|k,v|\n
+  \     puts \"[DEB] #{k}:\\t#{v}\"\n  }\n  end\n  puts \"1. \U0001F50B BatteryLife
+  % \U0001F50C\U0001FAAB: #{capacity_hash[:BatteryCapacityPercent].round(2)}\"\n  puts
+  \"2. \U0001F50B BatteryHealth % \U0001F6DF: #{capacity_hash[:battery_health].round(2)}\"\nend\n\ndef
+  main(filename)\n  deb \"I'm called by #{white filename}\"\n  init        # Enable
+  this to have command line parsing capabilities!\n  real_program\nend\n\nmain(__FILE__)\n```\n\n\nI
+  know, I call the same command 10 times and I could cache it. This is for the next
+  iteration!\n\nThe best part of this is, not only I get my battery life, it also
+  gives me my battery durability — so when I need to change battery. Woohoo!\n\nThere
+  you go, let’s try it out, let me just remove the cable so you dont get a boring
+  100%.\n\n![Image Caption](/images/articles/battery-life-cli.webp \"Here is my Battery
+  Life and my Battery health\")\n\nTODO(ricc): finish\n\n\n[See article on Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)\n"
+output: "---\n# type: docs\ntitle: \"\U0001F1EE\U0001F1F9♊ [Geminocks] La batteria\U0001F50B
+  del mio Mac su Google Cloud Monitoring — invio di SMS se scarica \U0001FAAB\"\ndate:
+  2022-11-09T11:48:51+01:00\nfeatured: false\ndraft: false\ncomment: true\ntoc: true\nreward:
+  true\npinned: false\ncarousel: false\nseries:\ncategories: []\ntags: [GCP, macbook,
+  SMS, pager, medium, symlink]\nimages:\n- /images/articles/london-airport.jpg\nmeta_image:
+  featured-sample.jpg # This is for ZZO\n#- /images/battery-life-cli.webp\n#- /images/london-airport.jpg\n#
+  original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe\n---\n\n<!--
+  this works: ![Image Caption](/images/riccardo.jpg \"Use Image Title as Caption aeroporto\")
+  -->\n![Image Caption](/images/articles/london-airport.jpg \"[HUGO] Prendendo un
+  treno per il City Airport, il mio aeroporto preferito a Londra\")\n\n\nQuesto articolo
+  mostra come iniettare facilmente una chiave/valore generico in Google Cloud Monitoring
+  e impostare avvisi su di esso. Lo uso per ricevere avvisi sullo spazio su disco
+  e ora anche sulla batteria scarica!\n\nStamattina ero a Londra e ho dimenticato
+  il caricabatterie a casa. Con molto tempo a disposizione ma \U0001FAAB poca batteria,
+  ho pensato: ehi! Ho bisogno di un modo per prevedere quando la mia batteria è scarica!
+  E devo farlo in un modo totalmente esagerato!\n\n<!--more-->\n\nLa mia batteria
+  era al 42%, il che mi è sembrato un sottile indizio che la mia idea valesse la pena
+  di essere pubblicata su un blog. Cercando su Google, ho trovato un articolo che
+  mi ha dato il suggerimento su come scrivere uno script per la batteria del mio Mac
+  (nota che questo funziona solo per un Macbook).\n\nCodice brutto qui (ehi! Sono
+  in un aeroporto senza caricabatterie, vuoi anche i test Unit?!?)\n\n```ruby\n#!/usr/bin/env
+  ruby\n\n# Nota 1. buridone non è attualmente utilizzato. È per un uso più efficiente
+  per estrapolare tutte le informazioni da un singolo file letto.\n# Nota 2. Questo
+  NON funziona su M1. Ho appena risolto questo problema nel repository github sakura.
+  Trova il codice 0.2 aggiornato lì.\ndef processMacCapacity(buridone)\n  ret = {}\n
+  \ ret[:debug] = 'Riempirà numeratore e denominatore finché non lo capisco.'\n  ret[:capacity_pct]
+  = 142 # chiaramente sbagliato\n  # `ioreg -l -w0 | grep AppleRawMaxCapacity`.split\n
+  \ # => [\"|\", \"|\", \"\\\"AppleRawMaxCapacity\\\"\", \"=\", \"4320\"]\n  ret[:AppleRawMaxCapacity]
+  = `ioreg -l -w0 | grep AppleRawMaxCapacity`.split[4].to_i\n  ret[:AppleRawCurrentCapacity]
+  = `ioreg -l -w0 | grep AppleRawCurrentCapacity`.split[4].to_i\n  #  => [\"\\\"StateOfCharge\\\"=41\"]\n
+  \ ret[:StateOfCharge] = `ioreg -l -w0 | grep BatteryData`.split(',').select{|e|
+  e.match /StateOfCharge/ }[0].split('=')[1].to_i\n  ret[:AppleDesignCapacity] = `ioreg
+  -l -w0 | grep BatteryData`.split(',').select{|e| e.match /DesignCapacity/ }[0].split('=')[1].to_i\n\n
+  \ # valori derivati..\n  # questa dovrebbe essere la durata della batteria, immagino?x\n
+  \ ret[:BatteryCapacityPercent] = ret[:AppleRawCurrentCapacity]*100.0/ret[:AppleRawMaxCapacity]\n
+  \ ret[:battery_health] =  ret[:AppleRawMaxCapacity]*100.0/ret[:AppleDesignCapacity]\n\n
+  \ return ret\nend\n\ndef real_program\n  capacity_hash = processMacCapacity(`ioreg
+  -l -w0 | grep Capacity`)\n  deb \"capacity_hash: '''#{white capacity_hash}'''\"\n
+  \ if $DEBUG\n    capacity_hash.each{|k,v|\n      puts \"[DEB] #{k}:\\t#{v}\"\n  }\n
+  \ end\n  puts \"1. \U0001F50B Durata batteria % \U0001F50C\U0001FAAB: #{capacity_hash[:BatteryCapacityPercent].round(2)}\"\n
+  \ puts \"2. \U0001F50B Stato batteria % \U0001F6DF: #{capacity_hash[:battery_health].round(2)}\"\nend\n\ndef
+  main(filename)\n  deb \"Sono chiamato da #{white filename}\"\n  init        # Abilita
+  questo per avere capacità di analisi della riga di comando!\n  real_program\nend\n\nmain(__FILE__)\n```\n\n\nLo
+  so, chiamo lo stesso comando 10 volte e potrei metterlo nella cache. Questo è per
+  la prossima iterazione!\n\nLa parte migliore di questo è che non solo ottengo la
+  durata della batteria, ma mi dà anche la sua durata - così quando ho bisogno di
+  cambiare la batteria. Woohoo!\n\nEcco fatto, proviamolo, fammi solo togliere il
+  cavo così non ottieni un noioso 100%.\n\n![Image Caption](/images/articles/battery-life-cli.webp
+  \"Ecco la durata della mia batteria e lo stato della mia batteria\")\n\nTODO(ricc):
+  finire\n\n\n[Vedi articolo su Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)\n"
+model: gemini-1.5-pro
+code_version: '1.0'

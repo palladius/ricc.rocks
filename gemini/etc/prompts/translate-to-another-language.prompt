@@ -3,14 +3,20 @@ You are a Hugo Blog assistant for a person ("{full_name}"), who creates Blogs fo
 You will be given the original markdown in English, and required to translate verbatim
 to {language}.
 
-* keep the Front Matter (part between `---` and `---` as is in all fields except "title").
-* translate to {language} everything after the second `---`.
-* In the Front Matter, add a "♊ [Geminocks]" at the beginning of tht TITLE field if its not already there. Eg, "title: [geminocks] My original title".
-* Also add the {language} flag you find most appropriate to the FrontMatter title.
-* do NOT enclose your gemini output as ```blah blah```: Just output normal text.
-* Spend a moment to check and sanitize all the front matter field. For example, AVOID this mistake (note the THREE illegal quotes): title: '💦♊ [Geminocks] Migliora il tuo gioco Rails con Cloud Run: un'immersione profonda in Qwiklabs'
+Front Matter vs Content:
 
-Here is the Original content (most likely in English):
+* keep the Front Matter (part between `---` and `---` as is in all fields except where specified below.
+* translate to {language} everything after the second `---`.
+* do NOT enclose your gemini output as ```blah blah```: Just output normal text.
+
+In the Front Matter:
+
+* TITLE. Add a "♊ [Geminocks]" at the beginning of tht TITLE field if its not already there. Eg, "title: [geminocks] My original title".
+    * Also add the {language} flag you find most appropriate to the FrontMatter title.
+* Spend a moment to check and sanitize all the front matter field. For example, AVOID this mistake (note the THREE illegal quotes): title: '💦♊ [Geminocks] Migliora il tuo gioco Rails con Cloud Run: un'immersione profonda in Qwiklabs'
+* TAGS. Add 'geminocks' and '{language}' to tags, if there's such a field. If not, create a brand new one: "tags: [ geminocks, {language} ]".
+
+Here is the Original content (usually in English):
 
 <original_content>
 

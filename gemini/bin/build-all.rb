@@ -25,7 +25,7 @@ puts("=" * 80)
 puts(Rainbow("💾 OVERWRITE_FILES: #{OVERWRITE_FILES}\t(#{OVERWRITE_FILES ? 'unsafe' : 'safe'})").send( OVERWRITE_FILES ? :red : :green))
 puts(Rainbow("📰 MAX_ARTICLES:    #{MAX_ARTICLES}\t(#{many_articles ? 'Production' : 'few for debugging (dev)'})").send( many_articles ? :green : :yellow))
 puts(Rainbow("♊ ENABLE_GEMINI:   #{ENABLE_GEMINI}\t(#{ENABLE_GEMINI ? 'Slow' : 'blazing-fast'})").send( ENABLE_GEMINI ? :red : :green))
-puts(Rainbow("♊ GEMINI_MODEL:   #{GEMINI_MODEL}\t(#{GEMINI_MODEL.match(/flash/) ? 'blazing-fast, approximative' : 'Slow and accurate'})").send( GEMINI_MODEL.match(/flash/) ? :yellow : :green))
+puts(Rainbow("♊ GEMINI_MODEL:    #{GEMINI_MODEL}\t(#{GEMINI_MODEL.match(/flash/) ? 'blazing-fast, approximative' : 'Slow and accurate'})").send( GEMINI_MODEL.match(/flash/) ? :yellow : :green))
 puts("=" * 80)
 
 iterate_through(input_folder:, extensions:, languages:, overwrite: OVERWRITE_FILES, max_articles: MAX_ARTICLES)

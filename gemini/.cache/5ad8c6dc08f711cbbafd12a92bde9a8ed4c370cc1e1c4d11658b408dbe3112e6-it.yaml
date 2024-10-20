@@ -1,0 +1,26 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"♊ [Geminocks] Music I like \U0001F3B9\"\ndate: 2023-02-03T21:17:43+01:00\ndraft:
+  false\ntags:\n- symlink\n- personal\n- music\n# Categories is feinitely used by
+  STACK framework:\ncategories:\n- symlink\n- music\n- personal\nkeywords:\n- music\n-
+  piano\n- personal\n- Riccardo\n- Carlesso\n- palladius\n- symlink\nimage: petrucci.png\n#images:\n#-
+  tranquilpeak-showcase.png\n#- zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\nthumbnailImage:
+  petrucci.png\nfeatured_image:  petrucci.png\n---\n\nI love a few bands which I'm
+  happy to share.\n\nI play the piano\n\n* https://www.youtube.com/watch?v=1_JwJ9fPGKg
+  A guy playing DT on piano. Wow.\n\n<!--\n   draft\n-->\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1EE\U0001F1F9 ♊ [Geminocks] Musica che mi piace
+  \U0001F3B9\"\ndate: 2023-02-03T21:17:43+01:00\ndraft: false\ntags:\n- symlink\n-
+  personal\n- music\n- geminocks\n- Italian\n# Categories is feinitely used by STACK
+  framework:\ncategories:\n- symlink\n- music\n- personal\nkeywords:\n- music\n- piano\n-
+  personal\n- Riccardo\n- Carlesso\n- palladius\n- symlink\nimage: petrucci.png\n#images:\n#-
+  tranquilpeak-showcase.png\n#- zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\nthumbnailImage:
+  petrucci.png\nfeatured_image:  petrucci.png\n---\n\nAmo alcuni gruppi musicali che
+  sono felice di condividere.\n\nSuono il pianoforte\n\n* https://www.youtube.com/watch?v=1_JwJ9fPGKg
+  Un ragazzo che suona i DT al pianoforte. Wow.\n\n<!--\n   draft\n-->\n"
+model: gemini-1.5-pro
+code_version: '1.1'
