@@ -1,6 +1,7 @@
 
 build-all:
-	ruby bin/build-all.rb
+	echo Rebuild ing safely...
+	OVERWRITE_FILES=False ruby bin/build-all.rb
 
 force-rebuild:
-	echo todo remove stuff and recalculate
+	OVERWRITE_FILES=true ruby bin/build-all.rb
