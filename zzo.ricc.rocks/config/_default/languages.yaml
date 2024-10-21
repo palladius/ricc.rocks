@@ -2,11 +2,24 @@ en:
   title: Riccardo's 💛 Blog
   languageName: English
   weight: 1
-  #languagedir: ltr
   contentdir: content/en
 it:
-  title: "Riccardo 💛 ZZO Blog"
+  title: "Riccardo 💛 el mi Blogghe"
   languageName: Italiano
   weight: 2
-  #languagedir: ltr
   contentdir: content/it
+de:
+  title: "Riccardo 💛 Das Blog"
+  languageName: Deutsch
+  weight: 30
+  contentdir: content/de
+# fr:
+#   title: "Riccardo 💛 Le Blog"
+#   languageName: Francais
+#   weight: 40
+#   contentdir: content/fr
+jp:
+  title: "Riccardo 💛 Tsugoi Blog"
+  languageName: '日本語 (Japanese)'
+  weight: 30
+  contentdir: content/jp
