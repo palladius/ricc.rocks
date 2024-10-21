@@ -25,11 +25,11 @@ images:
 
 See also [README.md](https://github.com/razonyang/hugo-theme-bootstrap-skeleton/blob/main/README.md).
 
-~This is the end of the introduction, Kate.
+~This is the end of the introduction on Bootstrap.
 
 <!--more-->
 
-<!-- ![boh](/images/riccardo/riccardo-smiles-swim-ironman.jpeg) -->
+<!-- ![Riccardo Ironman](/images/riccardo/riccardo-smiles-swim-ironman.jpeg) -->
 
 ## Useful links
 
