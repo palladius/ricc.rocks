@@ -15,7 +15,7 @@ categories:
 - technology
 ---
 
-I felel in love with MJ.
+I fell in love with MJ.
 
 * Some tips: https://www.wired.it/article/come-usare-midjourney/
 

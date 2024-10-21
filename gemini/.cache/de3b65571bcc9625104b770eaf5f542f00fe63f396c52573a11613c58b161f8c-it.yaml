@@ -1,0 +1,15 @@
+---
+input: |+
+  ---
+  title: "My First Post"
+  date: 2023-04-10T18:11:48+02:00
+  draft: true
+  ---
+
+  ![image](/gallery/midjourney/PalladiusPacans_a_puffin_who_just_won_an_ironman__all_sweated_a_b92ad63c-71b9-4848-9512-13d6240d1cbe.png)
+
+output: "---\ntitle: \"\U0001F1EE\U0001F1F9♊ [Geminocks] Il mio primo post\"\ndate:
+  2023-04-10T18:11:48+02:00\ndraft: true\ntags: [ geminocks, Italian ]\n---\n\n![image](/gallery/midjourney/PalladiusPacans_a_puffin_who_just_won_an_ironman__all_sweated_a_b92ad63c-71b9-4848-9512-13d6240d1cbe.png)\n\n\n\n"
+model: gemini-1.5-pro
+code_version: '1.1'
+...
