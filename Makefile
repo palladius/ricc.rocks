@@ -35,9 +35,14 @@ install:
 gemini-cp:
 	echo These are manually maintained yet quite easy to redo.
 	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
-	mkdir -p zzo.ricc.rocks/content/de/posts/gemini/
-	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/
+# Copy German too..
+#	mkdir -p zzo.ricc.rocks/content/de/posts/gemini/
+#	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/
 	rsync -avz gemini/doc/posts/medium/ zzo.ricc.rocks/content/en/posts/medium/
 # TODO quando te la senti rwynca TUTTO e poi togli doppioni tipo Musica Famiglia etc..
 #rsync -avz gemini/doc/posts/TUTTO zzo.ricc.rocks/content/en/posts/TUTTO/
 # Magari prima crea scriptino per togliere chirurgicamente roba copincollata prima che bloati di brutto.
+
+
+hugo-install:
+	echo 'on Debian: sudo snap install hugo'

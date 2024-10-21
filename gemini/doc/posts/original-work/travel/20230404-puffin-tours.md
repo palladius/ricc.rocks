@@ -18,19 +18,21 @@ categories:
 - midjourney
 ---
 
-Note: after this I've actyally created a Ruby on Rails application called Puffin Tours, for my wife to be able to add
+Note: after this I've actually created a `Ruby on Rails` application called Puffin Tours, for my wife to be able to add
 content and vote/rate it:
 
 * Code: <https://github.com/palladius/ror7-tailwind-puffintours>
 * App in PROD: <https://puffintours-prod-rjjr63dzrq-ew.a.run.app/>
 
+
 ## About Puffin tours
 
 Puffin tours organizes event for the whole Carlesso family since 2021, when the term was coined.
 
-Here's the company Logo (created with MidJourney of course)
+Here's the company Logo (created with `MidJourney`).
 
-valigia
+Suitcase:
+
 ![image](/gallery/midjourney/PalladiusPacans_a_puffin_sleeping_in_a_bed_with_beside_an_open__3d7dfdd9-fb23-4750-97e8-e59cbe642a73.png)
 
 Planning on the computer: [image.png](http://localhost:1313/gallery/midjourney/PalladiusPacans_a_puffin_with_yellow_hat_typing_on_his_Macbook__51a145b4-4ef0-4ccc-85fa-0c29f503b4e0.png)

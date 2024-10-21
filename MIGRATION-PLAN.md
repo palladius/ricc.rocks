@@ -13,3 +13,12 @@ Many problems arise:
 * post links break in case.
 * What about images links? Fingers crossed.
 * maybbe DRY this into a script?
+
+
+## Gemini bugs
+
+Only from Derek:
+
+```
+Net::ReadTimeout: Net::ReadTimeout with #<TCPSocket:(closed)>
+```
