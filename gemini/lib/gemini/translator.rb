@@ -15,7 +15,9 @@ FMPLoader ||= FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Time, Date
 # CHANGELOG
 #  2024-10-20 v1.0 first stesure
 #  2024-10-20 v1.1 Added geminocks+lang to prompt => into tags.
-TranslatorVersion = '1.1'
+#  2024-10-23 v1.2 Added other field to the file. Also added TXT to cache for easy of finding empty stuff. With the YAML is hard to see if it produces bogus output,
+#                  since INPUT is always chubby.
+TranslatorVersion = '1.2'
 
 def llm
   Langchain.logger.level = Logger::INFO
@@ -56,10 +58,22 @@ def translate_title(title:, lang: )
   "[TODO] [#{lang}] #{title}".gsub('Geminocks', '🎌GemiNoTrnsl')
 end
 
+def extract_title_from_content(markdown_content:)
+  match = markdown_content.match(/^title: "(.*)"$/)
+
+  if match
+    title = match[1]
+    return title  # Output the extracted title
+  else
+    puts "extract_title_from_content(): Title not found in the markdown_content: #{markdown_content}"
+    return nil
+  end
+end
+
 def alter_front_matter(file_name:,  extension:, lang:)
   alter_front_matter_version = '1.0'
 
-  puts("alter_front_matter:: file_name: #{file_name}")
+  puts("alter_front_matter:: Altering headers for file_name: #{Rainbow(file_name).cyan}")
   parsed = FrontMatterParser::Parser.parse_file(file_name, loader: FMPLoader)
   # front_matter to hash
   altered_fm = parsed.front_matter
@@ -70,9 +84,12 @@ def alter_front_matter(file_name:,  extension:, lang:)
     'alter_front_matter_version': alter_front_matter_version,
     'notes': 'Riccardo - todo make this variable per extension and calla  proper class to get it. So you can have a single thingie for Main picture, and then transform it for all extensions.'
   }
+  parsed_title = parsed.front_matter['title']
   altered_fm['title'] = translate_title(
-    title: parsed.front_matter['title'],
+    title: parsed_title, # parsed.front_matter['title'],
     lang:)
+  Langchain.logger.info("front_matter title: '#{Rainbow(parsed_title).cyan}'")
+
   return altered_fm
 end
 
@@ -91,6 +108,7 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
     full_name: 'Dr Riccardo Carlesso',
     )
   # DEBUG
+  title = extract_title_from_content(markdown_content:)
 
   # Generate a unique cache key based on content hash and language
   FileUtils.mkdir_p('.cache/')
@@ -129,11 +147,14 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
     "model" => GEMINI_MODEL,
     "code_version" => TranslatorVersion,
     'article_hash' => original_article_hash,
+    'title' => title,
+    'lang' => lang,
   }
 
 
   # Write the translation to the cache file
   File.open(cache_file, 'w') { |f| f.write(cache_data.to_yaml) }
+  File.open(cache_file + ".txt", 'w') { |f| f.write(response.chat_completion) } # output
 
   binding.pry if cache_data["output"].nil?
 

@@ -26,7 +26,7 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false, ma
 
         # Geminizing the file
         if file.end_with?('.md')
-          puts("TODO check the MD5 of the source file to see if it has changed. Wait, credo lo faccia gia semplicemente cambiando il nome del cache file.. l unico problema e trovare cache duplicates..")
+          #puts("TODO check the MD5 of the source file to see if it has changed. Wait, credo lo faccia gia semplicemente cambiando il nome del cache file.. l unico problema e trovare cache duplicates..")
           if File.exist?(output_file) and (not overwrite)
             puts(Rainbow("Output File exists ('#{output_file}') and overwrite=false => skipping Geminization").darkslategray)
           else
@@ -36,7 +36,7 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false, ma
               break
             end
             # Normal flow: Gemini is ON! :)
-            puts("Either OutputFile '#{output_file}' doesnt exist or overwrite=false => doing Geminization!!")
+            puts("Either OutputFile '#{Rainbow(output_file).purple}' doesnt exist or overwrite=false => doing Geminization!!")
             # Call your Gemini function (replace with your actual implementation)
 #            translate_with_gemini(file_name: file, extension:, lang:, output_file: , overwrite:)
             begin

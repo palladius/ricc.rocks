@@ -4,6 +4,10 @@ build-all:
 	OVERWRITE_FILES=False ruby bin/build-all.rb
 	make push-to-local-code
 
+rebuild-madeira:
+#	echo Rebuild ing safely... TODO(implement me)
+	OVERWRITE_FILES=TrUe ruby bin/build-all.rb --file-regex '20230210-madeira'
+
 ########################################################
 # Force rebuild tests - this is for Dev FB Loop
 ########################################################
@@ -31,3 +35,8 @@ force-rebuild-5-with-pro:
 push-to-local-code:
 	echo Copying all my files to the proper local folder for ZZO..
 	cd .. && make gemini-cp
+
+cleanup-local-output-cache:
+	rm -rf out/zzo/de/
+	rm -rf out/zzo/fr/
+	rm -rf out/zzo/it/
