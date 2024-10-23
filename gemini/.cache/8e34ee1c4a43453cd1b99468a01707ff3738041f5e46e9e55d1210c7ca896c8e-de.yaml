@@ -1,0 +1,99 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"About ⬢ Hugo ZZO theme\"\ndate: 2023-01-31T21:17:43+01:00\ndraft:
+  false\npinned: false # (ZZO) lo voglio in cima\ntags:\n- symlink\n- hugo\n# Categories
+  is feinitely used by STACK framework:\ncategories:\n- hugo\n- zzo\nkeywords:\n-
+  hugo\n- zzo\n#image: /images/clone-mtg-vintage.png\nimage: /gallery/midjourney/PalladiusPacans_hugo_github_theme_abstract_logo_website_logo_co_cec2f356-2b55-4ef0-be71-b3bdccde2f0f.png\npinned:
+  true\n#math: true\n# enables Maths on ZZO\nlibraries:\n- mathjax\nimages:\n- zzo-screenshot.png\n-
+  st-oca-zzo.jpeg\nauthor: Pinco Pallino Joe # author name\nauthorEmoji: \U0001F916
+  # emoji for subtitle, summary meta data\nauthorImage: \"/images/whoami/avatar.jpg\"
+  # image path in the static folder\nauthorImageUrl: \"/gallery/riccardo-at-once/pinco-pallino-joe.png\"\n#
+  \ your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.\nauthorDesc:
+  an average writer # author description\nsocialOptions: # override params.toml file
+  socialOptions\n  email: \"\"\n  facebook: \"\"\n---\n\n\nI'm playing around with
+  ZZO here. And this is my ZZO-only page test.\n\n* \U0001F44D\U0001F44D: [at-once
+  pictures](https://zzo-docs.vercel.app/zzo/pages/gallery/) for easy peasy album\n*
+  \U0001F44D pinned pages on top\n* \U0001F44D features below: tabs, markdown, ...
+  lot of goodies\n* \U0001F44D mulltilanguage support for IT.\n* \U0001F44D Supports
+  Author metadayta, wow\n* \U0001F44D Supports Maths\n* \U0001F44E\U0001F3FE: font
+  seems a bit ugly. Too playful, not serious.\n\n\n## img\n\nFrom https://zzo-docs.vercel.app/zzo/shortcodes/img/
+  :\n\n{{< img src=\"/images/header/background.jpg\" title=\"Sample Image\" caption=\"This
+  was in the sample site\" alt=\"image alt\" width=\"700px\" position=\"center\" >}}\n\n{{<
+  img src=\"/images/header/background2.jpeg\" title=\"Sample Image\" caption=\"This
+  I took from docs\" alt=\"image alt\" width=\"700px\" position=\"center\" >}}\n\n##
+  colorful Notices\n\nhttps://zzo-docs.vercel.app/zzo/shortcodes/notice/\n\n{{< notice
+  success \"This is a success type of notice\" >}}\nsuccess text\n{{< /notice >}}\n\n{{<
+  notice info \"This is a info type of notice\" >}}\ninfo text\n{{< /notice >}}\n\n{{<
+  notice warning \"This is a warning type of notice\" >}}\nwarning text\n{{< /notice
+  >}}\n\n{{< notice error \"This is a error type of notice\" >}}\nerror text\n{{<
+  /notice >}}\n\n## Math\n\n### MathJax\n\nBy enabling mathjax in libraries on front
+  matter, you get this!!!\n\nWhen $a \\ne 0$, there are two solutions to $\\(ax^2
+  + bx + c = 0\\)\\$ and they are\n$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$\n\n##
+  Tabs\n\nsee https://zzo-docs.vercel.app/zzo/shortcodes/tab/\n\n{{< tabs Italian
+  UK US >}}\n  {{< tab >}}\n\n  ### Mafia section\n\n  ```javascript\n  console.log('Tagliatelle
+  Bolognese \U0001F1EE\U0001F1F9!');\n  ```\n\n  {{< /tab >}}\n  {{< tab >}}\n\n  ###
+  UK section\n\n  \U0001F1EC\U0001F1E7 Hello Fish and Chips!\n  {{< /tab >}}\n  {{<
+  tab >}}\n\n  ### US section\n\n  \U0001F1FA\U0001F1F8 Let's shoot at it if it moves!\n
+  \ {{< /tab >}}\n{{< /tabs >}}\n\nalso expand:\n\n{{< expand \"Expand me\" >}}Some
+  Markdown Contents{{< /expand >}}\n\n## featured image\n\ndocumented in https://zzo-docs.vercel.app/zzo/shortcodes/featuredimage/\n\n{{<
+  featuredImage >}}\n\n## buttons\n\ndocumented here: https://zzo-docs.vercel.app/zzo/shortcodes/button/\n\n{{<
+  button href=\"https://zzo-docs.vercel.app/zzo/shortcodes/button/\" width=\"200px\"
+  >}}button docs{{< /button >}}\n{{< button href=\"https://...\" width=\"100px\" height=\"36px\"
+  >}}button{{< /button >}}\n{{< button href=\"https://...\" width=\"100px\" height=\"36px\"
+  color=\"primary\" >}}button{{< /button >}}\n\n\n## Images\n\n![Image](/st-oca-zzo.jpeg)\n\n\n##
+  Twitter Youtuibe\n\nSee rich content page but anyway:\n\nYouTube Aos Ricc\n\n{{<
+  youtube E3ReKuJ8ewA >}}\n\n<br>\n\n---\n\nTwitter Simple Shortcode\n\n{ { <\ntwitter_simple
+  user=\"palladius\" id=\"1617900746967773190\"\n> } }\n\nRiccardo tweet: https://twitter.com/palladius/status/1617900746967773190\n\n<br>\n\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1E9\U0001F1EA♊ [Geminocks] Über das ⬢ Hugo
+  ZZO Theme\"\ndate: 2023-01-31T21:17:43+01:00\ndraft: false\npinned: false # (ZZO)
+  lo voglio in cima\ntags:\n- symlink\n- hugo\n- geminocks\n- German\n# Categories
+  is feinitely used by STACK framework:\ncategories:\n- hugo\n- zzo\nkeywords:\n-
+  hugo\n- zzo\n#image: /images/clone-mtg-vintage.png\nimage: /gallery/midjourney/PalladiusPacans_hugo_github_theme_abstract_logo_website_logo_co_cec2f356-2b55-4ef0-be71-b3bdccde2f0f.png\npinned:
+  true\n#math: true\n# enables Maths on ZZO\nlibraries:\n- mathjax\nimages:\n- zzo-screenshot.png\n-
+  st-oca-zzo.jpeg\nauthor: Pinco Pallino Joe # author name\nauthorEmoji: \U0001F916
+  # emoji for subtitle, summary meta data\nauthorImage: \"/images/whoami/avatar.jpg\"
+  # image path in the static folder\nauthorImageUrl: \"/gallery/riccardo-at-once/pinco-pallino-joe.png\"\n#
+  \ your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.\nauthorDesc:
+  ein durchschnittlicher Schriftsteller # author description\nsocialOptions: # override
+  params.toml file socialOptions\n  email: \"\"\n  facebook: \"\"\n---\n\n\nIch spiele
+  hier mit ZZO herum. Und das ist mein ZZO-only Seiten-Test.\n\n* \U0001F44D\U0001F44D:
+  [at-once Bilder](https://zzo-docs.vercel.app/zzo/pages/gallery/) für einfache Alben\n*
+  \U0001F44D Gepinnte Seiten oben\n* \U0001F44D Features unten: Tabs, Markdown, ...
+  viele Goodies\n* \U0001F44D Mehrsprachige Unterstützung für IT.\n* \U0001F44D Unterstützt
+  Autoren-Metadaten, wow\n* \U0001F44D Unterstützt Mathematik\n* \U0001F44E\U0001F3FE:
+  Schriftart wirkt etwas hässlich. Zu verspielt, nicht seriös.\n\n\n## img\n\nVon
+  https://zzo-docs.vercel.app/zzo/shortcodes/img/ :\n\n{{< img src=\"/images/header/background.jpg\"
+  title=\"Beispielbild\" caption=\"Das war auf der Beispielseite\" alt=\"Bild alt\"
+  width=\"700px\" position=\"center\" >}}\n\n{{< img src=\"/images/header/background2.jpeg\"
+  title=\"Beispielbild\" caption=\"Das habe ich aus den Dokumenten\" alt=\"Bild alt\"
+  width=\"700px\" position=\"center\" >}}\n\n## Farbige Hinweise\n\nhttps://zzo-docs.vercel.app/zzo/shortcodes/notice/\n\n{{<
+  notice success \"Dies ist ein Erfolgshinweis\" >}}\nErfolgstext\n{{< /notice >}}\n\n{{<
+  notice info \"Dies ist ein Info-Hinweis\" >}}\nInfotext\n{{< /notice >}}\n\n{{<
+  notice warning \"Dies ist ein Warnungshinweis\" >}}\nWarnungstexte\n{{< /notice
+  >}}\n\n{{< notice error \"Dies ist ein Fehlerhinweis\" >}}\nFehlertext\n{{< /notice
+  >}}\n\n## Mathematik\n\n### MathJax\n\nDurch Aktivieren von Mathjax in Bibliotheken
+  auf der Vorderseite erhalten Sie dies!!!\n\nWenn $a \\ne 0$, gibt es zwei Lösungen
+  für $\\(ax^2 + bx + c = 0\\)\\$ und sie sind\n$$x = {-b \\pm \\sqrt{b^2-4ac} \\over
+  2a}.$$\n\n## Tabs\n\nsiehe https://zzo-docs.vercel.app/zzo/shortcodes/tab/\n\n{{<
+  tabs Italienisch UK US >}}\n  {{< tab >}}\n\n  ### Mafia-Sektion\n\n  ```javascript\n
+  \ console.log('Tagliatelle Bolognese \U0001F1EE\U0001F1F9!');\n  ```\n\n  {{< /tab
+  >}}\n  {{< tab >}}\n\n  ### UK-Sektion\n\n  \U0001F1EC\U0001F1E7 Hallo Fish and
+  Chips!\n  {{< /tab >}}\n  {{< tab >}}\n\n  ### US-Sektion\n\n  \U0001F1FA\U0001F1F8
+  Lass uns darauf schießen, wenn es sich bewegt!\n  {{< /tab >}}\n{{< /tabs >}}\n\nauch
+  erweitern:\n\n{{< expand \"Erweitern Sie mich\" >}}Einige Markdown-Inhalte{{< /expand
+  >}}\n\n## Empfohlenes Bild\n\ndokumentiert in https://zzo-docs.vercel.app/zzo/shortcodes/featuredimage/\n\n{{<
+  featuredImage >}}\n\n## Schaltflächen\n\ndokumentiert hier: https://zzo-docs.vercel.app/zzo/shortcodes/button/\n\n{{<
+  button href=\"https://zzo-docs.vercel.app/zzo/shortcodes/button/\" width=\"200px\"
+  >}}Schaltflächen-Dokumente{{< /button >}}\n{{< button href=\"https://...\" width=\"100px\"
+  height=\"36px\" >}}Schaltfläche{{< /button >}}\n{{< button href=\"https://...\"
+  width=\"100px\" height=\"36px\" color=\"primary\" >}}Schaltfläche{{< /button >}}\n\n\n##
+  Bilder\n\n![Image](/st-oca-zzo.jpeg)\n\n\n## Twitter Youtuibe\n\nSiehe Seite mit
+  Rich Content, aber trotzdem:\n\nYouTube Aos Ricc\n\n{{< youtube E3ReKuJ8ewA >}}\n\n<br>\n\n---\n\nTwitter
+  Simple Shortcode\n\n{ { <\ntwitter_simple user=\"palladius\" id=\"1617900746967773190\"\n>
+  } }\n\nRiccardo Tweet: https://twitter.com/palladius/status/1617900746967773190\n\n<br>\n\n\n\n"
+model: gemini-1.5-pro
+code_version: '1.1'
+article_hash: 8e34ee1c4a43453cd1b99468a01707ff3738041f5e46e9e55d1210c7ca896c8e
