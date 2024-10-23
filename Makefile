@@ -51,18 +51,18 @@ gemini-cp: clean
 	echo 'Now 🇩🇪 German stuff'
 	# Cleanup first
 	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/ || true
-	rsync -avz gemini/out/zzo/de/medium/ zzo.ricc.rocks/content/de/posts/medium/ || true
+#	rsync -avz gemini/out/zzo/de/medium/ zzo.ricc.rocks/content/de/posts/medium/ || true
 # Copy French too.. TODO to script..
 	echo 'Now 🇫🇷 French stuff'
 	cp -R gemini/out/zzo/fr/ zzo.ricc.rocks/content/fr/posts/gemini/ || true
-	rsync -avz gemini/out/zzo/fr/medium/ zzo.ricc.rocks/content/fr/posts/medium/ || true
+#	rsync -avz gemini/out/zzo/fr/medium/ zzo.ricc.rocks/content/fr/posts/medium/ || true
 # Copy French too.. TODO to script..
 	echo 'Now 🇮🇹 Italian stuff'
 	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/ || true
-	rsync -avz gemini/out/zzo/it/medium/ zzo.ricc.rocks/content/it/posts/medium/ || true
+#	rsync -avz gemini/out/zzo/it/medium/ zzo.ricc.rocks/content/it/posts/medium/ || true
 	echo 'Now 🇯🇵 Japanese stuff - tsugoi!'
 	cp -R gemini/out/zzo/jp/ zzo.ricc.rocks/content/jp/posts/gemini/  || true
-	rsync -avz gemini/out/zzo/jp/medium/ zzo.ricc.rocks/content/jp/posts/medium/ || true
+#	rsync -avz gemini/out/zzo/jp/medium/ zzo.ricc.rocks/content/jp/posts/medium/ || true
 
 	@echo '🍀 We made it to the end!'
 

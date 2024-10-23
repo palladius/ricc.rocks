@@ -4,6 +4,14 @@ build-all:
 	OVERWRITE_FILES=False ruby bin/build-all.rb
 	make push-to-local-code
 
+jp:
+	LANGUAGES=jp OVERWRITE_FILES=TrUe ruby bin/build-all.rb
+it:
+	LANGUAGES=it OVERWRITE_FILES=TrUe ruby bin/build-all.rb
+
+all-langs-rewriting:
+	LANGUAGES=it,jp,de,fr OVERWRITE_FILES=TrUe ruby bin/build-all.rb
+
 rebuild-madeira:
 #	echo Rebuild ing safely... TODO(implement me)
 	OVERWRITE_FILES=TrUe ruby bin/build-all.rb --file-regex '20230210-madeira'
