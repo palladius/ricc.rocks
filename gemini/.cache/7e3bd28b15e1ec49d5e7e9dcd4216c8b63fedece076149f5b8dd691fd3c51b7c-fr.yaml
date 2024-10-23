@@ -88,7 +88,7 @@ input: "---\n# type: docs\ntitle: \U0001F4A6 \U0001F688 Sebastian l'intrepido tr
   racchiudeva i segreti dell'universo.\n"
 output: "---\n# type: docs\ntitle: \U0001F1EB\U0001F1F7 ♊ [Geminocks] Sébastien, l'intrépide
   conducteur de tramway zurichois \U0001F1E8\U0001F1ED (pbt symlink)\ndate: 2024-04-20T11:48:51+01:00\nfeatured:
-  false\ndraft: false\ncomment: true\ntoc: true\nreward: true\npinned: false\ncarousel:
+  false\ndraft: true\ncomment: true\ntoc: true\nreward: true\npinned: false\ncarousel:
   false\n#series:\ncategories: []\ntags: [Gemini, genai, family, pbt, switzerland,
   geminocks, French]\nimages:\n- /images/articles/london-airport.jpg\nmeta_image:
   featured-sample.jpg # This is for ZZO\nimage: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png\n\n#
