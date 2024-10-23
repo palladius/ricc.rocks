@@ -32,31 +32,37 @@ install:
 	git submodule update --init --recursive
 
 
+gemini-feedback-loop:
+	echo '1. Create content'
+	cd gemini && make
+	echo '2. copy to ZZO'
+	make gemini-cp
+
 gemini-cp: clean
 	echo These are manually maintained yet quite easy to redo.
 #	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
 	echo '1. Copia originali in inglese 🏴󠁧󠁢󠁥󠁮󠁧󠁿'
 	rsync -avz gemini/doc/posts/medium/ zzo.ricc.rocks/content/en/posts/medium/
-# TODO quando te la senti rwynca TUTTO e poi togli doppioni tipo Musica Famiglia etc..
-#rsync -avz gemini/doc/posts/TUTTO zzo.ricc.rocks/content/en/posts/TUTTO/
+# TODO quando te la senti rsynca TUTTO e poi togli doppioni tipo Musica Famiglia etc..
+	#rsync -avz gemini/doc/posts/TUTTO zzo.ricc.rocks/content/en/posts/TUTTO/
 # Magari prima crea scriptino per togliere chirurgicamente roba copincollata prima che bloati di brutto.
 
 # Copy German too..
 	echo 'Now 🇩🇪 German stuff'
 	# Cleanup first
 	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/ || true
-	rsync -anvz gemini/out/zzo/de/medium/ zzo.ricc.rocks/content/de/posts/medium/
+	rsync -avz gemini/out/zzo/de/medium/ zzo.ricc.rocks/content/de/posts/medium/ || true
 # Copy French too.. TODO to script..
 	echo 'Now 🇫🇷 French stuff'
-	cp -R gemini/out/zzo/fr/ zzo.ricc.rocks/content/fr/posts/gemini/
-	rsync -anvz gemini/out/zzo/fr/medium/ zzo.ricc.rocks/content/fr/posts/medium/
+	cp -R gemini/out/zzo/fr/ zzo.ricc.rocks/content/fr/posts/gemini/ || true
+	rsync -avz gemini/out/zzo/fr/medium/ zzo.ricc.rocks/content/fr/posts/medium/ || true
 # Copy French too.. TODO to script..
 	echo 'Now 🇮🇹 Italian stuff'
-	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
-	rsync -anvz gemini/out/zzo/it/medium/ zzo.ricc.rocks/content/it/posts/medium/
+	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/ || true
+	rsync -avz gemini/out/zzo/it/medium/ zzo.ricc.rocks/content/it/posts/medium/ || true
 	echo 'Now 🇯🇵 Japanese stuff - tsugoi!'
-	cp -R gemini/out/zzo/jp/ zzo.ricc.rocks/content/jp/posts/gemini/
-	rsync -anvz gemini/out/zzo/jp/medium/ zzo.ricc.rocks/content/jp/posts/medium/
+	cp -R gemini/out/zzo/jp/ zzo.ricc.rocks/content/jp/posts/gemini/  || true
+	rsync -avz gemini/out/zzo/jp/medium/ zzo.ricc.rocks/content/jp/posts/medium/ || true
 
 	@echo '🍀 We made it to the end!'
 

@@ -1,7 +1,6 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "💦♊ [Geminocks] Maths 🧮"
+# Questo non viene bene in japano. Mette una icona dopo l'apice dx.
+title: "🧮 Maths"
 date: 2021-05-20T21:17:43+01:00
 draft: false
 tags:
