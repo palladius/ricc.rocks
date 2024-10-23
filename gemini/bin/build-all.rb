@@ -20,10 +20,9 @@ input_folder = 'doc/posts'
 #extensions = ['zzo', 'papermod', 'ananke']
 extensions = ['zzo']
 
-#languages = ['it']
 languages = ['it', 'fr', 'de']
 #languages = ['it', 'fr']
-#languages = ['it', 'de']
+#languages = ['it']
 
 many_articles = MAX_ARTICLES > 5
 

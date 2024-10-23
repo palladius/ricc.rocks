@@ -32,10 +32,10 @@ install:
 	git submodule update --init --recursive
 
 
-gemini-cp:
+gemini-cp: clean
 	echo These are manually maintained yet quite easy to redo.
-	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
-	# Copia originali
+#	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
+	echo '1. Copia originali in inglese 🏴󠁧󠁢󠁥󠁮󠁧󠁿'
 	rsync -avz gemini/doc/posts/medium/ zzo.ricc.rocks/content/en/posts/medium/
 # TODO quando te la senti rwynca TUTTO e poi togli doppioni tipo Musica Famiglia etc..
 #rsync -avz gemini/doc/posts/TUTTO zzo.ricc.rocks/content/en/posts/TUTTO/
@@ -65,6 +65,9 @@ clean:
 	rm -rf zzo.ricc.rocks/content/de/posts/gemini/
 	rm -rf zzo.ricc.rocks/content/fr/posts/gemini/
 	rm -rf zzo.ricc.rocks/content/it/posts/gemini/
+	gemini/bin/cleanup-for-language.rb de
+	gemini/bin/cleanup-for-language.rb fr
+	gemini/bin/cleanup-for-language.rb it
 
 
 hugo-install:

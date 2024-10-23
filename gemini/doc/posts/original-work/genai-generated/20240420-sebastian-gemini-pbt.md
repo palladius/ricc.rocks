@@ -1,6 +1,6 @@
 ---
 # type: docs
-title: 💦 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt symlink)
+title: 💦 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt)
 date: 2024-04-20T11:48:51+01:00
 featured: false
 # Messo come draft il 23oct e messo skip-zzo
@@ -24,7 +24,7 @@ image: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_maya
 # Generated with Gemini Ultra.
 ---
 
-**Note**: *This was created with Gemini*.
+**Note**: *This was created with [gemini.google.com](https://gemini.google.com/) (probably)*.
 
 **Prompt**: *Write an opening scene for a fantasy fiction novel set in a steampunk 18th century. Be descriptive and historically accurate. Avoid anachronism. The scene should involve Sebastian, a veryyoung tram driver in Zurich on a quest to understand the nature of knowledge and learning. Write in the style of Douglas Adams. Build mystery throughout the scene and end with an unexpected revelation. Write in Italian.*
 
