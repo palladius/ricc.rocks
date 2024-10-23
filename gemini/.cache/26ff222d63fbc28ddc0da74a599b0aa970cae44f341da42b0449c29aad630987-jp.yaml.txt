@@ -1,0 +1,52 @@
+---
+# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
+# initial HEADER :) Lets try to keep it small :)
+title: 🇯🇵 ♊ [Geminocks] Riccardo Sport history 2
+date: 2023-01-30T21:17:43+01:00
+draft: false
+tags:
+- personal
+- sport
+- symlink
+- geminocks
+- Japanese
+# paperMod
+#canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
+# ANANKE :)
+featured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg
+image: /images/riccardo/riccardo-bike-mallorca.jpg
+#image: imagez/riccardo-smiles-swim-ironman.jpeg
+#image: images/feature2/color-palette.png
+Categories:
+- symlink
+- GDoc
+images:
+- /images/riccardo/riccardo-smiles-swim-ironman.jpeg
+---
+子供の頃から、私はスポーツが全くダメでした。
+
+![image](imagez/riccardo-smiles-swim-ironman.jpeg)
+
+しかし、ある日、何かが変わりました。
+
+## 2010年：初めてのマラソン
+
+アイルランドに引っ越しました。ここでは、トレーニングを続けるには週に14～15パイントのビールを飲む必要があり、私は体重が増え始めました。2008年のことでした。私はまだ若く、32歳でした。しかし、「ジーノ」は成長していました。
+
+ジムでは物足りず、私は人生で最も невероятное なことをすることにしました。それは「フルマラソンを走る」ことです。10kmとハーフマラソンから始めましたが、ついにその時が来ました。世界で最も過酷なマラソンと言われる「コネマラソン」です（そう言われました。実際はそうではありませんでしたが、私を怖がらせ、決意させるには十分でした）。
+
+## 2012年：初めてのオリンピックディスタンス トライアスロン
+
+## 2015年：初めての（ハーフ）アイアンマン
+
+## 2017年：初めての（フル）アイアンマン
+
+## 2019年：2回目の（フル）アイアンマン
+
+## 2022年6月：平凡なハーフアイアンマン（ラッパースヴィル、🇨🇭）
+
+ここでは、私は山頂のように穏やかでした。しかし、私のパフォーマンスはひどく、2kmを30分以上かけて泳いでしまいました（！）。
+
+![image](/images/riccardo/riccardo-smiles-swim-ironman.jpeg)
+
+幸いなことに、緑のキャップを無料で手に入れることができました :)

@@ -32,10 +32,11 @@ def llm
 end
 
 def short_lang_to_long(lang:)
-  return 'Italian' if lang == 'it'
+  return 'German' if lang == 'de'
   return 'English' if lang == 'en'
   return 'French' if lang == 'fr'
-  return 'German' if lang == 'de'
+  return 'Italian' if lang == 'it'
+  return 'Japanese' if lang == 'jp'
   raise "Unknown language: #{lang}"
 end
 
@@ -59,13 +60,17 @@ def translate_title(title:, lang: )
 end
 
 def extract_title_from_content(markdown_content:)
-  match = markdown_content.match(/^title: "(.*)"$/)
+#  match = markdown_content.match(/^title: "(.*)"$/)
 
-  if match
-    title = match[1]
+  title = markdown_content.split("\n").select{|l| l =~ /^title:/}.first.split(': ')[1] rescue nil
+
+  if title
+    #title = match[1]
     return title  # Output the extracted title
   else
-    puts "extract_title_from_content(): Title not found in the markdown_content: #{markdown_content}"
+    puts "extract_title_from_content(): Title not found in the markdown_content: '''#{markdown_content[0..200]}...'''"
+    binding.pry
+    raise "Exception title not found for markdown: .."
     return nil
   end
 end
@@ -136,7 +141,7 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
   messages = [
     { role: "user", parts: [{ text: formatted_prompt }]}
   ]
-  puts("Calling Gemini on hashed content '#{original_article_hash}'..")
+  puts("Calling Gemini on hashed content '#{original_article_hash}' (lang= #{lang}))..")
   #puts(formatted_prompt)
   response = llm.chat(messages: messages)
 

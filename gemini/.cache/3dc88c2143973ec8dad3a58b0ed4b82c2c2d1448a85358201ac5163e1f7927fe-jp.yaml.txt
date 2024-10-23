@@ -1,0 +1,71 @@
+---
+title: "🇯🇵♊ [Geminocks] Cloud RunでRailsゲームをレベルアップ：Qwiklabs徹底解説"
+date: 2024-08-15  # Today's date
+layout: single  # Assuming single.html for blog posts in ZZO theme
+# Optional fields (change as needed)
+author: Riccardo Carlesso
+read_time: 3  # Minutes
+# categories: Add categories if applicable (e.g., ruby, rails, gcp)
+Tags: [geminocks, Japanese, qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain, skillsboost, cloudskillsboost ]
+canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
+# ![Riccardo Video on Youtube](/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png)
+---
+
+([元のMediumの記事](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b))
+
+[Cloud Skills Boost](https://www.cloudskillsboost.google/)（旧Qwiklabs）をご存知ですか？
+
+![Riccardo Video on Youtube](ricc-qwiklab-video.png)
+
+**[この動画](https://www.youtube.com/watch?v=vpPftSHE9kM)**では、cloudskillsboostのウェブサイトで説明されている「Ruby on Rails with PostgreSQL on Cloud Run」の手順を実行し、途中でいくつかの問題に遭遇し、それらを修正していく様子をご覧いただけます。
+
+さらに、元bash/perl開発者としての私の個人的なツールチェーンを紹介しますので、皆さんには奇妙に見えるかもしれません。
+
+すぐに始めたい方は、GitHubの最終コード[コードへのリンク](https://github.com/palladius/20240809-qwiklab-rails-on-gcp)とRoR Codelab[コードラボへのリンク](https://www.cloudskillsboost.google/focuses/20047)をご覧ください。
+
+これが私のRailsのビデオです！
+
+## **Skillsboostについて**
+
+Skillsboost（旧Qwiklabs）は、「ラボ」を実行することでGoogle Cloudのトレーニングを行うことができるサービスです。これらのラボは時間制限があり、Googleが必要なリソースをすべて作成し、ラボの最後に削除します。
+
+ラボを実行するには、クレジットベースのシステムがあります。クレジットは$$で購入するか、Innovator Championプログラムに登録するだけで無料で入手できます（そうです、すべて無料です！）。これにより、Geminiを含む約10個のラボを無料で受講できます（私も試してみましたが、とても楽しかったです！）。
+
+私たちのコードラボはこちらです：https://www.cloudskillsboost.google/focuses/20047
+
+## **リッカルドのSkillsboostへの取り組み方**
+
+ラボを実行するにはいくつかの方法がありますが、大きく分けて2つの方法があります。
+
+1. クラウド上でコードを実行する。これは最もシンプルで、誰もが行っている方法です。Cloud ShellとCloud Editorを組み合わせて使用します（vimでは不十分な場合）。
+2. ローカルでコードを実行する。これは設定が少し難しいですが、将来の使用/ハッキングのために、すべての有用なコードをローカルに保持することができます。私はこのためのツールチェーンを数年間かけて書いてきました。codelabbaやproceed_if_error_matchesなどを使っています。ご想像のとおり、私は自分のコードラボスクリプトをローカルのどこかに保存している唯一の人間だと思います。私は仲間はずれなのでしょうか？ぜひ私に連絡して、皆さんがどのように違うことをしているのか教えてください！
+
+ビデオでご覧いただけるように、私は両方のアプローチと、それぞれの長所と短所を紹介するために、両方を行っています。
+
+## **フリクションログとは？**
+
+フリクションログとは、コードやリソースの開発者に、自分の経験、感情、さらには怒りのレベル（色分けを使用）をテキストで記述したGoogleドキュメントのことです。このドキュメントを実装者と共有し、コードやドキュメントのバグを追跡するというアイデアです。私のクレイジーなアイデアは、それを元にビデオを作ることです！
+
+## **私の「codelabba」ツールチェーン**
+
+私の個人的なツールチェーンについて説明する時が来ました。普段は`~/git/`以下にいくつかのgitリポジトリがあり、そのうちの1つはオープンソースです。もちろん、palladius/sakuraのことです。
+
+* `00-init.sh`：すべてのcodelabbaプロジェクトに共通の初期化スクリプトで、PROJECT_ID、REGIONなどのENV変数を参照します。
+
+* `.envrc`：これはRob Edwardsに教えてもらったツール`direnv`によって動作し、私のすべてのENV変数が含まれています。これは、00-initと他のすべてのもののハイドレーション部分と考えることができ、.env*ファイルを管理するためのRuby/Pythonライブラリのおかげです。また、このファイルをPulumiでそのまま動作するように（Pulumi標準のENV名を採用）、Google Cloudのコードラボとできるだけ互換性を持つように努力しました。
+
+* `proceed_if_error_matches`：これは私が今までに書いた中で最もシンプルでスマートなスクリプトです。`set -euo pipefail`を使用した連続したbashスクリプトを、bash terraformのようなスクリプトに変換します。(1) バケットを作成する (2) バケットにACLを設定する (3) バケットにファイルをアップロードする必要があると想像してください。3つの連続したスクリプトがあると考えるのが妥当ですが、これは時々失敗することがあり、各行を修正するのに時間がかかります。修正したら次に進みたいのですが、どうなると思いますか？(1)が「バケットはすでに存在します」のような迷惑なメッセージで失敗し始めるので、(2)に取り組むことができません。そこで私は考えました。もし、文字列としてキャプチャした特定のエラーメッセージのみをフィルタリングできたらどうだろう？これがこのファイルの理由です。
+
+* `codelabba.rb`（プロプライエタリ）：これは私が公に公開したことがないRubyスクリプトです。しかし、コメントで聞いてくれれば、時間を取ってクリーンアップしてオープンソースにするかもしれません。これは基本的に私のコードラボのスケルトンを作成するもので、私が2回目か3回目のQwiklabコードラボを行っていたときに、まさに上で書いた理由で発明しました。
+
+* `XX-blah-blah.sh`（[例](https://github.com/palladius/20240809-qwiklab-rails-on-gcp)）：これらは順番に実行されるスクリプトです：01、02、03、...。つまり、ストーリーを語るスクリプトです。「Bash python notebook」と考えてください。わかっています、これはあなたが今日読む中で最も深遠な文章です:)
+
+コード：https://github.com/palladius/20240809-qwiklab-rails-on-gcp
+
+## 結論
+
+これは私にとって大きな実験です！これは良いアイデアだったのでしょうか？それともひどいアイデアだったのでしょうか？コメントで教えてください！
+
+
+
+
