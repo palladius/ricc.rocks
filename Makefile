@@ -43,9 +43,17 @@ gemini-cp:
 
 # Copy German too..
 	echo 'Now 🇩🇪 German stuff'
+	# Cleanup first
+	rm -rf zzo.ricc.rocks/content/de/posts/gemini/
 	mkdir -p zzo.ricc.rocks/content/de/posts/gemini/
 	cp -R gemini/out/zzo/de/ zzo.ricc.rocks/content/de/posts/gemini/
 	rsync -anvz gemini/out/zzo/de/medium/ zzo.ricc.rocks/content/de/posts/medium/
+# Copy French too.. TODO to script..
+	echo 'Now French stuff'
+	rm -rf zzo.ricc.rocks/content/fr/posts/gemini/
+	mkdir -p zzo.ricc.rocks/content/fr/posts/gemini/
+	cp -R gemini/out/zzo/fr/ zzo.ricc.rocks/content/fr/posts/gemini/
+	rsync -anvz gemini/out/zzo/fr/medium/ zzo.ricc.rocks/content/fr/posts/medium/
 
 
 hugo-install:

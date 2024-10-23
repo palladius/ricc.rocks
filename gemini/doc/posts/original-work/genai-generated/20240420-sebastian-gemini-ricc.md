@@ -3,7 +3,7 @@
 title: 💦 🚈 Sebastian l'intrepido tramviere zurighese 🏴󠁧󠁢󠁳󠁣󠁴󠁿 and  🦒 Rara (ricc symlink)
 date: 2024-04-20T11:48:51+01:00
 featured: true
-draft: false
+draft: true
 comment: true
 toc: true
 reward: true
@@ -11,7 +11,7 @@ pinned: false
 carousel: false
 series:
 categories: []
-tags: [Gemini, genai, family, ricc, switzerland]
+tags: [Gemini, genai, family, ricc, switzerland , family-only, skip-zzo ]
 images:
 #- /images/articles/london-airport.jpg
 - /gallery/riccardo-family/Screen%20Shot%202021-04-07%20at%204.00.10%20PM.png

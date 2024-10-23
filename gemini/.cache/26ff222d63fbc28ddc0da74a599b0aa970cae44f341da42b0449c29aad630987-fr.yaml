@@ -1,0 +1,46 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \U0001F4A6 Riccardo Sport history 2\ndate: 2023-01-30T21:17:43+01:00\ndraft:
+  false\ntags:\n- personal\n- sport\n- symlink\n# paperMod\n#canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n#
+  ANANKE :)\nfeatured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg\nimage:
+  /images/riccardo/riccardo-bike-mallorca.jpg\n#image: imagez/riccardo-smiles-swim-ironman.jpeg\n#image:
+  images/feature2/color-palette.png\nCategories:\n- symlink\n- GDoc\nimages:\n- /images/riccardo/riccardo-smiles-swim-ironman.jpeg\n---\nSince
+  I was a kiddo, I thouroughly sucked at sport.\n\n![image](imagez/riccardo-smiles-swim-ironman.jpeg)\n\nThen,
+  one day, something changed.\n\n## 2010: My first Marathon\n\nI moved to Ireland,
+  where you need to drink 14-15 pints a week to keep training and I started getting
+  weight. It was 2008, I was still young and 32. But *Gino* was growing.\n\nThe gym
+  wasn't, enough, I decided I would do the most incredible thing in my life: **I'd
+  run a full Marathon**. I started with 10k and a half marathon, but then it was there:
+  the Connemarathon, the hardest Marathon in the world (they told me - it wasn't -
+  but enough to scare me and set to purpose).\n\n## 2012: My first Olympic Triathlon\n\n\n##
+  2015: My first (half) Ironman\n\n\n## 2017: My first (full) Ironman\n\n## 2019:
+  My second (full) Ironman\n\n## June 2022: A mediocre half-Ironman (Rapperswil, \U0001F1E8\U0001F1ED)\n\nHere
+  I was tranquil like a peak; however, my performance was SO BAD that I was able to
+  swim 2km in more than 30m (!).\n\n![image](/images/riccardo/riccardo-smiles-swim-ironman.jpeg)\n\nLuckily,
+  I got a green cap for free :)\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \U0001F1EB\U0001F1F7 ♊ [Geminocks] Histoire du sport
+  de Riccardo 2\ndate: 2023-01-30T21:17:43+01:00\ndraft: false\ntags:\n- personal\n-
+  sport\n- symlink\n- geminocks\n- French\n# paperMod\n#canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n#
+  ANANKE :)\nfeatured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg\nimage:
+  /images/riccardo/riccardo-bike-mallorca.jpg\n#image: imagez/riccardo-smiles-swim-ironman.jpeg\n#image:
+  images/feature2/color-palette.png\nCategories:\n- symlink\n- GDoc\nimages:\n- /images/riccardo/riccardo-smiles-swim-ironman.jpeg\n---\nDepuis
+  que je suis enfant, j'ai toujours été nul en sport.\n\n![image](imagez/riccardo-smiles-swim-ironman.jpeg)\n\nPuis,
+  un jour, quelque chose a changé.\n\n## 2010 : Mon premier marathon\n\nJ'ai déménagé
+  en Irlande, où il faut boire 14 à 15 pintes par semaine pour continuer à s'entraîner,
+  et j'ai commencé à prendre du poids. C'était en 2008, j'étais encore jeune et j'avais
+  32 ans. Mais *Gino* grandissait.\n\nLa salle de sport ne suffisait pas, j'ai décidé
+  que je ferais la chose la plus incroyable de ma vie : **je courrais un marathon
+  complet**. J'ai commencé par 10 km et un semi-marathon, mais ensuite il était là :
+  le Connemarathon, le marathon le plus difficile du monde (m'a-t-on dit - ce n'était
+  pas le cas - mais assez pour me faire peur et me donner un but).\n\n## 2012 : Mon
+  premier triathlon olympique\n\n\n## 2015 : Mon premier (demi-)Ironman\n\n\n## 2017 :
+  Mon premier Ironman (complet)\n\n## 2019 : Mon deuxième Ironman (complet)\n\n##
+  Juin 2022 : Un semi-Ironman médiocre (Rapperswil, \U0001F1E8\U0001F1ED)\n\nJ'étais
+  là, tranquille comme un pic ; cependant, ma performance a été TELLEMENT MAUVAISE
+  que j'ai pu nager 2 km en plus de 30 m (!)\n\n![image](/images/riccardo/riccardo-smiles-swim-ironman.jpeg)\n\nHeureusement,
+  j'ai eu une casquette verte gratuitement :)\n"
+model: gemini-1.5-pro
+code_version: '1.1'

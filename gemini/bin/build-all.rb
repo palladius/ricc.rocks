@@ -20,8 +20,8 @@ input_folder = 'doc/posts'
 #extensions = ['zzo', 'papermod', 'ananke']
 extensions = ['zzo']
 
-languages = ['it']
-#languages = ['en', 'it', 'fr', 'de]
+#languages = ['it']
+languages = ['it', 'fr', 'de']
 #languages = ['it', 'fr']
 #languages = ['it', 'de']
 

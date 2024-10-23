@@ -25,6 +25,7 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false, ma
 
         # Geminizing the file
         if file.end_with?('.md')
+          puts("TODO check the MD5 of the source file to see if it has changed.")
           if File.exist?(output_file) and (not overwrite)
             puts(Rainbow("Output File exists ('#{output_file}') and overwrite=false => skipping Geminization").darkslategray)
           else

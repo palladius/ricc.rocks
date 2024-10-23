@@ -3,7 +3,9 @@
 title: 💦 🚈 Sebastian l'intrepido tramviere zurighese 🇨🇭(pbt symlink)
 date: 2024-04-20T11:48:51+01:00
 featured: false
-draft: false
+# Messo come draft il 23oct e messo skip-zzo
+# TODO(ricc): skip-zzo per articoli con skip-zzo :)
+draft: true
 comment: true
 toc: true
 reward: true

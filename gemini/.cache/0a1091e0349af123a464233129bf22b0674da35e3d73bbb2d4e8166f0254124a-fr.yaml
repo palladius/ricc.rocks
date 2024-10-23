@@ -1,0 +1,19 @@
+---
+input: "---\ntitle: \"\U0001F6A7 Scuba in Raja Ampat\"\ndate: 2022-11-05T12:20:22Z\ndraft:
+  false\n#image: /gallery/202211-raja-ampat/Screen%20Shot%202022-10-19%20at%2006.57.26.jpg\n#image:
+  /en/posts/travel/20230210-madeira/riccardo-madeira.jpg # So stupid not to autodetect...\nimage:
+  /gallery/midjourney/PalladiusPacans_Pixar_style_37b88a84-6c83-452f-9f63-4d250ea4ec3d.png\n\ntags:\n-
+  travel\n- indonesia\n- rajaampat\n- sport\n- scuba\ncategories:\n- travel\n#- scuba\n---\n\n{{<
+  notice warning \"This is \U0001F6A7 Work in progress\" >}}\n{{< /notice >}}\n\n##
+  TODO\n\nfind another place where you wrote the article..\n\n{{< youtube QW4XBtibFnk
+  >}}\n"
+output: "---\ntitle: \"\U0001F1EB\U0001F1F7 ♊ [Geminocks] \U0001F6A7 Plongée à Raja
+  Ampat\"\ndate: 2022-11-05T12:20:22Z\ndraft: false\n#image: /gallery/202211-raja-ampat/Screen%20Shot%202022-10-19%20at%2006.57.26.jpg\n#image:
+  /en/posts/travel/20230210-madeira/riccardo-madeira.jpg # So stupid not to autodetect...\nimage:
+  /gallery/midjourney/PalladiusPacans_Pixar_style_37b88a84-6c83-452f-9f63-4d250ea4ec3d.png\n\ntags:
+  \n- travel\n- indonesia\n- rajaampat\n- sport\n- scuba\n- geminocks\n- French\ncategories:\n-
+  travel\n#- scuba\n---\n\n{{< notice warning \"Ceci est \U0001F6A7 Travail en cours\"
+  >}}\n{{< /notice >}}\n\n## À faire\n\ntrouver un autre endroit où vous avez écrit
+  l'article..\n\n{{< youtube QW4XBtibFnk >}}\n"
+model: gemini-1.5-pro
+code_version: '1.1'
