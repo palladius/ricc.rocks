@@ -13,7 +13,7 @@ pinned: false
 carousel: false
 #series:
 categories: []
-tags: [Gemini, genai, family, pbt, switzerland ]
+tags: [Gemini, genai, family, pbt, switzerland , family-only, skip-zzo ]
 images:
 - /images/articles/london-airport.jpg
 meta_image: featured-sample.jpg # This is for ZZO

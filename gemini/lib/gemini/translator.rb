@@ -118,8 +118,8 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
   messages = [
     { role: "user", parts: [{ text: formatted_prompt }]}
   ]
-  puts("Calling Gemini..")
-  puts(formatted_prompt)
+  puts("Calling Gemini on hashed content '#{original_article_hash}'..")
+  #puts(formatted_prompt)
   response = llm.chat(messages: messages)
 
   # Prepare data for caching: input and output
@@ -151,8 +151,6 @@ def translate_with_gemini(file_name:, extension:, lang:, output_file: , overwrit
   # 2024-10-20 v1.2 Try to avoid the ``` output.
   # 2024-10-20 v1.4 Added geminocks to tags
   prompt_version = '1.4'
-
-  puts("TODO check the MD5 of the source file to see if it has changed.")
 
   puts(Rainbow("WARNING! overwrite is TRUE! Gemini will now overwrite markdown file '#{output_file}' !!").red) if overwrite
   markdown_content = File.read(file_name)
