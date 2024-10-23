@@ -9,7 +9,7 @@ Project `Geminocks` (from "Gemini rocks"). :gemini:
 * `etc/`: configs
 * `out/`: output configs.
 
-## Idea :lightbulb:
+## Idea :bulb:
 
 The idea is to use Gemini to write down automated markdown content with Gemini.
 You write it once with
