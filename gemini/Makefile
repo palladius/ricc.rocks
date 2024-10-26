@@ -48,3 +48,6 @@ cleanup-local-output-cache:
 	rm -rf out/zzo/de/
 	rm -rf out/zzo/fr/
 	rm -rf out/zzo/it/
+
+test:
+	ruby tests/test_all_headers_are_correct_yaml.rb
