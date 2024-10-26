@@ -24,7 +24,9 @@ def validate_yaml_front_matter(file_path)
       begin
         YAML.safe_load(front_matter_content)
       rescue Psych::SyntaxError => e
-        raise "Invalid YAML front matter in #{file_path}: #{e.message}"
+#        raise "Invalid YAML front matter in #{file_path}: #{e.message}"
+        puts "Invalid YAML front matter in #{file_path}:\n#{e.backtrace.join("\n")}"
+        raise 'paput!'
       end
     end
   end
