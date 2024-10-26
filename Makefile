@@ -82,3 +82,7 @@ clean:
 
 hugo-install:
 	echo 'on Debian: sudo snap install hugo'
+
+test:
+	echo todo test gemini
+	cd gemini && make test
