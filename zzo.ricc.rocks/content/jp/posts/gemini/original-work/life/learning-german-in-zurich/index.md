@@ -1,7 +1,6 @@
-# prova commento prima del dash dash dash
 ---
 title: "🇨🇭スイス国籍取得：ドイツ語🇩🇪学習 ♊ [Geminocks]"
-date: '2024-04-17T10:51:52Z'
+date: 2024-04-17T10:51:52Z
 draft: false
 tags:
 - geminocks

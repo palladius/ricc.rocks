@@ -13,6 +13,7 @@ In the Front Matter:
 
 * TITLE. Add a "♊ [Geminocks]" at the beginning of tht TITLE field if its not already there. Eg, "title: [geminocks] My original title".
     * Also add the {language} flag you find most appropriate to the FrontMatter title.
+    * Make sure the final string has double quotes at left and right, like ```title: "blah blah blah"```.
 * Spend a moment to check and sanitize all the front matter field. For example, AVOID this mistake (note the THREE illegal quotes): title: '💦♊ [Geminocks] Migliora il tuo gioco Rails con Cloud Run: un'immersione profonda in Qwiklabs'
 * TAGS. Add 'geminocks' and '{language}' to tags, if there's such a field. If not, create a brand new one: "tags: [ geminocks, {language} ]".
 
