@@ -38,7 +38,6 @@ class Hugo::FrontMatter::ZzoTheme < Hugo::FrontMatter::BaseTheme
 
 
 
-
   def example_sites
     [
       'https://github.com/zzossig/hugo-theme-zzo/tree/master/exampleSite'
