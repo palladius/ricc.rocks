@@ -2,7 +2,7 @@
 e2e:
 	echo Il sogno e di dfare tutto end2end cominciando da un sotto-paragrafo o per PATH o per REGEX. Cominciamo da PATH.
 	#RESTRICTED_PATH='src/posts/original-work/life/learning-german-in-zurich'
-	OVERWRITE_EXISTING_OUT_FILES=TRUE ruby bin/build-all.rb
+	OVERWRITE_EXISTING_OUT_FILES=TRUE LANGUAGES=jp ruby bin/build-all.rb
 
 build-all:
 #	echo Rebuild ing safely...

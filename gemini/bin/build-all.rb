@@ -15,7 +15,7 @@ PROJECT_ID ||= ENV.fetch('PROJECT_ID', nil).to_s
 LANGUAGES ||= ENV.fetch('LANGUAGES', DEFAULT_LANGUAGES ).to_s
 RESTRICT_SRC_PATH_BY_REGEX ||= ENV.fetch('RESTRICT_SRC_PATH_BY_REGEX', nil)
 INPUT_FOLDER ||= ENV.fetch('INPUT_FOLDER', nil) # 'src/posts'
-OUTPUT_FOLDER ||= ENV.fetch('OUTPUT_FOLDER', 'out2') # 'out/'
+OUTPUT_FOLDER ||= ENV.fetch('OUTPUT_FOLDER', 'out') # 'out/'
 raise "no ENV[GEMINI_API_KEY]!!" if GEMINI_API_KEY.nil?
 
 # Input folder
@@ -41,7 +41,7 @@ puts(Rainbow("📰 MAX_ARTICLES:    #{MAX_ARTICLES}\t(#{many_articles ? 'Product
 puts(Rainbow("♊ ENABLE_GEMINI:   #{ENABLE_GEMINI}\t(#{ENABLE_GEMINI ? 'Slow' : 'blazing-fast'})").send( ENABLE_GEMINI ? :red : :green))
 puts(Rainbow("♊ GEMINI_MODEL:    #{GEMINI_MODEL}\t(#{GEMINI_MODEL.match(/flash/) ? 'blazing-fast, approximative' : 'Slow and accurate'})").send( GEMINI_MODEL.match(/flash/) ? :yellow : :green))
 #binding.pry
-puts(Rainbow("♊ GEMINI_API_KEY:  #{GEMINI_API_KEY[0..5]}..\t(#{GEMINI_API_KEY.match(/^AIza/) ? 'seems legit' : 'incorrect'})").send( GEMINI_API_KEY.match(/^AIZa/) ? :green : :red))
+puts(Rainbow("♊ GEMINI_API_KEY:  ..#{GEMINI_API_KEY[-5..-1]}\t(#{GEMINI_API_KEY.match(/^AIza/) ? 'seems legit' : 'incorrect'})").send( GEMINI_API_KEY.match(/^AIZa/) ? :green : :red))
 puts(Rainbow("☁️  PROJECT_ID:      #{PROJECT_ID}").white)
 puts(Rainbow("🇬🇵 LANGUAGES:      [array] #{languages.join ', '}").white)
 puts(Rainbow("🇬🇵 INPUT_FOLDER:   #{INPUT_FOLDER}").cyan)

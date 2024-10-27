@@ -13,7 +13,7 @@ def copy_files_to_enabled_extensions_zzo_for_single_language(local_dir:, lang:, 
   local_language_specific_dir = "#{local_dir}/zzo/#{lang}/"
   raise "ZZO_BASE_FOLDER ('#{zzo_base_folder}') non existit - failing to deploy to local ZZO folder" unless File.exist?(zzo_base_folder)
   dest_language_specific_dir = "#{zzo_base_folder}/content/#{lang}/posts/"
-  emoji = get_language_emoji(lang)
+  emoji = get_language_emoji(lang_code: lang)
   language_name = get_language_name(lang_code: lang) # eg "French"
   inspectanda_files = count_markdowns(folder: local_language_specific_dir) # `find #{local_language_specific_dir} -name \\*.md`.split("\n") # :)
   num_dst_files = count_markdowns(folder: dest_language_specific_dir)
@@ -39,7 +39,7 @@ def copy_files_to_enabled_extensions_zzo_for_single_language(local_dir:, lang:, 
   puts("Riccardo todo sanitize")
   # 1/ Testing quality
   puts("1. Now validating... validate_yaml_front_matter for: #{local_language_specific_dir}")
-  #validate_yaml_front_matter("out2/zzo/#{lang}/")
+
   validate_yaml_front_matter_for_dir(local_language_specific_dir)
   puts(Rainbow("all good! Now lets copy!"))
   if cleanup_output_folder_before
@@ -48,7 +48,7 @@ def copy_files_to_enabled_extensions_zzo_for_single_language(local_dir:, lang:, 
   commands = [
     "TODO ricc in ruby, test each file in local folder...",
     "echo test output folder for BAD stuff, or maybe do it before :)",
-    "echo cp -R gemini/out/zzo/#{lang}/ #{zzo_base_folder}/content/#{lang}/posts/gemini/ || true",
+    "echo cp -R out/zzo/#{lang}/ #{zzo_base_folder}/content/#{lang}/posts/gemini/ || true",
     "echo rsync -avz gemini/out/zzo/#{lang}/medium/ zzo.ricc.rocks/content/#{lang}/posts/medium/ || true",
   ]
   commands.each do |cmd|
