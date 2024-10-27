@@ -117,7 +117,7 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
 
   formatted_prompt = prompt.format(
     original_content: markdown_content,
-    language: get_language_name(lang:), # OBSOLETE short_lang_to_long(lang: ),
+    language: get_language_name(lang_code: lang), # OBSOLETE short_lang_to_long(lang: ),
     full_name: 'Dr Riccardo Carlesso',
     )
   # DEBUG

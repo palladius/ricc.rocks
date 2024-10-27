@@ -54,12 +54,12 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite_existing_o
               n_articles += 1
             rescue StandardError => e  # Catch any StandardError
               n_articles_errors += 1
-              puts Rainbow("🙈 Error processing file '#{file}': #{e.message}").red
+              puts Rainbow("🙈 iterate_through(): Error processing file '#{file}': #{e.message}").red
               # Optionally, you can log the error to a file or error tracking service
-              #  Logger.error("Error processing file '#{file}': #{e.message}")
+              Langchain.logger.error("Error processing file '#{file}': #{e.message}")
               #  # Or use your preferred logging mechanism
               # Re-raise the exception if you want to halt execution
-              # raise e
+              raise e
             end
             #n_articles += 1
           end
@@ -72,7 +72,8 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite_existing_o
     end
   end
 
-  puts("#Articles ✅ correctly parsed: #{n_articles}")
+  puts("#Articles n_articles_errors✅ correctly parsed: #{n_articles}")
   puts("#Articles 🙈 with errors: #{n_articles_errors}")
 
+  return { n_articles: , n_articles_errors: }
 end

@@ -53,9 +53,21 @@ puts("=" * 80)
 #exit 42
 
 # Run the import
-iterate_through(input_folder: INPUT_FOLDER, extensions:, languages:, overwrite_existing_out_file: OVERWRITE_EXISTING_OUT_FILES, max_articles: MAX_ARTICLES, restrict_src_path_by_regex: RESTRICT_SRC_PATH_BY_REGEX, out_dir: OUTPUT_FOLDER)
+# 1. Call gemini
+iteration_results = iterate_through(input_folder: INPUT_FOLDER, extensions:, languages:, overwrite_existing_out_file: OVERWRITE_EXISTING_OUT_FILES, max_articles: MAX_ARTICLES, restrict_src_path_by_regex: RESTRICT_SRC_PATH_BY_REGEX, out_dir: OUTPUT_FOLDER)
 
-# raise "Exiting so i dont write stuff.."
-#   exit -1
-copy_files_to_enabled_extensions(extensions: , languages: , out_dir: 'out/')
+n_errors = iteration_results[:n_articles_errors]
+
+puts('--')
+#puts("Atrticle errors in total: #{n_errors}")
+
+if n_errors == 0
+  puts("🍀 All good, we can now move to the next step")
+  copy_files_to_enabled_extensions(extensions: , languages: , out_dir: OUTPUT_FOLDER)
+else
+  puts("🆑 Article errors in total: #{n_errors}")
+  puts("Sorry, Pallybboy: fix the errors first!")
+  exit(-1)
+end
+
 puts("🍀 Done!")

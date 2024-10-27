@@ -8,11 +8,12 @@ LanguageData = [
   ]
 
   # TODO add nice raise as below
-def get_language_name(lang_code)
+def get_language_name(lang_code:)
+  puts("DEB lang_code=#{lang_code}")
   LanguageData.find { |lang| lang[:code] == lang_code }[:name]
 end
 
-def get_language_emoji(lang_code)
+def get_language_emoji(lang_code:)
   LanguageData.find { |lang| lang[:code] == lang_code }[:emoji]
 end
 

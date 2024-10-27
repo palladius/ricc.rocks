@@ -1,18 +1,19 @@
 ---
 title: "Getting Swiss 🇨🇭 nationality: learning German 🇩🇪"
-date: 2024-04-17T10:51:52Z
+date: '2024-04-17T10:51:52Z'
 draft: false
 tags:
 - language
 - switzerland
 - Google
-# self: go/ricc-passaporto-svizzero
+- expat
 categories:
 - life
 image: /en/posts/life/learning-german-in-zurich/Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png
+# 20241027 - self: go/ricc-passaporto-svizzero TODO rimuovi questi commenti depurandoli in locale.
 ---
 
-I've been in Ziurich for 10 years, so now I can apply for swiss passport (I heard once you do, you get a free gold lingot from a Nazi *caveau*).
+I've been in Zurich for 10 years, so now I can apply for swiss passport (I heard once you do, you get a free gold lingot from a Nazi *caveau*).
 
 Jokes apart, the top complexity here is to pass an exam in German (Swiss German oder Hoch Deutsch, your choice).
 
