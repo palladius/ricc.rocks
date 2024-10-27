@@ -1,7 +1,7 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "♊ [Geminocks] 💦 🧹Pulumiを使って🐍Pythonで⬣ Cloud Buildトリガーを設定する 🇯🇵"
+title: "🇯🇵 ♊ [Geminocks] 🧹Pulumi を使用して ⬣ Cloud Build トリガーを設定する (🐍 Python)"
 date: 2022-09-22T21:17:43+01:00
 draft: false
 tags: [symlink, GCP, pulumi, CloudBuild, Medium, geminocks, Japanese]
@@ -12,49 +12,49 @@ featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /images/mtg-clone.jpg
 ---
 
-元のブログ記事はこちら:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
+元の投稿はこちら:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 
-TODO(7feb23): この動画を埋め込む: https://www.youtube.com/watch?v=5jhWVNN8P_M (6feb23に作成)
+TODO(7feb23): この動画を埋め込む: https://www.youtube.com/watch?v=5jhWVNN8P_M (6feb23作成)
 
-数週間前、私は**Pulumi**に恋をしました。Terraformに求めていたものすべてが揃っていました。セットアップが簡単、設定管理が簡単、優れたUIが無料で提供され、そして最も重要なのは…言語サポートです！ Pulumiはバッファローピザに次ぐ最高の発明ですが、1つだけ問題があります… [Rubyのサポートがありません](https://github.com/pulumi/pulumi/issues/132) :/
+数週間前、私は **Pulumi** に恋をしました。Terraform に求めていたものすべてが揃っていました。セットアップが簡単、設定管理が簡単、無料ですばらしい UI、そして最も重要なのは… 言語サポートです！Pulumi はバッファローピザに次ぐ最高の発明品ですが、1 つだけ問題があります… [Ruby がサポートされていません](https://github.com/pulumi/pulumi/issues/132) :/
 
-とにかく、私は給料を払ってくれている⬣ GCP (認めざるを得ませんが)、Cloud Build、Cloud Deploy、そしてGoogle Cloud上のCI/CDパイプライン全般に惚れ込んでしまったので、試してみたくなりました。「Cloud Build Pulumi」でググってみると、JavaScriptの素敵な記事が見つかりましたが、これは私の好みではありませんでした。
+とにかく、私は ⬣ GCP（私の給料を払ってくれている会社なので、認めざるを得ません）、Cloud Build、Cloud Deploy、そして一般的に Google Cloud 上の CI/CD パイプラインに惚れ込んでしまったので、試してみたくなりました。「Cloud Build Pulumi」でググってみると、JavaScript の素敵な記事が見つかりましたが、私の琴線に触れるものではありませんでした。
 
 ## コード
 
 私のコードはこちらです: https://github.com/palladius/pulumi/tree/main/examples/python-gcp-cloudbuild-auto-trigger
 
-注: 👍 コードがついに正しくビルドされるようになりました。やったー！
+注: 👍 コードはついに正しくビルドできるようになりました。やったー！
 
 ![cb-trigger-list](01-cb-trigger-list.webp)
 
 
-## このコードのどこがそんなに特別なのですか？
+## このコードの何がそんなに特別なのですか？
 
-このコードを使用すると、GCP 上の任意の Pulumi プロジェクト (Python 🐍) で、自己更新するためのトリガーを設定できます。git リポジトリへのプッシュによりビルドジョブがトリガーされ、ビルドが成功すると、Pulumi に自動的にログインして新しいコードで更新が実行されます。
+このコードを使用すると、GCP 上にある Pulumi プロジェクト (Python 🐍) で、自己更新のトリガーを設定できます。git リポジトリへのプッシュによりビルドジョブがトリガーされ、成功すると Pulumi に自分自身としてログインし、新しいコードで更新を発行します。
 
 そのため、例えば、コードに GCS バケットを追加する変更をコミットすると、数分後にはその GCS バケットが作成され、README.md がビルダーパラメータで更新されます。
 
 ![cb-trigger-list](02-pulumi-commands.webp)
-太字で示されているのは、Cloud Build自体によって更新された3つのパラメータです！
+太字で示されているのは、Cloud Build 自体によって更新された 3 つのパラメータです！
 
-私のコードは、現時点では**Github** (そのまま) と**Bitbucket** (コードは99%完成しており、最初に動作していました！) をサポートしています。
+私のコードは、今のところ **Github**（そのまま）と **Bitbucket**（最初に動作していたのでコードは 99% 完成しています！）をサポートしています。
 
-また、Lauraの記事に従ってメッセージをカスタマイズし、gitメッセージの先頭に「[built with Cloud Build]」を追加しました(この場合は「スラッシュN修正」)。
+また、Laura の記事に従ってメッセージをカスタマイズし、git メッセージの先頭に「[built with Cloud Build]」を追加しました（この場合は「スラッシュ N 修正」）。
 
 ![View on Pulumi website](03-trigger-build-on-pulumi-site.webp)
 
-## Pulumiってどういう意味？
+## Pulumi という言葉の意味は？
 
-Google翻訳で試してみましたが、ハワイ語かビルマ語(🇲🇲、現在のミャンマー)でほうき(🧹)という意味のようです。それまでは、誰かが違うと証明するまでは、最初の絵文字を使います。
+Google 翻訳を試してみましたが、ハワイ語またはビルマ語（🇲🇲、現在のミャンマー）で「ほうき」（🧹）という意味のようです。それまでは、誰かが私が間違っていることを証明するまでは、最初の絵文字を使います。
 
-編集: Pulumiの私の友人であるAaronが、ほうきであることを確認し、[この記事](http://joeduffyblog.com/2018/06/18/hello-pulumi/)を教えてくれました。
+編集: Pulumi の友人の Aaron が、ほうきであることを確認し、[この記事](http://joeduffyblog.com/2018/06/18/hello-pulumi/) を教えてくれました。
 
-##  次のステップ
-今後の📝は次のとおりです。
+## 今後の予定
+私の今後の 📝 は次のとおりです。
 
-* HSMまたはGCSを介してGCPに適切なパスワード/状態設定を行う。
-* モジュールに変換して、どのようなpulumiプロジェクトでも4〜5個の変数(githubユーザー、githubリポジトリ、pulumi buidlディレクトリ、資格情報など)でこのコードを呼び出せるようにする。これがクロスランゲージ(非🐍)でも実行可能かどうかはまだ確認する必要があります。
+* HSM または GCS を介して GCP で適切なパスワード/状態設定を行う。
+* モジュールに変換して、どのような pulumi プロジェクトでも 4～5 個の変数 (github ユーザー、github リポジトリ、pulumi ビルドディレクトリ、認証情報など) を指定するだけでこのコードを呼び出せるようにする。これがクロスランゲージ (非🐍) でも実現可能かどうかはまだ確認する必要があります。
 
 ## 参考文献
 

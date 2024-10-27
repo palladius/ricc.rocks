@@ -1,5 +1,4 @@
 ---
-# Questo non viene bene in japano. Mette una icona dopo l'apice dx.
 title: "🧮 Maths"
 date: 2021-05-20T21:17:43+01:00
 draft: false
@@ -7,7 +6,7 @@ tags:
 - symlink
 - hugo
 - WOW
-# Categories is feinitely used by STACK framework:
+# Categories is definitely used by STACK framework (nusacciu re ZZO):
 categories:
 - symlink
 - maths
@@ -26,8 +25,11 @@ keywords:
 #- zzo-screenshot.png
 # tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
 #thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
+# Questo non viene bene in japano. Mette una icona dopo l'apice dx.
 ---
-I've made a few video on Maths
+
+I have made a few video on Maths:
+
 * 🇬🇧 [Math in pills](https://www.youtube.com/playlist?list=PLLW_mrnzxmSo-Q841ZuBDxcIHHX4iGZkX) (English)
 * 🇮🇹 [Math pillole](https://www.youtube.com/playlist?list=PLLW_mrnzxmSp_zuV3OzY_Wksf6_dP-Ifn) (Italian)
 * 🇮🇹  [LibroMate (la matematica secondo Carlesso)](https://www.youtube.com/playlist?list=PLLW_mrnzxmSofo9gxu_NsWYl9c9NNmjZ6) (Italian)

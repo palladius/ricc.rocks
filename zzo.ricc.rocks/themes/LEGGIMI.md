@@ -1,4 +1,6 @@
-
+---
+title: Fatto a manhouse
+---
 Riccardo, sto tema non cambia MAI!
 
 https://github.com/zzossig/hugo-theme-zzo

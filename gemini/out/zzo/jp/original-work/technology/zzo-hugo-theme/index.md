@@ -1,7 +1,5 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "♊ [Geminocks] 🇯🇵 About ⬢ Hugo ZZO theme"
+title: "🇯🇵♊ [Geminocks] ⬢ Hugo ZZO テーマについて"
 date: 2023-01-31T21:17:43+01:00
 draft: false
 pinned: false # (ZZO) lo voglio in cima
@@ -10,7 +8,6 @@ tags:
 - hugo
 - geminocks
 - Japanese
-# Categories is feinitely used by STACK framework:
 categories:
 - hugo
 - zzo
@@ -33,20 +30,23 @@ authorImage: "/images/whoami/avatar.jpg" # image path in the static folder
 authorImageUrl: "/gallery/riccardo-at-once/pinco-pallino-joe.png"
 #  your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.
 authorDesc: an average writer # author description
-socialOptions: # override params.toml file socialOptions
-  email: ""
-  facebook: ""
+# 27oct24: Questo da problemi con gemini
+# socialOptions: # override params.toml file socialOptions
+#   email: ""
+#   facebook: ""
+# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
+# initial HEADER :) Lets try to keep it small :)
 ---
 
 
-ここでZZOを試しています。 これは私のZZO専用のページテストです。
+ここではZZOを試しています。そして、これは私のZZO専用ページテストです。
 
 * 👍👍: [at-once pictures](https://zzo-docs.vercel.app/zzo/pages/gallery/) 簡単なアルバムに
-* 👍 ピン留めされたページが上に
+* 👍 上部に固定ページ
 * 👍 以下の機能: タブ、マークダウン、... たくさんの便利な機能
 * 👍 イタリア語の多言語サポート。
-* 👍 作者のメタデータをサポート、すごい
-* 👍 数学をサポート
+* 👍 作者メタデータに対応、すごい
+* 👍 数学に対応
 * 👎🏾: フォントが少しダサい。遊び心がありすぎる、真面目ではない。
 
 
@@ -112,13 +112,13 @@ https://zzo-docs.vercel.app/zzo/shortcodes/tab/ を参照してください
 
   ### アメリカセクション
 
-  🇺🇸 動いたら撃て！
+  🇺🇸 動くものがあれば撃て！
   {{< /tab >}}
 {{< /tabs >}}
 
-また、展開:
+また、展開も可能です:
 
-{{< expand "展開する" >}}いくつかのMarkdownコンテンツ{{< /expand >}}
+{{< expand "展開する" >}}いくつかのマークダウンコンテンツ{{< /expand >}}
 
 ## 特集画像
 

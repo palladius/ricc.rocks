@@ -1,0 +1,38 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \U0001F4A6 Riccardo Sport history 2\ndate: 2023-01-30T21:17:43+01:00\ndraft:
+  false\ntags:\n- personal\n- sport\n- symlink\n# paperMod\n#canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n#
+  ANANKE :)\nfeatured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg\nimage:
+  /images/riccardo/riccardo-bike-mallorca.jpg\n#image: imagez/riccardo-smiles-swim-ironman.jpeg\n#image:
+  images/feature2/color-palette.png\nCategories:\n- symlink\n- GDoc\nimages:\n- /images/riccardo/riccardo-smiles-swim-ironman.jpeg\n---\nSince
+  I was a kiddo, I thouroughly sucked at sport.\n\n![image](imagez/riccardo-smiles-swim-ironman.jpeg)\n\nThen,
+  one day, something changed.\n\n## 2010: My first Marathon\n\nI moved to Ireland,
+  where you need to drink 14-15 pints a week to keep training and I started getting
+  weight. It was 2008, I was still young and 32. But *Gino* was growing.\n\nThe gym
+  wasn't, enough, I decided I would do the most incredible thing in my life: **I'd
+  run a full Marathon**. I started with 10k and a half marathon, but then it was there:
+  the Connemarathon, the hardest Marathon in the world (they told me - it wasn't -
+  but enough to scare me and set to purpose).\n\n## 2012: My first Olympic Triathlon\n\n\n##
+  2015: My first (half) Ironman\n\n\n## 2017: My first (full) Ironman\n\n## 2019:
+  My second (full) Ironman\n\n## June 2022: A mediocre half-Ironman (Rapperswil, \U0001F1E8\U0001F1ED)\n\nHere
+  I was tranquil like a peak; however, my performance was SO BAD that I was able to
+  swim 2km in more than 30m (!).\n\n![image](/images/riccardo/riccardo-smiles-swim-ironman.jpeg)\n\nLuckily,
+  I got a green cap for free :)\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1EF\U0001F1F5 ♊ [Geminocks] Riccardo Sport
+  history 2\"\ndate: 2023-01-30T21:17:43+01:00\ndraft: false\ntags:\n- personal\n-
+  sport\n- symlink\n- geminocks\n- Japanese\n# paperMod\n#canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n#
+  ANANKE :)\nfeatured_image: /images/riccardo/riccardo-smiles-swim-ironman.jpeg\nimage:
+  /images/riccardo/riccardo-bike-mallorca.jpg\n#image: imagez/riccardo-smiles-swim-ironman.jpeg\n#image:
+  images/feature2/color-palette.png\nCategories:\n- symlink\n- GDoc\nimages:\n- /images/riccardo/riccardo-smiles-swim-ironman.jpeg\n---\n子供の頃から、私はスポーツが全くできませんでした。\n\n![image](imagez/riccardo-smiles-swim-ironman.jpeg)\n\nしかし、ある日、何かが変わりました。\n\n##
+  2010年：初めてのマラソン\n\nアイルランドに引っ越しました。そこでは、トレーニングを続けるために週に14～15パイントのビールを飲む必要があり、私は体重が増え始めました。2008年のことでした。私はまだ若く、32歳でした。しかし、「ジーノ」は成長していました。\n\nジムでは物足りなくなり、私は人生で最も素晴らしいことをしようと決心しました。それは、「フルマラソンを走る」ことでした。10kmとハーフマラソンから始めましたが、ついにその時が来ました。世界で最も過酷なマラソンと言われる「コネマラソン」です（彼らはそう言っていましたが、実際はそうではありませんでした。しかし、私を怖がらせ、決意させるには十分でした）。\n\n##
+  2012年：初めてのオリンピックディスタンス トライアスロン\n\n\n## 2015年：初めての（ハーフ）アイアンマン\n\n\n## 2017年：初めての（フル）アイアンマン\n\n##
+  2019年：2回目の（フル）アイアンマン\n\n## 2022年6月：平凡なハーフアイアンマン（ラッパースヴィル、\U0001F1E8\U0001F1ED）\n\nここでは、私は山頂のように穏やかでした。しかし、私のパフォーマンスはひどく、2kmを30分以上かけて泳いでしまいました（！）。\n\n![image](/images/riccardo/riccardo-smiles-swim-ironman.jpeg)\n\n幸いなことに、緑色のキャップを無料で手に入れることができました
+  :)\n"
+model: gemini-1.5-pro
+code_version: '1.7'
+article_hash: 26ff222d63fbc28ddc0da74a599b0aa970cae44f341da42b0449c29aad630987
+title: "\U0001F4A6 Riccardo Sport history 2"
+lang: jp

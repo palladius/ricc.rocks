@@ -1,14 +1,12 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "💦 Themes Compared (🏆)"
+title: "Themes Compared: who 🏆 wins?"
 date: 2023-02-05T21:17:43+01:00
 draft: false
 tags:
 - symlink
 - hugo
 - WOW
-# Categories is feinitely used by STACK framework:
+# Categories are used by STACK framework, not sure re ZZO.
 categories:
 - hugo
 - category

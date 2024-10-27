@@ -1,14 +1,14 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "🇯🇵♊ [Geminocks] 💦 家族 👨‍👩‍👧‍👦"
+title: "🇯🇵♊ [Geminocks] 家族 👨‍👩‍👧‍👦"
 date: 2021-05-20T21:17:43+01:00
 draft: false
 tags:
-- geminocks
-- Japanese
 - symlink
 - family
+- geminocks
+- Japanese
 # Categories is feinitely used by STACK framework:
 categories:
 - symlink
@@ -30,15 +30,15 @@ keywords:
 
 TODO ローカルビデオの埋め込み:  2023-02-03 Capriola as a Service.mp4
 
-* [子供とのふざけたビデオ](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi) （くだらないけど、好評です）
+* [子供とのふざけたビデオ](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi) （とても馬鹿げているのですが、好評を得ています）
 
 ## 本
 
-数年前にカラブリアにいてインターネットが使えなかったとき、数学の本を書き始めました。LateX ドキュメントに記憶とアイデアを書き留めたかったのです。その成果はこちらです。
+数年前にカラブリアにいてインターネットが使えなかったときに、数学の本を書き始めました。LaTeXのドキュメントに記憶とアイデアを書き留めたかったのです。その成果はこちらです。
 
-* github にある私の本: [palladius/libromate](https://github.com/palladius/libromate) LaTEX で書いた数学解析:
+* githubにある私の本: [palladius/libromate](https://github.com/palladius/libromate)  LaTeXによる数学解析:
 
-数、微分/極限/積分、テイラーなど、よくある内容ですが、イタリア語ですみません)
+数、微分/極限/積分、テイラー展開など、よくある内容ですが、イタリア語ですみません)
 
 ## ポッドキャスト
 

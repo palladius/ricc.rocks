@@ -36,17 +36,17 @@ thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-sca
 
 
 
-今週末はたくさんのモジュールを試しました。上記のスタンザでは、テーマによって単語やキー/値が異なるため、混同しないように注意する必要があります。
+今週末はたくさんのモジュールを試してみました。上記のスタンザでは、テーマによって単語やキー/値が異なることに注意してください。混同しないようにしましょう。
 例えば、このページにはAnankeでのみ機能する`featured_image`と、おそらく他のテーマでも機能する`image`があります。
 
-これまでに試したこと。
+これまで試したこと:
 
 ## 全ページでシンボリックリンクする。
 
-* これまで試したのは1つだけ - golangは変更されたシンボリックリンクファイルを認識しないでしょう。
+* これまで1つだけ試しました - golangは変更されたシンボリックリンクファイルを認識しません。
 * STACKは現在、別の場所にあることに注意してください。ちょっと移動させてください。
 
-## これまでに試したHugoのウェブサイト
+## これまで試したHugoのウェブサイト
 
 すべてのコードは、私のGHリポジトリの異なるディレクトリにあります: https://github.com/palladius/ricc.rocks/
 
@@ -57,31 +57,31 @@ thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-sca
 | ----------- | ----------- | ------ | ----  |
 | [🙉](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/) ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️ | 私が望むようなアイコンがあり、とても遊び心がありますが、素晴らしい機能が満載です。とても気に入っています！  |
 
-(*) Permacompare: 本番環境の比較ページへのパーマリンク :)
+(*) Permacompare: 本番環境での比較ページへのパーマリンク :)
 
-* **PaperMod**: うまくいきます！ https://papermod.ricc.rocks	 まだあまり調べていません。比較ページ: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | 超スタイリッシュ。必要最低限でありながら、その本質において非常に優れています！ |
-* **Stack**: まず、[数学](https://dev.stack.jimmycai.com/p/math-typesetting/)があります。 https://hugo-stack.ricc.rocks  そして、私はそれが大好きです！
+* **PaperMod**: うまくいきます！ https://papermod.ricc.rocks	 まだあまり調べていません。比較ページ: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | とても洗練されています。必要最低限でありながら、その本質において非常に優れています！ |
+* **Stack**: まず、[数式](https://dev.stack.jimmycai.com/p/math-typesetting/)があります。 https://hugo-stack.ricc.rocks  そして、私はそれが大好きです！
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
-* 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ 数学に対応しています
+* 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ 数式に対応しています
 * 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
 
 敗北:
 
-* **Coder**: いやあ、私にはシンプルすぎます。
-* Ananke。シンプルすぎる - https://hugo-ananke.netlify.app/
+* **Coder**: いや、私にはシンプルすぎます。
+* Ananke。シンプルすぎます - https://hugo-ananke.netlify.app/
 
 ## フォトアルバム
 
-* きちんとしたフォトアルバムがあるのはXXXだけのようです。しかし、「Photoswipeのようにテーマが良ければいいのに」と言う人もいるので、[**PhotoSwipe**](https://photoswipe.com/)を他のものと連携させることができるかもしれません: [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe)を参照してください。
-* https://github.com/liwenyip/hugo-easy-galleryもチェックしてみてもいいかもしれませんが、価値があるとは思えません。(505 ⭐️)。
-* あるいは、コードを書くだけです（RubyではなくGolangだったらいいのに）: https://hugocodex.org/add-ons/image-gallery/
+* まともなフォトアルバムがあるのはXXXだけのようです。しかし、「Photoswipeのようにテーマが優れていればよかったのに」という声も聞かれるので、[**PhotoSwipe**](https://photoswipe.com/)を他のものと連携させることができるかもしれません: [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe)を参照してください。
+* https://github.com/liwenyip/hugo-easy-galleryもチェックできるかもしれませんが、価値があるとは思えません。(505 ⭐️)。
+* あるいは、自分でコーディングするだけです（RubyではなくGolangだったらよかったのですが）: https://hugocodex.org/add-ons/image-gallery/
 * あるいは、この[素晴らしいライブラリ](https://github.com/mfg92/hugo-shortcode-gallery)を使用します: https://matze.rocks/images/#gallery-filter=Landscapeでデモをご覧ください。
 
 
 
 ## ZZO
 
-![Resize](zzo-screenshot.png?width=300px)
+![リサイズ](zzo-screenshot.png?width=300px)
 
 * **比較ページ**: https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/
 * インストール: https://zzo-docs.vercel.app/
@@ -113,29 +113,29 @@ RSS
 
 ## Bootstrap
 
-* 画像ドキュメント: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images 良いものがたくさんあります。また、バグを見つけたのですが、開発者が24時間で修正してくれました - 素晴らしい。
+* 画像ドキュメント: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images ここにはたくさんの良いものがあります。また、バグを見つけたのですが、開発者が24時間で修正してくれました - 素晴らしいですね。
 * ギャラリードキュメント: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
 
 
 
 
-# 過去の情報
+# 古いもの
 
 ## PaperMod
 
-まだ少ししか触っていませんが、それは私の責任であって、彼の責任ではありません :)
+まだ少ししか触っていませんが - それは私の責任であって、彼の責任ではありません :)
 
 ドキュメント: https://github.com/adityatelange/hugo-PaperMod/
 
 ニュートラル:
 
-* [多くのアイコン](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons)をサポートしていますが、使い方がわかりません。
-* [数学をサポート](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/)していますが、動作させる方法がわかりません。
-* 絵文字はいい感じです。有効にすると、🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil: のようにできます。
+* [多くのアイコン](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons)をサポートしていますが、使い方がわかりません
+* [数式をサポート](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/)していますが、動作させる方法がわかりません
+* 絵文字はいい感じです。有効にすると、🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil: のように使えます
 
 悪い 😩:
 
-* シンプルすぎる。ブロガーとしての私のことを何も表現していません。単なるニュースの（スタイリッシュな）コンテナです。リッカルドのことではなく、私の記事だけです。
+* シンプルすぎる。ブロガーとしての私のことを何も表現していません。単なる（洗練された）ニュースの入れ物です。リッカルドのことではなく、私の記事だけです。
 
 
 ## Ananke ⭐️⭐️
@@ -143,7 +143,7 @@ RSS
 ステータス: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
 古い:
 * [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)
-* 歴史的に最初に試したもの。あまり深く掘り下げていません。
+* 歴史的に最初に試したものです。あまり深くは調べていません
 
 良い 😍:
 
@@ -152,7 +152,7 @@ RSS
 悪い 😩:
 
 * **シンプルすぎる**。例えば、お問い合わせフォームが投稿の中にあります（本当に？）。
-* 画像ギャラリーがないのではないかと思います。
+* 画像ギャラリーがないと思います
 
 
 ## TranquilPeak
@@ -175,8 +175,8 @@ RSS
 
 マイナス
 
-* FSは画像のシンボリックリンクをサポートしていないとのこと。しかし、投稿のシンボリックリンクはサポートしています。
-* content/posts/の構成が怪しい。ディレクトリ内外のコンテンツを移動すると、表示されなくなります。奇妙です。(もっともな理由があるのかもしれませんが、content/内のすべてを移動できる他のテーマと比較すると、バグのように思えます)
+* FSは画像のシンボリックリンクをサポートしていないと言っています。しかし、投稿のシンボリックリンクはサポートしています
+* content/posts/の構成が怪しいです。ディレクトリ内外のコンテンツを移動すると、表示されなくなります。奇妙です。(もっともな理由があるのかもしれませんが、content/内のすべてを移動できる他のテーマと比較すると、バグのように思えます)
 
 
 

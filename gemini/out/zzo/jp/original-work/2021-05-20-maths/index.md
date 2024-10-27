@@ -1,6 +1,6 @@
 ---
-# 🧮♊ [Geminocks] 数学 🇯🇵 
-title: "🧮♊ [Geminocks] 数学 🇯🇵"
+# Questo non viene bene in japano. Mette una icona dopo l'apice dx.
+title: "🧮♊ [Geminocks] 数学" 🇯🇵
 date: 2021-05-20T21:17:43+01:00
 draft: false
 tags:
@@ -33,15 +33,15 @@ keywords:
 * 🇬🇧 [Math in pills](https://www.youtube.com/playlist?list=PLLW_mrnzxmSo-Q841ZuBDxcIHHX4iGZkX) (英語)
 * 🇮🇹 [Math pillole](https://www.youtube.com/playlist?list=PLLW_mrnzxmSp_zuV3OzY_Wksf6_dP-Ifn) (イタリア語)
 * 🇮🇹  [LibroMate (la matematica secondo Carlesso)](https://www.youtube.com/playlist?list=PLLW_mrnzxmSofo9gxu_NsWYl9c9NNmjZ6) (イタリア語)
-* [Silly video with my kid](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi) (くだらないですが、好評を得ています)
+* [Silly video with my kid](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi) (くだらないですが、好評です)
 
 ## 本
 
-数年前にカラブリア州にいてインターネットがなかったときに、数学の本を書き始めました。LaTeXドキュメントにメモリとアイデアをダンプしたかっただけです。その結果がこちらです。
+数年前にカラブリアにいてインターネットがなかったときに、数学の本を書き始めました。LaTeX ドキュメントにメモリとアイデアをダンプしたかっただけです。その結果は次のとおりです。
 
-* githubにある私の本: [palladius/libromate](https://github.com/palladius/libromate) LaTEXによる数学解析:
+* github の私の本: [palladius/libromate](https://github.com/palladius/libromate) LaTEX での数学分析:
 
-数、微分/極限/積分、テイラーなど、いつもの内容ですが、申し訳ありませんがイタリア語です)
+数値、導関数/極限/積分、テイラーなど、いつものことですが、イタリア語ですみません)
 
 ## ポッドキャスト
 

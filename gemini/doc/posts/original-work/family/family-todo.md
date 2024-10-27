@@ -7,7 +7,6 @@ draft: false
 tags:
 - symlink
 - family
-# Categories is feinitely used by STACK framework:
 categories:
 - symlink
 - family

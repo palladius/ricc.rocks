@@ -1,10 +1,8 @@
 ---
-#🚧 Testing moving ABOUT from singleton to translated.
-title: "About me" # It / EN
+title: "About me"
 description: "This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/"
 type: "about"
 date: "2023-02-01"
-#This is the ZZO version of Riccardo Rocks ring: https://ricc.rocks/
 image: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg
 meta_image: image.png
 tags:
@@ -13,9 +11,7 @@ tags:
 - italy
 - ricc
 - me
-# {{< box >}}
-# 🚧 under construction 🚧
-# {{< /box >}}
+#🚧 Testing moving ABOUT from singleton to translated.
 ---
 
 *TODO(Ricc): This is currently under `posts/`. You ned to add the logic to copy this under ZZO/{LANG}/about/ . Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.*

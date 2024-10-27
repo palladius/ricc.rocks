@@ -22,24 +22,24 @@ tags:
 
 *TODO(Ricc): This is currently under `posts/`. You ned to add the logic to copy this under ZZO/{LANG}/about/ . Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.*
 
-こんにちは！リッカルドです。<tt>Palladius</tt>またはRiccと呼んでください。
+こんにちは！リッカルドと申します。<tt>Palladius</tt>またはRiccと呼んでください。
 
 ## 仕事
 
 ![Riccardo innaturally handsome at his wedding](image.png)
 
-私は[Google Cloud](http://cloud.google.com/)のデベロッパーアドボケイトです。このブログには、スポーツ、旅行、家族、テクノロジーなど、個人的なものと仕事関連のものが少し書かれています。
+私は[Google Cloud](http://cloud.google.com/)のデベロッパーアドボケイトをしています。このブログには、スポーツ、旅行、家族、テクノロジーなど、個人的なものと仕事関連のものが少し書かれています。
 
-Google には 11 年間在籍していますが、この素晴らしい旅のすべてを書き上げる方法が見つかりませんでした。実りあるコンテンツ、イタリアのドラマ、クールな写真がなければなりません。後者は書くのに時間がかかっています。私の一部は
+Googleには11年間在籍していますが、この素晴らしい旅のすべてを書き上げる方法が見つかりませんでした。実りあるコンテンツ、イタリアのドラマ、クールな写真がなければなりません。後者は書くのに時間がかかっています。私のいくつかは
 
 * Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>
-* Google 公式ページ: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
+* Google公式ページ: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
 
-SRE、オペレーション、Google の文化、GenAI、Ruby について話します。
+SRE、オペレーション、Googleの文化、GenAI、Rubyについて話します。
 
 ## プライベート
 
-私はイタリア人ですが、ほとんどの場合は時間に正確です。イタリアに32年間住んだ後、アイルランド（2008年）に移住し、2011年にスイスに移住し、現在、親切で思いやりのある妻のケイトと2人の素晴らしい子供たち*AJ*と*セボウスキー*と一緒に住んでいます。[Instagram](https://www.instagram.com/palladius/)または[ファミリーギャラリー](/en/gallery/riccardo-family/)で見つけることができます。
+私はイタリア人ですが、ほとんどの場合は時間に追われています。イタリアに32年間住んだ後、アイルランド（2008年）に移住し、2011年にスイスに移住しました。現在は、親切で思いやりのある妻のケイトと、*AJ*と*セボウスキー*という2人の素晴らしい子供たちと暮らしています。[Instagram](https://www.instagram.com/palladius/)または[ファミリーギャラリー](/en/gallery/riccardo-family/)で見つけることができます。
 
 もちろん、スイスに住んでいます。
 
@@ -50,25 +50,25 @@ SRE、オペレーション、Google の文化、GenAI、Ruby について話し
 グラハムの言葉を借りれば、「以前は趣味があったが、今は子供ができた」とのことです。私の趣味は、スポーツ、音楽、旅行、オタク的なことであり、以下のようなものがあります。
 
 * **ピアノ**の演奏（主にピーター・ガブリエル時代のジェネシスやドリーム・シアターを演奏しています）
-* **トライアスロン**（チューリッヒで2回のフル**アイアンマン**を完走し、EMEA周辺で5～6回のハーフディスタンスを完走しました）。
-* **マジック・ザ・ギャザリング**のプレイ（アリーナで、または子供たちと悲惨な結果でプレイしています。少なくともエールは20まで数えることを学んでいます！）
-* Thermomixを使った**料理**（ズルをしていると言われています）。そして、アメリカのイタリア料理のブログを書いたりしています。
-* **旅行**。友人であるアンドレアと訪れた国のスプレッドシートを持っています。現在、約61カ国です。アンドレアは、私がカリブ海をクルーズして1週間で+5も行ったので、私のことを嫌っています。
+* **トライアスロン**をする（チューリッヒで2回のフル**アイアンマン**を完走し、EMEA周辺で5～6回のハーフディスタンスを完走しました）。
+* **マジック・ザ・ギャザリング**をする（アリーナで、または子供たちと。悲惨な結果になりますが、少なくともエールは20まで数えられるようになりました！）
+* サーモミックスで**料理**をする（ズルをしていると言われます）。そして、アメリカのイタリア料理のブログを書いたりしています。
+* **旅行**。友人であるアンドレアと訪れた国のスプレッドシートを持っています。現在、約61カ国です。アンドレアは、私がカリブ海をクルーズして1週間で+5も増えたので、私のことを嫌っています。
 * **コンピューター**。Ruby on Rails、Linux、bashスクリプト、そして家族とコーディングを組み合わせるのが大好きです。信じられませんか？
-  * [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait)では、子供たちに有名な画像を使ってアルファベットの文字を教える方法を紹介しています。
+  * [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait)では、子供たちに親しみやすい画像を使ってアルファベットの文字を教える方法を紹介しています。
   * 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧 では、旅行の記録（WIP）と、妻が私に投票できるようにしています。（彼女は私のことをパフィンと呼んでいます）。
 
 ## このサイトについて
 
 
 {{< boxmd >}}
-このサイトはHugoで構築されています（もちろんJekyllの方が好きですが、同僚の意見に従いました）。[ZZO](https://github.com/zzossig/hugo-theme-zzo) ([ドキュメント](https://zzo-docs.vercel.app/zzo))を使用しています。なぜこれを選んだのかというと、2週間かけて5つの異なるテーマを試してみた結果です。学んだ教訓は以下のとおりです。
+このサイトはHugoで構築されています（もちろんJekyllの方が好きですが、同僚の意見に従いました）。[ZZO](https://github.com/zzossig/hugo-theme-zzo) ([ドキュメント](https://zzo-docs.vercel.app/zzo))を使用しています。なぜこれを選んだのかというと、2週間ほどかけて5つの異なるテーマを試してみた結果です。学んだ教訓は以下のとおりです。
 {{< /boxmd >}}
 
 学んだ教訓
 
 * <https://github.com/palladius/ricc.rocks>。Readmeには、Ananke、
-  Boostrap、Stack、Papermod、Coderなどのすべての代替サイトへのリンクが含まれています。Stackは妻のお気に入りで、Bootstrapは私のお気に入りでしたが、スミッシングのようなものがあり、それが何だったか思い出せません。そこで、イタリア語の**zzo vuoi?**を彷彿とさせるZZOを選びました。
+  Boostrap、Stack、Papermod、Coderなどのすべての代替サイトへのリンクが含まれています。Stackは妻のお気に入りで、Bootstrapは私のお気に入りでしたが、スミッシングのようなものがあることがわかりました。それで、イタリア語の**zzo vuoi?**を彷彿とさせるZZOを選びました。
 
 代替サイト
 

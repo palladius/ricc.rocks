@@ -84,7 +84,8 @@ hugo-install:
 	echo 'on Debian: sudo snap install hugo'
 
 test:
-	cd zzo.ricc.rocks && hugo --minify
-	echo todo test gemini
+	echo Delegating tests to Gemini and ZZO...
+	cd zzo.ricc.rocks && make test
+#hugo --minify
 	cd gemini && make test
-	find zzo.ricc.rocks/ -name \*.md | xargs head -1 | grep --  '!--'
+#	find zzo.ricc.rocks/ -name \*.md | xargs head -1 | grep --  '!--'
