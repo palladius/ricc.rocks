@@ -1,0 +1,151 @@
+---
+input: "---\n# The idea here is to have gemini copy it to\ntitle: \"\U0001F5E3️ My
+  sessions and \U0001F1EE\U0001F1F9\U0001F1EE\U0001F1EA\U0001F1E8\U0001F1ED Bio\"\ncanonicalURL:
+  https://github.com/palladius/my-sessions-and-bio\n---\n\nOriginal doc: https://github.com/palladius/my-sessions-and-bio\n\nTODO(ricc):
+  have the MAIN here and some script to copy it upon change :) Could be sth as simple
+  as \"cp aaa.md ../session-and-bio/index.md ; sed ...\"\n\n\n# My sessions, Bio and
+  public resources\n\n\nAn increasing trail of articles, sessions, demos, and so on.\n\nSelf:
+  go/ricc-gh-sessions - https://github.com/palladius/my-sessions-and-bio\n\n* [Google
+  Cloud - Advocacy](https://cloud.google.com/developers/advocates/riccardo-carlesso).\n*
+  [Linkedin](https://www.linkedin.com/in/riccardocarlesso/)\n* \U0001F426 [Twitter](https://twitter.com/palladius)\n*
+  \U0001F419 [github](https://github.com/palladius)\n\n## Bio\n\nFormer network administrator,
+  sysadmin, and Ruby on Rails developer, Riccardo has been in operations for 20+ years
+  and\nstill likes to spend time coding (better if Ruby). He loves engaging with customers
+  and help them run their operations\nreliably and successfully in the cloud. Riccardo
+  loves caipirinhas and \U0001F377 Amarone, playing \U0001F3B9 piano and \U0001F3CA\U0001F3FB\U0001F6B4\U0001F3FF\U0001F3C3‍♀️\ntriathlons;
+  he's been passionate about Mathematics since he was 4.\n\nHe's in love with `Ruby`.\n\nTags:
+  #maths #piano #cooking #Ruby #Google #DevOps #Linux #running #politics #Cloud #yellow
+  #wine #grammar #tongues #SRE\n\n## Areas of expertise\n\nI've been in Operations
+  for 20 years #as a Network Engineer (working in NOC).\nIn Google I specialize on:\n\n*
+  SRE (Site reliability Engineering)\n* How Google does Software Development, Culture,
+  Teams, Operations.\n* GenAI (new!)\n* Ruby\n* Pulumi\n* GCP foundations (Infra:
+  GCE, \"landing zones\") and all the experience I matured in 7 years of Professional
+  Services with big customers in DACH.\n\nCode proficiency:\n\n5. (AWESOME) Bash\n4.
+  (GOOD) **Ruby**\n3. (AVERAGE) `Python`, `Pulumi` (with Python because.. https://github.com/pulumi/pulumi/issues/132)\n2.
+  (LOW) C, C++, Java, Go, Perl, PHP, Prolog, Terraform\n1. (BAD) Javascript/Typescript.
+  I dream of a world where you can choose your own FE language and not stick to ****script.\n\n##
+  Articles\n\nMedium ([main page](https://medium.com/@palladiusbonton/) - [RSS feed](https://medium.com/feed/@palladiusbonton))
+  Blog:\n\n* 2023-12-12 **TBD** \"Hey Gemini, explain me these pictures - in bash \U0001F9D1\U0001F3FD‍\U0001F4BB\"
+  (coming soon!)\n* 2023-11-20 [Hey Bard, write a responsive Javascript Search Engine
+  app for me..](https://medium.com/@palladiusbonton/hey-bard-write-a-responsive-javascript-search-engine-app-for-me-b2585e55385e)\n*
+  2023-11-16 [Automated insights on Medium articles with GenAI and Ruby!\n](https://blog.devops.dev/parse-medium-articles-with-genai-and-add-some-fun-02fe9d30475a)
+  #GenAI #Medium #Ruby\n* 2022-MM-DD [My Mac’s battery\U0001F50B on Google Cloud Monitoring
+  — send SMS if low \U0001FAAB](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe?source=rss-b5293b96912f------2)\n*
+  2023-04-18 [Migrate ☁️ GCP projects across organizations, the gcloud way](https://medium.com/google-cloud/how-to-migrate-projects-across-organizations-c7e254ab90af?source=rss-b5293b96912f------2)\n*
+  2022-02-13 [\U0001F424 Canary Deployment on GCP with Cloud Deploy](https://medium.com/google-cloud/draft-canarying-on-gcp-with-cloud-deploy-91b3e4d0ee9a)
+  #cicd #cloud_deploy #cloud_build #canary This is possibly my longest and most complex
+  demo (took me six months to finalize!) - [video](https://www.youtube.com/watch?v=0GfV5iMGG64)
+  - [code](https://github.com/palladius/clouddeploy-platinum-path) - [step by step
+  guide](https://github.com/palladius/clouddeploy-platinum-path/blob/main/step-by-step-guide.md)\n*
+  2022  [Setting a \\u2605 Cloud Build trigger with Pulumi in  Python](https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf)\n\n\nGoogle
+  Cloud Blog:\n\n* [Vodafone: A DevOps approach to AI/ML through cloud-native CI/CD
+  pipelines](https://cloud.google.com/blog/products/devops-sre/how-vodafone-uses-cicd-to-speed-up-ml-pipelines)
+  #MLOps\n\nVideos:\n\n* [The Art of SLOs ](https://www.youtube.com/watch?v=E3ReKuJ8ewA)
+  - My very first video on Google Cloud! #SRE #SLOs ([More on Art of SLOs](https://sre.google/resources/practices-and-processes/art-of-slos/))\n\n\n##
+  Sessions\n\nTraveling around the world (..) and delivering sessions on SRE, How
+  Google does Software Development, ..\n\nMore info on my talks are in [talks](talks.md).\n\n**2025**\n\n*
+  2025-09 TODO (Euruko,\t\U0001F1F5\U0001F1F9Viana do Castelo)\n* 2025-05 TODO (Helvetic
+  Ruby, \U0001F1E8\U0001F1EDGeneva)\n* 2025-03 TODO (Cloud Conf, \U0001F1EE\U0001F1F9Torino)\n\n**2024**\n\n*
+  2024-11-21 \"[Keynote: SRE Gone Wrong: Top 7 Errors (and How to Avoid Them)](https://sreday.com/2024-amsterdam/#modal-speaker-0)\"
+  ([SRE Day, \U0001F1F3\U0001F1F1Amsterdam](https://sreday.com/2024-amsterdam/)) [CfP](https://www.papercall.io/sreday-2024-amsterdam)
+  #SRE #Keynote #Culture\n* 2024-11-08 \"[News Crawler via Langchain.RB and Gemini
+  APIs](https://sessionize.com/app/speaker/session/739236)\" (GDG Devfest, \U0001F1EE\U0001F1F9Pescara)
+  [CfP](https://sessionize.com/devfest-pescara-2024/) #GenAI #Gemini #Ruby\n* 2024-10-12
+  \"[News Crawler via Langchain.RB and Gemini APIs](https://sessionize.com/app/speaker/session/745608)\"
+  (GDG Devfest, \U0001F1EE\U0001F1F9Modena) #GenAI #Gemini #Ruby\n* 2024-10-11 \"[Keynote:
+  Dove l'SRE può andare storto](https://www.devsecopsday.it/talks_speakers/)\" ([DevSecOps
+  day, \U0001F1EE\U0001F1F9Bologna](https://www.devsecopsday.it/talks_speakers/))
+  #SRE  #Keynote #Culture\n* 2024-09-17 **SRE Jumpstart** (GDG \U0001F1ED\U0001F1FABudapest,
+  _remote_) #SRE #Culture (soon on Youtube)\n* 2024-09-11 \"[Workshop: Bring your
+  Ruby app in the Cloud](https://2024.euruko.org/speakers/riccardo_carlesso)\" (Euruko,
+  \U0001F1E7\U0001F1E6Sarajevo) #GenAI #Gemini #Ruby #Keynote\n* 2024-08-21 \"News
+  Crawler via Langchain.RB and Gemini APIs\" (Railshöck at Puzzle, \U0001F1E8\U0001F1EDZurich)
+  #GenAI #Gemini #Ruby\n* 2024-05-31 \"News Crawler via Langchain.RB and Gemini APIs\"
+  ([RubyDay, \U0001F1EE\U0001F1F9Verona](https://ti.to/grusp/rubyday-2024)) [Sessionize](https://sessionize.com/app/speaker/session/621013)
+  #GenAI #Gemini #Ruby\n* 2024-05-29 \"Software development with Google\" ([CloudConf,
+  \U0001F1EE\U0001F1F9Turin](https://2024.cloudconf.it/index.html)) #Culture #SWE\n*
+  2024-04-11 \"Goodbye, deployment headaches: Cloud Deploy and Vertex AI unite (Cloud
+  Next, \U0001F1FA\U0001F1F8Las Vegas)\" ([Cloud Next - Abstract](https://cloud.withgoogle.com/next?session=DEV302))
+  - [video](https://www.youtube.com/watch?v=_NlGk9Ao_oA) - [PDF Slides](https://assets.swoogo.com/uploads/3794522-661c3c8fe0cf9.pdf)
+  #CloudDeploy #MLOps\n\n**2023**\n\n* 2023-11-08 \"How to fail your SRE adoption
+  (for Enterprises)\" ([DevOpsDays, \U0001F1F5\U0001F1F1Warsaw](https://devopsdays.pl/bio/#kontakt))\n*
+  2023-11-DD \"Introduction to SRE\" and \"GenAI for dummies\" at GDG Warszawa (\U0001F1F5\U0001F1F1Warsaw,
+  Poland).\n* 2023-10-28 \"Esperimenti con Vertex AI\" (Italian) at Linux Day (\U0001F1EE\U0001F1F9Fabriano,
+  Italy) https://pdp.linux.it/news/2005/linux-day-2023/\n* 2023-09-19 [Reimagining
+  customer services with GenAI and multi-modal interaction](https://www.youtube.com/watch?v=WRNncVe5yJQ)
+  (George UX Conf, \U0001F1E6\U0001F1F9Vienna) #UX #GenAI . Had ~300 people in the
+  room and ~1500 remotely!\n\n**2022**\n\n* 2022-03-16 [Panel on SRE with Telia and
+  Datadog](https://hopin.com/events/telia-company-google-cloud-datadog-sre-panel)\n*
+  2022-01-26 [How to fail your SRE adoption](https://gdg.community.dev/events/details/google-gdg-budapest-presents-how-to-fail-your-sre-adoption/)\n
+  \ (GDG \U0001F1ED\U0001F1FABudapest, remote) #SRE #Culture **[video](https://www.youtube.com/watch?v=i96qBPyn2dw)**\n*
+  2022-03-18 [Intro to SRE](https://2022.incontrodevops.it/talks_speakers/index.html)
+  (Grusp, \U0001F1EE\U0001F1F9Bologna)\n\n## Thanks\n\nInspired by my colleague Kaz:
+  https://github.com/kazunori279/my-sessions-and-bio\n"
+output: "---\n# The idea here is to have gemini copy it to\ntitle: \"\U0001F5E3️♊
+  [Geminocks]  私のセッションと \U0001F1EE\U0001F1F9\U0001F1EE\U0001F1EA\U0001F1E8\U0001F1ED
+  バイオ\"\ncanonicalURL: https://github.com/palladius/my-sessions-and-bio\ntags: [ geminocks,
+  Japanese ]\n---\n\n元のドキュメント: https://github.com/palladius/my-sessions-and-bio\n\nTODO(ricc):
+  メインをここに置いて、変更時にコピーするスクリプトを用意する:) \"cp aaa.md ../session-and-bio/index.md ; sed ...\"
+  のような簡単なものでもいい。\n\n\n# 私のセッション、バイオ、公開リソース\n\n\n記事、セッション、デモなどがどんどん増えています。\n\n自分: go/ricc-gh-sessions
+  - https://github.com/palladius/my-sessions-and-bio\n\n* [Google Cloud - アドボカシー](https://cloud.google.com/developers/advocates/riccardo-carlesso).\n*
+  [Linkedin](https://www.linkedin.com/in/riccardocarlesso/)\n* \U0001F426 [Twitter](https://twitter.com/palladius)\n*
+  \U0001F419 [github](https://github.com/palladius)\n\n## バイオ\n\n元ネットワーク管理者、システム管理者、Ruby
+  on Rails開発者であるリッカルドは、20年以上運用に携わっており、\n今でもコーディングに時間を費やすのが好きです（できればRuby）。 お客様と関わり、お客様がクラウドで運用を\n確実かつ成功裏に実行できるよう支援することに情熱を注いでいます。
+  リッカルドはカイピリーニャと\U0001F377アマローネが大好きで、\U0001F3B9ピアノを弾いたり、\U0001F3CA\U0001F3FB\U0001F6B4\U0001F3FF\U0001F3C3‍♀️トライアスロンをしたりするのが好きです。
+  4歳の頃から数学に情熱を注いでいます。\n\n彼は`Ruby`に恋をしています。\n\nタグ: #maths #piano #cooking #Ruby #Google
+  #DevOps #Linux #running #politics #Cloud #yellow #wine #grammar #tongues #SRE\n\n##
+  専門分野\n\n私は20年間、#ネットワークエンジニア（NOC勤務）として運用に携わってきました。\nGoogleでは、以下を専門としています。\n\n* SRE（サイト信頼性エンジニアリング）\n*
+  Googleのソフトウェア開発、文化、チーム、運用の方法。\n* GenAI (新規!)\n* Ruby\n* Pulumi\n* GCPの基礎（インフラ：GCE、「ランディングゾーン」）と、DACHの大規模なお客様との7年間のプロフェッショナルサービスで培ったすべての経験。\n\nコードの習熟度:\n\n5.
+  (素晴らしい) Bash\n4. (得意) **Ruby**\n3. (平均) `Python`、`Pulumi` (Pythonを使用しているのは.. https://github.com/pulumi/pulumi/issues/132)\n2.
+  (低い) C、C++、Java、Go、Perl、PHP、Prolog、Terraform\n1. (苦手) Javascript/Typescript。 ****scriptに固執せず、自分の好きなFE言語を選べる世界を夢見ています。\n\n##
+  記事\n\nMedium ([メインページ](https://medium.com/@palladiusbonton/) - [RSSフィード](https://medium.com/feed/@palladiusbonton))
+  ブログ:\n\n* 2023-12-12 **未定** \"ねえジェミニ、これらの写真を説明してくれ - bashで\U0001F9D1\U0001F3FD‍\U0001F4BB\"
+  (近日公開予定！)\n* 2023-11-20 [ねえバード、レスポンシブなJavascript検索エンジンアプリを書いてくれ..](https://medium.com/@palladiusbonton/hey-bard-write-a-responsive-javascript-search-engine-app-for-me-b2585e55385e)\n*
+  2023-11-16 [GenAIとRubyを使用したMedium記事の自動分析！\n](https://blog.devops.dev/parse-medium-articles-with-genai-and-add-some-fun-02fe9d30475a)
+  #GenAI #Medium #Ruby\n* 2022-MM-DD [Google Cloud Monitoring上の私のMacのバッテリー\U0001F50B
+  - バッテリー残量が少なくなったらSMSを送信\U0001FAAB](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe?source=rss-b5293b96912f------2)\n*
+  2023-04-18 [☁️ GCPプロジェクトを組織間で移行する、gcloudの方法](https://medium.com/google-cloud/how-to-migrate-projects-across-organizations-c7e254ab90af?source=rss-b5293b96912f------2)\n*
+  2022-02-13 [\U0001F424 Cloud Deployを使用したGCPでのカナリアデプロイ](https://medium.com/google-cloud/draft-canarying-on-gcp-with-cloud-deploy-91b3e4d0ee9a)
+  #cicd #cloud_deploy #cloud_build #canary これはおそらく私の中で最も長く、最も複雑なデモです（完成までに6か月かかりました！）
+  - [ビデオ](https://www.youtube.com/watch?v=0GfV5iMGG64) - [コード](https://github.com/palladius/clouddeploy-platinum-path)
+  - [ステップバイステップガイド](https://github.com/palladius/clouddeploy-platinum-path/blob/main/step-by-step-guide.md)\n*
+  2022  [PythonでPulumiを使用して\\u2605 Cloud Buildトリガーを設定する](https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf)\n\n\nGoogle
+  Cloudブログ:\n\n* [Vodafone: クラウドネイティブなCI/CDパイプラインによるAI/MLへのDevOpsアプローチ](https://cloud.google.com/blog/products/devops-sre/how-vodafone-uses-cicd-to-speed-up-ml-pipelines)
+  #MLOps\n\nビデオ:\n\n* [SLOの芸術](https://www.youtube.com/watch?v=E3ReKuJ8ewA) - Google
+  Cloudでの私の初めてのビデオです！ #SRE #SLOs ([SLOの芸術の詳細](https://sre.google/resources/practices-and-processes/art-of-slos/))\n\n\n##
+  セッション\n\n世界中を旅して（..）、SRE、Googleのソフトウェア開発の方法などに関するセッションを実施しています。\n\n私の講演の詳細については、[講演](talks.md)をご覧ください。\n\n**2025**\n\n*
+  2025-09 TODO (Euruko、\t\U0001F1F5\U0001F1F9ヴィアナ・ド・カステロ)\n* 2025-05 TODO (Helvetic
+  Ruby、\U0001F1E8\U0001F1EDジュネーブ)\n* 2025-03 TODO (Cloud Conf、\U0001F1EE\U0001F1F9トリノ)\n\n**2024**\n\n*
+  2024-11-21 \"[基調講演: SREの失敗: 上位7つのエラー（とその回避方法）](https://sreday.com/2024-amsterdam/#modal-speaker-0)\"
+  ([SRE Day、\U0001F1F3\U0001F1F1アムステルダム](https://sreday.com/2024-amsterdam/)) [CfP](https://www.papercall.io/sreday-2024-amsterdam)
+  #SRE #Keynote #Culture\n* 2024-11-08 \"[Langchain.RBとGemini APIを使用したニュースクローラー](https://sessionize.com/app/speaker/session/739236)\"
+  (GDG Devfest、\U0001F1EE\U0001F1F9ペスカーラ) [CfP](https://sessionize.com/devfest-pescara-2024/)
+  #GenAI #Gemini #Ruby\n* 2024-10-12 \"[Langchain.RBとGemini APIを使用したニュースクローラー](https://sessionize.com/app/speaker/session/745608)\"
+  (GDG Devfest、\U0001F1EE\U0001F1F9モデナ) #GenAI #Gemini #Ruby\n* 2024-10-11 \"[基調講演:
+  SREが失敗する可能性がある場所](https://www.devsecopsday.it/talks_speakers/)\" ([DevSecOps day、\U0001F1EE\U0001F1F9ボローニャ](https://www.devsecopsday.it/talks_speakers/))
+  #SRE  #Keynote #Culture\n* 2024-09-17 **SREジャンプスタート** (GDG \U0001F1ED\U0001F1FAブダペスト、_リモート_)
+  #SRE #Culture (近日中にYoutubeで公開)\n* 2024-09-11 \"[ワークショップ: Rubyアプリをクラウドに導入する](https://2024.euruko.org/speakers/riccardo_carlesso)\"
+  (Euruko、\U0001F1E7\U0001F1E6サラエボ) #GenAI #Gemini #Ruby #Keynote\n* 2024-08-21 \"Langchain.RBとGemini
+  APIを使用したニュースクローラー\" (Railshöck at Puzzle、\U0001F1E8\U0001F1EDチューリッヒ) #GenAI #Gemini
+  #Ruby\n* 2024-05-31 \"Langchain.RBとGemini APIを使用したニュースクローラー\" ([RubyDay、\U0001F1EE\U0001F1F9ヴェローナ](https://ti.to/grusp/rubyday-2024))
+  [Sessionize](https://sessionize.com/app/speaker/session/621013) #GenAI #Gemini #Ruby\n*
+  2024-05-29 \"Googleによるソフトウェア開発\" ([CloudConf、\U0001F1EE\U0001F1F9トリノ](https://2024.cloudconf.it/index.html))
+  #Culture #SWE\n* 2024-04-11 \"さようなら、デプロイの頭痛: Cloud DeployとVertex AIの統合 (Cloud Next、\U0001F1FA\U0001F1F8ラスベガス)\"
+  ([Cloud Next - 概要](https://cloud.withgoogle.com/next?session=DEV302)) - [ビデオ](https://www.youtube.com/watch?v=_NlGk9Ao_oA)
+  - [PDFスライド](https://assets.swoogo.com/uploads/3794522-661c3c8fe0cf9.pdf) #CloudDeploy
+  #MLOps\n\n**2023**\n\n* 2023-11-08 \"SRE導入を失敗させる方法 (企業向け)\" ([DevOpsDays、\U0001F1F5\U0001F1F1ワルシャワ](https://devopsdays.pl/bio/#kontakt))\n*
+  2023-11-DD \"SRE入門\" と \"GenAI for dummies\" at GDG Warszawa (\U0001F1F5\U0001F1F1ワルシャワ、ポーランド).\n*
+  2023-10-28 \"Vertex AIを使った実験\" (イタリア語) at Linux Day (\U0001F1EE\U0001F1F9ファブリアーノ、イタリア)
+  https://pdp.linux.it/news/2005/linux-day-2023/\n* 2023-09-19 [GenAIとマルチモーダルインタラクションによるカスタマーサービスの再構想](https://www.youtube.com/watch?v=WRNncVe5yJQ)
+  (George UX Conf、\U0001F1E6\U0001F1F9ウィーン) #UX #GenAI 。 会場には約300人、リモートでは約1500人が参加しました！\n\n**2022**\n\n*
+  2022-03-16 [TeliaとDatadogとのSREに関するパネルディスカッション](https://hopin.com/events/telia-company-google-cloud-datadog-sre-panel)\n*
+  2022-01-26 [SRE導入を失敗させる方法](https://gdg.community.dev/events/details/google-gdg-budapest-presents-how-to-fail-your-sre-adoption/)\n
+  \ (GDG \U0001F1ED\U0001F1FAブダペスト、リモート) #SRE #Culture **[ビデオ](https://www.youtube.com/watch?v=i96qBPyn2dw)**\n*
+  2022-03-18 [SRE入門](https://2022.incontrodevops.it/talks_speakers/index.html) (Grusp、\U0001F1EE\U0001F1F9ボローニャ)\n\n##
+  謝辞\n\n同僚のKazにインスパイアされました: https://github.com/kazunori279/my-sessions-and-bio\n\n"
+model: gemini-1.5-pro
+code_version: '1.7'
+article_hash: 3caa8fcd465c46efde7429bdd9ecb94fbf98bbe3e9c489519a0ecc9234d5011f
+title: "\"\U0001F5E3️ My sessions and \U0001F1EE\U0001F1F9\U0001F1EE\U0001F1EA\U0001F1E8\U0001F1ED
+  Bio\""
+lang: jp
