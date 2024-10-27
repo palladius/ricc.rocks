@@ -13,7 +13,6 @@ tags:
 - me
 - geminocks
 - Italian
-#🚧 Testing moving ABOUT from singleton to translated.
 ---
 
 *TODO(Ricc): Questo è attualmente sotto `posts/`. Devi aggiungere la logica per copiare questo sotto ZZO/{LANG}/about/ . Forse potresti aggiungere una carlessian-geminocks-target-folder ma potrebbe aggiungere troppa complessità.*
@@ -35,7 +34,7 @@ Parlo di SRE, Operations, Culture in Google, GenAI e Ruby.
 
 ## Personale
 
-Sono italiano, solo che sono per lo più puntuale. Ho vissuto in Italia per 32 anni, poi mi sono trasferito in Irlanda (2008) e nel 2011 mi sono trasferito in Svizzera dove attualmente vivo con mia moglie Kate, gentile e premurosa, e due fantastici bambini: *AJ* e *Sebowski*. Puoi trovarci su [Instagram](https://www.instagram.com/palladius/), o nella [galleria di famiglia](/it/gallery/riccardo-family/).
+Sono italiano, solo che per lo più sono puntuale. Ho vissuto in Italia 32 anni, poi mi sono trasferito in Irlanda (2008) e nel 2011 mi sono trasferito in Svizzera dove attualmente vivo con mia moglie Kate, gentile e premurosa, e due fantastici bambini: *AJ* e *Sebowski*. Puoi trovarci su [Instagram](https://www.instagram.com/palladius/), o nella [galleria di famiglia](/it/gallery/riccardo-family/).
 
 Certo, vivo in Svizzera.
 
@@ -43,34 +42,35 @@ Certo, vivo in Svizzera.
 
 ## Hobby
 
-Per citare Graham, *prima avevo degli hobby, ora ho dei figli*. I miei hobby erano lo sport, la musica, i viaggi, l'essere nerd e includono:
+Per citare Graham, *prima avevo degli hobby, ora ho dei bambini*. I miei hobby erano lo sport, la musica, i viaggi, l'essere nerd e includono:
 
-* Suonare il **pianoforte** (principalmente suonando Genesis dell'era di Peter Gabriel o Dream Theater)
+* Suonare il **pianoforte** (principalmente suonando i Genesis dell'era di Peter Gabriel o i Dream Theater)
 * Fare **triathlon** (ho completato due **Ironman** completi, entrambi a Zurigo, e 5-6 mezze distanze in EMEA).
 * Giocare a **Magic the Gathering** (in Arena o con i miei figli, con effetti disastrosi - ma almeno Ale sta imparando a contare fino a 20!)
 * **Cucinare** con il mio Bimby (dicono che sia barare). E scrivere sul blog di cucina americana roba italiana.
 * **Viaggiare**. Tengo un foglio di calcolo dei paesi visitati per me e il mio amico Andrea. Attualmente circa 61. Andrea mi odia da quando sono andato in crociera ai Caraibi e ne ho presi +5 in una settimana.
-* **Computer**. Adoro Ruby on Rails, Linux, la creazione di script bash e mescolare la famiglia con la mia codifica. Non mi credi?
-  * Guarda [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait) su come insegnare le lettere dell'alfabeto ai tuoi figli con immagini conosciute.
-  * Guarda 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧 dove memorizzo i nostri viaggi (WIP) e la possibilità per mia moglie di votare per me. (Mi chiama puffo).
+* **Computer**. Adoro Ruby on Rails, Linux, gli script bash e mescolare la famiglia con la mia codifica. Non mi credi?
+  * Vedi [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait) su come insegnare le lettere dell'alfabeto ai tuoi figli con immagini conosciute.
+  * Vedi 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧 dove memorizzo i nostri viaggi (WIP) e la possibilità per mia moglie di votarmi. (Mi chiama puffo).
 
 ## Questo sito
 
 
 {{< boxmd >}}
-Questo sito è costruito in Hugo (certo, preferirei Jekyll, ma ho seguito l'esempio dei miei colleghi) con [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([documenti](https://zzo-docs.vercel.app/zzo)). Se vi chiedete perché ho scelto questo, è stato un paio di fine settimana a provare 5 cose diverse. Le lezioni apprese sono qui:
+Questo sito è costruito in Hugo (ovviamente preferirei Jekyll, ma ho seguito l'esempio dei miei colleghi) con [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([documentazione](https://zzo-docs.vercel.app/zzo)). Se vi chiedete perché ho scelto questo, è stato un paio di fine settimana a provare 5 cose diverse. Le lezioni apprese sono qui:
 {{< /boxmd >}}
 
 Lezioni apprese:
 
-* <https://github.com/palladius/ricc.rocks>. Il file Readme contiene collegamenti a tutti i siti alternativi, come Ananke,
-  Boostrap, Stack, Papermod e Coder. Stack era il preferito di mia moglie, Bootstrap era il mio preferito, finché non ho scoperto che aveva una cosa smisurata che non riesco a ricordare. Così ho optato per ZZO, che mi ricorda l'italiano **zzo vuoi?**, che è divertente.
+* <https://github.com/palladius/ricc.rocks>. Il file Readme contiene i link a tutti i siti alternativi, come Ananke,
+  Boostrap, Stack, Papermod e Coder. Stack era il preferito di mia moglie, Bootstrap era il mio preferito, finché non ho scoperto che aveva una cosa smishing che non ricordo. Così ho optato per ZZO, che mi ricorda l'italiano **zzo vuoi?**, che è divertente.
 
 Siti alternativi:
 
 * Ananke: <https://hugo-ananke-vecchiume.netlify.app/>
 * Bootstrap: <https://hugo-bootstrap-ricc-rocks.netlify.app/>
 * Confronto symlink: <https://hugo-bootstrap-ricc-rocks.netlify.app/posts/posts/2023-01-29-symlinked-themes-compared.d/>
+
 
 
 *(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.4)*
