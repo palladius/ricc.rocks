@@ -11,6 +11,7 @@ categories:
 - life
 image: /en/posts/life/learning-german-in-zurich/Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png
 # 20241027 - self: go/ricc-passaporto-svizzero TODO rimuovi questi commenti depurandoli in locale.
+# Updated on 27oct24: Added Anki stuff.
 ---
 
 I've been in Zurich for 10 years, so now I can apply for swiss passport (I heard once you do, you get a free gold lingot from a Nazi *caveau*).
@@ -57,9 +58,17 @@ Now, I've got a lot of tips from colleagues. Some random tips:
 
 ## Anki
 
-After an initial frustration using the tgool, I came to like it. I have the app installed on my Mac, downloaded the A1 and B1 word list (A1 is quite easy and fun, while B2 is like a cat attached to your testicles, as we say in Bologna). Word list is in alpha order, so the first 2 days I've learnt all about *ab-something* (which reminds me of Young Frankenstein 😬): *ab-holen*, *ab-fall*, *ab-sendung*, *ab-norme* 🧌 - and so on.
+After an initial frustration using the tgool, I came to like it. I have the app installed on my Mac, downloaded the A1 and B1 word list (A1 is quite easy and fun, while B2 is like a cat attached to your testicles, as we say in Bologna). Word list is in alpha order, so the first 2 days I've learnt all about *ab-something* (which reminds me of Young Frankenstein 😬): *ab-holen*, *ab-fall*, *ab-sendung*, *ab-normal* [🧌](https://it.wikipedia.org/wiki/Frankenstein_Junior) - and so on.
 
-I found out I learn more by looking at the etimology (eg, etimology of [*holen*](https://en.wiktionary.org/wiki/holen#German) is the same of *to haul* - I'll never forget that!)
+I found out I learn more by looking at the etimology (eg, etimology of [*holen*](https://en.wiktionary.org/wiki/holen#German) is the same of *to haul* - I'll never forget that!).
+
+I suggest you to try the A2 and B1 by Goethe (by the [same author](https://ankiweb.net/shared/by-author/1386119660)):
+
+# [A2 Wortliste Goethe](https://ankiweb.net/shared/info/1386119660)
+* [B1 Wortliste DTZ Goethe](https://ankiweb.net/shared/info/1586166030)
+
+I personally found the B1 very hard ( I never arrived past the AB/AN part: *abzahlen* / abholen / *anfahren* ..),
+but the A2 was at the right level.
 
 # 3. The B1 exam in Frauenfeld
 

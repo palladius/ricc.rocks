@@ -1,7 +1,5 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "💦♊ [Geminocks] テーマ比較 (🏆) 🇯🇵"
+title: "🇯🇵 ♊ [Geminocks] テーマ比較: 🏆 勝者は？"
 date: 2023-02-05T21:17:43+01:00
 draft: false
 tags:
@@ -10,7 +8,7 @@ tags:
 - WOW
 - geminocks
 - Japanese
-# Categories is feinitely used by STACK framework:
+# Categories are used by STACK framework, not sure re ZZO.
 categories:
 - hugo
 - category
@@ -37,29 +35,29 @@ thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-sca
 
 
 今週末はたくさんのモジュールを試してみました。上記のスタンザでは、テーマによって単語やキー/値が異なることに注意してください。混同しないようにしましょう。
-例えば、このページにはAnankeでのみ機能する`featured_image`と、おそらく他のテーマでも機能する`image`があります。
+例えば、このページにはAnankeでのみ機能する `featured_image` と、おそらく他のテーマでも機能する `image` があります。
 
-これまで試したこと:
+これまで試したことは次のとおりです。
 
-## 全ページでシンボリックリンクする。
+## 全ページにわたるシンボリックリンク
 
-* これまで1つだけ試しました - golangは変更されたシンボリックリンクファイルを認識しません。
+* これまで試したのは1つだけですが、golangは変更されたシンボリックリンクファイルを認識しないでしょう。
 * STACKは現在、別の場所にあることに注意してください。ちょっと移動させてください。
 
 ## これまで試したHugoのウェブサイト
 
 すべてのコードは、私のGHリポジトリの異なるディレクトリにあります: https://github.com/palladius/ricc.rocks/
 
-| テーマ + PermaCompare | ウェブサイト     | スター |  説明 |
+| テーマ + PermaCompare | ウェブサイト     | 星 |  説明 |
 | ----------- | ----------- | ------ | ---- |
-| Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | 素晴らしい |
-| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | たくさんいじりました。別のリポジトリにあることに注意してください |
+| Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/) | ⭐️⭐️⭐️⭐️⭐️ | まさに素晴らしい |
+| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks) |⭐️⭐️⭐️⭐️⭐️ | かなりいじりました。別のリポジトリにあることに注意してください |
 | ----------- | ----------- | ------ | ----  |
 | [🙉](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/) ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️ | 私が望むようなアイコンがあり、とても遊び心がありますが、素晴らしい機能が満載です。とても気に入っています！  |
 
-(*) Permacompare: 本番環境での比較ページへのパーマリンク :)
+(*) PermaCompare: 本番環境での比較ページへのパーマリンク :)
 
-* **PaperMod**: うまくいきます！ https://papermod.ricc.rocks	 まだあまり調べていません。比較ページ: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | とても洗練されています。必要最低限でありながら、その本質において非常に優れています！ |
+* **PaperMod**: うまくいきます！ https://papermod.ricc.rocks	 まだあまり探っていません。比較ページ: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [🙉](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️   | 超スタイリッシュ。必要最低限でありながら、その本質において非常に優れています！ |
 * **Stack**: まず、[数式](https://dev.stack.jimmycai.com/p/math-typesetting/)があります。 https://hugo-stack.ricc.rocks  そして、私はそれが大好きです！
 * **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/
 * 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ 数式に対応しています
@@ -67,15 +65,15 @@ thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-sca
 
 敗北:
 
-* **Coder**: いや、私にはシンプルすぎます。
-* Ananke。シンプルすぎます - https://hugo-ananke.netlify.app/
+* **Coder**: いやあ、私にはシンプルすぎます。
+* Ananke。シンプルすぎる - https://hugo-ananke.netlify.app/
 
-## フォトアルバム
+## 写真アルバム
 
-* まともなフォトアルバムがあるのはXXXだけのようです。しかし、「Photoswipeのようにテーマが優れていればよかったのに」という声も聞かれるので、[**PhotoSwipe**](https://photoswipe.com/)を他のものと連携させることができるかもしれません: [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe)を参照してください。
-* https://github.com/liwenyip/hugo-easy-galleryもチェックできるかもしれませんが、価値があるとは思えません。(505 ⭐️)。
-* あるいは、自分でコーディングするだけです（RubyではなくGolangだったらよかったのですが）: https://hugocodex.org/add-ons/image-gallery/
-* あるいは、この[素晴らしいライブラリ](https://github.com/mfg92/hugo-shortcode-gallery)を使用します: https://matze.rocks/images/#gallery-filter=Landscapeでデモをご覧ください。
+* きちんとした写真アルバムがあるのはXXXだけのようです。しかし、「Photoswipeのようにテーマが良ければいいのに」と言っている人がいるので、他のものと連携するように[**PhotoSwipe**](https://photoswipe.com/)を使えばいいと思います: [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe)を参照してください。
+* https://github.com/liwenyip/hugo-easy-galleryもチェックしてみてもいいかもしれませんが、価値があるとは思えません。(505 ⭐️)。
+* あるいは、コードを書いてしまうか（RubyではなくGolangなのが残念ですが）: https://hugocodex.org/add-ons/image-gallery/
+* あるいは、この[素晴らしいライブラリ](https://github.com/mfg92/hugo-shortcode-gallery)を使う: https://matze.rocks/images/#gallery-filter=Landscapeでデモを見る
 
 
 
@@ -91,11 +89,11 @@ thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-sca
 特徴:
 
 ```
-複数のスキン（ダーク、ライト、ソーラライズドなど）
+複数のスキン(ダーク、ライト、ソーラライズド、...)
 モバイルメニュー
 検索
-検索エンジン最適化（SEO）
-多言語対応（i18n）
+検索エンジン最適化(SEO)
+多言語対応 (i18n)
 レスポンシブデザイン
 カスタマイズ可能なUI
 RSS
@@ -103,7 +101,7 @@ RSS
 高速コードハイライト
 トークページ
 ショーケースページ
-出版ページ
+出版物ページ
 履歴書ページ
 プレゼンテーションページ
 ```
@@ -113,7 +111,7 @@ RSS
 
 ## Bootstrap
 
-* 画像ドキュメント: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images ここにはたくさんの良いものがあります。また、バグを見つけたのですが、開発者が24時間で修正してくれました - 素晴らしいですね。
+* 画像ドキュメント: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images ここにはたくさんの良いものがあります。また、私はバグを見つけましたが、彼は24時間で修正してくれました - 素晴らしい。
 * ギャラリードキュメント: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
 
 
@@ -123,19 +121,19 @@ RSS
 
 ## PaperMod
 
-まだ少ししか触っていませんが - それは私の責任であって、彼の責任ではありません :)
+今のところ少ししか時間を費やしていませんが、それは私の責任であって、彼の責任ではありません :)
 
 ドキュメント: https://github.com/adityatelange/hugo-PaperMod/
 
-ニュートラル:
+中立:
 
-* [多くのアイコン](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons)をサポートしていますが、使い方がわかりません
-* [数式をサポート](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/)していますが、動作させる方法がわかりません
-* 絵文字はいい感じです。有効にすると、🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil: のように使えます
+* [多くのアイコン](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons)をサポートしていますが、使用方法がわかりません
+* [数式をサポート](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/)していますが、動作させる方法がわかりません。
+* 絵文字はいいですね。有効にすると 🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil: のようにできます
 
 悪い 😩:
 
-* シンプルすぎる。ブロガーとしての私のことを何も表現していません。単なる（洗練された）ニュースの入れ物です。リッカルドのことではなく、私の記事だけです。
+* シンプルすぎる。ブロガーとしての私のことを何も表現していません。単なるニュースの（洗練された）入れ物です。リッカルドのことではなく、私の記事だけです。
 
 
 ## Ananke ⭐️⭐️
@@ -143,7 +141,7 @@ RSS
 ステータス: [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)
 古い:
 * [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)
-* 歴史的に最初に試したものです。あまり深くは調べていません
+* 歴史的に私が最初に試したもの。あまり探求していません
 
 良い 😍:
 
@@ -152,12 +150,12 @@ RSS
 悪い 😩:
 
 * **シンプルすぎる**。例えば、お問い合わせフォームが投稿の中にあります（本当に？）。
-* 画像ギャラリーがないと思います
+* 画像ギャラリーがないのではないかと思います
 
 
 ## TranquilPeak
 
-![image](tranquilpeak-showcase.png)
+![画像](tranquilpeak-showcase.png)
 
 * GH: https://github.com/kakawait/hugo-tranquilpeak-theme
 * 861スター / 515フォーク
@@ -176,7 +174,7 @@ RSS
 マイナス
 
 * FSは画像のシンボリックリンクをサポートしていないと言っています。しかし、投稿のシンボリックリンクはサポートしています
-* content/posts/の構成が怪しいです。ディレクトリ内外のコンテンツを移動すると、表示されなくなります。奇妙です。(もっともな理由があるのかもしれませんが、content/内のすべてを移動できる他のテーマと比較すると、バグのように思えます)
+* content/posts/ の構成が怪しい。ディレクトリ内のコンテンツを移動したり、ディレクトリ外に移動したりすると、コンテンツが表示されなくなります。奇妙です。(もっともな理由があるのかもしれませんが、content/ 内のすべてを移動できる他のテーマと比較すると、バグのように思えます)
 
 
 
@@ -184,3 +182,38 @@ RSS
 
 
 *(Generated by Geminocks: https://github.com/palladius/ricc.rocks/tree/main/gemini prompt_version=1.4)*
+
+---
+title: "[TODO] [jp] Themes Compared: who \U0001F3C6 wins?"
+date: 2023-02-05 21:17:43.000000000 +01:00
+draft: false
+tags:
+- symlink
+- hugo
+- WOW
+categories:
+- hugo
+- category
+- important
+keywords:
+- tech
+- hugo
+- comparative
+- theme
+- themes
+featured_image: clone-mtg-vintage.png
+image: clone-mtg-vintage.png
+images:
+- tranquilpeak-showcase.png
+- clone-mtg-vintage.png
+- zzo-screenshot.png
+thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
+geminock:
+  :alter_front_matter_version: '1.0'
+  :notes: Riccardo - todo make this variable per extension and calla  proper class
+    to get it. So you can have a single thingie for Main picture, and then transform
+    it for all extensions.
+# Generated by Geminock v.1.9 - matter_hash_to_str()
+# Note this operation might have removed all previous comments. Sorry.
+# If Riccardo wants to edit this, code is in: /Users/ricc/git/ricc.rocks/gemini/lib/gemini/translator.rb
+---

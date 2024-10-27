@@ -1,0 +1,99 @@
+---
+input: "---\ntitle: \"Getting Swiss \U0001F1E8\U0001F1ED nationality: learning German
+  \U0001F1E9\U0001F1EA\"\ndate: '2024-04-17T10:51:52Z'\ndraft: false\ntags:\n- language\n-
+  switzerland\n- Google\n- expat\ncategories:\n- life\nimage: /en/posts/life/learning-german-in-zurich/Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png\n#
+  20241027 - self: go/ricc-passaporto-svizzero TODO rimuovi questi commenti depurandoli
+  in locale.\n# Updated on 27oct24: Added Anki stuff.\n---\n\nI've been in Zurich
+  for 10 years, so now I can apply for swiss passport (I heard once you do, you get
+  a free gold lingot from a Nazi *caveau*).\n\nJokes apart, the top complexity here
+  is to pass an exam in German (Swiss German oder Hoch Deutsch, your choice).\n\nThis
+  article describes my steps and struggles. Luckily, I have super smart colleagues
+  in Google who helped me. This is my trying to give back :)\n\n![image](Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png)\n\n<!--more-->\n\n\n#
+  1. Back to School!\n\nFirst thing, you need a certificate from one of the enabled
+  schools:\n\nAccording to [Stadt Zurich official page](https://www.stadt-zuerich.ch/portal/de/index/politik_u_recht/einbuergerungen/kenntnisse/sprachlicheanforderungen.html)
+  (in German, of course), *All persons applying for naturalization must provide written
+  proof of their German language skills. The Common European Framework of Reference
+  for Languages ​​(CEFR) has different levels. For naturalization, all persons must
+  prove German language skills at the following levels:*\n\n* oral (speaking and listening):
+  level **B1**\n* written (writing and reading): level **A2**\n\nThe schools that
+  provide what you ask are these:\n\n1. [**Goethe Institute**](http://www.goethe.de/lrn/prj/pba/bes/gzb/deindex.html)
+  (hardest). No location in Switzerland, it seems (?)\n2. [TELC Ltd](https://www.telc.net/#section-0)
+  - ?\n3. [ÖSD](http://www.osd.at/) (Austrian, Second hardest)\n4. [Fide language
+  certificate](http://www.fide-service.ch/)\n5. [Digital language test](https://www.digitalersprachtest.ch/)\n\nNow:\n*
+  Goethe doesn't have presence in Switzerland and I hear its the hardest. Ciao.\n*
+  TELC has a pre-Christ website with still events from 2013-2014 (wow), still I contected
+  them for more info.\n* OST says \"Internationally recognized German language exams
+  and certificates for children, young learners and adults\", and since it starts
+  with Children I have a feeling I won't be treated like a complete idiot (*how long
+  have you been living in Sweitzerland? What, 10 years? And you still don't speak
+  German?* - followed by a compassion gaze). they do have centers in [Frauenfeld](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/Frauenfeld,+Svizzera/@47.550191,8.9002971,13.83z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479a922b7ac416d5:0xabd5ea8c4a738dc7!2m2!1d8.8987541!2d47.5535997!3e3)
+  (36m from HB) and [Niederurnen](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/8867+Niederurnen,+Svizzera/@47.1837248,8.744133,11.39z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479acd0b21f91dfd:0x6eb928b1714053f3!2m2!1d9.0531505!2d47.125507!3e3)
+  (50m from HB). Ok, Frauenfeld wins :) Ok, there's [one](https://www.osd.at/en/take-tests/find-exam-dates/?country=167&tests=00001100000&land=null&stadt=Frauenfeld&datefrom=01.06.2023&dateto=31.08.2023&centernr=null)
+  **B1 exam on June 24th** - should be good! I wrote to the organizer and will tell
+  you more close to the date about https://www.osd.at/en/take-tests/find-exam-dates/pruefung/?tid=29224ZB1\n\n#
+  2. Studying for the B1 exam\n\n![image](man-in-yellow-studies-by-lake-zurich.png)\n\nNow,
+  I've got a lot of tips from colleagues. Some random tips:\n\n* do passive listening.
+  They suggest this website: TBD\n* use a card system to learn the words. You can
+  create your own and sync from a repo to your system. [Anki](https://apps.ankiweb.net/)
+  is the name: you have an App for Mac, an app for Android, and you can edit your
+  own cards and sync them to your ankiWeb account :) You can download cards, for example
+  the [Goethe B1](https://ankiweb.net/shared/info/1586166030) cards or the [Goethe
+  A1](https://ankiweb.net/shared/info/1386119660), conveniently on github for you
+  to Fork and auto-build/sync/push :P\n\n## Anki\n\nAfter an initial frustration using
+  the tgool, I came to like it. I have the app installed on my Mac, downloaded the
+  A1 and B1 word list (A1 is quite easy and fun, while B2 is like a cat attached to
+  your testicles, as we say in Bologna). Word list is in alpha order, so the first
+  2 days I've learnt all about *ab-something* (which reminds me of Young Frankenstein
+  \U0001F62C): *ab-holen*, *ab-fall*, *ab-sendung*, *ab-normal* [\U0001F9CC](https://it.wikipedia.org/wiki/Frankenstein_Junior)
+  - and so on.\n\nI found out I learn more by looking at the etimology (eg, etimology
+  of [*holen*](https://en.wiktionary.org/wiki/holen#German) is the same of *to haul*
+  - I'll never forget that!).\n\nI suggest you to try the A2 and B1 by Goethe (by
+  the [same author](https://ankiweb.net/shared/by-author/1386119660)):\n\n# [A2 Wortliste
+  Goethe](https://ankiweb.net/shared/info/1386119660)\n* [B1 Wortliste DTZ Goethe](https://ankiweb.net/shared/info/1586166030)\n\nI
+  personally found the B1 very hard ( I never arrived past the AB/AN part: *abzahlen*
+  / abholen / *anfahren* ..),\nbut the A2 was at the right level.\n\n# 3. The B1 exam
+  in Frauenfeld\n\nThis went well. I was paired to an asian lady who could barely
+  speak English and German but worked A LOT to prepare.\nI kind of improvised all.
+  We were asked to organize together a trip with our family to the Bodensee\nand I
+  just applied common sense which the teachers seemed to appreciate, while her German
+  was much better but she was clesarly repeating something she memorized. She didn't
+  like me improvising, I can tell you!\n\nAnyhow, I got promoted with 70%, close to
+  the minimum to pass.\n\nOverall it was a terrible and a lovely experience at the
+  same time.\n\n# 4. The Stadt Zurich exam\n\nI've heard a lot of rumors which I'm
+  going to write here:\n\n* It's much easier to get your certificate in Zurich than
+  in small mountain towns where the local shaman vets you and decide if you fit in
+  with the culture (I love fondue, cook [Cuchaule](https://cookidoo.ch/recipes/recipe/fr-CH/r434981)
+  and can pronounce *Cuchicaschli*, and called the police on a noisy neighbour - hello?!?)\n\n#
+  \ 5. The aftermath, sorry! .. after German\n\nTBD\n"
+output: "---\ntitle: \"\U0001F1E8\U0001F1ED♊ [Geminocks] スイス国籍取得：ドイツ語学習 \U0001F1E9\U0001F1EA\"\ndate:
+  '2024-04-17T10:51:52Z'\ndraft: false\ntags:\n- language\n- switzerland\n- Google\n-
+  expat\n- geminocks\n- Japanese\ncategories:\n- life\nimage: /en/posts/life/learning-german-in-zurich/Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png\n---\n\nチューリッヒに住んで10年になるので、スイスのパスポートを申請できるようになりました（申請すると、ナチスの金庫から金の延べ棒がもらえると聞いたことがあります）。\n\n冗談はさておき、ここでの最大の難関は、ドイツ語の試験に合格することです（スイスドイツ語または標準ドイツ語のどちらかを選択できます）。\n\nこの記事では、私のステップと苦労について説明します。幸いなことに、Googleには、私を助けてくれる非常に優秀な同僚がいます。これは、私が恩返ししようとしていることです
+  :)\n\n![image](Riccardo_Italian_man_studying_on_a_German_spelling_book_in_front_of_Grossmunster.png)\n\n<!--more-->\n\n\n#
+  1. 学校へ戻る！\n\nまず、認定校のいずれかからの証明書が必要です。\n\n[シュタット・チューリッヒの公式ページ](https://www.stadt-zuerich.ch/portal/de/index/politik_u_recht/einbuergerungen/kenntnisse/sprachlicheanforderungen.html)
+  （もちろんドイツ語）によると、「帰化を申請するすべての人は、ドイツ語の能力の書面による証明を提出する必要があります。ヨーロッパ言語共通参照枠（CEFR）には、さまざまなレベルがあります。帰化のためには、すべての人が以下のレベルでドイツ語の能力を証明する必要があります。」\n\n*
+  口頭（話すことと聞くこと）：レベル **B1**\n* 筆記（書くことと読むこと）：レベル **A2**\n\n要求に応じて提供してくれる学校は以下のとおりです。\n\n1.
+  [**ゲーテ・インスティトゥート**](http://www.goethe.de/lrn/prj/pba/bes/gzb/deindex.html) （最難関）。スイスには拠点がないようです（？）\n2.
+  [TELC Ltd](https://www.telc.net/#section-0) -？\n3. [ÖSD](http://www.osd.at/) （オーストリア、2番目に難しい）\n4.
+  [Fide言語証明書](http://www.fide-service.ch/)\n5. [デジタル言語テスト](https://www.digitalersprachtest.ch/)\n\nさて：\n*
+  ゲーテはスイスに拠点がなく、最も難しいと聞きます。チャオ。\n* TELCのウェブサイトはキリスト以前のもので、まだ2013年から2014年のイベントが掲載されています（わお）。それでも、詳細について問い合わせてみました。\n*
+  OSTは「子供、若年層、大人のための国際的に認められたドイツ語試験と証明書」と述べており、「子供」から始まるので、私は完全にばか扱いされないような気がします（「スイスに住んでどれくらいになりますか？何、10年？まだドイツ語が話せないの？」
+  - 哀れみの視線が続きます）。[フラウエンフェルト](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/Frauenfeld,+Svizzera/@47.550191,8.9002971,13.83z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479a922b7ac416d5:0xabd5ea8c4a738dc7!2m2!1d8.8987541!2d47.5535997!3e3)
+  （HBから36m）と[ニーダーウルネン](https://www.google.com/maps/dir/Zurich+HB,+Bahnhofplatz,+Zurigo,+Svizzera/8867+Niederurnen,+Svizzera/@47.1837248,8.744133,11.39z/data=!4m14!4m13!1m5!1m1!1s0x47900a08cc0e6e41:0xf5c698b65f8c52a7!2m2!1d8.5403226!2d47.3778579!1m5!1m1!1s0x479acd0b21f91dfd:0x6eb928b1714053f3!2m2!1d9.0531505!2d47.125507!3e3)
+  （HBから50m）にセンターがあります。よし、フラウエンフェルトの勝ちだ :) よし、**6月24日にB1試験が[1つ](https://www.osd.at/en/take-tests/find-exam-dates/?country=167&tests=00001100000&land=null&stadt=Frauenfeld&datefrom=01.06.2023&dateto=31.08.2023&centernr=null)あります**
+  - これでいいでしょう！主催者に連絡したので、https://www.osd.at/en/take-tests/find-exam-dates/pruefung/?tid=29224ZB1
+  については、日にちが近づいたらまたお知らせします。\n\n# 2. B1試験の勉強\n\n![image](man-in-yellow-studies-by-lake-zurich.png)\n\nさて、同僚からたくさんのヒントをもらいました。ランダムないくつかのヒントを紹介します。\n\n*
+  受動的なリスニングをする。彼らはTBDというウェブサイトを勧めています。\n* 単語を覚えるには、カードシステムを使う。自分で作成し、リポジトリからシステムに同期させることができます。[Anki](https://apps.ankiweb.net/)という名前です。Mac用アプリ、Android用アプリがあり、自分でカードを編集してankiWebアカウントに同期させることができます
+  :) カードはダウンロードできます。例えば、[ゲーテB1](https://ankiweb.net/shared/info/1586166030)カードや[ゲーテA1](https://ankiweb.net/shared/info/1386119660)は、フォークして自動的にビルド/同期/プッシュできるように、GitHubで便利に利用できます
+  :P\n\n## Anki\n\n最初は使い方が分からずイライラしましたが、好きになりました。Macにアプリをインストールし、A1とB1の単語リストをダウンロードしました（A1はかなり簡単で楽しいですが、B2はボローニャで言うところの、まるで睾丸に猫がくっついているような感じです）。単語リストはアルファベット順なので、最初の2日間は*ab-something*について学びました（ヤング・フランケンシュタインを思い出します\U0001F62C）。*ab-holen*、*ab-fall*、*ab-sendung*、*ab-normal*
+  [\U0001F9CC](https://it.wikipedia.org/wiki/Frankenstein_Junior) - などなど。\n\n語源を調べることで、より多くのことを学ぶことが分かりました（例えば、[*holen*](https://en.wiktionary.org/wiki/holen#German)の語源は*to
+  haul*と同じです - 絶対に忘れません！）。\n\nゲーテによるA2とB1を試してみることをお勧めします（[同じ作者](https://ankiweb.net/shared/by-author/1386119660)による）。\n\n#
+  [A2 Wortliste Goethe](https://ankiweb.net/shared/info/1386119660)\n* [B1 Wortliste
+  DTZ Goethe](https://ankiweb.net/shared/info/1586166030)\n\n個人的には、B1は非常に難しいと感じました（AB/ANの部分、*abzahlen*
+  / abholen / *anfahren* ..以降は全く進めませんでした）が、A2はちょうど良いレベルでした。\n\n# 3. フラウエンフェルトでのB1試験\n\nこれはうまくいきました。私は、ほとんど英語もドイツ語も話せないアジア人女性とペアを組まされましたが、彼女は準備に非常に熱心に取り組んでいました。\n私はほとんどすべてを即興でこなしました。ボーデン湖への家族旅行を一緒に計画するように言われましたが、私は常識を働かせただけで、先生方はそれを評価してくれたようです。一方、彼女のドイツ語は私よりもはるかに上手でしたが、明らかに暗記したことを繰り返しているだけでした。彼女は私が即興でやるのが気に入らなかったようですね！\n\nともあれ、私は70％の成績で合格し、合格最低点ギリギリでした。\n\n全体的に、ひどい経験でありながら、同時に素晴らしい経験でもありました。\n\n#
+  4. シュタット・チューリッヒの試験\n\nいろいろな噂を耳にしたので、ここに書いておきます。\n\n* チューリッヒでは、地元のシャーマンがあなたを吟味し、文化に合っているかどうかを判断するような小さな山岳都市よりも、証明書を取得するのがはるかに簡単です（私はフォンデュが好きで、[クチョーレ](https://cookidoo.ch/recipes/recipe/fr-CH/r434981)を作ることができ、*チュチカスリ*と発音することができ、うるさい隣人に警察を呼びました
+  - ねえ！？）\n\n# 5. その後、すみません！.. ドイツ語の後\n\nTBD\n\n\n"
+model: gemini-1.5-pro
+code_version: '1.9'
+article_hash: 65132f0061259560dda65f3196259c0cb843c221fe7caafae77f9f4de2abd08b
+title: "\"Getting Swiss \U0001F1E8\U0001F1ED nationality"
+lang: jp

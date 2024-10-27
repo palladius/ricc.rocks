@@ -11,7 +11,6 @@ tags:
 - italy
 - ricc
 - me
-#🚧 Testing moving ABOUT from singleton to translated.
 ---
 
 *TODO(Ricc): This is currently under `posts/`. You ned to add the logic to copy this under ZZO/{LANG}/about/ . Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.*

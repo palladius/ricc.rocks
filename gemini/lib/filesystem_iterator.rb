@@ -1,5 +1,10 @@
 
 
+#  "src/posts//" =>  "src/posts/"
+def sanitize_path(path:, removed_leading_slah: false)
+  path.gsub(/\/+/, '/')
+end
+
 # DryRun. If enabled, doesnt copy files, doesnt do Gemini translation but it does creat folders.
 def iterate_through(
     #input_folder:,
@@ -12,7 +17,7 @@ def iterate_through(
     restrict_src_path_by_regex: ,
     out_dir: ,
     dry_run: false)
-  input_folder = "#{input_base_folder}/#{input_subfolder}"
+  input_folder = sanitize_path path: "#{input_base_folder}/#{input_subfolder}"
   puts("* INPUT: A   input_base_folder:  #{input_base_folder}")
   puts("* INPUT: B   input_subfolder:    #{input_subfolder}")
   puts("* INPUT: A+B input_folder:       #{input_folder}")
