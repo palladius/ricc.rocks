@@ -4,7 +4,7 @@
 require_relative '../lib/importz'
 require 'dotenv/load'
 
-DRY_RUN = true
+DRY_RUN = false
 lang = ARGV[0]
 
 raise "[usage] Give me an argument!" if lang.nil?
@@ -15,7 +15,7 @@ GIT_ROOT = `git rev-parse --show-toplevel`.chomp
 
 def zzo_cleanup(lang:)
   command = "cd #{GIT_ROOT} && echodo echo rm zzo.ricc.rocks/content/#{lang}/posts/gemini/"
-  puts("Command to execxute: #{Rainbow(command).white}")
+  puts("Command to execute: #{Rainbow(command).white}")
 
   if DRY_RUN
     puts("DRY_RUN enabled! Not executing: #{command}")

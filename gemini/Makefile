@@ -4,6 +4,9 @@ build-all:
 	OVERWRITE_FILES=False ruby bin/build-all.rb
 	make push-to-local-code
 
+remake-all:
+	make cleanup-local-output-cache
+	make build-all
 jp:
 	LANGUAGES=jp OVERWRITE_FILES=TrUe ruby bin/build-all.rb
 it:
