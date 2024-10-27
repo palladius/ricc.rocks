@@ -87,3 +87,4 @@ test:
 	cd zzo.ricc.rocks && hugo --minify
 	echo todo test gemini
 	cd gemini && make test
+	find zzo.ricc.rocks/ -name \*.md | xargs head -1 | grep --  '!--'

@@ -2,6 +2,10 @@
 
   Gemini Translator To-be class.
 
+  Note: the FrontMatterParser is only used if you disanble Gemini
+
+  TODO(use gemini to create a TMP matter and THEN parse it with proper parser so you ensure quality content.
+
 =end
 require 'rainbow'
 require 'pry'
@@ -11,6 +15,8 @@ require 'digest'
 require 'date' # For psych :: Date to import from YAML..
 
 FMPLoader ||= FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Time, Date])
+
+
 
 # CHANGELOG
 #  2024-10-27 v1.7 changed cache .txt to .md (so vscode highlights errors :P)
@@ -22,8 +28,7 @@ FMPLoader ||= FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Time, Date
 #                  since INPUT is always chubby.
 #  2024-10-20 v1.0 first stesure
 #  2024-10-20 v1.1 Added geminocks+lang to prompt => into tags.
-TranslatorVersion = '1.6'
-
+TranslatorVersion = '1.7'
 
 def golang_comment(str)
   str.split("\n").map{|line|  "{{/* #{line}  */}}\n"  }.join("")
