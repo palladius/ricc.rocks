@@ -13,6 +13,7 @@ require 'date' # For psych :: Date to import from YAML..
 FMPLoader ||= FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Time, Date])
 
 # CHANGELOG
+#  2024-10-27 v1.7 changed cache .txt to .md (so vscode highlights errors :P)
 #  2024-10-27 v1.6 added geminock version too :)
 #  2024-10-27 v1.5 Changed prompt to say ensure the double qutoes at beginning and end of it.
 #  2024-10-27 v1.4 Removed golang comments - before first --- they break everything..
@@ -170,7 +171,7 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
 
   # Write the translation to the cache file
   File.open(cache_file, 'w') { |f| f.write(cache_data.to_yaml) }
-  File.open(cache_file + ".txt", 'w') { |f| f.write(response.chat_completion) } # output
+  File.open(cache_file + ".md", 'w') { |f| f.write(response.chat_completion) } # output
 
   binding.pry if cache_data["output"].nil?
 

@@ -56,3 +56,4 @@ cleanup-local-output-cache:
 
 test:
 	ruby tests/test_all_headers_are_correct_yaml.rb
+	ruby tests/find-bad-headers.rb
