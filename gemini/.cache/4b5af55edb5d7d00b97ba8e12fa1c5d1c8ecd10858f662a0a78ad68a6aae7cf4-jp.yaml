@@ -18,7 +18,7 @@ input: "---\n# Questo non viene bene in japano. Mette una icona dopo l'apice dx.
   the usual stuff, but in Italian, sorry)\n\n## Podcast\n\n* I'm investigating the
   idea of starting a podcast.\n\n\n<!--\n    From: go/ricc-math\n-->\n"
 output: "---\n# Questo non viene bene in japano. Mette una icona dopo l'apice dx.\ntitle:
-  \"\U0001F9EE♊ [Geminocks] 数学\" \U0001F1EF\U0001F1F5\ndate: 2021-05-20T21:17:43+01:00\ndraft:
+  \"\U0001F9EE♊ [Geminocks] 数学 \U0001F1EF\U0001F1F5 (man fixed)\"\ndate: 2021-05-20T21:17:43+01:00\ndraft:
   false\ntags:\n- symlink\n- hugo\n- WOW\n- geminocks\n- Japanese\n# Categories is
   feinitely used by STACK framework:\ncategories:\n- symlink\n- maths\n- personal\nkeywords:\n-
   maths\n- hugo\n- personal\n- matematica\n- Riccardo\n- Carlesso\n- palladius\n#image:
