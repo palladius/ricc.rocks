@@ -18,3 +18,6 @@ clean:
 
 midjourney-move:
 	bin/move-midjourney-pics-to-here.sh
+
+test:
+	hugo --minify
