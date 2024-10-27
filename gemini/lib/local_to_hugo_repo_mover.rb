@@ -1,4 +1,4 @@
-require_relative "../tests/validate_markdowns"
+require_relative "tests/validate_markdowns"
 
 
 def count_markdowns(folder:)

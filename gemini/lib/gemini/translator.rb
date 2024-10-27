@@ -19,7 +19,8 @@ FMPLoader ||= FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Time, Date
 
 
 # CHANGELOG
-TranslatorVersion = '1.8'
+TranslatorVersion = '1.9'
+#  2024-10-27 v1.9 Fixed out_dir bug. :)
 #  2024-10-27 v1.8 Added the new Matter on BOTTOM so at least I caan confront them before deciding for the second one :)
 #  2024-10-27 v1.7 changed cache .txt to .md (so vscode highlights errors :P)
 #  2024-10-27 v1.6 added geminock version too :)

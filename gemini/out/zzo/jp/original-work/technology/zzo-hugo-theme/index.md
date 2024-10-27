@@ -150,13 +150,6 @@ YouTube Aos Ricc
 
 <br>
 
----
-
-Twitter シンプルショートコード
-
-{ { <
-twitter_simple user="palladius" id="1617900746967773190"
-> } }
 
 リッカルドのツイート: https://twitter.com/palladius/status/1617900746967773190
 

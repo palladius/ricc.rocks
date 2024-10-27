@@ -2,6 +2,7 @@
 LanguageData = [
     { code: 'de', name: 'German', emoji: '🇩🇪' },
     { code: 'en', name: 'English', emoji: '🇬🇧' },
+    { code: 'es', name: 'Spanish', emoji: '🇪🇸' },
     { code: 'fr', name: 'French', emoji: '🇫🇷' },
     { code: 'it', name: 'Italian', emoji: '🇮🇹' },
     { code: 'jp', name: 'Japanese', emoji: '🇯🇵' }

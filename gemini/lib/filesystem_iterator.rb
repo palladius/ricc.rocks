@@ -1,11 +1,21 @@
 
 
-# TODO(rocc): explain what is overwrite
-##
-##
 # DryRun. If enabled, doesnt copy files, doesnt do Gemini translation but it does creat folders.
-def iterate_through(input_folder:, extensions:, languages:, overwrite_existing_out_file: false, max_articles: , restrict_src_path_by_regex: , out_dir: , dry_run: false)
-  puts("* INPUT: input_folder:    #{input_folder}")
+def iterate_through(
+    #input_folder:,
+    input_base_folder:,
+    input_subfolder:,
+    extensions:,
+    languages:,
+    overwrite_existing_out_file: false,
+    max_articles: ,
+    restrict_src_path_by_regex: ,
+    out_dir: ,
+    dry_run: false)
+  input_folder = "#{input_base_folder}/#{input_subfolder}"
+  puts("* INPUT: A   input_base_folder:  #{input_base_folder}")
+  puts("* INPUT: B   input_subfolder:    #{input_subfolder}")
+  puts("* INPUT: A+B input_folder:       #{input_folder}")
   puts("* INPUT: restrict_src_path_by_regex: #{restrict_src_path_by_regex}")
   puts("iterate_through() DRYRUN enabled! ") if dry_run
   #exit 42
@@ -24,7 +34,9 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite_existing_o
         next if File.directory?(file)
 
         # Determine output file path
-        output_file = output_folder + file.gsub(input_folder, '')
+        output_file = output_folder + file.gsub(input_base_folder, '')
+#        puts("output_file: #{output_file}")
+#        exit 42
 
         # Create output directory if needed
         FileUtils.mkdir_p(File.dirname(output_file))
