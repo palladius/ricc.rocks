@@ -1,0 +1,40 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F4A6 Family \U0001F468‍\U0001F469‍\U0001F467‍\U0001F466\"\ndate:
+  2021-05-20T21:17:43+01:00\ndraft: false\ntags:\n- symlink\n- family\ncategories:\n-
+  symlink\n- family\n- personal\nkeywords:\n- personal\n- family\n- Riccardo\n- Carlesso\n-
+  famiglia\n#image: /images/mtg-clone.jpg\n#images:\n#- tranquilpeak-showcase.png\n#-
+  zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n---\n\nTODO
+  embed local video:  2023-02-03 Capriola as a Service.mp4\n\n* [Silly video with
+  my kid](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi)
+  (so silly, but they get lots of positive votes)\n\n## Book\n\nI've also started
+  writing a Book of maths a few years back, when in Calabria with no internet, and
+  I just wanted to dump\nmemoery and ideas in a LateX document, and here's the output:\n\n*
+  My book on github: [palladius/libromate](https://github.com/palladius/libromate)
+  Mathematical Analysis in LaTEX:\n\nNumbers, Derivation/Limits/Integrals, Taylor,
+  the usual stuff, but in Italian, sorry)\n\n## Podcast\n\n* I'm investigating the
+  idea of starting a podcast.\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1EB\U0001F1F7 ♊ [Geminocks] Famille \U0001F468‍\U0001F469‍\U0001F467‍\U0001F466\"\ndate:
+  2021-05-20T21:17:43+01:00\ndraft: false\ntags:\n- symlink\n- family\n- geminocks\n-
+  French\ncategories:\n- symlink\n- family\n- personal\nkeywords:\n- personal\n- family\n-
+  Riccardo\n- Carlesso\n- famiglia\n#image: /images/mtg-clone.jpg\n#images:\n#- tranquilpeak-showcase.png\n#-
+  zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n---\n\nTODO
+  intégrer une vidéo locale :  2023-02-03 Capriola as a Service.mp4\n\n* [Vidéo idiote
+  avec mon enfant](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi)
+  (tellement idiot, mais ils obtiennent beaucoup de votes positifs)\n\n## Livre\n\nJ'ai
+  également commencé à écrire un livre de mathématiques il y a quelques années, lorsque
+  j'étais en Calabre sans internet, et je voulais juste vider ma mémoire et mes idées
+  dans un document LateX, et voici le résultat :\n\n* Mon livre sur github : [palladius/libromate](https://github.com/palladius/libromate)
+  Analyse mathématique en LaTEX :\n\nNombres, Dérivation/Limites/Intégrales, Taylor,
+  les choses habituelles, mais en italien, désolé)\n\n## Podcast\n\n* J'étudie l'idée
+  de lancer un podcast.\n"
+model: gemini-1.5-pro
+code_version: '1.9'
+article_hash: b63135c6bb55923ef4ca9696744a214c9b52fbb9adb00251e43cf9da4fe19a44
+title: "\"\U0001F4A6 Family \U0001F468‍\U0001F469‍\U0001F467‍\U0001F466\""
+lang: fr

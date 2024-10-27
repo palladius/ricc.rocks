@@ -4,6 +4,9 @@ e2e:
 	#RESTRICTED_PATH='src/posts/original-work/life/learning-german-in-zurich'
 	OVERWRITE_EXISTING_OUT_FILES=TRUE INPUT_SUBFOLDER='original-work/life/learning-german-in-zurich' LANGUAGES=jp ruby bin/build-all.rb
 
+build-all-cached:
+	MAX_ARTICLES='500' ruby bin/build-all.rb
+
 build-all:
 #	echo Rebuild ing safely...
 	OVERWRITE_EXISTING_OUT_FILES=False ruby bin/build-all.rb
@@ -19,7 +22,10 @@ it:
 #	LANGUAGES=it OVERWRITE_EXISTING_OUT_FILES=TrUe ruby bin/build-all.rb
 	LANGUAGES=it ruby bin/build-all.rb
 fr:
-	LANGUAGES=fr OVERWRITE_EXISTING_OUT_FILES=TrUe ruby bin/build-all.rb
+	LANGUAGES=fr ruby bin/build-all.rb
+#	LANGUAGES=fr OVERWRITE_EXISTING_OUT_FILES=TrUe ruby bin/build-all.rb
+de:
+	LANGUAGES=de ruby bin/build-all.rb
 
 all-langs-rewriting:
 	LANGUAGES=it,jp,de,fr OVERWRITE_EXISTING_OUT_FILES=TrUe ruby bin/build-all.rb

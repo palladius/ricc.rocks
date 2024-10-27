@@ -1,0 +1,44 @@
+---
+input: "---\ntitle: \"\U0001F9EE Maths\"\ndate: 2021-05-20T21:17:43+01:00\ndraft:
+  false\ntags:\n- symlink\n- hugo\n- WOW\n# Categories is definitely used by STACK
+  framework (nusacciu re ZZO):\ncategories:\n- symlink\n- maths\n- personal\nkeywords:\n-
+  maths\n- hugo\n- personal\n- matematica\n- Riccardo\n- Carlesso\n- palladius\n#image:
+  /images/mtg-clone.jpg\n#images:\n#- tranquilpeak-showcase.png\n#- zzo-screenshot.png\n#
+  tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n# Questo
+  non viene bene in japano. Mette una icona dopo l'apice dx.\n---\n\nI have made a
+  few video on Maths:\n\n* \U0001F1EC\U0001F1E7 [Math in pills](https://www.youtube.com/playlist?list=PLLW_mrnzxmSo-Q841ZuBDxcIHHX4iGZkX)
+  (English)\n* \U0001F1EE\U0001F1F9 [Math pillole](https://www.youtube.com/playlist?list=PLLW_mrnzxmSp_zuV3OzY_Wksf6_dP-Ifn)
+  (Italian)\n* \U0001F1EE\U0001F1F9  [LibroMate (la matematica secondo Carlesso)](https://www.youtube.com/playlist?list=PLLW_mrnzxmSofo9gxu_NsWYl9c9NNmjZ6)
+  (Italian)\n* [Silly video with my kid](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi)
+  (so silly, but they get lots of positive votes)\n\n## Book\n\nI've also started
+  writing a Book of maths a few years back, when in Calabria with no internet, and
+  I just wanted to dump\nmemoery and ideas in a LateX document, and here's the output:\n\n*
+  My book on github: [palladius/libromate](https://github.com/palladius/libromate)
+  Mathematical Analysis in LaTEX:\n\nNumbers, Derivation/Limits/Integrals, Taylor,
+  the usual stuff, but in Italian, sorry)\n\n## Podcast\n\n* I'm investigating the
+  idea of starting a podcast.\n\n\n<!--\n    From: go/ricc-math\n-->\n"
+output: "---\ntitle: \"\U0001F1EB\U0001F1F7 ♊ [Geminocks] \U0001F9EE Maths\"\ndate:
+  2021-05-20T21:17:43+01:00\ndraft: false\ntags:\n- symlink\n- hugo\n- WOW\n- geminocks\n-
+  French\n# Categories is definitely used by STACK framework (nusacciu re ZZO):\ncategories:\n-
+  symlink\n- maths\n- personal\nkeywords:\n- maths\n- hugo\n- personal\n- matematica\n-
+  Riccardo\n- Carlesso\n- palladius\n#image: /images/mtg-clone.jpg\n#images:\n#- tranquilpeak-showcase.png\n#-
+  zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n#thumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n# Questo
+  non viene bene in japano. Mette una icona dopo l'apice dx.\n---\n\nJ'ai réalisé
+  quelques vidéos sur les mathématiques :\n\n* \U0001F1EC\U0001F1E7 [Math in pills](https://www.youtube.com/playlist?list=PLLW_mrnzxmSo-Q841ZuBDxcIHHX4iGZkX)
+  (Anglais)\n* \U0001F1EE\U0001F1F9 [Math pillole](https://www.youtube.com/playlist?list=PLLW_mrnzxmSp_zuV3OzY_Wksf6_dP-Ifn)
+  (Italien)\n* \U0001F1EE\U0001F1F9  [LibroMate (les mathématiques selon Carlesso)](https://www.youtube.com/playlist?list=PLLW_mrnzxmSofo9gxu_NsWYl9c9NNmjZ6)
+  (Italien)\n* [Vidéo idiote avec mon enfant](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi)
+  (tellement idiot, mais ils obtiennent beaucoup de votes positifs)\n\n## Livre\n\nJ'ai
+  également commencé à écrire un livre de mathématiques il y a quelques années, lorsque
+  j'étais en Calabre sans internet, et je voulais juste vider ma mémoire et mes idées
+  dans un document LateX, et voici le résultat :\n\n* Mon livre sur github : [palladius/libromate](https://github.com/palladius/libromate)
+  Analyse mathématique en LaTEX :\n\nNombres, Dérivation/Limites/Intégrales, Taylor,
+  les choses habituelles, mais en italien, désolé)\n\n## Podcast\n\n* J'étudie l'idée
+  de lancer un podcast.\n\n\n<!--\n    From: go/ricc-math\n-->\n"
+model: gemini-1.5-pro
+code_version: '1.9'
+article_hash: 614505ecc02fb9b0dd8d6b0e43ee6cb78093919e08b2048a953d3959fc7b7b95
+title: "\"\U0001F9EE Maths\""
+lang: fr
