@@ -1,21 +1,26 @@
 
 
-
-def iterate_through(input_folder:, extensions:, languages:, overwrite: false, max_articles: )
-
+# TODO(rocc): explain what is overwrite
+##
+##
+# DryRun. If enabled, doesnt copy files, doesnt do Gemini translation but it does creat folders.
+def iterate_through(input_folder:, extensions:, languages:, overwrite_existing_out_file: false, max_articles: , restrict_src_path_by_regex: , out_dir: , dry_run: false)
+  puts("* INPUT: input_folder:    #{input_folder}")
+  puts("* INPUT: restrict_src_path_by_regex: #{restrict_src_path_by_regex}")
+  puts("iterate_through() DRYRUN enabled! ") if dry_run
+  #exit 42
   n_articles = 0
   n_articles_errors = 0
   # Iterate through each extension and language
   extensions.each do |extension|
     languages.each do |lang|
       # Create output folder
-      output_folder = "out/#{extension}/#{lang}/"
+      output_folder = "#{out_dir}/#{extension}/#{lang}/"
       FileUtils.mkdir_p(output_folder)
 
       # Iterate through input files
       Dir.glob("#{input_folder}/**/*").each do |file|
         # Skip markdown files and directories
-  #      next if file.end_with?('.md') || File.directory?(file)
         next if File.directory?(file)
 
         # Determine output file path
@@ -27,8 +32,8 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false, ma
         # Geminizing the file
         if file.end_with?('.md')
           #puts("TODO check the MD5 of the source file to see if it has changed. Wait, credo lo faccia gia semplicemente cambiando il nome del cache file.. l unico problema e trovare cache duplicates..")
-          if File.exist?(output_file) and (not overwrite)
-            puts(Rainbow("Output File exists ('#{output_file}') and overwrite=false => skipping Geminization").darkslategray)
+          if File.exist?(output_file) and (not overwrite_existing_out_file)
+            puts(Rainbow("Output File exists ('#{output_file}') and overwrite_existing_out_file=false => skipping Geminization").darkslategray)
           else
             # Exit if too many files.
             if n_articles >= max_articles
@@ -36,12 +41,16 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false, ma
               break
             end
             # Normal flow: Gemini is ON! :)
-            puts("Either OutputFile '#{Rainbow(output_file).purple}' doesnt exist or overwrite=false => doing Geminization!!")
+            deb("Either OutputFile '#{Rainbow(output_file).purple}' doesnt exist or overwrite_existing_out_file=false => doing Geminization!!")
             # Call your Gemini function (replace with your actual implementation)
-#            translate_with_gemini(file_name: file, extension:, lang:, output_file: , overwrite:)
+#            translate_with_gemini(file_name: file, extension:, lang:, output_file: , overwrite_existing_out_file:)
             begin
               # Call your Gemini function (replace with your actual implementation)
-              translate_with_gemini(file_name: file, extension:, lang:, output_file:, overwrite:)
+              if dry_run
+                puts("[DRYRUN] Skipping translate for #{file}")
+              else
+                translate_with_gemini(file_name: file, extension:, lang:, output_file:)
+              end
               n_articles += 1
             rescue StandardError => e  # Catch any StandardError
               n_articles_errors += 1
@@ -56,8 +65,8 @@ def iterate_through(input_folder:, extensions:, languages:, overwrite: false, ma
           end
         else
           # Copy file to output folder
-          #puts("NOT MD = just copying #{file} to #{output_file}..")
-          FileUtils.cp(file, output_file)
+          deb("NOT MD => just copying #{file} to #{output_file}..")
+          FileUtils.cp(file, output_file) unless dry_run
         end
       end
     end

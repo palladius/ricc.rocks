@@ -1,0 +1,22 @@
+{
+    "folders": [
+      {
+        "name": "ricc_rocks_generic",
+        "path": ".",
+      },
+      {
+        "name": "gemini",
+        "path": "gemini",
+      },
+      // Inside the server directory, we have the server part of the project
+      {
+        "name": "zzo-site",
+        "path": "zzo.ricc.rocks/",
+      },
+    ],
+    "settings": {
+      "files.exclude": {
+        "zzo-site": true,
+      },
+    },
+  }

@@ -46,14 +46,7 @@ def llm
   )
 end
 
-def short_lang_to_long(lang:)
-  return 'German' if lang == 'de'
-  return 'English' if lang == 'en'
-  return 'French' if lang == 'fr'
-  return 'Italian' if lang == 'it'
-  return 'Japanese' if lang == 'jp'
-  raise "Unknown language: #{lang}"
-end
+
 
 def matter_hash_to_str(h)
 #  "---\n#{h.map{|k, v|  "#{k}: #{v}\n"}.join("\n\n")}---\n" # TODO sanitize
@@ -124,7 +117,7 @@ def call_gemini_on_content(markdown_content:, lang:) # , refresh_cache: false)
 
   formatted_prompt = prompt.format(
     original_content: markdown_content,
-    language: short_lang_to_long(lang: ),
+    language: get_language_name(lang:), # OBSOLETE short_lang_to_long(lang: ),
     full_name: 'Dr Riccardo Carlesso',
     )
   # DEBUG
@@ -187,7 +180,8 @@ end
 
 # This translates EVERYTHING, matter and content. Maybe I should just translate the content.
 # TODO(rename to sth without translate..)
-def translate_with_gemini(file_name:, extension:, lang:, output_file: , overwrite: false)
+# definition of this OVERWRITE... note this is NOT implemented here :)
+def translate_with_gemini(file_name:, extension:, lang:, output_file:) #  , overwrite: false)
   # CHANGELOG:
   # 2024-10-20 v1.0 First iteration
   # 2024-10-20 v1.1 Add a "[Geminocks]" to title:
@@ -195,7 +189,7 @@ def translate_with_gemini(file_name:, extension:, lang:, output_file: , overwrit
   # 2024-10-20 v1.4 Added geminocks to tags
   prompt_version = '1.4'
 
-  puts(Rainbow("WARNING! overwrite is TRUE! Gemini will now overwrite markdown file '#{output_file}' !!").red) if overwrite
+  #puts(Rainbow("WARNING! overwrite is TRUE! Gemini will now overwrite markdown file '#{output_file}' !!").red) if overwrite
   markdown_content = File.read(file_name)
   comment_ad_minchiam = "translate_with_gemini(file_name: #{file_name}, extension: #{extension}, lang: #{lang}). MD_content: #{markdown_content.length/1024}KB. prompt_version=#{prompt_version}"
 
