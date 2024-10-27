@@ -47,7 +47,7 @@ input: "---\ntitle: \"About me\"\ndescription: \"This is the Hugo/ZZO version of
   me of the Italian **zzo vuoi?**, which is fun.\n\nAlternative sites:\n\n* Ananke:
   <https://hugo-ananke-vecchiume.netlify.app/>\n* Bootstrap: <https://hugo-bootstrap-ricc-rocks.netlify.app/>\n*
   Comparison symlink: <https://hugo-bootstrap-ricc-rocks.netlify.app/posts/posts/2023-01-29-symlinked-themes-compared.d/>\n\n"
-output: "---\ntitle: \"\U0001F1EE\U0001F1F9♊ [Geminocks] Chi sono\"\ndescription:
+output: "---\ntitle: \"\U0001F1EE\U0001F1F9♊ [Geminocks] Chi sono io (aggiunto)\"\ndescription:
   \"This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/\"\ntype:
   \"about\"\ndate: \"2023-02-01\"\nimage: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg\nmeta_image:
   image.png\ntags: \n- personal\n- site\n- italy\n- ricc\n- me\n- geminocks\n- Italian\n#\U0001F6A7
