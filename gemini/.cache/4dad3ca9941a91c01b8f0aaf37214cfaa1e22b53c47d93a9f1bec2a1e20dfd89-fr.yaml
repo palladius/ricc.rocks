@@ -1,0 +1,93 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F4A6 Setting a ⬣ Cloud Build trigger with \U0001F9F9Pulumi
+  in \U0001F40D Python\"\ndate: 2022-09-22T21:17:43+01:00\ndraft: false\ntags: [symlink,
+  GCP, pulumi, CloudBuild, Medium]\n# paperMod\ncanonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n#
+  ANANKE :)\nfeatured_image: /images/gohugo-default-sample-hero-image.jpg\nimage:
+  /images/mtg-clone.jpg\n---\n\nThe Original article here:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n\nTODO(7feb23):
+  add this video as embedded: https://www.youtube.com/watch?v=5jhWVNN8P_M (created
+  on 6feb23)\n\nA couple of weeks ago, I fell in love with **Pulumi**. it has everything
+  I wanted from Terraform: easy to set up, easy config management, a nice UI for free,
+  and most importantly… language Support! Pulumi is the best invention after Buffalo
+  Pizza and has only a problem.. [no Ruby support](https://github.com/pulumi/pulumi/issues/132)
+  :/\n\nAnyway, I’m so in love with ⬣ GCP (which happens to pay my salary, I got to
+  admit), Cloud Build, Cloud Deploy, and in general CI/CD pipelines on Google Cloud
+  that I wanted to give it a try. Googling “Cloud Build Pulumi” I got to this nice
+  article for JavaScript, which is not in my chords.\n\n## The code\n\nMy code is
+  here: https://github.com/palladius/pulumi/tree/main/examples/python-gcp-cloudbuild-auto-trigger\n\nNote:
+  \U0001F44D Code is finally building correctly. Yay!\n\n![cb-trigger-list](01-cb-trigger-list.webp)\n\n\n##
+  What is so special about the code?\n\nThe code allows any Pulumi project you might
+  have on GCP (in Python \U0001F40D) to set up a trigger to self-update. A push to
+  the git repo will trigger a build job which — if successful — will login as yourself
+  to Pulumi and issue an update with the new code.\n\nSo if, for instance, you commit
+  a change that adds a GCS bucket to the code, in a couple of minutes that GCS bucket
+  will be created and the README.md will be updated with builder parameters:\n\n![cb-trigger-list](02-pulumi-commands.webp)\nIn
+  bold you can see 3 parameters updated by Cloud Build itself!\n\nMy code supports
+  **Github** (as is) and **Bitbucket** (code 99% there as it was working first!) for
+  the moment.\n\nI’ve also customized the message as per Laura article, prepending
+  a “[built with Cloud Build]” to the git message (”slash N fix”, in this case):\n\n![View
+  on Pulumi website](03-trigger-build-on-pulumi-site.webp)\n\n## What does Pulumi
+  mean?\n\nI’ve been trying google Translate, it looks like it might mean broomstick
+  (\U0001F9F9) in hawaiaan or Burma (\U0001F1F2\U0001F1F2, now Myanmar). Until then,
+  I’ll use the first emoji, until someone proves me wrong.\n\nEdit: my friend Aaron
+  from Pulumi confirms broom and points to [this article](http://joeduffyblog.com/2018/06/18/hello-pulumi/).\n\n##
+  \ Next steps\nMy \U0001F4DD for the future includes:\n\n* Having proper password/state
+  setting on GCP via HSM or GCS.\n* Transform into a module so whichever pulumi project
+  you might have you can just invoke this code with 4–5 variables (github user, github
+  repo, pulumi buidl directory, credentials, ..). I still need to see if this is viable
+  also cross-language (non\U0001F40D).\n\n## References\n\nOriginal code (Cloud Build
+  + Node.js): https://www.pulumi.com/docs/guides/continuous-delivery/google-cloud-build/\n\nMy
+  code (python): https://github.com/palladius/pulumi/tree/main/examples/python-gcp-cloudbuild-auto-trigger\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1EB\U0001F1F7 ♊ [Geminocks] Configuration d'un
+  déclencheur ⬣ Cloud Build avec \U0001F9F9Pulumi en \U0001F40D Python\"\ndate: 2022-09-22T21:17:43+01:00\ndraft:
+  false\ntags: [symlink, GCP, pulumi, CloudBuild, Medium, geminocks, French]\n# paperMod\ncanonicalURL:
+  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n#
+  ANANKE :)\nfeatured_image: /images/gohugo-default-sample-hero-image.jpg\nimage:
+  /images/mtg-clone.jpg\n---\n\nL'article original ici :  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf\n\nTODO(7feb23):
+  ajouter cette vidéo en tant que vidéo intégrée : https://www.youtube.com/watch?v=5jhWVNN8P_M
+  (créée le 6feb23)\n\nIl y a quelques semaines, je suis tombé amoureux de **Pulumi**.
+  Il a tout ce que j'attendais de Terraform : facile à configurer, gestion de configuration
+  facile, une interface utilisateur agréable et gratuite, et surtout... la prise en
+  charge de plusieurs langages ! Pulumi est la meilleure invention après la pizza
+  Buffalo et n'a qu'un seul problème... [pas de prise en charge de Ruby](https://github.com/pulumi/pulumi/issues/132)
+  :/\n\nQuoi qu'il en soit, je suis tellement amoureux de ⬣ GCP (qui se trouve à payer
+  mon salaire, je dois l'admettre), Cloud Build, Cloud Deploy, et en général des pipelines
+  CI/CD sur Google Cloud que je voulais l'essayer. En cherchant sur Google \"Cloud
+  Build Pulumi\", je suis tombé sur ce bel article pour JavaScript, qui n'est pas
+  dans mes cordes.\n\n## Le code\n\nMon code est ici : https://github.com/palladius/pulumi/tree/main/examples/python-gcp-cloudbuild-auto-trigger\n\nRemarque
+  : \U0001F44D Le code est enfin compilé correctement. Youpi !\n\n![cb-trigger-list](01-cb-trigger-list.webp)\n\n\n##
+  Qu'est-ce que ce code a de si spécial ?\n\nLe code permet à tout projet Pulumi que
+  vous pourriez avoir sur GCP (en Python \U0001F40D) de configurer un déclencheur
+  pour se mettre à jour automatiquement. Un push vers le dépôt git déclenchera un
+  travail de construction qui, s'il réussit, se connectera en tant que vous-même à
+  Pulumi et lancera une mise à jour avec le nouveau code.\n\nAinsi, si, par exemple,
+  vous validez une modification qui ajoute un bucket GCS au code, dans quelques minutes,
+  ce bucket GCS sera créé et le fichier README.md sera mis à jour avec les paramètres
+  du constructeur :\n\n![cb-trigger-list](02-pulumi-commands.webp)\nEn gras, vous
+  pouvez voir 3 paramètres mis à jour par Cloud Build lui-même !\n\nMon code prend
+  en charge **Github** (tel quel) et **Bitbucket** (code à 99% là car il fonctionnait
+  en premier !) pour le moment.\n\nJ'ai également personnalisé le message selon l'article
+  de Laura, en ajoutant un \"[construit avec Cloud Build]\" au message git (\"slash
+  N fix\", dans ce cas) :\n\n![Voir sur le site Web de Pulumi](03-trigger-build-on-pulumi-site.webp)\n\n##
+  Que signifie Pulumi ?\n\nJ'ai essayé Google Translate, il semble que cela puisse
+  signifier balai (\U0001F9F9) en hawaïen ou en birman (\U0001F1F2\U0001F1F2, maintenant
+  Myanmar). D'ici là, j'utiliserai le premier emoji, jusqu'à ce que quelqu'un me prouve
+  le contraire.\n\nEdit : mon ami Aaron de Pulumi confirme le balai et pointe vers
+  [cet article](http://joeduffyblog.com/2018/06/18/hello-pulumi/).\n\n##  Prochaines
+  étapes\nMon \U0001F4DD pour l'avenir comprend :\n\n* Avoir un réglage correct du
+  mot de passe/état sur GCP via HSM ou GCS.\n* Transformer en un module afin que,
+  quel que soit le projet Pulumi que vous pourriez avoir, vous puissiez simplement
+  appeler ce code avec 4 à 5 variables (utilisateur github, dépôt github, répertoire
+  de construction Pulumi, informations d'identification, ..). Je dois encore voir
+  si cela est viable également entre les langages (non\U0001F40D).\n\n## Références\n\nCode
+  original (Cloud Build + Node.js) : https://www.pulumi.com/docs/guides/continuous-delivery/google-cloud-build/\n\nMon
+  code (python) : https://github.com/palladius/pulumi/tree/main/examples/python-gcp-cloudbuild-auto-trigger\n"
+model: gemini-1.5-pro
+code_version: '1.3'
+article_hash: 4dad3ca9941a91c01b8f0aaf37214cfaa1e22b53c47d93a9f1bec2a1e20dfd89
+title: "\"\U0001F4A6 Setting a ⬣ Cloud Build trigger with \U0001F9F9Pulumi in \U0001F40D
+  Python\""
+lang: fr

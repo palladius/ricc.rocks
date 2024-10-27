@@ -8,6 +8,8 @@ jp:
 	LANGUAGES=jp OVERWRITE_FILES=TrUe ruby bin/build-all.rb
 it:
 	LANGUAGES=it OVERWRITE_FILES=TrUe ruby bin/build-all.rb
+fr:
+	LANGUAGES=fr OVERWRITE_FILES=TrUe ruby bin/build-all.rb
 
 all-langs-rewriting:
 	LANGUAGES=it,jp,de,fr OVERWRITE_FILES=TrUe ruby bin/build-all.rb

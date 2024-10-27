@@ -1,0 +1,156 @@
+---
+input: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F4A6 Themes Compared (\U0001F3C6)\"\ndate: 2023-02-05T21:17:43+01:00\ndraft:
+  false\ntags:\n- symlink\n- hugo\n- WOW\n# Categories is feinitely used by STACK
+  framework:\ncategories:\n- hugo\n- category\n- important\nkeywords:\n- tech\n- hugo\n-
+  comparative\n- theme\n- themes\n# ANANKE :)\nfeatured_image: clone-mtg-vintage.png
+  # /images/gohugo-default-sample-hero-image.jpg\nimage: clone-mtg-vintage.png\nimages:\n-
+  tranquilpeak-showcase.png\n- clone-mtg-vintage.png\n- zzo-screenshot.png\n# tranquilpeak-only:
+  https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\nthumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n---\n\n![image](clone-mtg-vintage.png)\n\n\n\nI
+  tried many modules this weekend. Note that different themes have different words
+  and key/vals in the above stanza so I better not confuse them.\nFor instance, this
+  page has a `featured_image` which only works with Ananke, and a `image` which probably
+  works with other themes.\n\nWhat I've tried so far:\n\n## Symlinking across all
+  pages.\n\n* so far only tried one - definitely golang won't notice the changed symlinked
+  file.\n* Notice that STACK is currently in a DIFFEERENT place. Let me move it for
+  a second.\n\n## My Hugo websites I've tried so far\n\nAll the code is in different
+  directories of my GH repo: https://github.com/palladius/ricc.rocks/\n\n| Theme +
+  PermaCompare | Website     | Stars |  Description |\n| ----------- | -----------
+  | ------ | ---- |\n| Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/)
+  | ⭐️⭐️⭐️⭐️⭐️ | Just amazing |\n| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks)
+  |⭐️⭐️⭐️⭐️⭐️ | played A LOT with it. Note its in a different repo |\n| -----------
+  | ----------- | ------ | ----  |\n| [\U0001F649](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/)
+  ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️
+  | Ha le icone come le voglio io, molto giocoso, ma pieno di feature splendide. Mi
+  piace un tot!  |\n\n(*) Permacompare: permalink in prod to the comparison page :)\n\n*
+  **PaperMod**: it works! https://papermod.ricc.rocks\t not explored much yet. Comparison
+  page: https://papermod.ricc.rocks/posts/papermod-analysis-page/  [\U0001F649](https://ricc.rocks/posts/papermod-analysis-page/)
+  PaperMod |⭐️⭐️⭐️⭐️   | Super sleek. Essential but damn, so good in its essence!
+  |\n* **Stack**: First, has [math](https://dev.stack.jimmycai.com/p/math-typesetting/).
+  https://hugo-stack.ricc.rocks  then I just love it!\n* **Bootstrap**: https://hugo-bootstrap-ricc-rocks.netlify.app/\n*
+  \U0001F6A7 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ Has Math\n*
+  \U0001F6A7 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/\n\nLost the battle:\n\n*
+  **Coder**: Naah, too simple for me.\n* Ananke. Too simple - https://hugo-ananke.netlify.app/\n\n##
+  Photo Albums\n\n* Only XXX seems to have decent photo albums. However, people are
+  saying \"i wish your theme was as good as Photoswipe\" so I believe I might just
+  get [**PhotoSwipe**](https://photoswipe.com/) to work with anything else: see [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe).\n*
+  maybe check https://github.com/liwenyip/hugo-easy-gallery but i dont think its worht
+  it. (505 ⭐️).\n* Or just code it (I wish it was Ruby and not Golang): https://hugocodex.org/add-ons/image-gallery/\n*
+  or use this [awesome library](https://github.com/mfg92/hugo-shortcode-gallery):
+  demo in https://matze.rocks/images/#gallery-filter=Landscape\n\n\n\n## ZZO\n\n![Resize](zzo-screenshot.png?width=300px)\n\n*
+  **Comparison page**: https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/\n*
+  install: https://zzo-docs.vercel.app/\n* GH theme: https://github.com/zzossig/hugo-theme-zzo\n*
+  Ricc version: https://ricc-zzo.netlify.app/\n\nFeatures:\n\n```\nMultiple Skins(dark,
+  light, solarized, ...)\nMobile menu\nSearch\nSearch Engine Optimization(SEO)\nMultilingual
+  (i18n)\nResponsive design\nCustomizable UI\nRSS\nGallery\nFast code highlighting\nTalks
+  page\nShowcase page\nPublication Page\nResume Page\nPresentation Page\n```\n\n\n\n\n##
+  Bootstrap\n\n* Image docs: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images
+  Plenty of good stuff here, also I found a bug and the guy fixed it in 24h - AMAZING.\n*
+  Gallery docs: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/\n\n\n\n\n#
+  Old stuff\n\n## PaperMod\n\nI spent little time so far - but its just my fault,
+  not his :)\n\nDocs: https://github.com/adityatelange/hugo-PaperMod/\n\nNEUTRAL:\n\n*
+  supports [many icons](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons),
+  but unsure how to use them\n* [Supports Maths](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/),
+  but unsure on how to make it work/\n* emoji are nice, once enaled you can do \U0001F648
+  :see_no_evil: \U0001F649 :hear_no_evil: \U0001F64A :speak_no_evil:\n\nBAD \U0001F629:\n\n*
+  too simple. Doesnt have something about me as a blogger, its just a pure (sleek)
+  container for news. Nothing about Riccardo, just my articles.\n\n\n## Ananke ⭐️⭐️\n\nStatus:
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)\nOld:\n*
+  [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)\n* Historically the first
+  ive tried. Havent explored much\n\nGOOD \U0001F60D:\n\n* TODO\n\nBAD \U0001F629:\n\n*
+  **too simple**. Eg, contact form is amongst posts (seriously?)\n* no image gallery
+  Im afraid\n\n\n## TranquilPeak\n\n![image](tranquilpeak-showcase.png)\n\n* GH: https://github.com/kakawait/hugo-tranquilpeak-theme\n*
+  861 stars / 515 forks\n* DemoSite:\n* license: GPL\n* install: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md\n\nHow
+  to sue the image btag (finally!): https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n\n\nPLUS\n\n*
+  nice graphics\n* built in galleries\n\nMINUS\n\n* says FS doesnt support symlinks
+  for images. But it does support them for posts\n* Fishy in content/posts/ organization.
+  If I move content in or out dirs, it disappears. Weird. (Maybe there's a good reason
+  for it, but seems like a bug wrt to other themes where you can move things accross
+  EVERYTHING within content/ )\n\n\n"
+output: "---\n# Note this is SUPER weird, I try to make this work for ALL my thingies
+  so there might be some behavioural clatches in the\n# initial HEADER :) Lets try
+  to keep it small :)\ntitle: \"\U0001F1EB\U0001F1F7 ♊ [Geminocks] Thèmes comparés
+  (\U0001F3C6)\"\ndate: 2023-02-05T21:17:43+01:00\ndraft: false\ntags:\n- geminocks\n-
+  French\n- symlink\n- hugo\n- WOW\n# Categories is feinitely used by STACK framework:\ncategories:\n-
+  hugo\n- category\n- important\nkeywords:\n- tech\n- hugo\n- comparative\n- theme\n-
+  themes\n# ANANKE :)\nfeatured_image: clone-mtg-vintage.png # /images/gohugo-default-sample-hero-image.jpg\nimage:
+  clone-mtg-vintage.png\nimages:\n- tranquilpeak-showcase.png\n- clone-mtg-vintage.png\n-
+  zzo-screenshot.png\n# tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\nthumbnailImage:
+  https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg\n---\n\n![image](clone-mtg-vintage.png)\n\n\n\nJ'ai
+  essayé plusieurs modules ce week-end. Notez que les différents thèmes ont des mots
+  et des clés/valeurs différents dans la strophe ci-dessus, il vaut donc mieux ne
+  pas les confondre.\nPar exemple, cette page a une `featured_image` qui ne fonctionne
+  qu'avec Ananke, et une `image` qui fonctionne probablement avec d'autres thèmes.\n\nCe
+  que j'ai essayé jusqu'à présent :\n\n## Liaison symbolique sur toutes les pages.\n\n*
+  Jusqu'à présent, je n'en ai essayé qu'un seul - Golang ne remarquera certainement
+  pas le fichier lié symboliquement modifié.\n* Notez que STACK est actuellement dans
+  un endroit DIFFÉRENT. Laissez-moi le déplacer pour une seconde.\n\n## Mes sites
+  Web Hugo que j'ai essayés jusqu'à présent\n\nTout le code se trouve dans différents
+  répertoires de mon référentiel GH : https://github.com/palladius/ricc.rocks/\n\n|
+  Thème + PermaCompare | Site Web     | Étoiles |  Description |\n| ----------- |
+  ----------- | ------ | ---- |\n| Bootstrap   | [hugo-bootstrap-ricc-rocks](https://hugo-bootstrap-ricc-rocks.netlify.app/)
+  | ⭐️⭐️⭐️⭐️⭐️ | Tout simplement incroyable |\n| Stack       | [hugo-stack.ricc.rocks](https://hugo-stack.ricc.rocks)
+  |⭐️⭐️⭐️⭐️⭐️ | J'ai beaucoup joué avec. Notez qu'il se trouve dans un référentiel
+  différent |\n| ----------- | ----------- | ------ | ----  |\n| [\U0001F649](https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/)
+  ZZO         | [ricc-zzo.netlify.app)](https://ricc-zzo.netlify.app/en/) | ⭐️⭐️⭐️⭐️⭐️
+  | Il a les icônes comme je les aime, très ludique, mais plein de fonctionnalités
+  splendides. J'aime beaucoup !  |\n\n(*) Permacompare : permalien en production vers
+  la page de comparaison :)\n\n* **PaperMod** : ça marche ! https://papermod.ricc.rocks\t
+  pas encore beaucoup exploré. Page de comparaison : https://papermod.ricc.rocks/posts/papermod-analysis-page/
+  \ [\U0001F649](https://ricc.rocks/posts/papermod-analysis-page/) PaperMod |⭐️⭐️⭐️⭐️
+  \  | Super élégant. Essentiel mais bon sang, tellement bon dans son essence ! |\n*
+  **Stack** : Tout d'abord, il a des [mathématiques](https://dev.stack.jimmycai.com/p/math-typesetting/).
+  https://hugo-stack.ricc.rocks  ensuite, je l'adore !\n* **Bootstrap** : https://hugo-bootstrap-ricc-rocks.netlify.app/\n*
+  \U0001F6A7 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/ A des mathématiques\n*
+  \U0001F6A7 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/\n\nBataille perdue :\n\n*
+  **Coder** : Non, trop simple pour moi.\n* Ananke. Trop simple - https://hugo-ananke.netlify.app/\n\n##
+  Albums photos\n\n* Seul XXX semble avoir des albums photos décents. Cependant, les
+  gens disent \"j'aimerais que votre thème soit aussi bon que Photoswipe\" donc je
+  pense que je pourrais juste faire fonctionner [**PhotoSwipe**](https://photoswipe.com/)
+  avec n'importe quoi d'autre : voir [HugoPhotoSwipe](https://github.com/GjjvdBurg/HugoPhotoSwipe).\n*
+  Peut-être vérifier https://github.com/liwenyip/hugo-easy-gallery mais je ne pense
+  pas que cela en vaille la peine. (505 ⭐️).\n* Ou simplement le coder (j'aimerais
+  que ce soit Ruby et non Golang) : https://hugocodex.org/add-ons/image-gallery/\n*
+  ou utiliser cette [bibliothèque géniale](https://github.com/mfg92/hugo-shortcode-gallery)
+  : démo dans https://matze.rocks/images/#gallery-filter=Landscape\n\n\n\n## ZZO\n\n![Redimensionner](zzo-screenshot.png?width=300px)\n\n*
+  **Page de comparaison** : https://ricc-zzo.netlify.app/en/posts/riccardo/prova-zzo/\n*
+  installer : https://zzo-docs.vercel.app/\n* Thème GH : https://github.com/zzossig/hugo-theme-zzo\n*
+  Version Ricc : https://ricc-zzo.netlify.app/\n\nFonctionnalités :\n\n```\nPlusieurs
+  apparences (sombre, clair, solarisé, ...)\nMenu mobile\nRecherche\nOptimisation
+  pour les moteurs de recherche (SEO)\nMultilingue (i18n)\nConception réactive\nInterface
+  utilisateur personnalisable\nRSS\nGalerie\nSurlignage de code rapide\nPage de conférences\nPage
+  de présentation\nPage de publication\nPage de CV\nPage de présentation\n```\n\n\n\n\n##
+  Bootstrap\n\n* Documentation sur les images : https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images
+  Plein de bonnes choses ici, j'ai aussi trouvé un bug et le gars l'a corrigé en 24h
+  - INCROYABLE.\n* Documentation de la galerie : https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/\n\n\n\n\n#
+  Vieilles choses\n\n## PaperMod\n\nJ'ai passé peu de temps jusqu'à présent - mais
+  c'est de ma faute, pas de la sienne :)\n\nDocuments : https://github.com/adityatelange/hugo-PaperMod/\n\nNEUTRE
+  :\n\n* prend en charge [de nombreuses icônes](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-icons/#social-icons),
+  mais je ne sais pas comment les utiliser\n* [Prend en charge les mathématiques](https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/),
+  mais je ne sais pas comment le faire fonctionner/\n* les emoji sont sympas, une
+  fois activés, vous pouvez faire \U0001F648 :see_no_evil: \U0001F649 :hear_no_evil:
+  \U0001F64A :speak_no_evil:\n\nMAUVAIS \U0001F629 :\n\n* trop simple. Il n'y a rien
+  sur moi en tant que blogueur, c'est juste un pur (et élégant) conteneur pour les
+  nouvelles. Rien sur Riccardo, juste mes articles.\n\n\n## Ananke ⭐️⭐️\n\nStatut
+  : [![Statut Netlify](https://api.netlify.com/api/v1/badges/9c6fdacc-6b9f-4908-b3e5-57f1dc2b8f50/deploy-status)](https://app.netlify.com/sites/hugo-ananke/deploys)\nAncien
+  :\n* [hugo-ananke.netlify.app](https://hugo-ananke.netlify.app)\n* Historiquement
+  le premier que j'ai essayé. Je n'ai pas beaucoup exploré\n\nBON \U0001F60D :\n\n*
+  À FAIRE\n\nMAUVAIS \U0001F629 :\n\n* **trop simple**. Par exemple, le formulaire
+  de contact est parmi les messages (sérieusement ?)\n* pas de galerie d'images je
+  crains\n\n\n## TranquilPeak\n\n![image](tranquilpeak-showcase.png)\n\n* GH : https://github.com/kakawait/hugo-tranquilpeak-theme\n*
+  861 étoiles / 515 fourchettes\n* Site de démonstration :\n* licence : GPL\n* installer
+  : https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md\n\nComment
+  poursuivre le btag de l'image (enfin !) : https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image\n\n\nPLUS\n\n*
+  beaux graphiques\n* galeries intégrées\n\nMOINS\n\n* dit que FS ne prend pas en
+  charge les liens symboliques pour les images. Mais il les prend en charge pour les
+  messages\n* Louche dans l'organisation du contenu/des messages/. Si je déplace du
+  contenu dans ou hors des répertoires, il disparaît. Bizarre. (Il y a peut-être une
+  bonne raison à cela, mais cela ressemble à un bug par rapport à d'autres thèmes
+  où vous pouvez déplacer des choses à travers TOUT dans le contenu/)\n\n\n\n\n"
+model: gemini-1.5-pro
+code_version: '1.3'
+article_hash: 4f8554330875c9c8070648af082354f91994505bf540d7ad30b03ccd66b1fadf
+title: "\"\U0001F4A6 Themes Compared (\U0001F3C6)\""
+lang: fr

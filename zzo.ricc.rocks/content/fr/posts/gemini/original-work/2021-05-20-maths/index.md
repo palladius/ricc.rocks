@@ -32,7 +32,7 @@ keywords:
 J'ai fait quelques vidéos sur les maths
 * 🇬🇧 [Math in pills](https://www.youtube.com/playlist?list=PLLW_mrnzxmSo-Q841ZuBDxcIHHX4iGZkX) (Anglais)
 * 🇮🇹 [Math pillole](https://www.youtube.com/playlist?list=PLLW_mrnzxmSp_zuV3OzY_Wksf6_dP-Ifn) (Italien)
-* 🇮🇹  [LibroMate (les mathématiques selon Carlesso)](https://www.youtube.com/playlist?list=PLLW_mrnzxmSofo9gxu_NsWYl9c9NNmjZ6) (Italien)
+* 🇮🇹  [LibroMate (la matematica secondo Carlesso)](https://www.youtube.com/playlist?list=PLLW_mrnzxmSofo9gxu_NsWYl9c9NNmjZ6) (Italien)
 * [Vidéo idiote avec mon enfant](https://www.youtube.com/playlist?list=PLLW_mrnzxmSpYyZ3zBOuRjNMpVOlSIlzi) (tellement idiot, mais ils obtiennent beaucoup de votes positifs)
 
 ## Livre
@@ -46,7 +46,7 @@ Nombres, Dérivation/Limites/Intégrales, Taylor, les choses habituelles, mais e
 
 ## Podcast
 
-* J'étudie l'idée de démarrer un podcast.
+* J'étudie l'idée de lancer un podcast.
 
 
 <!--
