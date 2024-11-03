@@ -16,6 +16,7 @@ categories:
 - features
 tags:
 - image gallery
+# Changed on 3nov24..
 ---
 
 And here is the image gallery!
