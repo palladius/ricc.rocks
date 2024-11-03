@@ -23,7 +23,7 @@ draft: false
 
 ## img
 
-/img/2022-10-19-riccardo-tartaruga.jpg
+`/img/2022-10-19-riccardo-tartaruga.jpg`
 
 ![Image](/img/2022-10-19-riccardo-tartaruga.jpg)
 
