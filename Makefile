@@ -84,14 +84,20 @@ hugo-install:
 	echo 'on Debian: sudo snap install hugo'
 
 test-tranquilpeak:
-	cd tranquilpeak.ricc.rocks/ && make test
+	cd tranquilpeak.ricc.rocks/ && hugo
 	echo '✅ tranquilpeak: Everything ok'
 
+test-bootstrap:
+	cd hugo-bootstrap.ricc.rocks/ && hugo
+	echo '✅ bootstrap: Everything ok'
 
-test:
-	echo Delegating tests to Gemini and ZZO...
+
+test-zzo:
 	cd zzo.ricc.rocks && make test
 	echo '✅ ZZO: Everything ok with zzo'
+
+test: test-zzo test-bootstrap test-tranquilpeak
+	echo Delegating tests to Gemini and ZZO...
 #hugo --minify
 	cd gemini && make test
 #	find zzo.ricc.rocks/ -name \*.md | xargs head -1 | grep --  '!--'

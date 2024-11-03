@@ -15,3 +15,10 @@ install:
 	npm install
 # from style page; https://hbs.razonyang.com/v1/en/docs/look-and-feel/#add-icons
 	hugo gen chromastyles --style=solarized-dark > assets/main/scss/_highlight.scss
+
+# sinatll
+# npm install @filipecarneiro/hugo-bootstrap-theme
+
+# Provato 2024
+# npm install -g hugo-installer
+# npm install @filipecarneiro/hugo-bootstrap-theme

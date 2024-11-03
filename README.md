@@ -8,7 +8,11 @@ Self: https://github.com/palladius/ricc.rocks/
 
 ## Notes from 2024 refurbishing
 
-* Home: https://ricc.rocks/en/ (ZZO).
+Some vibes:
+
+* ZZO: https://ricc.rocks/ (default with Gemini in multilanguage).
+* Bootstrap: https://hugo-bootstrap-ricc-rocks.netlify.app/
+*
 
 # Ciao da Riccardo
 
