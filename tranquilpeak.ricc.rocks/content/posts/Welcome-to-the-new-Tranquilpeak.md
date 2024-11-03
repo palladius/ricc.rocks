@@ -30,7 +30,9 @@ Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many
 ![Tranquilpeak](/img/showcase.png)
 
 
-{{< toc >}}
+TOC broken for Tranquilpeak
+
+{ { < toc > } }
 
 # Tranquilpeak
 

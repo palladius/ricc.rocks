@@ -6,6 +6,10 @@ Sessionize: https://sessionize.com/riccardo-carlesso
 
 Self: https://github.com/palladius/ricc.rocks/
 
+## Notes from 2024 refurbishing
+
+* Home: https://ricc.rocks/en/ (ZZO).
+
 # Ciao da Riccardo
 
 Self: https://github.com/palladius/ricc.rocks
@@ -28,7 +32,7 @@ Still evaulating, hence I've created a RING of many versions, and use symlinks t
 * 😩 ⭐️ **Coder**: Naah, too simple for me.
 
 * 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/
-* 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
+* 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/ => https://ricc.rocks/
 
 # customization
 
