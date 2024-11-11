@@ -1,6 +1,6 @@
 baseURL: 'https://ricc.rocks/'
 title: "Ricc \U0001F49B Blog"
-theme: zzo
+theme: zzo2
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 hasCJKLanguage: true

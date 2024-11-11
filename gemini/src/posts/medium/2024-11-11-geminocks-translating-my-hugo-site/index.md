@@ -27,9 +27,23 @@ I use a very simple config:
 
 ## The language problem
 
-However, a
+However, a respected Blog should haver at least a version in English and one in your mother language (🇮🇹 in my case).
 
-TODO()
+DHH infected me with DRY obsession, so now I can't live not-DRY. What if I manually translate content? Tomorrow I update the content and I have to update the translaton(s) too.
+Plus I speak a few language, so this gets scary pretty fast. LLMs are good at translating, so how about I try to use Gemini instead to do the heavy lifting?
+
+There are some challenges though: a Hugo markdown starts with the so called "Front Matter"; this contains some key values in YAML format.
+I want to translate the whole page and leave the Front Matter intact. Will my LLM be up to the task? I found out it works pretty well until...
+you try Jaspanese!
+
+## Geminocks architecture
+
+To run geminocks I had to put together a few pieces:
+
+1. A bunch of DRY articles I want to throw to `N` blogs and translate to `M` languages.
+2. A solid prompt to do this.
+3. A solid language to do this (of course, Ruby)
+4. A solid testing system to make sure if the results make sense. I chose Promptfoo to test my prompts and I check with hugo if I can rebuild the site locally.
 
 
 ## Testing the script
