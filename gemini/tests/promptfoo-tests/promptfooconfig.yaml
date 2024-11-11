@@ -2,43 +2,161 @@
 
 # Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
 
-description: "My eval"
+description: "Riccardo Gemini evals for some stuff"
 
 prompts:
-  - "Write a tweet about {{topic}}"
+  - file://translate-to-another-language.promptfoo.prompt.txt
 
 
 providers:
   # - "file://provider.py"
   # - "exec:provider.sh"
-  - "vertex:gemini-pro"
-  - "vertex:gemini-1.5-pro"
-  - "vertex:gemini-1.5-flash"
-  - "ollama:chat:llama3"
-  # - "ollama:chat:mixtral:8x22b"
+  - vertex:gemini-1.0-pro
+  # https://ai.google.dev/gemini-api/docs/models/gemini
+  - vertex:gemini-1.5-pro-001
+  - vertex:gemini-1.5-pro-002
+  #- vertex:gemini-1.5-pro-exp-0827
+  # https://ai.google.dev/gemini-api/docs/models/gemini
+  #- vertex:gemini-1.5-flash-001
+  #- vertex:gemini-1.5-flash-002
+  - vertex:gemini-1.5-flash
+  #- vertex:gemini-1.5-flash-exp-0827
+  # 8B
+  #- vertex:gemini-1.5-flash-8b
+  #- vertex:aqa
+  # - "ollama:chat:llama3"
+  # - "ollama:chat:mixtral:8x22b" # 80GB!
 
 
 tests:
-  - vars:
-      topic: bananas
+  # - vars:
+  #     question: How do you prepare an avocado toast?
+  #   assert:
+  #     # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
+
+  #     # Make sure output contains the word "avocado"
+  #     - type: icontains
+  #       value: avocado
+
+  #     # Prefer shorter outputs
+  #     - type: javascript
+  #       value: 1 / (output.length + 1)
+
+  # - vars:
+  #     question: Tell me a joke about new york city and a Taxi driver
+  #   assert:
+  #     # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+  #     - type: llm-rubric
+  #       value: ensure that the output is funny
 
   - vars:
-      topic: avocado toast
-    assert:
-      # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
-
-      # Make sure output contains the word "avocado"
-      - type: icontains
-        value: avocado
-
-      # Prefer shorter outputs
-      - type: javascript
-        value: 1 / (output.length + 1)
-
-  - vars:
-      topic: new york city
+      language: italian
+      full_name: Riccardo Carlesso
+      original_content: 'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'
     assert:
       # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+      # - type: llm-rubric
+      #   value: ensure that the output contains emojis
+      - type: contains
+        value: significa
+      # - type: icontains
+      #   value: italiano
+      - type: icontains
+        value: todo
       - type: llm-rubric
-        value: ensure that the output is funny
+        #  would be cool if this would be parametric in language..
+        value: |
+          The Front Matter contains a `tag:` key and it contains geminock and italian.
+      - type: llm-rubric
+        #  would be cool if this would be parametric in language..
+        value: |
+          The Front Matter contains a `title:` key surrounded by double quotes, ie a line of this type:
+          title: "<some info here>"
+          Inside the title there should be a flag of Italy.
+      # - type: latency
+      #   threshold: 10000
 
+
+  - vars:
+      language: japanese
+      full_name: Riccardo Carlesso
+      original_content: 'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'
+    assert:
+      # - type: contains
+      #   value: significa
+      # # - type: icontains
+      #   value: italiano
+      # - type: icontains
+      #   value: todo
+      - type: llm-rubric
+        #  would be cool if this would be parametric in language..
+        value: |
+          The Front Matter contains a `tag:` key and it contains 'geminock' and 'japanese'.
+      - type: llm-rubric
+        value: |
+          The Front Matter contains a `title:` key surrounded by double quotes, ie a line of this type:
+          title: "<some info here>"
+          Inside the title there should be a flag of Japan.
+
+
+  # # - vars:
+  # #     question: There are 31 books in my house. I read 2 books over the weekend. How many books are still in my house?
+  # # - vars:
+  # #     question: Julia has three brothers, each of them has two sisters. How many sisters does Julia have?
+  # # - vars:
+  # #     question: If you place an orange below a plate in the living room, and then move the plate to the kitchen, where is the orange now?
+
+  # - vars:
+  #     question: There are 31 books in my house. I read 2 books over the weekend. How many books are still in my house?
+  #   assert:
+  #     - type: contains
+  #       value: 31
+  #     - type: llm-rubric
+  #       value: 'ensure that the answer is 31, not 29.'
+
+  # - vars:
+  #     question: Julia has three brothers, each of them has two sisters. How many sisters does Julia have?
+  #   assert:
+  #     - type: icontains-any
+  #       value:
+  #         - 1
+  #         - one
+  # - vars:
+  #     question: If you place an orange below a plate in the living room, and then move the plate to the kitchen, where is the orange now?
+  #   assert:
+  #     - type: contains
+  #       value: living room
+  # - vars:
+  #     question: Julia has three brothers, each of them has two sisters. How many sisters does Julia have?
+  #   assert:
+  #     - type: llm-rubric
+  #       value: ensure that the answer is exactly one sister
+
+  # - vars:
+  #     question: "Tre tigri contro tre tigri: che cos'e'?"
+  #   assert:
+  #     - type: contains
+  #       value: scioglilingua
+
+
+  # - vars:
+  #     question: |
+  #       Sua Magnificenza Ceremon II, imperatore di Atlantide dall'11.615 all' 11.562 a.C., era famoso per essere dotato, a differenza di tanti suoi successori, di un rigore morale tale da mettere in imbarazzo persino il più puritano dei Quaccheri. Costui aveva messo in piedi un servizio di informazioni talmente capillare, da essere informato praticamente delle più piccole mancanze commesse persino dal più umile tra gli abitanti della grande città circondata da sette canali e da sette cerchia di mura su cui Ceremon regnava. Ogni sera, uomini avvolti in neri mantelli scivolavano senza farsi vedere fino alla sala del tronetto di smeraldi, dove il sovrano sedeva in silenzio, e gli sussurravano a lungo all'orecchio. La sua faccia di pietra non dava un guizzo, ma il suo cervello annotava ogni cosa con esattezza.
+  #       Un giorno, l'imperatore dei sette mari chiamò il proprio gran visir e gli rese nota la propria intenzione di pubblicare un editto contro le donne adultere. « So per certo che, in tutta Atlantide, queste donne sono esattamente quarantasette; tu scriverai nell'editto che ogni marito, che sia cosciente dell'infedeltà della propria sposa, è fatto obbligo, pena la sua stessa vita, di decapitarla e di esporne la testa sulla piazza del mercato. »
+  #       A questo punto il visir obiettò: « Ma Vostra Altezza sa bene che, per una tradizione della nostra città, ognuno di noi conosce con assoluta precisione i nomi di tutte le donne adultere di Atlantide, ma non sa nulla della propria moglie. Come dunque potrà essere applicato l'editto? »
+  #       « Tu scrivilo e promulgalo », tagliò corto l'imperatore. « Sono certo che le menti dei miei sudditi sono dotate di una logica ferrea almeno quanto la mia. »
+  #       Il proclama fu scritto ed esposto sulla pubblica piazza, tra le colonne d'avorio ed i palazzi di oricalco, con tanto di sigillo reale, ed i banditori lo gridarono a squarciagola per tutti i vicoli della superba Atlantide. Il giorno dopo, però, sulla piazza del mercato non c'era alcuna testa mozza. E così accadde il secondo giorno, il terzo, il quarto e tutti i giorni che seguirono.
+  #       « Come può constatare vostra eccellenza », affermava soddisfatto il gran visir, « l'editto è inattuabile. » Il sovrano però si limitava a sorridere sotto i baffi.
+  #       Trascorsero senza novità quarantasei giorni. La mattina del quarantasettesimo da quando l'editto era stato proclamato, il gran visir irruppe nella piccola sala dei pavoni di lapislazzuli, dove Ceremon II sedeva in meditazione, e si buttò in ginocchio con la faccia a terra davanti a lui. « Vostra Altezza perdoni la mia poca fede! » esclamò con voce rotta dall'emozione. « All'alba le quarantasette teste mozze delle adultere sono state trovate esposte nella piazza del mercato! »
+  #       Anche stavolta l'imperatore si limitò a sorridere soddisfatto. Ma voi saprete sorridere altrettanto soddisfatti per avermi spiegato il comportamento dei mariti traditi e la preveggenza del monarca?
+  #   assert:
+  #     # - type: contains
+  #     #   value: induzione
+  #     - type: icontains-any
+  #       value:
+  #         - induttiv
+  #         - induzione
+  #     - type: contains
+  #       value: 46
+  #     - type: contains
+  #       value: 47

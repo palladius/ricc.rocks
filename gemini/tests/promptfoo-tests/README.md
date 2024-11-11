@@ -8,3 +8,10 @@ promptfoo eval
 ```
 
 Afterwards, you can view the results by running `promptfoo view`
+
+
+## Riccardo on derek
+
+```
+alias promptfoo='/usr/local/google/home/ricc/git/py-pvt-gemini-chat-challenge/genai-training/vertex-eval/deepeval/genai-beyond-basics/samples/evaluation/node_modules/.bin/promptfoo'
+```
