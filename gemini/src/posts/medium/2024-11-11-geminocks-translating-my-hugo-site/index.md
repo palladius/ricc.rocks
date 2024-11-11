@@ -1,20 +1,18 @@
 ---
 title: "Geminocks: how I set-up auto-translation on my personal Hugo Blog"
-date: 2024-08-15  # Today's date
-layout: single  # Assuming single.html for blog posts in ZZO theme
-# Optional fields (change as needed)
+date: 2024-11-11
+layout: single
 author: Riccardo Carlesso
 read_time: 3  # Minutes
 # categories: Add categories if applicable (e.g., ruby, rails, gcp)
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
-Tags: [qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain, skillsboost, cloudskillsboost ]
-canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
-# ![Riccardo Video on Youtube](/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png)
+Tags: [hugo, netflify, blog, gcp, googlecloud, gemini, geminocks ]
+#canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
 ---
 
 # Geminocks
 
-https://ricc.rocks/ is an underlooked gem of precious content, and I'm not biased at all: it's my personal blog.
+https://ricc.rocks/ is an underlooked gem of precious content, and I'm not biased at all: it's my personal blog. 🤣
 
 Inside you can find my family pics, my sport and hobbies, alongside my Google Cloud articles. Why? I just fell in love
 with markdown and I've been directed by my colleagues to Hugo. As a rubyist, it feels like cheating on `jekyll`, I know.

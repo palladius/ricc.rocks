@@ -40,7 +40,9 @@ I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved
 
 Of course, I live in Switzerland.
 
-{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center" >}}
+ { { <
+ img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center"
+ > } }
 
 ## Hobbies
 

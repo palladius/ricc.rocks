@@ -1,0 +1,112 @@
+---
+input: |
+  ---
+  title: "Geminocks: how I set-up auto-translation on my personal Hugo Blog"
+  date: 2024-08-15  # Today's date
+  layout: single  # Assuming single.html for blog posts in ZZO theme
+  # Optional fields (change as needed)
+  author: Riccardo Carlesso
+  read_time: 3  # Minutes
+  # categories: Add categories if applicable (e.g., ruby, rails, gcp)
+  # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
+  Tags: [qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain, skillsboost, cloudskillsboost ]
+  canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
+  # ![Riccardo Video on Youtube](/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png)
+  ---
+
+  # Geminocks
+
+  https://ricc.rocks/ is an underlooked gem of precious content, and I'm not biased at all: it's my personal blog.
+
+  Inside you can find my family pics, my sport and hobbies, alongside my Google Cloud articles. Why? I just fell in love
+  with markdown and I've been directed by my colleagues to Hugo. As a rubyist, it feels like cheating on `jekyll`, I know.
+
+  ## My Blog configuration
+
+  I use a very simple config:
+
+  * Github to store the code
+  * Netfly to auto-build it
+  * `ricc.rocks` domain to host it. And that's it.
+
+  ## The language problem
+
+  However, a
+
+  TODO()
+
+
+  ## Testing the script
+
+  **How do you test an LLM output, and the prompt quality?**
+
+  Enter **PromptFoo**! Promptfoo is an amazing library where you can set up unit tests for your LLM output both in a deterministic
+  and LLMistic (pardon my neologisms) way.
+
+  If I want to ensure that LLM output is able to cope with Japanese (it got confused a few times).
+
+  Imagine you have a prompt which is parametric in Language, fullname (its always my name) and file content.
+
+  Well you can write things like:
+
+  ```yaml
+
+    - vars:
+        language: japanese
+        full_name: Riccardo Carlesso
+        original_content: 'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'
+      assert:
+        - type: llm-rubric
+          value: |
+            The Front Matter contains a `tag:` key and it contains 'geminock' and 'japanese'.
+        - type: llm-rubric
+          value: |
+            The Front Matter contains a `title:` key surrounded by double quotes, ie a line of this type:
+            title: "<some info here>"
+            Inside the title there should be a flag of Japan.
+  ```
+
+  Now an LLM will create (and cache!) the LLM content and perform these two tests. These tests come from my experience:
+  I noticed that when Gemini translates to Japanese, sometimes the title is not in form `title: "blah blah"` but in format
+  `title: blah blah` which doesn't work well with kanjis, so I want to make sure it's in double quotes.
+
+  This is a possible output:
+
+  ![promptfoo output](image.png)
+output: "---\ntitle: \"\U0001F1EE\U0001F1F9♊ [Geminocks] Come ho impostato la traduzione
+  automatica sul mio blog personale Hugo\"\ndate: 2024-08-15\nlayout: single\nauthor:
+  Riccardo Carlesso\nread_time: 3\nTags: [geminocks, Italian, qwiklabs, cloudrun,
+  rubyonrails, devops, gcp, googlecloud, toolchain, skillsboost, cloudskillsboost]\ncanonicalURL:
+  https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b\n---\n\n#
+  Geminocks\n\nhttps://ricc.rocks/ è una gemma sottovalutata di contenuti preziosi,
+  e non sono affatto di parte: è il mio blog personale.\n\nAll'interno potete trovare
+  le foto della mia famiglia, i miei sport e hobby, insieme ai miei articoli su Google
+  Cloud. Perché? Mi sono semplicemente innamorato\ndel markdown e sono stato indirizzato
+  dai miei colleghi a Hugo. Come rubyist, mi sembra di tradire `jekyll`, lo so.\n\n##
+  La configurazione del mio blog\n\nUso una configurazione molto semplice:\n\n* Github
+  per archiviare il codice\n* Netlify per costruirlo automaticamente\n* Dominio `ricc.rocks`
+  per ospitarlo. E questo è tutto.\n\n## Il problema della lingua\n\nTuttavia, un\n\nTODO()\n\n\n##
+  Testare lo script\n\n**Come si testa l'output di un LLM e la qualità del prompt?**\n\nEntra
+  in scena **PromptFoo**! Promptfoo è una libreria fantastica in cui è possibile impostare
+  unit test per l'output di LLM sia in modo deterministico\nche LLMistico (perdonate
+  i miei neologismi).\n\nSe voglio assicurarmi che l'output di LLM sia in grado di
+  gestire il giapponese (si è confuso alcune volte).\n\nImmagina di avere un prompt
+  che è parametrico in Lingua, nome completo (è sempre il mio nome) e contenuto del
+  file.\n\nBene, puoi scrivere cose come:\n\n```yaml\n\n  - vars:\n      language:
+  japanese\n      full_name: Riccardo Carlesso\n      original_content: 'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'\n
+  \   assert:\n      - type: llm-rubric\n        value: |\n          Il Front Matter
+  contiene una chiave `tag:` e contiene 'geminock' e 'japanese'.\n      - type: llm-rubric\n
+  \       value: |\n          Il Front Matter contiene una chiave `title:` racchiusa
+  tra virgolette doppie, cioè una riga di questo tipo:\n          title: \"<qualche
+  informazione qui>\"\n          All'interno del titolo dovrebbe esserci una bandiera
+  del Giappone.\n```\n\nOra un LLM creerà (e metterà in cache!) il contenuto LLM ed
+  eseguirà questi due test. Questi test derivano dalla mia esperienza:\nho notato
+  che quando Gemini traduce in giapponese, a volte il titolo non è nella forma `title:
+  \"blah blah\"` ma nel formato\n`title: blah blah` che non funziona bene con i kanji,
+  quindi voglio assicurarmi che sia tra virgolette doppie.\n\nQuesto è un possibile
+  output:\n\n![promptfoo output](image.png)\n\n"
+model: gemini-1.5-pro
+code_version: '1.9'
+article_hash: bc3c8fce0b236291edbe6d442698a4bfe9b32ad16c3d3328ef101082fa3fc07d
+title: "\"Geminocks"
+lang: it
