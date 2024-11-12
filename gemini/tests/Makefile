@@ -1,3 +1,4 @@
+#alias promptfoo='/usr/local/google/home/ricc/git/py-pvt-gemini-chat-challenge/genai-training/vertex-eval/deepeval/genai-beyond-basics/samples/evaluation/node_modules/.bin/promptfoo'
 
 
 eval:
@@ -9,5 +10,4 @@ eval:
 # https://www.promptfoo.dev/docs/guides/gemini-vs-gpt/
 promptfoo-tests:
 	npx promptfoo@latest init promptfoo-tests
-
 

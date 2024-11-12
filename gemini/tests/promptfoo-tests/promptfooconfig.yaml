@@ -26,7 +26,17 @@ providers:
   #- vertex:aqa
   # - "ollama:chat:llama3"
   # - "ollama:chat:mixtral:8x22b" # 80GB!
+  #- ollama:chat:llama3
+  # - ollama:chat:mixtral
+  # - ollama:chat:gemma2
+#  - ollama:chat:pincopallinojoe
+#  - id: ollama:llama3
+    # config:
+    #   num_predict: 1024
+    #   temperature: 0.2
 
+
+# Asserts: https://www.promptfoo.dev/docs/configuration/expected-outputs/
 
 tests:
   # - vars:
@@ -59,8 +69,8 @@ tests:
       #   value: ensure that the output contains emojis
       - type: contains
         value: significa
-      # - type: icontains
-      #   value: italiano
+      - type: not-contains
+        value: pitone
       - type: icontains
         value: todo
       - type: llm-rubric
@@ -73,21 +83,22 @@ tests:
           The Front Matter contains a `title:` key surrounded by double quotes, ie a line of this type:
           title: "<some info here>"
           Inside the title there should be a flag of Italy.
-      # - type: latency
-      #   threshold: 10000
-
+      - type: llm-rubric
+        value: |
+          The Front Matter has not been translated, except in the `title`. So:
+          "draft: false" would be good (left untouched).
+          "bozza: falso" would be bad (translated).
+      # This fails! Its a BAD test.
+      - type: llm-rubric
+        value: |
+          The Front Matter has not been altered, except in the `title:` and `tags:`. So, all other fields
+          (canonicalURL:, draft:, `image:`, ..) should be left untouched from input to output of model.
 
   - vars:
       language: japanese
       full_name: Riccardo Carlesso
       original_content: 'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'
     assert:
-      # - type: contains
-      #   value: significa
-      # # - type: icontains
-      #   value: italiano
-      # - type: icontains
-      #   value: todo
       - type: llm-rubric
         #  would be cool if this would be parametric in language..
         value: |
@@ -99,12 +110,36 @@ tests:
           Inside the title there should be a flag of Japan.
 
 
-  # # - vars:
-  # #     question: There are 31 books in my house. I read 2 books over the weekend. How many books are still in my house?
-  # # - vars:
-  # #     question: Julia has three brothers, each of them has two sisters. How many sisters does Julia have?
-  # # - vars:
-  # #     question: If you place an orange below a plate in the living room, and then move the plate to the kitchen, where is the orange now?
+  - vars:
+      language: french
+      full_name: Riccardo Carlesso
+      original_content: 'file://../../src/posts/medium/2024-10-19-level-up-rails/index.md'
+    assert:
+      - type: llm-rubric
+        value: |
+          The Front Matter contains a `tag:` key and it contains 'geminock' and 'french'.
+      - type: llm-rubric
+        value: |
+          Ruby is a programming language. Make sure it's never translated in the text to the french version of a ruby
+          gem (which is `rubis`).
+      - type: not-contains
+        value: rubis
+
+
+  - vars:
+      language: italian
+      full_name: Riccardo Carlesso
+      original_content: 'file://../../src/posts/medium/2024-10-19-level-up-rails/index.md'
+    assert:
+      - type: llm-rubric
+        value: |
+          The Front Matter contains a `tag:` key and it contains 'geminock' and 'italian'.
+      - type: llm-rubric
+        value: |
+          Ruby is a programming language. Make sure it's never translated in the text to the italian version of a ruby
+          gem (which is `rubino/i`).
+      - type: not-contains
+        value: rubino
 
   # - vars:
   #     question: There are 31 books in my house. I read 2 books over the weekend. How many books are still in my house?
@@ -138,25 +173,3 @@ tests:
   #     - type: contains
   #       value: scioglilingua
 
-
-  # - vars:
-  #     question: |
-  #       Sua Magnificenza Ceremon II, imperatore di Atlantide dall'11.615 all' 11.562 a.C., era famoso per essere dotato, a differenza di tanti suoi successori, di un rigore morale tale da mettere in imbarazzo persino il più puritano dei Quaccheri. Costui aveva messo in piedi un servizio di informazioni talmente capillare, da essere informato praticamente delle più piccole mancanze commesse persino dal più umile tra gli abitanti della grande città circondata da sette canali e da sette cerchia di mura su cui Ceremon regnava. Ogni sera, uomini avvolti in neri mantelli scivolavano senza farsi vedere fino alla sala del tronetto di smeraldi, dove il sovrano sedeva in silenzio, e gli sussurravano a lungo all'orecchio. La sua faccia di pietra non dava un guizzo, ma il suo cervello annotava ogni cosa con esattezza.
-  #       Un giorno, l'imperatore dei sette mari chiamò il proprio gran visir e gli rese nota la propria intenzione di pubblicare un editto contro le donne adultere. « So per certo che, in tutta Atlantide, queste donne sono esattamente quarantasette; tu scriverai nell'editto che ogni marito, che sia cosciente dell'infedeltà della propria sposa, è fatto obbligo, pena la sua stessa vita, di decapitarla e di esporne la testa sulla piazza del mercato. »
-  #       A questo punto il visir obiettò: « Ma Vostra Altezza sa bene che, per una tradizione della nostra città, ognuno di noi conosce con assoluta precisione i nomi di tutte le donne adultere di Atlantide, ma non sa nulla della propria moglie. Come dunque potrà essere applicato l'editto? »
-  #       « Tu scrivilo e promulgalo », tagliò corto l'imperatore. « Sono certo che le menti dei miei sudditi sono dotate di una logica ferrea almeno quanto la mia. »
-  #       Il proclama fu scritto ed esposto sulla pubblica piazza, tra le colonne d'avorio ed i palazzi di oricalco, con tanto di sigillo reale, ed i banditori lo gridarono a squarciagola per tutti i vicoli della superba Atlantide. Il giorno dopo, però, sulla piazza del mercato non c'era alcuna testa mozza. E così accadde il secondo giorno, il terzo, il quarto e tutti i giorni che seguirono.
-  #       « Come può constatare vostra eccellenza », affermava soddisfatto il gran visir, « l'editto è inattuabile. » Il sovrano però si limitava a sorridere sotto i baffi.
-  #       Trascorsero senza novità quarantasei giorni. La mattina del quarantasettesimo da quando l'editto era stato proclamato, il gran visir irruppe nella piccola sala dei pavoni di lapislazzuli, dove Ceremon II sedeva in meditazione, e si buttò in ginocchio con la faccia a terra davanti a lui. « Vostra Altezza perdoni la mia poca fede! » esclamò con voce rotta dall'emozione. « All'alba le quarantasette teste mozze delle adultere sono state trovate esposte nella piazza del mercato! »
-  #       Anche stavolta l'imperatore si limitò a sorridere soddisfatto. Ma voi saprete sorridere altrettanto soddisfatti per avermi spiegato il comportamento dei mariti traditi e la preveggenza del monarca?
-  #   assert:
-  #     # - type: contains
-  #     #   value: induzione
-  #     - type: icontains-any
-  #       value:
-  #         - induttiv
-  #         - induzione
-  #     - type: contains
-  #       value: 46
-  #     - type: contains
-  #       value: 47
