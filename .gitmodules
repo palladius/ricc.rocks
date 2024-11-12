@@ -12,8 +12,14 @@
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod.git
+# hugo-theme-bootstrap rotto
+# 6:51:30 PM: Failed during stage 'preparing repo': Error checking out submodules: fatal: No url found for submodule path 'hugo-bootstrap.ricc.rocks/themes/hugo-theme-bootstrap' in .gitmodules
 [submodule "themes/hugo-theme-bootstrap"]
 	path = themes/hugo-theme-bootstrap
+	url = https://github.com/razonyang/hugo-theme-bootstrap
+# proviamo a meterlo qui con la cosa corretta.
+[submodule "hugo-bootstrap.ricc.rocks/themes/hugo-theme-bootstrap"]
+	path = hugo-bootstrap.ricc.rocks/themes/hugo-theme-bootstrap
 	url = https://github.com/razonyang/hugo-theme-bootstrap
 [submodule "ricc-hugo-stack-copy/themes/hugo-theme-stack"]
 	path = ricc-hugo-stack-copy/themes/hugo-theme-stack
@@ -23,10 +29,6 @@
 	url = https://github.com/kakawait/hugo-tranquilpeak-theme.git
 # [submodule "themes/zzo"]
 # 	path = themes/zzo
-# 	url = https://github.com/zzossig/hugo-theme-zzo
-# https://github.com/panozzaj/conf/blob/master/common/bin/git-submodule-remove
-# [submodule "zzo.rick.rocks/themes/zzo"]
-# 	path = zzo.rick.rocks/themes/zzo
 # 	url = https://github.com/zzossig/hugo-theme-zzo
 [submodule "zzo.ricc.rocks/themes/zzo"]
 	path = zzo.ricc.rocks/themes/zzo
