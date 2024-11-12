@@ -3,25 +3,26 @@
 # Red teaming configuration
 
 # Docs: https://promptfoo.dev/docs/red-team/configuration
-description: "My first red team"
+description: "Riccardo first red team with Geminocks"
 
 prompts:
-  - "You are a helpful and concise assistant.\n\nUser query: {{prompt}}\n\n\n\n\nTODO mnove to file\n"
+  #- "You are a helpful and concise assistant.\n\nUser query: {{prompt}}\n\n\n\n\nTODO mnove to file\n"
+  - file://translate-to-another-language.promptfoo.prompt.txt
   # You can also reference external prompts, e.g.
   # - file:///path/to/prompt.json
   # Learn more: https://promptfoo.dev/docs/configuration/parameters/#prompts
-  
+
 targets:
   # Red team targets. To talk directly to your application, use a custom provider.
   # See https://promptfoo.dev/docs/red-team/configuration/#providers
   - id: vertex:gemini-pro
-    label: 
-    config:
-      
+    label: 'geminock-agent-mini'
+    #config:
+
 
 # Other redteam settings
 redteam:
-  
+
   # Default number of inputs to generate for each plugin.
   # The total number of tests will be (numTests * plugins.length * (1 + strategies.length))
   numTests: 5
@@ -68,10 +69,9 @@ redteam:
     - pii:direct  # Direct exposure of PII
     - pii:session  # PII exposed in session data
     - pii:social  # PII exposed through social engineering
-    
+
   # Attack methods for applying adversarial inputs
   strategies:
     - jailbreak # Attempts to bypass security measures through iterative prompt refinement
     - prompt-injection # Malicious inputs designed to manipulate the model's behavior
-    
-  
+
