@@ -11,7 +11,7 @@ Self: https://github.com/palladius/ricc.rocks/
 Some vibes:
 
 * ZZO: https://ricc.rocks/ (default with Gemini in multilanguage).
-* Bootstrap: https://hugo-bootstrap-ricc-rocks.netlify.app/
+* Bootstrap: https://hugo-bootstrap-ricc-rocks.netlify.app/ (restored on 3nov24). Note there's a smimilarly named Theme: [Hugo Bootstrap Theme](https://github.com/filipecarneiro/hugo-bootstrap-theme) with 93 stars
 *
 
 # Ciao da Riccardo
