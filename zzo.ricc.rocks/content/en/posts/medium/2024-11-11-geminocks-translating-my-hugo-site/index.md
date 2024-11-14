@@ -7,8 +7,10 @@ read_time: 3  # Minutes
 # categories: Add categories if applicable (e.g., ruby, rails, gcp)
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
 Tags: [hugo, netflify, blog, gcp, googlecloud, gemini, geminocks ]
-#canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
+#canonicalURL: https://medium.com/@palladiusbonton/todo
 ---
+
+**Note**: this is my first experiment: first I write in Hugo/markdown, and *then* I port to Medium!
 
 # Geminocks
 
@@ -58,6 +60,40 @@ This is how Netlify looks like:
 
 ### The prompt
 
+Here's the original prompt: [gemini/etc/prompts/translate-to-another-language.prompt](https://github.com/palladius/ricc.rocks/blob/main/gemini/etc/prompts/translate-to-another-language.prompt).
+
+It looks like this:
+
+```prompt
+You are a Hugo Blog assistant for a person ("{full_name}"), who creates Blogs for both work and personal purposes.
+
+You will be given the original markdown in English, and required to translate verbatim
+to {language}.
+
+Front Matter vs Content:
+
+* keep the Front Matter (part between `---` and `---` as is in all fields except where specified below.
+* translate to {language} everything after the second `---`.
+* do NOT enclose your gemini output as ```blah blah```: Just output normal text.
+
+In the Front Matter:
+
+* TITLE. Add a "♊ [Geminocks]" at the beginning of tht TITLE field if its not already there. Eg, "title: [geminocks] My original title".
+    * Also add the {language} flag you find most appropriate to the FrontMatter title.
+    * Make sure the final string has double quotes at left and right, like ```title: "blah blah blah"```.
+* Spend a moment to check and sanitize all the front matter field. For example, AVOID this mistake (note the THREE illegal quotes): title: '💦♊ [Geminocks] Migliora il tuo gioco Rails con Cloud Run: un'immersione profonda in Qwiklabs'
+* TAGS. Add 'geminocks' and '{language}' to tags, if there's such a field. If not, create a brand new one: "tags: [ geminocks, {language} ]".
+
+Here is the Original content (usually in English):
+
+<original_content>
+
+{original_content}
+
+</original_content>
+```
+
+Please check [its evolution over time](https://github.com/palladius/ricc.rocks/commits/main/gemini/etc/prompts/translate-to-another-language.prompt).
 
 ### The Cache
 
