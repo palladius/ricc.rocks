@@ -21,8 +21,8 @@ with markdown and I've been directed by my colleagues to Hugo. As a rubyist, it 
 
 I use a very simple config:
 
-* Github to store the code
-* Netfly to auto-build it
+* Github to store the code: https://github.com/palladius/ricc.rocks
+* [Netfly](https://www.netlify.com/) to auto-build it (for free!)
 * `ricc.rocks` domain to host it. And that's it.
 
 ## The language problem
@@ -41,9 +41,10 @@ you try Jaspanese!
 To run geminocks I had to put together a few pieces:
 
 1. A bunch of DRY articles I want to throw to `N` blogs and translate to `M` languages.
-2. A solid prompt to do this.
+2. A solid prompt to do this. See below
 3. A solid language to do this (of course, Ruby)
-4. A solid testing system to make sure if the results make sense. I chose Promptfoo to test my prompts and I check with hugo if I can rebuild the site locally.
+4. A [caching](https://github.com/palladius/ricc.rocks/tree/main/gemini/.cache) mechanism. You don't want to call Gemini for N articles for L languages and have NxLx1000 token at every commit.
+5. A solid testing system to make sure if the results make sense. I chose Promptfoo to test my prompts and I check with hugo if I can rebuild the site locally.
 
 
 ## Testing the script

@@ -1,10 +1,11 @@
 ---
 # Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
 # initial HEADER :) Lets try to keep it small :)
-title: "💦 Setting a ⬣ Cloud Build trigger with 🧹Pulumi in 🐍 Python"
+title: "Setting a ⬣ Cloud Build trigger with 🧹 Pulumi in 🐍 Python"
+subtitle: "Automate your code with a language-friendly Terraform"
 date: 2022-09-22T21:17:43+01:00
 draft: false
-tags: [symlink, GCP, pulumi, CloudBuild, Medium]
+tags: [GCP, pulumi, CloudBuild, Medium]
 # paperMod
 canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 # ANANKE :)
@@ -14,7 +15,9 @@ image: /images/mtg-clone.jpg
 
 The Original article here:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 
-TODO(7feb23): add this video as embedded: https://www.youtube.com/watch?v=5jhWVNN8P_M (created on 6feb23)
+{{< button href="https://www.youtube.com/watch?v=5jhWVNN8P_M" width="100px" height="36px" color="primary" >}}watch video{{< /button >}}
+
+{{< featuredImage >}}
 
 A couple of weeks ago, I fell in love with **Pulumi**. it has everything I wanted from Terraform: easy to set up, easy config management, a nice UI for free, and most importantly… language Support! Pulumi is the best invention after Buffalo Pizza and has only a problem.. [no Ruby support](https://github.com/pulumi/pulumi/issues/132) :/
 
