@@ -46,6 +46,30 @@ To run geminocks I had to put together a few pieces:
 4. A [caching](https://github.com/palladius/ricc.rocks/tree/main/gemini/.cache) mechanism. You don't want to call Gemini for N articles for L languages and have NxLx1000 token at every commit.
 5. A solid testing system to make sure if the results make sense. I chose Promptfoo to test my prompts and I check with hugo if I can rebuild the site locally.
 
+## Netlify
+
+This is how Netlify looks like:
+
+![multi commit on Netlify](image-1.png)
+
+* At every commit, netlify executes the code you want, usually `hugo minify`.
+* If you have an error, you can see where it sits. You can also try locally first. I tried to have one `make test` per repo.
+
+
+### The prompt
+
+
+### The Cache
+
+The idea is simple: if input content doesn't change, HIT the cache. This serves two purposes:
+
+1. Save money
+2. If Gemini makes a small mistake, I just fix the japanese mistake in the cache file and the next push will send the
+   Gemini+Riccardo edited markdown in prod.
+
+Since I started with a YAMl containing all I needed: [French example (yaml)](https://github.com/palladius/ricc.rocks/blob/main/gemini/.cache/0a1091e0349af123a464233129bf22b0674da35e3d73bbb2d4e8166f0254124a-fr.yaml),
+I decided to also save the full output, as it's a lot easier to double check: [same example (markdown)](https://github.com/palladius/ricc.rocks/blob/main/gemini/.cache/0a1091e0349af123a464233129bf22b0674da35e3d73bbb2d4e8166f0254124a-fr.yaml.txt)
+
 
 ## Testing the script
 
@@ -84,3 +108,9 @@ I noticed that when Gemini translates to Japanese, sometimes the title is not in
 This is a possible output:
 
 ![promptfoo output](image.png)
+
+## Next Steps
+
+* Copy my source to more Hugo versions, since I haven't decided yet to go ZZO (my wife prefers another, and I probably
+prefer the [bootstrap](https://hugo-bootstrap-ricc-rocks.netlify.app/) version); plus ZZO hasn't been updated in 3 years. Not a good sign.
+

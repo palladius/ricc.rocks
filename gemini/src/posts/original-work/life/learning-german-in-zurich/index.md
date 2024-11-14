@@ -90,6 +90,10 @@ On 13 nov 24, I received a letter where I thought I'd be convoked for my exam:
 
 ![presumed final exam convocation letter](image.png)
 
+However, after a Google translate, I realized it was simply an invitation to please try and apply to become a Swiss citizen!
+
+Sorry, Stadt Zurich, I was too fast!
+
 #  5. The aftermath, sorry! .. after German
 
 TBD
