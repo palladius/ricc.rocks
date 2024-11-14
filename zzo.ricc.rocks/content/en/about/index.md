@@ -1,10 +1,8 @@
 ---
-#🚧
 title: "About me"
 description: "This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/"
 type: "about"
 date: "2023-02-01"
-#This is the ZZO version of Riccardo Rocks ring: https://ricc.rocks/
 image: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg
 meta_image: image.png
 tags:
@@ -13,11 +11,9 @@ tags:
 - italy
 - ricc
 - me
-# {{< box >}}
-# 🚧 under construction 🚧
-# {{< /box >}}
 ---
 
+*TODO(Ricc): This is currently under `posts/`. You ned to add the logic to copy this under ZZO/{LANG}/about/ . Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.*
 
 Hi! I'm Riccardo, and I go by <tt>Palladius</tt> or just Ricc.
 
@@ -36,13 +32,11 @@ I speak about SRE, Operations, Culture at Google, GenAI, and Ruby.
 
 ## Personal
 
-I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland, and in 2011 I moved to Switzerland where I currently live with my kind and caring wife Kate and two amazeballs kids: *AJ* and *Sebowski*. You can find us on Instagram, or in the family gallery.
+I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland (2008), and in 2011 I moved to Switzerland where I currently live with my kind and caring wife Kate and two amazing kids: *AJ* and *Sebowski*. You can find us on [Instagram](https://www.instagram.com/palladius/), or in the [family gallery](/en/gallery/riccardo-family/).
 
 Of course, I live in Switzerland.
 
- { { <
- img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center"
- > } }
+{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. You can see everything here, except the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center" >}}
 
 ## Hobbies
 

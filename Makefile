@@ -38,6 +38,15 @@ gemini-feedback-loop:
 	echo '2. copy to ZZO'
 	make gemini-cp
 
+copy-across: cp-v2
+just-copy: cp-v2
+cp: cp-v2
+
+cp-v2:
+	echo '1. Copia originali in inglese 🏴󠁧󠁢󠁥󠁮󠁧󠁿'
+	rsync -avz gemini/src/posts/medium/ zzo.ricc.rocks/content/en/posts/medium/
+	rsync -avz gemini/src/posts/about/ zzo.ricc.rocks/content/en/about/
+
 gemini-cp: clean
 	echo These are manually maintained yet quite easy to redo.
 #	cp -R gemini/out/zzo/it/ zzo.ricc.rocks/content/it/posts/gemini/
