@@ -14,7 +14,13 @@ Tags: [hugo, netflify, blog, gcp, googlecloud, gemini, geminocks ]
 
 ![geminocks in action](image-2.png)
 
-{{< button href="https://github.com/palladius/ricc.rocks/tree/main/gemini" width="100px" height="36px" color="primary" >}}See the Code{{< /button >}}
+{{< button href="https://github.com/palladius/ricc.rocks/tree/main/gemini" width="100px" height="36px" color="primary" >}}Code{{< /button >}}
+
+{{< button href="https://ricc.rocks/it/" width="120px" height="36px" color="secondary" >}}🇮🇹 site{{< /button >}}
+
+{{< button href="https://ricc.rocks/de/" width="150px" height="36px" color="secondary" >}}🇩🇪 site{{< /button >}}
+
+{{< button href="https://ricc.rocks/fr/" width="120px" height="36px" color="secondary" >}}🇫🇷 site{{< /button >}}
 
 # Geminocks
 
@@ -55,7 +61,7 @@ To run geminocks I had to put together a few pieces:
 
 ## Netlify
 
-What is Netlify? It's a platform that builds/deploys your pages for Hugo. Very similar to what github pages does for
+What is Netlify? It's a platform that builds/deploys your pages for [Hugo](https://gohugo.io/); very similar to what github pages does for
 [jekyll](https://jekyllrb.com/). Once again: `jekill : hugo = ruby : go`.
 
 This is how my Netlify builds looks like:
