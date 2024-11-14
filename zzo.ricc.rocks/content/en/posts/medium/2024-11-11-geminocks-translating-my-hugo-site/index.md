@@ -12,6 +12,10 @@ Tags: [hugo, netflify, blog, gcp, googlecloud, gemini, geminocks ]
 
 **Note**: this is my first experiment: first I write in Hugo/markdown, and *then* I port to Medium!
 
+![geminocks in action](image-2.png)
+
+{{< button href="https://github.com/palladius/ricc.rocks/tree/main/gemini" width="100px" height="36px" color="primary" >}}See the Code{{< /button >}}
+
 # Geminocks
 
 https://ricc.rocks/ is an underlooked gem of precious content, and I'm not biased at all: it's my personal blog. 🤣
@@ -31,12 +35,13 @@ I use a very simple config:
 
 However, a respected Blog should haver at least a version in English and one in your mother language (🇮🇹 in my case).
 
-DHH infected me with DRY obsession, so now I can't live not-DRY. What if I manually translate content? Tomorrow I update the content and I have to update the translaton(s) too.
-Plus I speak a few language, so this gets scary pretty fast. LLMs are good at translating, so how about I try to use Gemini instead to do the heavy lifting?
+DHH infected me with DRY obsession, so now I can't live not-DRY. What if I manually translate content? Tomorrow I update the content and I have to update the translation(s) too.
+Plus I speak a few languages, so this gets scary pretty fast. LLMs are good at translating, so how about I try to use Gemini instead to do the heavy lifting?
 
 There are some challenges though: a Hugo markdown starts with the so called "Front Matter"; this contains some key values in YAML format.
 I want to translate the whole page and leave the Front Matter intact. Will my LLM be up to the task? I found out it works pretty well until...
-you try Jaspanese!
+
+..you try Japanese!
 
 ## Geminocks architecture
 
@@ -50,11 +55,14 @@ To run geminocks I had to put together a few pieces:
 
 ## Netlify
 
-This is how Netlify looks like:
+What is Netlify? It's a platform that builds/deploys your pages for Hugo. Very similar to what github pages does for
+[jekyll](https://jekyllrb.com/). Once again: `jekill : hugo = ruby : go`.
+
+This is how my Netlify builds looks like:
 
 ![multi commit on Netlify](image-1.png)
 
-* At every commit, netlify executes the code you want, usually `hugo minify`.
+* At every `git push`, netlify executes the code you want, usually `hugo minify`.
 * If you have an error, you can see where it sits. You can also try locally first. I tried to have one `make test` per repo.
 
 
