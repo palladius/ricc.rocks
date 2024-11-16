@@ -6,6 +6,8 @@ Sessionize: https://sessionize.com/riccardo-carlesso
 
 Self: https://github.com/palladius/ricc.rocks/
 
+**Note**: this is a collection of all my `hugo` websites. For my `jekyll` websites, please check here: https://github.com/palladius/palladius.github.io/
+
 ## Notes from 2024 refurbishing
 
 Some vibes:

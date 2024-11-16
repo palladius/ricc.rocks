@@ -1,0 +1,139 @@
+---
+input: "---\ntitle: \"Geminocks: how I set-up auto-translation on my personal Hugo
+  Blog\"\ndate: 2024-11-11\nlayout: single\nauthor: Riccardo Carlesso\nread_time:
+  3  # Minutes\n# categories: Add categories if applicable (e.g., ruby, rails, gcp)\n#
+  tags: Add tags if applicable (e.g., qwiklabs, cloudrun)\nTags: [hugo, netflify,
+  blog, gcp, googlecloud, gemini, geminocks ]\n#canonicalURL: https://medium.com/@palladiusbonton/todo\n---\n\n**Note**:
+  this is my first experiment: first I write in Hugo/markdown, and *then* I port to
+  Medium!\n\n![geminocks in action](image-2.png)\n\n{{< button href=\"https://github.com/palladius/ricc.rocks/tree/main/gemini\"
+  width=\"100px\" height=\"36px\" color=\"primary\" >}}Code{{< /button >}}\n\n{{<
+  button href=\"https://ricc.rocks/it/\" width=\"120px\" height=\"36px\" color=\"secondary\"
+  >}}\U0001F1EE\U0001F1F9 site{{< /button >}}\n\n{{< button href=\"https://ricc.rocks/de/\"
+  width=\"150px\" height=\"36px\" color=\"secondary\" >}}\U0001F1E9\U0001F1EA site{{<
+  /button >}}\n\n{{< button href=\"https://ricc.rocks/fr/\" width=\"120px\" height=\"36px\"
+  color=\"secondary\" >}}\U0001F1EB\U0001F1F7 site{{< /button >}}\n\n# Geminocks\n\nhttps://ricc.rocks/
+  is an underlooked gem of precious content, and I'm not biased at all: it's my personal
+  blog. \U0001F923\n\nInside you can find my family pics, my sport and hobbies, alongside
+  my Google Cloud articles. Why? I just fell in love\nwith markdown and I've been
+  directed by my colleagues to Hugo. As a rubyist, it feels like cheating on `jekyll`,
+  I know.\n\n## My Blog configuration\n\nI use a very simple config:\n\n* Github to
+  store the code: https://github.com/palladius/ricc.rocks\n* [Netfly](https://www.netlify.com/)
+  to auto-build it (for free!)\n* `ricc.rocks` domain to host it. And that's it.\n\n##
+  The language problem\n\nHowever, a respected Blog should haver at least a version
+  in English and one in your mother language (\U0001F1EE\U0001F1F9 in my case).\n\nDHH
+  infected me with DRY obsession, so now I can't live not-DRY. What if I manually
+  translate content? Tomorrow I update the content and I have to update the translation(s)
+  too.\nPlus I speak a few languages, so this gets scary pretty fast. LLMs are good
+  at translating, so how about I try to use Gemini instead to do the heavy lifting?\n\nThere
+  are some challenges though: a Hugo markdown starts with the so called \"Front Matter\";
+  this contains some key values in YAML format.\nI want to translate the whole page
+  and leave the Front Matter intact. Will my LLM be up to the task? I found out it
+  works pretty well until...\n\n..you try Japanese!\n\n## Geminocks architecture\n\nTo
+  run geminocks I had to put together a few pieces:\n\n1. A bunch of DRY articles
+  I want to throw to `N` blogs and translate to `M` languages.\n2. A solid prompt
+  to do this. See below\n3. A solid language to do this (of course, Ruby)\n4. A [caching](https://github.com/palladius/ricc.rocks/tree/main/gemini/.cache)
+  mechanism. You don't want to call Gemini for N articles for L languages and have
+  NxLx1000 token at every commit.\n5. A solid testing system to make sure if the results
+  make sense. I chose Promptfoo to test my prompts and I check with hugo if I can
+  rebuild the site locally.\n\n## Netlify\n\nWhat is Netlify? It's a platform that
+  builds/deploys your pages for [Hugo](https://gohugo.io/); very similar to what github
+  pages does for\n[jekyll](https://jekyllrb.com/). Once again: `jekill : hugo = ruby
+  : go`.\n\nThis is how my Netlify builds looks like:\n\n![multi commit on Netlify](image-1.png)\n\n*
+  At every `git push`, netlify executes the code you want, usually `hugo minify`.\n*
+  If you have an error, you can see where it sits. You can also try locally first.
+  I tried to have one `make test` per repo.\n\n\n### The prompt\n\nHere's the original
+  prompt: [gemini/etc/prompts/translate-to-another-language.prompt](https://github.com/palladius/ricc.rocks/blob/main/gemini/etc/prompts/translate-to-another-language.prompt).\n\nIt
+  looks like this:\n\n```prompt\nYou are a Hugo Blog assistant for a person (\"{full_name}\"),
+  who creates Blogs for both work and personal purposes.\n\nYou will be given the
+  original markdown in English, and required to translate verbatim\nto {language}.\n\nFront
+  Matter vs Content:\n\n* keep the Front Matter (part between `---` and `---` as is
+  in all fields except where specified below.\n* translate to {language} everything
+  after the second `---`.\n* do NOT enclose your gemini output as ```blah blah```:
+  Just output normal text.\n\nIn the Front Matter:\n\n* TITLE. Add a \"♊ [Geminocks]\"
+  at the beginning of tht TITLE field if its not already there. Eg, \"title: [geminocks]
+  My original title\".\n    * Also add the {language} flag you find most appropriate
+  to the FrontMatter title.\n    * Make sure the final string has double quotes at
+  left and right, like ```title: \"blah blah blah\"```.\n* Spend a moment to check
+  and sanitize all the front matter field. For example, AVOID this mistake (note the
+  THREE illegal quotes): title: '\U0001F4A6♊ [Geminocks] Migliora il tuo gioco Rails
+  con Cloud Run: un'immersione profonda in Qwiklabs'\n* TAGS. Add 'geminocks' and
+  '{language}' to tags, if there's such a field. If not, create a brand new one: \"tags:
+  [ geminocks, {language} ]\".\n\nHere is the Original content (usually in English):\n\n<original_content>\n\n{original_content}\n\n</original_content>\n```\n\nPlease
+  check [its evolution over time](https://github.com/palladius/ricc.rocks/commits/main/gemini/etc/prompts/translate-to-another-language.prompt).\n\n###
+  The Cache\n\nThe idea is simple: if input content doesn't change, HIT the cache.
+  This serves two purposes:\n\n1. Save money\n2. If Gemini makes a small mistake,
+  I just fix the japanese mistake in the cache file and the next push will send the\n
+  \  Gemini+Riccardo edited markdown in prod.\n\nSince I started with a YAMl containing
+  all I needed: [French example (yaml)](https://github.com/palladius/ricc.rocks/blob/main/gemini/.cache/0a1091e0349af123a464233129bf22b0674da35e3d73bbb2d4e8166f0254124a-fr.yaml),\nI
+  decided to also save the full output, as it's a lot easier to double check: [same
+  example (markdown)](https://github.com/palladius/ricc.rocks/blob/main/gemini/.cache/0a1091e0349af123a464233129bf22b0674da35e3d73bbb2d4e8166f0254124a-fr.yaml.txt)\n\n\n##
+  Testing the script\n\n**How do you test an LLM output, and the prompt quality?**\n\nEnter
+  **PromptFoo**! Promptfoo is an amazing library where you can set up unit tests for
+  your LLM output both in a deterministic\nand LLMistic (pardon my neologisms) way.\n\nIf
+  I want to ensure that LLM output is able to cope with Japanese (it got confused
+  a few times).\n\nImagine you have a prompt which is parametric in Language, fullname
+  (its always my name) and file content.\n\nWell you can write things like:\n\n```yaml\n\n
+  \ - vars:\n      language: japanese\n      full_name: Riccardo Carlesso\n      original_content:
+  'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'\n
+  \   assert:\n      - type: llm-rubric\n        value: |\n          The Front Matter
+  contains a `tag:` key and it contains 'geminock' and 'japanese'.\n      - type:
+  llm-rubric\n        value: |\n          The Front Matter contains a `title:` key
+  surrounded by double quotes, ie a line of this type:\n          title: \"<some info
+  here>\"\n          Inside the title there should be a flag of Japan.\n```\n\nNow
+  an LLM will create (and cache!) the LLM content and perform these two tests. These
+  tests come from my experience:\nI noticed that when Gemini translates to Japanese,
+  sometimes the title is not in form `title: \"blah blah\"` but in format\n`title:
+  blah blah` which doesn't work well with kanjis, so I want to make sure it's in double
+  quotes.\n\nThis is a possible output:\n\n![promptfoo output](image.png)\n\n## Next
+  Steps\n\n* Copy my source to more Hugo versions, since I haven't decided yet to
+  go ZZO (my wife prefers another, and I probably\nprefer the [bootstrap](https://hugo-bootstrap-ricc-rocks.netlify.app/)
+  version); plus ZZO hasn't been updated in 3 years. Not a good sign.\n\n"
+output: "---\ntitle: \"\U0001F1EF\U0001F1F5♊ [Geminocks] 個人的なHugoブログでの自動翻訳の設定方法\"\ndate:
+  2024-11-11\nlayout: single\nauthor: Riccardo Carlesso\nread_time: 3  # Minutes\n#
+  categories: Add categories if applicable (e.g., ruby, rails, gcp)\nTags: [hugo,
+  netflify, blog, gcp, googlecloud, gemini, geminocks, Japanese]\n#canonicalURL: https://medium.com/@palladiusbonton/todo\n---\n\n**注**:
+  これは私にとって初めての実験です。まずHugo/markdownで書き、*その後*Mediumに移植します！\n\n![ジェミノックスの実行](image-2.png)\n\n{{<
+  button href=\"https://github.com/palladius/ricc.rocks/tree/main/gemini\" width=\"100px\"
+  height=\"36px\" color=\"primary\" >}}コード{{< /button >}}\n\n{{< button href=\"https://ricc.rocks/it/\"
+  width=\"120px\" height=\"36px\" color=\"secondary\" >}}\U0001F1EE\U0001F1F9 サイト{{<
+  /button >}}\n\n{{< button href=\"https://ricc.rocks/de/\" width=\"150px\" height=\"36px\"
+  color=\"secondary\" >}}\U0001F1E9\U0001F1EA サイト{{< /button >}}\n\n{{< button href=\"https://ricc.rocks/fr/\"
+  width=\"120px\" height=\"36px\" color=\"secondary\" >}}\U0001F1EB\U0001F1F7 サイト{{<
+  /button >}}\n\n# ジェミノックス\n\nhttps://ricc.rocks/ は貴重なコンテンツの隠れた宝石であり、私は全く偏見を持っていません。これは私の個人的なブログです。
+  \U0001F923\n\n中には家族写真、スポーツや趣味、そしてGoogle Cloudの記事があります。なぜでしょうか？ markdownに惚れ込み、同僚にHugoを勧められたからです。
+  rubyistとしては、`jekyll`を裏切っているような気分です。\n\n## ブログの設定\n\n非常にシンプルな設定を使用しています。\n\n* コードの保存にGithubを使用:
+  https://github.com/palladius/ricc.rocks\n* [Netfly](https://www.netlify.com/) で自動ビルド（無料！）\n*
+  `ricc.rocks` ドメインでホスト。これだけです。\n\n## 言語の問題\n\nしかし、ちゃんとしたブログであれば、少なくとも英語と母国語（私の場合は\U0001F1EE\U0001F1F9）のバージョンが必要です。\n\nDHHにDRYの考え方を吹き込まれたので、DRYでない生活はもう送れません。手動でコンテンツを翻訳するとどうなるでしょうか？明日コンテンツを更新すると、翻訳も更新しなければなりません。\nさらに、私はいくつかの言語を話すので、これはすぐに恐ろしいことになります。LLMは翻訳が得意なので、代わりにGeminiを使って大変な作業をしてみるのはどうでしょうか？\n\nただし、いくつかの課題があります。Hugoのmarkdownは「Front
+  Matter」と呼ばれるもので始まります。これはYAML形式のいくつかのキーバリューを含んでいます。\nページ全体を翻訳し、Front Matterはそのままにしておきたいです。私のLLMはこのタスクに対応できるでしょうか？
+  それはかなりうまくいくことがわかりましたが、…\n\n…日本語を試すまでは！\n\n## ジェミノックスのアーキテクチャ\n\nジェミノックスを実行するには、いくつかのピースを組み合わせる必要がありました。\n\n1.
+  `N`個のブログに投稿し、`M`個の言語に翻訳したいDRYな記事の束。\n2. これを行うためのしっかりとしたプロンプト。以下を参照\n3. これを行うためのしっかりとした言語（もちろん、Ruby）\n4.
+  [キャッシュ](https://github.com/palladius/ricc.rocks/tree/main/gemini/.cache) メカニズム。N個の記事をL個の言語でGeminiに呼び出し、コミットごとにNxLx1000トークンを消費したくはありません。\n5.
+  結果が理にかなっていることを確認するためのしっかりとしたテストシステム。プロンプトをテストするためにPromptfooを選択し、hugoでサイトをローカルで再構築できるかどうかを確認します。\n\n##
+  Netlify\n\nNetlifyとは何でしょうか？ それは[Hugo](https://gohugo.io/)用のページをビルド/デプロイするプラットフォームです。[jekyll](https://jekyllrb.com/)用のgithubページと非常によく似ています。もう一度言います。`jekill
+  : hugo = ruby : go`。\n\n私のNetlifyビルドは次のようになります。\n\n![Netlifyでの複数コミット](image-1.png)\n\n*
+  `git push`ごとに、netlifyは必要なコードを実行します。通常は`hugo minify`です。\n* エラーが発生した場合は、どこにあるかを確認できます。最初にローカルで試すこともできます。リポジトリごとに1つの`make
+  test`を用意するようにしました。\n\n\n### プロンプト\n\n元のプロンプトはこちらです: [gemini/etc/prompts/translate-to-another-language.prompt](https://github.com/palladius/ricc.rocks/blob/main/gemini/etc/prompts/translate-to-another-language.prompt)。\n\n次のようになります。\n\n```prompt\nあなたは、仕事と個人の両方の目的でブログを作成する人物（「Dr
+  Riccardo Carlesso」）のためのHugoブログアシスタントです。\n\nあなたは英語の元のmarkdownを受け取り、日本語に逐語的に翻訳する必要があります。\n\nFront
+  Matterとコンテンツ：\n\n* Front Matter（`---`と`---`の間の部分）は、以下で指定されている場合を除き、すべてのフィールドでそのままにします。\n*
+  2番目の`---`の後にあるものはすべて日本語に翻訳します。\n* geminiの出力を```blah blah```のように囲まないでください。通常のテキストを出力してください。\n\nFront
+  Matterでは：\n\n* TITLE。TITLEフィールドの先頭に「♊ [Geminocks]」を追加します（まだない場合）。例：「title: [geminocks]
+  元のタイトル」\n    * また、FrontMatterのタイトルに最も適切だと思う日本の国旗を追加してください。\n    * 最終的な文字列の左右に二重引用符があることを確認してください。例：```title:
+  \"blah blah blah\"```\n* すべてのフロントマターフィールドを確認し、サニタイズするために少し時間をかけてください。たとえば、この間違いは避けてください（3つの不正な引用符に注意してください）：title:
+  '\U0001F4A6♊ [Geminocks] Migliora il tuo gioco Rails con Cloud Run: un'immersione
+  profonda in Qwiklabs'\n* TAGS。「geminocks」と「Japanese」をタグに追加します（そのようなフィールドがある場合）。ない場合は、新しく作成します：「tags:
+  [ geminocks, Japanese ]」。\n\n元のコンテンツ（通常は英語）は次のとおりです。\n\n<original_content>\n\n{original_content}\n\n</original_content>\n```\n\n[時間の経過に伴う進化](https://github.com/palladius/ricc.rocks/commits/main/gemini/etc/prompts/translate-to-another-language.prompt)
+  を確認してください。\n\n### キャッシュ\n\nアイデアはシンプルです。入力コンテンツが変更されない場合は、キャッシュにヒットします。これには2つの目的があります。\n\n1.
+  お金を節約する\n2. Geminiが小さなミスをした場合、キャッシュファイルの日本語のミスを修正するだけで、次のプッシュでGemini + Riccardoが編集したmarkdownが本番環境に送信されます。\n\n必要なものがすべて含まれたYAMLから始めたので：[フランス語の例（yaml）](https://github.com/palladius/ricc.rocks/blob/main/gemini/.cache/0a1091e0349af123a464233129bf22b0674da35e3d73bbb2d4e8166f0254124a-fr.yaml)、\n完全な出力も保存することにしました。ダブルチェックがはるかに簡単だからです：[同じ例（markdown）](https://github.com/palladius/ricc.rocks/blob/main/gemini/.cache/0a1091e0349af123a464233129bf22b0674da35e3d73bbb2d4e8166f0254124a-fr.yaml.txt)\n\n\n##
+  スクリプトのテスト\n\n**LLMの出力とプロンプトの品質をどのようにテストしますか？**\n\n**PromptFoo**の登場です！ Promptfooは、決定論的な方法とLLM的な方法（私の造語をお許しください）の両方でLLM出力の単体テストを設定できる素晴らしいライブラリです。\n\nLLM出力が日本語に対応できることを確認したい場合（何度か混乱しました）。\n\n言語、氏名（常に私の名前）、ファイルの内容でパラメトリックなプロンプトがあるとします。\n\n次のように書くことができます。\n\n```yaml\n\n
+  \ - vars:\n      language: japanese\n      full_name: Riccardo Carlesso\n      original_content:
+  'file://../../src/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python/index.md'\n
+  \   assert:\n      - type: llm-rubric\n        value: |\n          Front Matterには`tag:`キーが含まれており、「geminock」と「japanese」が含まれています。\n
+  \     - type: llm-rubric\n        value: |\n          Front Matterには、二重引用符で囲まれた`title:`キーが含まれています。つまり、このタイプの行です。\n
+  \         title: \"<ここに情報>\"\n          タイトル内には日本の国旗が必要です。\n```\n\nこれで、LLMはLLMコンテンツを作成（およびキャッシュ）し、これら2つのテストを実行します。これらのテストは私の経験から来ています。\nGeminiが日本語に翻訳するとき、タイトルが`title:
+  \"blah blah\"`の形式ではなく、`title: blah blah`の形式になる場合があることに気づきました。これは漢字ではうまく機能しないため、二重引用符で囲まれていることを確認したいのです。\n\nこれは考えられる出力です。\n\n![promptfooの出力](image.png)\n\n##
+  次のステップ\n\n* まだZZOに移行することを決めていないため、ソースをより多くのHugoバージョンにコピーします（妻は別のバージョンを好み、私はおそらく[bootstrap](https://hugo-bootstrap-ricc-rocks.netlify.app/)バージョンを好みます）。さらに、ZZOは3年間更新されていません。良い兆候ではありません。\n\n\n\n"
+model: gemini-1.5-pro
+code_version: '1.9'
+article_hash: 56970159b071f644bb7d37cab2cdbcf14fea679670de6ab5d4ab225d407f6b60
+title: "\"Geminocks"
+lang: jp
