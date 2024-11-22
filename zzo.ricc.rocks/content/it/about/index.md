@@ -37,7 +37,9 @@ I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved
 
 Of course, I live in Switzerland.
 
-{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center" >}}
+{ { <
+img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center"
+> } }
 
 ## Hobbies
 
@@ -56,7 +58,7 @@ To quote Graham, *I used to have hobbies, now I have kids*. My hobbies used to b
 
 
 {{< boxmd >}}
-This site is built in Hugo (of course I'd prefer Jekyll, but I followed the lead from my colleagues) with [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([docs](https://zzo-docs.vercel.app/zzo)). If you wonder why I chose this, it was a couple of weekends trying out 5 differnt things. The lessons learnt are here:
+This site is built in Hugo (of course I'd prefer Jekyll, but I followed the lead from my colleagues) with [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([docs](https://zzo-docs.vercel.app/zzo)). If you wonder why I chose this, it was a couple of weekends trying out 5 different things. The lessons learnt are here:
 {{< /boxmd >}}
 
 Lessons learnt:

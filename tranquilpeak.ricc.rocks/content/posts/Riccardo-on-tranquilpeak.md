@@ -20,10 +20,11 @@ math: true
 draft: false
 ---
 
+*Last updated: Riccardo updated this on 2024-11-03*
 
 ## img
 
-/img/2022-10-19-riccardo-tartaruga.jpg
+`/img/2022-10-19-riccardo-tartaruga.jpg`
 
 ![Image](/img/2022-10-19-riccardo-tartaruga.jpg)
 

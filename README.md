@@ -6,6 +6,16 @@ Sessionize: https://sessionize.com/riccardo-carlesso
 
 Self: https://github.com/palladius/ricc.rocks/
 
+**Note**: this is a collection of all my `hugo` websites. For my `jekyll` websites, please check here: https://github.com/palladius/palladius.github.io/
+
+## Notes from 2024 refurbishing
+
+Some vibes:
+
+* ZZO: https://ricc.rocks/ (default with Gemini in multilanguage).
+* Bootstrap: https://hugo-bootstrap-ricc-rocks.netlify.app/ (restored on 3nov24). Note there's a smimilarly named Theme: [Hugo Bootstrap Theme](https://github.com/filipecarneiro/hugo-bootstrap-theme) with 93 stars
+*
+
 # Ciao da Riccardo
 
 Self: https://github.com/palladius/ricc.rocks
@@ -28,7 +38,7 @@ Still evaulating, hence I've created a RING of many versions, and use symlinks t
 * 😩 ⭐️ **Coder**: Naah, too simple for me.
 
 * 🚧 [WIP] **Tranquilpeak**.  https://tranquilpeak.netlify.app/
-* 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/
+* 🚧 [WIP] **ZZO**. https://ricc-zzo.netlify.app/en/ => https://ricc.rocks/
 
 # customization
 

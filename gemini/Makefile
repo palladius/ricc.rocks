@@ -4,6 +4,9 @@ e2e:
 	#RESTRICTED_PATH='src/posts/original-work/life/learning-german-in-zurich'
 	OVERWRITE_EXISTING_OUT_FILES=TRUE INPUT_SUBFOLDER='original-work/life/learning-german-in-zurich' LANGUAGES=jp ruby bin/build-all.rb
 
+new-article:
+	OVERWRITE_EXISTING_OUT_FILES=TRUE INPUT_SUBFOLDER='medium/2024-11-11-geminocks-translating-my-hugo-site/' LANGUAGES=it ruby bin/build-all.rb
+
 build-all-cached:
 	MAX_ARTICLES='500' ruby bin/build-all.rb
 

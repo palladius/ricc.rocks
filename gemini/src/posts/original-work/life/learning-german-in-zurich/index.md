@@ -86,6 +86,14 @@ I've heard a lot of rumors which I'm going to write here:
 
 * It's much easier to get your certificate in Zurich than in small mountain towns where the local shaman vets you and decide if you fit in with the culture (I love fondue, cook [Cuchaule](https://cookidoo.ch/recipes/recipe/fr-CH/r434981) and can pronounce *Cuchicaschli*, and called the police on a noisy neighbour - hello?!?)
 
+On 13 nov 24, I received a letter where I thought I'd be convoked for my exam:
+
+![presumed final exam convocation letter](image.png)
+
+However, after a Google translate, I realized it was simply an invitation to please try and apply to become a Swiss citizen!
+
+Sorry, Stadt Zurich, I was too fast!
+
 #  5. The aftermath, sorry! .. after German
 
 TBD
