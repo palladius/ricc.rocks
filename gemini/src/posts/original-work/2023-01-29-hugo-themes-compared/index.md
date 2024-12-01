@@ -26,11 +26,12 @@ images:
 - zzo-screenshot.png
 # tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
 thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
+carlessian:
+  main_class: blog
+  priority: 7
 ---
 
 ![image](clone-mtg-vintage.png)
-
-
 
 I tried many modules this weekend. Note that different themes have different words and key/vals in the above stanza so I better not confuse them.
 For instance, this page has a `featured_image` which only works with Ananke, and a `image` which probably works with other themes.
@@ -104,16 +105,10 @@ Resume Page
 Presentation Page
 ```
 
-
-
-
 ## Bootstrap
 
 * Image docs: https://hbs.razonyang.com/v1/en/docs/image-processing/#resizing-images Plenty of good stuff here, also I found a bug and the guy fixed it in 24h - AMAZING.
 * Gallery docs: https://hbs.razonyang.com/v1/en/docs/shortcodes/gallery/
-
-
-
 
 # Old stuff
 

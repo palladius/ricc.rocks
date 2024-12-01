@@ -23,6 +23,9 @@ keywords:
 #- zzo-screenshot.png
 # tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
 #thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
+carlessian:
+  main_class: family
+  priority: 7
 ---
 
 TODO embed local video:  2023-02-03 Capriola as a Service.mp4

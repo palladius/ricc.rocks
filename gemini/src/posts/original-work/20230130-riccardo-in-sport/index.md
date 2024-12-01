@@ -20,6 +20,11 @@ Categories:
 - GDoc
 images:
 - /images/riccardo/riccardo-smiles-swim-ironman.jpeg
+carlessian:
+  main_class: blog
+  priority: 5 # super relevant but still not complete
+  completion: 20 # pct
+
 ---
 Since I was a kiddo, I thouroughly sucked at sport.
 

@@ -39,6 +39,9 @@ images:
 # - "scuba--ks67tanqqui.jpg"
 # - "scuba--n82h94fc7s.jpg"
 # - "scuba--tnomzk5zfnr.jpg"
+carlessian:
+  main_class: blog
+  priority: 9
 ---
 Self: [https://medium.com/p/cf851f0f588/edit](https://medium.com/p/cf851f0f588/edit)
 Status: draft

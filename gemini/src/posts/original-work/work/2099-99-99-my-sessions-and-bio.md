@@ -2,6 +2,9 @@
 # The idea here is to have gemini copy it to
 title: "🗣️ My sessions and 🇮🇹🇮🇪🇨🇭 Bio"
 canonicalURL: https://github.com/palladius/my-sessions-and-bio
+carlessian:
+  main_class: work # Google Work
+  priority: 9
 ---
 
 Original doc: https://github.com/palladius/my-sessions-and-bio

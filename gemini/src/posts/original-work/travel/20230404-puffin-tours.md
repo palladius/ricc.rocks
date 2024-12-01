@@ -7,8 +7,9 @@ pinned: true
 #image: /en/posts/travel/20230210-madeira/Riccardo Heapster col Mac.png
 image: /gallery/midjourney/PalladiusPacans_minimalist_japanese_abstract_art_of_puffin_tour_d5b142a3-27bb-4fa2-ab29-7dfba0e8138d.png
 viewportSize: "normal" # https://zzo-docs.vercel.app/zzo/userguide/viewportsize/
-
-
+carlessian:
+  main_class: family # Google Work
+  priority: 8
 tags:
 - travel
 - puffin

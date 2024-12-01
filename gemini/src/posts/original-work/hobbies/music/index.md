@@ -14,6 +14,9 @@ tags:
 categories:
 - music
 - hobbies
+carlessian:
+  main_class: blog
+  priority: 8
 ---
 
 ![image](/gallery/midjourney/PalladiusFigata_Floor_plan_sketch_watercolor_style_grand_piano_7023fc60-189f-4f02-83dd-b7df0974f25e.png)

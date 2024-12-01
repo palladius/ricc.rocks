@@ -11,6 +11,10 @@ tags:
 - italy
 - ricc
 - me
+carlessian:
+  main_class: all
+  priority: 8
+  completion: 100
 ---
 
 *TODO(Ricc): This is currently under `posts/`. You ned to add the logic to copy this under ZZO/{LANG}/about/ . Maybe you could add a carlessian-geminocks-target-folder but it might add too much to complexity.*
@@ -68,4 +72,3 @@ Alternative sites:
 * Ananke: <https://hugo-ananke-vecchiume.netlify.app/>
 * Bootstrap: <https://hugo-bootstrap-ricc-rocks.netlify.app/>
 * Comparison symlink: <https://hugo-bootstrap-ricc-rocks.netlify.app/posts/posts/2023-01-29-symlinked-themes-compared.d/>
-

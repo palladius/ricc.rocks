@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/importz'
+require 'dotenv/load'
+
+DRY_RUN = false
+#lang = ARGV[0]
+MAX_ARTICLES ||= ENV.fetch('MAX_ARTICLES', '100000').to_i # == 'true'
+INPUT_BASE_FOLDER ||= ENV.fetch('INPUT_BASE_FOLDER', 'src/posts') # 'src/posts'
+
+puts(Rainbow("Let me show you Ricc Articles, a 2024 project..").green)
+puts(Rainbow("Riccardo showing a reasoned list of articles to publish on your many HuGo sites :)").yellow)
+
+#.env:INPUT_BASE_FOLDER=
+iterate_through_carlessian_articles(
+    input_base_folder: INPUT_BASE_FOLDER,
+    max_articles: MAX_ARTICLES
+)

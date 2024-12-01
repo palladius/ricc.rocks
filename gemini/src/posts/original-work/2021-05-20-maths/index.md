@@ -26,6 +26,9 @@ keywords:
 # tranquilpeak-only: https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#image
 #thumbnailImage: https://www.etrurio.com/wp-content/uploads/2019/12/pistacchi-scaled.jpg
 # Questo non viene bene in japano. Mette una icona dopo l'apice dx.
+carlessian:
+  main_class: blog
+  priority: 9
 ---
 
 I have made a few video on Maths:

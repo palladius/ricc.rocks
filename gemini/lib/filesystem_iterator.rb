@@ -5,7 +5,60 @@ def sanitize_path(path:, removed_leading_slah: false)
   path.gsub(/\/+/, '/')
 end
 
+# classify
+def iterate_through_carlessian_articles(
+  input_base_folder:,
+  max_articles:,
+  extensions: ['zzo'],
+  dry_run: true,
+  show_file_list: false
+)
+  puts("iterate_through_carlessian_articles(): input_base_folder=#{input_base_folder}, max_articles=#{max_articles}")
+  input_folder = input_base_folder
+  puts("iterate_through_carlessian_articles(): DRYRUN enabled! ") if dry_run
+  #exit 42
+  n_articles = 0
+  n_articles_errors = 0
+  # Iterate through each extension and language
+#  extensions.each do |extension|
+
+    # Iterate through input files
+      Dir.glob("#{input_folder}/**/*").each do |file|
+        # Skip markdown files and directories
+        next if File.directory?(file)
+
+        # Determine output file path
+        #output_file = output_folder + file.gsub(input_base_folder, '')
+
+        # Create output directory if needed
+        #FileUtils.mkdir_p(File.dirname(output_file))
+
+        if file.end_with?('.md')
+          file_stats = aruspicami(file: )
+          puts("📜 markdown file: #{Rainbow(file).cyan}. file_stats: #{file_stats}") if show_file_list
+          print_fancy_file_stats(file:, file_stats:)
+          n_articles += 1
+        else
+          # Copy file to output folder
+          deb("NOT MD => just ignoring #{file}..")
+          #FileUtils.cp(file, output_file) unless dry_run
+        end
+      end
+
+
+  puts("#Articles n_articles_errors✅ correctly parsed: #{n_articles}")
+  puts("#Articles 🙈 with errors: #{n_articles_errors}")
+
+  return { n_articles: , n_articles_errors: }
+end
+
+
+
+# I want to create a new version of iterate_through|() which takes same inputs, but for each files manages with a configurable callback. Please copy code in iterate_through() and for each file call a certain callback we add in argument. Lets call it iterate_through_with_callback()
+
+
 # DryRun. If enabled, doesnt copy files, doesnt do Gemini translation but it does creat folders.
+# Iterates trough a list of files with the intention to copy them to ZZO under EN/FR/ES and so on...
 def iterate_through(
     #input_folder:,
     input_base_folder:,
@@ -40,8 +93,6 @@ def iterate_through(
 
         # Determine output file path
         output_file = output_folder + file.gsub(input_base_folder, '')
-#        puts("output_file: #{output_file}")
-#        exit 42
 
         # Create output directory if needed
         FileUtils.mkdir_p(File.dirname(output_file))
