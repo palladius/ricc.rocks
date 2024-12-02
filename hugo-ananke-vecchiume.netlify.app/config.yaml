@@ -58,7 +58,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "PaperMod Ricc Blog (obsolete)"
+    text: "PaperMod Ricc Blog (obsolete but resuscitated)"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -85,6 +85,12 @@ params:
     Content: |
       Welcome to Riccardo 💛 blog in PaperMod! Note this site is still **under construction** 🚧:
       -> [more info](https://github.com/palladius/ricc.rocks)
+      Ma porca pupazza, is it Ananke or PaperMod?
+
+      Seems like this is Papermod but the web page is still some sort of ananke (hugo-ananke-vecchiume.netlify.app/
+      in source)?
+
+      Touched on 2dec24 #riccping
 
   socialIcons:
     - name: twitter
