@@ -26,3 +26,5 @@ Hugo is for people who want to hand code their own website without worrying abou
 Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
 
 Learn more and contribute on [GitHub](https://github.com/gohugoio).
+
+Small update on 2024-12-02 #riccping

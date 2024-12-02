@@ -22,6 +22,8 @@ draft: false
 
 *Last updated: Riccardo updated this on 2024-11-03*
 
+Small update on 2024-12-02 #riccping
+
 ## img
 
 `/img/2022-10-19-riccardo-tartaruga.jpg`

@@ -26,3 +26,6 @@ Now it's... {{< time.inline >}}{{ now }}{{< /time.inline >}}
 
 
 TODO
+
+
+Small update on 2024-12-02 #riccping
