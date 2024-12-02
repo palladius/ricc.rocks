@@ -14,9 +14,18 @@ Some vibes:
 
 * ZZO: https://ricc.rocks/ (default with Gemini in multilanguage).
 * Bootstrap: https://hugo-bootstrap-ricc-rocks.netlify.app/ (restored on 3nov24). Note there's a smimilarly named Theme: [Hugo Bootstrap Theme](https://github.com/filipecarneiro/hugo-bootstrap-theme) with 93 stars
-*
 
-# Ciao da Riccardo
+## Non-ZZO Hugo sources
+
+* [main]  https://ricc.rocks/ . Deploys to: see below
+* https://github.com/palladius/jekyll-fulmine. Deploys to:
+     * Minimalistic: https://spontaneous-travesseiro-10cf09.netlify.app/
+     * Super cool: https://meek-heliotrope-a05c2d.netlify.app/
+* Jekyll: https://github.com/palladius/palladius.github.io SREccardo
+    * https://jekyll-sreccardo.netlify.app/ (broken)
+    * http://blog.palladi.us/ (working)
+
+# ZZO Hugo themese
 
 Self: https://github.com/palladius/ricc.rocks
 
