@@ -1,5 +1,5 @@
 ---
-title: "My first Post in a bundle/folder"
+title: "Riccardo first Post in a bundle/folder"
 date: 2023-01-29T20:45:18+01:00
 draft: true
 tags: [test, image]
@@ -18,3 +18,5 @@ Ciao a tutti - img doesnt work..
 ## prova imagez
 
 <!-- ![riccardo-turtle](/imagez/riccardo-turtle.jpg) -->
+
+Small update on 2024-12-02 #riccping

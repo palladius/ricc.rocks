@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo Fai come il fratello che hai dimenticato di checkare ma accetta una dir in ARGV[1]. cosi puoi spulciare N hugo folders. Se poi fai --auto verifichi tutte le dir e fa uno smart auitodetect di ...
+# 1. is it a hugo filer? If yes, spulcha folder1/ e cosi via.
