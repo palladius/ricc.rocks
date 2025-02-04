@@ -1,9 +1,11 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "Using Gemini to write code in 2025.."
+#########################################################
+# Article note: this was written at manhouse
+#########################################################
+title: "Using 'gemini-exp-1206' model to write code as a pro in 2025.."
+subtitle: TODO subtitle
 date: 2025-02-03T12:17:43+01:00
-#draft: false
+draft: false
 #image: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png
 tags:
 - gemini
@@ -21,14 +23,75 @@ This article is about sharing lessons learnt in my journey as the **perfect lazy
 
 ## Using Gemini to write code
 
-I've been prompting gemini for a while, and started copying my prompts for future reuse
+I've been prompting gemini for a while, and started copying my prompts for future reuse.
 
-## 🧐 Prompt 1: ???
+For this article, I'm using the latest spectacular `gemini-exp-1206`:
+
+![alt text](image-1.png)
+
+# Prompt Idea 1: Build Python Agent with LangChain
+
+This is my first idea: show me what can be done with langchain
+
+## 🧐 Prompt 1: Build Python Agent with LangChain
 
 
-## 🧐 Prompt 2: code agent
+> I would like to create a python agent using langchain and gemini. The code should be4 modular (smaller files under lib/). The agent might inspect code in a local folder and do things given a generic prompt like """identify TODOs , propose code changes based on TODOs and create unit tests""".
+> The agent should be able to:
+> 1. take an input prompt from CLI
+> 2. start doing stuff asynchronously.
+> 3. Come back when done in STDOUT, but also create hidden files in output based on its search. Something like `.agent-findings.md` but also create new files which can't be confused from user files. Example: I write main.py , agent writes "main_test._agent_.py" so we're sure the agent will skip its own files and wont create recursively files based on those.
+>
+> Can you help me draft it?
 
-Second prompt. I w anted
+## Answer
+
+Okay, I can help you draft a Python agent using LangChain and Gemini that meets your requirements. Here's a modular structure and code outline, broken down into files under a lib/ directory:
+
+Project Structure:
+
+```bash
+agent_project/
+├── lib/
+│   ├── core.py        # Main agent logic, orchestration
+│   ├── tools.py       # Custom tools for LangChain (code inspection, file creation)
+│   ├── prompts.py      # Prompt templates for Gemini
+│   ├── utils.py       # Utility functions (file handling, naming, etc.)
+├── main.py         # CLI entry point
+└── requirements.txt
+```
+
+Code Outline:
+
+1. `lib/core.py` (Main Agent Logic):
+
+[...]
+...
+
+## Conclusions
+
+This didnt perform great.
+
+Negative:
+
+* Langchain didnt really work. Wanted to use gemini 1.0 and the code for LC+GEM didnt really work.
+* it implemented TODOs as code, whereas this should have been more fluid.
+
+Positive
+
+* Code outline is awesome.
+* However, plenty of lessons learnt and I can reuse part of the prompt!
+
+# Prompt Idea 2: Build a Gemini-Powered Code Analyzer
+
+
+## 🧐 Prompt 2: Build a Gemini-Powered Code Analyzer
+
+I wanted to be able to create an extensible, multi-capability, file utility powered by Gemini. It should be able to
+analyze code, know diffs thanks to git, and also know if files are OLD so my diabolic idea is to give it my 104 git repo folder
+and tell me "this code is obsolete -> forget about it" vs "this code is awesome and was last edited a few months ago". My diabolic
+plan involves also, somdeay, to create a standard, maintainable, `blueprint.yaml` which i can parse with things that a robot can do better than me like:
+name and author of the project, abstract of what it does, last commit date, last file date, ...
 
 ```markdown
 I would like to create a python agent using gemini (and langchain framework if needed). The code should be modular in implementation (smaller files under lib/, capabilities under lib/capabilities/ ). The agent might inspect code in a local folder and do things given a generic prompt like """identify TODOs , propose code changes based on TODOs and create unit tests""". The agent should have these core capabilities (but also be extensible):
@@ -47,7 +110,55 @@ Can you help me draft it?
 
 ### Gemini output
 
-I really
+I really liked the orderly outline it produced in a few seconds:
+
+File outline:
+
+```bash
+# Folder outline
+gemini-agent/
+├── main.py          # Main entry point for the agent
+├── agent.py         # Core agent logic
+├── config.yaml      # Configuration file (input for the agent)
+├── requirements.txt # Python dependencies
+├── lib/             # Core libraries and utilities
+│   ├── __init__.py
+│   ├── utils.py     # General utility functions (e.g., file I/O, logging)
+│   └── async_utils.py # Asynchronous operation handling
+└── lib/capabilities/ # Specific capabilities of the agent
+    ├── __init__.py
+    ├── base.py      # Abstract base class for capabilities
+    ├── code_inspection.py
+    ├── file_inspection.py
+    └── git_inspection.py
+```
+
+I also asked him to give me a configurable YAML so he writes down great default ideas for me, which I then can easily change.
+
+```yaml
+# agent2_config.yaml
+output_folder: "out/"
+
+capabilities:
+  - name: code_inspection
+    folder: "./my_code_project"
+    prompt: "Identify all TODOs in the code and suggest improvements."
+    output_subfolder: "cap1-code-inspection"
+
+  - name: file_inspection
+    folder: "./my_code_project"
+    output_subfolder: "cap2-file-inspection"
+
+  - name: git_inspection
+    folder: "./my_code_project"
+    prompt: "Analyze modified files against the main branch. Suggest a commit message."
+    output_subfolder: "cap3-git-inspection"
+    base_branch: "main" # Optional: Specify the base branch for comparison
+```
+
+then Gemini starts to blurb out all the files, which is handy to cut and paste 1by 1:
+
+![alt text](image.png)
 
 ## 2 to 3 lesson learnt
 
@@ -82,3 +193,8 @@ print(response.text)
 * Ask Gemini to break down the mono-file into **smaller pieces**. This will work well with a yet-incredibly high context
   window of 1MB - and when the window fails you, you can still paste the small part of it and gemini will pick it up likely
   from where you left.
+
+
+## ricc TODOs
+
+* Add code from `~/git/blahblahpoo/20250201-code-agents` to github.
