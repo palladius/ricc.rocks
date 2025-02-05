@@ -186,6 +186,83 @@ response = client.models.generate_content(
 print(response.text)
 ```
 
+# Third prompt: a Gemini CLI
+
+Note that somebody did this already :)
+
+## prompt
+
+
+I would like to create a python CLI utility which leverages Gemini to create images, videos, and stuff. We'll call it `gemicli`.
+
+It can be invoked with these commands:
+
+$ gemicli images create [--options ..] [--model GEMINI_MODEL] --prompt "a cute little avocado" # Calls Gemini APIs to create an image with Imagen
+$ gemicli videos create [--options ..] [--model GEMINI_MODEL] --prompt "a cute little puffin emerging from a channel in Venice" # Calls Gemini APIs to create a video with Veo.
+$ gemicli stories create [--options ..] [--model GEMINI_MODEL] [--language=it] --prompt "a puffin who wants to be a firefighter in Alice in Wonderland" # Calls Gemini APIs to create a TXT story in the chosen language.
+$ gemicli models list  [--options ..]  #  Shows all available models, like gemini-1.5-pro, gemini-1.5-pro, gemini-2.0.
+
+
+The code should be modular in implementation (all files except main.py  under lib/, and capabilities should follow a smart readable pattern, like:
+
+* `gemicli images create` should be under `lib/images/create.py` or simply a method under `lib/image.py` (in this case the class would be singularized).
+
+I also want a file under `./etc/sample-prompts.yaml` containing a few sample images creation for images and videos, so I can keep a library of smart prompts.
+A `--save` option will save the image/video/story
+
+Every image (.png), video (.mpg) or story (.md) should be saved as a file in the OUTPUT_DIR directory (default to `out/`).
+
+File naming should be consistent and deterministic with prompt, and created in this way:
+
+* take the prompt and transforms " " in "_" and remove strange characters. Chomp to max 50 chars.
+* Take a 8char part of a hash of the prompt string
+* if the APi produces more than 1 (eg image API should create 4), add _ and number at the end.
+
+So for example, ```gemicli images create --prompt "a cute little avocado" ``` should create 4 images like this:
+
+* "out/a_cute_little_avocado_fa29548b_1.png"
+* "out/a_cute_little_avocado_fa29548b_2.png"
+* "out/a_cute_little_avocado_fa29548b_3.png"
+* "out/a_cute_little_avocado_fa29548b_4.png" ,
+
+presuming the hash of the prompt string is "fa29548b".
+
+Finally, since GenAI is expensive and I want to be able to find a trace of what I've created, I would also like to have,
+at the end of every execution, a YAML file called similarly:
+
+* "out/a_cute_little_avocado_fa29548b.gemicli_out.yaml".
+
+This file should contain:
+* all the Gemini output JSON (transformed to YAML)
+* program version
+* original prompt (for ease of reproduction)
+* all CLI options (for ease of reproduction)
+* hostname
+* timestamp of execution
+
+Can you help me draft this code?
+
+## output
+
+
+Project Structure:
+
+```bash
+gemicli/
+├── main.py          # Main CLI entry point
+├── lib/
+│   ├── __init__.py
+│   ├── utils.py     # Shared utility functions (hashing, filename creation, etc.)
+│   ├── image.py     # Image generation logic
+│   ├── video.py     # Video generation logic
+│   ├── story.py     # Story generation logic
+│   └── models.py    # Model listing logic
+├── etc/
+│   └── sample-prompts.yaml # Sample prompts for inspiration
+├── out/            # Default output directory (create this)
+└── requirements.txt # Python dependencies
+```
+
 
 
 # Lessons learnt
@@ -193,6 +270,10 @@ print(response.text)
 * Ask Gemini to break down the mono-file into **smaller pieces**. This will work well with a yet-incredibly high context
   window of 1MB - and when the window fails you, you can still paste the small part of it and gemini will pick it up likely
   from where you left.
+* If he gets it right in the first 2-3 iterations, good. If not, you have two options:
+    * Fix the code yourself (turn Gemini off)
+    * Fix the prompt with what gemini got wrong and restart from scratch. Don't get too attached to the code. `mkdir` another folder,
+      add a `README.md` with the lesson learnt, copy the prompt from other README's `# PROMPT` and iterate.
 
 
 ## ricc TODOs
