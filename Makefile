@@ -15,6 +15,9 @@ modules-update:
 	hugo mod get -u
 #	cd themes/PaperMod/ && git pull
 
+status:
+	git submodule status
+
 modules-show:
 	hugo mod graph
 modules-optimize:

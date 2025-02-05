@@ -17,6 +17,9 @@
 [submodule "themes/hugo-theme-bootstrap"]
 	path = themes/hugo-theme-bootstrap
 	url = https://github.com/razonyang/hugo-theme-bootstrap
+[submodule "themes/hugo-bootstrap-theme"]
+	path = themes/hugo-bootstrap-theme
+	url = https://github.com/razonyang/hugo-theme-bootstrap
 # proviamo a meterlo qui con la cosa corretta.
 [submodule "hugo-bootstrap.ricc.rocks/themes/hugo-theme-bootstrap"]
 	path = hugo-bootstrap.ricc.rocks/themes/hugo-theme-bootstrap
