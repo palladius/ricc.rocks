@@ -11,3 +11,10 @@ status:
 #[group zzo]
 zzo-status:
     echo sobenme
+
+
+#[group git-submodule]
+git-submodule-status:
+	git submodule status
+
+gsm-status: git-submodule-status
