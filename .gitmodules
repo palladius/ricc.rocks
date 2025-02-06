@@ -14,9 +14,9 @@
 	url = https://github.com/adityatelange/hugo-PaperMod.git
 # hugo-theme-bootstrap rotto
 # 6:51:30 PM: Failed during stage 'preparing repo': Error checking out submodules: fatal: No url found for submodule path 'hugo-bootstrap.ricc.rocks/themes/hugo-theme-bootstrap' in .gitmodules
-[submodule "themes/hugo-theme-bootstrap"]
-	path = themes/hugo-theme-bootstrap
-	url = https://github.com/razonyang/hugo-theme-bootstrap
+; [submodule "themes/hugo-theme-bootstrap"]
+; 	path = themes/hugo-theme-bootstrap
+; 	url = https://github.com/razonyang/hugo-theme-bootstrap
 [submodule "themes/hugo-bootstrap-theme"]
 	path = themes/hugo-bootstrap-theme
 	url = https://github.com/razonyang/hugo-theme-bootstrap
