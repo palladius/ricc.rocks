@@ -11,3 +11,4 @@ public/
 .ondir.was.here.touch
 .git-privatize
 .env
+private
