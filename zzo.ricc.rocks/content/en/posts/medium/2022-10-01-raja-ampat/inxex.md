@@ -2,8 +2,9 @@
 # TMP doc: https://docs.google.com/document/d/1phYcR_fCAa0_-lEAoC7k0nu_2U8Emw67CUfpj98FiAM/edit?tab=t.0#heading=h.j6stero17b2v
 # TMP Medium: https://medium.com/p/cf851f0f588/edit
 layout: zzo_content  # Use the ZZO content layout
-title: Scuba Diving in Raja Ampat and a Coding Adventure  # Update title
+title: Scuba Diving in Raja Ampat and a Coding Adventure
 date: 2022-10-01T00:00:00
+draft: true
 ---
 
 **My Scuba Diving Experience in Raja Ampat**

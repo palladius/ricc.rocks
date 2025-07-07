@@ -10,14 +10,16 @@ tags: [GCP, pulumi, CloudBuild, Medium]
 canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 # ANANKE :)
 featured_image: /images/gohugo-default-sample-hero-image.jpg
-image: /images/mtg-clone.jpg
+#image: "/images/mtg-clone.jpg"
+image: /en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/image.png
 ---
 
-The Original article here:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
+The Original article on Medium:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 
 {{< button href="https://www.youtube.com/watch?v=5jhWVNN8P_M" width="100px" height="36px" color="primary" >}}watch video{{< /button >}}
 
 {{< featuredImage >}}
+
 
 A couple of weeks ago, I fell in love with **Pulumi**. it has everything I wanted from Terraform: easy to set up, easy config management, a nice UI for free, and most importantly… language Support! Pulumi is the best invention after Buffalo Pizza and has only a problem.. [no Ruby support](https://github.com/pulumi/pulumi/issues/132) :/
 

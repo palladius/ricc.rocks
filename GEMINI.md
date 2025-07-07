@@ -35,3 +35,12 @@ We can match that timestamp to identify the git commit which broke it.
 Whenever you do soem research and find anything (wether its a good thing or a cul de sac), write your findings
 (succintly!) under `AI_FINDINGS.md`.
 When you read this, you'll first read `AI_FINDINGS.md` to get up to speed, then update it with new findings.
+
+## Feedback loop
+
+* I will run `make run` under ZZO folder for you.which runs Hugo on port 1313.
+* You can invoke commands like "curl http://localhost:1313/en/" ,
+* or more complex endpoints like: "curl http://localhost:1313/en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/"
+* Note that an article pointing to this URL: http://localhost:1313/en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/"
+  can be found in files here: `zzo.ricc.rocks/content/en/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python`. So the
+  mapping is quite deterministic.
