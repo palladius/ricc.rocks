@@ -9,8 +9,7 @@ tags: [GCP, pulumi, CloudBuild, Medium]
 # paperMod
 canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 # ANANKE :)
-featured_image: /images/gohugo-default-sample-hero-image.jpg
-#image: "/images/mtg-clone.jpg"
+#featured_image: /images/gohugo-default-sample-hero-image.jpg
 image: /en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/image.png
 ---
 

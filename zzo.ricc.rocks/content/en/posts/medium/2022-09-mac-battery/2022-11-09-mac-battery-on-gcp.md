@@ -1,30 +1,24 @@
 ---
-# type: docs
 title: "My Mac’s battery🔋 on Google Cloud Monitoring — send SMS if low 🪫"
 date: 2022-11-09T11:48:51+01:00
-featured: false
-draft: false
+#featured: false
+#draft: false
 comment: true
-toc: true
-reward: true
-pinned: false
-carousel: false
-series:
+#toc: true
+#reward: true
+#pinned: false
+#carousel: false
+#series:
 categories: [ GCP, Work ]
 tags: [GCP, macbook, SMS, pager, medium, geminocks , AppDev, monitoring, Alerts, CloudMonitoring ]
 images:
 - /images/articles/london-airport.jpg
-meta_image: featured-sample.jpg # This is for ZZO
-#- /images/battery-life-cli.webp
-#- /images/london-airport.jpg
 # original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
 ---
-
 [See original article on Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)
 
 <!-- this works: ![Image Caption](/images/riccardo.jpg "Use Image Title as Caption aeroporto") -->
 ![Image Caption](/images/articles/london-airport.jpg "[HUGO] Taking a train to City Airport, my fav airport in London")
-
 
 This article shows how you can easily inject a generic key/value into Google Cloud Monitoring and set up alerts on it. I use it to alert on disk space, and now also low battery!
 
@@ -89,14 +83,11 @@ The best part of this is, not only I get my battery life, it also gives me my ba
 
 There you go, let’s try it out, let me just remove the cable so you dont get a boring 100%.
 
-![Image Caption](/images/articles/battery-life-cli.webp "Here is my Battery Life and my Battery health")
+![Image Caption](/en/posts/medium/2022-09-mac-battery/battery-life-cli.webp "Here is my Battery Life and my Battery health")
 
-
-![Battery level is 98%. Unfortunately 14% of my battery potential seems gone 😢](battery-life-98.png)
 
 *Battery level is 98%. Unfortunately 14% of my battery potential seems gone 😢*
 
-Battery is 98%, yay! Unfortunately seems like ~14% of my battery is gone. Luckily I don’t pay for its repair :)
 
 ## Step 2: push this metric to the ☁ ️(GCP)
 
@@ -173,7 +164,7 @@ main()
 Ok! Now let’s try it out.
 
 
-![Created the timeseries ‘prova’ (test in italian) with meaningful number 123! Wow!](image.png)
+![Created the timeseries ‘prova’ (test in italian) with meaningful number 123! Wow!](/en/posts/medium/2022-09-mac-battery/image.png)
 
 *Caption:* Created the timeseries ‘prova’ (test in italian) with meaningful number 123! Wow!
 
@@ -200,7 +191,7 @@ done
 
 This script requires a project_id in ARGV, then it does the work for you, knowing the fields which are useful from macbook-battery are coming from values 3 and 5 (yes, a JSON encoding/parsing would be less error prone!). Let’s call it:
 
-![Meanwhile I went home, and launched this on my other M1 Mac. Always, boringly, attached to the current. Destined to an infinite life between 99 and 100%. Wait — this Mac, although charged, is on hold until 80%. Maybe cells optimization? I’m impressed.](image-1.png)
+![Meanwhile I went home, and launched this on my other M1 Mac. Always, boringly, attached to the current. Destined to an infinite life between 99 and 100%. Wait — this Mac, although charged, is on hold until 80%. Maybe cells optimization? I’m impressed.](/en/posts/medium/2022-09-mac-battery/image-1.png)
 
 Caption: Meanwhile I went home, and launched this on my other M1 Mac. Always, boringly, attached to the current. Destined to an infinite life between 99 and 100%. Wait — this Mac, although charged, is on hold until 80%. Maybe cells optimization? I’m impressed.
 
@@ -223,14 +214,15 @@ Let’s now head to the Metrics Explorer here and check a fake GCE metric:
 * Go to https://console.cloud.google.com/monitoring/metrics-explorer
 * In “Select a metric” > Type “Battery” and see the options fall from many to two:
 
-![Here are my two metrics, CamelCased too!](image-2.png)
+![Here are my two metrics, CamelCased too!](/en/posts/medium/2022-09-mac-battery/image-2.png)
 
 Caption: Here are my two metrics, CamelCased too!
 
-# Select **BatteryLife**. This should take you to a nice dashboard (possibly empty if you just created this — be patient). Use the time control to go back in time or zoom until you get the desired view.
-# Since this signal comes from (possibly) multiple Macs, select “group by” -> **hostname**. You could see something like this:
 
-![See battery for last day. My Mac (3) at home is always plugged in, the one at work (42) goes to meeting rooms from time to time. To be honest i unplugged it twice just to get a nice screenshot — cheater!](image-3.png)
+* Select **BatteryLife**. This should take you to a nice dashboard (possibly empty if you just created this — be patient). Use the time control to go back in time or zoom until you get the desired view.
+* Since this signal comes from (possibly) multiple Macs, select “group by” -> **hostname**. You could see something like this:
+
+![See battery for last day. My Mac (3) at home is always plugged in, the one at work (42) goes to meeting rooms from time to time. To be honest i unplugged it twice just to get a nice screenshot — cheater!](/en/posts/medium/2022-09-mac-battery/image-3.png)
 
 Caption: See battery for last day. My Mac (3) at home is always plugged in, the one at work (42) goes to meeting rooms from time to time. To be honest i unplugged it twice just to get a nice screenshot — cheater!
 
@@ -255,7 +247,7 @@ Now let’s get an alert when the battery is below 14% (42 divided by π).
 * click Create Policy
 * Finally, configure your **Notification Channels** ([documentation](https://cloud.google.com/monitoring/support/notification-options)), where I’ve set up previously my email and swiss phone:
 
-![What life would be without emojis?](image-4.png)
+![What life would be without emojis?](/en/posts/medium/2022-09-mac-battery/image-4.png)
 
 Caption: What life would be without emojis?
 
@@ -263,7 +255,7 @@ Caption: What life would be without emojis?
 * [optional] You can fill in the Documentation like a Playbook. I always try to write something meaningful as part of SRE methodology (“no alert is good if it’s not actionable”). The action here is to attach your Mac to a power source.
 * Finally review the values and click Review Alert:
 
-![Example graph on my Mac](image-5.png)
+![Example graph on my Mac](/en/posts/medium/2022-09-mac-battery/image-5.png)
 
 ## Conclusions
 
@@ -271,16 +263,17 @@ In this brief article, we’ve seen how you can script a meaningful metric from 
 
 It’s very easy to slice and dice these values (in this case aggregate by hostname), then dashboard and alert on them.
 
-![plug it to have battery or unplug it to see a nice graph?](image-6.png)
+![plug it to have battery or unplug it to see a nice graph?](/en/posts/medium/2022-09-mac-battery/image-6.png)
 
 Caption: plug it to have battery or unplug it to see a nice graph?
 
 
 The sky is just the limit now. You can do something silly like counting your Chrome Tabs and alert when they’re more than 42 with some silly messages like “A message from the Galaxy: restart Chrome!”
 
-```>bash
+```bash
 brew install chrome-cli # only-once install
-PROJECT_ID=my-project-123 gcp-write-metric mac-chrome-cli-ntabs $(chrome-cli list tabs | wc -l)
+export PROJECT_ID=my-project-123
+gcp-write-metric mac-chrome-cli-ntabs $(chrome-cli list tabs | wc -l)
 ```
 
 *Note: in the code I use “gce_instance” when I should be really using “global” metric ([docs](https://cloud.google.com/monitoring/api/resources)). I loved GCE Instance as it already has hostname and GCP zone baked in, but it’s incorrect (I tell GCP that’s a VM in the cloud, which is not). New code to support this is being developed in this amazing script: 🌸 [gcp-write-metric-done-well](https://github.com/palladius/sakura/blob/master/bin/gcp-write-metric-done-well)*
