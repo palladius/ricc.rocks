@@ -1,3 +1,21 @@
+---
+title: "Alessandro learns a few languages"
+date: 2022-04-14T11:48:51+01:00
+#featured: false
+#draft: true
+#comment: true
+categories: [ Family ]
+#tags: [GCP, macbook, SMS, pager, medium, geminocks , AppDev, monitoring, Alerts, CloudMonitoring ]
+image: /en/posts/family/alessandro_tandem.jpg
+---
+Alessandro is learning his fourth language this year! Reading and pronouncing all those sounds, dictongues , and all those vowels together can be off putting.
+
+![Alessandro coming out of school](/en/posts/family/alessandro_tandem.jpg "Alessandro collecting his stuff after school")
+
+Hence, I've asked Gemini to create a reading help, by language.
+
+## Gemini answer
+
 Okay, this is a great way to help your son! Learning multiple languages at once is fantastic, but yes, the different ways letters combine and sound can be tricky.
 
 Here are four markdown tables, one for each language, focusing on some common pronunciation challenges for young learners. The phonetic descriptions are simplified approximations, often comparing to English sounds where possible, as precise phonetic symbols (IPA) might be too complex at this stage.
