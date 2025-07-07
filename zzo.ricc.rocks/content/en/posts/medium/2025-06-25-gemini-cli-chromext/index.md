@@ -1,5 +1,5 @@
 ---
-title: "Vibe coding my first Chrome Extension with gemini-cli !"
+title: "Vibe coding my first Chrome Extension with Gemini CLI"
 date: 2025-06-25T14:22:07+02:00
 draft: false
 tags: [ "gemini", "chromext",  "gemini-cli", "generative-ai" ]
