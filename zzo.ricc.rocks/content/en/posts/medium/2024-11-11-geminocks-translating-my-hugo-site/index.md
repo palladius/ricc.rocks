@@ -8,6 +8,7 @@ read_time: 3  # Minutes
 # tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
 Tags: [hugo, netflify, blog, gcp, googlecloud, gemini, geminocks ]
 #canonicalURL: https://medium.com/@palladiusbonton/todo
+image: /en/posts/medium/2024-11-11-geminocks-translating-my-hugo-site/image-2.png
 ---
 
 **Note**: this is my first experiment: first I write in Hugo/markdown, and *then* I port to Medium!
