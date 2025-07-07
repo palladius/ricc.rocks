@@ -25,3 +25,9 @@ gsm-update-all:
 gsm-update-funge:
     verde "Riccardo read: https://stackoverflow.com/questions/5828324/update-git-submodule-to-latest-commit-on-origin"
     git submodule update --remote --merge
+
+test:
+    cd zzo.ricc.rocks && make test
+
+curl-localhost:
+    curl http://localhost:1313/en/

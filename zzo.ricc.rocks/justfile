@@ -1,0 +1,7 @@
+
+# TODO : import from Makefile..
+list:
+    @echo "1. just -l. "
+    just -l
+    @echo "2. More in Makefile"
+    cat Makefile

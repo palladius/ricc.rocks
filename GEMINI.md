@@ -5,6 +5,7 @@ Each folder uses a different Hugo skin.
 
 The only one in prod is:
 * PROD: `zzo.ricc.rocks/`: a hugo website: `https://ricc.rocks/`
+* ZZO theme is quite old, unfortunately: https://github.com/zzossig/hugo-theme-zzo , hasnt been updated in 4 years.
 
 
 All repos are handled by Netlify, which means that when

@@ -3,9 +3,9 @@
 # Article note: this was written at manhouse
 #########################################################
 title: "Using 'gemini-exp-1206' model to write code as a pro in 2025.."
-subtitle: TODO subtitle
+subtitle: 'TODO(ricc): finish writing this beauty'
 date: 2025-02-03T12:17:43+01:00
-draft: false
+draft: true
 #image: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png
 tags:
 - gemini
