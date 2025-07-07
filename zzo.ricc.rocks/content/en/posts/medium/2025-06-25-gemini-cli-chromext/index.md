@@ -1,9 +1,10 @@
 ---
-title: "Vibe coding my first Chrome Extension with gemini-cli!"
+title: "Vibe coding my first Chrome Extension with gemini-cli !"
 date: 2025-06-25T14:22:07+02:00
 draft: false
-tags: [ "gemini", "chromext", "gemini-cli", "generative-ai" ]
-categories: [ "technology" ]
+tags: [ "gemini", "chromext",  "gemini-cli", "generative-ai" ]
+categories: [ "technology", "google" ]
+image: /en/posts/medium/2025-06-25-gemini-cli-chromext/250603b4220753--ic2a2erzc3n.png
 ---
 
 # Vibe coding my first Chrome Extension with gemini-cli !
@@ -29,7 +30,7 @@ Impatient to try it out? Click here: ⏩
 [https://github.com/google-gemini/gemini-cli/](https://github.com/google-gemini/gemini-cli/)
 ⏪
 
-![image](250603b4220753--ic2a2erzc3n.png)
+![image: 250603b4220753--ic2a2erzc3n.png)
 
 ## I've never written a Chrome Extension - let AI do it for me!
 

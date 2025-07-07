@@ -1,12 +1,20 @@
+---
+title: "Get started with gemini-cli: let's vibecode an app"
+date: 2025-06-25T14:22:07+02:00
+draft: false
+tags: [ "gemini","gemini-cli", "portfolio", "generative-ai" ]
+categories: [ "technology", "google" ]
+image: /en/posts/medium/2025-06-25-gemini-cli-chromext/250603b4220753--ic2a2erzc3n.png
+---
+
 # Get started with gemini-cli: let's vibecode an app
 
-…\
 On June 23rd, the DeepMind team has dropped a bomb 💣: `gemini-cli` !\
 I'm so excited to show you how it works so.. Why don't we code an application from scratch? I had this idea this morning of making a more complex and good looking version of [palladius/my-sessions-and-bio](https://github.com/palladius/my-sessions-and-bio) so.. Why don't we do it in a language that I don't speak?
 
 What did you say, Latin? *Tanem Latine loquor*. Sorry, let's try something more esoteric and incomprehensible, like… Javascript!
 
-![image](250611[startin--mftmzu49fw.png)
+![image: 250603b4220753--ic2a2erzc3n.png
 
 For this test, I'm using:
 
@@ -979,6 +987,3 @@ We were able to:
 
 -   Teaching AI to fish is more rewarding that cut and paste endlessly error logs.
 -   "teach them to fish" "teach them to fish" "teach them to fish"
-
-    -
--   
