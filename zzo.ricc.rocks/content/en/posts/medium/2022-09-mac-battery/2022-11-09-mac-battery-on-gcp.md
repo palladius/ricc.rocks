@@ -13,18 +13,20 @@ categories: [ GCP, Work ]
 tags: [GCP, macbook, SMS, pager, medium, geminocks , AppDev, monitoring, Alerts, CloudMonitoring ]
 images:
 - /images/articles/london-airport.jpg
+image: /en/posts/medium/2022-09-mac-battery/image-5.png
 # original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
 ---
 [See original article on Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)
 
 <!-- this works: ![Image Caption](/images/riccardo.jpg "Use Image Title as Caption aeroporto") -->
-![Image Caption](/images/articles/london-airport.jpg "[HUGO] Taking a train to City Airport, my fav airport in London")
 
 This article shows how you can easily inject a generic key/value into Google Cloud Monitoring and set up alerts on it. I use it to alert on disk space, and now also low battery!
 
 This morning I was in London, and I forgot my charger at home. With plenty of time but 🪫 little battery, I thought: hey! I need to have a way to predict when my battery is low! And I need to do it in a totally overkill way!
 
 <!--more-->
+
+![Image Caption](/images/articles/london-airport.jpg "[HUGO] Taking a train to City Airport, my fav airport in London")
 
 My battery was at 42%, which seemed a subtle indication my idea was worth blogging. Googling around, I found an article which gave me the tip on how to script my Mac’s battery (note this only works for a Macbook).
 
