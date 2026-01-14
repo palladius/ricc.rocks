@@ -13,7 +13,7 @@ Everyone knows GenAI is good for coding. Even Linus is vibecoding with Antigravi
 
 I'm at work when my friend Elia from the Rubycon team tells me: *"Riccardo, Netlify can't update our site anymore!"* 
 
-Luckily, the site is not down, but it's stuck! 
+Luckily, the site is not down, it's just stuck! 
 
 
 ![The issue 58](image.png)
@@ -35,6 +35,8 @@ $ antigravity .
 Antigravity is great at keeping me in the loop, and surviving software crashes and computer reboots.
 
 I write lazily (I could be a CEO now!) on the right side of Antigravity:
+
+![Help me troubleshoot this...](image-2.png)
 
 > Help me troubleshoot this: https://github.com/palladius/rubycon.it/issues/58
 
@@ -92,3 +94,7 @@ npm install @google/gemini-cli
 # or
 npx @google/gemini-cli
 ```
+
+Do you love Ruby? Want to know more about Rubycon?
+
+![alt text](image-3.png)
