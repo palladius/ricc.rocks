@@ -40,9 +40,11 @@ I write lazily (I could be a CEO now!) on the right side of Antigravity:
 
 > Help me troubleshoot this: https://github.com/palladius/rubycon.it/issues/58
 
-After some thinking, Antigravity analyzes the issue, identifies the problem, and proposes a fix.
+After some thinking, Antigravity analyzes the issue, identifies the problem, and proposes a fix:
 
-## Fixing the Issue
+![Problem analysis from AG](problem-analysis.png)
+
+<!-- ## Fixing the Issue -->
 
 Once the fix is ready, I simply tell Antigravity:
 
@@ -50,30 +52,45 @@ Once the fix is ready, I simply tell Antigravity:
 
 **Bham!** The comment is posted automatically.
 
+![GH Issue Commented by AGY](image-10.png)
+
 Then:
 
 > "ok git commit with gitmoji and push now!"
 
 And we're done! The fix is deployed.
 
+![alt text](image-11.png)
+
 ## Bonus: Adding a Sponsor
 
-Meanwhile, a sponsor has paid us and wants their logo to be represented on our website! I file a GitHub issue: https://github.com/palladius/rubycon.it/issues/59 
+Meanwhile, a sponsor has paid us and wants their logo to be represented on our website! 
 
-I tell Antigravity to take it from there. **4 minutes later**, the commit is done and online. **1 minute later**, the change is documented on GitHub and the issue is closed. WOW!
+1. I file a GitHub issue: https://github.com/palladius/rubycon.it/issues/59 with a ZIP of their logo.
+2. I tell Antigravity to take it from there. 
+3. **4 minutes later**, the commit is done and online.
+4. **1 minute later**, the change is documented on GitHub and the issue is closed. WOW!
 
-### Wait a Minute... Sponsor is Unhappy
+![sponsor page updated with latest sponsor](image-12.png)
 
-The sponsor (Welaika) made a comment on GitHub about the link. I open my Antigravity and:
+### Wait a Minute... Sponsor asks for a change
+
+The sponsor (Welaika) made a comment on GitHub about the wrong link. I open my Antigravity and:
 
 > welaika made a comment on GH. PTAL at the comment and fix it pls.
 > pls leave the LinkedIn link as a comment for future use.
 
+![alt text](image-13.png)
+
 A minute later... fixed!
+
+![GHI fixed](image-14.png)
 
 And we're game! 🎮
 
 ## And now lets write a nice post about this..
+
+*(yes, THIS post you're reading!)*
 
 Houston we got a problem: 
 
