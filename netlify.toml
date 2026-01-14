@@ -4,7 +4,9 @@
   command = "hugo --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.150.1"
+  # Using Hugo 0.128.2 - compatible with Netlify's Ubuntu 20.04 (GLIBC 2.31)
+  # Note: v0.150.1 requires GLIBC 2.32+ which is not available in current build image
+  HUGO_VERSION = "0.128.2"
   
 [context.production.environment]
   HUGO_ENV = "production"
