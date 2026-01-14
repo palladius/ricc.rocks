@@ -1,7 +1,7 @@
 logoText: 'Riccardo 💛 Blog'
 logoType: short
 description: Riccardo Blog (Hugo + stoka ZZO + Netlify)
-custom_css: []
+custom_css: ["sass/custom.scss"]
 custom_js: []
 useFaviconGenerator: true
 meta_image: ''

@@ -5,20 +5,32 @@ layout: single
 author: Riccardo Carlesso
 read_time: 5  # Minutes
 tags: [gemini, gemini-cli, antigravity, netlify, sre, devops, troubleshooting, github, rubycon]
-image: /en/posts/medium/2026-01-14-troubleshooting-cloud-build-with-gemini-cli/header.png
-#draft: true
+image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/header.png
 ---
 
-Everyone knows GenAI is good for coding. Even Linus is vibecoding with Antigravity now! However, **how AI can help SREs and Operators is still up for debate**.
+Everyone knows GenAI is good for coding. Even [Linus is vibecoding with Antigravity](https://news.ycombinator.com/item?id=46569587) now!
+
+However, **how AI can help SREs and Operators is still up for debate**.
 
 I'm at work when my friend Elia from the Rubycon team tells me: *"Riccardo, Netlify can't update our site anymore!"* 
 
 Luckily, the site is not down, it's just stuck! 
 
 
+![Antigravity + Gemini CLI FTW!](header.png)
+
+In this article, we'll see how Antigravity can help:
+
+1. Troubleshoot Netlify build issues, quite brilliantly.
+2. Implement fixes and document changes for future reuse.
+
+
 ---
 
 ![The issue #58](image.png)
+
+TODO(ricc): **taglia meglio img**
+
 The issue: https://github.com/palladius/rubycon.it/issues/58 
 
 Sounds familiar? Luckily I have **Antigravity**, **Gemini CLI**, and a number of tools at my disposal to right the wrong! Time to put my Ops hat on and fix this. So let's Start With...
@@ -28,7 +40,14 @@ $ cd ~/git/rubycon.it/
 $ antigravity .
 ```
 
-![antigravity .](image-1.png)
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="image-1.png" alt="Help me troubleshoot this..." style="max-width: 100%; height: auto;">
+  <figcaption style="width: 80%; margin: 0.5rem auto 0; font-style: italic; color: #666; font-size: 0.9em;">
+    <strong>Fig 1</strong>: You'll never guess my nationality from my <tt>PS1</tt>..
+  </figcaption>
+</figure>
+
+
 
 ## Antigravity Keeps Me in the Loop
 
@@ -36,9 +55,26 @@ Antigravity is great at keeping me in the loop, and surviving software crashes a
 
 I write lazily (I could be a CEO now!) on the right side of Antigravity:
 
-![Help me troubleshoot this...](image-2.png)
-
 > Help me troubleshoot this: https://github.com/palladius/rubycon.it/issues/58
+
+
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="image-2.png" alt="Help me troubleshoot this..." style="max-width: 100%; height: auto;">
+  <figcaption style="width: 80%; margin: 0.5rem auto 0; font-style: italic; color: #666; font-size: 0.9em;">
+    <strong>Fig HTML</strong>: Asking Antigravity to analyze the GitHub issue - notice how I can just paste the URL and it fetches the context automatically!
+  </figcaption>
+</figure>
+
+<!-- Testing Hugo's built-in figure shortcode -->
+{{< figure 
+    src="image-2.png" 
+    alt="Help me troubleshoot this..." 
+    caption="  **Fig Hugo**: Asking Antigravity to analyze the GitHub issue - notice how I can just paste the URL and it fetches the context automatically!  " 
+    width="100%"
+    class="narrow-caption"
+>}}
+
+---
 
 After some thinking, Antigravity analyzes the issue, identifies the problem, and proposes a fix:
 
