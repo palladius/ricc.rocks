@@ -16,10 +16,10 @@ I'm at work when my friend Elia from the Rubycon team tells me: *"Riccardo, Netl
 Luckily, the site is not down, it's just stuck! 
 
 
-![The issue 58](image.png)
+---
 
+![The issue #58](image.png)
 The issue: https://github.com/palladius/rubycon.it/issues/58 
-
 
 Sounds familiar? Luckily I have **Antigravity**, **Gemini CLI**, and a number of tools at my disposal to right the wrong! Time to put my Ops hat on and fix this. So let's Start With...
 
@@ -73,7 +73,21 @@ A minute later... fixed!
 
 And we're game! 🎮
 
-## Conclusion
+## And now lets write a nice post about this..
+
+Houston we got a problem: 
+
+![Netlify push is stuck!](image-4.png)
+
+As you can see from this image, Netlify is not updating our site and this article is only visible in localhost! 
+
+Time to ask Antigravity in a new thread (yes, AG is multi threaded)! Let's attach this image and ask it to create an issue, and fix it!
+
+![AG help me here!](image-5.png)
+
+=> https://github.com/palladius/ricc.rocks/issues/2
+
+## Conclusion (ricc TIODO change this)
 
 This is how AI-assisted operations work in practice. With **Gemini CLI** and **Antigravity**, I can:
 
@@ -86,15 +100,8 @@ The future of SRE work is here, and it's powered by AI! 🚀
 
 ---
 
-**Want to try Gemini CLI yourself?**
+* Do you love `CLI`? Download Gemini CLI here: 
+* DO you love `vscode`-type IDEs? Download Antigravity: it has Gemini CLI inside, like Tony Stark is powered by [Arc Reactor](https://ironman.fandom.com/wiki/.Arc_Reactor)
+* Do you love **Ruby**? Want to know more about Rubycon? https://rubycon.it/
 
-Get started with:
-```bash
-npm install @google/gemini-cli
-# or
-npx @google/gemini-cli
-```
-
-Do you love Ruby? Want to know more about Rubycon?
-
-![alt text](image-3.png)
+![Rubycon Site](image-3.png)
