@@ -3,14 +3,12 @@
 meta-list:
     echodo just -l
 
-status:
-	git submodule status
-
+status: git-submodule-status
 
 
 #[group zzo]
 zzo-status:
-    echo sobenme
+    cd zzo.ricc.rocks && make test
 
 
 #[group git-submodule]

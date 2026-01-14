@@ -10,7 +10,8 @@ buildFuture: true
 copyright: '&copy;{year}, Ricky C, few Rights Reserved'
 timeout: 10000
 enableEmoji: true
-paginate: 13
+pagination:
+  pagerSize: 13
 rssLimit: 100
 enableGitInfo: false
 googleAnalytics: ''
@@ -35,10 +36,6 @@ outputs:
     - RSS
     - SearchIndex
   section:
-    - HTML
-    - RSS
-    - SearchIndex
-  taxonomyTerm:
     - HTML
     - RSS
     - SearchIndex

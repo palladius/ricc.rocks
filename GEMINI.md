@@ -38,9 +38,16 @@ When you read this, you'll first read `AI_FINDINGS.md` to get up to speed, then 
 
 ## Feedback loop
 
-* I will run `make run` under ZZO folder for you.which runs Hugo on port 1313.
+* I will run `make run` under ZZO folder for you, which runs Hugo on port 1313.
 * You can invoke commands like "curl http://localhost:1313/en/" ,
 * or more complex endpoints like: "curl http://localhost:1313/en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/"
 * Note that an article pointing to this URL: http://localhost:1313/en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/"
   can be found in files here: `zzo.ricc.rocks/content/en/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python`. So the
   mapping is quite deterministic.
+* do NOT commit before ensuring the ZZO ricc.rocks is working (`cd zzo.ricc.rocks && make test`).
+
+## DOs
+
+* Use `gitmoji` for commits.
+* Keep a `VERSION` and a track of its changes onto `CHANGELOG.md`. Make the comment emoji-based (with gitmoji semantics if possible).
+  Sign yourself as Gemini/Antigravity if needed, to discrminate from author (Riccardo).
