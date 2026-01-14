@@ -1,0 +1,14 @@
+[build]
+  base = "zzo.ricc.rocks"
+  publish = "public"
+  command = "hugo --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.150.1"
+  
+[context.production.environment]
+  HUGO_ENV = "production"
+
+# Ensure git submodules are properly initialized
+[build.processing]
+  skip_processing = false
