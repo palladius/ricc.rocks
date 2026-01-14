@@ -67,3 +67,39 @@ And manually handle submodules in build command.
 3. What build command to run
 
 This will isolate the ZZO site build from other sites' submodules.
+
+---
+
+## 🎯 ACTUAL ROOT CAUSE DISCOVERED (2026-01-14 18:56)
+
+After implementing the `netlify.toml` fix, builds still failed with:
+
+```
+hugo: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by hugo)
+hugo: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by hugo)
+hugo: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by hugo)
+```
+
+### The Real Problem:
+**Hugo version incompatibility with Netlify's build environment!**
+
+- Hugo v0.150.1 (used locally) requires GLIBC 2.32+ (newer system libraries)
+- Netlify's build environment (Ubuntu 20.04) only has GLIBC 2.31
+- This caused "Build script returned non-zero exit code: 2"
+
+### The Final Fix (commit `de67ac6`):
+Changed Hugo version in `netlify.toml` from **0.150.1** to **0.128.2**
+
+**Why Hugo 0.128.2?**
+- ✅ Compatible with Netlify's GLIBC 2.31
+- ✅ Still includes the fix for `google_analytics_async.html` deprecation (Hugo v0.128+)
+- ✅ Proven stable version for Netlify deployments
+
+### Commits Applied:
+1. `4c00bd5` - Created initial `netlify.toml` with Hugo 0.150.1
+2. `a5ef6d9` - Polished blog article formatting
+3. `de67ac6` - Fixed Hugo version to 0.128.2 for GLIBC compatibility
+
+### Lesson Learned:
+When using newer Hugo versions locally (0.150.1), always check compatibility with your deployment environment's system libraries (GLIBC version). Netlify's Ubuntu 20.04 has GLIBC 2.31, which limits Hugo to versions < 0.140.
+
