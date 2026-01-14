@@ -87,6 +87,21 @@ Time to ask Antigravity in a new thread (yes, AG is multi threaded)! Let's attac
 
 => https://github.com/palladius/ricc.rocks/issues/2
 
+Now this was more complex, after a bit of back and forth, AG figured it out: 
+
+![alt text](image-6.png)
+
+And indeed... 
+
+![it compiled finally!](image-7.png)
+![better screenshot for BUILD on netlify](image-9.png)
+
+it worked, damn GLIBC! :) 
+
+And finally, my article landed online on ricc.rocks, where most likely you're reading it!
+
+![Article is online!](image-8.png)
+
 ## Conclusion (ricc TIODO change this)
 
 This is how AI-assisted operations work in practice. With **Gemini CLI** and **Antigravity**, I can:
