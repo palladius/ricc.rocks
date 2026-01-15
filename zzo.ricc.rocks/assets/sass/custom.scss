@@ -1,0 +1,17 @@
+/* Custom CSS for ricc.rocks ZZO theme */
+
+/* Narrow caption class - makes figure captions 80% width and centered */
+.narrow-caption figcaption {
+    width: 80%;
+    margin: 0.5rem auto 0;
+    text-align: center;
+    font-style: italic;
+    color: #a4e7f0;
+    font-size: 0.9em;
+}
+
+/* Make the figure itself centered */
+.narrow-caption {
+    margin: 1.5rem auto;
+    text-align: center;
+}

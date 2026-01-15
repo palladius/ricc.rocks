@@ -40,12 +40,12 @@ $ cd ~/git/rubycon.it/
 $ antigravity .
 ```
 
-<figure style="margin: 1.5rem auto; text-align: center;">
-  <img src="image-1.png" alt="Help me troubleshoot this..." style="max-width: 100%; height: auto;">
-  <figcaption style="width: 80%; margin: 0.5rem auto 0; font-style: italic; color: #666; font-size: 0.9em;">
-    <strong>Fig 1</strong>: You'll never guess my nationality from my <tt>PS1</tt>..
-  </figcaption>
-</figure>
+{{< figure 
+    src="image-1.png" 
+    alt="Antigravity terminal" 
+    caption="**Fig 1**: You'll never guess my nationality from my `PS1`.." 
+    class="narrow-caption"
+>}}
 
 
 
@@ -57,19 +57,11 @@ I write lazily (I could be a CEO now!) on the right side of Antigravity:
 
 > Help me troubleshoot this: https://github.com/palladius/rubycon.it/issues/58
 
-
-<figure style="margin: 1.5rem auto; text-align: center;">
-  <img src="image-2.png" alt="Help me troubleshoot this..." style="max-width: 100%; height: auto;">
-  <figcaption style="width: 80%; margin: 0.5rem auto 0; font-style: italic; color: #666; font-size: 0.9em;">
-    <strong>Fig HTML</strong>: Asking Antigravity to analyze the GitHub issue - notice how I can just paste the URL and it fetches the context automatically!
-  </figcaption>
-</figure>
-
 <!-- Testing Hugo's built-in figure shortcode -->
 {{< figure 
     src="image-2.png" 
     alt="Help me troubleshoot this..." 
-    caption="  **Fig Hugo**: Asking Antigravity to analyze the GitHub issue - notice how I can just paste the URL and it fetches the context automatically!  " 
+    caption="  **Fig 2 (Hugo)**: Asking Antigravity to analyze the GitHub issue - notice how I can just paste the URL and it fetches the context automatically!  " 
     width="100%"
     class="narrow-caption"
 >}}
@@ -130,15 +122,15 @@ And we're game! 🎮
 
 Houston we got a problem: 
 
-![Netlify push is stuck!](image-4.png)
+![Netlify push is stuck! With arrows](image-15.png)
 
-As you can see from this image, Netlify is not updating our site and this article is only visible in localhost! 
+As you can see from this image, Netlify is not updating our site ricc.rocks (to the right) and this article is only visible in localhost (to the left)! 
 
-Time to ask Antigravity in a new thread (yes, AG is multi threaded)! Let's attach this image and ask it to create an issue, and fix it!
+Time to ask *Antigravity* in a new thread (yes, AG is multi threaded)! Let's attach this image and ask it to create an issue, and fix it!
 
 ![AG help me here!](image-5.png)
 
-=> https://github.com/palladius/ricc.rocks/issues/2
+* Issue is created => https://github.com/palladius/ricc.rocks/issues/2
 
 Now this was more complex, after a bit of back and forth, AG figured it out: 
 
@@ -146,23 +138,22 @@ Now this was more complex, after a bit of back and forth, AG figured it out:
 
 And indeed... 
 
-![it compiled finally!](image-7.png)
 ![better screenshot for BUILD on netlify](image-9.png)
 
-it worked, damn GLIBC! :) 
+.. it works! Damn GLIBC! :) 
 
-And finally, my article landed online on ricc.rocks, where most likely you're reading it!
+And finally, my article landed online on https://ricc.rocks/, where most likely you're reading it!
 
-![Article is online!](image-8.png)
+![Article is online! With red arrows](image-8bis.png)
 
-## Conclusion (ricc TIODO change this)
+## Conclusions
 
 This is how AI-assisted operations work in practice. With **Gemini CLI** and **Antigravity**, I can:
 
 1. **Troubleshoot issues** faster by having AI analyze GitHub issues
 2. **Implement fixes** with AI assistance
-3. **Document changes** automatically
-4. **Handle follow-up requests** efficiently
+3. **Document changes** automatically. See [Issue #2](https://github.com/palladius/ricc.rocks/issues/2) for the fix and [Issue #3](https://github.com/palladius/ricc.rocks/issues/3) on how to do beautiful image captions with Hugo `figure`s ("go figure", literally!)
+4. **Handle parallel requests** thanks to Antigravity's multi-threading.
 
 The future of SRE work is here, and it's powered by AI! 🚀
 
@@ -170,6 +161,6 @@ The future of SRE work is here, and it's powered by AI! 🚀
 
 * Do you love `CLI`? Download Gemini CLI here: 
 * DO you love `vscode`-type IDEs? Download Antigravity: it has Gemini CLI inside, like Tony Stark is powered by [Arc Reactor](https://ironman.fandom.com/wiki/.Arc_Reactor)
-* Do you love **Ruby**? Want to know more about Rubycon? https://rubycon.it/
+* Do you love **Ruby**? Want to know more about its Italian conference? Check [Rubycon](https://rubycon.it/)
 
 ![Rubycon Site](image-3.png)
