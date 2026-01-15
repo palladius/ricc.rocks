@@ -23,13 +23,13 @@ In this article, we'll see how Antigravity and Gemini CLI can help:
 
 1. Troubleshoot Netlify build issues, quite brilliantly.
 2. Implement fixes and document changes for future reuse.
-3. Build a **Post Mortem** via **Custom Commands**.
+3. Build a **Post Mortem** (timeline + action items!) via **Custom Commands**. Use thw Workspace MCP to actually create a [Google doc](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0)!
+
 
 ---
 
-![The issue #58](image.png)
 
-TODO(ricc): **taglia meglio img**
+![Issue 58 broken CICD - better cut](image-27.png)
 
 The issue: https://github.com/palladius/rubycon.it/issues/58 
 
@@ -186,15 +186,15 @@ As you see, I've asked GianCarlo to use Workspace MCP to update. You canf ind Wo
 
 And that's it! 
 
-* Google Doc created:
+* [Google Doc created](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0):
 
 ![PoMo screenshot](image-24.png)
 
-* 2 Action Items filed:
+* 2 Action Items filed on GitHub:
 
 ![Two GH issues](image-23.png)
 
-### Some final fun
+### Some final fun 🍌
 
 > finally use Nano Banana MCP to create an image of the outage in the same folder!
 
