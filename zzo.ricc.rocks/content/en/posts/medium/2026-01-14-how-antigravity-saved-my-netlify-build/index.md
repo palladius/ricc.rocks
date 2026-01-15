@@ -6,6 +6,9 @@ author: Riccardo Carlesso
 read_time: 5  # Minutes
 tags: [gemini, gemini-cli, antigravity, netlify, SRE, devops, troubleshooting, github, rubycon]
 image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/header.png
+enableToc: true
+hideToc: false
+enableTocContent: true
 ---
 
 Everyone knows GenAI is good for coding. I mean, even [Linus is vibecoding with Antigravity](https://news.ycombinator.com/item?id=46569587) now!
@@ -23,11 +26,12 @@ In this article, we'll see how Antigravity and Gemini CLI can help:
 
 1. Troubleshoot Netlify build issues, quite brilliantly.
 2. Implement fixes and document changes for future reuse.
-3. Build a **Post Mortem** (timeline + action items!) via **Custom Commands**. Use thw Workspace MCP to actually create a [Google doc](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0)!
+3. Build a **Post Mortem** (timeline + action items!) via **Custom Commands**. Use the Workspace MCP to actually create a [Google doc](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0)!
 
 
----
+## Honey, I Shrunk the CI/CD!
 
+*aka How I broke Netlify auto-build.*
 
 ![Issue 58 broken CICD - better cut](image-27.png)
 
@@ -49,7 +53,7 @@ $ antigravity .
 
 
 
-## Antigravity Keeps Me in the Loop
+### Antigravity Keeps Me in the Loop
 
 Antigravity is great at keeping me in the loop, and surviving software crashes and computer reboots.
 
@@ -66,7 +70,6 @@ I write lazily (I could be a CEO now!) on the right side of Antigravity:
     class="narrow-caption"
 >}}
 
----
 
 After some thinking, Antigravity analyzes the issue, identifies the problem, and proposes a fix:
 
@@ -78,11 +81,11 @@ Once the fix is ready, I simply tell Antigravity:
 
 > Comment on issue 58 with: 1. what the problem was, 2. what your fix was. Ensure you sign yourself as Antigravity.
 
-**Bham!** The comment is posted automatically.
+**Wham!** The comment is posted automatically.
 
-![GH Issue Commented by AGY](image-10.png)
+![GH Issue Commented by AGY](image-28.png)
 
-Then:
+Then I type:
 
 > "ok git commit with gitmoji and push now!"
 
@@ -92,7 +95,7 @@ And we're done! The fix is deployed.
 
 ## Bonus: Adding a Sponsor
 
-Meanwhile, a sponsor has paid us and wants their logo to be represented on our website! 
+Meanwhile, a sponsor has just paid us and wants their logo to be represented on our website! 
 
 1. I file a GitHub issue: https://github.com/palladius/rubycon.it/issues/59 with a ZIP of their logo.
 2. I tell Antigravity to take it from there. 
@@ -103,50 +106,49 @@ Meanwhile, a sponsor has paid us and wants their logo to be represented on our w
 
 ### Wait a Minute... Sponsor asks for a change
 
-The sponsor (Welaika) made a comment on GitHub about the wrong link. I open my Antigravity and:
+The sponsor [made a comment on GitHub](https://github.com/palladius/rubycon.it/issues/59#issuecomment-3749958473) about the wrong link. I open my Antigravity and:
 
 > welaika made a comment on GH. PTAL at the comment and fix it pls.
 > pls leave the LinkedIn link as a comment for future use.
 
 ![alt text](image-13.png)
 
-A minute later... fixed!
+A minute later, it is fixed...
 
 ![GHI fixed](image-14.png)
 
-And we're game! 🎮
+.. and documented. And we're game! 🎮
 
 ## Have I told you about that time I broke PROD?
 
-> An Operator enters the bar and tells his friends *Have I told you about that time I broke PROD?*.
-> His friends sit down and sip calmly their beer while waiting for a great story to be told.
-> It starts like this...
+*aka How to write a Post Mortem with Gemini CLI*
 
-I'm Riccardo, the kind of Engineers who commits to PROD, no PRs, no questions asked. 
-Last Saturday, I mistakenly committed a new page and all of a sudden my website was all white! 
-I'm not a chromatic snob, but I can tell if white over white is hard to read (when "Rubycon" reads "con").
+*"An Operator enters the bar and tells his friends "Have I told you about that time I broke PROD?". His friends sit down and sip calmly their beer while waiting for a great story to be told. It starts like this..."*
+
+I'm Riccardo, the kind of Engineer who commits to PROD, no PRs, no questions asked. Last Saturday, I mistakenly committed a [new Equity page](https://rubycon.it/equity) and all of a sudden my website was all white! I'm not a chromatic snob, but I can tell if white over white is hard to read (when "Rubycon" reads "con").
 
 ![alt text](image-4.png)
 
-But I'm also a tidy person, before fixing prod [I document it](https://github.com/palladius/rubycon.it/issues/57) and advise my friends on Whatsapp.
+But I'm also a tidy person, before fixing prod [I document it](https://github.com/palladius/rubycon.it/issues/57) and warn my friends on Whatsapp.
+The world can go on fire, but it needs to be tidy.
 
 ### The issue
 
-As always, the problem was a commit: [`a61a79d`](https://github.com/palladius/rubycon.it/commit/a61a79d6e015bf4c8b05e2750fcee3342a89364a).
-On Sat Jan 10 11:36:14 2026 I pushed a new Equity page and all of a sudden my website was all defaced!
+As always, the problem was a commit: [`a61a79d`](https://github.com/palladius/rubycon.it/commit/a61a79d6e015bf4c8b05e2750fcee3342a89364a).On Sat Jan 10 11:36:14 2026 I pushed a new page and all of a sudden my website was all defaced!
 
 ### The solution
 
 * I've asked Gemini to fix it, and it did.
 * I've also asked it to write a mini Post-Mortem, and [it did](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
 
-I won't tell you how it did it, but it's the good old feedback loop: 
+I won't tell you how the fix was done; it's the good old feedback loop: 
+
 * check `git diff` for culprit (breaking change was minutes ago, after all!)
 * check `curl localhost:8080` to reproduce the bad CSS until you fix it. This is a bit harder as the system has no EYES, but CSSs can be tested.
 
 ### The Post Mortem (via Custom Command)
 
-Yesterday, I've open sourced a new Post Mortem Gemini CLI **Custom Command** *and* a **Skill**!. Today, I'll try to reproduce the PoMo and show you some magic here. Let's see it in action here:
+Yesterday, I opened sourced a new Post Mortem Gemini CLI **Custom Command** *and* a **Skill**!. Today, I'll try to reproduce the PoMo and show you some magic here. Let's see it in action here:
 
 > /sre:postmortem-create Look at breaking and fixing commits in https://github.com/palladius/rubycon.it/issues/57 and follow  
 > the PoMo procedure to create a PoMo doc. Ignore doc/post_mortems/20260110-css-outage.md - you're smarter than that   
@@ -159,7 +161,7 @@ Code for `/sre:postmortem-create` Custom Command is available [here](https://git
 
 ![alt text](image-17.png)
 
-* It then createsd a CSV with the timeline, as instructed:
+* It then created a CSV with the timeline, as instructed:
 
 ![Building CSV timeline](image-18.png)
 
@@ -171,7 +173,7 @@ Code for `/sre:postmortem-create` Custom Command is available [here](https://git
 
 ![alt text](image-20.png)
 
-As you see, I've asked GianCarlo to use Workspace MCP to update. You canf ind Workspace MCP server here. It's maintained by my friend Allen.
+As you see, I've asked [GianCarlo](https://github.com/google-gemini/gemini-cli) to use **Workspace MCP** to update. You can find the Workspace MCP server [here](https://github.com/gemini-cli-extensions/workspace). It's maintained by my friend [Allen](https://github.com/allenhutchison).
 
 * It first asks for permission: 
 
@@ -181,18 +183,20 @@ As you see, I've asked GianCarlo to use Workspace MCP to update. You canf ind Wo
 
 ![alt text](image-22.png)
 
-* Gemini:  Would you like me to share it with anyone or file those action items as GitHub issues now? 🇮🇹🤌
-* Riccardo: Yes why not. file AIs and then link them in the GDoc too.
+* Gemini:  *Would you like me to share it with anyone or file those action items as GitHub issues now? 🇮🇹🤌*
+* Riccardo: *Yes why not. file AIs and then link them in the GDoc too.*
 
 And that's it! 
 
-* [Google Doc created](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0):
+* [Google Doc created](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0) (this is a pubilc copy):
 
 ![PoMo screenshot](image-24.png)
 
-* 2 Action Items filed on GitHub:
+* Action Items filed on GitHub:
 
 ![Two GH issues](image-23.png)
+
+I then asked GianCarlo to link the two AIs onto the original GH issue. We have a similar dependency mechanism in our internal Google Issue Tracker.
 
 ### Some final fun 🍌
 
@@ -204,19 +208,19 @@ And the result is...
 
 ![broken ruby outage NanoBanana result](image-26.png)
 
-Good enough!
+TA-DAH! Good enough!
 
-If you're interested, all steps are in: [doc/post_mortems/issue-57/](https://github.com/palladius/rubycon.it/tree/main/doc/post_mortems/issue-57). You can find the old PostMortem (created withut any CC) in [doc/post_mortems/20260110-css-outage.md](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
+If you're interested, all steps are in: [doc/post_mortems/issue-57/](https://github.com/palladius/rubycon.it/tree/main/doc/post_mortems/issue-57). You can find the old PostMortem (created without any CC) in [doc/post_mortems/20260110-css-outage.md](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
 
-## And now lets write a nice post about this..
+## And now let's write a nice post about this.. (aka CI/CD broken part 2)
 
 *(yes, THIS post you're reading!)*
 
-Houston we got a problem: 
+I was gonna push this article for you to read but.. **Houston we got a problem**: 
 
 ![Netlify push is stuck! With arrows](image-15.png)
 
-As you can see from this image, Netlify is not updating our site ricc.rocks (to the right) and this article is only visible in localhost (to the left)! 
+As you can see from this image, **Netlify** is not updating our site ricc.rocks (to the right) and this article is only visible in localhost (to the left)! 
 
 Time to ask *Antigravity* in a new thread (yes, AG is multi threaded)! Let's attach this image and ask it to create an issue, and fix it!
 
@@ -251,8 +255,15 @@ The future of SRE work is here, and it's powered by AI! 🚀
 
 ---
 
-* Do you love `CLI`? Download Gemini CLI here: 
-* DO you love `vscode`-type IDEs? Download Antigravity: it has Gemini CLI inside, like Tony Stark is powered by [Arc Reactor](https://ironman.fandom.com/wiki/.Arc_Reactor)
-* Do you love **Ruby**? Want to know more about its Italian conference? Check [Rubycon](https://rubycon.it/)
+* Do you love `CLI`? Download Gemini CLI here: 🔗 [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+    * Want to pump it up with Riccardo's Custom Commands, such as the PostMortem you've seen in action? 🔗 [Extension](https://github.com/palladius/gemini-cli-custom-commands/)
+    * Want to pump it up with Allen's Workspace MCP? 🔗 [Extension](https://github.com/gemini-cli-extensions/workspace)
+* Do you love `vscode`-type IDEs? Download 🔗 [Antigravity](https://antigravity.google/): it has Gemini CLI inside, like Tony Stark is powered by [Arc Reactor](https://ironman.fandom.com/wiki/.Arc_Reactor)
+* Do you love **Ruby**? Want to know more about the classiest Ruby Italian conference? Check out 🔗 [Rubycon](https://rubycon.it/) ♦️
 
-![Rubycon Site](image-3.png)
+{{< figure 
+    src="image-3.png" 
+    alt="Rubycon Site" 
+    caption="I've ideated and created this with a bunch of Italian friends: ♦️ [rubycon.it](https://rubycon.it/) See you on 📅 May 8th in Rimini! "
+    class="narrow-caption"
+>}}
