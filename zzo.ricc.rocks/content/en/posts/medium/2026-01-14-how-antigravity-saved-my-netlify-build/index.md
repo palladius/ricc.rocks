@@ -5,7 +5,8 @@ layout: single
 author: Riccardo Carlesso
 read_time: 5  # Minutes
 tags: [gemini, gemini-cli, antigravity, netlify, SRE, devops, troubleshooting, github, rubycon]
-image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/header.png
+#image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/header.png
+image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/image-26.png
 enableToc: true
 hideToc: false
 enableTocContent: true
@@ -20,29 +21,39 @@ I'm at work when my friend Elia from the Rubycon team tells me: *"Riccardo, Netl
 Luckily, the site is not down, it's just stuck! 
 
 
+<!-- 
 ![Antigravity + Gemini CLI FTW!](header.png)
+-->
 
 In this article, we'll see how Antigravity and Gemini CLI can help:
 
-1. Troubleshoot Netlify build issues, quite brilliantly.
+1. Troubleshoot [Netlify](https://www.netlify.com/) build issues, quite brilliantly.
 2. Implement fixes and document changes for future reuse.
-3. Build a **Post Mortem** (timeline + action items!) via **Custom Commands**. Use the Workspace MCP to actually create a [Google doc](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0)!
+3. Build a **Post Mortem** (timeline + action items!) via **Custom Commands**. Use the Workspace MCP to create an actual [Google doc](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0)!
 
+All links on how I did it are at the bottom of this page.
 
 ## Honey, I Shrunk the CI/CD!
 
 *aka How I broke Netlify auto-build.*
 
-![Issue 58 broken CICD - better cut](image-27.png)
+I love [Netlify](https://www.netlify.com/). I use it to maintain my countless websites and blogs, built with `jekyll` or `hugo`. Sometimes, the pipeline breaks, and you need to read the logs. I used to fix things manually, before AI. Now I just paste the logs or, better, use an MCP or CLI to have it downlod it for me :) ("teach them to fish" strategy).
 
-The issue: https://github.com/palladius/rubycon.it/issues/58 
+This morning, I get pinged by my friend Elia from the Rubycon team: "Riccardo, Netlify can't update our site anymore!".
+"Sure, file a GitHub issue and I'll fix it", I reply. I'm from the old "If it's not on [buganizer](https://issuetracker.google.com/), it doesn't exist" Google school of thought.
+
+
+{{< figure 
+    src="image-27.png" 
+    alt="Issue 58 broken CI/CD" 
+    caption="**The issue**: https://github.com/palladius/rubycon.it/issues/58" 
+    class="narrow-caption"
+>}}
+
+
 
 Sounds familiar? Luckily I have **Antigravity**, **Gemini CLI**, and a number of tools at my disposal to right the wrong! Time to put my Ops hat on and fix this. So let's Start With...
 
-```
-$ cd ~/git/rubycon.it/
-$ antigravity .
-```
 
 {{< figure 
     src="image-1.png" 
@@ -51,6 +62,12 @@ $ antigravity .
     class="narrow-caption"
 >}}
 
+
+```
+# I love how I can invoke it from CLI..
+$ cd ~/git/rubycon.it/
+$ antigravity .
+```
 
 
 ### Antigravity Keeps Me in the Loop
@@ -93,7 +110,9 @@ And we're done! The fix is deployed.
 
 ![alt text](image-11.png)
 
-## Bonus: Adding a Sponsor
+`gitmoji` is fancy and meaningful at the same time!
+
+## Bonus Feature Request: Adding a Sponsor
 
 Meanwhile, a sponsor has just paid us and wants their logo to be represented on our website! 
 
@@ -111,6 +130,8 @@ The sponsor [made a comment on GitHub](https://github.com/palladius/rubycon.it/i
 > welaika made a comment on GH. PTAL at the comment and fix it pls.
 > pls leave the LinkedIn link as a comment for future use.
 
+I know, I could warm up a small city with the "please" token I waste!
+
 ![alt text](image-13.png)
 
 A minute later, it is fixed...
@@ -119,7 +140,7 @@ A minute later, it is fixed...
 
 .. and documented. And we're game! 🎮
 
-## Have I told you about that time I broke PROD?
+## The Post Mortem: "Have I told you about that time I broke PROD?"
 
 *aka How to write a Post Mortem with Gemini CLI*
 
@@ -253,6 +274,7 @@ This is how AI-assisted operations work in practice. With **Gemini CLI** and **A
 
 The future of SRE work is here, and it's powered by AI! 🚀
 
+Follow me for more, since **Skills** are coming for Gemini CLI!
 ---
 
 * Do you love `CLI`? Download Gemini CLI here: 🔗 [Gemini CLI](https://github.com/google-gemini/gemini-cli)
