@@ -10,6 +10,10 @@ status: git-submodule-status
 zzo-status:
     cd zzo.ricc.rocks && make test
 
+dev-zzo:
+    cd zzo.ricc.rocks && just dev
+
+dev: dev-zzo
 
 #[group git-submodule]
 git-submodule-status:

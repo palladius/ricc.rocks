@@ -5,3 +5,7 @@ list:
     just -l
     @echo "2. More in Makefile"
     cat Makefile
+
+#[group dev]
+dev:
+	hugo server --disableFastRender

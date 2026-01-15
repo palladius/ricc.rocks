@@ -1,14 +1,14 @@
 ---
-title: "AI-Powered SRE: How Gemini CLI Saved My Netlify Build"
+title: "AI-Powered SRE: How Antigravity Saved My Netlify Build"
 date: 2026-01-14
 layout: single
 author: Riccardo Carlesso
 read_time: 5  # Minutes
-tags: [gemini, gemini-cli, antigravity, netlify, sre, devops, troubleshooting, github, rubycon]
+tags: [gemini, gemini-cli, antigravity, netlify, SRE, devops, troubleshooting, github, rubycon]
 image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/header.png
 ---
 
-Everyone knows GenAI is good for coding. Even [Linus is vibecoding with Antigravity](https://news.ycombinator.com/item?id=46569587) now!
+Everyone knows GenAI is good for coding. I mean, even [Linus is vibecoding with Antigravity](https://news.ycombinator.com/item?id=46569587) now!
 
 However, **how AI can help SREs and Operators is still up for debate**.
 
@@ -19,11 +19,11 @@ Luckily, the site is not down, it's just stuck!
 
 ![Antigravity + Gemini CLI FTW!](header.png)
 
-In this article, we'll see how Antigravity can help:
+In this article, we'll see how Antigravity and Gemini CLI can help:
 
 1. Troubleshoot Netlify build issues, quite brilliantly.
 2. Implement fixes and document changes for future reuse.
-
+3. Build a **Post Mortem** via **Custom Commands**.
 
 ---
 
@@ -115,6 +115,98 @@ A minute later... fixed!
 ![GHI fixed](image-14.png)
 
 And we're game! 🎮
+
+## Have I told you about that time I broke PROD?
+
+> An Operator enters the bar and tells his friends *Have I told you about that time I broke PROD?*.
+> His friends sit down and sip calmly their beer while waiting for a great story to be told.
+> It starts like this...
+
+I'm Riccardo, the kind of Engineers who commits to PROD, no PRs, no questions asked. 
+Last Saturday, I mistakenly committed a new page and all of a sudden my website was all white! 
+I'm not a chromatic snob, but I can tell if white over white is hard to read (when "Rubycon" reads "con").
+
+![alt text](image-4.png)
+
+But I'm also a tidy person, before fixing prod [I document it](https://github.com/palladius/rubycon.it/issues/57) and advise my friends on Whatsapp.
+
+### The issue
+
+As always, the problem was a commit: [`a61a79d`](https://github.com/palladius/rubycon.it/commit/a61a79d6e015bf4c8b05e2750fcee3342a89364a).
+On Sat Jan 10 11:36:14 2026 I pushed a new Equity page and all of a sudden my website was all defaced!
+
+### The solution
+
+* I've asked Gemini to fix it, and it did.
+* I've also asked it to write a mini Post-Mortem, and [it did](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
+
+I won't tell you how it did it, but it's the good old feedback loop: 
+* check `git diff` for culprit (breaking change was minutes ago, after all!)
+* check `curl localhost:8080` to reproduce the bad CSS until you fix it. This is a bit harder as the system has no EYES, but CSSs can be tested.
+
+### The Post Mortem (via Custom Command)
+
+Yesterday, I've open sourced a new Post Mortem Gemini CLI **Custom Command** *and* a **Skill**!. Today, I'll try to reproduce the PoMo and show you some magic here. Let's see it in action here:
+
+> /sre:postmortem-create Look at breaking and fixing commits in https://github.com/palladius/rubycon.it/issues/57 and follow  
+> the PoMo procedure to create a PoMo doc. Ignore doc/post_mortems/20260110-css-outage.md - you're smarter than that   
+
+![alt text](image-16.png)
+
+Code for `/sre:postmortem-create` Custom Command is available [here](https://github.com/palladius/gemini-cli-custom-commands/blob/main/commands/sre/postmortem-create.toml).
+
+* Gemini CLI starts reading GitHub, and then starts looking at the two interesting commits:
+
+![alt text](image-17.png)
+
+* It then createsd a CSV with the timeline, as instructed:
+
+![Building CSV timeline](image-18.png)
+
+* 3. Updates the PLAN.md (stateful genius):
+
+![alt text](image-19.png)
+
+* 4. finalizes it all.
+
+![alt text](image-20.png)
+
+As you see, I've asked GianCarlo to use Workspace MCP to update. You canf ind Workspace MCP server here. It's maintained by my friend Allen.
+
+* It first asks for permission: 
+
+![alt text](image-21.png)
+
+* It then goes on and...
+
+![alt text](image-22.png)
+
+* Gemini:  Would you like me to share it with anyone or file those action items as GitHub issues now? 🇮🇹🤌
+* Riccardo: Yes why not. file AIs and then link them in the GDoc too.
+
+And that's it! 
+
+* Google Doc created:
+
+![PoMo screenshot](image-24.png)
+
+* 2 Action Items filed:
+
+![Two GH issues](image-23.png)
+
+### Some final fun
+
+> finally use Nano Banana MCP to create an image of the outage in the same folder!
+
+![Asking GC to use NanoBanana MCP to create an image of the outage](image-25.png)
+
+And the result is...
+
+![broken ruby outage NanoBanana result](image-26.png)
+
+Good enough!
+
+If you're interested, all steps are in: [doc/post_mortems/issue-57/](https://github.com/palladius/rubycon.it/tree/main/doc/post_mortems/issue-57). You can find the old PostMortem (created withut any CC) in [doc/post_mortems/20260110-css-outage.md](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
 
 ## And now lets write a nice post about this..
 
