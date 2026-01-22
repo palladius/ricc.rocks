@@ -11,6 +11,8 @@ image: antigravity-ruby-cfp.png
 
 ![Antigravity building Rails App](antigravity-ruby-cfp.png)
 
+![Caesar with CFP](image-5.png)
+
 Today I want to share a story about speed, efficiency, and the future of coding. 
 
 As you might know, I'm a big fan of Rails and I'm the co-organizer of the [Rubycon](https://rubycon.it/) Ruby conference (See you all on [May 8th in Rimini](https://rubycon.it/#venue), btw!). Last week we've closed the [CFP](https://rubycon.it/cfp) for the conference and we've received a lot of submissions. We need to select the best talks and organize them in a way that makes sense for the conference schedule. Since this is the first time we do it, we didn't have a nice form to fill, we instead asked people to shoot us an email with title, abstract and other info.
@@ -82,6 +84,12 @@ This is Antigravity in Playground mode:
 
 Here it's latying the foundations of Rails app, and also the import jobs.
 
+Once you create the app in playground mode, it lands in your filesystem in a folder like this: `~/.gemini/antigravity/playground/hidden-nova`.
+
+Actually I've asked AGY to create a private repo called https://github.com/RubyconIT/cfp-proposals-evaluator and asked AGY to push it there: it just worked!
+
+![My vibecoded app is on GitHub](image-4.png)
+
 ## Bad news: Vibecoding and the illusion of 90% -> 100%
 
 Now let me digress a miunte. I read it everywhere and I don't want to lie: LLMs aren't able to get there yet: they're great at vibecoding a solution based on training material, so they'll do great for well known paths; they still struggle to:
@@ -127,22 +135,35 @@ This is my usual dilemma:
 
 ## Workspace MCP to the rescue
 
-Wait, my bussy Allen has created a [workspace MCP](https://geminicli.com/extensions/?name=gemini-cli-extensionsworkspace) for me! 
-I can ask Gemini CLI to just use it and read emails for me! find more in [Gemini CLI extensions](https://geminicli.com/extensions/) page.
+Wait, my buddy Allen has created a [workspace MCP](https://geminicli.com/extensions/?name=gemini-cli-extensionsworkspace) to interact with GMail, Drive and other Google services! 
+I can ask Gemini CLI to just use it and read emails for me! 
+Find more extensions in the [Gemini CLI extensions](https://geminicli.com/extensions/) page.
 
-* `gemini extensions install https://github.com/gemini-cli-extensions/workspace`
+```bash
+# Installs Gemini CLI
+gemini extensions install https://github.com/gemini-cli-extensions/workspace
+gemini -p "Use workspace MCP to read emails from rubycon.italy@gmail.com and.."
+````
 
 ![Gemini CLI extensions](image-3.png)
 
-Then: 
+
+Then you can do this from Gemini CLI:
 ```
 * use workspace MCP to read emails to rubycon.italy@gmail.com 
 and return a list of emails which look like a CFP.
 * maybe start dumping emails under a folder `emails/` 
-and then we can sbobinate them later
+and then we can sbobinate(*) them later
 ```
 
-*Sbobinate* is an italian word my father used to use a lot when "downloading videos from cameras" back in the days. I still use it today, like "I'm sbobinating the GoPro videos from my SSD, for yesterday scuba diving session(s)".
+
+(*) *Sbobinate* is an italian word my father used to use a lot when "downloading videos from cameras" back in the days. I still use it today, like "I'm sbobinating the GoPro videos from my SSD, for yesterday scuba diving session(s)".
+
+You think I'm lying? YEah, I get this a lot. This is a proof I'm not lying:
+
+![Result of the prompt](image-6.png)
+
+
 
 **Tip**: do not ask Gemini to read emails and do something within the context. Tell him to "sbobinate" them locally first, and then you can ask him to do something with them. Maybe you can give Gemini CLI a filter like a do "Just download the ones that look like a CFP" or be more precise "download only the emails tagged as #CFP" (*if* mcp supports labels).
 
@@ -183,9 +204,13 @@ A functional app doesn't have to look bad. We used modern CSS (and a bit of Rail
 
 The real magic happened when I realized I wasn't just typing code; I was *directing* development.
 
-When I asked to "Symlink Submissions to Sbobination," Antigravity understood the intent: strictly coupling the data sources to prevent drift. It executed the file system operations safely and verified the links.
+When I asked to "Symlink Submissions to Sbobination," Antigravity understood the intent: strictly coupling the data sources to prevent drift. 
+It executed the file system operations safely and verified the links.
+Now both PROD and DEV environments point to the same ***grounded*** data source.
 
-When I needed to "Debug Universe Selector" (ensure the image assets loaded correctly for different themes), it dove into the asset pipeline and fixed the visibility issues without me having to trace the execution flow manually.
+## The longer part
+
+Directing Gemini CLI to push via Cloud Build to Cloud Run was a bit harder and took me 4 hours, but this is for another article.
 
 ## Conclusion
 
@@ -199,7 +224,7 @@ We moved from loose text files to a database-backed, aesthetically pleasing, and
 
 This is the new standard for rapid application development.
 
-## Ricc conclusions
+Would you like to try Antigravity?
 
 * Try Antigravity starting from Romin/Mete's codelabs:
     * v1 https://codelabs.developers.google.com/getting-started-google-antigravity
