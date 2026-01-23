@@ -34,3 +34,17 @@ Created service account [spreadsheet-reader].
 
 
 ![service account](image-7.png)
+
+
+## execution
+
+and bingo!
+
+$ just dump-spreadsheet 
+📦 Dumping Google Spreadsheet...
+SPREADSHEET_ID='1AUAkBJf-gTprbFp0jkWbD6NxDZumDQV4DgddM_TJZRo' bundle exec rake dump:spreadsheet
+🔍 Authenticating with service account...
+📂 Opening spreadsheet: 1AUAkBJf-gTprbFp0jkWbD6NxDZumDQV4DgddM_TJZRo...
+📄 Reading worksheet: 'Applicants 2025'...
+💾 Saving to: etc/spreadsheet_dump_20260123_083838.csv
+✅ Done! Saved 50 rows to etc/spreadsheet_dump_20260123_083838.csv
