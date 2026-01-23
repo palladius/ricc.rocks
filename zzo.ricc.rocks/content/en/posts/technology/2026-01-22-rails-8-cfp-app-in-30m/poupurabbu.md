@@ -48,3 +48,8 @@ SPREADSHEET_ID='1AUAkBJf-gTprbFp0jkWbD6NxDZumDQV4DgddM_TJZRo' bundle exec rake d
 📄 Reading worksheet: 'Applicants 2025'...
 💾 Saving to: etc/spreadsheet_dump_20260123_083838.csv
 ✅ Done! Saved 50 rows to etc/spreadsheet_dump_20260123_083838.csv
+
+
+and bingo, here's my CSV which i cant show you:
+
+![just carmine and known people](image-10.png)
