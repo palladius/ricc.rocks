@@ -82,7 +82,7 @@ This is Antigravity in Playground mode:
 
 ![AGY in playground mode](image.png)
 
-Here it's latying the foundations of Rails app, and also the import jobs.
+Here it's laying the foundations of Rails app, and also the import jobs.
 
 Once you create the app in playground mode, it lands in your filesystem in a folder like this: `~/.gemini/antigravity/playground/hidden-nova`.
 
