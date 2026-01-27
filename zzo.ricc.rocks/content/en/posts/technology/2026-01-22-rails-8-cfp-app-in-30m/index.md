@@ -9,7 +9,9 @@ author: "Riccardo"
 image: antigravity-ruby-cfp.png
 ---
 
+<!-- 
 ![Antigravity building Rails App](antigravity-ruby-cfp.png)
+-->
 
 ![Caesar with CFP](image-5.png)
 
@@ -98,6 +100,8 @@ Now let me digress a miunte. I read it everywhere and I don't want to lie: LLMs 
 
 With **Rails 8** providing the robust foundation and **Antigravity** (Google's advanced AI coding agent) as my pair programmer, we went from concept to a polished, feature-rich application in just about 30 minutes.
 
+Post Note: One week after, I'm still fighting to reconcile my buddies data into a live DB.
+
 <!-- 
 ## The Challenge (yes Riccardo, the structure "capaci tutti", but what about the data?)
 
@@ -163,44 +167,53 @@ You think I'm lying? YEah, I get this a lot. This is a proof I'm not lying:
 
 ![Result of the prompt](image-6.png)
 
-
-
 **Tip**: do not ask Gemini to read emails and do something within the context. Tell him to "sbobinate" them locally first, and then you can ask him to do something with them. Maybe you can give Gemini CLI a filter like a do "Just download the ones that look like a CFP" or be more precise "download only the emails tagged as #CFP" (*if* mcp supports labels).
 
+At the end of this step, I have a local list of all CFP emails in my file system, which I can feed to my Rails fixtures easily!
 
-## [VC] The Stack: Rails 8
+## Help! Data keeps changing!
 
-Rails has always been about "convention over configuration," and Rails 8 takes this to the next level. It's lighter, faster, and comes with batteries included for things that used to require complex setups.
+We've decided to keep the Spreadsheet as the master of source.
+**Problem**: Ok, I'm a bit fed up to download a CSV every time my colleagues add a couple of votes, time to automate this: Spreadsheet update -> CSV -> `rake import` ... let's do it!
+
+```prompt
+Ok now Write a script to dump the Spreadsheet like just dump-spreadsheet into a CSV. 
+I'll give u spreadsheet id, and i can create a sevice account, help me with it:
+trix: https://docs.google.com/spreadsheets/d/XXXXXX/edit
+tabs: Applicants 2025
+and now teach me how to do it. How do i create a SvcAcct and maybe give me a bash script to do it!
+```
+
+**Wow!** Notably, Antigravity did two things:
+1. Created the code on GCP to do the automateable part:
+   1. Select my project_id from `.env`
+   2. Enable APIs.
+   3. Create Service Account
+   4. Download JSON key under `private/sa.json` (I put all my private stuff under `private/`, except .env, so I dont get misled into checking passwords by eager `git add *`).
+   5. Something is missing though... something only I can do (well, until Workspace MCP fills in the gaps! Wait until 2027 for this!)
+2. Coached me into filling the gap (as the "silly human in the loop"):
+
+![pupurabbux scruupt: create a service account](image-11.png)
+
+After 30 seconds, the code was there, and the script had the ability to dump the CSV onto my fixtures folder! 
+Wow! I closed the loop!
 
 ## [VC] The Catalyst: Antigravity
 
+*TODO(ricc): bring above*
+
 Antigravity isn't just a code completor; it's a proactive agent. Here is how it transformed the workflow:
 
-### 1. Data Ingestion & Structuring
-
-One of the most tedious parts of moving from a manual process to an app is data migration. I had a folder full of `.txt` email submissions.
-
-I asked Antigravity to:
+1. **Data Ingestion & Structuring**. One of the most tedious parts of moving from a manual process to an app is data migration. I had a folder full of `.txt` email submissions. I asked Antigravity to:
 > "Process all remaining CFP email submissions, extract relevant information, and store it in a structured YAML format."
 
 In moments, it wrote a script to parse the unstructured text, extracting titles, abstracts, and speaker details, and populated the `etc/by_env/sbobination/submissions/` directory with perfectly formatted YAML files. It even enriched the data by inferring `speaker_country` and adding placeholders for Gemini annotations.
 
-### 2. "Sbobination" as the Single Source of Truth
+3. **"Sbobination" as the Single Source of Truth**. We established a data architecture where **Sbobination** (our internal naming for the enriched dataset) became the single source of truth. Antigravity helped set up symbolic links so that both `production` and `development` environments pointed to this authentic data source, ensuring consistency across the board.
 
-We established a data architecture where **Sbobination** (our internal naming for the enriched dataset) became the single source of truth. Antigravity helped set up symbolic links so that both `production` and `development` environments pointed to this authentic data source, ensuring consistency across the board.
+3. **Polish & UI**. A functional app doesn't have to look bad. We used modern CSS (and a bit of Rails magic) to make the dashboard pop. We added a "Unique Countries" stat to the dashboard to track the global reach of our CFP, and refined the footer and FAQ sections to ensure clarity for users.
 
-### 3. Feature Blitz: Scholarships & Sponsorships
-
-We iterated rapidly on features:
-
-*   **Sponsorships**: Added a `needs_sponsorship` toggle for speakers requiring travel assistance. This involved a migration, model update, and UI integration, handled almost autonomously.
-*   **Top Rated**: Implemented a "Your Top Rated" section where I can manage and edit my votes, ensuring the best talks rise to the top.
-
-### 4. Polish & UI
-
-A functional app doesn't have to look bad. We used modern CSS (and a bit of Rails magic) to make the dashboard pop. We added a "Unique Countries" stat to the dashboard to track the global reach of our CFP, and refined the footer and FAQ sections to ensure clarity for users.
-
-## The "Wow" Moment
+### The "Wow" Moment
 
 The real magic happened when I realized I wasn't just typing code; I was *directing* development.
 
@@ -208,7 +221,7 @@ When I asked to "Symlink Submissions to Sbobination," Antigravity understood the
 It executed the file system operations safely and verified the links.
 Now both PROD and DEV environments point to the same ***grounded*** data source.
 
-## The longer part
+## The longer part: Deployment
 
 Directing Gemini CLI to push via Cloud Build to Cloud Run was a bit harder and took me 4 hours, but this is for another article.
 
