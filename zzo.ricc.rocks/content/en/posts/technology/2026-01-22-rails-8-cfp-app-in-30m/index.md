@@ -36,9 +36,17 @@ For the impatient, here's the **final result** after 2 days of coding:
 
 ![votes from us](image-13.png)
 
+I had to implement an anonimize button to take screenshots without violating the privacy of my people:
 
+My personal voting page (anonimized):
 
-## the CFP Rails Prompt
+![alt text](image-15.png)
+
+Final Selection review (anonimized):
+
+![alt text](image-16.png)
+
+## The CFP Rails Prompt
 
 Here's my initial prompt, vaguely inspired by Antigravity's codelabs:
 
@@ -50,7 +58,7 @@ keep doing micro-commits as you proceed.
 
 The website should have the following functionality:
 
-1. A home page that shows login/logout, and the cfps YOu need to still vote.
+1. A home page that shows login/logout, and the CFPs you need to still vote.
 2. A login for people to log in (**email**, **password**, **username**). 
    Prepopulate with Alessandro, Alessia, Emiliano. More can be added 
    from a config when spawning up the DB.
@@ -85,13 +93,13 @@ This prompt took me 5-10min to write, I was pooring my heart and mind to it - a 
 
 I set out to build a **CFP (Call for Papers) management application** called **Mecenate**. The goal? To have a fully functional app to handle conference submissions, evaluations, and speaker data in record time. 
 
-* In **30 seconds**, AGY came up with a Rails 8 app with git initialized and a README.md.
+* In **45 seconds**, AGY came up with a Rails 8 app with git initialized and a `README.md`.
 * Within **5 minutes**, the app was up and running (no kidding!) and was ~80% done. It had a simple/pleasant interface. Only data was missing, some sample/fake CFPs were there:
 
 ![CFP with fake submissions](image-1.png)
 * AGY then started running the app in `localhost:3000`, navigated it with the [Browser function](https://codelabs.developers.google.com/getting-started-google-antigravity#3), found some issues, and started fixing them from there! Within **30min**, the app was working with *fake data*.
 
-## Antigravity in Playground mode
+## Antigravity in Playground mode (💎)
 
 This is Antigravity in Playground mode:
 
@@ -209,9 +217,9 @@ and now teach me how to do it. How do i create a SvcAcct and maybe give me a bas
 
 <!-- 
 ![pupurabbux script: create a service account](image-11.png)
--->
-
 TODO(ricc): choose between code (pastable) and image (cuter, smaller):
+
+-->
 
 ```bash
 $ iac/gcp/create_service_account.sh
@@ -238,8 +246,9 @@ Created service account [spreadsheet-reader].
 ----------------------------------------------------------------
 ```
 
+<!--
 ![alt text](image-9.png)
-
+-->
 So I executed these simple instructions...
 
 ![alt text](image-8.png)
@@ -274,6 +283,78 @@ Wow! I closed the loop!
 ## The longer part: Deployment
 
 Directing Gemini CLI to push via Cloud Build to Cloud Run was a bit harder and took me 4 hours, but this is for another article.
+
+1. Cloud Build YAML (took me a while to do correctly, so I'm currently working on making it a good Custom Command):
+
+```yaml
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+steps:
+# 1. Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', '$_REGION-docker.pkg.dev/$PROJECT_ID/$_ARTIFACT_REGISTRY_REPO/$_SERVICE_NAME_BASE:$COMMIT_SHA', '.']
+
+# 2. Push the container image
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      export DOCKER_API_VERSION=1.41
+      docker push '$_REGION-docker.pkg.dev/$PROJECT_ID/$_ARTIFACT_REGISTRY_REPO/$_SERVICE_NAME_BASE:$COMMIT_SHA'
+
+# 3. Deploy container to Cloud Run (Development)
+- name: 'google/cloud-sdk:alpine'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - '${_SERVICE_NAME_BASE}-dev'
+  - '--image'
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_ARTIFACT_REGISTRY_REPO/$_SERVICE_NAME_BASE:$COMMIT_SHA'
+  - '--region'
+  - '$_REGION'
+  - '--port'
+  - '8080'
+  - '--allow-unauthenticated' # Often needed for public access, adjust if internal only
+  - '--add-cloudsql-instances'
+  - '$PROJECT_ID:europe-north1:pg-dev'
+  - '--set-env-vars'
+  - 'RAILS_ENV=development'
+
+# 4. Deploy container to Cloud Run (Production)
+- name: 'google/cloud-sdk:alpine'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - '${_SERVICE_NAME_BASE}-prod'
+  - '--image'
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_ARTIFACT_REGISTRY_REPO/$_SERVICE_NAME_BASE:$COMMIT_SHA'
+  - '--region'
+  - '$_REGION'
+  - '--port'
+  - '8080'
+  # Production might need stricter auth or different settings
+  - '--allow-unauthenticated'
+  - '--add-cloudsql-instances'
+  - '$PROJECT_ID:europe-north1:pg-dev'
+
+substitutions:
+  _REGION: europe-west1
+  _SERVICE_NAME_BASE: rubycon-cfp-evaluator
+  _ARTIFACT_REGISTRY_REPO: rubycon-apps
+
+```
+
+1. Cloud Build took me a while to get right:
+
+![CB screnshot](image-18.png)
+
+2. Artifact Repository
+
+![AR screenshot](image-17.png)
 
 ## The clear winner: Antigravity
 
@@ -324,13 +405,18 @@ Would you like to try Antigravity?
 **P.S.** For the curious, the code is currently cooking in my local lab (aka "Derek") at `~/.gemini/antigravity/playground/hidden-nova`. It's not public yet, but who knows what the future holds? 🚀
 
 
-## the untold story
+## Post-credit scene: the anonimizer untold story
 
-To take screenshjots without violating the privacy of my people I had to:
-1. Protect PII out of the login - no login no data!
-2. Created a magic button 
+To take screenshots for this article *without* violating the privacy of my people I had to:
 
-```
-> Create an anonimize bnutton on top right of the app. If I click it, all people name become "John Doe" or "Jane Doe" otr similar, and all titles are changed by Xxx . this allows me taking smart screenshots :) Make the button colorful and
-  change color if activated or deactivated. Needs to be in header and stateful
+1. Protect PII out of the login - no login no data! This secures the [public app](https://rubycon-cfp-evaluator-dev-7636499139.europe-west1.run.app/)
+2. Created a magic button to anonymize the data. Also added an ENV var to enable it for the whole dev cycle. I know I could have used test data, but I preferred to anonymize the real data to have the same numbers and shape.
+
+```ruby
+# prompt
+Create an anonimize bnutton on top right of the app. 
+If I click it, all people name become "John Doe" or "Jane Doe" or similar, 
+and all titles are changed by Xxx . 
+This allows me taking smart screenshots :) Make the button colorful and
+change color if activated or deactivated. Needs to be in header and stateful
 ```
