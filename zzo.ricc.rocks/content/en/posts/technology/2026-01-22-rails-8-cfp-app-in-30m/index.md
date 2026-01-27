@@ -4,7 +4,7 @@ date: 2026-01-22T11:00:00+01:00
 draft: false
 description: "A lightning-fast development session using Rails 8 and Google's Antigravity agent to build Mecenate, a CFP management tool."
 categories: ["Technology"]
-tags: ["Rails 8", "AI", "Antigravity", "Coding", "Ruby"]
+tags: ["Rails 8", "AI", "Antigravity", "Coding", "Ruby", "Gemini CLI", "Rubycon", "rubycon"]
 author: "Riccardo"
 #image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/antigravity-ruby-cfp.png
 image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/image-5.png
@@ -24,7 +24,7 @@ Since this is the first time we do it, we didn't have a nice form to fill, we in
 
 We put this info in a BIG Spreadsheet where all the organizers could vote and comment on the talks. It was a mess.
 
-Since I was Friction Logging my buddies Romin/Mete great Codelab "[Build with Antigravity](https://codelabs.developers.google.com/building-with-google-antigravity#3)" for work, I thought to myself: *Python and Flask? Giammai! I'll build it with Rails 8 instead!* (I'm a Rubyist, after all). 
+Since I was Friction Logging my buddies Romin and Mete's great Codelab "[Build with Antigravity](https://codelabs.developers.google.com/building-with-google-antigravity#3)" for work, I thought to myself: *Python and Flask? Giammai! I'll build it with Rails 8 instead!* (I'm a Rubyist, after all). 
 
 I thought: **will AGY ([antigravity](https://antigravity.google/)) be able to code something this ambitious for me?**
 
@@ -36,13 +36,13 @@ For the impatient, here's the **final result** after 2 days of coding:
 
 ![votes from us](image-13.png)
 
-I had to implement an anonimize button to take screenshots without violating the privacy of my people:
+I had to implement an anonymize button to take screenshots without violating the privacy of my people:
 
-My personal voting page (anonimized):
+My personal voting page (anonymized):
 
 ![alt text](image-15.png)
 
-Final Selection review (anonimized):
+Final Selection review (anonymized):
 
 ![alt text](image-16.png)
 
@@ -74,7 +74,7 @@ The website should have the following functionality:
    In other words, every vote is a number, and two strings.
 5. Each organizer/user can vote one CFP once, but they can edit it later on.
 6. The home page for a logged in user should have a Leaderboard of the TOP speakers (people they ranked the most)
-   for THAT USER and the list of speakers to still efvaluate (ordered by sent cfp early first!). Add an emoji warning 
+   for THAT USER and the list of speakers to still evaluate (ordered by sent cfp early first!). Add an emoji warning 
    if the person submitted after 15th january (max time), with some hover text “This person was naughty).
 7. The home page for LOGGED OUT user should have: 1 some dashboards (eg showing how many CFPs have been voted in %age: 
    for example with  4 users, 50 submissions: we target 4x50=200 votes so if we have 71 votes its 35.5% completed)
@@ -89,17 +89,20 @@ The website should have the following functionality:
 11. Launch the web application for me to review.
 ```
 
-This prompt took me 5-10min to write, I was pooring my heart and mind to it - a wrong word and the code would be messy! 
+This prompt took me 5-10min to write, I was pouring my heart and mind to it - a wrong word and the code would be messy! 
 
 I set out to build a **CFP (Call for Papers) management application** called **Mecenate**. The goal? To have a fully functional app to handle conference submissions, evaluations, and speaker data in record time. 
 
 * In **45 seconds**, AGY came up with a Rails 8 app with git initialized and a `README.md`.
 * Within **5 minutes**, the app was up and running (no kidding!) and was ~80% done. It had a simple/pleasant interface. Only data was missing, some sample/fake CFPs were there:
 
-![CFP with fake submissions](image-1.png)
+![CFP with test submissions from AGY](image-1.png)
+<!-- 
+![CFP with fake submissions](image-19.png)
+-->
 * AGY then started running the app in `localhost:3000`, navigated it with the [Browser function](https://codelabs.developers.google.com/getting-started-google-antigravity#3), found some issues, and started fixing them from there! Within **30min**, the app was working with *fake data*.
 
-## Antigravity in Playground mode (💎)
+## The gem: Antigravity in Playground mode 💎
 
 This is Antigravity in Playground mode:
 
@@ -113,9 +116,11 @@ Actually I've asked AGY to create a private repo called https://github.com/Rubyc
 
 ![My vibecoded app is on GitHub](image-4.png)
 
-## Bad news: Vibecoding and the illusion of 90% -> 100%
+## Bad news: Vibecoding and the illusion of the easy 90% -> 100%
 
-Now let me digress a miunte. I read it everywhere and I don't want to lie: LLMs aren't able to get there yet: they're great at vibecoding a solution based on training material, so they'll do great for well known paths; they still struggle to:
+Now let me digress a minute. 
+
+I read it everywhere and I don't want to lie: LLMs aren't able to get there yet: they're great at vibecoding a solution based on training material, so they'll do great for well known paths; they still struggle to:
 * integrate your *N* ideas (or *N* well-known paths), errors will arise, and inconsistencies will be found - some very hard to catch. 
 * LLMs are very helpful in implementing NEW ideas, but they're not able to integrate them or stay true to the previous ones. *Tip*: use add Unit tests FTW and prompt the learnings somewhere and ensure your agents read those *first*.
 
@@ -184,9 +189,11 @@ and then we can sbobinate(*) them later
 
 (*) *Sbobinate* is an italian word my father used to use a lot when "downloading videos from cameras" back in the days. I still use it today, like "I'm sbobinating the GoPro videos from my SSD, for yesterday scuba diving session(s)".
 
-You think I'm lying? YEah, I get this a lot. This is a proof I'm not lying:
+You think I'm lying? Yeah, I get this a lot. This is proof I'm not lying:
 
 ![Result of the prompt](image-6.png)
+
+*Revolutionary, right?*
 
 **Tip**: do not ask Gemini to read emails and do something within the context. Tell him to "sbobinate" them locally first, and then you can ask him to do something with them. Maybe you can give Gemini CLI a filter like a do "Just download the ones that look like a CFP" or be more precise "download only the emails tagged as #CFP" (*if* mcp supports labels).
 
@@ -194,20 +201,20 @@ At the end of this step, I have a local list of all CFP emails in my file system
 
 ## Help! Data keeps changing!
 
-We've decided to keep the Spreadsheet as the master of source. This was a suffered decision. Having two sources of truth which are not 100% sync-tolerant risked to create fake data, which ultimately would damage those 46 people who passionately applied for our event; they deserve better than that.
+We've decided to keep the Spreadsheet as the master of source. This was a tough decision. Having two sources of truth which are not 100% sync-tolerant risked to create fake data, which ultimately would damage those 46 people who passionately applied for our event; they deserve better than that.
 
 **Problem**: Ok, I'm a bit fed up to download a CSV every time my colleagues add a couple of votes, time to automate this: Spreadsheet update -> CSV -> `rake import` ... let's do it!
 
 ```prompt
 Ok now Write a script to dump the Spreadsheet like just dump-spreadsheet into a CSV. 
-I'll give u spreadsheet id, and i can create a sevice account, help me with it:
+I'll give u spreadsheet id, and i can create a service account, help me with it:
 trix: https://docs.google.com/spreadsheets/d/XXXXXX/edit
 tabs: Applicants 2025
 and now teach me how to do it. How do i create a SvcAcct and maybe give me a bash script to do it!
 ```
 
 **Wow!** Notably, Antigravity did two things:
-1. Created the code on GCP to do the automateable part:
+1. Created the code on GCP to do the automatable part:
    1. Select my project_id from `.env`
    2. Enable APIs.
    3. Create Service Account
@@ -284,7 +291,7 @@ Wow! I closed the loop!
 
 Directing Gemini CLI to push via Cloud Build to Cloud Run was a bit harder and took me 4 hours, but this is for another article.
 
-1. Cloud Build YAML (took me a while to do correctly, so I'm currently working on making it a good Custom Command):
+1. Cloud Build YAML (took me a while to do correctly, so I'm currently working on making it a good [Cloud Build Custom Command](https://github.com/palladius/gemini-cli-custom-commands/tree/main/commands/gcp)):
 
 ```yaml
 options:
@@ -350,11 +357,11 @@ substitutions:
 
 1. Cloud Build took me a while to get right:
 
-![CB screnshot](image-18.png)
+![Cloud Build screenshot](image-18.png)
 
 2. Artifact Repository
 
-![AR screenshot](image-17.png)
+![Artifact Registry screenshot](image-17.png)
 
 ## The clear winner: Antigravity
 
@@ -366,9 +373,9 @@ Antigravity isn't just a code completor; it's a proactive agent. Here is how it 
 
 In moments, it wrote a script to parse the unstructured text, extracting titles, abstracts, and speaker details, and populated the `etc/by_env/sbobination/submissions/` directory with perfectly formatted YAML files. It even enriched the data by inferring `speaker_country` and adding placeholders for Gemini annotations.
 
-3. **Mix AI and Determinism**. I love it when an LLM can help me **deterministically** dump 50 emails, and 50 rows from CSV, then it can **non-determinisically** do things like:
+2. **Mix AI and Determinism**. I love it when an LLM can help me **deterministically** dump 50 emails, and 50 rows from CSV, then it can **non-deterministically** do things like:
     * Research a person on the internet
-    * Fill in the gaps (nationality, company, github userame)
+    * Fill in the gaps (nationality, company, GitHub username)
 This info definitely facilitated our research job (remember: a CFP is not just about title/abstract!)
 
 3. **Polish & quick UI**. A functional app doesn't have to look bad. We used modern CSS (and a bit of Rails magic) to make the dashboard pop. I was impressed how a nice-looking, Tailwind with custom CSS, working app was working IN MINUTES!
@@ -405,7 +412,7 @@ Would you like to try Antigravity?
 **P.S.** For the curious, the code is currently cooking in my local lab (aka "Derek") at `~/.gemini/antigravity/playground/hidden-nova`. It's not public yet, but who knows what the future holds? 🚀
 
 
-## Post-credit scene: the anonimizer untold story
+## Post-credit scene: the anonymizer untold story
 
 To take screenshots for this article *without* violating the privacy of my people I had to:
 
@@ -414,9 +421,18 @@ To take screenshots for this article *without* violating the privacy of my peopl
 
 ```ruby
 # prompt
-Create an anonimize bnutton on top right of the app. 
+Create an anonymize button on top right of the app. 
 If I click it, all people name become "John Doe" or "Jane Doe" or similar, 
 and all titles are changed by Xxx . 
 This allows me taking smart screenshots :) Make the button colorful and
 change color if activated or deactivated. Needs to be in header and stateful
+```
+
+And finally a review:
+
+```
+review this article for typos, tone etc: 
+"content/en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/index.md"
+audience is mostly European or US-based.
+I'm a developer advocate for Google Cloud, so I'm an engineer.
 ```
