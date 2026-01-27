@@ -6,7 +6,8 @@ description: "A lightning-fast development session using Rails 8 and Google's An
 categories: ["Technology"]
 tags: ["Rails 8", "AI", "Antigravity", "Coding", "Ruby"]
 author: "Riccardo"
-image: antigravity-ruby-cfp.png
+#image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/antigravity-ruby-cfp.png
+image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/image-5.png
 ---
 
 <!-- 

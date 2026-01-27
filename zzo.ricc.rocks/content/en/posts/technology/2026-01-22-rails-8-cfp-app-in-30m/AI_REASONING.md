@@ -22,3 +22,6 @@ The user provided a memory reference to `gemini-cli` and an `output.md`, but the
 *   User can review and publish.
 
 App is in Derek in `~/.gemini/antigravity/playground/hidden-nova`
+
+
+![alt text](image-12.png)
