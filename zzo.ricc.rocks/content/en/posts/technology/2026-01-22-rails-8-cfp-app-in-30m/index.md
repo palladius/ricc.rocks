@@ -173,7 +173,8 @@ At the end of this step, I have a local list of all CFP emails in my file system
 
 ## Help! Data keeps changing!
 
-We've decided to keep the Spreadsheet as the master of source.
+We've decided to keep the Spreadsheet as the master of source. This was a suffered decision. Having two sources of truth which are not 100% sync-tolerant risked to create fake data, which ultimately would damage those 46 people who passionately applied for our event; they deserve better than that.
+
 **Problem**: Ok, I'm a bit fed up to download a CSV every time my colleagues add a couple of votes, time to automate this: Spreadsheet update -> CSV -> `rake import` ... let's do it!
 
 ```prompt
@@ -191,16 +192,78 @@ and now teach me how to do it. How do i create a SvcAcct and maybe give me a bas
    3. Create Service Account
    4. Download JSON key under `private/sa.json` (I put all my private stuff under `private/`, except .env, so I dont get misled into checking passwords by eager `git add *`).
    5. Something is missing though... something only I can do (well, until Workspace MCP fills in the gaps! Wait until 2027 for this!)
-2. Coached me into filling the gap (as the "silly human in the loop"):
+2. Coached me into filling the gap (as the "silly human in the loop"), look at the code:
 
-![pupurabbux scruupt: create a service account](image-11.png)
+<!-- 
+![pupurabbux script: create a service account](image-11.png)
+-->
 
-After 30 seconds, the code was there, and the script had the ability to dump the CSV onto my fixtures folder! 
+TODO(ricc): choose between code (pastable) and image (cuter, smaller):
+
+```bash
+$ iac/gcp/create_service_account.sh
+re: rubycon-it
+🔌 Enabling Google Sheets and Drive APIs...
+Operation "operations/acat.p2-7636499139-07863954-932d-4898-8e8c-8d07256bd598" finished successfully.
+mw: Creating Service Account 'spreadsheet-reader'...
+Created service account [spreadsheet-reader].
+   ✅ Created service account.
+🔑 Creating/Downloading JSON key to 'private/sa.json'...
+   ⚠️  Key file 'private/sa.json' already exists. We won't overwrite it to prevent duplicates.
+   If you want a new key, delete the file and run this script again.
+
+🎉 Setup Complete!
+----------------------------------------------------------------
+👉 ACTION REQUIRED:
+1. Open your spreadsheet in your browser.
+2. Click the 'Share' button.
+3. Share it with this email address:
+
+   spreadsheet-reader@rubycon-it.iam.gserviceaccount.com
+
+4. Give it 'Viewer' access.
+----------------------------------------------------------------
+```
+
+![alt text](image-9.png)
+
+So I executed these simple instructions...
+
+![alt text](image-8.png)
+
+
+<!-- 
+# ![service account](image-7.png)
+-->
+
+.. and bingo! After 30 seconds, the code was there, and the script had the ability to see the spreadsheet, hence dump the CSV onto my fixtures folder! 
+
+Look now:
+
+```bash
+$ just dump-spreadsheet 
+📦 Dumping Google Spreadsheet...
+SPREADSHEET_ID='1AUAkBJf-gTprbFp0jkWbD6NxDZumDQV4DgddM_TJZRo' bundle exec rake dump:spreadsheet
+🔍 Authenticating with service account...
+📂 Opening spreadsheet: 1AUAkBJf-gTprbFp0jkWbD6NxDZumDQV4DgddM_TJZRo...
+📄 Reading worksheet: 'Applicants 2025'...
+💾 Saving to: etc/spreadsheet_dump_20260123_083838.csv
+✅ Done! Saved 50 rows to etc/spreadsheet_dump_20260123_083838.csv
+```
+
+..and bingo, here's my CSV which i can show just partially:
+
+![just carmine and known people](image-10.png)
+
 Wow! I closed the loop!
 
-## [VC] The Catalyst: Antigravity
 
-*TODO(ricc): bring above*
+## The longer part: Deployment
+
+Directing Gemini CLI to push via Cloud Build to Cloud Run was a bit harder and took me 4 hours, but this is for another article.
+
+## The clear winner: Antigravity
+
 
 Antigravity isn't just a code completor; it's a proactive agent. Here is how it transformed the workflow:
 
@@ -209,9 +272,12 @@ Antigravity isn't just a code completor; it's a proactive agent. Here is how it 
 
 In moments, it wrote a script to parse the unstructured text, extracting titles, abstracts, and speaker details, and populated the `etc/by_env/sbobination/submissions/` directory with perfectly formatted YAML files. It even enriched the data by inferring `speaker_country` and adding placeholders for Gemini annotations.
 
-3. **"Sbobination" as the Single Source of Truth**. We established a data architecture where **Sbobination** (our internal naming for the enriched dataset) became the single source of truth. Antigravity helped set up symbolic links so that both `production` and `development` environments pointed to this authentic data source, ensuring consistency across the board.
+3. **Mix AI and Determinism**. I love it when an LLM can help me **deterministically** dump 50 emails, and 50 rows from CSV, then it can **non-determinisically** do things like:
+    * Research a person on the internet
+    * Fill in the gaps (nationality, company, github userame)
+This info definitely facilitated our research job (remember: a CFP is not just about title/abstract!)
 
-3. **Polish & UI**. A functional app doesn't have to look bad. We used modern CSS (and a bit of Rails magic) to make the dashboard pop. We added a "Unique Countries" stat to the dashboard to track the global reach of our CFP, and refined the footer and FAQ sections to ensure clarity for users.
+3. **Polish & quick UI**. A functional app doesn't have to look bad. We used modern CSS (and a bit of Rails magic) to make the dashboard pop. I was impressed how a nice-looking, Tailwind with custom CSS, working app was working IN MINUTES!
 
 ### The "Wow" Moment
 
@@ -221,9 +287,6 @@ When I asked to "Symlink Submissions to Sbobination," Antigravity understood the
 It executed the file system operations safely and verified the links.
 Now both PROD and DEV environments point to the same ***grounded*** data source.
 
-## The longer part: Deployment
-
-Directing Gemini CLI to push via Cloud Build to Cloud Run was a bit harder and took me 4 hours, but this is for another article.
 
 ## Conclusion
 
@@ -246,3 +309,4 @@ Would you like to try Antigravity?
 <br/>
 
 **P.S.** For the curious, the code is currently cooking in my local lab (aka "Derek") at `~/.gemini/antigravity/playground/hidden-nova`. It's not public yet, but who knows what the future holds? 🚀
+
