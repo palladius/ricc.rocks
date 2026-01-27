@@ -14,17 +14,29 @@ image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/image-5.png
 ![Antigravity building Rails App](antigravity-ruby-cfp.png)
 -->
 
-![Caesar with CFP](image-5.png)
-
 Today I want to share a story about speed, efficiency, and the future of coding. 
 
-As you might know, I'm a big fan of Rails and I'm the co-organizer of the [Rubycon](https://rubycon.it/) Ruby conference (See you all on [May 8th in Rimini](https://rubycon.it/#venue), btw!). Last week we've closed the [CFP](https://rubycon.it/cfp) for the conference and we've received a lot of submissions. We need to select the best talks and organize them in a way that makes sense for the conference schedule. Since this is the first time we do it, we didn't have a nice form to fill, we instead asked people to shoot us an email with title, abstract and other info.
+As you might know, I'm a big fan of Rails and I'm the co-organizer of the [Rubycon](https://rubycon.it/) Ruby conference (See you all on [May 8th in Rimini](https://rubycon.it/#venue), btw!). Last week we've closed the [Call For Paper (CFP)](https://rubycon.it/cfp) for the conference and we've received a lot of submissions. We need to select the best talks and organize them in a way that makes sense for the conference schedule. 
 
-We put this info in a BIG Spreadsheet where all the organizers could vote and comment on the talks. It was a mess. Since I was Friction Logging my buddies Romin/Mete great Codelab "[Build with Antigravity](https://codelabs.developers.google.com/building-with-google-antigravity#3)" I thought to myself: *Python and Flask? Giammai! I'll build it with Rails 8 instead!*. I thought: will AGY be able to code something for me?
+Since this is the first time we do it, we didn't have a nice form to fill, we instead asked people to shoot us an email with title, abstract and other info. Bad idea!
 
-Here's the **final result** after 2 days of coding:
+![Caesar with CFP](image-5.png)
+
+We put this info in a BIG Spreadsheet where all the organizers could vote and comment on the talks. It was a mess.
+
+Since I was Friction Logging my buddies Romin/Mete great Codelab "[Build with Antigravity](https://codelabs.developers.google.com/building-with-google-antigravity#3)" for work, I thought to myself: *Python and Flask? Giammai! I'll build it with Rails 8 instead!* (I'm a Rubyist, after all). 
+
+I thought: **will AGY ([antigravity](https://antigravity.google/)) be able to code something this ambitious for me?**
+
+## The final result
+
+For the impatient, here's the **final result** after 2 days of coding:
 
 ![final result](image-2.png)
+
+![votes from us](image-13.png)
+
+
 
 ## the CFP Rails Prompt
 
@@ -311,3 +323,14 @@ Would you like to try Antigravity?
 
 **P.S.** For the curious, the code is currently cooking in my local lab (aka "Derek") at `~/.gemini/antigravity/playground/hidden-nova`. It's not public yet, but who knows what the future holds? 🚀
 
+
+## the untold story
+
+To take screenshjots without violating the privacy of my people I had to:
+1. Protect PII out of the login - no login no data!
+2. Created a magic button 
+
+```
+> Create an anonimize bnutton on top right of the app. If I click it, all people name become "John Doe" or "Jane Doe" otr similar, and all titles are changed by Xxx . this allows me taking smart screenshots :) Make the button colorful and
+  change color if activated or deactivated. Needs to be in header and stateful
+```
