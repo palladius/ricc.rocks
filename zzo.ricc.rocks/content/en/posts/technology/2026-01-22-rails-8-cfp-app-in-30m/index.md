@@ -437,3 +437,7 @@ review this article for typos, tone etc:
 audience is mostly European or US-based.
 I'm a developer advocate for Google Cloud, so I'm an engineer.
 ```
+
+
+**Note**: a shorter version of this article is on my Medium channel: https://medium.com/@palladiusbonton/how-i-coded-a-rails-8-cfp-app-in-30m-with-antigravity-29afcf83f8e2
+
