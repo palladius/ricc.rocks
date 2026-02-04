@@ -1,8 +1,9 @@
 ---
-title: "How I coded a Rails 8 CFP app in 30m with Antigravity"
+title: "How I coded a Rails 8 CFP app in 30m with Antigravity (long version)"
 date: 2026-01-22T11:00:00+01:00
 draft: false
-description: "A lightning-fast development session using Rails 8 and Google's Antigravity agent to build Mecenate, a CFP management tool."
+description: |
+   A lightning-fast development session using Rails 8 and Google's Antigravity agent to vibecode a chaotic spreadsheet into a beautiful app.
 categories: ["Technology"]
 tags: ["Rails 8", "AI", "Antigravity", "Coding", "Ruby", "Gemini CLI", "Rubycon", "rubycon"]
 author: "Riccardo"
@@ -94,7 +95,7 @@ This prompt took me 5-10min to write, I was pouring my heart and mind to it - a 
 I set out to build a **CFP (Call for Papers) management application** called **Mecenate**. The goal? To have a fully functional app to handle conference submissions, evaluations, and speaker data in record time. 
 
 * In **45 seconds**, AGY came up with a Rails 8 app with git initialized and a `README.md`.
-* Within **5 minutes**, the app was up and running (no kidding!) and was ~80% done. It had a simple/pleasant interface. Only data was missing, some sample/fake CFPs were there:
+* Within **5 minutes**, the app was up and running (no kidding!) and was ~80% done (together with a working login). It had a simple/pleasant interface. Only data was missing, some sample/fake CFPs were there:
 
 ![CFP with test submissions from AGY](image-1.png)
 <!-- 
