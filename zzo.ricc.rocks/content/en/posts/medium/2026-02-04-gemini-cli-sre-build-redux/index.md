@@ -1,0 +1,257 @@
+---
+title: "AI-Powered SRE: How Antigravity Saved My Netlify Build"
+date: 2026-02-04
+layout: single
+author: Riccardo Carlesso
+read_time: 5  # Minutes
+tags: [gemini, gemini-cli, antigravity, netlify, SRE, devops, troubleshooting, github, rubycon]
+image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/image-26.png
+enableToc: true
+hideToc: false
+enableTocContent: true
+---
+
+Everyone knows GenAI is good for coding. I mean, even [Linus is vibecoding with Antigravity](https://news.ycombinator.com/item?id=46569587) now!
+
+However, **how AI can help SREs and Operators is still up for debate**.
+
+I'm at work when my friend Elia from the Rubycon team tells me: *"Riccardo, Netlify can't update our site anymore!"* 
+
+Luckily, the site is not down, it's just stuck! 
+
+In this article, we'll see how Antigravity and Gemini CLI can help:
+
+1. Troubleshoot [Netlify](https://www.netlify.com/) build issues, quite brilliantly.
+2. Implement fixes and document changes for future reuse.
+3. Build a **Post Mortem** (timeline + action items!) via **Custom Commands**. Use the Workspace MCP to create an actual [Google doc](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0)!
+
+All links on how I did it are at the bottom of this page.
+
+## Honey, I Shrunk the CI/CD!
+
+*aka How I broke Netlify auto-build.*
+
+I love [Netlify](https://www.netlify.com/). I use it to maintain my countless websites and blogs, built with `jekyll` or `hugo`. Sometimes, the pipeline breaks, and you need to read the logs. I used to fix things manually, before AI. Now I just paste the logs or, better, use an MCP or CLI to have it downlod it for me :) ("teach them to fish" strategy).
+
+This morning, I get pinged by my friend Elia from the Rubycon team: "Riccardo, Netlify can't update our site anymore!".
+"Sure, file a GitHub issue and I'll fix it", I reply. I'm from the old "If it's not on [buganizer](https://issuetracker.google.com/), it doesn't exist" Google school of thought.
+
+
+{{< figure 
+    src="image-27.png" 
+    alt="Issue 58 broken CI/CD" 
+    caption="**The issue**: https://github.com/palladius/rubycon.it/issues/58" 
+    class="narrow-caption"
+>}}
+
+
+
+Sounds familiar? Luckily I have **Antigravity**, **Gemini CLI**, and a number of tools at my disposal to right the wrong! Time to put my Ops hat on and fix this. So let's Start With...
+
+
+{{< figure 
+    src="image-1.png" 
+    alt="Antigravity terminal" 
+    caption="**Fig 1**: You'll never guess my nationality from my `PS1`.." 
+    class="narrow-caption"
+>}}
+
+
+```
+# I love how I can invoke it from CLI..
+$ cd ~/git/rubycon.it/
+$ antigravity .
+```
+
+
+### Antigravity Keeps Me in the Loop
+
+Antigravity is great at keeping me in the loop, and surviving software crashes and computer reboots.
+
+I write lazily (I could be a CEO now!) on the right side of Antigravity:
+
+> Help me troubleshoot this: https://github.com/palladius/rubycon.it/issues/58
+
+<!-- Testing Hugo's built-in figure shortcode -->
+{{< figure 
+    src="image-2.png" 
+    alt="Help me troubleshoot this..." 
+    caption="  **Fig 2 (Hugo)**: Asking Antigravity to analyze the GitHub issue - notice how I can just paste the URL and it fetches the context automatically!  " 
+    width="100%"
+    class="narrow-caption"
+>}}
+
+
+After some thinking, Antigravity analyzes the issue, identifies the problem, and proposes a fix:
+
+![Problem analysis from AG](problem-analysis.png)
+
+<!-- ## Fixing the Issue -->
+
+Once the fix is ready, I simply tell Antigravity:
+
+> Comment on issue 58 with: 1. what the problem was, 2. what your fix was. Ensure you sign yourself as Antigravity.
+
+**Wham!** The comment is posted automatically.
+
+![GH Issue Commented by AGY](image-28.png)
+
+Then I type:
+
+> "ok git commit with gitmoji and push now!"
+
+And we're done! The fix is deployed.
+
+![alt text](image-11.png)
+
+`gitmoji` is fancy and meaningful at the same time!
+
+## The Post Mortem: "Have I told you about that time I broke PROD?"
+
+*aka How to write a Post Mortem with Gemini CLI*
+
+*"An Operator enters the bar and tells his friends "Have I told you about that time I broke PROD?". His friends sit down and sip calmly their beer while waiting for a great story to be told. It starts like this..."*
+
+I'm Riccardo, the kind of Engineer who commits to PROD, no PRs, no questions asked. Last Saturday, I mistakenly committed a [new Equity page](https://rubycon.it/equity) and all of a sudden my website was all white! I'm not a chromatic snob, but I can tell if white over white is hard to read (when "Rubycon" reads "con").
+
+![alt text](image-4.png)
+
+But I'm also a tidy person, before fixing prod [I document it](https://github.com/palladius/rubycon.it/issues/57) and warn my friends on Whatsapp.
+The world can go on fire, but it needs to be tidy.
+
+### The issue
+
+As always, the problem was a commit: [`a61a79d`](https://github.com/palladius/rubycon.it/commit/a61a79d6e015bf4c8b05e2750fcee3342a89364a).On Sat Jan 10 11:36:14 2026 I pushed a new page and all of a sudden my website was all defaced!
+
+### The solution
+
+* I've asked Gemini to fix it, and it did.
+* I've also asked it to write a mini Post-Mortem, and [it did](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
+
+I won't tell you how the fix was done; it's the good old feedback loop: 
+
+* check `git diff` for culprit (breaking change was minutes ago, after all!)
+* check `curl localhost:8080` to reproduce the bad CSS until you fix it. This is a bit harder as the system has no EYES, but CSSs can be tested.
+
+### The Post Mortem (via Custom Command)
+
+Yesterday, I opened sourced a new Post Mortem Gemini CLI **Custom Command** *and* a **Skill**!. Today, I'll try to reproduce the PoMo and show you some magic here. Let's see it in action here:
+
+> /sre:postmortem-create Look at breaking and fixing commits in https://github.com/palladius/rubycon.it/issues/57 and follow  
+> the PoMo procedure to create a PoMo doc. Ignore doc/post_mortems/20260110-css-outage.md - you're smarter than that   
+
+![alt text](image-16.png)
+
+Code for `/sre:postmortem-create` Custom Command is available [here](https://github.com/palladius/gemini-cli-custom-commands/blob/main/commands/sre/postmortem-create.toml).
+
+* Gemini CLI starts reading GitHub, and then starts looking at the two interesting commits:
+
+![alt text](image-17.png)
+
+* It then created a CSV with the timeline, as instructed:
+
+![Building CSV timeline](image-18.png)
+
+* 3. Updates the PLAN.md (stateful genius):
+
+![alt text](image-19.png)
+
+* 4. finalizes it all.
+
+![alt text](image-20.png)
+
+As you see, I've asked [GianCarlo](https://github.com/google-gemini/gemini-cli) to use **Workspace MCP** to update. You can find the Workspace MCP server [here](https://github.com/gemini-cli-extensions/workspace). It's maintained by my friend [Allen](https://github.com/allenhutchison).
+
+* It first asks for permission: 
+
+![alt text](image-21.png)
+
+* It then goes on and...
+
+![alt text](image-22.png)
+
+* Gemini:  *Would you like me to share it with anyone or file those action items as GitHub issues now? 🇮🇹🤌*
+* Riccardo: *Yes why not. file AIs and then link them in the GDoc too.*
+
+And that's it! 
+
+* [Google Doc created](https://docs.google.com/document/d/1ba21A7ShDCqPhNBJxpH6sV3dSFQaOeDxy4VgrkurouM/edit?tab=t.0) (this is a pubilc copy):
+
+![PoMo screenshot](image-24.png)
+
+* Action Items filed on GitHub:
+
+![Two GH issues](image-23.png)
+
+I then asked GianCarlo to link the two AIs onto the original GH issue. We have a similar dependency mechanism in our internal Google Issue Tracker.
+
+### Some final fun 🍌
+
+> finally use Nano Banana MCP to create an image of the outage in the same folder!
+
+![Asking GC to use NanoBanana MCP to create an image of the outage](image-25.png)
+
+And the result is...
+
+![broken ruby outage NanoBanana result](image-26.png)
+
+TA-DAH! Good enough!
+
+If you're interested, all steps are in: [doc/post_mortems/issue-57/](https://github.com/palladius/rubycon.it/tree/main/doc/post_mortems/issue-57). You can find the old PostMortem (created without any CC) in [doc/post_mortems/20260110-css-outage.md](https://github.com/palladius/rubycon.it/blob/main/doc/post_mortems/20260110-css-outage.md).
+
+## And now let's write a nice post about this.. (aka CI/CD broken part 2)
+
+*(yes, THIS post you're reading!)*
+
+I was gonna push this article for you to read but.. **Houston we got a problem**: 
+
+![Netlify push is stuck! With arrows](image-15.png)
+
+As you can see from this image, **Netlify** is not updating our site ricc.rocks (to the right) and this article is only visible in localhost (to the left)! 
+
+Time to ask *Antigravity* in a new thread (yes, AG is multi threaded)! Let's attach this image and ask it to create an issue, and fix it!
+
+![AG help me here!](image-5.png)
+
+* Issue is created => https://github.com/palladius/ricc.rocks/issues/2
+
+Now this was more complex, after a bit of back and forth, AG figured it out: 
+
+![alt text](image-6.png)
+
+And indeed... 
+
+![better screenshot for BUILD on netlify](image-9.png)
+
+.. it works! Damn GLIBC! :) 
+
+And finally, my article landed online on https://ricc.rocks/, where most likely you're reading it!
+
+![Article is online! With red arrows](image-8bis.png)
+
+## Conclusions
+
+This is how AI-assisted operations work in practice. With **Gemini CLI** and **Antigravity**, I can:
+
+1. **Troubleshoot issues** faster by having AI analyze GitHub issues
+2. **Implement fixes** with AI assistance
+3. **Document changes** automatically. See [Issue #2](https://github.com/palladius/ricc.rocks/issues/2) for the fix and [Issue #3](https://github.com/palladius/ricc.rocks/issues/3) on how to do beautiful image captions with Hugo `figure`s ("go figure", literally!)
+4. **Handle parallel requests** thanks to Antigravity's multi-threading.
+
+The future of SRE work is here, and it's powered by AI! 🚀
+
+Follow me for more, since **Skills** are coming for Gemini CLI!
+---
+
+* Do you love `CLI`? Download Gemini CLI here: 🔗 [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+    * Want to pump it up with Riccardo's Custom Commands, such as the PostMortem you've seen in action? 🔗 [Extension](https://github.com/palladius/gemini-cli-custom-commands/)
+    * Want to pump it up with Allen's Workspace MCP? 🔗 [Extension](https://github.com/gemini-cli-extensions/workspace)
+* Do you love `vscode`-type IDEs? Download 🔗 [Antigravity](https://antigravity.google/): it has Gemini CLI inside, like Tony Stark is powered by [Arc Reactor](https://ironman.fandom.com/wiki/.Arc_Reactor)
+* Do you love **Ruby**? Want to know more about the classiest Ruby Italian conference? Check out 🔗 [Rubycon](https://rubycon.it/) ♦️
+
+{{< figure 
+    src="image-3.png" 
+    alt="Rubycon Site" 
+    caption="I've ideated and created this with a bunch of Italian friends: ♦️ [rubycon.it](https://rubycon.it/) See you on 📅 May 8th in Rimini! "
+    class="narrow-caption"
+>}}
