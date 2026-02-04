@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.1] - 2026-02-04
+
+### Added
+- New "Redux" Medium article: "How I coded a Rails 8 CFP app in 30m with Antigravity" (Simplified version of the previous tech post).
+
 ## [0.2.0] - 2026-01-25
 
 ### Added
