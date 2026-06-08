@@ -10,7 +10,7 @@ image: /en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-o
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
 User: ricc
-Host: derek
+Host: derek.zrh
 Bug: b/520314033
 UTM_ADDON: "?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog"
 CTA: "https://github.com/gemini-cli-extensions/sre"
@@ -92,12 +92,10 @@ Things I've learnt playing with Google harnesses and GCP investigations:
 
 ## Let's Break Things: The GKE Demo Outage
 
-[![SRE Extension Installation & Setup Walkthrough Video](https://img.youtube.com/vi/bPCznsjW8BU/0.jpg)](https://youtu.be/bPCznsjW8BU)
-
 To show you exactly how this works under stress, we recorded some walkthroughs and demo videos where we intentionally broke a live GKE cluster:
-*   **Demo 01: SRE Extension Demo Outage Investigation Video**: Watch us triage an active outage in real-time:
-    [![Demo 01 Video Thumbnail](https://img.youtube.com/vi/_sqPO2oYUoM/0.jpg)](https://youtu.be/_sqPO2oYUoM)
-*   **Demo 02: SRE Extension Installation & Setup Walkthrough Video**: See how to get up and running from scratch:
+*   **Demo 01: SRE Extension Installation & Setup Walkthrough Video**: See how to get up and running from scratch:
+    [![01 SRE Extension Installation & Setup Walkthrough Video](https://img.youtube.com/vi/_sqPO2oYUoM/0.jpg)](https://youtu.be/_sqPO2oYUoM)
+*   **Demo 02: SRE Extension Demo Outage Investigation Video**: Watch us triage an active outage in real-time:
     [![Demo 02 Video Thumbnail](https://img.youtube.com/vi/bPCznsjW8BU/0.jpg)](https://youtu.be/bPCznsjW8BU)
 
 In these walkthroughs, you will see how the agent logs in, securely audits the deployment configuration, correlates the service errors, and isolates the broken workload—saving what would normally be 20 minutes of hunting in under two minutes.
