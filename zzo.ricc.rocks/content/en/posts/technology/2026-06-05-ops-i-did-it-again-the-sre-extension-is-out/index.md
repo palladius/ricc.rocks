@@ -15,14 +15,14 @@ Bug: b/520314033
 UTM_ADDON: "?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog"
 CTA: "https://github.com/gemini-cli-extensions/sre"
 Status: wip
-Version: "1.2"
+version: "1.3"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-06-12"
 ---
 
 # Ops I did it again: The SRE Extension is out!
 
-When I met Ramon in a cafeteria here in Google Zurich, I wouldn't have known that in a few months I would have released an official Open Source package to help SREs around the world! But life is full of surprises, and here we are.
+When I met Ramón in a cafeteria here in Google Zurich, I wouldn't have known that in a few months I would have released an official Open Source package to help SREs around the world! But life is full of surprises, and here we are.
 
 When we talk about SRE (Site Reliability Engineering), we are talking about keeping systems alive under heavy pressure. SREs are constantly fighting outages, config drift, and alert storms. It is a world of pager alerts at 3 AM and frantic Slack threads.
 
@@ -38,18 +38,18 @@ It is a bundle of specialized, agentic skills that allow AI assistants to perfor
 
 And now, we have expanded this support so it works perfectly and seamlessly with both the [Antigravity CLI (agy)](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog), **Claude Code** and Codex.
 
-The SRE Extension exposes a suite of specialized skills; let's examine them in a tyipical chronological order:
+The SRE Extension exposes a suite of specialized skills; let's examine them in a typical chronological order:
 
 - **GCP Setup**. [gcp-setup](https://github.com/gemini-cli-extensions/sre/blob/main/skills/gcp-setup/SKILL.md) and [gcp-mcp-setup](https://github.com/gemini-cli-extensions/sre/blob/main/skills/gcp-mcp-setup/SKILL.md) for secure GCP setup; it also sets up your CLI environment with a bunch of Google MCPs (see the [supported products list](https://docs.cloud.google.com/mcp/supported-products)).
   - Kudos to my buddy [Romin Irani](https://rominirani.medium.com) for his pioneering work on [Google Managed MCP Servers](https://rominirani.medium.com/getting-started-with-google-mcp-services-a31dfb1b87a8) (check out his [google-mcp-servers repository](https://github.com/rominirani/google-mcp-servers) too!).
   - We're also currently working on a nice [GCP Discovery](https://github.com/gemini-cli-extensions/sre/blob/main/skills/gcp-architecture-discovery/SKILL.md) skill.
   - If you don't have GCP, no worries, the other skills will be independent! We also accept contributions for other Clouds!
 
-![Dozens od supported products](image.png)
+![Dozens of supported products](image.png)
 
 - **Investigation**. [investigation-entrypoint](https://github.com/gemini-cli-extensions/sre/blob/main/skills/investigation-entrypoint/SKILL.md). This is where your SRE CLI journey starts, in a safe way. This skill is aware of the others and knows what to call:
   - [cloud-logging](https://github.com/gemini-cli-extensions/sre/blob/main/skills/cloud-logging/SKILL.md), [cloud-monitoring](https://github.com/gemini-cli-extensions/sre/blob/main/skills/cloud-monitoring/SKILL.md), and [gcp-slo-management](https://github.com/gemini-cli-extensions/sre/blob/main/skills/gcp-slo-management/SKILL.md) for getting all those nice *o11y* signals you care about, including Service Level Objectives.
-  - [GCP Playbooks](https://github.com/gemini-cli-extensions/sre/blob/main/skills/gcp-playbooks/SKILL.md) tries to be the place to record our (and your) Playbooks. Currnetly supports Cloud Build, resource managher, GKE and Cloud Run.
+  - [GCP Playbooks](https://github.com/gemini-cli-extensions/sre/blob/main/skills/gcp-playbooks/SKILL.md) tries to be the place to record our (and your) playbooks. Currently supports Cloud Build, resource manager, GKE and Cloud Run.
   - [monitoring-graphs](https://github.com/gemini-cli-extensions/sre/blob/main/skills/monitoring-graphs/SKILL.md) to start and orchestrate outage triage, generate incident charts, and keep SRE investigations safe.
   - [Generic Mitigation](https://github.com/gemini-cli-extensions/sre/tree/main/skills/generic-mitigations) from Jen Mace article allows the system to classify the outage and find the best remediation.
 
@@ -62,10 +62,10 @@ You can inspect the open-source codebase on the [Main SRE Extensions GitHub Repo
 
 Two hidden gemstones:
 
-* [cloud-monitoring](https://github.com/gemini-cli-extensions/sre/blob/main/skills/cloud-monitoring/SKILL.md). In order to safeguard token expenditure, I'm particularly proud for scripting a python CSV extractor which takes a generic multi-var timeseries and then shows the user a simple, cost-effective Sparkline, like `|█▇▆▇ ▂▃   ▂ ▂|`. Costs 10 tokens vs thousands (if not millions) for a single CSV!
-* [monitoring-graphs](https://github.com/gemini-cli-extensions/sre/blob/main/skills/monitoring-graphs/SKILL.md) actually vibe-codes python scripts amd creates amazing PoMo graphs which would probably make Ben Treynor cry of joy!
+* [cloud-monitoring](https://github.com/gemini-cli-extensions/sre/blob/main/skills/cloud-monitoring/SKILL.md). In order to safeguard token expenditure, I'm particularly proud for scripting a Python CSV extractor which takes a generic multi-var timeseries and then shows the user a simple, cost-effective Sparkline, like `|█▇▆▇ ▂▃   ▂ ▂|`. Costs 10 tokens vs thousands (if not millions) for a single CSV!
+* [monitoring-graphs](https://github.com/gemini-cli-extensions/sre/blob/main/skills/monitoring-graphs/SKILL.md) actually vibe-codes Python scripts and creates amazing PoMo graphs which would probably make Ben Treynor cry of joy!
 
-See 2 examples here (more exmaples in [this repo](https://github.com/palladius/about-sre-extension/)):
+See 2 examples here (more examples in [this repo](https://github.com/palladius/about-sre-extension/)):
 
 ![alt text](image-1.png)
 
@@ -85,17 +85,17 @@ Check out the [About SRE Extension Page & PostMortems](https://github.com/pallad
 
 Things I've learnt playing with Google harnesses and GCP investigations:
 
-* Monitoring and Logs are BIG. Ingesting them in the agent results in "tipsiness". That's way we've instructed the Investigator skill to call those with subagents, and use `grep`, `jq` and the magic [export_timeseries_to_csv.py](https://github.com/gemini-cli-extensions/sre/blob/main/skills/cloud-monitoring/scripts/export_timeseries_to_csv.py) script to evince stats from huge metrics via NumPy.
+* Monitoring and Logs are BIG. Ingesting them in the agent results in "tipsiness". That's why we've instructed the Investigator skill to call those with subagents, and use `grep`, `jq` and the magic [export_timeseries_to_csv.py](https://github.com/gemini-cli-extensions/sre/blob/main/skills/cloud-monitoring/scripts/export_timeseries_to_csv.py) script to evince stats from huge metrics via NumPy.
 
 ## Let's Break Things: The GKE Demo Outage
 
-[![SRE Extension Installation & Setup Walkthrough Video](https://img.youtube.com/vi/_sqPO2oYUoM/0.jpg)](https://youtu.be/_sqPO2oYUoM)
+[![SRE Extension Installation & Setup Walkthrough Video](https://img.youtube.com/vi/5GGw0HegE3E/0.jpg)](https://youtu.be/5GGw0HegE3E)
 
 To show you exactly how this works under stress, we recorded some walkthroughs and demo videos where we intentionally broke a live GKE cluster:
 *   **Demo 01: SRE Extension Demo Outage Investigation Video**: Watch us triage an active outage in real-time:
-    [![Demo 01 Video Thumbnail](https://img.youtube.com/vi/5GGw0HegE3E/0.jpg)](https://youtu.be/5GGw0HegE3E)
+    [![Demo 01 Video Thumbnail](https://img.youtube.com/vi/_sqPO2oYUoM/0.jpg)](https://youtu.be/_sqPO2oYUoM)
 *   **Demo 02: SRE Extension Installation & Setup Walkthrough Video**: See how to get up and running from scratch:
-    [![Demo 02 Video Thumbnail](https://img.youtube.com/vi/_sqPO2oYUoM/0.jpg)](https://youtu.be/_sqPO2oYUoM)
+    [![Demo 02 Video Thumbnail](https://img.youtube.com/vi/5GGw0HegE3E/0.jpg)](https://youtu.be/5GGw0HegE3E)
 
 In these walkthroughs, you will see how the agent logs in, securely audits the deployment configuration, correlates the service errors, and isolates the broken workload—saving what would normally be 20 minutes of hunting in under two minutes.
 
@@ -110,7 +110,7 @@ If you are the type of developer or SRE who needs to see it to believe it—or i
 
 - **SRE Testing Suite**: Madhavi and I got you covered! Find it on the [SRE Testing Suite GitHub Repository](https://github.com/palladius/sre-testing-suite?utm_source=ricc-blog&utm_medium=blog&utm_campaign=sre-extension) and just follow the instructions. You can deploy this testing suite to spin up mock environments, simulate active GKE outages, and observe how your AI agents handle incident response.
 
-We're also working on an **GKE Outage Investigation Codelab** to get an easy step-by-step codelab to experience this at your own time on your computer.
+We're also working on a GKE Outage Investigation Codelab to get an easy step-by-step codelab to experience this at your own time on your computer.
 
 <!-- TODO once published
  [GKE Outage Investigation Codelab](https://codelabs.developers.google.com/codelabs/investigate-gke-cluster-breakage-scenarios-with-postmortem) to learn how to break and debug GKE clusters step-by-step.
@@ -145,7 +145,7 @@ Here's the architecture diagram ([.dot](https://github.com/palladius/adk-sre-ben
 
 ![Particular of the graph with just Ops and Planning](image-5.png)
 
-Fun fact: I've vibecoded this idea over telegram with my agent while cycling around Zurich (then refined later on a computer)
+Fun fact: I've vibecoded this idea over Telegram with my agent while cycling around Zurich (then refined later on a computer)
 
 
 ## RECAP links
