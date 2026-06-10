@@ -10,12 +10,12 @@ image: /en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-o
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
 User: ricc
-Host: derek.zrh
+Host: derek.zrh.corp.google.com
 Bug: b/520314033
 UTM_ADDON: "?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog"
 CTA: "https://github.com/gemini-cli-extensions/sre"
 Status: published
-version: "1.3"
+version: "1.4"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-06-05"
 MediumURL: "https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0"
@@ -93,9 +93,9 @@ Things I've learnt playing with Google harnesses and GCP investigations:
 ## Let's Break Things: The GKE Demo Outage
 
 To show you exactly how this works under stress, we recorded some walkthroughs and demo videos where we intentionally broke a live GKE cluster:
-*   **Demo 01: SRE Extension Installation & Setup Walkthrough Video**: See how to get up and running from scratch:
-    [![01 SRE Extension Installation & Setup Walkthrough Video](https://img.youtube.com/vi/_sqPO2oYUoM/0.jpg)](https://youtu.be/_sqPO2oYUoM)
-*   **Demo 02: SRE Extension Demo Outage Investigation Video**: Watch us triage an active outage in real-time:
+*   **Demo 01: SRE Extension Installation & Setup Walkthrough Video**: See how to get up and running from scratch (available on the [official GCT Channel](https://youtu.be/W1RMWhSDnvI) or the [original personal upload](https://youtu.be/_sqPO2oYUoM)):
+    [![01 SRE Extension Installation & Setup Walkthrough Video](https://img.youtube.com/vi/W1RMWhSDnvI/0.jpg)](https://youtu.be/W1RMWhSDnvI)
+*   **Demo 02: SRE Extension Demo Outage Investigation Video**: Watch us triage an active outage in real-time (available on the [official GCT Channel](https://youtu.be/bPCznsjW8BU) or the [original personal upload](https://youtu.be/5GGw0HegE3E)):
     [![Demo 02 Video Thumbnail](https://img.youtube.com/vi/bPCznsjW8BU/0.jpg)](https://youtu.be/bPCznsjW8BU)
 
 In these walkthroughs, you will see how the agent logs in, securely audits the deployment configuration, correlates the service errors, and isolates the broken workload—saving what would normally be 20 minutes of hunting in under two minutes.
