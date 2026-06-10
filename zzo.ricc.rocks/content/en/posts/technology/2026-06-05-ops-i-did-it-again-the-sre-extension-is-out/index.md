@@ -25,6 +25,8 @@ PrimaryURL: "https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-exte
 
 # Ops I did it again: The SRE Extension is out!
 
+<small>*Written with drc, article v1.4*</small>
+
 When I met Ramón in a cafeteria here in Google Zurich, I wouldn't have known that in a few months I would have released an official Open Source package to help SREs around the world! But life is full of surprises, and here we are.
 
 When we talk about SRE (Site Reliability Engineering), we are talking about keeping systems alive under heavy pressure. SREs are constantly fighting outages, config drift, and alert storms. It is a world of pager alerts at 3 AM and frantic Slack threads.
