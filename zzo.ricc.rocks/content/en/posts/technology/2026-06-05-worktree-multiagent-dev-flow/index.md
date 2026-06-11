@@ -51,11 +51,11 @@ Then last weekend I read [this article](https://seroter.com/2026/06/01/one-promp
 This clean interface has it all:
 
 * 📁 My personal Project 1
-  * 🧵 Improve UI by adding blue login button with hidden password
-  * 🧵 Add `/checkout/` to backend
+    * 🧵 Improve UI by adding blue login button with hidden password
+    * 🧵 Add `/checkout/` to backend
 * 📁 My work Project 2
-  * 🧵 Add documentation to `doc/PRD.md`
-  * 🧵 Add security tests after later omg/1234.
+    * 🧵 Add documentation to `doc/PRD.md`
+    * 🧵 Add security tests after later omg/1234.
 
 As you can see, all your unrelated work is nicely grouped by project (basically, a folder) and then all threads are aligned there, sorted by the most recent one you worked on (and yes, you can ARCHIVE them, otherwise they'll survive my wife's sadistic reboot).
 
@@ -66,15 +66,12 @@ As I was saying, I was reading Richard's magic prompt on my throne and thinking:
 ```markdown
 Let's build a hotel room booking app [..].
 
-First, launch the **Engineering Manager** agent to design the API and frontend,
-saving the design and a Mermaid diagram into an **artifact** called `architecture.md`.
+First, launch the **Engineering Manager** agent to ... into an **artifact** called 'architecture.md'.
 
 Once the design is ready, launch three agents in *parallel*:
-1. **Test Manager**: Write a simple API test plan and append it to 'architecture.md'.
-2. **Backend Engineer**: Build a clean Go REST API with standard error handling
-   based on the design.
-3. **Frontend Engineer**: Build a responsive web UI using a simple CSS framework
-   like Tailwind to interact with the API (skip UI testing).
+1. **Test Manager**: Write [..] to 'architecture.md'.
+2. **Backend Engineer**: Build an API based on [..] .
+3. **Frontend Engineer**: Build a web UI [..] to interact with the API [..].
 
 [..] *How to sync the 3 sub-agents* [..]
 
@@ -87,6 +84,7 @@ Let's unpack this **prompt**. It contains:
 2. Your team of 3 sub-agents.
 3. How these sub-agents interact (what time / which way).
 4. What happens when they're done (spin up and let the human-not-so-much-in-the-loop take a look).
+5. **Important**. the common file state here is the common artifact: `architecture.md`.
 
 Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into emergence and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
 
@@ -123,7 +121,7 @@ Let's build a cross-platform Flutter game called **orologia.io** to help kids le
 First, launch the **Lead Architect** agent to design the Flutter application structure, state management flow, and UI layouts (Analog Clock screen, Multiple-choice Quiz, and time addition/subtraction Sandbox mode). Save the design and a Mermaid sequence diagram into an artifact called `architecture.md`.
 
 Once the design is ready, launch three sub-agents in parallel to execute the implementation:
-1. **QA Automation Engineer**: 
+1. **QA Automation Engineer**:
    - Write a comprehensive Dart unit/widget test plan for the time generation and scoring system.
    - Design an **autonomous integration test script** (using `package:integration_test` or a browser/device automation script like Playwright/Selenium) that launches the application on a local server (`http://localhost:8080`) or an active Android Emulator.
    - The script must simulate gameplay by autonomously tapping options, checking score changes, taking a gameplay screenshot, and saving it to `artifact/gameplay_snapshot.png`.
