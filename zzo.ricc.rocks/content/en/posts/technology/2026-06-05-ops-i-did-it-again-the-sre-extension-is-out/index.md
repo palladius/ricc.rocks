@@ -15,12 +15,19 @@ Bug: b/520314033
 UTM_ADDON: "?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog"
 CTA: "https://github.com/gemini-cli-extensions/sre"
 Status: published
+#Status: published
+Completion: 98
 version: "1.4"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-06-05"
 MediumURL: "https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0"
+MediumStatus: published
+MediumVersion: "1.3"
 RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/"
+RiccRocksStatus: published
+RiccRocksVersion: "1.4"
 PrimaryURL: "https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0"
+#AppsPortfolio: TODO
 ---
 
 # Ops I did it again: The SRE Extension is out!
@@ -86,7 +93,7 @@ You don't need to build complex pipelines to get value out of this. Here are som
 
 Check out the [About SRE Extension Page & PostMortems](https://github.com/palladius/about-sre-extension) repository to see real examples of how these reports look!
 
-## Lesson learnt (todo move somewhere else)
+## Lesson learnt (TODO move somewhere else)
 
 Things I've learnt playing with Google harnesses and GCP investigations:
 
@@ -115,9 +122,7 @@ If you are the type of developer or SRE who needs to see it to believe it—or i
 
 We're also working on a GKE Outage Investigation Codelab to get an easy step-by-step codelab to experience this at your own time on your computer.
 
-<!-- TODO once published
- [GKE Outage Investigation Codelab](https://codelabs.developers.google.com/codelabs/investigate-gke-cluster-breakage-scenarios-with-postmortem?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog) to learn how to break and debug GKE clusters step-by-step.
--->
+<!-- TODO GKE Outage codelab once ready - see TODOs. -->
 
 ## What Customers Want: Auto-Remediation (And Why It's Incredibly Risky)
 
