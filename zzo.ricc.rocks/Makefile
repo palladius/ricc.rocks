@@ -1,10 +1,10 @@
 
 run:
-	hugo server --disableFastRender
+	@which hugo >/dev/null 2>&1 && hugo server --disableFastRender || npx -y hugo-bin server --disableFastRender
 
 build:
 	echo "Riccardo JFYI questo e' quel che Netlify runna.."
-	hugo --minify
+	@which hugo >/dev/null 2>&1 && hugo --minify || npx -y hugo-bin --minify
 
 help:
 	echo Read the docs for Hugo and recipe for cocktail.
@@ -12,7 +12,7 @@ help:
 
 
 new-post:
-	hugo new posts/my-first-post.md
+	@which hugo >/dev/null 2>&1 && hugo new posts/my-first-post.md || npx -y hugo-bin new posts/my-first-post.md
 
 clean:
 	rm -rf resources/_gen/ public/
@@ -21,4 +21,4 @@ midjourney-move:
 	bin/move-midjourney-pics-to-here.sh
 
 test:
-	hugo --minify
+	@which hugo >/dev/null 2>&1 && hugo --minify || npx -y hugo-bin --minify

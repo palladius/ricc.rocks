@@ -5,7 +5,7 @@ Title: "Worktree multiagent dev flow with Antigravity"
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
-Tags: worktree, Antigravity
+Tags: [worktree, Antigravity]
 PublishedURL: TODO
 Completion: 50%
 CTA: https://antigravity.google/ # probably AG 2.0

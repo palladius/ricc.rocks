@@ -1,7 +1,6 @@
 ---
 title: Riccardo Family
 date: 2019-10-31T10:20:16+09:00
-description: Pix of Kate, Ale and Seby
 type: gallery
 #mode: one-by-one
 mode: at-once

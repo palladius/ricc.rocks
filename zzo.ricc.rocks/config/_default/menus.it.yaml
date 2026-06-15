@@ -23,3 +23,8 @@ main:
     name: 🌍Blog
     url: https://ricc.rocks/
     weight: 10
+
+  - identifier: portfolio
+    name: 💼Portfolio
+    url: https://portfolio-app-272932496670.europe-west1.run.app/about
+    weight: 11

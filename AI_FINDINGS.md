@@ -25,3 +25,16 @@ Created `netlify.toml` at repo root with proper configuration:
 This isolates the ZZO site build from other sites' dependencies and ensures Netlify uses the correct Hugo version and build directory.
 
 **Related**: GitHub issue #2 (https://github.com/palladius/ricc.rocks/issues/2)
+
+## Portfolio Button and Hugo Build Fixes (2026-06-15)
+**FIXED & ADDED (by Gemini/Antigravity)**:
+1. **Added Portfolio Button**: Added a flashy "Portfolio" button to the top navbar (pointing to the about page: `https://portfolio-app-272932496670.europe-west1.run.app/about`) on both desktop and mobile views. Created layout overrides:
+   - `zzo.ricc.rocks/layouts/partials/navbar/nav-menu.html`
+   - `zzo.ricc.rocks/layouts/partials/navbar/nav-menu-mobile.html`
+   - Injected custom styles under `zzo.ricc.rocks/assets/sass/custom.scss` with gradient, shadow glow, and hover transitions.
+   - Updated menu files: `menus.en.yaml` and `menus.it.yaml`.
+2. **Fixed Hugo Build Errors**:
+   - Fixed duplicate `description` frontmatter keys in multiple gallery files (Madeira, Photo, Family, Sport).
+   - Fixed duplicate `author` and `draft` keys in `math-typesetting.md` and `about-me/index.md`.
+   - Fixed a critical frontmatter syntax issue in `2026-06-05-worktree-multiagent-dev-flow/index.md` where `Tags: worktree, Antigravity` was parsed as a single string, crashing the RSS templates. Changed to `Tags: [worktree, Antigravity]`.
+3. **Makefile Fallback**: Updated `zzo.ricc.rocks/Makefile` to fallback to `npx -y hugo-bin` when standard `hugo` is not in the environment PATH.
