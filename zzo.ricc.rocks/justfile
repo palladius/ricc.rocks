@@ -9,3 +9,6 @@ list:
 #[group dev]
 dev:
 	@which hugo >/dev/null 2>&1 && hugo server --disableFastRender || npx -y hugo-bin server --disableFastRender
+
+curl-localhost:
+  curl -s http://localhost:1313/

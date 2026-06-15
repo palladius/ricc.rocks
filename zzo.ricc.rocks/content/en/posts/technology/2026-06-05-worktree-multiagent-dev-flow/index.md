@@ -5,7 +5,7 @@ Title: "Worktree multiagent dev flow with Antigravity"
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
-Tags: [worktree, Antigravity]
+tags: ["worktree", "Antigravity"]
 PublishedURL: TODO
 Completion: "100"
 CTA: https://antigravity.google/ # probably AG 2.0
@@ -13,7 +13,7 @@ Status: "published"
 Linkedin post:
 Generator: "create_article.rb"
 Version: "1.2"
-Platform: "TBD"
+Platform: "Medium, Ricc.Rocks"
 PublishDate: "2026-06-15"
 RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/"
 RiccRocksStatus: "published"
@@ -189,5 +189,5 @@ I want to use:
 * `git worktree` for async agent implementation
 * *GitHub Issues* + *Conductor* "Railways" (someone would say boundaries) for implementation.
 * The [`gemini-superpowers` plugin](https://github.com/barretstorck/gemini-superpowers), which provides the `using-git-worktrees` skill used to isolate our parallel subagents.
-* "Antigravity 2.0" as harness, inspired by Richard's article (TODO link)
+* "Antigravity 2.0" as harness, inspired by [Richard's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/)
 * [State on Disk](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi), inspired by [Paul article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi).
