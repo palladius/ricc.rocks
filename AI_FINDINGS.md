@@ -38,3 +38,9 @@ This isolates the ZZO site build from other sites' dependencies and ensures Netl
    - Fixed duplicate `author` and `draft` keys in `math-typesetting.md` and `about-me/index.md`.
    - Fixed a critical frontmatter syntax issue in `2026-06-05-worktree-multiagent-dev-flow/index.md` where `Tags: worktree, Antigravity` was parsed as a single string, crashing the RSS templates. Changed to `Tags: [worktree, Antigravity]`.
 3. **Makefile Fallback**: Updated `zzo.ricc.rocks/Makefile` to fallback to `npx -y hugo-bin` when standard `hugo` is not in the environment PATH.
+
+## `just dev` fallback & Tags syntax fix (2026-06-15)
+**UPDATED & FIXED (by Gemini/Antigravity)**:
+1. **Added `just dev` Fallback**: Updated `zzo.ricc.rocks/justfile` to check for `hugo` in PATH first, and fallback to `npx -y hugo-bin server --disableFastRender` if it's not present. This prevents `hugo: command not found` errors.
+2. **Re-applied YAML Tags fix**: Found that the frontmatter in `content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` still contained `Tags: worktree, Antigravity` which caused build crashes. Corrected it to `Tags: [worktree, Antigravity]`. The site now builds successfully with `make test`.
+

@@ -7,14 +7,18 @@ Host: derek.zrh.corp.google.com
 Bug: b/520305371
 Tags: [worktree, Antigravity]
 PublishedURL: TODO
-Completion: 50%
+Completion: "100"
 CTA: https://antigravity.google/ # probably AG 2.0
-Status: wip
+Status: "published"
 Linkedin post:
 Generator: "create_article.rb"
 Version: "1.2"
 Platform: "TBD"
 PublishDate: "2026-06-15"
+RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/"
+RiccRocksStatus: "published"
+RiccRocksVersion: "1.2"
+PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/"
 ---
 
 # Worktree multiagent dev flow with Antigravity
@@ -116,9 +120,9 @@ Caption: since `.com` era is so 2000s, and the Sardinian `.io` era is now! (And 
 Here is the exact multi-agent prompt I designed to orchestrate the creation of **orologia.io**:
 
 ```markdown
-Let's build a cross-platform Flutter game called **orologia.io** to help kids learn how to read analog clocks and transition to digital/string representations (e.g., matching a watch face showing 19:45 to the text "19:45", and practicing time math like adding 20 minutes).
+Let's build a cross-platform Flutter game called **orologia.io** to help kids learn how to read analog clocks and transition to digital/string representations. The Product Requirement Document (PRD) and Behavior-Driven Development (BDD) specifications are already available in the repository at `docs/PRD.md`.
 
-First, launch the **Lead Architect** agent to design the Flutter application structure, state management flow, and UI layouts (Analog Clock screen, Multiple-choice Quiz, and time addition/subtraction Sandbox mode). Save the design and a Mermaid sequence diagram into an artifact called `architecture.md`.
+First, launch the **Lead Architect** agent to design the Flutter application structure, state management flow, and UI layouts (Analog Clock screen, Multiple-choice Quiz, and Sandbox mode), referencing the requirements in `docs/PRD.md`. Save the design and a Mermaid sequence diagram into an artifact called `architecture.md`.
 
 Once the design is ready, launch three sub-agents in parallel to execute the implementation:
 1. **QA Automation Engineer**:
@@ -131,10 +135,59 @@ Once the design is ready, launch three sub-agents in parallel to execute the imp
 As soon as the QA Automation Engineer finishes the test plan, hand it to the Game Logic Developer, who reads it from `architecture.md` and implements the Dart unit tests. After both developers complete their tasks, the QA Automation Engineer runs the unit tests and executes the autonomous integration/gameplay test script. Once the script successfully completes and saves the screenshot, the QA agent presents the visual handoff report with the screenshot to the human developer, and leaves the live simulator running for manual review.
 ```
 
+## The API Perspective: Stateful Remote Sandboxes
+
+Inspired by Romin Irani's excellent article on [Antigravity Managed Agents](https://medium.com/google-cloud/antigravity-managed-agents-tutorial-ship-production-ai-agents-b5917844932b), I wanted to see how far we could push the native SDK. 
+
+It turns out, with a simple **20-line Python script**, you can orchestrate a stateful, multi-turn agent session that acts as a full-fledged **SpaceX IPO Analyzer**. The script launches a remote sandbox to research and generate a Markdown report, re-attaches to that same environment in a second turn to transform it into a beautifully styled HTML dashboard (complete with custom CSS and generated graphics), and then downloads the entire workspace state:
+
+```python
+import os
+import requests
+import tarfile
+from google import genai
+
+client = genai.Client()
+
+# Turn 1: Launch agent to research and write a report in a remote sandbox
+interaction_1 = client.interactions.create(
+    agent="antigravity-preview-05-2026",
+    input="Research SpaceX IPO and save report as spacex-report.md.",
+    environment="remote"  # Launches a remote Ubuntu sandbox
+)
+
+# Turn 2: Re-attach to the SAME sandbox and preserve conversation memory
+interaction_2 = client.interactions.create(
+    agent="antigravity-preview-05-2026",
+    environment=interaction_1.environment_id,       # ← Re-attaches to same sandbox
+    previous_interaction_id=interaction_1.id,       # ← Preserves conversation memory
+    input="Convert that spacex-report.md file into a clean index.html webpage."
+)
+
+# Turn 3: Download the entire sandbox environment state (.tar) locally
+env_id = interaction_2.environment_id
+api_key = os.environ.get("GEMINI_API_KEY")
+
+response = requests.get(
+    f"https://generativelanguage.googleapis.com/v1beta/files/environment-{env_id}:download",
+    params={"alt": "media"},
+    headers={"x-goog-api-key": api_key},
+)
+
+with open("snapshot_env.tar", "wb") as f:
+    f.write(response.content)
+# ... extract tarfile ...
+```
+
+This highlights two critical features of the GenAI SDK:
+*   **`environment_id`**: Keeps the remote Ubuntu container alive, allowing subsequent API calls to inherit the filesystem state.
+*   **Environment Download API**: Allows you to programmatically retrieve the final agent workspace as a standard `.tar` archive.
+
 ## The coding Framework
 
 I want to use:
 * `git worktree` for async agent implementation
 * *GitHub Issues* + *Conductor* "Railways" (someone would say boundaries) for implementation.
+* The [`gemini-superpowers` plugin](https://github.com/barretstorck/gemini-superpowers), which provides the `using-git-worktrees` skill used to isolate our parallel subagents.
 * "Antigravity 2.0" as harness, inspired by Richard's article (TODO link)
 * [State on Disk](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi), inspired by [Paul article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi).
