@@ -5,7 +5,7 @@ Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 2)"
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
-Tags: worktree, Antigravity
+Tags: [worktree, Antigravity]
 PublishedURL: TODO
 Completion: "100"
 CTA: https://antigravity.google/ # probably AG 2.0
@@ -14,11 +14,11 @@ Linkedin post:
 Generator: "create_article.rb"
 Version: "1.3"
 Platform: "Medium, Ricc.Rocks"
-PublishDate: "2026-06-15"
-RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/"
+PublishDate: "2026-06-16"
+RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
 RiccRocksStatus: "published"
 RiccRocksVersion: "1.3"
-PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/"
+PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
 ---
 
 # Orchestrating with Antigravity: A Crescendo of Agents (Part 2)
@@ -27,7 +27,7 @@ PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-05-worktree-multiage
 
 ![Hero Image](hero_image.png)
 
-> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](../01-crescendo-of-agents-part-1/ARTICLE.md) to learn about stateful remote sandboxes and Python SDK orchestration.
+> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
 
 <!-- -
@@ -41,9 +41,9 @@ This article highlights how Git Worktrees solve workspace pollution and file col
 - Key Takeaways / Conclusion
 -->
 
-Alexis said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI Agent**s**!
+[Alexis](https://www.linkedin.com/in/alexismp/) said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI Agent**s**!
 
-If you read [Part 1](subtasks/20260615-antigravity-subagents/ARTICLE.md), you know my confession: **I'm a CLI guy.** I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare. 
+If you read [Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy.** I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare. 
 
 I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage the visual feedback loop of comparing my Flutter code with a 10x better, 20-second vibecoded JS prototype. It saved my sanity.
 

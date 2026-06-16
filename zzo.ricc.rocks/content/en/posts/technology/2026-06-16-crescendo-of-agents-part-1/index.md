@@ -5,7 +5,7 @@ Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 1)"
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
-Tags: API, Antigravity, GenAI, Sandbox
+Tags: [API, Antigravity, GenAI, Sandbox]
 PublishedURL: TODO
 Completion: "100"
 CTA: https://antigravity.google/
@@ -175,4 +175,4 @@ This is where I hit the wall. I had to capitulate, open the **Antigravity 2.0 De
 
 ---
 
-🚀 **Ready for Part 2?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](../02-crescendo-of-agents-part-2/ARTICLE.md) to see how we scale this local development flow using Git Worktrees, Conductor++, and parallel subagents under Agostina.
+🚀 **Ready for Part 2?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/) to see how we scale this local development flow using Git Worktrees, Conductor++, and parallel subagents under Agostina.
