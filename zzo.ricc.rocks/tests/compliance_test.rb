@@ -105,10 +105,23 @@ def check_post_compliance(file_path)
   body.scan(/\{\{<\s*(?:img|figure)\b[^>]*\bsrc=["']([^"']+)["']/i) { |m| image_refs << m[0].strip }
 
   post_dir = File.dirname(file_path)
-  # Hugo content root: two levels up from tests/ -> zzo.ricc.rocks/content/
-  content_dir = File.expand_path("../content", __dir__)
-  # Hugo static root: two levels up from tests/ -> zzo.ricc.rocks/static/
-  static_dir  = File.expand_path("../static", __dir__)
+  site_root   = File.expand_path("..", __dir__)          # zzo.ricc.rocks/
+  # Hugo SOURCE resolution order for site-absolute paths (we check source, not build output):
+  #   1. site content/  (page-bundle resources served at their content path)
+  #   2. site static/   (static assets copied verbatim)
+  #   3. theme static/  (theme-provided static assets)
+  content_dir = File.join(site_root, "content")
+  static_dir  = File.join(site_root, "static")
+  # Detect active theme from config/_default/config.yaml
+  theme_static_dir = nil
+  config_file = File.join(site_root, "config/_default/config.yaml")
+  if File.exist?(config_file)
+    config_content = File.read(config_file)
+    if config_content =~ /^theme:\s*(\S+)/
+      active_theme = $1.strip.gsub(/['"]/, '')
+      theme_static_dir = File.join(site_root, "themes", active_theme, "static")
+    end
+  end
 
   image_refs.uniq.each do |ref|
     # Skip absolute URLs (http/https/protocol-relative)
@@ -117,13 +130,13 @@ def check_post_compliance(file_path)
     next if ref.strip.empty?
 
     if ref.start_with?('/')
-      # Site-absolute path: Hugo merges content/ and static/ at the site root.
-      # Check both locations before flagging as broken.
+      # Site-absolute path: check Hugo source dirs in resolution order
       relative = ref.sub(/\A\//, '')
-      candidate_content = File.expand_path(relative, content_dir)
-      candidate_static  = File.expand_path(relative, static_dir)
-      unless File.exist?(candidate_content) || File.exist?(candidate_static)
-        errors << "Rule 4 Violation: Broken site-absolute image '#{ref}' not found in content/ or static/."
+      found = File.exist?(File.join(content_dir, relative)) ||
+              File.exist?(File.join(static_dir, relative))  ||
+              (theme_static_dir && File.exist?(File.join(theme_static_dir, relative)))
+      unless found
+        errors << "Rule 4 Violation: Broken site-absolute image '#{ref}' not found in source (content/, static/, or theme static/)."
       end
     else
       # Relative path: resolve relative to post's own directory (for page bundles)
@@ -139,10 +152,21 @@ end
 
 # Resolve files to test
 if ARGV.empty?
-  posts_dir = File.expand_path("../content/en/posts", __dir__)
-  md_files = Dir.glob("#{posts_dir}/**/*.md")
-  md_files.reject! { |f| File.basename(f).start_with?('_') || f.include?('removeme') }
-  puts "Running compliance tests on #{md_files.count} posts..."
+  site_root  = File.expand_path("..", __dir__)   # zzo.ricc.rocks/
+  posts_dir  = File.join(site_root, "content/en/posts")
+  # Use git ls-files to respect .gitignore (skips public/, resources/, etc.)
+  git_files = `git -C #{site_root} ls-files content/en/posts/`.strip.split("\n")
+  if $?.success? && !git_files.empty?
+    md_files = git_files
+      .select { |f| f.end_with?('.md') }
+      .reject { |f| File.basename(f).start_with?('_') || f.include?('removeme') }
+      .map    { |f| File.join(site_root, f) }
+  else
+    # Fallback: plain glob (may include ignored dirs)
+    md_files = Dir.glob("#{posts_dir}/**/*.md")
+    md_files.reject! { |f| File.basename(f).start_with?('_') || f.include?('removeme') }
+  end
+  puts "Running compliance tests on #{md_files.count} posts (git-tracked only)..."
 else
   repo_root = File.expand_path("../..", __dir__) # Root of the git repository
   md_files = ARGV.map do |arg|
