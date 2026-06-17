@@ -112,6 +112,18 @@ In the past few months, all I wanted to do was **GHI-triggered multi-agent imple
 * `git worktree`. This is what prevents 2+ agents for making a mess out of your repo (been there done that).
   * If you have N agents pushing Pull Requests to remote branches, it makes sense to have a "Git concierge" to resolve the code to main. He should be configured to have a more conservative approach to the repo. While agent X wants to implement feature X as instructed, this Concierge will be [unfazeable](https://gurps.fandom.com/wiki/Unfazeable) as a British Alfred (turns out only GURPS players know what this means) and act as a 'last defense' for your repo consistency (maybe the code is great, but forgot to run tests, or to update the CHANGELOG... nothing's better than a fresh context window to catch these errors).
 
+### 🛠️ Equip Your Agents with the `condutree` Skill
+
+To make this entire multi-agent git-worktree workflow reusable for any codebase, I packaged these exact rules and automations into an open-source agent skill called **`condutree`** (technically, `conductor-worktree-hitl`). 
+
+You can find the code and details in my public [gemini-cli-custom-commands repository](https://github.com/palladius/gemini-cli-custom-commands) (and be sure to star the new [devrel-cli repository](https://github.com/palladius-uat/devrel-cli) where I'm centralizing all my developer advocacy automation tools!).
+
+Equipping your Antigravity coordinator and subagents with this skill teaches them:
+1.  **Worktree Provisioning**: How to safely check out independent git worktrees for concurrent tasks.
+2.  **Git Hygiene**: Symlinking the shared Conductor metadata folders while excluding them locally so git status remains clean.
+3.  **HITL Polling**: The dual reentrant protocol for posting issue comments, reading local registries, and polling answers without exhausting API quota limit ranges.
+4.  **Local Commits & Notes**: Standardizing local branch commits and signing off details via Git Notes without direct remote pushes.
+
 ![Too many cooking agents making a mess of a single branch](image-cooking-agents-mess.png)
 *Caption: Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the "too many cooks in the kitchen" metaphor applied to git merges).*
 
