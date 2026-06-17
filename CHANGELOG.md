@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.0] - 2026-06-17
+
+### 🧪 Refined (by Gemini/Antigravity)
+- 🧪 Made Medium article compliance validation (Rule 2) trigger conditionally only if the post is tagged with `#medium` or `medium`.
+- 🗑️ Removed the requirement for `canonicalURL: absent` frontmatter on non-Medium posts, avoiding frontmatter metadata clutter.
+
 ## [0.2.9] - 2026-06-17
 
 ### 🔧 Added (by Gemini/Antigravity)

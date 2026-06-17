@@ -7,14 +7,14 @@ require 'yaml'
 require 'date'
 require 'fileutils'
 
-def has_medium_link?(front_matter, body)
-  return true if front_matter['canonicalURL'] && front_matter['canonicalURL'].to_s.include?('medium.com')
-  # Check if there is an explicit Medium article link in the body
-  # Excluding author profile page and feeds
-  medium_urls = body.scan(%r{https?://(?:[a-zA-Z0-9-]+\.)?medium\.com/(\S+)})
-  medium_urls.any? do |path_match|
-    path = path_match.first
-    path && !path.start_with?('@') && !path.include?('feed')
+def tagged_as_medium?(front_matter)
+  tags = front_matter['tags'] || front_matter['Tags'] || []
+  if tags.is_a?(Array)
+    tags.any? { |t| t.to_s.downcase.gsub('#', '') == 'medium' }
+  elsif tags.is_a?(String)
+    tags.split(/,\s*/).any? { |t| t.downcase.gsub('#', '') == 'medium' }
+  else
+    false
   end
 end
 
@@ -71,29 +71,20 @@ def check_post_compliance(file_path)
     errors << "Rule 1 Violation: Snippet (via #{source_type}) is too long (#{word_count} words). Must be at most 120 words."
   end
 
-  # --- Rule 2: Point to Medium article or have `canonicalURL: absent` ---
-  medium_linked = has_medium_link?(front_matter, body)
-  canonical_url = front_matter['canonicalURL']
+  # --- Rule 2: Point to Medium article if tagged with #medium ---
+  if tagged_as_medium?(front_matter)
+    canonical_url = front_matter['canonicalURL']
 
-  if medium_linked
     # Check if the end of the body points to the Medium article
     end_of_body = body[-1500..-1] || body
     unless end_of_body.include?('medium.com')
-      errors << "Rule 2 Violation: This post has a Medium article, but the end of the body does not point to it (no medium.com link in the last 1500 characters)."
+      errors << "Rule 2 Violation: Post is tagged as 'medium', but the end of the body does not point to it (no medium.com link in the last 1500 characters)."
     end
 
     if canonical_url.nil?
-      errors << "Rule 2 Violation: Missing 'canonicalURL' frontmatter key. Since a Medium link exists, 'canonicalURL' must point to the Medium article URL."
-    elsif canonical_url == 'absent'
-      errors << "Rule 2 Violation: 'canonicalURL' is set to 'absent', but a Medium link was found in the content/frontmatter."
+      errors << "Rule 2 Violation: Post is tagged as 'medium', but missing 'canonicalURL' frontmatter key. It must point to the Medium article URL."
     elsif !canonical_url.to_s.include?('medium.com')
       errors << "Rule 2 Violation: 'canonicalURL' frontmatter key does not point to a valid Medium URL (got: '#{canonical_url}')."
-    end
-  else
-    if canonical_url.nil?
-      errors << "Rule 2 Violation: Missing 'canonicalURL' frontmatter key. If there is no Medium article, specify: `canonicalURL: absent`."
-    elsif canonical_url != 'absent'
-      errors << "Rule 2 Violation: 'canonicalURL' is set to '#{canonical_url}', but no Medium link was found. Set to 'absent' if there is no Medium article."
     end
   end
 
