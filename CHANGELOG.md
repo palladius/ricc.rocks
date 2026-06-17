@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.5] - 2026-06-17
+
+### 🚨 Added (by Gemini/Antigravity)
+- 🚨 Added failing compliance tests executed via `just test` (`cd zzo.ricc.rocks && just test`).
+- 🧪 Implemented checks for ZZO post compliance rules defined in `TESTING.md` (no images in initial snippets, presence of valid `medium-site` frontmatter key).
+
 ## [0.2.4] - 2026-06-17
 
 ### 🔀 Merged (by Gemini/Antigravity)

@@ -29,7 +29,8 @@ gsm-update-funge:
     git submodule update --remote --merge
 
 test:
-    cd zzo.ricc.rocks && make test
+    cd zzo.ricc.rocks && just test
+
 
 curl-localhost:
     curl http://localhost:1313/en/

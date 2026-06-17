@@ -13,3 +13,7 @@ dev:
 curl-localhost:
   curl -s http://localhost:1313/
 
+test:
+  ruby tests/compliance_test.rb
+
+

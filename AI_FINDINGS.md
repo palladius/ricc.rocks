@@ -53,4 +53,13 @@ This isolates the ZZO site build from other sites' dependencies and ensures Netl
 2. **Upgraded npm Fallback**: Updated the fallback command in both `justfile` and `Makefile` to use `npx -y hugo-extended` instead of `hugo-bin`. This downloads and uses the extended version of Hugo automatically.
 3. **Installed Global Extended Hugo**: Successfully ran `brew install hugo` to provide the global extended Hugo binary (`hugo v0.163.2+extended+withdeploy`) in the user's environment. This enables standard `just dev` and `make test`/`make run` to run instantly without relying on the npm fallback.
 
+## Failing Compliance Tests added to `just test` (2026-06-17)
+**CREATED & CONFIGURED (by Gemini/Antigravity)**:
+1. **Created `compliance_test.rb`**: Added a Ruby validation script under [compliance_test.rb](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/tests/compliance_test.rb) that checks the rules from [TESTING.md](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/TESTING.md). Specifically, it checks that post snippets contain no images (Rule 1) and that posts have `medium-site` configured in their frontmatter (Rule 2).
+2. **Linked via `just test`**:
+   - Added `test` target in [zzo.ricc.rocks/justfile](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/justfile).
+   - Replaced root [justfile](file:///usr/local/google/home/ricc/git/ricc.rocks/justfile)'s `test` target to run `cd zzo.ricc.rocks && just test`.
+3. **Fails as Expected**: Verified that `just test` runs the script and fails on missing `medium-site` key and image-inclusive snippets across posts.
+
+
 
