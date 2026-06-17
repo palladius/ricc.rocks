@@ -1,35 +1,27 @@
 ---
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
-Title: 'Orchestrating with Antigravity: A Crescendo of Agents (Part 2)'
-date: 2026-06-16 12:00:00.000000000 +02:00
+Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 2)"
+date: 2026-06-16T12:00:00+02:00
 draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
-Tags:
-- worktree
-- Antigravity
+Tags: [worktree, Antigravity]
 PublishedURL: TODO
-Completion: '100'
-CTA: https://antigravity.google/
-Status: published
+Completion: "100"
+CTA: https://antigravity.google/ # probably AG 2.0
+Status: "published"
 Linkedin post:
-Generator: create_article.rb
-Version: '1.3'
-Platform: Medium, Ricc.Rocks
-PublishDate: '2026-06-16'
-RiccRocksURL: https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/
-RiccRocksStatus: published
-RiccRocksVersion: '1.3'
-PrimaryURL: https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/
-medium-site: absent
-summary: "# Orchestrating with Antigravity: A Crescendo of Agents (Part 2) ## Parallel
-  Coding with Git Worktrees, Conductor++, and Agostina Alexis said *'This is the year
-  of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of
-  the AI agent, 2026 is definitely the year of... AI"
+Generator: "create_article.rb"
+Version: "1.3"
+Platform: "Medium, Ricc.Rocks"
+PublishDate: "2026-06-16"
+RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
+RiccRocksStatus: "published"
+RiccRocksVersion: "1.3"
+PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
 ---
-
 
 # Orchestrating with Antigravity: A Crescendo of Agents (Part 2)
 
@@ -267,8 +259,41 @@ Here is the step-by-step progression of the SRE Benjamin run, showing how the co
 #### Step 1: Initializing SRE Tracks & Worktrees
 The parent coordinator initialized the workspaces on the host machine. The Conductor inspector CLI tracked active tracks and assigned subagents (e.g. `grazia` for Discord war-rooms, `pinocchio` for pending mutations queue).
 
+To monitor the active tracks, branches, and agent statuses across all parallel workspaces, we run the Conductor Inspector CLI tool:
+```bash
+./scripts/conductor-inspector /Users/ricc/git/adk-sre-benjamin --all
+```
+
+Here is the terminal console output captured during initialization:
+
+```text
+================================================================================
+  CONDUCTOR++ ACTIVE WORKTREES & TRACKS INSPECTION
+================================================================================
+[Track: telegram_incident_creation_20260603] 
+  Worktree: .worktrees/issue-29-telegram-wizard
+  Branch:   feature/issue-29
+  Agent:    pinocchio
+  Status:   AWAITING_HUMAN (Question: "Verify Telegram Token config?")
+  GHI URL:  https://github.com/palladius/adk-sre-benjamin/issues/29
+
+[Track: unified_incident_lifecycle_observability_20260607]
+  Worktree: .worktrees/issue-18-discord-warrooms
+  Branch:   feature/issue-18
+  Agent:    grazia
+  Status:   RUNNING
+  GHI URL:  https://github.com/palladius/adk-sre-benjamin/issues/18
+================================================================================
+```
+
+![Conductor Inspector Status Overview](image-conductor-inspector-short-v1.png)
+*Caption: Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments.*
+
+![Conductor Inspector Live Question Details](image-conductor-inspector-short-v2.png)
+*Caption: Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues.*
+
 ![Initializing SRE Tracks](image-screenshot-10-23-32.png)
-*Caption: Conductor inspector showing active tracks in progress.*
+*Caption: Antigravity UI thread tracker showing active tracks in progress.*
 
 #### Step 2: Parallel Worktree Isolations
 Each agent checked out its own branch and worked in isolation. The Amanuense scribe logged precise file edits and workspace activity without file conflicts.

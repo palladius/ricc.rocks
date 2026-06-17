@@ -1,42 +1,20 @@
 ---
 Harness: Antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
-Title: 'Orchestrating with Antigravity: A Crescendo of Agents (Part 1)'
-date: 2026-06-16 12:00:00.000000000 +02:00
+Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 1)"
+date: 2026-06-16T12:00:00+02:00
 draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
-Bug: b/520305371
-Tags:
-- API
-- Antigravity
-- GenAI
-- Sandbox
-PublishedURL: ''
-Completion: '100'
+Bug: b/524911947
+Tags: [API, Antigravity, GenAI, Sandbox]
+PublishedURL: ""
+Completion: "100"
 CTA: https://Antigravity.google/
-Status: draft
-Platform: Medium, ricc.rocks
-PublishDate: '2026-06-16'
-medium-site: absent
-summary: "# Orchestrating with Antigravity: A Crescendo of Agents (Part 1) ## Stateful
-  API Sandboxes & Snapshot Downloads I'm a command-line guy. If it doesn't run in
-  a terminal or get driven by a bash script, I usually avoid it. For years, my daily
-  workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli`
-  (`agy`). I avoided desktop apps and GUI tools like the plague. But recently, I hit
-  a wall. As I scaled up my AI agent workflows—managing multiple concurrent coding
-  agents, multi-turn stateful loops, and file changes—babysitting 6 to 12 terminal
-  windows across six virtual desktops became a cognitive nightmare. This is the story
-  of that failure, and the learnings that followed. It is a story in two parts: 1.
-  **Part 1 (This Article)**: Trying to solve agent persistence programmatically via
-  the Python GenAI SDK and `agy` CLI, and encountering the crescendo of complexity.
-  2. **Part 2**: Hitting the CLI limit and stepping into the **Antigravity 2.0 UI
-  / Desktop app** to orchestrate parallel local subagents safely with git worktrees.
-  In this first part, we will explore how stateful remote sandboxes work under the
-  hood using the Google GenAI SDK (`antigravity-preview-05-2026`), how to re-attach
-  to container environments, and how to"
+Status: "draft"
+Platform: "Medium, ricc.rocks"
+PublishDate: "2026-06-16"
 ---
-
 
 # Orchestrating with Antigravity: A Crescendo of Agents (Part 1)
 
