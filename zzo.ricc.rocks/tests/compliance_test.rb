@@ -9,7 +9,6 @@ require 'fileutils'
 
 def has_medium_link?(front_matter, body)
   return true if front_matter['canonicalURL'] && front_matter['canonicalURL'].to_s.include?('medium.com')
-  return true if front_matter['medium-site'] && front_matter['medium-site'].to_s.include?('medium.com')
   # Check if there is an explicit Medium article link in the body
   # Excluding author profile page and feeds
   medium_urls = body.scan(%r{https?://(?:[a-zA-Z0-9-]+\.)?medium\.com/(\S+)})
@@ -72,9 +71,9 @@ def check_post_compliance(file_path)
     errors << "Rule 1 Violation: Snippet (via #{source_type}) is too long (#{word_count} words). Must be at most 120 words."
   end
 
-  # --- Rule 2: Point to Medium article or have `medium-site: absent` ---
+  # --- Rule 2: Point to Medium article or have `canonicalURL: absent` ---
   medium_linked = has_medium_link?(front_matter, body)
-  medium_site = front_matter['medium-site']
+  canonical_url = front_matter['canonicalURL']
 
   if medium_linked
     # Check if the end of the body points to the Medium article
@@ -83,18 +82,18 @@ def check_post_compliance(file_path)
       errors << "Rule 2 Violation: This post has a Medium article, but the end of the body does not point to it (no medium.com link in the last 1500 characters)."
     end
 
-    if medium_site.nil?
-      errors << "Rule 2 Violation: Missing 'medium-site' frontmatter key. Since a Medium link exists, 'medium-site' must point to the Medium article URL."
-    elsif medium_site == 'absent'
-      errors << "Rule 2 Violation: 'medium-site' is set to 'absent', but a Medium link was found in the content/frontmatter."
-    elsif !medium_site.to_s.include?('medium.com')
-      errors << "Rule 2 Violation: 'medium-site' frontmatter key does not point to a valid Medium URL (got: '#{medium_site}')."
+    if canonical_url.nil?
+      errors << "Rule 2 Violation: Missing 'canonicalURL' frontmatter key. Since a Medium link exists, 'canonicalURL' must point to the Medium article URL."
+    elsif canonical_url == 'absent'
+      errors << "Rule 2 Violation: 'canonicalURL' is set to 'absent', but a Medium link was found in the content/frontmatter."
+    elsif !canonical_url.to_s.include?('medium.com')
+      errors << "Rule 2 Violation: 'canonicalURL' frontmatter key does not point to a valid Medium URL (got: '#{canonical_url}')."
     end
   else
-    if medium_site.nil?
-      errors << "Rule 2 Violation: Missing 'medium-site' frontmatter key. If there is no Medium article, specify: `medium-site: absent`."
-    elsif medium_site != 'absent'
-      errors << "Rule 2 Violation: 'medium-site' is set to '#{medium_site}', but no Medium link was found. Set to 'absent' if there is no Medium article."
+    if canonical_url.nil?
+      errors << "Rule 2 Violation: Missing 'canonicalURL' frontmatter key. If there is no Medium article, specify: `canonicalURL: absent`."
+    elsif canonical_url != 'absent'
+      errors << "Rule 2 Violation: 'canonicalURL' is set to '#{canonical_url}', but no Medium link was found. Set to 'absent' if there is no Medium article."
     end
   end
 

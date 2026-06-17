@@ -55,11 +55,13 @@ This isolates the ZZO site build from other sites' dependencies and ensures Netl
 
 ## Failing Compliance Tests added to `just test` (2026-06-17)
 **CREATED & CONFIGURED (by Gemini/Antigravity)**:
-1. **Created `compliance_test.rb`**: Added a Ruby validation script under [compliance_test.rb](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/tests/compliance_test.rb) that checks the rules from [TESTING.md](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/TESTING.md). Specifically, it checks that post snippets contain no images (Rule 1) and that posts have `medium-site` configured in their frontmatter (Rule 2).
+1. **Created `compliance_test.rb`**: Added a Ruby validation script under [compliance_test.rb](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/tests/compliance_test.rb) that checks the rules from [TESTING.md](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/TESTING.md). Specifically, it checks that post snippets contain no images (Rule 1) and that posts have `canonicalURL` configured in their frontmatter (Rule 2).
 2. **Linked via `just test`**:
    - Added `test` target in [zzo.ricc.rocks/justfile](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/justfile).
    - Replaced root [justfile](file:///usr/local/google/home/ricc/git/ricc.rocks/justfile)'s `test` target to run `cd zzo.ricc.rocks && just test`.
-3. **Fails as Expected**: Verified that `just test` runs the script and fails on missing `medium-site` key and image-inclusive snippets across posts.
+3. **Fails as Expected**: Verified that `just test` runs the script and fails on missing/incorrect `canonicalURL` keys and image-inclusive snippets across posts.
+4. **Reverted Post Fixes**: Kept all posts in their original, unmodified states to ensure the tests report actual failures directly on the source files, as they are managed by upstream processes.
+
 
 
 
