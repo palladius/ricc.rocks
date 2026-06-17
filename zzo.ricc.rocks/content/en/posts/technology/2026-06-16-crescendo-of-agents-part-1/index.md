@@ -7,30 +7,42 @@ draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/524911947
-Tags: [API, Antigravity, GenAI, Sandbox]
+Tags: [API, Antigravity, GenAI, Sandbox, Medium, agy, romin]
 PublishedURL: ""
 Completion: "100"
 CTA: https://Antigravity.google/
 Status: "draft"
 Platform: "Medium, ricc.rocks"
 PublishDate: "2026-06-16"
+canonicalURL: "https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9"
 ---
 
-# Orchestrating with Antigravity: A Crescendo of Agents (Part 1)
+<!--
+⚠️ DEVELOPER NOTE (DO NOT EDIT THIS GENERATED FILE DIRECTLY IN RICC.ROCKS):
+This post is compiled and synced from the private source repository.
+Source path: ~/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/articles/01-crescendo-of-agents-part-1/
+To redeploy / sync updates, run:
+cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
+-->
 
-## Stateful API Sandboxes & Snapshot Downloads
+I'm a command-line guy. If it doesn't run in a [emoji] terminal or get driven by a `bash` script, I usually avoid it. For
+years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`).
+I avoided desktop apps and GUI tools like the plague (with the only exception of `vscode`).
 
-I'm a command-line guy. If it doesn't run in a terminal or get driven by a bash script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague. 
+But recently, I hit a wall.
 
-But recently, I hit a wall. 
+<!--more-->
+
+## This article series
 
 As I scaled up my AI agent workflows—managing multiple concurrent coding agents, multi-turn stateful loops, and file changes—babysitting 6 to 12 terminal windows across six virtual desktops became a cognitive nightmare. This is the story of that failure, and the learnings that followed. It is a story in two parts:
-1. **Part 1 (This Article)**: Trying to solve agent persistence programmatically via the Python GenAI SDK and `agy` CLI, and encountering the crescendo of complexity.
+1. **Part 1 (This Article)**: Trying to solve agent persistence programmatically via the **Antigravity Managed Agents** and `agy` CLI, and encountering the crescendo of complexity.
 2. **Part 2**: Hitting the CLI limit and stepping into the **Antigravity 2.0 UI / Desktop app** to orchestrate parallel local subagents safely with git worktrees.
 
 In this first part, we will explore how stateful remote sandboxes work under the hood using the Google GenAI SDK (`antigravity-preview-05-2026`), how to re-attach to container environments, and how to programmatically retrieve your agent workspace.
 
-<!--more-->
+This first part builds on the foundation laid out in Romin Irani's excellent [Antigravity Managed Agents Tutorial](https://medium.com/google-cloud/antigravity-managed-agents-tutorial-ship-production-ai-agents-b5917844932b) and Phil Schmid's deep dive into [how Managed Agents work under the hood](https://www.philschmid.de/how-managed-agents-work). I spent a day playing around with Romin's article code ideas, customizing them to my own setups, and this article is the output of those experiments. While their articles focus on the architectural and hosted aspects of managed agents, we will look at how a developer can drive stateful remote sandboxes programmatically to build automation loops directly from a local terminal shell.
+
 
 ![Stateful Remote Sandboxes](hero_image.png)
 
@@ -50,7 +62,7 @@ The Google Antigravity SDK solves this with **Stateful Remote Sandboxes**. When 
 
 ## The SpaceX IPO Analyzer: Python Orchestration
 
-To demonstrate this capability, let's write a Python script that orchestrates a stateful, multi-turn agent session. 
+To demonstrate this capability, let's write a Python script that orchestrates a stateful, multi-turn agent session.
 
 Our agent acts as a **SpaceX IPO Analyzer**. In the first turn, it researches the SpaceX IPO and generates a Markdown report. In the second turn, it re-attaches to the same container, reads the Markdown report, converts it into a styled HTML dashboard (with custom CSS), and generates a space-themed image asset. Finally, in the third turn, it programmatically downloads the entire workspace container snapshot.
 
@@ -74,7 +86,7 @@ interaction_1 = client.interactions.create(
     environment="remote"  # Launches a remote Ubuntu sandbox
 )
 env_id = interaction_1.environment_id
-print(f"✅ Turn 1 Complete. Container Environment ID: {env_id}")
+#print(f"✅ Turn 1 Complete. Container Environment ID: {env_id}")
 
 print("\n🔄 Turn 2: Re-attaching to same container and converting to HTML...")
 # Turn 2: Re-attach to the SAME sandbox and preserve conversation memory
@@ -82,7 +94,8 @@ interaction_2 = client.interactions.create(
     agent="antigravity-preview-05-2026",
     environment=env_id,                              # ← Re-attaches to same sandbox
     previous_interaction_id=interaction_1.id,       # ← Preserves conversation memory
-    input="Convert that spacex-report.md file into a clean index.html webpage with styling and generate a custom nanobanana image."
+    input="Convert that spacex-report.md file into a clean index.html webpage" +
+          " with styling and generate a custom nanobanana image."
 )
 print("✅ Turn 2 Complete.")
 
@@ -106,6 +119,15 @@ with tarfile.open(tar_path) as tar:
 print("🎉 Workspace extracted successfully! Check ./workspace_extract/")
 ```
 
+Let's unpack what just happened in this code:
+
+1. Turn 1: Google creates a docker container on a Ubuntu machine somewhere, and this instance *with REAL disk* starts
+   doing some research.
+2. Turn 2. Convert MD to HTML. This is silly - we could have done an HTML in iteration 1 of course - but it serves the
+   purpose to demonstrate you can park your calculation today and come back tomorrow and **continue the session** and
+   iterate over it, maybe with a chat over Telegram ;)
+4. Turn 3. This is the magical part: `git pull remote-workspace`. This is where we know it's REAL. There's a real workspace
+   there, maybe with some remote github repo pulled and some added Unit Tests :)
 ---
 
 ## Deep Dive: What is inside the container snapshot?
@@ -128,9 +150,9 @@ Here's the visual rendered output of the generated dashboard:
 
 ## Scaling Up: The Multi-Agent Complexity Wall
 
-The SpaceX IPO Analyzer shows how easy it is to manage a single, linear agent session programmatically. But in real-world software development, we rarely work in a vacuum. We need architects, developers, and QA engineers working in parallel. 
+The SpaceX IPO Analyzer shows how easy it is to manage a single, linear agent session programmatically. But in real-world software development, we rarely work in a vacuum. We need architects, developers, and QA engineers working in parallel.
 
-When you scale from one agent to a team of agents, the programmatic SDK orchestration approach begins to crack. The complexity doesn't scale linearly—it explodes. 
+When you scale from one agent to a team of agents, the programmatic SDK orchestration approach begins to crack. The complexity doesn't scale linearly—it explodes.
 
 To experience this firsthand, I decided to build a complete application using a multi-agent team. And the inspiration came from a very personal challenge.
 
@@ -138,7 +160,7 @@ To experience this firsthand, I decided to build a complete application using a 
 
 ## The App: The Italian Watchmaker
 
-After watching *Heroes*, I've always been a bit wary of watchmakers (especially [Sylar](https://www.youtube.com/watch?v=MqIf3ysYPmg)). But recently, I spent a whole day helping my 8-year-old son struggle to map an analog clock pointing at 19:45 to its digital string representation. It was frustrating because he is actually fantastic at math—once he can work with digital time strings, he can calculate time differences like `08:45 + 20 minutes` in seconds. The blocker was entirely visual. 
+After watching *Heroes*, I've always been a bit wary of watchmakers (especially [Sylar](https://www.youtube.com/watch?v=MqIf3ysYPmg)). But recently, I spent a whole day helping my 8-year-old son struggle to map an analog clock pointing at 19:45 to its digital string representation. It was frustrating because he is actually fantastic at math—once he can work with digital time strings, he can calculate time differences like `08:45 + 20 minutes` in seconds. The blocker was entirely visual.
 
 So, I decided to build a game to help kids bridge this gap. The goal was to build `orologia.io`—a cross-platform mobile game built in Flutter.
 
@@ -170,15 +192,15 @@ As soon as the QA Automation Engineer finishes the test plan, hand it to the Gam
 
 Here is where the screaming failure (and learning) happened. I set up this beautiful, complex multi-agent prompt. I let the agents run for two hours, spawning worktrees, writing Dart classes, setting up widget structures, and compiling tests.
 
-The result? It was sloppy. The clock hands were misaligned, the UI was clunky, and it just didn't feel playable. 
+The result? It was sloppy. The clock hands were misaligned, the UI was clunky, and it just didn't feel playable.
 
 Frustrated, I did a 20-second **vibe coding** run. Following Andrej Karpathy's idea of vibe coding—acting as the conductor feeding specs and letting the AI realize the code and UI interactively—I asked a single agent to spin up a quick, single-file prototype in plain HTML, CSS, and JavaScript.
 
 What I did NOT expect was that the 20-second vibecoded JS app was **10x better** than the 2-hour carefully planned Flutter app. It looked better, it was smoother, and it was actually fun to play.
 
-So, I did what any lazy developer would do: I didn't throw away the Flutter code. Instead, I took that vibecoded JS app and used it as a "visual spec" to teach my Flutter subagents how the clock should look and behave. 
+So, I did what any lazy developer would do: I didn't throw away the Flutter code. Instead, I took that vibecoded JS app and used it as a "visual spec" to teach my Flutter subagents how the clock should look and behave.
 
-But trying to manage this feedback loop—coordinating the Lead Architect, the subagents, the Flutter repository, and checking screenshots of the running JS app—completely broke my CLI workflow. Babysitting text scrollbacks in multiple terminal windows was a lost cause. 
+But trying to manage this feedback loop—coordinating the Lead Architect, the subagents, the Flutter repository, and checking screenshots of the running JS app—completely broke my CLI workflow. Babysitting text scrollbacks in multiple terminal windows was a lost cause.
 
 This is where I hit the wall. I had to capitulate, open the **Antigravity 2.0 Desktop app**, and use its visual thread manager to keep my sanity while steering the agents. It was the only way to make the visual loops of vibe coding actually work without losing my mind.
 
@@ -195,3 +217,15 @@ This is where I hit the wall. I had to capitulate, open the **Antigravity 2.0 De
 ---
 
 🚀 **Ready for Part 2?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/) to see how we scale this local development flow using git worktrees, Conductor++, and parallel subagents under Agostina.
+
+---
+
+> 🛠️ **Developer Note**: This page is compiled and synced from an external repository.
+> - **Do not edit this file here**: Any changes made directly in this repository will be overwritten and lost.
+> - **Deployment & Workspace Dependency**: To learn how this page ended up here, see the [RICCARDO_NOTES.md](../../../../../../RICCARDO_NOTES.md) at the root of this repository.
+> - **Redeployment Command**: To edit the source drafts and redeploy, run:
+>   ```bash
+>   cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
+>   ```
+
+*Read this article on Medium: <https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9>.*
