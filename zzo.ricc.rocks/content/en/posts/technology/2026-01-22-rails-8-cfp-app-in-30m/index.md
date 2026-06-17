@@ -1,15 +1,27 @@
 ---
-title: "How I coded a Rails 8 CFP app in 30m with Antigravity (long version)"
-date: 2026-01-22T11:00:00+01:00
+title: How I coded a Rails 8 CFP app in 30m with Antigravity (long version)
+date: 2026-01-22 11:00:00.000000000 +01:00
 draft: false
-description: |
-   A lightning-fast development session using Rails 8 and Google's Antigravity agent to vibecode a chaotic spreadsheet into a beautiful app.
-categories: ["Technology"]
-tags: ["Rails 8", "AI", "Antigravity", "Coding", "Ruby", "Gemini CLI", "Rubycon", "rubycon"]
-author: "Riccardo"
-#image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/antigravity-ruby-cfp.png
-image: /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/image-5.png
+description: 'A lightning-fast development session using Rails 8 and Google''s Antigravity
+  agent to vibecode a chaotic spreadsheet into a beautiful app.
+
+  '
+categories:
+- Technology
+tags:
+- Rails 8
+- AI
+- Antigravity
+- Coding
+- Ruby
+- Gemini CLI
+- Rubycon
+- rubycon
+author: Riccardo
+image: "/en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/image-5.png"
+medium-site: absent
 ---
+
 
 <!-- 
 ![Antigravity building Rails App](antigravity-ruby-cfp.png)

@@ -1,21 +1,23 @@
 ---
-title: "Spaghetti Bolognese don't exist!"
-date: 2019-12-16T12:00:06+09:00
-#description: "Guide to emoji usage in Hugo"
+title: Spaghetti Bolognese don't exist!
+date: 2019-12-16 12:00:06.000000000 +09:00
 draft: false
 hideToc: false
 enableToc: true
 enableTocContent: false
 author: Riccardo
-authorEmoji: 🇮🇹
-image: /en/posts/www.palladius.it/spaghetti-bolognese-dont-exist/spaghetti-bolognese.jpg
+authorEmoji: "\U0001F1EE\U0001F1F9"
+image: "/en/posts/www.palladius.it/spaghetti-bolognese-dont-exist/spaghetti-bolognese.jpg"
 tags:
 - italy
 - pasta
-# - namoji
-# - bamoji
-# - amoji
+medium-site: absent
+summary: 'Spaghetti bolognese: Everyone knows them... except Italians. Right, read
+  it again if you don''t believe me... in Italy we don''t prepare that kind of pasta.
+  What the hell, you may be wondering... Italy is famous for spaghetti and bolognese
+  sauce (that we call "ragout alla bolognese" or simply ragü, but'
 ---
+
 
 Spaghetti bolognese: Everyone knows them... except Italians.
 

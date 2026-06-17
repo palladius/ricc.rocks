@@ -1,16 +1,26 @@
 ---
-title: "Geminocks: how I set-up auto-translation on my personal Hugo Blog"
+title: 'Geminocks: how I set-up auto-translation on my personal Hugo Blog'
 date: 2024-11-11
 layout: single
 author: Riccardo Carlesso
-read_time: 3  # Minutes
-# categories: Add categories if applicable (e.g., ruby, rails, gcp)
-# tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
-Tags: [hugo, netflify, blog, gcp, googlecloud, gemini, geminocks ]
-#canonicalURL: https://medium.com/@palladiusbonton/todo
-image: /en/posts/medium/2024-11-11-geminocks-translating-my-hugo-site/image-2.png
-#draft: true
+read_time: 3
+Tags:
+- hugo
+- netflify
+- blog
+- gcp
+- googlecloud
+- gemini
+- geminocks
+image: "/en/posts/medium/2024-11-11-geminocks-translating-my-hugo-site/image-2.png"
+medium-site: absent
+summary: "**Note**: this is my first experiment: first I write in Hugo/markdown, and
+  *then* I port to Medium! Code \U0001F1EE\U0001F1F9 site \U0001F1E9\U0001F1EA site
+  \U0001F1EB\U0001F1F7 site # Geminocks https://ricc.rocks/ is an underlooked gem
+  of precious content, and I'm not biased at all: it's my personal blog. \U0001F923
+  Inside you can find my"
 ---
+
 
 **Note**: this is my first experiment: first I write in Hugo/markdown, and *then* I port to Medium!
 

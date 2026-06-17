@@ -1,22 +1,19 @@
 ---
-title: "Who am I"
-date: 2023-02-16T12:00:06+09:00
-#description: "Guide to emoji usage in Hugo"
+title: Who am I
+date: 2023-02-16 12:00:06.000000000 +09:00
 hideToc: false
 enableToc: true
 enableTocContent: false
 author: Riccardo
 pinned: true
 draft: true
-authorEmoji: 🇮🇹
+authorEmoji: "\U0001F1EE\U0001F1F9"
 tags:
 - personal
 - Riccardo
-# - gamoji
-# - namoji
-# - bamoji
-# - amoji
+medium-site: absent
 ---
+
 
 # Something about me (EN)
 

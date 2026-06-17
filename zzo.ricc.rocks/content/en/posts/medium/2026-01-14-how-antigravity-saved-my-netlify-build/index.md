@@ -1,16 +1,26 @@
 ---
-title: "AI-Powered SRE: How Antigravity Saved My Netlify Build"
+title: 'AI-Powered SRE: How Antigravity Saved My Netlify Build'
 date: 2026-01-14
 layout: single
 author: Riccardo Carlesso
-read_time: 5  # Minutes
-tags: [gemini, gemini-cli, antigravity, netlify, SRE, devops, troubleshooting, github, rubycon]
-#image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/header.png
-image: /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/image-26.png
+read_time: 5
+tags:
+- gemini
+- gemini-cli
+- antigravity
+- netlify
+- SRE
+- devops
+- troubleshooting
+- github
+- rubycon
+image: "/en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/image-26.png"
 enableToc: true
 hideToc: false
 enableTocContent: true
+medium-site: absent
 ---
+
 
 Everyone knows GenAI is good for coding. I mean, even [Linus is vibecoding with Antigravity](https://news.ycombinator.com/item?id=46569587) now!
 

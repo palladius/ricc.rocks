@@ -1,34 +1,42 @@
 ---
-title: "Ops I did it again: The SRE Extension is out!"
-date: 2026-06-05T17:40:00+02:00
+title: 'Ops I did it again: The SRE Extension is out!'
+date: 2026-06-05 17:40:00.000000000 +02:00
 draft: false
-description: "Site Reliability Engineering (SRE) meets agentic AI with the official release of the SRE Extension for Gemini and Antigravity CLIs."
-categories: ["Technology"]
-tags: ["SRE", "AI", "Google Cloud", "Gemini CLI", "Antigravity", "DevOps"]
-author: "Riccardo"
-image: /en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/hero_image.png
+description: Site Reliability Engineering (SRE) meets agentic AI with the official
+  release of the SRE Extension for Gemini and Antigravity CLIs.
+categories:
+- Technology
+tags:
+- SRE
+- AI
+- Google Cloud
+- Gemini CLI
+- Antigravity
+- DevOps
+author: Riccardo
+image: "/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/hero_image.png"
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520314033
 UTM_ADDON: "?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog"
-CTA: "https://github.com/gemini-cli-extensions/sre"
+CTA: https://github.com/gemini-cli-extensions/sre
 Status: published
-#Status: published
 Completion: 98
-version: "1.4"
-Platform: "Medium and ricc.rocks"
-PublishDate: "2026-06-05"
-MediumURL: "https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0"
+version: '1.4'
+Platform: Medium and ricc.rocks
+PublishDate: '2026-06-05'
+MediumURL: https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0
 MediumStatus: published
-MediumVersion: "1.3"
-RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/"
+MediumVersion: '1.3'
+RiccRocksURL: https://ricc.rocks/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/
 RiccRocksStatus: published
-RiccRocksVersion: "1.4"
-PrimaryURL: "https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0"
-#AppsPortfolio: TODO
+RiccRocksVersion: '1.4'
+PrimaryURL: https://medium.com/@palladiusbonton/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0
+medium-site: https://rominirani.medium.com/getting-started-with-google-mcp-services-a31dfb1b87a8)
 ---
+
 
 # Ops I did it again: The SRE Extension is out!
 

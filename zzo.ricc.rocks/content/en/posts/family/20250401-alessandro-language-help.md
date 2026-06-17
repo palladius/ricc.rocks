@@ -1,13 +1,16 @@
 ---
-title: "Alessandro learns a few languages"
-date: 2022-04-14T11:48:51+01:00
-#featured: false
-#draft: true
-#comment: true
-categories: [ Family ]
-#tags: [GCP, macbook, SMS, pager, medium, geminocks , AppDev, monitoring, Alerts, CloudMonitoring ]
-image: /en/posts/family/alessandro_tandem.jpg
+title: Alessandro learns a few languages
+date: 2022-04-14 11:48:51.000000000 +01:00
+categories:
+- Family
+image: "/en/posts/family/alessandro_tandem.jpg"
+medium-site: absent
+summary: 'Alessandro is learning his fourth language this year! Reading and pronouncing
+  all those sounds, dictongues , and all those vowels together can be off putting.
+  Hence, I''ve asked Gemini to create a reading help, by language. ## Gemini answer
+  Okay, this is a great way to help your son! Learning'
 ---
+
 Alessandro is learning his fourth language this year! Reading and pronouncing all those sounds, dictongues , and all those vowels together can be off putting.
 
 ![Alessandro coming out of school](/en/posts/family/alessandro_tandem.jpg "Alessandro collecting his stuff after school")

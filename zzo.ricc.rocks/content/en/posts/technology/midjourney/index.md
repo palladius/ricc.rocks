@@ -1,10 +1,7 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "Midjourney - what I've learnt so far"
-date: 2023-04-10T21:17:43+01:00
-#draft: false
-image: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png
+title: Midjourney - what I've learnt so far
+date: 2023-04-10 21:17:43.000000000 +01:00
+image: "/gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png"
 tags:
 - midjourney
 - generative AI
@@ -12,7 +9,14 @@ tags:
 categories:
 - midjourney
 - technology
+medium-site: absent
+summary: 'I fell in love with MJ. * Some tips: https://www.wired.it/article/come-usare-midjourney/
+  * See my gallery in this website: https://ricc.rocks/en/gallery/midjourney/ * See
+  my MJ page: https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/
+  ## What it''s good for * amazing at merging/bending different concepts and giving
+  you an artistic view of something you know. Example: a mermaid chair ,'
 ---
+
 
 I fell in love with MJ.
 

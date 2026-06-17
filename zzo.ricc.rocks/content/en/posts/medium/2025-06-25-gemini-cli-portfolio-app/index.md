@@ -1,12 +1,19 @@
 ---
-title: "Get started with Gemini CLI: let's vibecode an app"
-date: 2025-06-25T14:22:07+02:00
+title: 'Get started with Gemini CLI: let''s vibecode an app'
+date: 2025-06-25 14:22:07.000000000 +02:00
 draft: false
-tags: [ "gemini","gemini-cli", "portfolio", "generative-ai" ]
-categories: [ "technology", "google" ]
-#image: /en/posts/medium/2025-06-25-gemini-cli-chromext/250603b4220753--ic2a2erzc3n.png
-image: /en/posts/medium/2025-06-25-gemini-cli-portfolio-app/250611[startin--m6gt3tkw97l.png
+tags:
+- gemini
+- gemini-cli
+- portfolio
+- generative-ai
+categories:
+- technology
+- google
+image: "/en/posts/medium/2025-06-25-gemini-cli-portfolio-app/250611[startin--m6gt3tkw97l.png"
+medium-site: absent
 ---
+
 
 # Get started with gemini-cli: let's vibecode an app
 

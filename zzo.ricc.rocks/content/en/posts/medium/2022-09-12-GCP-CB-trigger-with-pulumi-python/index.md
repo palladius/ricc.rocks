@@ -1,17 +1,18 @@
 ---
-# Note this is SUPER weird, I try to make this work for ALL my thingies so there might be some behavioural clatches in the
-# initial HEADER :) Lets try to keep it small :)
-title: "Setting a ⬣ Cloud Build trigger with 🧹 Pulumi in 🐍 Python"
-subtitle: "Automate your code with a language-friendly Terraform"
-date: 2022-09-22T21:17:43+01:00
+title: "Setting a ⬣ Cloud Build trigger with \U0001F9F9 Pulumi in \U0001F40D Python"
+subtitle: Automate your code with a language-friendly Terraform
+date: 2022-09-22 21:17:43.000000000 +01:00
 draft: false
-tags: [GCP, pulumi, CloudBuild, Medium]
-# paperMod
+tags:
+- GCP
+- pulumi
+- CloudBuild
+- Medium
 canonicalURL: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
-# ANANKE :)
-#featured_image: /images/gohugo-default-sample-hero-image.jpg
-image: /en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/image.png
+image: "/en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/image.png"
+medium-site: https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 ---
+
 
 The Original article on Medium:  https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf
 
@@ -65,3 +66,6 @@ My 📝 for the future includes:
 Original code (Cloud Build + Node.js): https://www.pulumi.com/docs/guides/continuous-delivery/google-cloud-build/
 
 My code (python): https://github.com/palladius/pulumi/tree/main/examples/python-gcp-cloudbuild-auto-trigger
+
+
+*Original article published on [Medium](https://medium.com/google-cloud/setting-cloudbuild-with-pulumi-in-python-330e8b54b2cf).*

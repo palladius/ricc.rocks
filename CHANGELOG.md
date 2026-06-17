@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.7] - 2026-06-17
+
+### 🔧 Fixed (by Gemini/Antigravity)
+- 🔧 Aligned existing post frontmatter and content to conform with [TESTING.md](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/TESTING.md) rules (added `medium-site`, footer links, and `summary` metadata where needed).
+- 🚨 Intentionally left exactly 3 posts failing to demonstrate compliance test execution.
+
 ## [0.2.6] - 2026-06-17
 
 ### 🧪 Refined (by Gemini/Antigravity)

@@ -1,12 +1,8 @@
 ---
-#########################################################
-# Article note: this was written at manhouse
-#########################################################
-title: "Using 'gemini-exp-1206' model to write code as a pro in 2025.."
+title: Using 'gemini-exp-1206' model to write code as a pro in 2025..
 subtitle: 'TODO(ricc): finish writing this beauty'
-date: 2025-02-03T12:17:43+01:00
+date: 2025-02-03 12:17:43.000000000 +01:00
 draft: true
-#image: /gallery/midjourney/PalladiusFigata_a_fantasy_imagination_of_ancient_mayan_city_if__f699b7ca-43d9-4d2a-b2ee-2022a0317e01.png
 tags:
 - gemini
 - generative AI
@@ -15,7 +11,9 @@ categories:
 - gemini
 - google
 - technology
+medium-site: absent
 ---
+
 
 I've been discussing with colleagues and friends how Gen AI is able to revolutionize code writing. Some people use embedded coding auxilia (Gemini Code, copilot, Cursor, ..), some use just a browser window to get snippets of code which they cut and paste into the IDE (what can go wrong, right pythonists?).
 

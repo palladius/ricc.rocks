@@ -1,27 +1,35 @@
 ---
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
-Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 2)"
-date: 2026-06-16T12:00:00+02:00
+Title: 'Orchestrating with Antigravity: A Crescendo of Agents (Part 2)'
+date: 2026-06-16 12:00:00.000000000 +02:00
 draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
-Tags: [worktree, Antigravity]
+Tags:
+- worktree
+- Antigravity
 PublishedURL: TODO
-Completion: "100"
-CTA: https://antigravity.google/ # probably AG 2.0
-Status: "published"
+Completion: '100'
+CTA: https://antigravity.google/
+Status: published
 Linkedin post:
-Generator: "create_article.rb"
-Version: "1.3"
-Platform: "Medium, Ricc.Rocks"
-PublishDate: "2026-06-16"
-RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
-RiccRocksStatus: "published"
-RiccRocksVersion: "1.3"
-PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
+Generator: create_article.rb
+Version: '1.3'
+Platform: Medium, Ricc.Rocks
+PublishDate: '2026-06-16'
+RiccRocksURL: https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/
+RiccRocksStatus: published
+RiccRocksVersion: '1.3'
+PrimaryURL: https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/
+medium-site: absent
+summary: "# Orchestrating with Antigravity: A Crescendo of Agents (Part 2) ## Parallel
+  Coding with Git Worktrees, Conductor++, and Agostina Alexis said *'This is the year
+  of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of
+  the AI agent, 2026 is definitely the year of... AI"
 ---
+
 
 # Orchestrating with Antigravity: A Crescendo of Agents (Part 2)
 

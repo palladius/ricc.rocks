@@ -1,11 +1,19 @@
 ---
-title: "Vibe coding my first Chrome Extension with Gemini CLI"
-date: 2025-06-25T14:22:07+02:00
+title: Vibe coding my first Chrome Extension with Gemini CLI
+date: 2025-06-25 14:22:07.000000000 +02:00
 draft: false
-tags: [ "gemini", "chromext",  "gemini-cli", "generative-ai" ]
-categories: [ "technology", "google" ]
-image: /en/posts/medium/2025-06-25-gemini-cli-chromext/250603b4220753--ic2a2erzc3n.png
+tags:
+- gemini
+- chromext
+- gemini-cli
+- generative-ai
+categories:
+- technology
+- google
+image: "/en/posts/medium/2025-06-25-gemini-cli-chromext/250603b4220753--ic2a2erzc3n.png"
+medium-site: absent
 ---
+
 
 # Vibe coding my first Chrome Extension with gemini-cli !
 

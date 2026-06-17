@@ -1,17 +1,24 @@
 ---
-title: "Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive"
-date: 2024-08-15  # Today's date
-layout: single  # Assuming single.html for blog posts in ZZO theme
-# Optional fields (change as needed)
+title: 'Level Up Your Rails Game with Cloud Run: A Qwiklabs Deep Dive'
+date: 2024-08-15
+layout: single
 author: Riccardo Carlesso
-read_time: 3  # Minutes
-# categories: Add categories if applicable (e.g., ruby, rails, gcp)
-# tags: Add tags if applicable (e.g., qwiklabs, cloudrun)
-Tags: [qwiklabs, cloudrun, rubyonrails, devops, gcp, googlecloud, toolchain, skillsboost, cloudskillsboost ]
+read_time: 3
+Tags:
+- qwiklabs
+- cloudrun
+- rubyonrails
+- devops
+- gcp
+- googlecloud
+- toolchain
+- skillsboost
+- cloudskillsboost
 canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
-# ![Riccardo Video on Youtube](/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png)
-image: /en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png
+image: "/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png"
+medium-site: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
 ---
+
 
 ([Original article on Medium](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b))
 
@@ -69,3 +76,6 @@ Code: https://github.com/palladius/20240809-qwiklab-rails-on-gcp
 This is a big experiment for me! Was it a good idea? A terrible idea? Let me know in the comments!
 
 
+
+
+*Original article published on [Medium](https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b).*

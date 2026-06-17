@@ -1,21 +1,31 @@
 ---
-title: "My Mac’s battery🔋 on Google Cloud Monitoring — send SMS if low 🪫"
-date: 2022-11-09T11:48:51+01:00
-#featured: false
-#draft: false
+title: "My Mac’s battery\U0001F50B on Google Cloud Monitoring — send SMS if low \U0001FAAB"
+date: 2022-11-09 11:48:51.000000000 +01:00
 comment: true
-#toc: true
-#reward: true
-#pinned: false
-#carousel: false
-#series:
-categories: [ GCP, Work ]
-tags: [GCP, macbook, SMS, pager, medium, geminocks , AppDev, monitoring, Alerts, CloudMonitoring ]
+categories:
+- GCP
+- Work
+tags:
+- GCP
+- macbook
+- SMS
+- pager
+- medium
+- geminocks
+- AppDev
+- monitoring
+- Alerts
+- CloudMonitoring
 images:
-- /images/articles/london-airport.jpg
-image: /en/posts/medium/2022-09-mac-battery/image-5.png
-# original TODO more from https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
+- "/images/articles/london-airport.jpg"
+image: "/en/posts/medium/2022-09-mac-battery/image-5.png"
+medium-site: https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)
+summary: See original article on Medium This article shows how you can easily inject
+  a generic key/value into Google Cloud Monitoring and set up alerts on it. I use
+  it to alert on disk space, and now also low battery! This morning I was in London,
+  and I forgot my charger
 ---
+
 [See original article on Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)
 
 <!-- this works: ![Image Caption](/images/riccardo.jpg "Use Image Title as Caption aeroporto") -->
@@ -279,3 +289,6 @@ gcp-write-metric mac-chrome-cli-ntabs $(chrome-cli list tabs | wc -l)
 ```
 
 *Note: in the code I use “gce_instance” when I should be really using “global” metric ([docs](https://cloud.google.com/monitoring/api/resources)). I loved GCE Instance as it already has hostname and GCP zone baked in, but it’s incorrect (I tell GCP that’s a VM in the cloud, which is not). New code to support this is being developed in this amazing script: 🌸 [gcp-write-metric-done-well](https://github.com/palladius/sakura/blob/master/bin/gcp-write-metric-done-well)*
+
+
+*Original article published on [Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)).*

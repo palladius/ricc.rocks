@@ -1,17 +1,18 @@
 ---
-title: "Emoji Support"
-date: 2019-12-16T12:00:06+09:00
-description: "Guide to emoji usage in Hugo"
+title: Emoji Support
+date: 2019-12-16 12:00:06.000000000 +09:00
+description: Guide to emoji usage in Hugo
 draft: true
 hideToc: false
 enableToc: true
 enableTocContent: false
-#author: "Hugo Authors"
 author: Kim
-authorEmoji: 👻
+authorEmoji: "\U0001F47B"
 tags:
 - emoji
+medium-site: absent
 ---
+
 
 Emoji can be enabled in a Hugo project in a number of ways.
 <!--more-->
