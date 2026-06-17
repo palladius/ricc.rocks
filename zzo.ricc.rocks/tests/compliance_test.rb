@@ -7,6 +7,18 @@ require 'yaml'
 require 'date'
 require 'fileutils'
 
+def has_medium_link?(front_matter, body)
+  return true if front_matter['canonicalURL'] && front_matter['canonicalURL'].to_s.include?('medium.com')
+  return true if front_matter['medium-site'] && front_matter['medium-site'].to_s.include?('medium.com')
+  # Check if there is an explicit Medium article link in the body
+  # Excluding author profile page and feeds
+  medium_urls = body.scan(%r{https?://(?:[a-zA-Z0-9-]+\.)?medium\.com/(\S+)})
+  medium_urls.any? do |path_match|
+    path = path_match.first
+    path && !path.start_with?('@') && !path.include?('feed')
+  end
+end
+
 def check_post_compliance(file_path)
   errors = []
   content = File.read(file_path)
@@ -26,32 +38,69 @@ def check_post_compliance(file_path)
     return []
   end
 
-  # --- Rule 1: Initial snippet should NOT contain images ---
-  # Snippet is defined as text before <!--more--> or the beginning of content.
   body = content.sub(/\A---.*?---/m, '').strip
-  snippet = body.split(/<!--\s*more\s*-->/i).first || ""
-  
-  # Check for images in snippet
-  if snippet =~ /!\[.*?\]\(.*?\)/ || snippet =~ /<img\s+/i || snippet =~ /\{\{\s*<\s*(figure|img|image|photo)\b/i
-    errors << "Rule 1 Violation: Initial snippet contains an image or image shortcode."
+
+  # --- Rule 1: Initial snippet should NOT contain images and word count should be similar ---
+  # Snippet extraction logic simulating Hugo:
+  snippet = ""
+  source_type = :none
+
+  if front_matter['summary'] && !front_matter['summary'].strip.empty?
+    snippet = front_matter['summary']
+    source_type = :front_matter
+  elsif body =~ /<!--\s*more\s*-->/i
+    snippet = body.split(/<!--\s*more\s*-->/i).first || ""
+    source_type = :more_tag
+  else
+    # Fallback to 70 words, stripping HTML comments first
+    clean_body = body.gsub(/<!--.*?-->/m, '')
+    words = clean_body.strip.split(/\s+/)
+    snippet = words[0...70].join(" ")
+    source_type = :fallback_70_words
+  end
+
+  # Check for images in the extracted snippet
+  if snippet =~ /!\[.*?\]\(.*?\)/ || snippet =~ /<img\s+/i || snippet =~ /\{\{\s*[<%]\s*(figure|img|image|photo)\b/i
+    errors << "Rule 1 Violation: Initial snippet (via #{source_type}) contains an image or image shortcode."
+  end
+
+  # Check word count of the snippet to ensure they are similar/reasonable
+  word_count = snippet.split(/\s+/).reject(&:empty?).size
+  if word_count < 10
+    errors << "Rule 1 Violation: Snippet (via #{source_type}) is too short (#{word_count} words). Must be at least 10 words."
+  elsif word_count > 120
+    errors << "Rule 1 Violation: Snippet (via #{source_type}) is too long (#{word_count} words). Must be at most 120 words."
   end
 
   # --- Rule 2: Point to Medium article or have `medium-site: absent` ---
-  # TESTING.md: "Ensure the end of the R.R. Page points to the Medium article, if there is one. 
-  # Otherwise the frontmatter should say explicitly: `medium-site: absent` and this needs to be done by a human, not by AI."
+  medium_linked = has_medium_link?(front_matter, body)
   medium_site = front_matter['medium-site']
-  if medium_site.nil?
-    errors << "Rule 2 Violation: Missing 'medium-site' frontmatter key. Must be a Medium URL or 'absent'."
-  elsif medium_site != 'absent' && !(medium_site =~ %r{\Ahttps?://(.*\.)?medium\.com/})
-    errors << "Rule 2 Violation: 'medium-site' must be either 'absent' or a valid Medium URL (got: '#{medium_site}')."
+
+  if medium_linked
+    # Check if the end of the body points to the Medium article
+    end_of_body = body[-1500..-1] || body
+    unless end_of_body.include?('medium.com')
+      errors << "Rule 2 Violation: This post has a Medium article, but the end of the body does not point to it (no medium.com link in the last 1500 characters)."
+    end
+
+    if medium_site.nil?
+      errors << "Rule 2 Violation: Missing 'medium-site' frontmatter key. Since a Medium link exists, 'medium-site' must point to the Medium article URL."
+    elsif medium_site == 'absent'
+      errors << "Rule 2 Violation: 'medium-site' is set to 'absent', but a Medium link was found in the content/frontmatter."
+    elsif !medium_site.to_s.include?('medium.com')
+      errors << "Rule 2 Violation: 'medium-site' frontmatter key does not point to a valid Medium URL (got: '#{medium_site}')."
+    end
+  else
+    if medium_site.nil?
+      errors << "Rule 2 Violation: Missing 'medium-site' frontmatter key. If there is no Medium article, specify: `medium-site: absent`."
+    elsif medium_site != 'absent'
+      errors << "Rule 2 Violation: 'medium-site' is set to '#{medium_site}', but no Medium link was found. Set to 'absent' if there is no Medium article."
+    end
   end
 
   # --- Rule 3: Series/train pointers if part of multiseries ---
-  # TESTING.md: "If this is a part of a multiseries article, ensure that article 1 points to article 2 and v.v. in a narrative 'train'."
-  # If 'series' is specified in frontmatter, verify we have some narrative link or structure.
   if front_matter['series']
-    # Just a placeholder check: if in a series, make sure body references other series pages or train structure.
-    # We can warn or enforce. Let's make it a warning or check if there is references.
+    # Placeholder for series validation
   end
 
   errors

@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.6] - 2026-06-17
+
+### 🧪 Refined (by Gemini/Antigravity)
+- 🧪 Refined snippet-extracting logic in compliance tests to mirror Hugo's actual logic (`summary` frontmatter, `<!--more-->`, and 70-word fallback).
+- 🚨 Added snippet word count similarity validation (10 to 120 words).
+- 🔗 Correlated Medium links detection by parsing both frontmatter (`canonicalURL`/`medium-site`) and post content to check that the end of page points to the Medium article.
+
 ## [0.2.5] - 2026-06-17
 
 ### 🚨 Added (by Gemini/Antigravity)
