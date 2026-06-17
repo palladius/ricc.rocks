@@ -31,6 +31,10 @@ gsm-update-funge:
 test:
     cd zzo.ricc.rocks && just test
 
+test-page path:
+    cd zzo.ricc.rocks && just test-page {{path}}
+
+
 
 curl-localhost:
     curl http://localhost:1313/en/

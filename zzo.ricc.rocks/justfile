@@ -16,4 +16,8 @@ curl-localhost:
 test:
   ruby tests/compliance_test.rb
 
+test-page path:
+  ruby tests/compliance_test.rb {{path}}
+
+
 

@@ -61,7 +61,5 @@ This isolates the ZZO site build from other sites' dependencies and ensures Netl
    - Replaced root [justfile](file:///usr/local/google/home/ricc/git/ricc.rocks/justfile)'s `test` target to run `cd zzo.ricc.rocks && just test`.
 3. **Fails as Expected**: Verified that `just test` runs the script and fails on missing/incorrect `canonicalURL` keys and image-inclusive snippets across posts.
 4. **Reverted Post Fixes**: Kept all posts in their original, unmodified states to ensure the tests report actual failures directly on the source files, as they are managed by upstream processes.
-
-
-
+5. **Single Page Validation**: Added support for checking a single file using `just test-page <path>` (e.g., `just test-page content/en/posts/emoji-support.md` or `just test-page zzo.ricc.rocks/content/en/posts/emoji-support.md`). It dynamically resolves paths whether they are root-relative or zzo-relative.
 

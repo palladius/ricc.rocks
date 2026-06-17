@@ -105,16 +105,36 @@ def check_post_compliance(file_path)
   errors
 end
 
-# Find all markdown files recursively in content/en/posts/
-posts_dir = File.expand_path("../content/en/posts", __dir__)
-md_files = Dir.glob("#{posts_dir}/**/*.md")
-
-# Filter out _index.md or files containing 'removeme' in name
-md_files.reject! { |f| File.basename(f).start_with?('_') || f.include?('removeme') }
+# Resolve files to test
+if ARGV.empty?
+  posts_dir = File.expand_path("../content/en/posts", __dir__)
+  md_files = Dir.glob("#{posts_dir}/**/*.md")
+  md_files.reject! { |f| File.basename(f).start_with?('_') || f.include?('removeme') }
+  puts "Running compliance tests on #{md_files.count} posts..."
+else
+  repo_root = File.expand_path("../..", __dir__) # Root of the git repository
+  md_files = ARGV.map do |arg|
+    resolved = nil
+    if File.file?(arg)
+      resolved = File.expand_path(arg)
+    elsif File.file?(File.expand_path(arg, repo_root))
+      resolved = File.expand_path(arg, repo_root)
+    elsif File.file?(File.expand_path(arg, File.expand_path("..", __dir__))) # inside zzo.ricc.rocks
+      resolved = File.expand_path(arg, File.expand_path("..", __dir__))
+    else
+      resolved = File.expand_path(arg, Dir.pwd)
+    end
+    
+    unless File.file?(resolved)
+      puts "\e[31mError: File not found: '#{arg}' (resolved as '#{resolved}')\e[0m"
+      exit(1)
+    end
+    resolved
+  end
+  puts "Running compliance tests on #{md_files.count} specified post(s)..."
+end
 
 all_errors = {}
-
-puts "Running compliance tests on #{md_files.count} posts..."
 md_files.each do |file_path|
   relative_path = file_path.sub(File.expand_path("..", __dir__) + "/", "")
   errors = check_post_compliance(file_path)

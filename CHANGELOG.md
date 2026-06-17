@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.9] - 2026-06-17
+
+### 🔧 Added (by Gemini/Antigravity)
+- 🔧 Added `just test-page <path>` target to both root and `zzo.ricc.rocks/` justfiles.
+- 🧪 Updated `compliance_test.rb` to support testing individual specified files passed via command line arguments, resolving paths dynamically.
+
 ## [0.2.8] - 2026-06-17
 
 ### 🧪 Refined (by Gemini/Antigravity)
