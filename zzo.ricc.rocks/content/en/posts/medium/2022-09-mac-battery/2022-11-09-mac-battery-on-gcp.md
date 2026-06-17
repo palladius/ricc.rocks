@@ -19,7 +19,7 @@ tags:
 images:
 - "/images/articles/london-airport.jpg"
 image: "/en/posts/medium/2022-09-mac-battery/image-5.png"
-medium-site: https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)
+canonicalURL: https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe
 summary: See original article on Medium This article shows how you can easily inject
   a generic key/value into Google Cloud Monitoring and set up alerts on it. I use
   it to alert on disk space, and now also low battery! This morning I was in London,
@@ -291,4 +291,4 @@ gcp-write-metric mac-chrome-cli-ntabs $(chrome-cli list tabs | wc -l)
 *Note: in the code I use “gce_instance” when I should be really using “global” metric ([docs](https://cloud.google.com/monitoring/api/resources)). I loved GCE Instance as it already has hostname and GCP zone baked in, but it’s incorrect (I tell GCP that’s a VM in the cloud, which is not). New code to support this is being developed in this amazing script: 🌸 [gcp-write-metric-done-well](https://github.com/palladius/sakura/blob/master/bin/gcp-write-metric-done-well)*
 
 
-*Original article published on [Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe)).*
+*Original article published on [Medium](https://medium.com/google-cloud/my-macs-battery-on-google-cloud-monitoring-with-sms-if-its-low-a1ccd70485fe).*
