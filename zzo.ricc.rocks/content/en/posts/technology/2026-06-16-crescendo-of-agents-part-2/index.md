@@ -129,6 +129,13 @@ Equipping your Antigravity coordinator and subagents with this skill teaches the
 3.  **HITL Polling**: The dual reentrant protocol for posting issue comments, reading local registries, and polling answers without exhausting API quota limit ranges.
 4.  **Local Commits & Notes**: Standardizing local branch commits and signing off details via Git Notes without direct remote pushes.
 
+#### ⚠️ v1.0 Limitations & Looking Ahead to v2.0
+
+While `condutree v1.0` is a solid foundation, it still has a few manual edges that we plan to streamline in `v2.0`:
+*   **Automatic Symlinking**: Fully automate the symlinking of `.env` configurations and shared runtime files alongside the main `conductor/` folder.
+*   **Streamlined Helpers**: Replace ad-hoc shell commands with a clean Python or Ruby helper script to handle weird worktree git states robustly.
+*   **`justfile` Integration**: Package this script under `conductor/bin/git-status-patched.sh` and expose it via a clean recipe (e.g., `just git-status-condutree`) so developers can view patched git status of active worktrees instantly.
+
 ![Too many cooking agents making a mess of a single branch](image-cooking-agents-mess.png)
 *Caption: Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the "too many cooks in the kitchen" metaphor applied to git merges).*
 
