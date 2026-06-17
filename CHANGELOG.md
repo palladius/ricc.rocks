@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🔀 Merged (by Gemini/Antigravity)
 - 🔀 Merged branch `origin/main` into local `main`. Resolved conflict in deleted file `content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` by accepting the remote deletion since the article has been split and published as "Crescendo of Agents (Part 1 & Part 2)".
 
+### ⚡ Fixed (by Gemini/Antigravity)
+- ⚡ Fixed local development fallback commands in both `zzo.ricc.rocks/justfile` (`just dev`) and `zzo.ricc.rocks/Makefile` (`make run`/`make test`/`make build`) to use `npx -y hugo-extended` instead of standard `hugo-bin`. This ensures the SCSS/TOCSS templates compile successfully when a local global Hugo is not present.
+- 🚀 Installed global `hugo` extended edition via Homebrew to support fast local dev builds.
+
+
 ## [0.2.3] - 2026-06-15
 
 

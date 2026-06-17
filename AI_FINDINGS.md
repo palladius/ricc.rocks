@@ -43,8 +43,14 @@ This isolates the ZZO site build from other sites' dependencies and ensures Netl
 **UPDATED & FIXED (by Gemini/Antigravity)**:
 1. **Added `just dev` Fallback**: Updated `zzo.ricc.rocks/justfile` to check for `hugo` in PATH first, and fallback to `npx -y hugo-bin server --disableFastRender` if it's not present. This prevents `hugo: command not found` errors.
 2. **Re-applied YAML Tags fix**: Found that the frontmatter in `content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` still contained `Tags: worktree, Antigravity` which caused build crashes. Corrected it to `Tags: [worktree, Antigravity]`. The site now builds successfully with `make test`.
-
 ## Git Merge Conflict Resolution (2026-06-17)
 **RESOLVED (by Gemini/Antigravity)**:
 - **Conflict Resolution**: Merged `origin/main` into local `main`. Resolved the conflict on `deleted by them: content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` by accepting the deletion, since the post was reorganized and published in `origin/main` as "Crescendo of Agents (Part 1 & 2)".
+
+## `just dev` SCSS/TOCSS extended build fix (2026-06-17)
+**UPDATED & FIXED (by Gemini/Antigravity)**:
+1. **Identified Root Cause**: When `hugo` is missing from the environment PATH, the local fallback `npx -y hugo-bin` pulls down standard Hugo, which lacks the extended features (such as SCSS/TOCSS compilation) required by the ZZO theme, causing build and server failure.
+2. **Upgraded npm Fallback**: Updated the fallback command in both `justfile` and `Makefile` to use `npx -y hugo-extended` instead of `hugo-bin`. This downloads and uses the extended version of Hugo automatically.
+3. **Installed Global Extended Hugo**: Successfully ran `brew install hugo` to provide the global extended Hugo binary (`hugo v0.163.2+extended+withdeploy`) in the user's environment. This enables standard `just dev` and `make test`/`make run` to run instantly without relying on the npm fallback.
+
 
