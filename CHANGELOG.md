@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.4] - 2026-06-17
+
+### ⚡ Fixed (by Gemini/Antigravity)
+- ⚡ Fixed local development fallback commands in both `zzo.ricc.rocks/justfile` (`just dev`) and `zzo.ricc.rocks/Makefile` (`make run`/`make test`/`make build`) to use `npx -y hugo-extended` instead of standard `hugo-bin`. This ensures the SCSS/TOCSS templates compile successfully when a local global Hugo is not present.
+- 🚀 Installed global `hugo` extended edition via Homebrew to support fast local dev builds.
+
 ## [0.2.3] - 2026-06-15
 
 ### 🔧 Added (by Gemini/Antigravity)
