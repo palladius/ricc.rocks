@@ -44,3 +44,7 @@ This isolates the ZZO site build from other sites' dependencies and ensures Netl
 1. **Added `just dev` Fallback**: Updated `zzo.ricc.rocks/justfile` to check for `hugo` in PATH first, and fallback to `npx -y hugo-bin server --disableFastRender` if it's not present. This prevents `hugo: command not found` errors.
 2. **Re-applied YAML Tags fix**: Found that the frontmatter in `content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` still contained `Tags: worktree, Antigravity` which caused build crashes. Corrected it to `Tags: [worktree, Antigravity]`. The site now builds successfully with `make test`.
 
+## Git Merge Conflict Resolution (2026-06-17)
+**RESOLVED (by Gemini/Antigravity)**:
+- **Conflict Resolution**: Merged `origin/main` into local `main`. Resolved the conflict on `deleted by them: content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` by accepting the deletion, since the post was reorganized and published in `origin/main` as "Crescendo of Agents (Part 1 & 2)".
+

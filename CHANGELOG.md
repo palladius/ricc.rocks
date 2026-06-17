@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.4] - 2026-06-17
+
+### 🔀 Merged (by Gemini/Antigravity)
+- 🔀 Merged branch `origin/main` into local `main`. Resolved conflict in deleted file `content/en/posts/technology/2026-06-05-worktree-multiagent-dev-flow/index.md` by accepting the remote deletion since the article has been split and published as "Crescendo of Agents (Part 1 & Part 2)".
+
 ## [0.2.3] - 2026-06-15
+
 
 ### 🔧 Added (by Gemini/Antigravity)
 - 🔧 Added fallback support for `npx -y hugo-bin server` in `zzo.ricc.rocks/justfile` to make `just dev` work out of the box when `hugo` is not installed on the system.
