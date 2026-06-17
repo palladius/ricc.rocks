@@ -116,6 +116,11 @@ In the past few months, all I wanted to do was **GHI-triggered multi-agent imple
 
 To make this entire multi-agent git-worktree workflow reusable for any codebase, I packaged these exact rules and automations into an open-source agent skill called **`condutree`** (technically, `conductor-worktree-hitl`). 
 
+Why did I build this as an external skill rather than dumping all the git/worktree commands into the main coordinator prompt?
+1.  **Conflating the Logic**: It consolidates all the low-level workspace provisioning, symlinking, and git excludes in a single, maintainable script.
+2.  **Manageable Coordinator Prompts**: It keeps the prompt given to the main coordinator agent small, clean, and focused entirely on the high-level *main-to-subagent* delegation workflow and reentrant question resolution. The agent doesn't need to get bogged down in git syntax; it simply delegates that execution to the skill.
+3.  **Reusability**: Other developers can instantly plug this skill into their own repositories and agent harnesses to gain safe, conflict-free parallel agent executions without rewriting the integration scripts.
+
 You can find the code and details in my public [gemini-cli-custom-commands repository](https://github.com/palladius/gemini-cli-custom-commands) (and be sure to star the new [devrel-cli repository](https://github.com/palladius-uat/devrel-cli) where I'm centralizing all my developer advocacy automation tools!).
 
 Equipping your Antigravity coordinator and subagents with this skill teaches them:
