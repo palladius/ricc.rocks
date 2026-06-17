@@ -61,7 +61,7 @@ If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-d
 
 <!--more-->
 
-![Hero Image](hero_image.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
 
 > 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
@@ -71,7 +71,7 @@ When you scale from a soloist agent to a crescendo of parallel agents—where a 
 
 Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/) is the best at this!
 
-![Antigravity 2.0 explained](image-1.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
 
 This clean interface has it all:
 
@@ -113,7 +113,7 @@ Let's unpack this **prompt**. It contains:
 
 Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into emergence and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
 
-![Seroter agent interactions architecture diagram](architecture_diagram.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
 
 In the past few months, all I wanted to do was **GHI-triggered multi-agent implementation**!
 
@@ -147,7 +147,7 @@ While `condutree v1.0` is a solid foundation, it still has a few manual edges th
 *   **Streamlined Helpers**: Replace ad-hoc shell commands with a clean Python or Ruby helper script to handle weird worktree git states robustly.
 *   **`justfile` Integration**: Package this script under `conductor/bin/git-status-patched.sh` and expose it via a clean recipe (e.g., `just git-status-condutree`) so developers can view patched git status of active worktrees instantly.
 
-![Too many cooking agents making a mess of a single branch](image-cooking-agents-mess.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-cooking-agents-mess.png" caption="Too many cooking agents making a mess of a single branch" alt="Too many cooking agents making a mess of a single branch" position="center" >}}
 *Caption: Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the "too many cooks in the kitchen" metaphor applied to git merges).*
 
 *While the clock game taught us that multi-agent systems require a visual feedback loop to align code with user expectations, we needed to see how this workflow behaves under heavy SRE workloads. Enter Project Benjamin...*
@@ -297,31 +297,31 @@ Here is the terminal console output captured during initialization:
 ================================================================================
 ```
 
-![Conductor Inspector Status Overview](image-conductor-inspector-short-v1.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-conductor-inspector-short-v1.png" caption="Conductor Inspector Status Overview" alt="Conductor Inspector Status Overview" position="center" >}}
 *Caption: Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments.*
 
-![Conductor Inspector Live Question Details](image-conductor-inspector-short-v2.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-conductor-inspector-short-v2.png" caption="Conductor Inspector Live Question Details" alt="Conductor Inspector Live Question Details" position="center" >}}
 *Caption: Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues.*
 
-![Initializing SRE Tracks](image-screenshot-10-23-32.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-screenshot-10-23-32.png" caption="Initializing SRE Tracks" alt="Initializing SRE Tracks" position="center" >}}
 *Caption: Antigravity UI thread tracker showing active tracks in progress.*
 
 #### Step 2: Parallel Worktree Isolations
 Each agent checked out its own branch and worked in isolation. The Amanuense scribe logged precise file edits and workspace activity without file conflicts.
 
-![Parallel Worktree Activity](image-screenshot-11-51-44.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-screenshot-11-51-44.png" caption="Parallel Worktree Activity" alt="Parallel Worktree Activity" position="center" >}}
 *Caption: Monitoring the worktree files during concurrent development.*
 
 #### Step 3: Interactive Polling & Human Steering
 When agents needed clarification (such as verifying Telegram token configuration), they posted issues that were parsed by `poll_ghi_questions.py`.
 
-![Human-in-the-loop Steering](image-screenshot-12-07-11.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Human-in-the-loop Steering" alt="Human-in-the-loop Steering" position="center" >}}
 *Caption: Human approvals and diagnostics feedback loop active.*
 
 #### Step 4: The Final Green State
 Once all feature branches were validation-checked and sequentially merged, Agostina created the Pull Request. The final audit output confirmed all 12 SRE tracks were fully merged into the production branch.
 
-![Fully Merged Status](image-screenshot-16-53-05.png)
+{{< img src="/en/posts/technology/02-crescendo-of-agents-part-2/image-screenshot-16-53-05.png" caption="Fully Merged Status" alt="Fully Merged Status" position="center" >}}
 *Caption: Final audit output showing 100% of Conductor tracks completed and merged.*
 
 ## The coding Framework

@@ -6,6 +6,7 @@
 require 'yaml'
 require 'date'
 require 'fileutils'
+require 'uri'
 
 def tagged_as_medium?(front_matter)
   tags = front_matter['tags'] || front_matter['Tags'] || []
@@ -91,6 +92,46 @@ def check_post_compliance(file_path)
   # --- Rule 3: Series/train pointers if part of multiseries ---
   if front_matter['series']
     # Placeholder for series validation
+  end
+
+  # --- Rule 4: No broken local images ---
+  # Extract all image references from the body.
+  image_refs = []
+  # Markdown images: ![alt](path) — optionally followed by title in quotes
+  body.scan(/!\[.*?\]\(([^)]+)\)/) { |m| image_refs << m[0].strip.split(/\s+/).first }
+  # HTML img tags: <img src="path" ...> or <img src='path' ...>
+  body.scan(/<img\b[^>]*\bsrc=["']([^"']+)["']/i) { |m| image_refs << m[0].strip }
+  # Hugo shortcode img/figure: {{< img src="..." >}} or {{< figure src="..." >}}
+  body.scan(/\{\{<\s*(?:img|figure)\b[^>]*\bsrc=["']([^"']+)["']/i) { |m| image_refs << m[0].strip }
+
+  post_dir = File.dirname(file_path)
+  # Hugo content root: two levels up from tests/ -> zzo.ricc.rocks/content/
+  content_dir = File.expand_path("../content", __dir__)
+  # Hugo static root: two levels up from tests/ -> zzo.ricc.rocks/static/
+  static_dir  = File.expand_path("../static", __dir__)
+
+  image_refs.uniq.each do |ref|
+    # Skip absolute URLs (http/https/protocol-relative)
+    next if ref =~ /\Ahttps?:\/\//i
+    next if ref =~ /\A\/\//  # protocol-relative
+    next if ref.strip.empty?
+
+    if ref.start_with?('/')
+      # Site-absolute path: Hugo merges content/ and static/ at the site root.
+      # Check both locations before flagging as broken.
+      relative = ref.sub(/\A\//, '')
+      candidate_content = File.expand_path(relative, content_dir)
+      candidate_static  = File.expand_path(relative, static_dir)
+      unless File.exist?(candidate_content) || File.exist?(candidate_static)
+        errors << "Rule 4 Violation: Broken site-absolute image '#{ref}' not found in content/ or static/."
+      end
+    else
+      # Relative path: resolve relative to post's own directory (for page bundles)
+      candidate = File.expand_path(ref, post_dir)
+      unless File.exist?(candidate)
+        errors << "Rule 4 Violation: Broken local image reference '#{ref}' (resolved to '#{candidate}') does not exist."
+      end
+    end
   end
 
   errors

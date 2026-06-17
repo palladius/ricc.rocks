@@ -44,11 +44,11 @@ In this first part, we will explore how stateful remote sandboxes work under the
 This first part builds on the foundation laid out in Romin Irani's excellent [Antigravity Managed Agents Tutorial](https://medium.com/google-cloud/antigravity-managed-agents-tutorial-ship-production-ai-agents-b5917844932b) and Phil Schmid's deep dive into [how Managed Agents work under the hood](https://www.philschmid.de/how-managed-agents-work). I spent a day playing around with Romin's article code ideas, customizing them to my own setups, and this article is the output of those experiments. While their articles focus on the architectural and hosted aspects of managed agents, we will look at how a developer can drive stateful remote sandboxes programmatically to build automation loops directly from a local terminal shell.
 
 
-![Stateful Remote Sandboxes](hero_image.png)
+{{< img src="/en/posts/technology/01-crescendo-of-agents-part-1/hero_image.png" caption="Stateful Remote Sandboxes" alt="Stateful Remote Sandboxes" position="center" >}}
 
 ---
 
-## The Sandbox Dilemma: Stateless vs. Stateful
+## Antigravity Agents: a Stateful delight
 
 In a traditional agent API interaction, each call is stateless. You send a prompt, the agent responds, and the workspace disappears. If you want the agent to edit a file it created in a previous turn, you have to pass the entire file content back and forth in the prompt context. This consumes tokens, increases latency, and makes multi-turn code generation slow and expensive.
 
@@ -58,11 +58,14 @@ The Google Antigravity SDK solves this with **Stateful Remote Sandboxes**. When 
 3. Keeps the container alive and returns an `environment_id`.
 4. Allows subsequent API calls to re-attach to the same container, inheriting the exact filesystem state.
 
----
+You don't believe me? Let me show you the code (heavily inspiured by Romin article [LINKED]).
 
 ## The SpaceX IPO Analyzer: Python Orchestration
 
 To demonstrate this capability, let's write a Python script that orchestrates a stateful, multi-turn agent session.
+
+A few days back, Space X made the news as the biggest IPO in history, making Elon Musk the firts Trillionaire in
+history (https://www.reuters.com/business/media-telecom/spacex-ipo-makes-elon-musk-worlds-first-trillionaire-2026-06-11/). Everyone is thinking: should I buy? Should I not? Let's put Gemini to the test.
 
 Our agent acts as a **SpaceX IPO Analyzer**. In the first turn, it researches the SpaceX IPO and generates a Markdown report. In the second turn, it re-attaches to the same container, reads the Markdown report, converts it into a styled HTML dashboard (with custom CSS), and generates a space-themed image asset. Finally, in the third turn, it programmatically downloads the entire workspace container snapshot.
 
@@ -86,7 +89,8 @@ interaction_1 = client.interactions.create(
     environment="remote"  # Launches a remote Ubuntu sandbox
 )
 env_id = interaction_1.environment_id
-#print(f"✅ Turn 1 Complete. Container Environment ID: {env_id}")
+print(f"✅ Turn 1 Complete. Container Environment ID: {env_id}")
+
 
 print("\n🔄 Turn 2: Re-attaching to same container and converting to HTML...")
 # Turn 2: Re-attach to the SAME sandbox and preserve conversation memory
@@ -98,6 +102,7 @@ interaction_2 = client.interactions.create(
           " with styling and generate a custom nanobanana image."
 )
 print("✅ Turn 2 Complete.")
+
 
 print("\n📦 Turn 3: Downloading the entire container snapshot (.tar) locally...")
 # Turn 3: Download the entire sandbox environment state (.tar) locally
@@ -116,6 +121,7 @@ with open(tar_path, "wb") as f:
 print(f"✅ Snapshot downloaded to {tar_path}. Extracting...")
 with tarfile.open(tar_path) as tar:
     tar.extractall(path="./workspace_extract")
+# Wow! We've dumped the remote agent workspace locally!
 print("🎉 Workspace extracted successfully! Check ./workspace_extract/")
 ```
 
@@ -127,23 +133,15 @@ Let's unpack what just happened in this code:
    purpose to demonstrate you can park your calculation today and come back tomorrow and **continue the session** and
    iterate over it, maybe with a chat over Telegram ;)
 4. Turn 3. This is the magical part: `git pull remote-workspace`. This is where we know it's REAL. There's a real workspace
-   there, maybe with some remote github repo pulled and some added Unit Tests :)
----
+   there, maybe with some remote github repo pulled and some added Unit Tests. In our case, it contains  **`spacex-report.md`** (created in turn 1),  **`index.html`** and **`nanobanana.jpg`** (The space-themed HTML dashboard created in Turn 2), finally a CSS to make
+   all very nice and space-themed.
 
-## Deep Dive: What is inside the container snapshot?
+This is what I see opening **`index.html`** with my browser:
 
-When the environment is downloaded and extracted, you get the exact workspace of the agent. In our SpaceX IPO demo, the extracted folder contains:
-
-*   **`spacex-report.md`**: The raw research report compiled by the agent during Turn 1, detailing the financials, valuation, and the bull/bear case for SpaceX.
-*   **`index.html`**: The space-themed HTML dashboard created in Turn 2. It reads the Markdown data and displays it using a responsive, modern glassmorphism design.
-*   **`nanobanana.jpg`**: A graphic generated by the agent's image generation tools and embedded directly into the UI.
-
-Here's the visual rendered output of the generated dashboard:
-
-![SpaceX IPO Report page 1](image-spacex-ipo-report-page1.png)
+{{< img src="/en/posts/technology/01-crescendo-of-agents-part-1/image-spacex-ipo-report-page1.png" caption="SpaceX IPO Report page 1" alt="SpaceX IPO Report page 1" position="center" >}}
 *Caption: Page 1 of the generated SpaceX IPO analysis dashboard.*
 
-![SpaceX IPO Report page 2](image-spacex-ipo-report-page2.png)
+{{< img src="/en/posts/technology/01-crescendo-of-agents-part-1/image-spacex-ipo-report-page2.png" caption="SpaceX IPO Report page 2" alt="SpaceX IPO Report page 2" position="center" >}}
 *Caption: Page 2 of the generated financial dashboard, displaying the bull/bear investment case.*
 
 ---
@@ -166,7 +164,7 @@ So, I decided to build a game to help kids bridge this gap. The goal was to buil
 
 A catchy name, that's the easy part! `orologia.io`
 
-![Orologia.io](image-orologia-ui.png)
+{{< img src="/en/posts/technology/01-crescendo-of-agents-part-1/image-orologia-ui.png" caption="Orologia.io" alt="Orologia.io" position="center" >}}
 
 *Caption: since `.com` era is so 2000s, and the Sardinian `.io` era is now! (And no, I'm not buying the domain, only Italians get this joke).*
 
