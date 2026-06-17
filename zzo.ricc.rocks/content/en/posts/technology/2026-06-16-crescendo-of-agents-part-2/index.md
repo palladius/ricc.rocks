@@ -2,6 +2,8 @@
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
 Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 2)"
+date: 2026-06-16T12:00:00+02:00
+draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
@@ -25,11 +27,6 @@ PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agen
 
 ## Parallel Coding with Git Worktrees, Conductor++, and Agostina
 
-![Hero Image](hero_image.png)
-
-> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
-
-
 <!-- -
 ## Intent
 This article highlights how Git Worktrees solve workspace pollution and file collision in concurrent multi-agent systems using the Google Antigravity SDK (agy). In a traditional development setup, switching branches (git checkout) changes files directly in the working directory. If a parent agent delegates tasks to three subagents running concurrently on the same local workstation, they cannot all work in the same directory without overwriting changes, polluting unstaged state, or corrupting builds. Git Worktrees managed by agy solve this by provisioning isolated workspaces.
@@ -50,6 +47,12 @@ I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage the vi
 But once you have a visual harness that works, the immediate developer question is: **how far can we scale this?**
 
 If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation (**Project Benjamin**) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
+
+<!--more-->
+
+![Hero Image](hero_image.png)
+
+> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
 ## The problem: scaling past the CLI
 
@@ -109,9 +112,10 @@ In the past few months, all I wanted to do was **GHI-triggered multi-agent imple
 * `git worktree`. This is what prevents 2+ agents for making a mess out of your repo (been there done that).
   * If you have N agents pushing Pull Requests to remote branches, it makes sense to have a "Git concierge" to resolve the code to main. He should be configured to have a more conservative approach to the repo. While agent X wants to implement feature X as instructed, this Concierge will be [unfazeable](https://gurps.fandom.com/wiki/Unfazeable) as a British Alfred (turns out only GURPS players know what this means) and act as a 'last defense' for your repo consistency (maybe the code is great, but forgot to run tests, or to update the CHANGELOG... nothing's better than a fresh context window to catch these errors).
 
-<!--
-TODO(gemini): create an AI image of many AI agents making a mess out of a git repo, using some ITalian 'too many cooks in the kitchen' kind of metaphor. Food metaphor needs to be in the image, but also some referring to `git` and line of code, and bad merges. Put the two things together in a creative and funny way. Resuolt needs to be tragicomical and result in user feeling the frustration.
--->
+![Too many cooking agents making a mess of a single branch](image-cooking-agents-mess.png)
+*Caption: Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the "too many cooks in the kitchen" metaphor applied to git merges).*
+
+*While the clock game taught us that multi-agent systems require a visual feedback loop to align code with user expectations, we needed to see how this workflow behaves under heavy SRE workloads. Enter Project Benjamin...*
 
 ## Scaling Up: Conductor++ Multi-Worktree Multi-Agent Dev Flow
 

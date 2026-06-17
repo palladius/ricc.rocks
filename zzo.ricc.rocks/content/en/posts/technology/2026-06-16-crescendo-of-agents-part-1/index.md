@@ -1,16 +1,18 @@
 ---
-Harness: antigravity-cli
+Harness: Antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
 Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 1)"
+date: 2026-06-16T12:00:00+02:00
+draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
 Tags: [API, Antigravity, GenAI, Sandbox]
-PublishedURL: TODO
+PublishedURL: ""
 Completion: "100"
-CTA: https://antigravity.google/
+CTA: https://Antigravity.google/
 Status: "draft"
-Platform: "Medium, Ricc.Rocks"
+Platform: "Medium, ricc.rocks"
 PublishDate: "2026-06-16"
 ---
 
@@ -18,17 +20,19 @@ PublishDate: "2026-06-16"
 
 ## Stateful API Sandboxes & Snapshot Downloads
 
-![Stateful Remote Sandboxes](hero_image.png)
-
 I'm a command-line guy. If it doesn't run in a terminal or get driven by a bash script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague. 
 
 But recently, I hit a wall. 
 
 As I scaled up my AI agent workflows—managing multiple concurrent coding agents, multi-turn stateful loops, and file changes—babysitting 6 to 12 terminal windows across six virtual desktops became a cognitive nightmare. This is the story of that failure, and the learnings that followed. It is a story in two parts:
 1. **Part 1 (This Article)**: Trying to solve agent persistence programmatically via the Python GenAI SDK and `agy` CLI, and encountering the crescendo of complexity.
-2. **Part 2**: Hitting the CLI limit and stepping into the **Antigravity 2.0 UI / Desktop app** to orchestrate parallel local subagents safely with Git Worktrees.
+2. **Part 2**: Hitting the CLI limit and stepping into the **Antigravity 2.0 UI / Desktop app** to orchestrate parallel local subagents safely with git worktrees.
 
 In this first part, we will explore how stateful remote sandboxes work under the hood using the Google GenAI SDK (`antigravity-preview-05-2026`), how to re-attach to container environments, and how to programmatically retrieve your agent workspace.
+
+<!--more-->
+
+![Stateful Remote Sandboxes](hero_image.png)
 
 ---
 
@@ -49,6 +53,8 @@ The Google Antigravity SDK solves this with **Stateful Remote Sandboxes**. When 
 To demonstrate this capability, let's write a Python script that orchestrates a stateful, multi-turn agent session. 
 
 Our agent acts as a **SpaceX IPO Analyzer**. In the first turn, it researches the SpaceX IPO and generates a Markdown report. In the second turn, it re-attaches to the same container, reads the Markdown report, converts it into a styled HTML dashboard (with custom CSS), and generates a space-themed image asset. Finally, in the third turn, it programmatically downloads the entire workspace container snapshot.
+
+> 💡 *Note: The Antigravity stateful features are accessed using the standard Google GenAI Python SDK by calling the preview agent model (`antigravity-preview-05-2026`) with `environment="remote"`.*
 
 Here is the complete python script:
 
@@ -120,16 +126,27 @@ Here's the visual rendered output of the generated dashboard:
 
 ---
 
+## Scaling Up: The Multi-Agent Complexity Wall
+
+The SpaceX IPO Analyzer shows how easy it is to manage a single, linear agent session programmatically. But in real-world software development, we rarely work in a vacuum. We need architects, developers, and QA engineers working in parallel. 
+
+When you scale from one agent to a team of agents, the programmatic SDK orchestration approach begins to crack. The complexity doesn't scale linearly—it explodes. 
+
+To experience this firsthand, I decided to build a complete application using a multi-agent team. And the inspiration came from a very personal challenge.
+
+---
+
 ## The App: The Italian Watchmaker
 
-After watching *Heroes*, I'm a bit scared of watchmakers, exp [Sylar](https://www.youtube.com/watch?v=MqIf3ysYPmg).
-I've helped my 8-year old for the whole day as he struggled to map an analog watch pointing to 19:45 to the "19:45" string, and that is sad since he's so good at math! Once he moves from visual to strings, he can do 08:45 + 20 in no time! So I know what the app needs to be, a platform independent mobile app -> Flutter!
+After watching *Heroes*, I've always been a bit wary of watchmakers (especially [Sylar](https://www.youtube.com/watch?v=MqIf3ysYPmg)). But recently, I spent a whole day helping my 8-year-old son struggle to map an analog clock pointing at 19:45 to its digital string representation. It was frustrating because he is actually fantastic at math—once he can work with digital time strings, he can calculate time differences like `08:45 + 20 minutes` in seconds. The blocker was entirely visual. 
+
+So, I decided to build a game to help kids bridge this gap. The goal was to build `orologia.io`—a cross-platform mobile game built in Flutter.
 
 A catchy name, that's the easy part! `orologia.io`
 
 ![Orologia.io](image-orologia-ui.png)
 
-*Caption: since `.com` era is so 2000s, and the Sardinian `.io` era is now! (And no, I'm not buying the domain, only italians get this joke).*
+*Caption: since `.com` era is so 2000s, and the Sardinian `.io` era is now! (And no, I'm not buying the domain, only Italians get this joke).*
 
 Here is the exact multi-agent prompt I designed to orchestrate the creation of **orologia.io**:
 
@@ -172,7 +189,9 @@ This is where I hit the wall. I had to capitulate, open the **Antigravity 2.0 De
 1.  **`environment_id` Isolation**: Container preservation keeps your agent workspace hot. You don't need to rebuild context or transfer files over network sockets.
 2.  **Environment Download API**: Bridge the cloud container to local storage. By downloading the workspace state directly, you can easily integrate AI agent builders into your CI/CD pipelines, local editors, or backup routines.
 3.  **True Multi-Turn Autonomy**: The combination of stateful sandboxes and local workspace downloads allows developers to build complex, multi-agent compilers that perform heavy lifting entirely in the cloud, while delivering clean, completed output artifacts to the host system.
+4.  **The Visual Feedback Loop**: Multi-agent systems building frontend components cannot rely on text logs alone. A visual interface and quick prototyping (vibe coding) are essential to guide agents toward high-quality UX.
+5.  **CLI Orchestration Limits**: While the terminal is great for single-agent automation, coordinating parallel developer subagents with visual handoffs pushes CLI to its limits. This is where visual IDEs and desktop thread managers become necessary.
 
 ---
 
-🚀 **Ready for Part 2?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/) to see how we scale this local development flow using Git Worktrees, Conductor++, and parallel subagents under Agostina.
+🚀 **Ready for Part 2?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/) to see how we scale this local development flow using git worktrees, Conductor++, and parallel subagents under Agostina.
