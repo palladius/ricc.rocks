@@ -213,7 +213,10 @@ This proved the value of single-agent rapid prototyping. But what happens when y
 
 ## What are these Remote Agents good for?
 
-So the big question is: **What are these Remote Agents good for?**. You could argue that *everything is more comfortable in localhost*,
+So the big question is: **What are these Remote Agents good for?**
+
+
+You could argue that *everything is more comfortable in localhost*,
 but I see this as a pioneering of the "agents `Dockerfile`s" where you start playing with something locally, then a piece at a time you
 start building your own "agent container" with `bin/custom-script` and `.gemini/my-smart-config` and maybe a `gcloud` ServiceAccount `sa.json` and
 boom! You have a repeatable, secure, self-contained sendbox where you can interact with the Internet with the power of Gemini! Remember, `git clone` and `API_KEYS` are a powerfule combination!
