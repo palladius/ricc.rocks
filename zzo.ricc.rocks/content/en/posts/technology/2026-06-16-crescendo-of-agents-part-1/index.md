@@ -17,7 +17,7 @@ PublishDate: "2026-06-16"
 canonicalURL: "https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9"
 ---
 
-I'm a command-line guy. If it doesn't run in a 🖥️ terminal or get driven by a `bash` script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague (with the only exception of `vscode`); a friend calls people like me *TerminalOps* — the opposite of the perfectly reasonable *ClickOps* folks who prefer GUIs.
+I'm a command-line guy. If it doesn't run in a 🖥️ terminal or get driven by a `bash` script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague (with the only exception of `vscode`); a friend calls people like me *BashOps* — the opposite of the perfectly reasonable *ClickOps* folks who prefer GUIs.
 
 But recently, I hit a wall.
 
