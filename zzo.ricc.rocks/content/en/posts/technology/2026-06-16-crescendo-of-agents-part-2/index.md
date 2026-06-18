@@ -14,12 +14,12 @@ CTA: https://antigravity.google/ # probably AG 2.0
 Status: "published"
 Linkedin post:
 Generator: "create_article.rb"
-Version: "1.3"
+Version: "1.3.1"
 Platform: "Medium, Ricc.Rocks"
 PublishDate: "2026-06-16"
 RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
 RiccRocksStatus: "published"
-RiccRocksVersion: "1.3"
+RiccRocksVersion: "1.3.1"
 PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
 canonicalURL: "TODO_MEDIUM_URL_PART_2"
 ---
