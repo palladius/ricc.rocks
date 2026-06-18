@@ -17,7 +17,7 @@ PublishDate: "2026-06-16"
 canonicalURL: "https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9"
 ---
 
-I'm a command-line guy. If it doesn't run in a 🖥️ terminal or get driven by a `bash` script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague (with the only exception of `vscode`); a friend call these people *ClickOps*.
+I'm a command-line guy. If it doesn't run in a 🖥️ terminal or get driven by a `bash` script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague (with the only exception of `vscode`); a friend calls people like me *TerminalOps* — the opposite of the perfectly reasonable *ClickOps* folks who prefer GUIs.
 
 But recently, I hit a wall.
 
@@ -225,6 +225,7 @@ My personal **Key Takeaways**:
 
 * Do NOT use for a one-off investigation. Use Web or local CLI instead, it's much faster.
 * Use for repeatable workflows where the config takes a lot more than the final prompt. In other words, anything where you have 5 prompts of which 1-2-3-4 are the same, and 5 always changes. This is IMHO the sweet spot where these excel.
+* Try `Gemini API CLI` excellently explained in [Philip's article](https://www.philschmid.de/gemini-managed-agents-developer-guide).
 
 *Example*: I'm currently working on containerizing a travel planner for my family where I just say the trip I want to plan, when and the constraints. Yes, it feels like a fine-tuned model, but fully FS observable/tweakable, so I can download the index.html later on!
 
