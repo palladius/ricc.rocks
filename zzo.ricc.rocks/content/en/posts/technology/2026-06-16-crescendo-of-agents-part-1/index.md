@@ -150,9 +150,9 @@ Here is how we used a single stateful agent script to build the initial prototyp
 
 Here is the core logic we used to run this stateful agent loop. It uses the `google-genai` SDK to provision the remote sandbox, mounts the `orologia.io` git repository, and downloads/extracts the final workspace snapshot.
 
-You can view the complete, self-contained execution script at [solutions/20260615-antigravity-managed-agents/run-agent-prototype.py](https://github.com/palladius/orologia.io/blob/main/solutions/20260615-antigravity-managed-agents/run-agent-prototype.py).
+You can view the complete, self-contained execution script at .
 
-Here is the core API setup, repository mounting, and snapshot download sequence:
+Here is the core API setup, repository mounting, and snapshot download sequence (complete [run-agent-prototype.py](https://github.com/palladius/orologia.io/blob/main/solutions/20260615-antigravity-managed-agents/run-agent-prototype.py) script [here](https://github.com/palladius/orologia.io/blob/main/solutions/20260615-antigravity-managed-agents/run-agent-prototype.py) ):
 
 ```python
 from google import genai
@@ -210,15 +210,6 @@ This proved the value of single-agent rapid prototyping. But what happens when y
 
 **This** is where I hit the wall and resolved to invent a Worktree + Conductor Carlessian-customized workflow.... but this is for another article... 🚀  [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/)
 
----
-
-## Key Takeaways (Gemini)
-
-1.  **`environment_id` Isolation**: Container preservation keeps your agent workspace hot. You don't need to rebuild context or transfer files over network sockets.
-2.  **Environment Download API**: Bridge the cloud container to local storage. By downloading the workspace state directly, you can easily integrate AI agent builders into your CI/CD pipelines, local editors, or backup routines.
-3.  **True Multi-Turn Autonomy**: The combination of stateful sandboxes and local workspace downloads allows developers to build complex, multi-agent compilers that perform heavy lifting entirely in the cloud, while delivering clean, completed output artifacts to the host system.
-4.  **The Visual Feedback Loop**: Multi-agent systems building frontend components cannot rely on text logs alone. A visual interface and quick prototyping (vibe coding) are essential to guide agents toward high-quality UX.
-5.  **CLI Orchestration Limits**: While the terminal is great for single-agent automation, coordinating parallel developer subagents with visual handoffs pushes CLI to its limits. This is where visual IDEs and desktop thread managers become necessary.
 
 ## What are these Remote Agents good for?
 
@@ -232,8 +223,7 @@ My personal **Key Takeaways**:
 * Do NOT use for a one-off investigation. Use Web or local CLI instead, it's much faster.
 * Use for repeatable workflows where the config takes a lot more than the final prompt. In other words, anything where you have 5 prompts of which 1-2-3-4 are the same, and 5 always changes. This is IMHO the sweet spot where these excel.
 
-
-Example: I'm currently working on containerizing a travel planner for my family where I just say the trip I want to plan, when and the constraints. Yes, it feels like a fine-tuned model, but fully FS observable!
+*Example*: I'm currently working on containerizing a travel planner for my family where I just say the trip I want to plan, when and the constraints. Yes, it feels like a fine-tuned model, but fully FS observable/tweakable, so I can download the index.html later on!
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/image-sardinia-travel-agent.png" caption="The agent built a full Sardinia travel plan — with a flight proof and an itinerary map — from a three prompts (1 and 2 are constant), and with provable flight booking links." alt="The agent built a full Sardinia travel plan — with a flight proof and an itinerary map — from a three prompts (1 and 2 are constant), and with provable flight booking links." position="center" >}}
 
