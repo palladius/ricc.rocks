@@ -35,7 +35,7 @@ In this first part, we will explore how stateful remote sandboxes work under the
 This first part builds on the foundation laid out in Romin Irani's excellent [Antigravity Managed Agents Tutorial](https://medium.com/google-cloud/antigravity-managed-agents-tutorial-ship-production-ai-agents-b5917844932b) and Phil Schmid's deep dive into [how Managed Agents work under the hood](https://www.philschmid.de/how-managed-agents-work). I spent a day playing around with Romin's article code ideas, customizing them to my own setups, and this article is the output of those experiments. While their articles focus on the architectural and hosted aspects of managed agents, we will look at how a developer can drive stateful remote sandboxes programmatically to build automation loops directly from a local terminal shell.
 
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/hero_image.png" caption="Riccardo playing with Stateful Remote Sandboxes" alt="Riccardo playing with Stateful Remote Sandboxes" position="center" >}}
+{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/hero_image.png" caption="Riccardo playing with Stateful Remote Sandboxes, after reading Romin's article" alt="Riccardo playing with Stateful Remote Sandboxes, after reading Romin's article" position="center" >}}
 
 ---
 
