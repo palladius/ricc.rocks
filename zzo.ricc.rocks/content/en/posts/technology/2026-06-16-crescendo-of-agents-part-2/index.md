@@ -70,7 +70,7 @@ If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-d
 
 When you scale from a soloist agent to a crescendo of parallel agents—where a coordinator agent spawns subagents, manages branch checkouts, and handles human-in-the-loop approval requests—the CLI simply stops scaling cognitively. You can't track it all in a flat scrollback buffer.
 
-Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/) is the best at this!
+Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog) is the best at this!
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
 
