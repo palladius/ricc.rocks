@@ -151,8 +151,6 @@ Here is how we used a single stateful agent script to build the initial prototyp
 
 Here is the core logic we used to run this stateful agent loop. It uses the `google-genai` SDK to provision the remote sandbox, mounts the `orologia.io` git repository, and downloads/extracts the final workspace snapshot.
 
-You can view the complete, self-contained execution script at .
-
 Here is the core API setup, repository mounting, and snapshot download sequence (complete [run-agent-prototype.py](https://github.com/palladius/orologia.io/blob/main/solutions/20260615-antigravity-managed-agents/run-agent-prototype.py) script [here](https://github.com/palladius/orologia.io/blob/main/solutions/20260615-antigravity-managed-agents/run-agent-prototype.py) ):
 
 ```python
