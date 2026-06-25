@@ -21,7 +21,7 @@ RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-ag
 RiccRocksStatus: "published"
 RiccRocksVersion: "1.3.1"
 PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
-canonicalURL: "TODO_MEDIUM_URL_PART_2"
+# canonicalURL: (pending Medium publication)
 ---
 
 <!--
@@ -336,3 +336,5 @@ I want to use:
 >   ```bash
 >   cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
 >   ```
+
+*📝 This article will also be published on Medium — link coming soon.*
