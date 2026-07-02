@@ -32,6 +32,8 @@ To redeploy / sync updates, run:
 cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
 -->
 
+**TL;DR** In this follow up article to [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) I will explore parallel subagents + `git worktree` + [Conductor](https://github.com/gemini-cli-extensions/conductor) + some icing on the cake.
+
 # Orchestrating with Antigravity: A Crescendo of Agents (Part 2)
 
 ## Parallel Coding with Git Worktrees, Conductor++, and Agostina
@@ -40,7 +42,7 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 
 <!--more-->
 
-If you read [Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy.** I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
+If you read [Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
 
 <!-- -
@@ -68,7 +70,9 @@ If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-d
 
 ## The problem: scaling past the CLI
 
-When you scale from a soloist agent to a crescendo of parallel agents—where a coordinator agent spawns subagents, manages branch checkouts, and handles human-in-the-loop approval requests—the CLI simply stops scaling cognitively. You can't track it all in a flat scrollback buffer.
+When you scale from a soloist agent to a crescendo of parallel agents—where a coordinator agent spawns subagents, manages branch checkouts, and handles human-in-the-loop approval requests—the CLI simply stops scaling cognitively. You can't track it all in a flat scrollback buffer. 
+
+While opinionated CLI-first developer helpers like Garry Tan's [GBrain](https://github.com/garrytan/gbrain) are fantastic for single-threaded tasks, managing multiple concurrent agent streams in a standard terminal is a recipe for cognitive overload.
 
 Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog) is the best at this!
 
@@ -83,11 +87,11 @@ This clean interface has it all:
     * 🧵 Add documentation to `doc/PRD.md`
     * 🧵 Add security tests after later omg/1234.
 
-As you can see, all your unrelated work is nicely grouped by project (basically, a folder) and then all threads are aligned there, sorted by the most recent one you worked on (and yes, you can ARCHIVE them, otherwise they'll survive my wife's sadistic reboot).
+As you can see, all your unrelated work is nicely grouped by project (basically, a 📁 folder) and then all threads are aligned there, sorted by the most recent one you worked on (and yes, you can ARCHIVE them, otherwise they'll survive my wife's sadistic reboot).
 
 ## When it hit me
 
-As I was saying, I was reading Richard's magic prompt on my throne and thinking: I just want to do this, *plus* a few things!
+As I was saying, I was reading [Richard's magic prompt](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) on my throne and thinking: I just want to do this, *plus* a few things!
 
 ```markdown
 Let's build a hotel room booking app [..].
@@ -95,9 +99,9 @@ Let's build a hotel room booking app [..].
 First, launch the **Engineering Manager** agent to ... into an **artifact** called 'architecture.md'.
 
 Once the design is ready, launch three agents in *parallel*:
-1. **Test Manager**: Write [..] to 'architecture.md'.
-2. **Backend Engineer**: Build an API based on [..] .
-3. **Frontend Engineer**: Build a web UI [..] to interact with the API [..].
+1. **Test Manager**: Write <SPECS> to 'architecture.md'.
+2. **Backend Engineer**: Build an API based on <SPECS> .
+3. **Frontend Engineer**: Build a web UI based on <SPECS>  to interact with the API <details>.
 
 [..] *How to sync the 3 sub-agents* [..]
 
@@ -112,19 +116,23 @@ Let's unpack this **prompt**. It contains:
 4. What happens when they're done (spin up and let the human-not-so-much-in-the-loop take a look).
 5. **Important**. the common file state here is the common artifact: `architecture.md`.
 
-Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into emergence and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
+Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into *emergence* and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
 
-In the past few months, all I wanted to do was **GHI-triggered multi-agent implementation**!
+**What I find the most compelling is that here the agents are communicating over a Markdown artifact... the SPECS!**
+
+*Let's move back from Richard to Riccardo...*
+
+In the past few months, all I wanted to do was **GitHub Issue (GHI)-triggered multi-agent implementation**!
 
 * **GitHub Issue** Integration. Every subagent should work on an issue, if its defined.
-* As a [Ruby on Rails](https://rubyonrails.org/) developer, I know the value of having your code on Rails. The Rails for AI imho is the [Conductor](https://github.com/gemini-cli-extensions/conductor) extension by my buddy Keith. I use it for all my serious projects.
+* As a [Ruby on Rails](https://rubyonrails.org/) developer, I know the value of having your code "on Rails". The Rails for AI imho is the [Conductor](https://github.com/gemini-cli-extensions/conductor) extension by my buddy [Keith](https://github.com/keithballinger). I use it for all my serious projects.
   * Let's be honest, not always a GHI has what it takes for an agent to go and do things. Sometimes you need a HITL to answer the hard questions. This prevents the implementation for being sloppy (*"of course I meant just for authenticated users!!!"*)
 * `git worktree`. This is what prevents 2+ agents for making a mess out of your repo (been there done that).
   * If you have N agents pushing Pull Requests to remote branches, it makes sense to have a "Git concierge" to resolve the code to main. He should be configured to have a more conservative approach to the repo. While agent X wants to implement feature X as instructed, this Concierge will be [unfazeable](https://gurps.fandom.com/wiki/Unfazeable) as a British Alfred (turns out only GURPS players know what this means) and act as a 'last defense' for your repo consistency (maybe the code is great, but forgot to run tests, or to update the CHANGELOG... nothing's better than a fresh context window to catch these errors).
 
-### 🛠️ Equip Your Agents with the `condutree` Skill
+### 🛠️ Equip Your Agents with the "condutree" Skill
 
 To make this entire multi-agent git-worktree workflow reusable for any codebase, I packaged these exact rules and automations into an open-source agent skill called **`condutree`** (technically, `conductor-worktree-hitl`). 
 
@@ -133,7 +141,7 @@ Why did I build this as an external skill rather than dumping all the git/worktr
 2.  **Manageable Coordinator Prompts**: It keeps the prompt given to the main coordinator agent small, clean, and focused entirely on the high-level *main-to-subagent* delegation workflow and reentrant question resolution. The agent doesn't need to get bogged down in git syntax; it simply delegates that execution to the skill.
 3.  **Reusability**: Other developers can instantly plug this skill into their own repositories and agent harnesses to gain safe, conflict-free parallel agent executions without rewriting the integration scripts.
 
-You can find the code and details in my public [gemini-cli-custom-commands repository](https://github.com/palladius/gemini-cli-custom-commands) (and be sure to star the new [devrel-cli repository](https://github.com/palladius-uat/devrel-cli) where I'm centralizing all my developer advocacy automation tools!).
+You can find the code and details in my public [gemini-cli-custom-commands repository](https://github.com/palladius/gemini-cli-custom-commands).
 
 Equipping your Antigravity coordinator and subagents with this skill teaches them:
 1.  **Worktree Provisioning**: How to safely check out independent git worktrees for concurrent tasks.
@@ -150,7 +158,27 @@ While `condutree v1.0` is a solid foundation, it still has a few manual edges th
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
 
-*While the clock game taught us that multi-agent systems require a visual feedback loop to align code with user expectations, we needed to see how this workflow behaves under heavy SRE workloads. Enter Project Benjamin...*
+### Case Study: The Flutter Complexity Wall (`orologia.io`)
+
+To put this parallel multi-agent orchestration to the test, I wanted to build `orologia.io`—a mobile/web clock game designed to help kids learn how to read analog clocks. 
+
+Inspired by the "Seroter Hotels" prompt, I set up a team of four parallel subagents:
+1.  **Lead Architect**: Designs Flutter app state and writes the `architecture.md` spec.
+2.  **Game Logic Developer**: Implements the Dart clock hand angle calculations and unit tests.
+3.  **UI/Flutter Developer**: Implements the CustomPainter interactive clock hands and animations.
+4.  **QA Automation Engineer**: Writes tests and runs an autonomous browser/device integration test script (using Selenium/Playwright) against a local simulator.
+
+We let the agents run for two hours. They spawned isolated worktrees, wrote complex widget trees, and compiled unit tests. But when the simulator booted, the final Flutter UI was clunky, misaligned, and simply lacked polish. 
+
+Frustrated, I did a **20-second vibe-coding run** instead. I asked a single agent to spin up a prototype using raw, simple HTML, CSS, and vanilla JS. The result was **10x better** than the planned Flutter app—smooth, responsive, and actually fun to play.
+
+Rather than discarding the Flutter project, we used the vibe-coded JS app as a "visual spec" to teach the Flutter subagents how the clock should render. 
+
+Juggling this loop—running the local JS mock, reviewing the automated integration test screenshot (`gameplay_snapshot.png`), and checking subagent compiler errors—pushed the CLI to its cognitive limits. Juggling tmux panes and tailing logs across workspaces was too slow. This was the tipping point where we transitioned to the **Antigravity 2.0 Desktop app**. The thread manager allowed us to visually coordinate the parallel execution channels and review the generated image outputs in real time.
+
+![QA Agent Gameplay Test Snapshot](https://raw.githubusercontent.com/palladius/orologia.io/main/solutions/antigravity2.0-multi-agent-flutter/artifact/gameplay_snapshot.png)
+
+*(You can see the actual Dart code, integration tests, and assets inside the open-source [orologia.io repository](https://github.com/palladius/orologia.io).)*
 
 ## Scaling Up: Conductor++ Multi-Worktree Multi-Agent Dev Flow
 
@@ -189,6 +217,8 @@ Running multiple AI agents coding in parallel on the exact same repository requi
     2.  **GitHub GHI Comments**: Subagents post the question as an issue comment with a unique tracking signature: `[conductree:<track_id>:<question_id>]`.
     3.  **Smart Polling**: Agostina runs a polling script that first checks if any local track is in `"awaiting_human"` status. If none are, it skips the GitHub API poll entirely (saving 95%+ of API quota). When it finds a matching comment answer on GitHub, it updates the local metadata to `"answered"`, waking up the subagent.
 
+*   **Shared Wiki-Memory as Agent State**: Rather than bloating each subagent's context window with the entire project history, we use a shared `conductor/` directory as a persistent **"Wiki-Memory"**. This aligns with [Andrej Karpathy's LLM Memory gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) and [LangChain's Wiki-Memory concept](https://www.langchain.com/blog/wiki-memory)—treating a structured local directory like a Wikipedia page that agents dynamically read and write to maintain long-term context. As my friend Dave Rensin notes in his article [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874), managing agent memory effectively is what prevents our AI assistants from behaving like goldfish.
+
 *   **Cascading Conflict Loop Resolution**: In a parallel multi-worktree execution flow, merging the completed feature branches one-by-one can create a "cascading conflict" scenario. Imagine Mario's branch is merged cleanly into the validation branch, but Luigi's branch has merge conflicts. 
     If the human developer resolves Luigi's conflict directly on the validation branch, Luigi's original feature branch in `.worktrees/telegram_incident_creation/` is still conflicting and out-of-date. To prevent this drift, Agostina automatically cherry-picks or merges the conflict resolution back into Luigi's feature branch. This ensures that the subagent's isolated worktree remains up-to-date and syntactically aligned with the validated codebase.
 
@@ -205,29 +235,26 @@ Running multiple AI agents coding in parallel on the exact same repository requi
 
 The orchestrator lifecycle is defined as follows:
 
-```mermaid
-graph TD
-    A["Start: Define Tracks"] --> B["Agostina: Provision Git Worktrees"]
-    B --> C["Symlink conductor/ & Configure info/exclude"]
-    C --> D["Launch Subagents Mario, Luigi, etc."]
-    D --> E{"Subagent Blocked?"}
-    E -- Yes --> F["Post GHI Comment + Write Track JSON"]
-    F --> G["Agostina: poll_ghi_questions.py"]
-    G -- Answer Found --> H["Update Track JSON to answered"]
-    H --> E
-    E -- No / Completed --> I["Subagent: Local Commit + Git Notes"]
-    I --> J["Agostina: Checkout Validation Branch"]
-    J --> K["Agostina: Sequential Merging"]
-    K -- Conflict? --> L["Human Resolves Conflict"]
-    L --> M["Agostina: Update Subagent Branch with Resolution"]
-    M --> N["All Merged & Validated"]
-    K -- Clean --> N
-    N --> O["Agostina: Push & Create PR with gh CLI"]
-```
+{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/agostina_graph.png" caption="Agent / Subagents Flow" alt="Agent / Subagents Flow" position="center" >}}
 
-1.  **Provisioning**: Agostina sets up the isolated worktrees and launches the subagents.
-2.  **Execution & HITL**: Subagents code independently, using the polling script to handle high-fidelity human-in-the-loop (HITL) questions.
-3.  **Merge & PR**: Agostina sequentially merges the code, driving conflict resolutions back to the source worktrees, pushes the final integrated branch to remote, and opens a unified Pull Request (PR) via the `gh` CLI for human review and final merge to `main`.
+A critical architectural principle of this flow is that **the human operator never interacts directly with the subagents (Mario or Luigi)**. The subagents run in complete isolation inside their respective git worktrees. Instead, the human only communicates with the coordinator (Agostina) at two specific integration points:
+
+1.  **1. Launch**: The human triggers the orchestrator, which reads the GHI/Conductor status and provisions the worktrees.
+2.  **4. HITL Question Watcher**: When a subagent gets blocked and asks a question, the request is routed through Agostina's HITL watcher (via the Telegram Sidecar or GitHub Issue comments) to the human. The human's response is then translated back by the watcher to unblock the agent.
+
+The full 6-step lifecycle is structured as:
+*   **1. Launch & 2. Read Status**: The human operator starts the run; Agostina audits active GitHub Issues and Conductor track states.
+*   **3. Provision Subagents/Worktrees**: Agostina creates isolated git worktrees and spawns the parallel developer subagents.
+*   **4. HITL Question Watcher**: Mediates any blocking questions from the subagents back to the human operator, ensuring a safe, asynchronous feedback loop.
+*   **5. Cleanup Worktrees**: Once the subagents complete their tasks and create their Pull Requests, Agostina cleans up the temporary worktree directories.
+*   **6. Merge PR to main**: Agostina integrates the changes and opens/merges the final PR, looping back to step 5 for any remaining tasks. This can be a blood bath, but luckily agents are better at me at git merges.
+
+**Note**. The question answering is highly experimental. I've tried 3 ways to implement it:
+
+1. **Telegram** (openclaw's style).
+2. **GH Issue** answering (Jules / `@gemini` CLI style).
+3. By talking to main agent via `questions.json`. While this is the simplest, I wasn't able to be automagically unblocked - had to trigger it myself. So I discarded this approach but I'm sure this can be solved via [hooks](https://antigravity.google/docs/hooks) or in future releases.
+
 ## Case Study: Project Benjamin (Full Multi-Agent Speed Run)
 
 To prove that our Conductor++ Multi-Worktree pipeline works in real production environments, we set up **Project Benjamin** as a stress test. 
@@ -246,20 +273,36 @@ Here are the operational facts and results of this live execution:
 
 Using our parallel Git Worktree orchestration, all feature tracks were developed, tested, and fully integrated into the `main` branch. Below is the final status audit of the SRE features:
 
-| Issue # & Feature | Conductor Track ID | Merge Status in `main` | Key Operational Value |
-| :--- | :--- | :--- | :--- |
-| **#1: ADK Observability + Cloud Run** | `adk_observability_cloud_run_20260603` | **Merged** | Dockerization of SRE dashboard and built-in **OpenTelemetry (OTEL) tracing** for all inter-agent communication flows. |
-| **#5: Incident Status Taxonomy** | `incident_status_taxonomy_20260603` | **Merged** | Establishes a strict IMAG-compliant lifecycle taxonomy (Open, In Investigation, Mitigated, Resolved). |
-| **#6: Incident Deletion & Archival** | `incident_delete_archive_20260603` | **Merged** | Prevents data loss by replacing raw delete buttons with a safe incident archiving mechanism. |
-| **#7: Wiki Project Cross-linking** | `wiki_cross_linking_20260603` | **Merged** | Parses wiki markdown to dynamically cross-link GCP project references and network topologies. |
-| **#8: Multi-env State Management** | `multi_env_state_management_20260616` | **Merged** | Rails-style environment folders (`prod`, `dev`, `test`) to isolate incident states. |
-| **#9: Graduate State to Cloud** | `graduate_local_state_cloud_20260604` | **Merged** | Seamless cloud-sql state integration with local sqlite fallback to support multi-homed runs. |
-| **#10: Responsive Wiki UI** | `better_wiki_edit_ui_20260604` | **Merged** | Hides lateral incident/chat columns during wiki editing to maximize workspace view. |
-| **#18: Discord Incident War-Rooms** | `unified_incident_lifecycle_observability_20260607` | **Merged** | Dynamic creation of Discord war-room text channels, with **remote human steering** via `@mention` routing to SRE agents. |
-| **#26: GCP Asset Crawlers** | `gcp_resource_discovery_20260601` | **Merged** | Resource crawlers for GKE, VPC, GCE VMs, GCS, SQL, and Cloud Run to build SRE knowledge index. |
-| **#27: Live GCP Connectors** | `live_gcp_connectors_20260601` | **Merged** | Direct shell SSH mutation capabilities and diagnostics API mappings. |
-| **#28: Pending Mutations Queue** | `pending_mutations_registry_20260602` | **Merged** | Safety registry queuing hazardous actions for explicit confirmation, with operator feedback to agents. |
-| **#29: Telegram Incident Wizard** | `telegram_incident_creation_20260603` | **Merged** | An interactive Telegram chatbot wizard with project selection and voice-note/STT diagnostics transcription. |
+| Issue # & Feature | Conductor Track ID | Merge Status in `main` |
+| :--- | :--- | :--- |
+| **#1: ADK Observability + Cloud Run** | `adk_observability_cloud_run_20260603` | **Merged** |
+| **#5: Incident Status Taxonomy** | `incident_status_taxonomy_20260603` | **Merged** |
+| **#6: Incident Deletion & Archival** | `incident_delete_archive_20260603` | **Merged** |
+| **#7: Wiki Project Cross-linking** | `wiki_cross_linking_20260603` | **Merged** |
+| **#8: Multi-env State Management** | `multi_env_state_management_20260616` | **Merged** |
+| **#9: Graduate State to Cloud** | `graduate_local_state_cloud_20260604` | **Merged** |
+| **#10: Responsive Wiki UI** | `better_wiki_edit_ui_20260604` | **Merged** |
+| **#18: Discord Incident War-Rooms** | `unified_incident_lifecycle_observability_20260607` | **Merged** |
+| **#26: GCP Asset Crawlers** | `gcp_resource_discovery_20260601` | **Merged** |
+| **#27: Live GCP Connectors** | `live_gcp_connectors_20260601` | **Merged** |
+| **#28: Pending Mutations Queue** | `pending_mutations_registry_20260602` | **Merged** |
+| **#29: Telegram Incident Wizard** | `telegram_incident_creation_20260603` | **Merged** |
+
+#### 💡 Key Operational Value of Features
+
+*   **#1: ADK Observability + Cloud Run**: Dockerization of SRE dashboard and built-in **OpenTelemetry (OTEL) tracing** for all inter-agent communication flows.
+*   **#5: Incident Status Taxonomy**: Establishes a strict IMAG-compliant lifecycle taxonomy (Open, In Investigation, Mitigated, Resolved).
+*   **#6: Incident Deletion & Archival**: Prevents data loss by replacing raw delete buttons with a safe incident archiving mechanism.
+*   **#7: Wiki Project Cross-linking**: Parses wiki markdown to dynamically cross-link GCP project references and network topologies.
+*   **#8: Multi-env State Management**: Rails-style environment folders (`prod`, `dev`, `test`) to isolate incident states.
+*   **#9: Graduate State to Cloud**: Seamless cloud-sql state integration with local sqlite fallback to support multi-homed runs.
+*   **#10: Responsive Wiki UI**: Hides lateral incident/chat columns during wiki editing to maximize workspace view.
+*   **#18: Discord Incident War-Rooms**: Dynamic creation of Discord war-room text channels, with **remote human steering** via `@mention` routing to SRE agents.
+*   **#26: GCP Asset Crawlers**: Resource crawlers for GKE, VPC, GCE VMs, GCS, SQL, and Cloud Run to build SRE knowledge index.
+*   **#27: Live GCP Connectors**: Direct shell SSH mutation capabilities and diagnostics API mappings.
+*   **#28: Pending Mutations Queue**: Safety registry queuing hazardous actions for explicit confirmation, with operator feedback to agents.
+*   **#29: Telegram Incident Wizard**: An interactive Telegram chatbot wizard with project selection and voice-note/STT diagnostics transcription.
+
 
 ---
 
@@ -309,7 +352,65 @@ Each agent checked out its own branch and worked in isolation. The Amanuense scr
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
 
 #### Step 3: Interactive Polling & Human Steering
-When agents needed clarification (such as verifying Telegram token configuration), they posted issues that were parsed by `poll_ghi_questions.py`.
+When agents needed clarification, they posted issues that were parsed by `poll_ghi_questions.py`. 
+
+To make this human-in-the-loop (HITL) steering truly mobile-friendly, we implemented a **Telegram Sidecar Bridge**. Instead of requiring the operator to sit at their computer and refresh GitHub, the bridge routes questions directly to their phone.
+
+##### 🤖 Deep Dive: The Telegram Sidecar Bridge
+
+The Telegram Sidecar Bridge is registered as an Antigravity background daemon. It enables parallel coding subagents and SRE coordinators (like Agostina) to send questions or approval requests directly to the developer's Telegram account, poll for the response, and resume execution once answered.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Human Operator (Telegram Mobile)
+    participant Sidecar as Telegram Sidecar Daemon
+    participant Reg as Local Questions Registry (questions.json)
+    participant Agent as Subagent (Worktree / Track)
+
+    Note over Agent: Blocked on task / Needs approval
+    Agent->>Reg: Write pending question (JSON)
+    Note over Reg: Status: pending
+    
+    loop Every Poll Interval
+        Sidecar->>Reg: Scan for pending questions
+    end
+    
+    Reg-->>Sidecar: Return pending question (q_id, text)
+    Sidecar->>User: Send Telegram message with inline buttons (Approve/Reject)
+    Note over User: Receives push notification
+    
+    User->>Sidecar: Click "Approve" (Callback query)
+    Sidecar->>Reg: Write answer: "Approved" (Update status to "answered")
+    Note over Reg: Status: answered
+    
+    loop Check status
+        Agent->>Reg: Read questions.json
+    end
+    Reg-->>Agent: Question answered!
+    Note over Agent: Read answer & Resume execution
+```
+
+###### The Sidecar Configuration (`sidecar.json`)
+The sidecar is registered in Antigravity using the following configuration:
+
+```json
+{
+  "command": "python3",
+  "args": ["sidecar.py"],
+  "restart_policy": "always",
+  "description": "Bridges local agent question-watcher events to/from Telegram.",
+  "env": {
+    "TELEGRAM_BOT_TOKEN": "YOUR_TELEGRAM_BOT_TOKEN",
+    "TELEGRAM_CHAT_ID": "YOUR_TELEGRAM_CHAT_ID"
+  }
+}
+```
+
+###### Key Benefits
+1.  **Mobile-First HITL**: You can approve risky mutations or answer coding design questions (e.g., *"Should we use SQLite or Postgres?"*) from your phone while on the go.
+2.  **Race-Free Parallelism**: By keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`), multiple agents can ask questions concurrently without file lock contention.
+3.  **Audit Trail**: Every decision is stored locally in the Git repository as JSON state, providing 100% trace accountability.
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Human approvals and diagnostics feedback loop active." alt="Human approvals and diagnostics feedback loop active." position="center" >}}
 

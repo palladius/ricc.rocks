@@ -8,14 +8,14 @@ User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/524911947
 Tags: [API, Antigravity, GenAI, Sandbox, Medium, agy, romin]
-PublishedURL: ""
+PublishedURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/"
 Completion: "100"
-CTA: https://Antigravity.google/
+CTA: https://antigravity.google/
 Status: "draft"
 Platform: "Medium, ricc.rocks"
 PublishDate: "2026-06-16"
 canonicalURL: "https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9"
-version: "0.0.1"
+version: "0.0.2"
 ---
 
 I'm a command-line guy. If it doesn't run in a 🖥️ terminal or get driven by a `bash` script, I usually avoid it. For years, my daily workflow revolved around `gemini-cli`, and recently the newer `antigravity-cli` (`agy`). I avoided desktop apps and GUI tools like the plague (with the only exception of `vscode`); a friend calls people like me *BashOps* — the opposite of the perfectly reasonable *ClickOps* folks who prefer GUIs.
