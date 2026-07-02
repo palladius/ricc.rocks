@@ -32,7 +32,7 @@ To redeploy / sync updates, run:
 cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
 -->
 
-**TL;DR** In this follow up article to [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) I will explore parallel subagents + `git worktree` + [Conductor](https://github.com/gemini-cli-extensions/conductor) + some icing on the cake.
+**TL;DR** In this follow up article to [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) I will explore parallel subagents + `git worktree` + [Conductor](https://github.com/gemini-cli-extensions/conductor) + some icing on the cake.
 
 # Orchestrating with Antigravity: A Crescendo of Agents (Part 2)
 
@@ -42,7 +42,7 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 
 <!--more-->
 
-If you read [Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
+If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
 
 <!-- -
@@ -66,7 +66,7 @@ If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-d
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
 
-> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
+> 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
 ## The problem: scaling past the CLI
 
@@ -237,10 +237,10 @@ The orchestrator lifecycle is defined as follows:
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/agostina_graph.png" caption="Agent / Subagents Flow" alt="Agent / Subagents Flow" position="center" >}}
 
-A critical architectural principle of this flow is that **the human operator never interacts directly with the subagents (Mario or Luigi)**. The subagents run in complete isolation inside their respective git worktrees. Instead, the human only communicates with the coordinator (Agostina) at two specific integration points:
+A critical aspect of this flow is that **the human operator never interacts directly with the subagents**. The subagents run in complete isolation inside their respective `git worktree`s. Instead, the human only communicates with the coordinator at two specific integration points:
 
 1.  **1. Launch**: The human triggers the orchestrator, which reads the GHI/Conductor status and provisions the worktrees.
-2.  **4. HITL Question Watcher**: When a subagent gets blocked and asks a question, the request is routed through Agostina's HITL watcher (via the Telegram Sidecar or GitHub Issue comments) to the human. The human's response is then translated back by the watcher to unblock the agent.
+2.  **4. HITL Question Watcher**: When a subagent gets blocked and asks a question, the request is routed through Agostina's HITL watcher to the human. The human's response is then translated back by the watcher to unblock the agent.
 
 The full 6-step lifecycle is structured as:
 *   **1. Launch & 2. Read Status**: The human operator starts the run; Agostina audits active GitHub Issues and Conductor track states.
@@ -251,13 +251,24 @@ The full 6-step lifecycle is structured as:
 
 **Note**. The question answering is highly experimental. I've tried 3 ways to implement it:
 
-1. **Telegram** (openclaw's style).
+1. **Telegram sidecar** (openclaw's style). While I was able to make it work a few times (and generated smart custom buttons! ), it wasn't reliable enough.
 2. **GH Issue** answering (Jules / `@gemini` CLI style).
 3. By talking to main agent via `questions.json`. While this is the simplest, I wasn't able to be automagically unblocked - had to trigger it myself. So I discarded this approach but I'm sure this can be solved via [hooks](https://antigravity.google/docs/hooks) or in future releases.
 
-## Case Study: Project Benjamin (Full Multi-Agent Speed Run)
+### Lessons learnt 
 
-To prove that our Conductor++ Multi-Worktree pipeline works in real production environments, we set up **Project Benjamin** as a stress test. 
+My **#1 lesson learnt** is: try to keep the conversation with a single agent, try to delegate to sub-agents only simple / pre-determined tasks, which requires no interaction. Two tips for this: 
+
+* `/roastme` is great to ask hard questions to let then the agent go unimpeded.
+
+* Conductor is great at asking hard questions so that it can work by himself. This is why i love conductor! In other words: you answer all the questions between 09:30 and 10:00 and then go for a cycle ride, and at lunch you have an app; this is a smart alternative to a contiunuous interruption cycle of 30s question / 5m dev time.
+
+## Case Study 1: Project Benjamin (Full Multi-Agent Speed Run)
+
+To prove that our Conductor++ Multi-Worktree pipeline works in real production environments, I wanted to try it out on a REAL thing. I chose **Project Benjamin** as a test case. 
+
+<!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
+In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [🪨 another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) !
 
 We went into **full multi-agent mode**. Instead of playing with one or two toy features, we took 12 complex, critical SRE capabilities and broke them down into **more than 20 concrete GitHub Issues (GHIs)**. 
 
