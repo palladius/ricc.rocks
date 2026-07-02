@@ -34,7 +34,6 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 
 **TL;DR** In this follow up article to [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) I will explore parallel subagents + `git worktree` + [Conductor](https://github.com/gemini-cli-extensions/conductor) + some icing on the cake.
 
-# Orchestrating with Antigravity: A Crescendo of Agents (Part 2)
 
 ## Parallel Coding with Git Worktrees, Conductor++, and Agostina
 
@@ -270,13 +269,13 @@ To prove that our Conductor++ Multi-Worktree pipeline works in real production e
 <!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
 In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [🪨 another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) !
 
-We went into **full multi-agent mode**. Instead of playing with one or two toy features, we took 12 complex, critical SRE capabilities and broke them down into **more than 20 concrete GitHub Issues (GHIs)**. 
+We went into **full multi-agent mode**. Instead of playing with one or two toy features, we took **12 complex, critical SRE capabilities** and broke them down into **more than 20 concrete GitHub Issues (GHIs)**. 
 
 Then, we let the machine rip. 
 
 In just **5 hours**, the Conductor++ pipeline successfully built, tested, and merged **all 20+ GHIs** into the main branch! 
 
-The scope of implementation was massive: from setting up OpenTelemetry (OTEL) tracing in Cloud Run to writing interactive Telegram incident wizards and pending mutation approval registries. 
+The scope of implementation was massive: from setting up OpenTelemetry (`OTEL`, not to be confused with Seroter Hotels!) tracing in Cloud Run to writing interactive Telegram incident wizards and pending mutation approval registries.
 
 Here are the operational facts and results of this live execution:
 
@@ -286,34 +285,53 @@ Using our parallel Git Worktree orchestration, all feature tracks were developed
 
 | Issue # & Feature | Conductor Track ID | Merge Status in `main` |
 | :--- | :--- | :--- |
-| **#1: ADK Observability + Cloud Run** | `adk_observability_cloud_run_20260603` | **Merged** |
-| **#5: Incident Status Taxonomy** | `incident_status_taxonomy_20260603` | **Merged** |
-| **#6: Incident Deletion & Archival** | `incident_delete_archive_20260603` | **Merged** |
-| **#7: Wiki Project Cross-linking** | `wiki_cross_linking_20260603` | **Merged** |
-| **#8: Multi-env State Management** | `multi_env_state_management_20260616` | **Merged** |
-| **#9: Graduate State to Cloud** | `graduate_local_state_cloud_20260604` | **Merged** |
-| **#10: Responsive Wiki UI** | `better_wiki_edit_ui_20260604` | **Merged** |
-| **#18: Discord Incident War-Rooms** | `unified_incident_lifecycle_observability_20260607` | **Merged** |
-| **#26: GCP Asset Crawlers** | `gcp_resource_discovery_20260601` | **Merged** |
-| **#27: Live GCP Connectors** | `live_gcp_connectors_20260601` | **Merged** |
-| **#28: Pending Mutations Queue** | `pending_mutations_registry_20260602` | **Merged** |
-| **#29: Telegram Incident Wizard** | `telegram_incident_creation_20260603` | **Merged** |
+| **[#1](https://github.com/palladius/adk-sre-benjamin/issues/1): ADK Observability + Cloud Run** | `adk_observability_cloud_run_20260603` | **Merged** |
+| **[#5](https://github.com/palladius/adk-sre-benjamin/issues/5): Incident Status Taxonomy** | `incident_status_taxonomy_20260603` | **Merged** |
+| **[#6](https://github.com/palladius/adk-sre-benjamin/issues/6): Incident Deletion & Archival** | `incident_delete_archive_20260603` | **Merged** |
+| **[#7](https://github.com/palladius/adk-sre-benjamin/issues/7): Wiki Project Cross-linking** | `wiki_cross_linking_20260603` | **Merged** |
+| **[#8](https://github.com/palladius/adk-sre-benjamin/issues/8): Multi-env State Management** | `multi_env_state_management_20260616` | **Merged** |
+| **[#9](https://github.com/palladius/adk-sre-benjamin/issues/9): Graduate State to Cloud** | `graduate_local_state_cloud_20260604` | **Merged** |
+| **[#10](https://github.com/palladius/adk-sre-benjamin/issues/10): Responsive Wiki UI** | `better_wiki_edit_ui_20260604` | **Merged** |
+| **[#18](https://github.com/palladius/adk-sre-benjamin/issues/18): Discord Incident War-Rooms** | `unified_incident_lifecycle o11y_20260607` | **Merged** |
+| **[#26](https://github.com/palladius/adk-sre-benjamin/issues/26): GCP Asset Crawlers** | `gcp_resource_discovery_20260601` | **Merged** |
+| **[#27](https://github.com/palladius/adk-sre-benjamin/issues/27): Live GCP Connectors** | `live_gcp_connectors_20260601` | **Merged** |
+| **[#28](https://github.com/palladius/adk-sre-benjamin/issues/28): Pending Mutations Queue** | `pending_mutations_registry_20260602` | **Merged** |
+| **[#29](https://github.com/palladius/adk-sre-benjamin/issues/29): Telegram Incident Wizard** | `telegram_incident_creation_20260603` | **Merged** |
 
 #### 💡 Key Operational Value of Features
 
-*   **#1: ADK Observability + Cloud Run**: Dockerization of SRE dashboard and built-in **OpenTelemetry (OTEL) tracing** for all inter-agent communication flows.
-*   **#5: Incident Status Taxonomy**: Establishes a strict IMAG-compliant lifecycle taxonomy (Open, In Investigation, Mitigated, Resolved).
-*   **#6: Incident Deletion & Archival**: Prevents data loss by replacing raw delete buttons with a safe incident archiving mechanism.
-*   **#7: Wiki Project Cross-linking**: Parses wiki markdown to dynamically cross-link GCP project references and network topologies.
-*   **#8: Multi-env State Management**: Rails-style environment folders (`prod`, `dev`, `test`) to isolate incident states.
-*   **#9: Graduate State to Cloud**: Seamless cloud-sql state integration with local sqlite fallback to support multi-homed runs.
-*   **#10: Responsive Wiki UI**: Hides lateral incident/chat columns during wiki editing to maximize workspace view.
-*   **#18: Discord Incident War-Rooms**: Dynamic creation of Discord war-room text channels, with **remote human steering** via `@mention` routing to SRE agents.
-*   **#26: GCP Asset Crawlers**: Resource crawlers for GKE, VPC, GCE VMs, GCS, SQL, and Cloud Run to build SRE knowledge index.
-*   **#27: Live GCP Connectors**: Direct shell SSH mutation capabilities and diagnostics API mappings.
-*   **#28: Pending Mutations Queue**: Safety registry queuing hazardous actions for explicit confirmation, with operator feedback to agents.
-*   **#29: Telegram Incident Wizard**: An interactive Telegram chatbot wizard with project selection and voice-note/STT diagnostics transcription.
+*   **[#1](https://github.com/palladius/adk-sre-benjamin/issues/1): ADK Observability + Cloud Run**: Dockerization of SRE dashboard and built-in **OpenTelemetry (OTEL) tracing** for all inter-agent communication flows.
+*   **[#5](https://github.com/palladius/adk-sre-benjamin/issues/5): Incident Status Taxonomy**: Establishes a strict IMAG-compliant lifecycle taxonomy (Open, In Investigation, Mitigated, Resolved).
+*   **[#6](https://github.com/palladius/adk-sre-benjamin/issues/6): Incident Deletion & Archival**: Prevents data loss by replacing raw delete buttons with a safe incident archiving mechanism.
+*   **[#7](https://github.com/palladius/adk-sre-benjamin/issues/7): Wiki Project Cross-linking**: Parses wiki markdown to dynamically cross-link GCP project references and network topologies.
+*   **[#8](https://github.com/palladius/adk-sre-benjamin/issues/8): Multi-env State Management**: Rails-style environment folders (`prod`, `dev`, `test`) to isolate incident states.
+*   **[#9](https://github.com/palladius/adk-sre-benjamin/issues/9): Graduate State to Cloud**: Seamless cloud-sql state integration with local sqlite fallback to support multi-homed runs.
+*   **[#10](https://github.com/palladius/adk-sre-benjamin/issues/10): Responsive Wiki UI**: Hides lateral incident/chat columns during wiki editing to maximize workspace view.
+*   **[#18](https://github.com/palladius/adk-sre-benjamin/issues/18): Discord Incident War-Rooms**: Dynamic creation of Discord war-room text channels, with **remote human steering** via `@mention` routing to SRE agents.
+*   **[#26](https://github.com/palladius/adk-sre-benjamin/issues/26): GCP Asset Crawlers**: Resource crawlers for GKE, VPC, GCE VMs, GCS, SQL, and Cloud Run to build SRE knowledge index.
+*   **[#27](https://github.com/palladius/adk-sre-benjamin/issues/27): Live GCP Connectors**: Direct shell SSH mutation capabilities and diagnostics API mappings.
+*   **[#28](https://github.com/palladius/adk-sre-benjamin/issues/28): Pending Mutations Queue**: Safety registry queuing hazardous actions for explicit confirmation, with operator feedback to agents.
+*   **[#29](https://github.com/palladius/adk-sre-benjamin/issues/29): Telegram Incident Wizard**: An interactive Telegram chatbot wizard with project selection and voice-note/STT diagnostics transcription.
 
+Two weeks later, this is how Conductor looks like:
+
+```bash
+$ just conductor-status
+python3 conductor/bin/conductor-inspector . --open --short
+
+🔍 Inspecting Conductor Workspace: /usr/local/google/home/ricc/git/adk-sre-benjamin
+📦 Product: Initial Concept
+STATUS      |  PROGRESS  | RATIO |  GHI  |   AGENT    |   CHANGED   | TRACK ID                                           |  🌳 
+==============================================================================================================================
+NEW         | ░░░░░░░░░░ |  0/25 |  #23  |            |  💻 15days   | managed_agents_sandbox_20260616                    |    
+NOT_READY   | ░░░░░░░░░░ |  0/17 |  #22  |            |  💻 15days   | mcp_streamline_abilities_20260616                  |    
+NOT_READY   | ░░░░░░░░░░ |  0/11 |  #15  |            |  💻 15days   | migrate_tf_cb_logic_20260616                       |    
+NOT_READY   | ░░░░░░░░░░ |   0/9 |  #21  |            |  💻 15days   | ai_engineering_practices_20260616                  |    
+NOT_READY   | ░░░░░░░░░░ |   0/9 |  #19  |            |  💻 15days   | workspace_agent_installation_20260616              |    
+NEW         | ░░░░░░░░░░ |  0/15 |  #31  | antigravity |  🐙 16days   | disable_mock_fallback_dev_20260616                 |    
+==============================================================================================================================
+TOTAL       |            |  0/86 |       |            |             | 0 completed, 6 open (6 total)                      | 0 🌳
+```
 
 ---
 
