@@ -157,9 +157,11 @@ While `condutree v1.0` is a solid foundation, it still has a few manual edges th
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
 
-### Case Study: The Flutter Complexity Wall (`orologia.io`)
+## Case Study 2: The Flutter Complexity Wall (`orologia.io`)
 
-To put this parallel multi-agent orchestration to the test, I wanted to build `orologia.io`—a mobile/web clock game designed to help kids learn how to read analog clocks. 
+Do you remember [orologia.io](https://palladius.github.io/orologia.io/) from Article 1 (TODO link)?
+
+To put this parallel multi-agent orchestration to the test, I wanted to build `orologia.io` - a mobile/web clock game designed to help kids learn how to read analog clocks. 
 
 Inspired by the "Seroter Hotels" prompt, I set up a team of four parallel subagents:
 1.  **Lead Architect**: Designs Flutter app state and writes the `architecture.md` spec.
@@ -171,7 +173,7 @@ We let the agents run for two hours. They spawned isolated worktrees, wrote comp
 
 Frustrated, I did a **20-second vibe-coding run** instead. I asked a single agent to spin up a prototype using raw, simple HTML, CSS, and vanilla JS. The result was **10x better** than the planned Flutter app—smooth, responsive, and actually fun to play.
 
-Rather than discarding the Flutter project, we used the vibe-coded JS app as a "visual spec" to teach the Flutter subagents how the clock should render. 
+Rather than discarding the Flutter project, we used the vibe-coded JS app as a "visual spec" to teach the Flutter subagents how the clock should render.
 
 Juggling this loop—running the local JS mock, reviewing the automated integration test screenshot (`gameplay_snapshot.png`), and checking subagent compiler errors—pushed the CLI to its cognitive limits. Juggling tmux panes and tailing logs across workspaces was too slow. This was the tipping point where we transitioned to the **Antigravity 2.0 Desktop app**. The thread manager allowed us to visually coordinate the parallel execution channels and review the generated image outputs in real time.
 
@@ -389,36 +391,7 @@ To make this human-in-the-loop (HITL) steering truly mobile-friendly, we impleme
 
 The Telegram Sidecar Bridge is registered as an Antigravity background daemon. It enables parallel coding subagents and SRE coordinators (like Agostina) to send questions or approval requests directly to the developer's Telegram account, poll for the response, and resume execution once answered.
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User as Human Operator (Telegram Mobile)
-    participant Sidecar as Telegram Sidecar Daemon
-    participant Reg as Local Questions Registry (questions.json)
-    participant Agent as Subagent (Worktree / Track)
-
-    Note over Agent: Blocked on task / Needs approval
-    Agent->>Reg: Write pending question (JSON)
-    Note over Reg: Status: pending
-    
-    loop Every Poll Interval
-        Sidecar->>Reg: Scan for pending questions
-    end
-    
-    Reg-->>Sidecar: Return pending question (q_id, text)
-    Sidecar->>User: Send Telegram message with inline buttons (Approve/Reject)
-    Note over User: Receives push notification
-    
-    User->>Sidecar: Click "Approve" (Callback query)
-    Sidecar->>Reg: Write answer: "Approved" (Update status to "answered")
-    Note over Reg: Status: answered
-    
-    loop Check status
-        Agent->>Reg: Read questions.json
-    end
-    Reg-->>Agent: Question answered!
-    Note over Agent: Read answer & Resume execution
-```
+{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
 
 ###### The Sidecar Configuration (`sidecar.json`)
 The sidecar is registered in Antigravity using the following configuration:
