@@ -414,12 +414,14 @@ The sidecar is registered in Antigravity using the following configuration:
 2.  **Race-Free Parallelism**: By keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`), multiple agents can ask questions concurrently without file lock contention.
 3.  **Audit Trail**: Every decision is stored locally in the Git repository as JSON state, providing 100% trace accountability.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Human approvals and diagnostics feedback loop active." alt="Human approvals and diagnostics feedback loop active." position="center" >}}
+{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Screenshot showcasing Human approvals and diagnostics feedback loop active." alt="Screenshot showcasing Human approvals and diagnostics feedback loop active." position="center" >}}
 
 #### Step 4: The Final Green State
 Once all feature branches were validation-checked and sequentially merged, Agostina created the Pull Request. The final audit output confirmed all 12 SRE tracks were fully merged into the production branch.
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
+
+Were they all 100% perfectly tested, also in their mutual interactions? Not so much; but this is for a third article.
 
 ## The coding Framework
 
