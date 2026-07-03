@@ -16,12 +16,12 @@ Linkedin post: TODO
 Generator: "create_article.rb"
 Version: "1.3.1"
 Platform: "Medium, Ricc.Rocks"
-PublishDate: "2026-06-16"
-RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
+PublishDate: "2026-07-03"
+RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
 RiccRocksStatus: "published"
 RiccRocksVersion: "1.3.1"
-PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
-image: "/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/hero_image.png"
+PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
+image: "/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/hero_image.png"
 # canonicalURL: (pending Medium publication)
 ---
 
@@ -64,7 +64,7 @@ This article highlights how Git Worktrees solve workspace pollution and file col
 I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage my dozens of sessions. 
 But once you have a visual harness that works, the immediate developer question is: **how far can we scale this?** 
 
-## Parallel Coding with Git Worktrees, Conductor++, and... "Agostina"
+## Parallel Coding with Git Worktrees, Conductor++, and.. Agostina!
 
 
 This concept of using a multi-agent harness to build apps in parallel was inspired by Richard Seroter's recent article [One prompt, four subagents and ninety seconds to get a working app](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/), where he demonstrated spawning four parallel developer agents to construct a working application in under two minutes. I read Richard's piece when it came out but had to wait a bit before getting my hands on the new Antigravity 2.0 UI harness. Yesterday (June 16), I finally sat down to play with it, and this second article is what came out of that session.
@@ -123,17 +123,17 @@ Let's unpack this **prompt**. It contains:
 4. What happens when they're done (spin up and let the human-not-so-much-in-the-loop take a look).
 5. **Important**. the common file state here is the common artifact: `architecture.md`.
 
-Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into *emergence* and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
-
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
+
+Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into *emergence* and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
 
 **What I find the most compelling is that here the agents are communicating over a Markdown artifact... the SPECS!**
 
-*Let's move back from Richard to Riccardo...*
+*Let's move back from 🇺🇸 Richard ➡️ to 🇮🇹 Riccardo...*
 
 In the past few months, all I wanted to do was **GitHub Issue (GHI)-triggered multi-agent implementation**!
 
-* **GitHub Issue** Integration. Every subagent should work on an issue, if its defined.
+* **GitHub Issue** Integration. Every subagent should work on an issue, if its defined. 
 * As a [Ruby on Rails](https://rubyonrails.org/) developer, I know the value of having your code "on Rails". The Rails for AI imho is the [Conductor](https://github.com/gemini-cli-extensions/conductor) extension by my buddy [Keith](https://github.com/keithballinger). I use it for all my serious projects.
   * Let's be honest, not always a GHI has what it takes for an agent to go and do things. Sometimes you need a HITL to answer the hard questions. This prevents the implementation for being sloppy (*"of course I meant just for authenticated users!!!"*)
 * `git worktree`. This is what prevents 2+ agents for making a mess out of your repo (been there done that).
@@ -375,7 +375,7 @@ Each agent checked out its own branch and worked in isolation. The Amanuense scr
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
 
-Look how these beautiful sjub-agents work on Antigravity, this would make Richard so proud!
+Look how these beautiful sub-agents work on Antigravity, this would make Richard so proud!
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Antigravity UI thread tracker showing active tracks in progress." alt="Antigravity UI thread tracker showing active tracks in progress." position="center" >}}
 
@@ -426,6 +426,7 @@ My **#1 lesson learnt** is: try to keep the conversation with a single agent, an
 
 *   **Minimize agent/human wait-time**: Using `/roastme` is great to ask hard questions upfront so the agent can go unimpeded. **Conductor** is excellent at gathering questions offline. Instead of a continuous interruption cycle of 30-second questions every 5 minutes, you answer all questions in a single 30-minute block, go for a cycle ride, and return to a finished app.
 *   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
+* **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing is the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The Orchestration Tax is real, and you can be ahead of the curve or be trampled by it, like myself most days.
 
 ![Roastme in Conductor](2jul roastme on conductor.png)
 
