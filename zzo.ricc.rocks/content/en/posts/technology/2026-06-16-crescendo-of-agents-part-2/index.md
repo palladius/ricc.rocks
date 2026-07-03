@@ -12,7 +12,7 @@ PublishedURL: TODO
 Completion: "100"
 CTA: https://antigravity.google/ # probably AG 2.0
 Status: "published"
-Linkedin post:
+Linkedin post: TODO
 Generator: "create_article.rb"
 Version: "1.3.1"
 Platform: "Medium, Ricc.Rocks"
@@ -21,6 +21,7 @@ RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-ag
 RiccRocksStatus: "published"
 RiccRocksVersion: "1.3.1"
 PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/"
+image: "/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/hero_image.png"
 # canonicalURL: (pending Medium publication)
 ---
 
