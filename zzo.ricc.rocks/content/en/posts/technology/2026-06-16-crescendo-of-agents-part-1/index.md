@@ -14,6 +14,7 @@ CTA: https://antigravity.google/
 Status: "draft"
 Platform: "Medium, ricc.rocks"
 PublishDate: "2026-06-16"
+image: "/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/hero_image.png"
 canonicalURL: "https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9"
 version: "0.0.2"
 ---

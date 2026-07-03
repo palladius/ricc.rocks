@@ -33,16 +33,21 @@ To redeploy / sync updates, run:
 cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
 -->
 
+<!-- i think this is a repetioin 
 **TL;DR** In this follow up article to [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) I will explore parallel subagents + `git worktree` + [Conductor](https://github.com/gemini-cli-extensions/conductor) + some icing on the cake.
 
 
 ## Parallel Coding with Git Worktrees, Conductor++, and Agostina
+-->
 
 [Alexis](https://www.linkedin.com/in/alexismp/) said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI Agent**s**!
 
-<!--more-->
 
 If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
+
+TODO(gmeini): an image of 6 destktops, each with 2 `agy` terminals and Apple stickies on top saying what they do, like "PRJ1 frontend" , "PRJ1 backend" , "PRJ1 testing", "PRJ2 New App", ..
+
+<!--more-->
 
 
 <!-- -
