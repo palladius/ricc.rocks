@@ -208,7 +208,7 @@ This proved the value of single-agent rapid prototyping. But what happens when y
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/image-cooking-agents-mess.png" caption="Riccardo surrounded by a million agents and being desperate" alt="Riccardo surrounded by a million agents and being desperate" position="center" >}}
 
-**This** is where I hit the wall and resolved to invent a Worktree + Conductor Carlessian-customized workflow.... but this is for another article... 🚀  [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/)
+**This** is where I hit the wall and resolved to invent a Worktree + Conductor Carlessian-customized workflow.... but this is for another article... 🚀  [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/)
 
 
 ## What are these Remote Agents good for?
@@ -234,7 +234,7 @@ My personal **Key Takeaways**:
 
 ---
 
-🚀 **Ready for Part 2?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/) to see how we scale this local development flow using git worktrees, Conductor++, and parallel subagents under Agostina.
+🚀 **Ready for Part 2?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 2)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/) to see how we scale this local development flow using git worktrees, Conductor++, and parallel subagents under Agostina.
 
 
 <!--

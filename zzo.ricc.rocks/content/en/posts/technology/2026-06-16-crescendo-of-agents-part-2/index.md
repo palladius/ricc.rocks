@@ -43,7 +43,7 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 [Alexis](https://www.linkedin.com/in/alexismp/) said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI Agent<u>**s**</u>!
 
 
-If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
+If you read [Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-terminal-chaos.png" caption="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
 
@@ -74,7 +74,7 @@ If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-d
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
 
-> 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
+> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
 ## The problem: scaling past the CLI
 
@@ -256,7 +256,7 @@ The full 6-step lifecycle is structured as:
 <!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
 
 To prove that our Conductor++ Multi-Worktree pipeline works, I wanted to try it out on a REAL thing. I chose [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) as a test case. 
-In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [🪨 another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) ! 
+In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) ! 
 
 **Why** is this a good case? Because it contains a [good number of features](https://github.com/palladius/adk-sre-benjamin/issues?q=is:issue), which can be develeoped in parallel: frontend, backend, an LLM chat, a telegram chatbot, OpenTelemetry tracing, GCP discovery, ... it's basically a mess but a fun one to have!
 

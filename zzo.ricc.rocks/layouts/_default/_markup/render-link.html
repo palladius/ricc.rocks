@@ -1,0 +1,49 @@
+{{- $destination := .Destination -}}
+{{- $text := .Text -}}
+{{- $title := .Title -}}
+{{- $plainText := $text | plainify -}}
+
+{{- $wikimoji := "" -}}
+{{- $svg_partial := "" -}}
+
+{{- if site.Data.wikimoji.enabled -}}
+  {{- $matched := false -}}
+  {{- range site.Data.wikimoji.targets -}}
+    {{- if not $matched -}}
+      {{- $hasPattern := false -}}
+      {{- range .patterns -}}
+        {{- if findRE . $destination -}}
+          {{- $hasPattern = true -}}
+          {{- break -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if $hasPattern -}}
+        {{- if .emoji -}}
+          {{- $wikimoji = .emoji -}}
+        {{- else if .svg_partial -}}
+          {{- $svg_partial = .svg_partial -}}
+        {{- end -}}
+        {{- $matched = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Smart bypass: if the link text already starts with the emoji or contains an image/svg, do not prepend */ -}}
+{{- $should_prepend := true -}}
+{{- if and $wikimoji (strings.HasPrefix $plainText $wikimoji) -}}
+  {{- $should_prepend = false -}}
+{{- end -}}
+{{- /* Also do not prepend if the link text is empty, or contains an image (e.g. starts with <img or <picture) */ -}}
+{{- if or (eq $plainText "") (findRE "^<(img|picture|svg|iframe)" $text) -}}
+  {{- $should_prepend = false -}}
+{{- end -}}
+
+{{- if and $should_prepend $wikimoji -}}
+  <span class="wikimoji-emoji">{{ $wikimoji }}</span>&nbsp;
+{{- else if and $should_prepend $svg_partial -}}
+  <span class="wikimoji-icon-wrapper">{{ partial $svg_partial (dict "width" "13px" "height" "13px") }}</span>&nbsp;
+{{- end -}}
+<a href="{{ $destination | safeURL }}"{{ with $title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $destination "http" }} target="_blank" rel="noopener"{{ end }}>
+  {{- $text | safeHTML -}}
+</a>

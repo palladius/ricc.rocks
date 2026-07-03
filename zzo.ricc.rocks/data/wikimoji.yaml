@@ -1,0 +1,48 @@
+enabled: true
+targets:
+  - name: internal
+    patterns:
+      - "^/"
+      - "ricc.rocks"
+    emoji: "🪨"
+    description: "Internal links to ricc.rocks"
+
+  - name: github
+    patterns:
+      - "github.com"
+      - "github.io"
+    svg_partial: "svgs/social/github.svg"
+    description: "GitHub links"
+
+  - name: linkedin
+    patterns:
+      - "linkedin.com"
+    emoji: "💼"
+    description: "LinkedIn links"
+
+  - name: medium
+    patterns:
+      - "medium.com"
+    svg_partial: "svgs/social/medium.svg"
+    description: "Medium links"
+
+  - name: youtube
+    patterns:
+      - "youtube.com"
+      - "youtu.be"
+    emoji: "🎥"
+    description: "YouTube links"
+
+  - name: twitter
+    patterns:
+      - "twitter.com"
+      - "x.com"
+    emoji: "🐦"
+    description: "Twitter / X links"
+
+  - name: google-cloud
+    patterns:
+      - "cloud.google.com"
+      - "console.cloud.google.com"
+    emoji: "☁️"
+    description: "Google Cloud Platform"
