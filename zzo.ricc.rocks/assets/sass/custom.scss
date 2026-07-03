@@ -98,3 +98,8 @@
   vertical-align: middle;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
 }
+
+/* Custom H2 Heading Color (Overriding theme green) */
+h2 {
+  color: #e5a900 !important; /* Rich, decisive Google-like yellow/gold */
+}
