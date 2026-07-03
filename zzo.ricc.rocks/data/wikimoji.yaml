@@ -44,5 +44,21 @@ targets:
     patterns:
       - "cloud.google.com"
       - "console.cloud.google.com"
+      - "cloudskillsboost.google"
+      - "skills.google"
     emoji: "☁️"
     description: "Google Cloud Platform"
+
+  - name: google
+    patterns:
+      - "google.com"
+      - "google.ch"
+      - "google.it"
+    svg_partial: "svgs/social/google.svg"
+    description: "Google links"
+
+  - name: sessionize
+    patterns:
+      - "sessionize.com"
+    emoji: "🗣️"
+    description: "Sessionize speaker profile"
