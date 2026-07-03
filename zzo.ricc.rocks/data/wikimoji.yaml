@@ -62,3 +62,10 @@ targets:
       - "sessionize.com"
     emoji: "🗣️"
     description: "Sessionize speaker profile"
+
+  - name: zurich
+    patterns:
+      - "stadt-zuerich.ch"
+      - "zuerich.ch"
+    svg_partial: "svgs/social/zurich.svg"
+    description: "Zurich / Switzerland official links"

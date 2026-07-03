@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="{{ .width }}" height="{{ .height }}">
+  <defs>
+    <clipPath id="shield">
+      <path d="M12,2 C12,2 22,3 22,11 C22,17 16,21.5 12,23 C8,21.5 2,17 2,11 C2,3 12,2 12,2 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shield)">
+    <!-- Blue bottom-left -->
+    <path fill="#0F47AF" d="M-2,-2 L-2,26 L26,26 Z"/>
+    <!-- White top-right -->
+    <path fill="#FFFFFF" d="M-2,-2 L26,-2 L26,26 Z"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M12,2 C12,2 22,3 22,11 C22,17 16,21.5 12,23 C8,21.5 2,17 2,11 C2,3 12,2 12,2 Z" fill="none" stroke="#A0A0A0" stroke-width="1.5"/>
+</svg>
