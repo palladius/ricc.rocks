@@ -2,7 +2,7 @@
 Harness: antigravity-cli
 Model: Gemini 3.5 Flash (Medium)
 Title: "Orchestrating with Antigravity: A Crescendo of Agents (Part 2)"
-date: 2026-06-16T12:00:00+02:00
+date: 2026-07-03T12:00:00+02:00
 draft: false
 User: ricc
 Host: derek.zrh.corp.google.com
@@ -43,9 +43,9 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 [Alexis](https://www.linkedin.com/in/alexismp/) said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI Agent<u>**s**</u>!
 
 
-If you read [Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
+If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-terminal-chaos.png" caption="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-terminal-chaos.png" caption="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
 
 <!--more-->
 
@@ -61,9 +61,8 @@ This article highlights how Git Worktrees solve workspace pollution and file col
 - Key Takeaways / Conclusion
 -->
 
-I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage the visual feedback loop of comparing my Flutter code with a 10x better, 20-second vibecoded JS prototype. It saved my sanity.
-
-But once you have a visual harness that works, the immediate developer question is: **how far can we scale this?**
+I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage my dozens of sessions. 
+But once you have a visual harness that works, the immediate developer question is: **how far can we scale this?** 
 
 ## Parallel Coding with Git Worktrees, Conductor++, and... "Agostina"
 
@@ -72,9 +71,9 @@ This concept of using a multi-agent harness to build apps in parallel was inspir
 
 If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation ([Project Benjamin](https://github.com/palladius/adk-sre-benjamin)) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
 
-> 💡 **Looking for Part 1?** Read [Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
+> 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
 ## The problem: scaling past the CLI
 
@@ -84,7 +83,7 @@ While opinionated CLI-first developer helpers like Garry Tan's [GBrain](https://
 
 Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog) is the best at this!
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
 
 This clean interface has it all:
 
@@ -126,7 +125,7 @@ Let's unpack this **prompt**. It contains:
 
 Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into *emergence* and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
 
 **What I find the most compelling is that here the agents are communicating over a Markdown artifact... the SPECS!**
 
@@ -174,7 +173,7 @@ While `condutree v1.0` is a solid foundation, it still has a few manual edges th
 *   **Streamlined Helpers**: Replace ad-hoc shell commands with a clean Python or Ruby helper script to handle weird worktree git states robustly.
 *   **`justfile` Integration**: Package this script under `conductor/bin/git-status-patched.sh` and expose it via a clean recipe (e.g., `just git-status-condutree`) so developers can view patched git status of active worktrees instantly.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
 
 ## Scaling Up: Conductor++ Multi-Worktree Multi-Agent Dev Flow
 
@@ -228,7 +227,7 @@ Running multiple AI agents coding in parallel on the exact same repository requi
 
 The orchestrator lifecycle is defined as follows:
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/agostina_graph.png" caption="Agent / Subagents Flow" alt="Agent / Subagents Flow" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/agostina_graph.png" caption="Agent / Subagents Flow" alt="Agent / Subagents Flow" position="center" >}}
 
 A critical aspect of this flow is that **the human operator never interacts directly with the subagents**. The subagents run in complete isolation inside their respective `git worktree`s. Instead, the human only communicates with the coordinator at two specific integration points:
 
@@ -256,7 +255,7 @@ The full 6-step lifecycle is structured as:
 <!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
 
 To prove that our Conductor++ Multi-Worktree pipeline works, I wanted to try it out on a REAL thing. I chose [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) as a test case. 
-In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) ! 
+In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [🪨 another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) ! 
 
 **Why** is this a good case? Because it contains a [good number of features](https://github.com/palladius/adk-sre-benjamin/issues?q=is:issue), which can be develeoped in parallel: frontend, backend, an LLM chat, a telegram chatbot, OpenTelemetry tracing, GCP discovery, ... it's basically a mess but a fun one to have!
 
@@ -360,23 +359,25 @@ Here is the terminal console output captured during initialization:
 ================================================================================
 ```
 
+As you can see `pinocchio` sub-agent is blocked waiting for HITL answer.
+
 ##### Wait, Riccardo, are GHI and Conductor tracks the same?
 
 Glad you've asked! I've asked Gemini to detect drift between Conductor and GitHub:
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-conductor-inspector-short-v1.png" caption="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." alt="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-conductor-inspector-short-v1.png" caption="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." alt="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." position="center" >}}
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-conductor-inspector-short-v2.png" caption="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." alt="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-conductor-inspector-short-v2.png" caption="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." alt="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." position="center" >}}
 
 
 #### Step 2: Parallel Worktree Isolations
 Each agent checked out its own branch and worked in isolation. The Amanuense scribe logged precise file edits and workspace activity without file conflicts.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
 
 Look how these beautiful sjub-agents work on Antigravity, this would make Richard so proud!
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Antigravity UI thread tracker showing active tracks in progress." alt="Antigravity UI thread tracker showing active tracks in progress." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Antigravity UI thread tracker showing active tracks in progress." alt="Antigravity UI thread tracker showing active tracks in progress." position="center" >}}
 
 #### Step 3: Interactive Polling & Human Steering
 When agents needed clarification, they posted issues that were parsed by `poll_ghi_questions.py`. 
@@ -387,7 +388,7 @@ To make this human-in-the-loop (HITL) steering truly mobile-friendly, we impleme
 
 The Telegram Sidecar Bridge is registered as an Antigravity background daemon. It enables parallel coding subagents and SRE coordinators (like Agostina) to send questions or approval requests directly to the developer's Telegram account, poll for the response, and resume execution once answered. 
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
 
 ###### The Sidecar Configuration (`sidecar.json`)
 The sidecar is registered in Antigravity using the following configuration:
@@ -410,12 +411,12 @@ The sidecar is registered in Antigravity using the following configuration:
 2.  **Race-Free Parallelism**: By keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`), multiple agents can ask questions concurrently without file lock contention.
 3.  **Audit Trail**: Every decision is stored locally in the Git repository as JSON state, providing 100% trace accountability.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Screenshot showcasing Human approvals and diagnostics feedback loop active." alt="Screenshot showcasing Human approvals and diagnostics feedback loop active." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Screenshot showcasing Human approvals and diagnostics feedback loop active." alt="Screenshot showcasing Human approvals and diagnostics feedback loop active." position="center" >}}
 
 #### Step 4: The Final Green State
 Once all feature branches were validation-checked and sequentially merged, Agostina created the Pull Request. The final audit output confirmed all 12 SRE tracks were fully merged into the production branch.
 
-{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
 
 Were they all 100% perfectly tested, also in their mutual interactions? Not so much; but this is for a third article.
 
