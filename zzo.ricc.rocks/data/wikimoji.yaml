@@ -75,3 +75,12 @@ targets:
       - "wikipedia.org"
     svg_partial: "svgs/social/wikipedia.svg"
     description: "Wikipedia links"
+
+  - name: blogs
+    patterns:
+      - "seroter.com"
+      - "substack.com"
+      - "glaforge.dev"
+      - "glaforge.appspot.com"
+    emoji: "✍️"
+    description: "Generic tech blogs (Seroter, Paul Datta, Guillaume Laforge)"
