@@ -45,7 +45,7 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 
 If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
-TODO(gmeini): an image of 6 destktops, each with 2 `agy` terminals and Apple stickies on top saying what they do, like "PRJ1 frontend" , "PRJ1 backend" , "PRJ1 testing", "PRJ2 New App", ..
+{{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/image-terminal-chaos.png" caption="6 macOS Desktops running agy terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="6 macOS Desktops running agy terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
 
 <!--more-->
 
