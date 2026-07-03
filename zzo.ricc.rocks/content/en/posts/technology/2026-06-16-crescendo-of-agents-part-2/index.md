@@ -67,7 +67,7 @@ But once you have a visual harness that works, the immediate developer question 
 
 This concept of using a multi-agent harness to build apps in parallel was inspired by Richard Seroter's recent article [One prompt, four subagents and ninety seconds to get a working app](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/), where he demonstrated spawning four parallel developer agents to construct a working application in under two minutes. I read Richard's piece when it came out but had to wait a bit before getting my hands on the new Antigravity 2.0 UI harness. Yesterday (June 16), I finally sat down to play with it, and this second article is what came out of that session.
 
-If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation (**Project Benjamin**) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
+If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation ([Project Benjamin](https://github.com/palladius/adk-sre-benjamin)) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
 
 {{< img src="/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
 
@@ -189,7 +189,7 @@ Juggling this loop—running the local JS mock, reviewing the automated integrat
 
 ## Scaling Up: Conductor++ Multi-Worktree Multi-Agent Dev Flow
 
-To see how far we could push this parallel execution model, we built **Project Benjamin**—a complex, real-world SRE automation and incident command simulator. We weren't just testing toy apps; we wanted to run a multi-agent system that could audit cloud environments and coordinate incidents across multiple isolated workspaces at the same time.
+To see how far we could push this parallel execution model, we built [Project Benjamin](https://github.com/palladius/adk-sre-benjamin)—a complex, real-world SRE automation and incident command simulator. We weren't just testing toy apps; we wanted to run a multi-agent system that could audit cloud environments and coordinate incidents across multiple isolated workspaces at the same time.
 
 Here is how we designed and optimized this parallel dev flow:
 
@@ -270,9 +270,9 @@ My **#1 lesson learnt** is: try to keep the conversation with a single agent, tr
 
 * Conductor is great at asking hard questions so that it can work by himself. This is why i love conductor! In other words: you answer all the questions between 09:30 and 10:00 and then go for a cycle ride, and at lunch you have an app; this is a smart alternative to a contiunuous interruption cycle of 30s question / 5m dev time.
 
-## Case Study 1: Project Benjamin (Full Multi-Agent Speed Run)
+## Case Study 1: [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) (Full Multi-Agent Speed Run)
 
-To prove that our Conductor++ Multi-Worktree pipeline works in real production environments, I wanted to try it out on a REAL thing. I chose **Project Benjamin** as a test case. 
+To prove that our Conductor++ Multi-Worktree pipeline works in real production environments, I wanted to try it out on a REAL thing. I chose [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) as a test case. 
 
 <!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
 In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [🪨 another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) !
