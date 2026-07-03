@@ -79,3 +79,22 @@
     }
   }
 }
+
+/* Wikimoji Link Icons styling */
+.wikimoji-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-top: -2px;
+  
+  svg {
+    fill: currentColor;
+    display: inline-block;
+  }
+}
+
+.wikimoji-emoji {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
