@@ -69,3 +69,9 @@ targets:
       - "zuerich.ch"
     svg_partial: "svgs/social/zurich.svg"
     description: "Zurich / Switzerland official links"
+
+  - name: wikipedia
+    patterns:
+      - "wikipedia.org"
+    svg_partial: "svgs/social/wikipedia.svg"
+    description: "Wikipedia links"
