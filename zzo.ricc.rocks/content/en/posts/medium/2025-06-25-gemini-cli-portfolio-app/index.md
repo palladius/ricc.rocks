@@ -121,7 +121,7 @@ I've found the error, but I have two small children and I know the difference be
 
 -   ♊ Now that the sqlite package is installed, I'll try running the import script again.
 -   ✔  Shell just import (Run the data import script.)
-    -   npx tsx scripts/[import-yaml.ts](import-yaml.ts)
+    -   npx tsx scripts/import-yaml.ts
     -   npm warn Unknown user config "always-auth"
     -   ✅ Data imported successfully!
 

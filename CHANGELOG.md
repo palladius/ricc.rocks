@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.4.1] - 2026-07-05
+
+### Fixed (by Gemini/Antigravity)
+- 🐛 Fixed Google Search indexing 404 bugs:
+  - Added Netlify redirect rules in `zzo.ricc.rocks/static/_redirects` to redirect old Redux posts, missing `index.json`, and deleted multilingual pages / tag queries.
+  - Corrected relative social links for `youtube` and `google-plus` in `params.yaml` to avoid relative link generation.
+  - Cleaned up broken relative markdown links in blog posts (`GEMINI.md` and `import-yaml.ts`).
+
 ## [0.4.0] - 2026-07-03
 
 ### ✨ Added (by Gemini/Antigravity)

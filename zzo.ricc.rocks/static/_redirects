@@ -1,0 +1,58 @@
+# Redirects for ricc.rocks Google Indexing fixes
+
+# ----------------------------------------------------
+# 1. SPECIFIC REDIRECTS (Redux posts & index.json)
+# ----------------------------------------------------
+/en/posts/medium/2026-02-04-gemini-cli-sre-build-redux/    /en/posts/medium/2026-01-14-how-antigravity-saved-my-netlify-build/    301
+/en/posts/medium/2026-02-04-rails-8-cfp-app-redux/        /en/posts/technology/2026-01-22-rails-8-cfp-app-in-30m/                 301
+
+/index.json                                               /en/index.json                                                          301
+
+# Redirect specific translation/content mismatches
+/en/posts/travel/202211-raja-ampat/                       /en/posts/medium/2022-10-01-raja-ampat/                                 301
+
+# ----------------------------------------------------
+# 2. GENERAL WILDCARD FALLBACKS (Only triggered if file doesn't exist)
+# ----------------------------------------------------
+
+# Tags Fallbacks
+/de/tags/:tag             /de/tags/              301
+/it/tags/:tag             /it/tags/              301
+/fr/tags/:tag             /fr/tags/              301
+/jp/tags/:tag             /jp/tags/              301
+/en/tags/:tag             /en/tags/              301
+
+# Categories Fallbacks
+/de/categories/:cat       /de/categories/        301
+/it/categories/:cat       /it/categories/        301
+/fr/categories/:cat       /fr/categories/        301
+/jp/categories/:cat       /jp/categories/        301
+/en/categories/:cat       /en/categories/        301
+
+# Series Fallbacks
+/de/series/:ser           /de/series/            301
+/it/series/:ser           /it/series/            301
+/fr/series/:ser           /fr/series/            301
+/jp/series/:ser           /jp/series/            301
+/en/series/:ser           /en/series/            301
+
+# Pagination Fallbacks
+/de/page/:page            /de/                   301
+/it/page/:page            /it/                   301
+/fr/page/:page            /fr/                   301
+/jp/page/:page            /jp/                   301
+/en/page/:page            /en/                   301
+
+# Posts Fallbacks
+/de/posts/:p              /de/                   301
+/it/posts/:p              /it/                   301
+/fr/posts/:p              /fr/                   301
+/jp/posts/:p              /jp/                   301
+/en/posts/:p              /en/posts/             301
+
+# Gallery Fallbacks
+/de/gallery/:g            /de/                   301
+/it/gallery/:g            /it/gallery/           301
+/fr/gallery/:g            /fr/                   301
+/jp/gallery/:g            /jp/                   301
+/en/gallery/:g            /en/gallery/           301
