@@ -63,27 +63,11 @@ This article highlights how Git Worktrees solve workspace pollution and file col
 - Key Takeaways / Conclusion
 -->
 
-I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage my dozens of sessions. 
-But once you have a visual harness that works, the immediate developer question is: **how far can we scale this?** 
+This concept of using a multi-agent harness to build apps in parallel was inspired by Richard Seroter's recent article [One prompt, four subagents and ninety seconds to get a working app](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/), where he demonstrated spawning four parallel developer agents to construct a working application in under two minutes. 
 
-## Parallel Coding with Git Worktrees, Conductor++, and.. Agostina!
+While opinionated CLI-first developer helpers like Garry Tan's [GBrain](https://github.com/garrytan/gbrain) are fantastic for single-threaded tasks, managing multiple concurrent agent streams in a standard terminal is a recipe for cognitive overload. Juggling parallel branches, checkouts, and coordinator-to-subagent feedback loops in a flat scrollback buffer simply does not scale cognitively.
 
-
-This concept of using a multi-agent harness to build apps in parallel was inspired by Richard Seroter's recent article [One prompt, four subagents and ninety seconds to get a working app](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/), where he demonstrated spawning four parallel developer agents to construct a working application in under two minutes. I read Richard's piece when it came out but had to wait a bit before getting my hands on the new Antigravity 2.0 UI harness. Yesterday (June 16), I finally sat down to play with it, and this second article is what came out of that session.
-
-If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation ([Project Benjamin](https://github.com/palladius/adk-sre-benjamin)) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
-
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
-
-> 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
-
-## The problem: scaling past the CLI
-
-When you scale from a soloist agent to a crescendo of parallel agents—where a coordinator agent spawns subagents, manages branch checkouts, and handles human-in-the-loop approval requests—the CLI simply stops scaling cognitively. You can't track it all in a flat scrollback buffer. 
-
-While opinionated CLI-first developer helpers like Garry Tan's [GBrain](https://github.com/garrytan/gbrain) are fantastic for single-threaded tasks, managing multiple concurrent agent streams in a standard terminal is a recipe for cognitive overload.
-
-Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog) is the best at this!
+So, I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage my concurrent sessions. 
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
 
@@ -96,7 +80,17 @@ This clean interface has it all:
     * 🧵 Add documentation to `doc/PRD.md`
     * 🧵 Add security tests after later omg/1234.
 
-As you can see, all your unrelated work is nicely grouped by project (basically, a 📁 folder) and then all threads are aligned there, sorted by the most recent one you worked on (and yes, you can ARCHIVE them, otherwise they'll survive my wife's sadistic reboot). More importantly, now we don't need *stickies* anymore!
+As you can see, all your unrelated work is nicely grouped by project (basically, a 📁 folder) and then all threads are aligned there, sorted by the most recent one you worked on (and yes, you can ARCHIVE them, otherwise they'll survive my wife's sadistic reboot). More importantly, now we don't need physical *stickies* stuck to the monitor anymore!
+
+But once you have a visual harness that works, the immediate developer question is: **how far can we scale this?**
+
+## Parallel coding with git worktrees, Conductor++, and.. Agostina!
+
+If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation ([Project Benjamin](https://github.com/palladius/adk-sre-benjamin)) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
+
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
+
+> 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
 ## When it hit me
 
@@ -142,7 +136,7 @@ In the past few months, all I wanted to do was **GitHub Issue (GHI)-triggered mu
   * If you have N agents pushing Pull Requests to remote branches, it makes sense to have a "Git concierge" to resolve the code to main. He should be configured to have a more conservative approach to the repo. While agent X wants to implement feature X as instructed, this Concierge will be [unfazeable](https://gurps.fandom.com/wiki/Unfazeable) as a British Alfred (turns out only GURPS players know what this means) and act as a 'last defense' for your repo consistency (maybe the code is great, but forgot to run tests, or to update the CHANGELOG... nothing's better than a fresh context window to catch these errors).
 
 
-### 🛠️ Conductor++ Stack: the "condutree" Skill
+### 🛠️ Conductor++ stack: the "condutree" skill
 
 To make this entire multi-agent git-worktree workflow reusable for any codebase, I packaged these exact rules and automations into an open-source agent skill called [**`conductor-worktree-hitl`**](https://github.com/palladius/gemini-cli-custom-commands/tree/main/skills/conductor-worktree-hitl) (or `condutree` for close friends).
 
@@ -170,22 +164,17 @@ Equipping your Antigravity coordinator and subagents with this skill teaches the
 3.  **HITL Polling**: The dual reentrant protocol for posting issue comments, reading local registries, and polling answers without exhausting API quota limit ranges.
 4.  **Local Commits & Notes**: Standardizing local branch commits and signing off details via Git Notes without direct remote pushes.
 
-#### ⚠️ v1.0 Limitations & Looking Ahead to v2.0
-
-While `condutree v1.0` is a solid foundation, it still has a few manual edges that we plan to streamline in `v2.0`:
-*   **Automatic Symlinking**: Fully automate the symlinking of `.env` configurations and shared runtime files alongside the main `conductor/` folder.
-*   **Streamlined Helpers**: Replace ad-hoc shell commands with a clean Python or Ruby helper script to handle weird worktree git states robustly.
-*   **`justfile` Integration**: Package this script under `conductor/bin/git-status-patched.sh` and expose it via a clean recipe (e.g., `just git-status-condutree`) so developers can view patched git status of active worktrees instantly.
+While `condutree v1.0` provides a solid foundation, we're already planning `v2.0` enhancements (including automated configuration symlinking and richer helper scripts). Check the [repository roadmap](https://github.com/palladius/gemini-cli-custom-commands/tree/main/skills/conductor-worktree-hitl) for the latest updates.
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
 
-## Scaling Up: Conductor++ Multi-Worktree Multi-Agent Dev Flow
+## Scaling up: Conductor++ multi-worktree multi-agent dev flow
 
 To see how far we could push this parallel execution model, we built [Project Benjamin](https://github.com/palladius/adk-sre-benjamin)—a complex, real-world SRE automation and incident command simulator. We weren't just testing toy apps; we wanted to run a multi-agent system that could audit cloud environments and coordinate incidents across multiple isolated workspaces at the same time.
 
 Here is how we designed and optimized this parallel dev flow:
 
-### 1. The Preparation
+### 1. The preparation
 
 Before we could run this without file collisions and merge chaos, we had to solve some tricky git hygiene and naming issues:
 
@@ -195,7 +184,7 @@ Before we could run this without file collisions and merge chaos, we had to solv
 
 *   **The *Amanuense* Scribe Agent**: To maintain a high-resolution, real-time chronicle of all parallel development events, we introduced a dedicated scribe agent called **Amanuense**. Amanuense continually logs directory creation, code changes, and agent interactions with precise timestamps, outputting them to a central audit file so developers can audit exactly who did what, when, and in which worktree. *Naming*: [Amanuensis](https://en.wikipedia.org/wiki/Amanuensis) is Latin for scribe and it was created for two main reasons (1) Check the smarts in aubs-agent syncrhonization with other agents. and (2) get the timestamps and logs to write this article factually.
 
-### 2. The Logic: Parallelism Without the Chaos
+### 2. The logic: parallelism without the chaos
 
 Running multiple AI agents coding in parallel on the exact same repository requires strict isolation and a race-free way to communicate.
 
@@ -230,7 +219,7 @@ And here is a cleaner, more minimalistic version of the same workflow, illustrat
 
 *   **Conceptual Incompatibility & Subagent Termination**: Parallel execution can also lead to conceptual conflicts or logical incompatibilities between two tracks (e.g., track A implements a feature that track B refactors in an incompatible way). If Agostina detects such irregularities, she is authorized to immediately terminate one of the conflicting subagents. The cancellation must be documented directly on the GHI (GitHub Issue) for the terminated agent's task, and the issue must be blocked/linked against the other active agent's GHI to preserve clear decision ancestry. Note: This happened once. :)
 
-### 3. The Execution: Orchestration Lifecycle
+### 3. The execution: orchestration lifecycle
 
 The orchestrator lifecycle is defined as follows:
 
@@ -250,14 +239,23 @@ The full 6-step lifecycle is structured as:
 
 **Note**. The question answering is highly experimental. I've tried 3 ways to implement it:
 
-1. **Telegram sidecar** (openclaw's style). While I was able to make it work a few times (and generated smart custom buttons! ), it wasn't reliable enough.
+1. **Telegram Sidecar Bridge** (openclaw's style):
+   The Telegram Sidecar Bridge runs as an Antigravity background daemon, routing questions or database mutation approvals directly to the developer's mobile Telegram bot and polling for response states.
+   
+   {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
+   
+   *Key benefits of this approach:*
+   * **Mobile-First HITL**: Answer questions or approve database mutations from your phone on the go.
+   * **Race-Free Parallelism**: Keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`) avoids file lock contention.
+   * **Audit Trail**: Every decision is stored locally in the Git repository as JSON state for accountability.
+
 2. **GH Issue** answering (Jules / `@gemini` CLI style).
 3. By talking to main agent via `questions.json`. While this is the simplest, I wasn't able to be automagically unblocked - had to trigger it myself. So I discarded this approach but I'm sure this can be solved via [hooks](https://antigravity.google/docs/hooks) or in future releases.
 
 
 
 
-## Case Study: [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) (SRE on ADK steroids)
+## Case study: [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) (SRE on ADK steroids)
 
 <!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
 
@@ -276,39 +274,18 @@ The scope of implementation was massive: from setting up OpenTelemetry (`OTEL`, 
 
 Here are the operational facts and results of this live execution:
 
-### 🚦 Integration & Merge Results
+### 🚦 Integration & merge results
 
 Using our parallel Git Worktree orchestration, all feature tracks were developed, tested, and fully integrated into the `main` branch. Below is the final status audit of the SRE features:
 
-| Issue # & Feature | Conductor Track ID | Merge Status in `main` |
+| Issue # | Conductor Track ID & Operational Value | Merge Status in `main` |
 | :--- | :--- | :--- |
-| **[#1](https://github.com/palladius/adk-sre-benjamin/issues/1): ADK Observability + Cloud Run** | `adk_observability_cloud_run_20260603` | **Merged** |
-| **[#5](https://github.com/palladius/adk-sre-benjamin/issues/5): Incident Status Taxonomy** | `incident_status_taxonomy_20260603` | **Merged** |
-| **[#6](https://github.com/palladius/adk-sre-benjamin/issues/6): Incident Deletion & Archival** | `incident_delete_archive_20260603` | **Merged** |
-| **[#7](https://github.com/palladius/adk-sre-benjamin/issues/7): Wiki Project Cross-linking** | `wiki_cross_linking_20260603` | **Merged** |
-| **[#8](https://github.com/palladius/adk-sre-benjamin/issues/8): Multi-env State Management** | `multi_env_state_management_20260616` | **Merged** |
-| **[#9](https://github.com/palladius/adk-sre-benjamin/issues/9): Graduate State to Cloud** | `graduate_local_state_cloud_20260604` | **Merged** |
-| **[#10](https://github.com/palladius/adk-sre-benjamin/issues/10): Responsive Wiki UI** | `better_wiki_edit_ui_20260604` | **Merged** |
-| **[#18](https://github.com/palladius/adk-sre-benjamin/issues/18): Discord Incident War-Rooms** | `unified_incident_lifecycle o11y_20260607` | **Merged** |
-| **[#26](https://github.com/palladius/adk-sre-benjamin/issues/26): GCP Asset Crawlers** | `gcp_resource_discovery_20260601` | **Merged** |
-| **[#27](https://github.com/palladius/adk-sre-benjamin/issues/27): Live GCP Connectors** | `live_gcp_connectors_20260601` | **Merged** |
-| **[#28](https://github.com/palladius/adk-sre-benjamin/issues/28): Pending Mutations Queue** | `pending_mutations_registry_20260602` | **Merged** |
-| **[#29](https://github.com/palladius/adk-sre-benjamin/issues/29): Telegram Incident Wizard** | `telegram_incident_creation_20260603` | **Merged** |
+| [#1](https://github.com/palladius/adk-sre-benjamin/issues/1) | `adk_observability_cloud_run_20260603`<br><small>Dockerization of the SRE dashboard and built-in **OpenTelemetry (OTEL) tracing** for all inter-agent communication flows.</small> | **Merged** |
+| [#18](https://github.com/palladius/adk-sre-benjamin/issues/18) | `unified_incident_lifecycle o11y_20260607`<br><small>Dynamic creation of Discord war-room text channels, with **remote human steering** via `@mention` routing to SRE agents.</small> | **Merged** |
+| [#26](https://github.com/palladius/adk-sre-benjamin/issues/26) | `gcp_resource_discovery_20260601`<br><small>Resource crawlers for GKE, VPC, GCE VMs, GCS, SQL, and Cloud Run to build the SRE knowledge index.</small> | **Merged** |
+| [#29](https://github.com/palladius/adk-sre-benjamin/issues/29) | `telegram_incident_creation_20260603`<br><small>An interactive Telegram chatbot wizard with project selection and voice-note/STT diagnostics transcription.</small> | **Merged** |
 
-#### 💡 Key Operational Value of Features
-
-*   **[#1](https://github.com/palladius/adk-sre-benjamin/issues/1): ADK Observability + Cloud Run**: Dockerization of SRE dashboard and built-in **OpenTelemetry (OTEL) tracing** for all inter-agent communication flows.
-*   **[#5](https://github.com/palladius/adk-sre-benjamin/issues/5): Incident Status Taxonomy**: Establishes a strict IMAG-compliant lifecycle taxonomy (Open, In Investigation, Mitigated, Resolved).
-*   **[#6](https://github.com/palladius/adk-sre-benjamin/issues/6): Incident Deletion & Archival**: Prevents data loss by replacing raw delete buttons with a safe incident archiving mechanism.
-*   **[#7](https://github.com/palladius/adk-sre-benjamin/issues/7): Wiki Project Cross-linking**: Parses wiki markdown to dynamically cross-link GCP project references and network topologies.
-*   **[#8](https://github.com/palladius/adk-sre-benjamin/issues/8): Multi-env State Management**: Rails-style environment folders (`prod`, `dev`, `test`) to isolate incident states.
-*   **[#9](https://github.com/palladius/adk-sre-benjamin/issues/9): Graduate State to Cloud**: Seamless cloud-sql state integration with local sqlite fallback to support multi-homed runs.
-*   **[#10](https://github.com/palladius/adk-sre-benjamin/issues/10): Responsive Wiki UI**: Hides lateral incident/chat columns during wiki editing to maximize workspace view.
-*   **[#18](https://github.com/palladius/adk-sre-benjamin/issues/18): Discord Incident War-Rooms**: Dynamic creation of Discord war-room text channels, with **remote human steering** via `@mention` routing to SRE agents.
-*   **[#26](https://github.com/palladius/adk-sre-benjamin/issues/26): GCP Asset Crawlers**: Resource crawlers for GKE, VPC, GCE VMs, GCS, SQL, and Cloud Run to build SRE knowledge index.
-*   **[#27](https://github.com/palladius/adk-sre-benjamin/issues/27): Live GCP Connectors**: Direct shell SSH mutation capabilities and diagnostics API mappings.
-*   **[#28](https://github.com/palladius/adk-sre-benjamin/issues/28): Pending Mutations Queue**: Safety registry queuing hazardous actions for explicit confirmation, with operator feedback to agents.
-*   **[#29](https://github.com/palladius/adk-sre-benjamin/issues/29): Telegram Incident Wizard**: An interactive Telegram chatbot wizard with project selection and voice-note/STT diagnostics transcription.
+*Note: The remaining 8 operational tracks were also successfully integrated: [#5: Incident Status Taxonomy](https://github.com/palladius/adk-sre-benjamin/issues/5), [#6: Incident Deletion & Archival](https://github.com/palladius/adk-sre-benjamin/issues/6), [#7: Wiki Project Cross-linking](https://github.com/palladius/adk-sre-benjamin/issues/7), [#8: Multi-env State Management](https://github.com/palladius/adk-sre-benjamin/issues/8), [#9: Graduate State to Cloud](https://github.com/palladius/adk-sre-benjamin/issues/9), [#10: Responsive Wiki UI](https://github.com/palladius/adk-sre-benjamin/issues/10), [#27: Live GCP Connectors](https://github.com/palladius/adk-sre-benjamin/issues/27), and [#28: Pending Mutations](https://github.com/palladius/adk-sre-benjamin/issues/28). See the full [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) repository for the complete audit log.*
 
 Two weeks later, this is how Conductor looks like:
 
@@ -332,12 +309,12 @@ TOTAL       |            |  0/86 |       |            |             | 0 complete
 
 ---
 
-### 📸 The Workflow Timeline (Visual Audit)
+### 📸 The workflow timeline (visual audit)
 
 Here is the step-by-step progression of the SRE Benjamin run, showing how the coordinator, scribe, and parallel subagents worked without stepping on each other's toes:
 
-#### Step 1: Initializing SRE Tracks & Worktrees
-The parent coordinator initialized the workspaces on the host machine. The Conductor inspector CLI tracked active tracks and assigned subagents (e.g. `grazia` for Discord war-rooms, `pinocchio` for pending mutations queue).
+#### Step 1: Initializing SRE tracks & worktrees
+The parent coordinator initialized the workspaces on the host machine. The Conductor inspector CLI tracked active tracks and assigned subagents (e.g. `grazia` for Discord war-rooms, `pinocchio` for pending mutations).
 
 To monitor the active tracks, branches, and agent statuses across all parallel workspaces, we run the Conductor Inspector CLI tool:
 ```bash
@@ -377,7 +354,7 @@ Glad you've asked! I've asked Gemini to detect drift between Conductor and GitHu
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-conductor-inspector-short-v2.png" caption="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." alt="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." position="center" >}}
 
 
-#### Step 2: Parallel Worktree Isolations
+#### Step 2: Parallel worktree isolations
 Each agent checked out its own branch and worked in isolation. The Amanuense scribe logged precise file edits and workspace activity without file conflicts.
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
@@ -386,56 +363,35 @@ Look how these beautiful sub-agents work on Antigravity, this would make Richard
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-12-07-11.png" caption="Antigravity UI thread tracker showing active tracks in progress." alt="Antigravity UI thread tracker showing active tracks in progress." position="center" >}}
 
-#### Step 3: Interactive Polling & Human Steering
+#### Step 3: Interactive polling & human steering
 When agents needed clarification, they posted issues that were parsed by `poll_ghi_questions.py`. 
 
-To make this human-in-the-loop (HITL) steering truly mobile-friendly, we implemented a **Telegram Sidecar Bridge**. Instead of requiring the operator to sit at their computer and refresh GitHub, the bridge routes questions directly to their phone.
-
-##### 🤖 Deep Dive: The Telegram Sidecar Bridge
-
-The Telegram Sidecar Bridge is registered as an Antigravity background daemon. It enables parallel coding subagents and SRE coordinators (like Agostina) to send questions or approval requests directly to the developer's Telegram account, poll for the response, and resume execution once answered. 
-
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
-
-###### The Sidecar Configuration (`sidecar.json`)
-The sidecar is registered in Antigravity using the following configuration:
-
-```json
-{
-  "command": "python3",
-  "args": ["sidecar.py"],
-  "restart_policy": "always",
-  "description": "Bridges local agent question-watcher events to/from Telegram.",
-  "env": {
-    "TELEGRAM_BOT_TOKEN": "YOUR_TELEGRAM_BOT_TOKEN",
-    "TELEGRAM_CHAT_ID": "YOUR_TELEGRAM_CHAT_ID"
-  }
-}
-```
-
-###### Key Benefits
-1.  **Mobile-First HITL**: You can approve risky mutations or answer coding design questions (e.g., *"Should we use SQLite or Postgres?"*) from your phone while on the go.
-2.  **Race-Free Parallelism**: By keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`), multiple agents can ask questions concurrently without file lock contention.
-3.  **Audit Trail**: Every decision is stored locally in the Git repository as JSON state, providing 100% trace accountability.
+To make this human-in-the-loop (HITL) steering truly mobile-friendly, we routed these questions through the **Telegram Sidecar Bridge** (detailed in Section 2 above). Instead of requiring the operator to sit at their computer and refresh GitHub, the bridge routed questions directly to their phone, allowing for rapid, mobile-first approvals on the go.
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-12-07-11.png" caption="Screenshot showcasing Human approvals and diagnostics feedback loop active." alt="Screenshot showcasing Human approvals and diagnostics feedback loop active." position="center" >}}
 
-#### Step 4: The Final Green State
+#### Step 4: The final green state
 Once all feature branches were validation-checked and sequentially merged, Agostina created the Pull Request. The final audit output confirmed all 12 SRE tracks were fully merged into the production branch.
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
 
 Were they all 100% perfectly tested, also in their mutual interactions? Not so much; but this is for a third article.
 
-## Lessons Learnt & Key Takeaways
+You want a more 1980s Space-invaders-like visualization? Here you are:
+
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/adk-sre-benjamin-multitrack-space-invaders.png" caption="Space-invaders view of ADK SRE Benjamin repo" alt="Space-invaders view of ADK SRE Benjamin repo" position="center" >}}
+
+## Lessons learned & key takeaways
 
 My **#1 lesson learnt** is: try to keep the conversation with a single agent, and delegate only simple, pre-determined tasks to sub-agents that require no interaction. Two key practices for this: 
 
 *   **Minimize agent/human wait-time**: Using `/roastme` is great to ask hard questions upfront so the agent can go unimpeded. **Conductor** is excellent at gathering questions offline. Instead of a continuous interruption cycle of 30-second questions every 5 minutes, you answer all questions in a single 30-minute block, go for a cycle ride, and return to a finished app.
-*   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
-* **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing is the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The **Orchestration Tax** is real, and you can be ahead of the curve or be trampled by it, like myself most days.
 
-![Roastme in Conductor](images/2jul roastme on conductor.png)
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/2jul-roastme-on-conductor.png" caption="Roastme in Conductor" alt="Roastme in Conductor" position="center" >}}
+
+*   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
+* **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing/accepting are the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The **Orchestration Tax** is real, and you can be ahead of the curve or be trampled by it, like myself most days.
+
 
 <!-- 
 ---
