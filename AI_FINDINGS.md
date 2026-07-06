@@ -72,3 +72,14 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
 - SCSS Styles: [custom.scss](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/assets/sass/custom.scss)
 - Cleaned up manual emojis from articles to rely on the new hook.
 - Bumped version to `0.4.0`.
+
+## Google Search Indexing 404 Fixes (2026-07-05)
+**FIXED**: Google Search Console reported 10 (and up to 130+) "Not Found (404)" indexing errors.
+- **Root Causes**:
+  1. Broken relative social links in `params.yaml` (`youtube` and `google-plus` usernames resolved relative to the current page, e.g. `/en/tags/blog/palladiusbonton`).
+  2. Deleted "Redux" versions of Medium posts and missing root `/index.json` (due to `defaultContentLanguageInSubdir`).
+  3. Broken relative markdown links to local files in posts (e.g. `GEMINI.md` and `import-yaml.ts`).
+- **Fixes Applied**:
+  - Changed `google-plus` to `''` and `youtube` to absolute URL `https://www.youtube.com/palladiusbonton` in `params.yaml`.
+  - Created `zzo.ricc.rocks/static/_redirects` with specific redirects for Redux posts, `/index.json`, and wildcard redirect patterns to map missing taxonomies/posts/gallery paths to safe parent listing pages.
+  - Replaced broken relative links in markdown posts with code formatting.

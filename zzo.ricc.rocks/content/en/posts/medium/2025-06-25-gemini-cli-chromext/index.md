@@ -178,7 +178,7 @@ If you want to browse more MCP servers, you can try
 
 On an instance, I've found that the model would make mistakes and "hallucinate"
 events/talks I've never been to. I've just added one line to
-[GEMINI.md](GEMINI.md) to check with me for every event he'd add and look:
+`GEMINI.md` to check with me for every event he'd add and look:
 
 ![image](250603b4220753--p9ge40rpswi.png)
 
@@ -187,7 +187,7 @@ Now this kind of error won't happen again!
 ## Ok Riccardo, I buy. But what is it good for?
 
 I believe the sky is the limit 🩵 . I've been using gemini-cli with
-`[GEMINI.md](GEMINI.md)` to automate a number of different jobs. For instance:
+`GEMINI.md` to automate a number of different jobs. For instance:
 
 1. **Long-standing background job.** Use a mix of `git log` for "historical
     git blame" to get the timestamp of when I added each line of an array of
@@ -231,9 +231,9 @@ in the CLI output, not in the browser!.
 
 ![image](250603b4220753--entfjgvrdqs.png)
 
--  **Declarative** vs **imperative** [GEMINI.md](GEMINI.md) (weekend
+-  **Declarative** vs **imperative** `GEMINI.md` (weekend
     lessons). This weekend I found something weird happened: my
-    `[GEMINI.md](GEMINI.md)` contained instructions to create function a and b.
+    `GEMINI.md` contained instructions to create function a and b.
     But after that, my codebase grew to also have function c. When I restarted
     the session and told Gemini CLI to fix my code, it read the instructions,
     and proposed a change to remove function `c`. I was puzzled! But it made
