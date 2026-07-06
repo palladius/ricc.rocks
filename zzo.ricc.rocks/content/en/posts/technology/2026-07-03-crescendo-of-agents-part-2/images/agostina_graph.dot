@@ -1,0 +1,101 @@
+digraph G {
+    fontname="sans-serif";
+    penwidth=1.5;
+    compound=true;
+    
+    // Graph Title
+    label="Agent / Subagents flow";
+    labelloc="t";
+    fontsize=14;
+    fontname="sans-serif-bold";
+    
+    // Global styles
+    node [shape=box, style="rounded,filled", fontname="sans-serif", fontsize=11, fillcolor="#f5f5f5", color="#9e9e9e"];
+    edge [fontname="sans-serif", fontsize=10];
+
+    // --- HUMAN OPERATOR ---
+    Human [label="Human 👨‍💻", shape=ellipse, fillcolor="#ffe082", color="#ffa000"];
+
+    subgraph cluster_agostina {
+        label="Agostina 👩‍✈️\n🌿 #main";
+        labeljust="l";
+        labelloc="t";
+        style="filled,rounded";
+        color="#039be5";
+        fillcolor="#fafafa"; // neutral light gray (pseudo-white)
+        fontname="sans-serif-bold";
+
+        // --- TOP: Setup Sequence (Orchestrator Start) ---
+        A_Launch  [label="1. Launch", fillcolor="#e1f5fe", color="#039be5"];
+        A_Status  [label="2. Read GHI / Conductor Status", fillcolor="#e1f5fe", color="#039be5"];
+        A_Setup   [label="3. Provision Subagents/Worktrees", fillcolor="#e1f5fe", color="#039be5"];
+        
+        A_Launch -> A_Status -> A_Setup;
+
+        // --- MIDDLE LAYER ---
+        // Mario (Left)
+        subgraph cluster_mario {
+            label = "Mario sub-agent 1\n📂 .worktrees/mario-feature-1/";
+            style = "filled,rounded";
+            color = "#e53935";
+            fillcolor = "#ffebee11";
+            fontname = "sans-serif-bold";
+            
+            M_Code [label="Code"];
+            M_Test [label="Test"];
+            M_PR   [label="Create PR", fillcolor="#b3e5fc", color="#0288d1"];
+            
+            M_Code -> M_Test -> M_PR;
+        }
+
+        // Luigi (Right)
+        subgraph cluster_luigi {
+            label = "Luigi sub-agent 2\n📂 .worktrees/luigi-bug-2/";
+            style = "filled,rounded";
+            color = "#43a047";
+            fillcolor = "#e8f5e911";
+            fontname = "sans-serif-bold";
+            
+            L_Code [label="Code"];
+            L_Test [label="Test"];
+            L_Ask  [label="Ask Question (Blocked)\n📂 conductor/track2/questions.json", fillcolor="#ffe082", color="#ffa000"];
+            L_PR   [label="Create PR", fillcolor="#b3e5fc", color="#0288d1"];
+            
+            L_Code -> L_Ask [label="blocked"];
+            L_Code -> L_Test -> L_PR;
+        }
+
+        // --- RIGHT: HITL Watcher (aligned with Luigi's block) ---
+        A_HITL    [label="4. HITL Question Watcher", fillcolor="#fff9c4", color="#fbc02d"];
+
+        // --- BOTTOM: Integration ---
+        A_Cleanup [label="5. Cleanup Worktrees", fillcolor="#e1f5fe", color="#039be5"];
+        A_Merge   [label="6. Merge PR to main", fillcolor="#c8e6c9", color="#388e3c"];
+        
+        // Align them vertically and create the feedback loop
+        A_Cleanup -> A_Merge;
+    }
+
+    // Connectors outside or across cluster boundaries
+    Human -> A_Launch [label="triggers"];
+    A_Merge -> A_Cleanup [style=dashed, color="#388e3c", constraint=false, label="loop"];
+
+    // Flows: Spawning
+    A_Setup -> M_Code [style=dashed, label="spawn"];
+    A_Setup -> L_Code [style=dashed, label="spawn"];
+
+    // Luigi HITL Loop
+    L_Ask -> A_HITL [style=dotted, color="#43a047", label="notifies"];
+    A_HITL -> L_Code [style=dashed, color="#039be5", label="unblocks"];
+
+    // Human Interaction with HITL Watcher
+    A_HITL -> Human [dir=both, style=dashed, color="#ffa000", constraint=false, label="answers\nquestions"];
+
+    // Human Review points
+    Human -> A_Status [style=dashed, color="#039be5", constraint=false, label="👁️ reviews"];
+    Human -> A_Merge [style=dashed, color="#039be5", constraint=false, label="👁️ reviews"];
+
+    // Merging pipeline
+    M_PR -> A_Cleanup [color="#e53935", label="submit"];
+    L_PR -> A_Cleanup [color="#43a047", label="submit"];
+}

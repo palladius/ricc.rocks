@@ -150,6 +150,85 @@ def check_post_compliance(file_path)
   errors
 end
 
+def verify_wikimojis(file_path, site_root, wikimoji_config)
+  errors = []
+  return errors unless wikimoji_config && wikimoji_config['enabled']
+
+  content = File.read(file_path)
+  links = []
+  content.scan(/\[([^\]]+)\]\(([^)]+)\)/) do |text, url|
+    links << { text: text, url: url.strip }
+  end
+
+  return errors if links.empty?
+
+  relative_path = file_path.sub(File.join(site_root, "content") + "/", "")
+  html_relative = relative_path.sub(/\.md$/, "/index.html").gsub(/\/index\/index.html$/, "/index.html")
+  if relative_path.end_with?("index.md")
+    html_relative = relative_path.sub(/index\.md$/, "index.html")
+  end
+  
+  html_path = File.join(site_root, "public", html_relative)
+
+  unless File.exist?(html_path)
+    return errors
+  end
+
+  html_content = File.read(html_path)
+
+  links.each do |link|
+    url = link[:url]
+    text = link[:text]
+    plain_text = text.gsub(/<[^>]*>/, '')
+
+    matched_target = nil
+    wikimoji_config['targets'].each do |target|
+      next if matched_target
+      has_pattern = target['patterns'].any? do |pattern|
+        begin
+          Regexp.new(pattern).match?(url)
+        rescue
+          url.include?(pattern)
+        end
+      end
+      matched_target = target if has_pattern
+    end
+
+    next unless matched_target
+
+    emoji = matched_target['emoji']
+    svg_partial = matched_target['svg_partial']
+
+    should_prepend = true
+    if emoji && plain_text.start_with?(emoji)
+      should_prepend = false
+    end
+    if plain_text.empty? || text =~ /\A<(img|picture|svg|iframe)/i
+      should_prepend = false
+    end
+
+    next unless should_prepend
+
+    url_path = URI.parse(url).path rescue url
+    url_path = url if url_path.nil? || url_path.empty?
+    escaped_url_path = Regexp.escape(url_path)
+
+    if emoji
+      pattern = /class="wikimoji-emoji"[^>]*>\s*#{Regexp.escape(emoji)}\s*<\/span>&nbsp;<a\s+[^>]*href=["'][^"']*#{escaped_url_path}[^"']*["']/
+      unless html_content =~ pattern
+        errors << "Wikimoji Violation: Link to '#{url}' ('#{text}') is missing the expected emoji '#{emoji}' in the built HTML."
+      end
+    elsif svg_partial
+      pattern = /class="wikimoji-icon-wrapper"[^>]*>\s*<svg[^>]*>.*?<\/svg>\s*<\/span>&nbsp;<a\s+[^>]*href=["'][^"']*#{escaped_url_path}[^"']*["']/m
+      unless html_content =~ pattern
+        errors << "Wikimoji Violation: Link to '#{url}' ('#{text}') is missing the expected SVG icon '#{svg_partial}' in the built HTML."
+      end
+    end
+  end
+
+  errors
+end
+
 # Resolve files to test
 if ARGV.empty?
   site_root  = File.expand_path("..", __dir__)   # zzo.ricc.rocks/
@@ -190,10 +269,34 @@ else
   puts "Running compliance tests on #{md_files.count} specified post(s)..."
 end
 
+# Load Wikimoji config
+wikimoji_config = nil
+wikimoji_file = File.join(File.expand_path("..", __dir__), "data/wikimoji.yaml")
+if File.exist?(wikimoji_file)
+  begin
+    wikimoji_config = YAML.load_file(wikimoji_file)
+  rescue => e
+    puts "Warning: Failed to load wikimoji.yaml: #{e.message}"
+  end
+end
+
+# Build the site to ensure public/ is fresh for HTML-based tests
+if wikimoji_config && wikimoji_config['enabled']
+  puts "Building Hugo site to verify HTML output..."
+  build_cmd = "which hugo >/dev/null 2>&1 && hugo --quiet || npx -y hugo-extended --quiet"
+  system("cd #{File.expand_path("..", __dir__)} && #{build_cmd}")
+end
+
 all_errors = {}
 md_files.each do |file_path|
   relative_path = file_path.sub(File.expand_path("..", __dir__) + "/", "")
   errors = check_post_compliance(file_path)
+  
+  if wikimoji_config && wikimoji_config['enabled']
+    wikimoji_errors = verify_wikimojis(file_path, File.expand_path("..", __dir__), wikimoji_config)
+    errors.concat(wikimoji_errors)
+  end
+
   unless errors.empty?
     all_errors[relative_path] = errors
   end

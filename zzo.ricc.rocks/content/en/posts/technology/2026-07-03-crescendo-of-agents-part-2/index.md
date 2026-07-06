@@ -14,7 +14,7 @@ CTA: https://antigravity.google/ # probably AG 2.0
 Status: "published"
 Linkedin post: TODO
 Generator: "create_article.rb"
-Version: "1.3.1"
+Version: "1.3.2"
 Platform: "Medium, Ricc.Rocks"
 PublishDate: "2026-07-03"
 RiccRocksURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
@@ -23,6 +23,8 @@ RiccRocksVersion: "1.3.1"
 PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
 image: "/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/hero_image.png"
 # canonicalURL: (pending Medium publication)
+# CHANGELOG
+# 6jul26   v1.3.2 Merged a few paragraphs together, added Agostina banana image.
 ---
 
 <!--
@@ -45,7 +47,7 @@ cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/202606
 
 If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-terminal-chaos.png" caption="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-terminal-chaos.png" caption="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
 
 <!--more-->
 
@@ -71,7 +73,7 @@ This concept of using a multi-agent harness to build apps in parallel was inspir
 
 If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation ([Project Benjamin](https://github.com/palladius/adk-sre-benjamin)) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
 
 > 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
@@ -83,7 +85,7 @@ While opinionated CLI-first developer helpers like Garry Tan's [GBrain](https://
 
 Then last weekend I read [this article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/) from my Seroter namesake and thought: *OMG, this is exactly what I need.* I need a visual harness to manage my concurrent agents, and [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog) is the best at this!
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-1.png" caption="Antigravity 2.0 explained" alt="Antigravity 2.0 explained" position="center" >}}
 
 This clean interface has it all:
 
@@ -123,7 +125,7 @@ Let's unpack this **prompt**. It contains:
 4. What happens when they're done (spin up and let the human-not-so-much-in-the-loop take a look).
 5. **Important**. the common file state here is the common artifact: `architecture.md`.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/architecture_diagram.png" caption="Seroter agent interactions architecture diagram" alt="Seroter agent interactions architecture diagram" position="center" >}}
 
 Brilliant. This is meta-programming at its best: you don't prompt the code you want, you're prompting the TEAM of workers you want coding your thing! Another step into *emergence* and you're prompting... [scion](https://googlecloudplatform.github.io/scion/overview/)!
 
@@ -139,21 +141,23 @@ In the past few months, all I wanted to do was **GitHub Issue (GHI)-triggered mu
 * `git worktree`. This is what prevents 2+ agents for making a mess out of your repo (been there done that).
   * If you have N agents pushing Pull Requests to remote branches, it makes sense to have a "Git concierge" to resolve the code to main. He should be configured to have a more conservative approach to the repo. While agent X wants to implement feature X as instructed, this Concierge will be [unfazeable](https://gurps.fandom.com/wiki/Unfazeable) as a British Alfred (turns out only GURPS players know what this means) and act as a 'last defense' for your repo consistency (maybe the code is great, but forgot to run tests, or to update the CHANGELOG... nothing's better than a fresh context window to catch these errors).
 
-### The Conductor++ Stack
 
-To build this workflow, I settled on the following core components:
-*   `git worktree` for async agent implementation.
-*   **GitHub Issues** + **Conductor** "Railways" (opinionated boundaries) for implementation.
-*   **Antigravity 2.0** as the visual harness, inspired by [Richard's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
-*   [**State on Disk**](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi) (inspired by [Paul's article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi)) to persist agent context across runs.
-*   *(Optional)* The [`gemini-superpowers` plugin](https://github.com/barretstorck/gemini-superpowers), which provides the `using-git-worktrees` skill to automate the worktree isolation.
-
-
-### 🛠️ Equip Your Agents with the "condutree" Skill
+### 🛠️ Conductor++ Stack: the "condutree" Skill
 
 To make this entire multi-agent git-worktree workflow reusable for any codebase, I packaged these exact rules and automations into an open-source agent skill called [**`conductor-worktree-hitl`**](https://github.com/palladius/gemini-cli-custom-commands/tree/main/skills/conductor-worktree-hitl) (or `condutree` for close friends).
 
+Here are core components:
+*   `git worktree` for async agent implementation. One sub-agent, one worktree, one Conductor Track.
+*   **GitHub Issues** + **Conductor** "Railways" (opinionated boundaries) for implementation.
+*   **Antigravity 2.0** as the visual harness, inspired by [Richard's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
+*   [**State on Disk**](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi) (inspired by [Paul's article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi)) to persist agent context across runs. My version is compatible with Conductor frameowrk but introduces additional state-as-file, mostly for two things:
+  * GitHub Issue linking.
+  * Sub-agent Question/Answers framework (experimental).
+*   *(Optional)* The [`gemini-superpowers` plugin](https://github.com/barretstorck/gemini-superpowers), which provides the `using-git-worktrees` skill to automate the worktree isolation.
+
+
 Why did I build this as an external skill rather than dumping all the git/worktree commands into the main coordinator prompt?
+
 1.  **Conflating the Logic**: It consolidates all the low-level workspace provisioning, symlinking, and git excludes in a single, maintainable script.
 2.  **Manageable Coordinator Prompts**: It keeps the prompt given to the main coordinator agent small, clean, and focused entirely on the high-level *main-to-subagent* delegation workflow and reentrant question resolution. The agent doesn't need to get bogged down in git syntax; it simply delegates that execution to the skill.
 3.  **Reusability**: Other developers can instantly plug this skill into their own repositories and agent harnesses to gain safe, conflict-free parallel agent executions without rewriting the integration scripts.
@@ -173,7 +177,7 @@ While `condutree v1.0` is a solid foundation, it still has a few manual edges th
 *   **Streamlined Helpers**: Replace ad-hoc shell commands with a clean Python or Ruby helper script to handle weird worktree git states robustly.
 *   **`justfile` Integration**: Package this script under `conductor/bin/git-status-patched.sh` and expose it via a clean recipe (e.g., `just git-status-condutree`) so developers can view patched git status of active worktrees instantly.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-cooking-agents-mess.png" caption="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." alt="Too many coding subagents making a mess of a single branch without git worktree isolation (an AI-generated illustration of the 'too many cooks in the kitchen' metaphor applied to git merges)." position="center" >}}
 
 ## Scaling Up: Conductor++ Multi-Worktree Multi-Agent Dev Flow
 
@@ -181,29 +185,32 @@ To see how far we could push this parallel execution model, we built [Project Be
 
 Here is how we designed and optimized this parallel dev flow:
 
-### 1. The Preparation: Setting Up for Great Work
+### 1. The Preparation
 
 Before we could run this without file collisions and merge chaos, we had to solve some tricky git hygiene and naming issues:
 
-*   **Preventing Git Worktree Symlink Pollution**: In our Conductor++ setup, each parallel agent gets its own Git Worktree (e.g., `.worktrees/telegram_incident_creation/`). Because subagents need to communicate metadata back to the parent coordinator, we symlink the root `conductor/` directory into each worktree:
-    ```bash
-    ln -s ../../conductor conductor
-    ```
-    However, Git ordinarily sees a symlinked tracked folder inside a subdirectory as both a deleted folder and a new untracked file. To prevent this working-tree pollution:
-    *   We configured the local repository's `.gitignore` to explicitly ignore `conductor/questions.json` and track-specific question folders.
-    *   We updated the Conductor orchestration prompt to run a dynamic Git exclude command within each worktree:
-        ```bash
-        echo "conductor" >> $(git rev-parse --git-dir)/info/exclude
-        ```
-        This instructs Git to dynamically ignore the symlink inside that specific worktree, keeping working trees 100% clean.
+*   **Preventing Git Worktree Symlink Pollution**: In our Conductor++ setup, each parallel agent gets its own Git Worktree (e.g., `.worktrees/telegram_incident_creation/`). Because subagents need to communicate metadata back to the parent coordinator, we symlink the root `conductor/` directory into each worktree: `ln -s ../../conductor conductor`. Basically, we work on a different worktree for everything except the conductor folder. This is  low risk since every track is in a different conductor folder, so there are very low posisbilities of merge issues.
 
-*   **Personifying the Coordinator**: To give our DevFlow an approachable, unflappable personality, we named our Lead Git Concierge coordinator **Agostina**. Agostina behaves like a calm, organized Italian concierge running on espresso, ensuring that parallel subagents (Mario, Luigi, etc.) remain in sync without stepping on each other's toes. (Of course she's Italian, and sounds like Antigravity)
+*   **The Coordinator Agent**: To give our DevFlow an approachable, unflappable personality, we named our Lead Git Concierge coordinator **Agostina**. Agostina behaves like a calm, organized Italian concierge running on espresso, ensuring that parallel subagents (Mario, Luigi, etc.) remain in sync without stepping on each other's toes. *Naming*: Of course she's Italian, and sounds like Antigravity.
 
-*   **The Amanuense Scribe Agent**: To maintain a high-resolution, real-time chronicle of all parallel development events, we introduced a dedicated scribe agent called **Amanuense**. Amanuense continually logs directory creation, code changes, and agent interactions with precise timestamps, outputting them to a central audit file so developers can audit exactly who did what, when, and in which worktree. Note: [amanuense](https://en.wikipedia.org/wiki/Amanuensis) is Italian for scribe and it was created for two main reasons (1) Check the smarts in aubs-agent syncrhonization with other agents. and (2) get the timestamps and logs to write this article factually.
+*   **The *Amanuense* Scribe Agent**: To maintain a high-resolution, real-time chronicle of all parallel development events, we introduced a dedicated scribe agent called **Amanuense**. Amanuense continually logs directory creation, code changes, and agent interactions with precise timestamps, outputting them to a central audit file so developers can audit exactly who did what, when, and in which worktree. *Naming*: [Amanuensis](https://en.wikipedia.org/wiki/Amanuensis) is Latin for scribe and it was created for two main reasons (1) Check the smarts in aubs-agent syncrhonization with other agents. and (2) get the timestamps and logs to write this article factually.
 
 ### 2. The Logic: Parallelism Without the Chaos
 
 Running multiple AI agents coding in parallel on the exact same repository requires strict isolation and a race-free way to communicate.
+
+<!-- 
+Here is a conceptual cartoon illustration of this multi-agent workflow (featuring Mario and Luigi as subagents, and Agostina as the concierge):
+
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-cartoon-workflow.jpg" caption="Agostina resolving merges from subagents Mario and Luigi, while a third yellow subagent keeps tinkering in a separate Git Worktree." alt="Agostina resolving merges from subagents Mario and Luigi, while a third yellow subagent keeps tinkering in a separate Git Worktree." position="center" >}}
+
+And here is a cleaner, more minimalistic version of the same workflow, illustrating the clean branch separation and simplified workspace:
+
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-cartoon-workflow-clean-v1.jpg" caption="Simplified cartoon block diagram illustrating Git Worktree multi-agent workflow." alt="Simplified cartoon block diagram illustrating Git Worktree multi-agent workflow." position="center" >}}
+
+-->
+
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-cartoon-workflow-clean-v1.jpg" caption="Agostina resolving merges from subagents Mario and Luigi, while a third yellow subagent keeps tinkering in a separate Git Worktree." alt="Agostina resolving merges from subagents Mario and Luigi, while a third yellow subagent keeps tinkering in a separate Git Worktree." position="center" >}}
 
 *   **Subagent Git Hygiene (No Direct Remote Pushes)**: If multiple subagents attempt to run `git push` concurrently, they will trigger lock collisions on remote refs and introduce untested code into production. Subagents commit exclusively to their local feature branches (`feature/<track_id>`) and write summarizing git notes. Only the coordinator (Agostina) is permitted to run `git push`, checkout the validation branch, and merge feature branches.
 
@@ -227,7 +234,7 @@ Running multiple AI agents coding in parallel on the exact same repository requi
 
 The orchestrator lifecycle is defined as follows:
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/agostina_graph.png" caption="Agent / Subagents Flow" alt="Agent / Subagents Flow" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/agostina_graph.png" caption="Agent / Subagents Flow" alt="Agent / Subagents Flow" position="center" >}}
 
 A critical aspect of this flow is that **the human operator never interacts directly with the subagents**. The subagents run in complete isolation inside their respective `git worktree`s. Instead, the human only communicates with the coordinator at two specific integration points:
 
@@ -365,19 +372,19 @@ As you can see `pinocchio` sub-agent is blocked waiting for HITL answer.
 
 Glad you've asked! I've asked Gemini to detect drift between Conductor and GitHub:
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-conductor-inspector-short-v1.png" caption="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." alt="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-conductor-inspector-short-v1.png" caption="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." alt="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." position="center" >}}
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-conductor-inspector-short-v2.png" caption="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." alt="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-conductor-inspector-short-v2.png" caption="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." alt="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." position="center" >}}
 
 
 #### Step 2: Parallel Worktree Isolations
 Each agent checked out its own branch and worked in isolation. The Amanuense scribe logged precise file edits and workspace activity without file conflicts.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-11-51-44.png" caption="Monitoring the worktree files during concurrent development." alt="Monitoring the worktree files during concurrent development." position="center" >}}
 
 Look how these beautiful sub-agents work on Antigravity, this would make Richard so proud!
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Antigravity UI thread tracker showing active tracks in progress." alt="Antigravity UI thread tracker showing active tracks in progress." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-12-07-11.png" caption="Antigravity UI thread tracker showing active tracks in progress." alt="Antigravity UI thread tracker showing active tracks in progress." position="center" >}}
 
 #### Step 3: Interactive Polling & Human Steering
 When agents needed clarification, they posted issues that were parsed by `poll_ghi_questions.py`. 
@@ -388,7 +395,7 @@ To make this human-in-the-loop (HITL) steering truly mobile-friendly, we impleme
 
 The Telegram Sidecar Bridge is registered as an Antigravity background daemon. It enables parallel coding subagents and SRE coordinators (like Agostina) to send questions or approval requests directly to the developer's Telegram account, poll for the response, and resume execution once answered. 
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/telegram_sidecar.png" caption="Telegram Sidecar Asynchronous HITL Flow" alt="Telegram Sidecar Asynchronous HITL Flow" position="center" >}}
 
 ###### The Sidecar Configuration (`sidecar.json`)
 The sidecar is registered in Antigravity using the following configuration:
@@ -411,12 +418,12 @@ The sidecar is registered in Antigravity using the following configuration:
 2.  **Race-Free Parallelism**: By keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`), multiple agents can ask questions concurrently without file lock contention.
 3.  **Audit Trail**: Every decision is stored locally in the Git repository as JSON state, providing 100% trace accountability.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-12-07-11.png" caption="Screenshot showcasing Human approvals and diagnostics feedback loop active." alt="Screenshot showcasing Human approvals and diagnostics feedback loop active." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-12-07-11.png" caption="Screenshot showcasing Human approvals and diagnostics feedback loop active." alt="Screenshot showcasing Human approvals and diagnostics feedback loop active." position="center" >}}
 
 #### Step 4: The Final Green State
 Once all feature branches were validation-checked and sequentially merged, Agostina created the Pull Request. The final audit output confirmed all 12 SRE tracks were fully merged into the production branch.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
 
 Were they all 100% perfectly tested, also in their mutual interactions? Not so much; but this is for a third article.
 
@@ -426,9 +433,9 @@ My **#1 lesson learnt** is: try to keep the conversation with a single agent, an
 
 *   **Minimize agent/human wait-time**: Using `/roastme` is great to ask hard questions upfront so the agent can go unimpeded. **Conductor** is excellent at gathering questions offline. Instead of a continuous interruption cycle of 30-second questions every 5 minutes, you answer all questions in a single 30-minute block, go for a cycle ride, and return to a finished app.
 *   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
-* **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing is the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The Orchestration Tax is real, and you can be ahead of the curve or be trampled by it, like myself most days.
+* **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing is the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The **Orchestration Tax** is real, and you can be ahead of the curve or be trampled by it, like myself most days.
 
-![Roastme in Conductor](2jul roastme on conductor.png)
+![Roastme in Conductor](images/2jul roastme on conductor.png)
 
 <!-- 
 ---
