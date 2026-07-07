@@ -35,21 +35,13 @@ To redeploy / sync updates, run:
 cd /usr/local/google/home/ricc/git/ricclife-with-gemini-pvt/work/articles/20260605-worktree-multiagent-dev-flow/ && just build && just copy-to-ricc-rocks
 -->
 
-<!-- i think this is a repetioin 
-**TL;DR** In this follow up article to [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) I will explore parallel subagents + `git worktree` + [Conductor](https://github.com/gemini-cli-extensions/conductor) + some icing on the cake.
-
-
-## Parallel Coding with Git Worktrees, Conductor++, and Agostina
--->
-
 [Alexis](https://www.linkedin.com/in/alexismp/) said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI Agent<u>**s**</u>!
 
+<!--more-->
 
 If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game (`orologia.io`), my terminal babysitting workflow completely broke down. Juggling tmux panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-terminal-chaos.png" caption="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." alt="Multiple MacOS Desktops running `agy` terminals with Apple stickies representing the chaos of managing multiple parallel agent workspaces." position="center" >}}
-
-<!--more-->
 
 
 <!-- -
@@ -143,7 +135,7 @@ To make this entire multi-agent git-worktree workflow reusable for any codebase,
 Here are core components:
 *   `git worktree` for async agent implementation. One sub-agent, one worktree, one Conductor Track.
 *   **GitHub Issues** + **Conductor** "Railways" (opinionated boundaries) for implementation.
-*   **Antigravity 2.0** as the visual harness, inspired by [Richard's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
+*   **Antigravity 2.0** as the visual UI harness.
 *   [**State on Disk**](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi) (inspired by [Paul's article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi)) to persist agent context across runs. My version is compatible with Conductor frameowrk but introduces additional state-as-file, mostly for two things:
   * GitHub Issue linking.
   * Sub-agent Question/Answers framework (experimental).
@@ -259,10 +251,7 @@ The full 6-step lifecycle is structured as:
 
 <!-- Note for gemini: the link  https://medium.com/google-cloud/ops-i-did-it-again-the-sre-extension-is-out-d06baaccf7a0 is also on ricc.rocks - link to that one if the oyutput is RR -->
 
-To prove that our Conductor++ Multi-Worktree pipeline works, I wanted to try it out on a REAL thing. I chose [Project Benjamin](https://github.com/palladius/adk-sre-benjamin) as a test case. 
-In case you wonder, [Benjamin](https://github.com/palladius/adk-sre-benjamin) is my attempt at creating a web app around my awesome **SRE Extension**. What is the SRE Extension? Time for [🪨 another article](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) ! 
-
-**Why** is this a good case? Because it contains a [good number of features](https://github.com/palladius/adk-sre-benjamin/issues?q=is:issue), which can be develeoped in parallel: frontend, backend, an LLM chat, a telegram chatbot, OpenTelemetry tracing, GCP discovery, ... it's basically a mess but a fun one to have!
+To test this parallel dev flow under real-world conditions, I chose **Project Benjamin**—a web application built around my [🪨 SRE Extension](/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/) (story for another day!). It was the perfect test candidate because it contains a massive, messy array of parallelizable features: frontend UI, backend APIs, an LLM chat assistant, a Telegram chatbot, OpenTelemetry tracing, and GCP resource discovery.
 
 We went into **full multi-agent mode**. Instead of playing with one or two toy features, we took **12 complex, critical SRE capabilities** and broke them down into **more than 20 concrete GitHub Issues (GHIs)**. 
 
