@@ -395,11 +395,11 @@ My **#1 lesson learnt** is: try to keep the conversation with a single agent, an
 *   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
 * **Orchestration Tax in 2026**. Coding is cheap, SPECIFICATION is king, and testing/accepting are the new bottleneck. Read it again, just in case I'm right. [Dave](https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The Orchestration Tax is real, and you can be ahead of the curve or be [trampled](https://scryfall.com/card/w17/29/stampeding-rhino?utm_source=mw_MTGWiki) by it, like myself most days.
 
-## What's Next? (Try It Yourself!)
+## Now, try It Yourself!
 
 Ready to stop babysitting terminal panes and start orchestrating your own agentic symphonies? Here is how you can get started today:
 
-1. **Download [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520314033&utm_medium=external&utm_source=blog)** and get started immediately with visual multi-track orchestration!
+1. **Download [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520305371&utm_medium=external&utm_source=blog)** and get started immediately with visual multi-track orchestration!
 2. **Check out my [`conductor-worktree-hitl` skill](https://github.com/palladius/gemini-cli-custom-commands/tree/main/skills/conductor-worktree-hitl)** to equip your own agents with Git Worktree isolation and offline Human-in-the-Loop question gathering!
 
 
