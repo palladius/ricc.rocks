@@ -8,7 +8,7 @@ User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
 Tags: [worktree, Antigravity]
-PublishedURL: TODO
+PublishedURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
 Completion: "100"
 CTA: https://antigravity.google/ # probably AG 2.0
 Status: "published"
@@ -22,7 +22,7 @@ RiccRocksStatus: "published"
 RiccRocksVersion: "1.3.1"
 PrimaryURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
 image: "/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/hero_image.png"
-# canonicalURL: (pending Medium publication)
+canonicalURL: https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-2-ea39e3715506
 # CHANGELOG
 # 6jul26   v1.3.2 Merged a few paragraphs together, added Agostina banana image.
 ---
@@ -420,4 +420,4 @@ Ready to stop babysitting terminal panes and start orchestrating your own agenti
 >   ```
 -->
 
-*📝 This article will also be published on Medium — link coming soon.*
+*Read this article on Medium: <https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-2-ea39e3715506>.*
