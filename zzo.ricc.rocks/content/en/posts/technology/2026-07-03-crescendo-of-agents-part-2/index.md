@@ -383,6 +383,7 @@ Another screenshot:
 -->
 
 <figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/demo_subelement_fading.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Space-invaders demo on ADK SRE Benjamin via ConductorAS</strong></figcaption></figure>
+*(Watch the video demo on YouTube: https://youtu.be/wHEUxk6G7wE)*
 
 ## Lessons learned & key takeaways
 
