@@ -27,7 +27,7 @@ image: "/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/hero_image.pn
 # 6jul26   v1.3.2 Merged a few paragraphs together, added Agostina banana image.
 ---
 
-[Alexis](https://www.linkedin.com/in/alexismp/) said *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI *Agents*!
+[Alexis](https://www.linkedin.com/in/alexismp/) said last February: *'This is the year of Agent orchestration'*: I couldn't agree more with him! If 2025 was the year of the AI agent, 2026 is definitely the year of... AI *Agents*!
 
 If you read [🪨 Part 1 of this series](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/), you know my confession: **I'm a CLI guy** (or *cleek* as I like to call myself). I don't do UIs. But when I tried to orchestrate a team of parallel subagents to build a simple clock game ([`orologia.io`](https://github.com/palladius/orologia.io)), my terminal babysitting workflow completely broke down. Juggling `tmux` panes, file checkouts, and Apple Stickies stuck to terminal windows to track active runs was a cognitive nightmare.
 
@@ -383,6 +383,11 @@ Another screenshot:
 
 <figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/demo_subelement_fading.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Space-invaders demo on ADK SRE Benjamin via ConductorAS</strong></figcaption></figure>
 *(Watch the video demo on YouTube: https://youtu.be/wHEUxk6G7wE)*
+
+<!-- TODO: manage video on youtube with comments on both ricc.rocks AND Medium -->
+https://www.youtube.com/watch?v=wHEUxk6G7wE
+
+Yes, of course, Conductor At Scale visualizes a generic git history extrapolating the Conductor tracks and brings  them to life in a Star Wars explosive JS animation.
 
 ## Lessons learned & key takeaways
 
