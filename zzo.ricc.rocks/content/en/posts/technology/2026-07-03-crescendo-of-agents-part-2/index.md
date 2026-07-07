@@ -379,6 +379,10 @@ Another screenshot:
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/adk-sre-benjamin-multitrack-space-invaders-2.png" caption="Space-invaders view 2 of ADK SRE Benjamin repo" alt="Space-invaders view 2 of ADK SRE Benjamin repo" position="center" >}}
 
+And here is a video demonstration of subelement fading in action:
+
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/demo_subelement_fading.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Demo of subelement fading in ADK SRE Benjamin</strong></figcaption></figure>
+
 ## Lessons learned & key takeaways
 
 My **#1 lesson learnt** is: try to keep the conversation with a single agent, and delegate only simple, pre-determined tasks to sub-agents that require no interaction. Two key practices for this: 
