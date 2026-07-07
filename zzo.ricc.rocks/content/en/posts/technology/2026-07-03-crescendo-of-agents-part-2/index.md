@@ -340,6 +340,11 @@ Glad you've asked! I've asked Gemini to detect drift between Conductor and GitHu
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-conductor-inspector-short-v1.png" caption="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." alt="Conductor inspector CLI displaying the overview of active worktrees, branches, and subagent assignments." position="center" >}}
 
+And of course, reconciling thw two DBs is only one prompt away:
+1. GHI->Conductor: *`/conductor:newTrack` Create a new track for every GHI. Ask me all the questions needed, one track at a time.*
+1. Conductor -> GHI: *Ensure there's a GHI for every conductor track*
+
+
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-conductor-inspector-short-v2.png" caption="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." alt="Conductor inspector detail view highlighting a pending Human-in-the-Loop question waiting for human input on GitHub Issues." position="center" >}}
 
 
@@ -369,6 +374,10 @@ Were they all 100% perfectly tested, also in their mutual interactions? Not so m
 You want a more 1980s Space-invaders-like visualization? Here you are:
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/adk-sre-benjamin-multitrack-space-invaders.png" caption="Space-invaders view of ADK SRE Benjamin repo" alt="Space-invaders view of ADK SRE Benjamin repo" position="center" >}}
+
+Another screenshot:
+
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/adk-sre-benjamin-multitrack-space-invaders-2.png" caption="Space-invaders view 2 of ADK SRE Benjamin repo" alt="Space-invaders view 2 of ADK SRE Benjamin repo" position="center" >}}
 
 ## Lessons learned & key takeaways
 
