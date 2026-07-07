@@ -371,17 +371,18 @@ Once all feature branches were validation-checked and sequentially merged, Agost
 
 Were they all 100% perfectly tested, also in their mutual interactions? Not so much; but this is for a third article.
 
-You want a more 1980s Space-invaders-like visualization? Here you are:
+You want a more 1980s Space-invaders-like visualization? Here is a [ConductorAS](https://github.com/palladius/conductoras/) video animation:
 
+<!-- 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/adk-sre-benjamin-multitrack-space-invaders.png" caption="Space-invaders view of ADK SRE Benjamin repo" alt="Space-invaders view of ADK SRE Benjamin repo" position="center" >}}
 
 Another screenshot:
 
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/adk-sre-benjamin-multitrack-space-invaders-2.png" caption="Space-invaders view 2 of ADK SRE Benjamin repo" alt="Space-invaders view 2 of ADK SRE Benjamin repo" position="center" >}}
 
-And here is a video demonstration of subelement fading in action:
+-->
 
-<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/demo_subelement_fading.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Demo of subelement fading in ADK SRE Benjamin</strong></figcaption></figure>
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/demo_subelement_fading.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Space-invvaders demo on ADK SRE Benjamin via CconductorAS</strong></figcaption></figure>
 
 ## Lessons learned & key takeaways
 
@@ -389,7 +390,7 @@ My **#1 lesson learnt** is: try to keep the conversation with a single agent, an
 
 *   **Minimize agent/human wait-time**: Using `/roastme` is great to ask hard questions upfront so the agent can go unimpeded. **Conductor** is excellent at gathering questions offline. Instead of a continuous interruption cycle of 30-second questions every 5 minutes, you answer all questions in a single 30-minute block, go for a cycle ride, and return to a finished app.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/2jul-roastme-on-conductor.png" caption="Roastme in Conductor" alt="Roastme in Conductor" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/2jul-roastme-on-conductor.png" caption="Roastme in Conductor, with some typos" alt="Roastme in Conductor, with some typos" position="center" >}}
 
 *   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
 * **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing/accepting are the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The **Orchestration Tax** is real, and you can be ahead of the curve or be trampled by it, like myself most days.
