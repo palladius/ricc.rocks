@@ -393,7 +393,7 @@ My **#1 lesson learnt** is: try to keep the conversation with a single agent, an
 {{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/2jul-roastme-on-conductor.png" caption="Roastme in Conductor, with some typos" alt="Roastme in Conductor, with some typos" position="center" >}}
 
 *   **Keep the Agent/sub-agent relationship lean**: Don't overcomplicate the coordination between agents. While the industry will move toward complex multi-agent hierarchies, in 2026 we should stick to simple, repeatable tasks (implementation-heavy, low-ambiguity) to avoid unnecessary orchestration overhead.
-* **Tax returns in 2026**. Coding is cheap, SPECIFICATION is king, and testing/accepting are the new bottleneck. Read it again, just in case I'm right. Dave and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The **Orchestration Tax** is real, and you can be ahead of the curve or be trampled by it, like myself most days.
+* **Orchestration Tax in 2026**. Coding is cheap, SPECIFICATION is king, and testing/accepting are the new bottleneck. Read it again, just in case I'm right. [Dave](https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) and [Addy](https://addyosmani.com/blog/orchestration-tax/) seem to agree with me. The Orchestration Tax is real, and you can be ahead of the curve or be trampled by it, like myself most days.
 
 
 <!-- 
