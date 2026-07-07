@@ -65,12 +65,13 @@ So, I capitulated and opened the **Antigravity 2.0 UI/Desktop app** to manage my
 
 This clean interface has it all:
 
-* 📁 My personal Project 1
-    * 🧵 Improve UI by adding blue login button with hidden password
-    * 🧵 Add `/checkout/` to backend
-* 📁 My work Project 2
-    * 🧵 Add documentation to `doc/PRD.md`
-    * 🧵 Add security tests after later omg/1234.
+**📁 My personal Project 1**
+* 🧵 Improve UI by adding blue login button with hidden password
+* 🧵 Add `/checkout/` to backend
+
+**📁 My work Project 2**
+* 🧵 Add documentation to `doc/PRD.md`
+* 🧵 Add security tests after later `omg/1234`
 
 As you can see, all your unrelated work is nicely grouped by project (basically, a 📁 folder) and then all threads are aligned there, sorted by the most recent one you worked on (and yes, you can ARCHIVE them, otherwise they'll survive my wife's sadistic reboot). More importantly, now we don't need physical *stickies* stuck to the monitor anymore!
 
@@ -366,8 +367,6 @@ To make this human-in-the-loop (HITL) steering truly mobile-friendly, we routed 
 
 #### Step 4: The final green state
 Once all feature branches were validation-checked and sequentially merged, Agostina created the Pull Request. The final audit output confirmed all 12 SRE tracks were fully merged into the production branch.
-
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/image-screenshot-16-53-05.png" caption="Final audit output showing 100% of Conductor tracks completed and merged." alt="Final audit output showing 100% of Conductor tracks completed and merged." position="center" >}}
 
 Were they all 100% perfectly tested, also in their mutual interactions? Not so much; but this is for a third article.
 
