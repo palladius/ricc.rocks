@@ -8,9 +8,10 @@ User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/524911947
 Tags: [API, Antigravity, GenAI, Sandbox, Medium, agy, romin]
+mentions: [philschmid, romin, jack, alexismp, rseroter, rensin, addyosmani, keithballinger, danicat]
 PublishedURL: "https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/"
 Completion: "100"
-CTA: https://antigravity.google/
+CTA: "https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b524911947&utm_medium=external&utm_source=blog"
 Status: "draft"
 Platform: "Medium, ricc.rocks"
 PublishDate: "2026-06-16"

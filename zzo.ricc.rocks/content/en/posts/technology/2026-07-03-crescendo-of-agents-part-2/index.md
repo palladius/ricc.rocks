@@ -8,6 +8,7 @@ User: ricc
 Host: derek.zrh.corp.google.com
 Bug: b/520305371
 Tags: [worktree, Antigravity]
+mentions: [romin, jack, alexismp, rseroter, rensin, addyosmani, keithballinger, danicat]
 PublishedURL: "https://ricc.rocks/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/"
 Completion: "100"
 CTA: "https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b520305371&utm_medium=external&utm_source=blog"
