@@ -384,7 +384,7 @@ Another screenshot:
 -->
 
 {{< youtube wHEUxk6G7wE >}}
-*Space-invaders demo on ADK SRE Benjamin via ConductorAS*
+<div class="video-caption" style="text-align: center; font-size: 0.85em; opacity: 0.7; margin-top: -15px; margin-bottom: 20px; padding: 0 10%;">Space-invaders demo on ADK SRE Benjamin via ConductorAS</div>
 
 
 Yes, of course, Conductor At Scale visualizes a generic git history extrapolating the Conductor tracks and brings  them to life in a Star Wars explosive JS animation.
