@@ -139,7 +139,7 @@ Here are core components:
 *   `git worktree` for async agent implementation. One sub-agent, one worktree, one Conductor Track.
 *   **GitHub Issues** + **Conductor** "Railways" (opinionated boundaries) for implementation.
 *   **Antigravity 2.0** as the visual UI harness.
-*   [**State on Disk**](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi) (inspired by [Paul's article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi)) to persist agent context across runs. My version is compatible with Conductor frameowrk but introduces additional state-as-file, mostly for two things:
+*   [**State on Disk**](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi) (inspired by [Paul's article](https://aipositive.substack.com/p/how-i-turned-gemini-cli-into-a-multi)) to persist agent context across runs. My version is compatible with Conductor framework but introduces additional state-as-file, mostly for two things:
   * GitHub Issue linking.
   * Sub-agent Question/Answers framework (experimental).
 *   *(Optional)* The [`gemini-superpowers` plugin](https://github.com/barretstorck/gemini-superpowers), which provides the `using-git-worktrees` skill to automate the worktree isolation.
@@ -173,11 +173,11 @@ Here is how we designed and optimized this parallel dev flow:
 
 Before we could run this without file collisions and merge chaos, we had to solve some tricky git hygiene and naming issues:
 
-*   **Preventing Git Worktree Symlink Pollution**: In our Conductor++ setup, each parallel agent gets its own Git Worktree (e.g., `.worktrees/telegram_incident_creation/`). Because subagents need to communicate metadata back to the parent coordinator, we symlink the root `conductor/` directory into each worktree: `ln -s ../../conductor conductor`. Basically, we work on a different worktree for everything except the conductor folder. This is  low risk since every track is in a different conductor folder, so there are very low posisbilities of merge issues.
+*   **Preventing Git Worktree Symlink Pollution**: In our Conductor++ setup, each parallel agent gets its own Git Worktree (e.g., `.worktrees/telegram_incident_creation/`). Because subagents need to communicate metadata back to the parent coordinator, we symlink the root `conductor/` directory into each worktree: `ln -s ../../conductor conductor`. Basically, we work on a different worktree for everything except the conductor folder. This is low risk since every track is in a different conductor folder, so there are very low possibilities of merge issues.
 
 *   **The Coordinator Agent**: To give our DevFlow an approachable, unflappable personality, we named our Lead Git Concierge coordinator **Agostina**. Agostina behaves like a calm, organized Italian concierge running on espresso, ensuring that parallel subagents (Mario, Luigi, etc.) remain in sync without stepping on each other's toes. *Naming*: Of course she's Italian, and sounds like Antigravity.
 
-*   **The *Amanuense* Scribe Agent**: To maintain a high-resolution, real-time chronicle of all parallel development events, we introduced a dedicated scribe agent called **Amanuense**. Amanuense continually logs directory creation, code changes, and agent interactions with precise timestamps, outputting them to a central audit file so developers can audit exactly who did what, when, and in which worktree. *Naming*: [Amanuensis](https://en.wikipedia.org/wiki/Amanuensis) is Latin for scribe and it was created for two main reasons (1) Check the smarts in aubs-agent syncrhonization with other agents. and (2) get the timestamps and logs to write this article factually.
+*   **The *Amanuense* Scribe Agent**: To maintain a high-resolution, real-time chronicle of all parallel development events, we introduced a dedicated scribe agent called **Amanuense**. Amanuense continually logs directory creation, code changes, and agent interactions with precise timestamps, outputting them to a central audit file so developers can audit exactly who did what, when, and in which worktree. *Naming*: [Amanuensis](https://en.wikipedia.org/wiki/Amanuensis) is Latin for scribe and it was created for two main reasons (1) Check the smarts in sub-agent synchronization with other agents. and (2) get the timestamps and logs to write this article factually.
 
 ### 2. The logic: parallelism without the chaos
 
