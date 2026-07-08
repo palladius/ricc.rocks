@@ -83,7 +83,7 @@ But once you have a visual harness that works, the immediate developer question 
 
 If Part 1 was a soloist sandbox and a simple clock game, Part 2 is about heavy-duty parallel engineering. Today, we'll see how we took the Antigravity Desktop app and scaled it up to a massive 12-track SRE simulation ([Project Benjamin](https://github.com/palladius/adk-sre-benjamin)) using Git Worktrees, a Rails-like orchestrator called Conductor++, and a concierge agent named Agostina.
 
-{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/hero_image.png" caption="Hero Image" alt="Hero Image" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/hero_image.png" caption="Riccardo trying to manage a number of worktree subagents without getting crazy. Oh, and eating Panettone!" alt="Riccardo trying to manage a number of worktree subagents without getting crazy. Oh, and eating Panettone!" position="center" >}}
 
 > 💡 **Looking for Part 1?** Read [🪨 Orchestrating with Antigravity: A Crescendo of Agents (Part 1)](https://ricc.rocks/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) to learn about stateful remote sandboxes and Python SDK orchestration.
 
@@ -244,8 +244,8 @@ The full 6-step lifecycle is structured as:
    * **Race-Free Parallelism**: Keeping questions in isolated track directories (`conductor/tracks/<track_id>/questions.json`) avoids file lock contention.
    * **Audit Trail**: Every decision is stored locally in the Git repository as JSON state for accountability.
 
-2. **GH Issue** answering (Jules / `@gemini` CLI style).
-3. By talking to main agent via `questions.json`. While this is the simplest, I wasn't able to be automagically unblocked - had to trigger it myself. So I discarded this approach but I'm sure this can be solved via [hooks](https://antigravity.google/docs/hooks) or in future releases.
+2. **GH Issue** answering (Jules / `@gemini` CLI style). While this is very nice to observe when on the run, this might hit scaling issues from `gh` script and I'm afraid of losing my GitHub privileges.
+3. By talking to main agent via `questions.json`. While this is the simplest, I wasn't able to be automagically unblocked - had to trigger it myself. So I discarded this approach but I'm sure this can be solved via [hooks](https://antigravity.google/docs/hooks?utm_campaign=CDR_0x89ad3e41_awareness_b520305371&utm_medium=external&utm_source=blog) or in future releases.
 
 
 
@@ -383,11 +383,9 @@ Another screenshot:
 
 -->
 
-<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/images/demo_subelement_fading.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Space-invaders demo on ADK SRE Benjamin via ConductorAS</strong></figcaption></figure>
-*(Watch the video demo on YouTube: https://youtu.be/wHEUxk6G7wE)*
+{{< youtube wHEUxk6G7wE >}}
+*Space-invaders demo on ADK SRE Benjamin via ConductorAS*
 
-<!-- TODO: manage video on youtube with comments on both ricc.rocks AND Medium -->
-https://www.youtube.com/watch?v=wHEUxk6G7wE
 
 Yes, of course, Conductor At Scale visualizes a generic git history extrapolating the Conductor tracks and brings  them to life in a Star Wars explosive JS animation.
 
