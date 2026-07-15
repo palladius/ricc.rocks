@@ -18,7 +18,6 @@ CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main
 
 *I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!*
 
-<!-- would be nice to have a BIG FONT impact thingy which is not an H2 i think medium supports it. -->
 > How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill!
 
 Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
@@ -41,6 +40,8 @@ If you maintain an old project, you know the drill: you check the repository aft
 
 I didn't want to spin up 20 separate agents manually, so I had an idea: what if I wrote **a single prompt to rule them all**? A prompt that would fetch all open issues, spawn a dedicated worker for each, evaluate whether it could be solved autonomously, and then do the work in parallel worktrees!
 
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
+
 ## My first solution
 
  Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
@@ -49,10 +50,16 @@ So I started typing this fan-out prompt:
 
 ```markdown
 For every open GH issue, open a subagent for that issue. That subagent shall:
-1. identify if that is doable without human intervention. Does it have all it takes for independently drive to resolution?
-2. If no, update that asking questions which can be answered by human to answer yes at a next pass.
-3. If yes, then create a new worktree, read the conductor + worktree skill, and implement it independently. Add meaningful failing tests and implement your way to make them not fail anymore (TDD). Tests need to fail first and then not anymore! 
-4. When done, create a PR with the branch and: (a)  update GHI with what has been done, choices that have been taken, .. (b) a message for the user in the PR. 
+1. identify if that is doable without human intervention.
+   Does it have all it takes for independently drive to resolution?
+2. If no, update that asking questions which can be answered by human
+   to answer yes at a next pass.
+3. If yes, then create a new worktree, read the conductor + worktree skill, 
+   and implement it independently. Add meaningful failing tests and implement
+   your way to make them not fail anymore (TDD). Tests need to fail first and
+   then not anymore! 
+4. When done, create a PR with the branch and: (a)  update GHI with what has been
+   done, choices that have been taken, .. (b) a message for the user in the PR. 
 ```
 
 Some important notes:
@@ -92,7 +99,10 @@ To prove me right, my friend Andrea is not a coder and *yet* is building Finance
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/1004-all-subagents-but-one-are-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
-* **15:15**. Some missing JSON fields, update skill, rinse and repeat.
+* Results are visible here: https://github.com/palladius/rails8-turbo-chat/issues/71
+* **10:15**. Some missing JSON fields, update skill, rinse and repeat.
+...
+* 11:30 we're ready to execute the newer version, shiny skill v1.5!
 
 ## Additional iterations
 
@@ -107,8 +117,8 @@ sip caipirinha while observing "watch just cool-jsons"
 A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile ([#4b08376](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58)):
 
 ```bash
- just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98                                                                           ricc-mac.roam.internal: Wed Jul 15 10:56:48 2026
-                                                                                                                                                                                         in 0.917s (0)
+# Launching with skill v1.4
+$ just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98
 =====================================================
 🚀 GHI Fan-Out Bonanza Dashboard | UUID: AC67EF98-9364-407A-A497-FD7DDD01EF98
 =====================================================
@@ -138,9 +148,16 @@ Problem Reports (JSON): 2
 =====================================================
 ```
 
-### Review is missing
+### Riccardo, what about Code Review?
 
-I'm currently working on part 2 of the skill where automated review is happening sequentially.
+Apparently, GEmini was listening to my `GEMINI.md` which said "do not push" so I found myself with this issue... sounds familiar? It's a FIFO world where the first wins and all the others end in pain.
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_1_1784108977950.jpg" caption="Too many conflicts, too many PRs fighting for prime time" alt="Too many conflicts, too many PRs fighting for prime time" position="center" >}}
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_3_1784109131568.jpg" caption="This is even better" alt="This is even better" position="center" >}}
+
+
+I'm currently working on version 1.5 of the skill where automated review is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
 
 
@@ -148,12 +165,19 @@ I'm currently working on part 2 of the skill where automated review is happening
 
 ## Conclusion
 
+My favorite mantra in google SRE is "Automate yourself out of the job" and today I achieved something in that direction.
+
 What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating. The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
 
-If you want to try it out yourself, check out the `ghi-fan-out-coding` skill!
+If you want to try it out yourself, check out the `ghi-fan-out-coding` skill! <Todo perma link to skill>
 
----
+A few lessons learnt.
 
-<sub style="font-size: 0.7em; opacity: 0.6;">*Drafted with Antigravity, article v1.0*</sub>
+* **Devil is in the details**, some things will always fail. Authnetication, 
+* For everything else, Playwright is on our side. Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image.png" caption="Antigravity running a playwright script where an image says "it works!"" alt="Antigravity running a playwright script where an image says "it works!"" position="center" >}}
+
+Image: playwright_hello_8080.png
 
 *📝 This article will also be published on Medium — link coming soon.*
