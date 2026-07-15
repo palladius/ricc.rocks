@@ -98,7 +98,10 @@ Think about this: my best friend Andrea is not a coder and *yet* he's building F
 
 ### A small diary
 
-* **09:41**: It all started.
+* **09:41**: It all started. Here is a quick video of the agents working in parallel:
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-working.gif" caption="Subagents in action" alt="Subagents in action" position="center" >}}
+
 * **10:04**: 23 minutes later, all subagents but one have finished! Look:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
