@@ -75,9 +75,11 @@ To achieve this, I packaged the logic into a new skill: `ghi-fan-out-coding`. Th
 
 ### Chatting with Antigravity on Specs
 
-I love how Antigravity makes it easy for you to comment on an Implementation plan
+Spec Driven Development (SDD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan:
 
-TODO screenshot
+![alt text](<screenshots/ricc commenting on implementation plan.png>)
+
+To prove me right, my friend Andrea is not a coder and *yet* is building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
 
 ## We're ready, let's start!
 
@@ -88,6 +90,7 @@ TODO screenshot
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/1004%20all%20subagents%20but%20one%20are%20done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
+* **15:15**. Some missing JSON fields, update skill, rinse and repeat.
 
 ## Additional iterations
 
@@ -99,7 +102,7 @@ hopefully by just checking JSON in local and
 sip caipirinha while observing "watch just cool-jsons"
 ```
 
-A few minutes later...
+A few minutes later, `scripts/dashboard.sh` is ready and integrated in my repo's Justfile (commit hash):
 
 ```bash
  just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98                                                                           ricc-mac.roam.internal: Wed Jul 15 10:56:48 2026
