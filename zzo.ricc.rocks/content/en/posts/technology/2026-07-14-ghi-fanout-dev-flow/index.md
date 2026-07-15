@@ -14,6 +14,8 @@ version: "1.0"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-07-14"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
+published_urls:
+- "https://ricc.rocks/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/" 
 ---
 
 *I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!*
@@ -43,9 +45,8 @@ I didn't want to spin up 20 separate agents manually, so I had an idea: what if 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
 
 If you're a follower of mine, this might ring a bell! I just posted another Worktree + Conductor article here: 
-* http://localhost:1313/en/posts/technology/2026-07-03-crescendo-of-agents-part-1/
-* http://localhost:1313/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/
-* <!-- TODO make these links polymorphic into ricc.rocks and meidum, dont remember how we achieve this. -->
+* https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9
+* https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-2-ea39e3715506
 * This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use HITL+Conductor as in article 2 instead.
 
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
