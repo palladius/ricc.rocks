@@ -71,7 +71,6 @@ For every open GH issue, open a subagent for that issue. That subagent shall:
    done, choices that have been taken, .. (b) a message for the user in the PR. 
 ```
 
-
 Some important notes:
 
 * Use a **SMART, thoughtful model**. Today I've used Gemini 3.1 pro in high thinking mode for the main agent. You can spare a few pennies for this as it needs to set it up correctly.
@@ -84,7 +83,7 @@ We're off to a great start! But...
 
 Then I thought: this is so amazing, this is gonna change the world, this should be MORE than just a prompt. How do I maintain it? To quote Ali G, *"The world is bigger than Staines, and me gotta build a skill for it!"*
 
-In Italy we say that *appetite comes eating* and so why don't we raise the bar a bit?
+In Italy we say that [*appetite comes with eating*](https://appetitomagazine.com/features/lappetito-vien-mangiando-why-appetite-comes-with-eating) and so why don't we raise the bar a bit?
 
 <!-- 
 Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
