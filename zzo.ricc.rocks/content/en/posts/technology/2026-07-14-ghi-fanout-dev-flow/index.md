@@ -78,7 +78,7 @@ In Italy we say that *appetite comes eating* and so why don't we raise the bar a
 
 ## Let's make it more complex
 
-Who knows me call me "The Master in overcomplication", which is not a compliment. Since the [first version (commit `39f9f19`)](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
+Who knows me call me "The Master in overcomplication", which is not a compliment. Since the first version ([#39f9f19](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19)) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
 
 To achieve this, I packaged the logic into a [new skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding): [`ghi-fan-out-coding`](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding). The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
@@ -200,6 +200,83 @@ And i got execution `D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-4.png" caption="alt text" alt="alt text" position="center" >}}
 
+## 12:52 Exec v3 -  471A394C-0CC3-413B-9457-26318ECAE38B
+
+
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-5.png" caption="second version exploded" alt="second version exploded" position="center" >}}
+
+12:54
+```
+$ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B 
+=====================================================
+🚀 GHI Fan-Out Bonanza Dashboard | UUID: 471A394C-0CC3-413B-9457-26318ECAE38B
+   Skill: v1.5.4  #bac8f95
+   https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/bac8f95/skills/ghi-fan-out-coding
+=====================================================
+Total Issue Folders Created: 15
+Subagents Completed: 0 / 15
+PRs Created: 0
+Problem Reports (JSON): 0
+=====================================================
+📊 Agent Status:
+  - ⏳ ghi-12: Pending
+  - ⏳ ghi-18: Pending
+  - ⏳ ghi-23: Pending
+  - ⏳ ghi-24: Pending
+  - ⏳ ghi-25: Pending
+  - ⏳ ghi-26: Pending
+  - ⏳ ghi-27: Pending
+  - ⏳ ghi-34: Pending
+  - ⏳ ghi-38: Pending
+  - ⏳ ghi-40: Pending
+  - ⏳ ghi-41: Pending
+  - ⏳ ghi-44: Pending
+  - ⏳ ghi-72: Pending
+  - ⏳ ghi-73: Pending
+  - ⏳ ghi-74: Pending
+=====================================================
+```
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-6.png" caption="v3 figata alla fine" alt="v3 figata alla fine" position="center" >}}
+
+<!-- ricc-mac.roam.internal: Wed Jul 15 13:07:06 2026 -->
+13:07 We're finished!
+```
+$ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B
+                                                                                                                                                                                         in 3.230s (0)
+=====================================================
+🚀 GHI Fan-Out Bonanza Dashboard | UUID: 471A394C-0CC3-413B-9457-26318ECAE38B
+   Skill: v1.5.4  #bac8f95
+   https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/bac8f95/skills/ghi-fan-out-coding
+=====================================================
+Total Issue Folders Created: 15
+Subagents Completed: 15 / 15
+PRs Created: 2
+Problem Reports (JSON): 0
+=====================================================
+📊 Agent Status:
+  🟢 ✅ ghi-12: Completed (Created PR #81) [🕵️ Review: HITL Required]
+  🔴 🛑 ghi-18: Aborted (NOOP_BAD) (Requires human intervention: Missing credentials. The issue requires the actual GCS_CREDENTIALS_JSON payload to create the Secret in Google Cloud Secret Manager.)
+  🟢 ✅ ghi-23: Completed (Created PR #87) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-24: Completed (Created PR #82) [🕵️ Review: HITL Required]
+  🔴 🛑 ghi-25: Aborted (NOOP_BAD) (Requires human intervention: Waiting for explicit user approval to push to remote.)
+  🟢 ✅ ghi-26: Completed (Created PR #78) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-27: Completed (Agent 27 forgot to write the json file, fixing it manually.) [🕵️ Review: HITL Required]
+  🟢 ♻️  ghi-34: NOOP (Good) (Issue #34 is already addressed by PR #62.)
+  🟢 ♻️  ghi-38: NOOP (Good) (PR #75 is already open and waiting for user manual review and merge. Tests passed. No code changes needed.)
+  🟢 ✅ ghi-40: Completed (Created PR #84) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-41: Completed (Created PR #85) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-44: Completed (Created PR #80) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-72: Completed (Created PR #83)
+  🔴 🛑 ghi-73: Aborted (NOOP_BAD) (Requires human intervention: Blocked from pushing to remote by user rule requiring explicit human approval.)
+  🟢 ✅ ghi-74: Completed (Created PR #79)
+=====================================================
+```
+
+As you can see I modernized the emoji report.
+
+
 ## Conclusion
 
 My favorite mantra in google SRE is "Automate yourself out of the job" and today I achieved something in that direction.
@@ -211,10 +288,10 @@ If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](h
 A few lessons learnt.
 
 * **Devil is in the details**, some things will always fail. Authnetication, 
-* For everything else, Playwright is on our side. Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
+* For everything else, **Playwright** is on our side. Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
 
-Image: playwright_hello_8080.png
+* Do not try this in **production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without HITL unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3.
 
 *📝 This article will also be published on Medium — link coming soon.*
