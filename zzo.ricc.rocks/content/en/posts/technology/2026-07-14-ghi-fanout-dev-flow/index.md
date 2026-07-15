@@ -55,8 +55,6 @@ This article differs in the sense that it's LESS Conductor/Spec-Driven and so it
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
 ## My first solution
 
- Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
-
 So I started typing this fan-out prompt:
 
 ```markdown
@@ -72,6 +70,9 @@ For every open GH issue, open a subagent for that issue. That subagent shall:
 4. When done, create a PR with the branch and: (a)  update GHI with what has been
    done, choices that have been taken, .. (b) a message for the user in the PR. 
 ```
+
+Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
+
 
 Some important notes:
 
