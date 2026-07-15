@@ -30,7 +30,7 @@ Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emili
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" alt="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" position="center" >}}
 
 
-**YES**, it is possible, and [🛸 Antigravity](https://antigravity.google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
+**YES**, it is possible, and [Antigravity](https://antigravity.google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
 
 But let's not get ahead of ourselves.
 
@@ -101,7 +101,7 @@ To achieve this, I packaged the logic into a [new skill](https://github.com/pall
 
 ### Chatting with AGY on SKILL Specs
 
-[Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) ([SDD](https://en.wikipedia.org/wiki/Specification-driven_development), not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan (which is an AGY [🛸 artifact](https://antigravity.google/docs/artifacts)):
+[Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) ([SDD](https://en.wikipedia.org/wiki/Specification-driven_development), not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan (which is an AGY [artifact](https://antigravity.google/docs/artifacts)):
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="Riccardo commenting on implementation plan" alt="Riccardo commenting on implementation plan" position="center" >}}
 
@@ -343,7 +343,7 @@ A few lessons learnt.
 
 ## Next steps
 
-It would be nice to try out the [🛸 Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3)
+It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3)
 
 *The vision is wild: `python3 run_bonanza.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. Ullalla! 🚀*
 

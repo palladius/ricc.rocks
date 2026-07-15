@@ -92,3 +92,9 @@ targets:
       - "rubyonrails.org"
     svg_partial: "svgs/social/ruby.svg"
     description: "Ruby related links"
+
+  - name: antigravity
+    patterns:
+      - "antigravity.google"
+    emoji: "🛸"
+    description: "Antigravity links"
