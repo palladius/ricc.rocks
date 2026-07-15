@@ -5,6 +5,7 @@ priority: P2
 title: "How I built a skill to fan out 20 workers to fix my old Rails App (steal my prompt!)"
 date: 2026-07-14T09:00:00+02:00
 draft: false
+image: assets/hero_image.png
 description: "I wanted to fix an app which had 20 open GHI but I didnt want to spin up 20 agents. So I created a single prom pt to rule them all!"
 categories: ["Antigravity"]
 tags: ["Google", "Antigravity"]
@@ -88,7 +89,7 @@ To prove me right, my friend Andrea is not a coder and *yet* is building Finance
 * **09:41**: It all started.
 * **10:04**: 23 minutes later, all subagents but one have finished! Look:
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/1004%20all%20subagents%20but%20one%20are%20done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/1004-all-subagents-but-one-are-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
 * **15:15**. Some missing JSON fields, update skill, rinse and repeat.
 
@@ -102,7 +103,7 @@ hopefully by just checking JSON in local and
 sip caipirinha while observing "watch just cool-jsons"
 ```
 
-A few minutes later, `scripts/dashboard.sh` is ready and integrated in my repo's Justfile (commit hash):
+A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile (TODO commit hash of rails8 repo):
 
 ```bash
  just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98                                                                           ricc-mac.roam.internal: Wed Jul 15 10:56:48 2026
