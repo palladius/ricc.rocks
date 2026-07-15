@@ -21,7 +21,7 @@ published_urls:
 
 *I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!* Ok, if not 1000s maybe 1 or 2.
 
-> How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill, so you woulnd't have to do it!
+> How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill, so you don't have to!
 
 Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
 
@@ -30,7 +30,7 @@ Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emili
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" alt="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" position="center" >}}
 
 
-**YES**, it is possible, and [Antigravity](https://antigravity/google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
+**YES**, it is possible, and [Antigravity](https://antigravity.google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
 
 But let's not get ahead of ourselves.
 
@@ -41,13 +41,14 @@ If you maintain an old project, you know the drill: you check the repository aft
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/image.png" caption="A bunch of open GitHub Issues for my old Rails8 app" alt="A bunch of open GitHub Issues for my old Rails8 app" position="center" >}}
 
-I didn't want to spin up 20 separate agents manually, so I had an idea: what if I wrote **a single prompt to rule them all**? A prompt that would fetch all open issues, spawn a dedicated worker for each, evaluate whether it could be solved autonomously, and then do the work in parallel worktrees!
+I didn't want to spin up 20 separate agents manually, so I had an idea: what if I wrote **a single prompt to rule them all**? A prompt that would fetch all open issues, spawn a dedicated worker for each, evaluate whether it could be solved autonomously, and then do the work in parallel worktrees! This is a breeze with Antigravity 2.0 as you can read in [Richard Seroter's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
 
 If you're a follower of mine, this might ring a bell! I just posted another Worktree + Conductor article here: 
-* https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-1-b708b132b8a9
-* https://medium.com/@palladiusbonton/orchestrating-with-antigravity-a-crescendo-of-agents-part-2-ea39e3715506
+
+* [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/)
+* [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)
 * This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use HITL+Conductor as in article 2 instead.
 
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
@@ -179,7 +180,7 @@ Apparently, Gemini was listening to my `GEMINI.md` which said "do not push" so I
 I'm currently working on version `1.5` of the skill where automated review is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
 
-## 12:15 Second pass: v1.5.1 skill - TODO remove 
+## 12:15 Second pass: v1.5.1 skill
 
 At 12:21 I start this second prompt v1.5.1:
 
