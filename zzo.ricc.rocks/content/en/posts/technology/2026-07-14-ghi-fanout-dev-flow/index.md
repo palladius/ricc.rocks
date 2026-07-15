@@ -4,7 +4,7 @@ status: wip
 priority: P2
 title: "How I built a skill to fan out 20 workers to fix my old Rails App (steal my prompt!)"
 date: 2026-07-14T09:00:00+02:00
-draft: true
+draft: false
 description: "I wanted to fix an app which had 20 open GHI but I didnt want to spin up 20 agents. So I created a single prom pt to rule them all!"
 categories: ["Antigravity"]
 tags: ["Google", "Antigravity"]
@@ -59,13 +59,13 @@ Some important notes:
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/gemini31pro-thinking.png" caption="Use a Gemini PRo high-thinking mode for the main agent" alt="Use a Gemini PRo high-thinking mode for the main agent" position="center" >}}
 * **Enable Turbo mode**. What's the worst that can happen in your GH repo?
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/turbo-mode.png" caption="Enable Turbo mode" fewer questions and mnore risk. This is how Proper Unresponsible Vibecoding is done" alt="Enable Turbo mode" fewer questions and mnore risk. This is how Proper Unresponsible Vibecoding is done" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/turbo-mode.png" caption="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" alt="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" position="center" >}}
 
 But then I thought: this is so amazing, this is gonna change the world, this should be MORE than just a prompt. How do I maintain it? To quote Ali G, *"The world is bigger than Staines, and me gotta build a skill for it!"*
 
 ## Let's make it more complex
 
-Who knows me call me "The Master in overcomplication", which is not a compliment. Since the first version (commit `39f9f19`) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
+Who knows me call me "The Master in overcomplication", which is not a compliment. Since the [first version (commit `39f9f19`)](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
 
 To achieve this, I packaged the logic into a new skill: `ghi-fan-out-coding`. The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
@@ -75,10 +75,69 @@ To achieve this, I packaged the logic into a new skill: `ghi-fan-out-coding`. Th
 
 ### Chatting with Antigravity on Specs
 
-I love how Antigravity makes it easy for you to comment on na Implementation plan
+I love how Antigravity makes it easy for you to comment on an Implementation plan
 
+TODO screenshot
 
 ## We're ready, let's start!
+
+### A small diary
+
+* **09:41**: It all started.
+* **10:04**: 23 minutes later, all subagents but one have finished! Look:
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/1004%20all%20subagents%20but%20one%20are%20done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
+
+
+## Additional iterations
+
+CLI observation.
+```markdown
+3. Does the skill support some sort of CLI to get script status?
+I would love to see sth like `14 issues faced, 11 faced 3 skipped, 8 PR pendings, ..` 
+hopefully by just checking JSON in local and 
+sip caipirinha while observing "watch just cool-jsons"
+```
+
+A few minutes later...
+
+```bash
+ just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98                                                                           ricc-mac.roam.internal: Wed Jul 15 10:56:48 2026
+                                                                                                                                                                                         in 0.917s (0)
+=====================================================
+🚀 GHI Fan-Out Bonanza Dashboard | UUID: AC67EF98-9364-407A-A497-FD7DDD01EF98
+=====================================================
+Total Issue Folders Created: 14
+Subagents Completed: 11 / 14
+PRs Created: 2
+Problem Reports (JSON): 2
+=====================================================
+📊 Agent Status:
+  - 🤷 ghi-10: NOOP (Already fixed/closed)
+  - ✅ ghi-12: Completed (Work finished (no explicit PR link))
+  - 🛑 ghi-18: Aborted (Requires human intervention)
+  - ⏳ ghi-23: In Progress / Interrupted
+  - ✅ ghi-24: Completed (Work finished (no explicit PR link))
+  - ⏳ ghi-25: In Progress / Interrupted
+  - ✅ ghi-26: Completed (Pending push approval)
+  - ⏳ ghi-27: In Progress / Interrupted
+  - 🛑 ghi-34: Aborted (Requires human intervention)
+  - ✅ ghi-38: Completed (Pending push approval)
+  - ✅ ghi-40: Completed (Work finished (no explicit PR link))
+  - ✅ ghi-41: Completed (Created PR #69)
+  - 🛑 ghi-42: Aborted (Requires human intervention)
+  - ✅ ghi-44: Completed (Created PR #66)
+⚠️ Problems Found:
+  - ghi-42:  missing_context
+  - ghi-34:  app_not_running, missing_playwright
+=====================================================
+```
+
+### Review is missing
+
+I'm currently working on part 2 of the skill where automated review is happening sequentially.
+
+
 
 
 
