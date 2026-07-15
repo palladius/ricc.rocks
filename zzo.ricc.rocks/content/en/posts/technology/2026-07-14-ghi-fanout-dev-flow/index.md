@@ -109,7 +109,7 @@ Think about this: my best friend 🇮🇹 Andrea is not a coder and *yet* he's b
 
 ## We're ready, let's start!
 
-I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast. Here's what happened, Jack Bower style:
+I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast with my agents. Here's what happened, [Jack Bower](https://en.wikipedia.org/wiki/Jack_Bauer) style:
 
 🪵 `09:41` It all started. Here is a quick video of the agents working in parallel:
 
