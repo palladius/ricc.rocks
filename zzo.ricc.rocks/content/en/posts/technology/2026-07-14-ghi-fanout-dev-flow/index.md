@@ -101,7 +101,7 @@ To achieve this, I packaged the logic into a [new skill](https://github.com/pall
 
 ### Chatting with Antigravity on Skill Specs
 
-Spec Driven Development (SDD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan:
+[Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) (SDD, not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="Riccardo commenting on implementation plan" alt="Riccardo commenting on implementation plan" position="center" >}}
 
