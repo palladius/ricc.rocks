@@ -124,8 +124,8 @@ Don't believe me? Results are visible here: https://github.com/palladius/rails8-
 * **10:15**. Some missing JSON fields, update skill, rinse and repeat. 
   * I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. Ping me if this interesting to you.
 
-* 11:30 we're ready to execute the newer version, shiny skill v1.5!
-* 12:14 I've updated my article for you guys - sop now I'm ready fot the second pass
+* 11:30 we're ready to execute the newer version, shiny skill `v1.5`! <TODO link skill 1.5 permalink>
+* 12:14 I've updated my article for you guys - so now I'm ready fot the second pass
 
 
 ## Additional iterations
