@@ -187,7 +187,7 @@ Sounds familiar? It's a FIFO world where the first wins and all the others end w
 So I've worked on version `1.5` of the skill where **automated review** is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
 
-## Second pass: automated review (v1.5)
+## Skill Second pass: automated review (v1.5)
 
 🪵 `12:21` I start this second prompt v1.5.1:
 
@@ -209,7 +209,7 @@ What changed:
   1. a **HITL threshold** to tell it "bother me only for important questions" and do 80% by yourself.
   2. *(minor)* A harness name to be put in the GHI signature.
 
-### And it works!
+### .. and it works!
 
 Look how my 15 subagents are tokenmaxxing my Antigravity without breaking a sweat, and nicely populating 15 JSON files I can then review later:
 
