@@ -192,6 +192,14 @@ What changed:
   1. a **HITL threshold** to tell it "bother me only for important questions" and do 80% by yourself.
   2. *(minor)* A harness name to be put in the GHI signature.
 
+12:25: video
+
+<video controls src="assets/videos/Screen Recording 2026-07-15 at 12.26.01.mov" title="21 subagents! Wooooot!!!"></video>
+
+And i got execution `D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-4.png" caption="alt text" alt="alt text" position="center" >}}
+
 ## Conclusion
 
 My favorite mantra in google SRE is "Automate yourself out of the job" and today I achieved something in that direction.
