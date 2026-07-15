@@ -19,15 +19,15 @@ published_urls:
 #- "Medium TODO" 
 ---
 
-*I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!*
+*I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!* Ok, if not 1000s maybe 1 or 2.
 
-> How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill!
+> How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill, so you woulnd't have to do it!
 
 Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
 
 ---
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare!" alt="An old 2025 Rails app with plenty of open issues... nightmare!" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" alt="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" position="center" >}}
 
 
 **YES**, it is possible, and [Antigravity](https://antigravity/google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
@@ -271,13 +271,12 @@ Problem Reports (JSON): 0
 -->
 
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-6.png" caption="v3 figata alla fine" alt="v3 figata alla fine" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-6.png" caption="Final v3 status (UI upgrade)" alt="Final v3 status (UI upgrade)" position="center" >}}
 
 <!-- ricc-mac.roam.internal: Wed Jul 15 13:07:06 2026 -->
 * **13:07** And we're finished!
 ```
 $ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B
-                                                                                                                                                                                         in 3.230s (0)
 =====================================================
 🚀 GHI Fan-Out Bonanza Dashboard | UUID: 471A394C-0CC3-413B-9457-26318ECAE38B
    Skill: v1.5.4  #bac8f95
@@ -326,5 +325,10 @@ A few lessons learnt.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
 
 * Do not try this in **production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without HITL unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3.
+
+* AI tries to cut corners. For example I've asked for a code quality ratio in v1.5.4 and the executor created a deterministic script which eneded up rating them all 50%
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-8.png" caption="all code is 50% good and 50% bad, like a half Full glass" alt="all code is 50% good and 50% bad, like a half Full glass" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="50% political for everyone!" alt="50% political for everyone!" position="center" >}}
 
 *📝 This article will also be published on Medium — link coming soon.*
