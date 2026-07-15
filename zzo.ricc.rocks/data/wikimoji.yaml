@@ -7,6 +7,14 @@ targets:
     emoji: "🪨"
     description: "Internal links to ricc.rocks"
 
+  - name: gemini
+    patterns:
+      - "geminicli.com"
+      - "github.com/google-gemini/gemini-cli"
+      - "github.com/google/gemini-cli"
+    svg_partial: "svgs/social/gemini.svg"
+    description: "Gemini CLI links"
+
   - name: github
     patterns:
       - "github.com"
@@ -96,5 +104,5 @@ targets:
   - name: antigravity
     patterns:
       - "antigravity.google"
-    emoji: "🛸"
+    svg_partial: "svgs/social/antigravity.svg"
     description: "Antigravity links"
