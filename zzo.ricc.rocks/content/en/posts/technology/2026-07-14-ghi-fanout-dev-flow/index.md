@@ -345,7 +345,8 @@ A few lessons learnt.
 
 1. **Do it with Antigvraity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `python3 run_bonanza.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. Ullalla! 🚀*
 
-1. I'd love to investigate **Nested sub-agents**: TODO GHI
+2. I'd love to investigate **Nested sub-agents**: TODO GHI
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="banana agent" alt="banana agent" position="center" >}}
 
 
 ```mermaid
