@@ -80,7 +80,7 @@ In Italy we say that *appetite comes eating* and so why don't we raise the bar a
 
 Who knows me call me "The Master in overcomplication", which is not a compliment. Since the [first version (commit `39f9f19`)](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
 
-To achieve this, I packaged the logic into a new skill: TODO(permalink to skill) `ghi-fan-out-coding`. The workflow is simple:
+To achieve this, I packaged the logic into a [new skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding): [`ghi-fan-out-coding`](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding). The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
 2. **Fan Out:** It invokes subagents, handing each one an issue.
 3. **Isolated Worktrees:** Each subagent creates a git worktree to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix.
@@ -173,7 +173,7 @@ My favorite mantra in google SRE is "Automate yourself out of the job" and today
 
 What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating. The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
 
-If you want to try it out yourself, check out the `ghi-fan-out-coding` skill! <Todo perma link to skill>
+If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)!
 
 A few lessons learnt.
 
