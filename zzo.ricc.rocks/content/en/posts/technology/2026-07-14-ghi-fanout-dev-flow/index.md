@@ -7,8 +7,8 @@ date: 2026-07-14T09:00:00+02:00
 draft: false
 image: assets/hero_image.png
 description: "I wanted to fix an app which had 20 open GHI but I didnt want to spin up 20 agents. So I created a single prom pt to rule them all!"
-categories: ["Antigravity"]
-tags: ["Google", "Antigravity"]
+categories: ["Antigravity", Rails ]
+tags: ["Google", "Antigravity", Ruby, Rails, Worktree, Agentic, Subagents ]
 author: "Riccardo Carlesso"
 version: "1.0"
 Platform: "Medium and ricc.rocks"
@@ -103,7 +103,7 @@ hopefully by just checking JSON in local and
 sip caipirinha while observing "watch just cool-jsons"
 ```
 
-A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile ([4b08376](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58)):
+A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile ([#4b08376](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58)):
 
 ```bash
  just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98                                                                           ricc-mac.roam.internal: Wed Jul 15 10:56:48 2026
