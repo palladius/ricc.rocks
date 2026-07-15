@@ -103,7 +103,7 @@ hopefully by just checking JSON in local and
 sip caipirinha while observing "watch just cool-jsons"
 ```
 
-A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile (TODO commit hash of rails8 repo):
+A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile ([4b08376](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58)):
 
 ```bash
  just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98                                                                           ricc-mac.roam.internal: Wed Jul 15 10:56:48 2026
