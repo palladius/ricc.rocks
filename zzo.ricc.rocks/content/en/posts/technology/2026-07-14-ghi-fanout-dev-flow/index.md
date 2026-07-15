@@ -16,9 +16,10 @@ PublishDate: "2026-07-14"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
 ---
 
-# How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill!
-
 *I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!*
+
+<!-- would be nice to have a BIG FONT impact thingy which is not an H2 i think medium supports it. -->
+> How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill!
 
 Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
 
