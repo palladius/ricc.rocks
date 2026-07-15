@@ -113,8 +113,7 @@ I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast with
 
 🪵 `09:41` It all started. Here is a quick video of the agents working in parallel:
 
-<!-- TODO this is a BAD gif, i'd rather have the MPG instead -->
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-working.gif" caption="TODO_VIDEO_EMOHI Subagents in action" alt="TODO_VIDEO_EMOHI Subagents in action" position="center" >}}
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/videos/subagents-working.mov" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>🎥 Subagents in action</strong></figcaption></figure>
 
 🪵 `10:04` 23 minutes later, all subagents but one have finished! Look:
 
