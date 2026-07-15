@@ -84,3 +84,11 @@ targets:
       - "glaforge.appspot.com"
     emoji: "✍️"
     description: "Generic tech blogs (Seroter, Paul Datta, Guillaume Laforge)"
+
+  - name: ruby
+    patterns:
+      - "ruby-lang.org/en"
+      - "rubycon.it"
+      - "rubyonrails.org"
+    emoji: "💎"
+    description: "Ruby related links"
