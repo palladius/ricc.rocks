@@ -178,9 +178,11 @@ Problem Reports (JSON): 2
 
 ### Riccardo, what about Code Review?
 
-Apparently, Gemini was listening to my `GEMINI.md` which said "do not push" so I found myself with this issue... sounds familiar? It's a FIFO world where the first wins and all the others end in pain.
+Apparently, Gemini was listening to my `GEMINI.md` which said "do not push" so I found myself with this issue... 20 PRs and the temptation to tell those agents to stop slacking off and just push to main already! I mean, what can possibly go wrong?
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_3_1784109131568.jpg" caption="Too many conflicts, too many PRs fighting for prime time" alt="Too many conflicts, too many PRs fighting for prime time" position="center" >}}
+
+Sounds familiar? It's a FIFO world where the first wins and all the others end in pain.
 
 I'm currently working on version `1.5` of the skill where automated review is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
