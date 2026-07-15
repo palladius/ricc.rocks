@@ -341,4 +341,8 @@ A few lessons learnt.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-8.png" caption="all code is 50% good and 50% bad, like a half Full glass" alt="all code is 50% good and 50% bad, like a half Full glass" position="center" >}}
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="50% political for everyone!" alt="50% political for everyone!" position="center" >}}
 
+## Next steps
+
+It would be nice to try out [TODO link to]Antigravity SDK and try to implement this visionary tool: https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3
+
 *📝 This article will also be published on Medium — link coming soon.*
