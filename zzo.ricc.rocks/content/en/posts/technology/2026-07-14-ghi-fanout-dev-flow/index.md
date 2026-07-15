@@ -2,11 +2,11 @@
 type: Article
 status: wip
 priority: P2
-title: "How I built a skill to fan out 20 workers to fix my old Rails App (steal my prompt!)"
+title: "How I built a skill to fan out 20 workers to fix my old Rails App on Antigravity (steal my prompt!)"
 date: 2026-07-14T09:00:00+02:00
 draft: false
 image: "/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png"
-description: "I wanted to fix an app which had 20 open GH Issues but I didnt want to spin up 20 agents. So I created a single Antigravity prompt to rule them all!"
+description: "I wanted to fix an app which had 20 open GH Issues but I didnt want to spin up 20 agents. So I created a single Antigravity prompt to rule them all! The prompt was so good, and ideas came flogging at me, that I constructed a skill for you to re-use! This has been tested on Antigravity, which is free to use for everyone!"
 categories: ["Antigravity", Rails ]
 tags: ["Google", "Antigravity", Ruby, Rails, Worktree, Agentic, Subagents ]
 author: "Riccardo Carlesso"
@@ -23,14 +23,14 @@ published_urls:
 
 > How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill!
 
-Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [💎 Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
+Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
 
 ---
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare!" alt="An old 2025 Rails app with plenty of open issues... nightmare!" position="center" >}}
 
 
-**YES**, it is possible, and [Antigravity](https://github.com/google/antigravity) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
+**YES**, it is possible, and [Antigravity](https://antigravity/google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
 
 But let's not get ahead of ourselves.
 
@@ -124,15 +124,19 @@ Think about this: my best friend Andrea is not a coder and *yet* he's building F
 
 ## Additional iterations
 
-CLI observation.
+### No CLI, no party!
+
+I love having 20 json in my local computer, but I don't enjoy reading them manually (O write pomes in YAML - not JSON!) that means you can create a UI or a CLI to show you a synoptic. Let's do it!
+
 ```markdown
-3. Does the skill support some sort of CLI to get script status?
-I would love to see sth like `14 issues faced, 11 faced 3 skipped, 8 PR pendings, ..` 
+Does the skill support some sort of CLI to get script status?
+I would love to see sth like: 
+`14 issues faced, 11 faced 3 skipped, 8 PR pendings, ..` 
 hopefully by just checking JSON in local and 
 sip caipirinha while observing "watch just cool-jsons"
 ```
 
-A few minutes later, `scripts/dashboard.sh` (commit hash of skill) is ready and integrated in my repo's Justfile ([#4b08376](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58)):
+A few minutes later, `scripts/dashboard.sh` is ready and integrated in my repo's  ([Justfile](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58#diff-deb9bb56fb122db0b605aa5b63f95a4665c905b18dd670e1fa6c877576a94ff1)):
 
 ```bash
 # Launching with skill v1.4
@@ -168,18 +172,14 @@ Problem Reports (JSON): 2
 
 ### Riccardo, what about Code Review?
 
-Apparently, GEmini was listening to my `GEMINI.md` which said "do not push" so I found myself with this issue... sounds familiar? It's a FIFO world where the first wins and all the others end in pain.
+Apparently, Gemini was listening to my `GEMINI.md` which said "do not push" so I found myself with this issue... sounds familiar? It's a FIFO world where the first wins and all the others end in pain.
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_1_1784108977950.jpg" caption="Too many conflicts, too many PRs fighting for prime time" alt="Too many conflicts, too many PRs fighting for prime time" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_3_1784109131568.jpg" caption="Too many conflicts, too many PRs fighting for prime time" alt="Too many conflicts, too many PRs fighting for prime time" position="center" >}}
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_3_1784109131568.jpg" caption="This is even better" alt="This is even better" position="center" >}}
-
-
-I'm currently working on version 1.5 of the skill where automated review is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
+I'm currently working on version `1.5` of the skill where automated review is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
 
-
-## 12:15 Second pass: v1.5.1 skill
+## 12:15 Second pass: v1.5.1 skill - TODO remove 
 
 At 12:21 I start this second prompt v1.5.1:
 
@@ -196,7 +196,7 @@ After Phase 2, create the [META] retrospective issue and call main_end with --re
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="prompt verbatim" alt="prompt verbatim" position="center" >}}
 
 What changed:
-1. We have a sequential review phase following the main/subagent phase
+1. We have a **sequential review** phase following the main/subagent phase (not parallel to minimize merge/rebase pain).
 2. We have a few parameters:
   1. a **HITL threshold** to tell it "bother me only for important questions" and do 80% by yourself.
   2. *(minor)* A harness name to be put in the GHI signature.
