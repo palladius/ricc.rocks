@@ -90,5 +90,5 @@ targets:
       - "ruby-lang.org/en"
       - "rubycon.it"
       - "rubyonrails.org"
-    emoji: "💎"
+    svg_partial: "svgs/social/ruby.svg"
     description: "Ruby related links"
