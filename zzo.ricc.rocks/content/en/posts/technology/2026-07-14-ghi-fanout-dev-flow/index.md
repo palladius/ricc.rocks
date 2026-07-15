@@ -184,10 +184,10 @@ Apparently, Gemini was listening to my `GEMINI.md` which said "do not push" so I
 
 Sounds familiar? It's a FIFO world where the first wins and all the others end with blood on their hands.
 
-So I've worked on version `1.5` of the skill where automated review is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
+So I've worked on version `1.5` of the skill where **automated review** is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
 
-## 12:15 Second pass: v1.5.1 skill
+## Second pass: automated review (v1.5)
 
 🪵 `12:21` I start this second prompt v1.5.1:
 
