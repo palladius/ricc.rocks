@@ -96,7 +96,7 @@ Who knows me call me "The Master in overcomplication", which is not a compliment
 To achieve this, I packaged the logic into a [new skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding): [`ghi-fan-out-coding`](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding). The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
 2. **Fan Out:** It invokes subagents, handing each one an issue.
-3. **Isolated Worktrees:** Each subagent creates a git worktree to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix.
+3. **Isolated Worktrees:** Each subagent creates a `git worktree` to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix. This is a lesson I learnt in the poast month and you can read in TODO(article 2)
 4. **Pull Requests:** When the tests pass, the subagent pushes the branch and creates a PR with a summary of its choices.
 
 ### Chatting with Antigravity on Specs
@@ -104,6 +104,7 @@ To achieve this, I packaged the logic into a [new skill](https://github.com/pall
 Spec Driven Development (SDD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="Riccardo commenting on implementation plan" alt="Riccardo commenting on implementation plan" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="alt text" alt="alt text" position="center" >}}
 
 Think about this: my best friend Andrea is not a coder and *yet* he's building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
 
