@@ -380,4 +380,6 @@ graph TD
     SA3 --> SA33
 ```
 
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="alt text" alt="alt text" position="center" >}}
+
 *📝 This article will also be published on Medium — link coming soon.*
