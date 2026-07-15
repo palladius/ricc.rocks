@@ -47,35 +47,35 @@ graph TD
 
 ## 📊 Full Agent Registry
 
-| Agent | Level | Parent | Conversation ID | Date Output |
-|-------|-------|--------|----------------|-------------|
-| **Main** | L0 | — | `7cf8c596-0fe0-4664-955d-6e29aae658a2` | — |
-| **SA1** | L1 | Main | `ab7d1ea9-96d3-43d1-890f-f7604a3549c5` | — |
-| **SA2** | L1 | Main | `53242514-b273-4fe2-a156-8c5634fc219f` | — |
-| **SA3** | L1 | Main | `89efcbeb-e198-4de4-a486-e1994d0b07dd` | — |
-| **SA11** | L2 | SA1 | `bf82638b-693a-4d06-9615-65768ac8c271` | `Wed Jul 15 16:03:35 CEST 2026` |
-| **SA12** | L2 | SA1 | `ed8074f9-c06c-489f-b199-677e8886d8f6` | `Wed Jul 15 16:03:35 CEST 2026` |
-| **SA13** | L2 | SA1 | `a699c454-b801-4a1d-963a-fbc7f9cd1ed2` | `Wed Jul 15 16:03:35 CEST 2026` |
-| **SA21** | L2 | SA2 | `a6eee4f2-e848-46a1-8f59-120898b197ad` | `Wed Jul 15 16:03:28 CEST 2026` |
-| **SA22** | L2 | SA2 | `14a5ec4e-74df-4b5b-b259-2bfc720a88d5` | `Wed Jul 15 16:03:29 CEST 2026` |
-| **SA23** | L2 | SA2 | `8e68a505-a353-40c2-9cad-dcceed47588f` | `Wed Jul 15 16:03:29 CEST 2026` |
-| **SA31** | L2 | SA3 | `ef2df0ec-c144-4a4b-8268-ac124f3be7d5` | `Wed Jul 15 16:03:36 CEST 2026` |
-| **SA32** | L2 | SA3 | `5915764c-e743-4227-bf92-4dad68c2deae` | `Wed Jul 15 16:03:35 CEST 2026` |
-| **SA33** | L2 | SA3 | `cdafa921-a0a6-4bf6-917e-8393eb19141b` | `Wed Jul 15 16:03:36 CEST 2026` |
+| Agent    | Level | Parent | Conversation ID                        | Date Output                     |
+| ----------| -------| --------| ----------------------------------------| ---------------------------------|
+| **Main** | L0    | —      | `7cf8c596-0fe0-4664-955d-6e29aae658a2` | —                               |
+| **SA1**  | L1    | Main   | `ab7d1ea9-96d3-43d1-890f-f7604a3549c5` | —                               |
+| **SA2**  | L1    | Main   | `53242514-b273-4fe2-a156-8c5634fc219f` | —                               |
+| **SA3**  | L1    | Main   | `89efcbeb-e198-4de4-a486-e1994d0b07dd` | —                               |
+| **SA11** | L2    | SA1    | `bf82638b-693a-4d06-9615-65768ac8c271` | `Wed Jul 15 16:03:35 CEST 2026` |
+| **SA12** | L2    | SA1    | `ed8074f9-c06c-489f-b199-677e8886d8f6` | `Wed Jul 15 16:03:35 CEST 2026` |
+| **SA13** | L2    | SA1    | `a699c454-b801-4a1d-963a-fbc7f9cd1ed2` | `Wed Jul 15 16:03:35 CEST 2026` |
+| **SA21** | L2    | SA2    | `a6eee4f2-e848-46a1-8f59-120898b197ad` | `Wed Jul 15 16:03:28 CEST 2026` |
+| **SA22** | L2    | SA2    | `14a5ec4e-74df-4b5b-b259-2bfc720a88d5` | `Wed Jul 15 16:03:29 CEST 2026` |
+| **SA23** | L2    | SA2    | `8e68a505-a353-40c2-9cad-dcceed47588f` | `Wed Jul 15 16:03:29 CEST 2026` |
+| **SA31** | L2    | SA3    | `ef2df0ec-c144-4a4b-8268-ac124f3be7d5` | `Wed Jul 15 16:03:36 CEST 2026` |
+| **SA32** | L2    | SA3    | `5915764c-e743-4227-bf92-4dad68c2deae` | `Wed Jul 15 16:03:35 CEST 2026` |
+| **SA33** | L2    | SA3    | `cdafa921-a0a6-4bf6-917e-8393eb19141b` | `Wed Jul 15 16:03:36 CEST 2026` |
 
 ## 😂 Joke Parade
 
-| Agent | Number | Joke |
-|-------|--------|------|
-| SA11 | 11 | Why is 11 the loneliest number? Because it's just two ones standing together but never touching! |
-| SA12 | 12 | Why did 12 go to therapy? It had too many factors in its life! |
-| SA13 | 13 | Why is 13 so unlucky? Because it can't even! |
-| SA21 | 21 | Why is 21 the best age? Because you can finally blackjack legally! |
-| SA22 | 22 | What did 22 say to 11? You are only half the number I am! |
-| SA23 | 23 | Why is 23 Michael Jordan's favorite? Because even numbers couldn't keep up! |
-| SA31 | 31 | Why does 31 love ice cream? Because it's a Baskin Robbins flavor count! |
-| SA32 | 32 | What do 32 teeth say? We are the full set, no wisdom needed! |
-| SA33 | 33 | Why is 33 the magic number? Because Larry Bird said so! |
+| Agent | Number | Joke                                                                                             |
+| -------| --------| --------------------------------------------------------------------------------------------------|
+| SA11  | 11     | Why is 11 the loneliest number? Because it's just two ones standing together but never touching! |
+| SA12  | 12     | Why did 12 go to therapy? It had too many factors in its life!                                   |
+| SA13  | 13     | Why is 13 so unlucky? Because it can't even!                                                     |
+| SA21  | 21     | Why is 21 the best age? Because you can finally blackjack legally!                               |
+| SA22  | 22     | What did 22 say to 11? You are only half the number I am!                                        |
+| SA23  | 23     | Why is 23 Michael Jordan's favorite? Because even numbers couldn't keep up!                      |
+| SA31  | 31     | Why does 31 love ice cream? Because it's a Baskin Robbins flavor count!                          |
+| SA32  | 32     | What do 32 teeth say? We are the full set, no wisdom needed!                                     |
+| SA33  | 33     | Why is 33 the magic number? Because Larry Bird said so!                                          |
 
 ## ⏱️ Timeline
 
