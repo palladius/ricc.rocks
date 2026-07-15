@@ -5,7 +5,7 @@ priority: P2
 title: "How I built a skill to fan out 20 workers to fix my old Rails App (steal my prompt!)"
 date: 2026-07-14T09:00:00+02:00
 draft: false
-image: assets/hero_image.png
+image: "/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png"
 description: "I wanted to fix an app which had 20 open GHI but I didnt want to spin up 20 agents. So I created a single prom pt to rule them all!"
 categories: ["Antigravity", Rails ]
 tags: ["Google", "Antigravity", Ruby, Rails, Worktree, Agentic, Subagents ]
@@ -16,6 +16,7 @@ PublishDate: "2026-07-14"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
 published_urls:
 - "https://ricc.rocks/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/" 
+#- "Medium TODO" 
 ---
 
 *I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!*
