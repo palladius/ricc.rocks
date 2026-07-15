@@ -92,7 +92,7 @@ Spec Driven Development (SDD) couldn't be funnier and more productive! I love ho
 
 ![alt text](<screenshots/ricc commenting on implementation plan.png>)
 
-To prove me right, my friend Andrea is not a coder and *yet* is building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
+Think about this: my best friend Andrea is not a coder and *yet* he's building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
 
 ## We're ready, let's start!
 
@@ -101,12 +101,14 @@ To prove me right, my friend Andrea is not a coder and *yet* is building Finance
 * **09:41**: It all started.
 * **10:04**: 23 minutes later, all subagents but one have finished! Look:
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/1004-all-subagents-but-one-are-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
 * Results are visible here: https://github.com/palladius/rails8-turbo-chat/issues/71
 * **10:15**. Some missing JSON fields, update skill, rinse and repeat.
 ...
 * 11:30 we're ready to execute the newer version, shiny skill v1.5!
+* 12:14 I've updated my article for you guys - sop now I'm ready fot the second pass
+
 
 ## Additional iterations
 
@@ -165,7 +167,27 @@ I'm currently working on version 1.5 of the skill where automated review is happ
 
 
 
+## 12:15 Second pass: v1.5.1 skill
 
+At 12:21 I start this second prompt v1.5.1:
+
+```markdown
+Read the `ghi-fan-out-coding` skill, then execute both phases:
+• Phase 1: Follow `MAIN_AGENT_CHECKLIST.md` to fan-out parallel subagents.
+• Phase 2: Follow `REVIEW_AGENT_CHECKLIST.md` to sequentially review all PRs.
+Settings:
+• Harness: antigravity
+• HITL threshold: 80
+After Phase 2, create the [META] retrospective issue and call main_end with --retro-ghi.
+
+```
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="prompt verbatim" alt="prompt verbatim" position="center" >}}
+
+What changed:
+1. We have a sequential review phase following the main/subagent phase
+2. We have a few parameters:
+  1. a **HITL threshold** to tell it "bother me only for important questions" and do 80% by yourself.
+  2. *(minor)* A harness name to be put in the GHI signature.
 
 ## Conclusion
 
