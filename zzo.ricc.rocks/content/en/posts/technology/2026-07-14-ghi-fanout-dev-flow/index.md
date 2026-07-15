@@ -30,7 +30,7 @@ Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emili
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" alt="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" position="center" >}}
 
 
-**YES**, it is possible, and [Antigravity](https://antigravity.google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
+**YES**, it is possible, and [🛸 Antigravity](https://antigravity.google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
 
 But let's not get ahead of ourselves.
 
