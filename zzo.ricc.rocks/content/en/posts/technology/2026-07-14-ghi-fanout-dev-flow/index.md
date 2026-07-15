@@ -111,21 +111,21 @@ Think about this: my best friend 🇮🇹 Andrea is not a coder and *yet* he's b
 
 I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast. Here's what happened, Jack Bower style:
 
-* 🪵 `09:41` It all started. Here is a quick video of the agents working in parallel:
+🪵 `09:41` It all started. Here is a quick video of the agents working in parallel:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-working.gif" caption="Subagents in action" alt="Subagents in action" position="center" >}}
 
-* 🪵 `10:04` 23 minutes later, all subagents but one have finished! Look:
+🪵 `10:04` 23 minutes later, all subagents but one have finished! Look:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
 Don't believe me? Results are visible here: https://github.com/palladius/rails8-turbo-chat/issues/71
 
-* 🪵 `10:15` Some missing JSON fields, update skill, rinse and repeat. 
+🪵 `10:15` Some missing JSON fields, update skill, rinse and repeat. 
   * I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. Ping me if this interesting to you.
 
-* 🪵 `11:30` We're ready to execute the newer version, shiny skill `v1.5`! ([View on GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
-* 🪵 `12:14` I've updated this article for you guys - so now I'm ready for the second pass
+🪵 `11:30` We're ready to execute the newer version, shiny skill `v1.5`! ([View on GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
+🪵 `12:14` I've updated this article for you guys - so now I'm ready for the second pass
 
 
 ## Additional iterations
@@ -187,7 +187,7 @@ I'm currently working on version `1.5` of the skill where automated review is ha
 
 ## 12:15 Second pass: v1.5.1 skill
 
-* 🪵 `12:21` I start this second prompt v1.5.1:
+🪵 `12:21` I start this second prompt v1.5.1:
 
 ```markdown
 Read the `ghi-fan-out-coding` skill, then execute both phases:
@@ -224,13 +224,13 @@ Woops - some solert agent decided to wipe out the whole status folder. Damn it!
 1. Fix the skill to say don't do it again, naughty boy!
 2. Rinse and repeat: 
  
-* 🪵 `12:52` Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
+🪵 `12:52` Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
 
 Now the skill updated to `v1.5.4`.
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-5.png" caption="Prompt for second version, launching on Antigravity!" alt="Prompt for second version, launching on Antigravity!" position="center" >}}
 
-* 🪵 `12:54` Start with empty slate, third folder:
+🪵 `12:54` Start with empty slate, third folder:
 
 ```
 📊 Agent Status:
@@ -280,7 +280,7 @@ Problem Reports (JSON): 0
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-6.png" caption="Final v3 status (UI upgrade)" alt="Final v3 status (UI upgrade)" position="center" >}}
 
 <!-- ricc-mac.roam.internal: Wed Jul 15 13:07:06 2026 -->
-* 🪵 `13:07` And we're finished!
+🪵 `13:07` And we're finished!
 ```
 $ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B
 =====================================================
