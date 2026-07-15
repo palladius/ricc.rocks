@@ -109,7 +109,7 @@ Think about this: my best friend <emoji italian flag> Andrea is not a coder and 
 
 ## We're ready, let's start!
 
-### A small diary
+I'm at Lido degli Estensi, <italy emoji>, coding with A/C on, and having a blast. Here's what happened, Jack Bower style:
 
 * **09:41**: It all started. Here is a quick video of the agents working in parallel:
 
