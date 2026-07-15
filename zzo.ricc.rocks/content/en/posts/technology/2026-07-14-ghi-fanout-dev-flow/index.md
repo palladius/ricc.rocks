@@ -187,7 +187,7 @@ I'm currently working on version `1.5` of the skill where automated review is ha
 
 ## 12:15 Second pass: v1.5.1 skill
 
-At 12:21 I start this second prompt v1.5.1:
+* 🪵 `12:21` I start this second prompt v1.5.1:
 
 ```markdown
 Read the `ghi-fan-out-coding` skill, then execute both phases:
@@ -224,7 +224,7 @@ Woops - some solert agent decided to wipe out the whole status folder. Damn it!
 1. Fix the skill to say don't do it again, naughty boy!
 2. Rinse and repeat: 
  
-**12:52** Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
+* 🪵 `12:52` Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
 
 Now the skill updated to `v1.5.4`.
 
