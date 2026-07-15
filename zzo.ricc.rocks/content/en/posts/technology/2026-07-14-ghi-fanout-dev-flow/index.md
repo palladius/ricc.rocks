@@ -99,7 +99,7 @@ To achieve this, I packaged the logic into a [new skill](https://github.com/pall
 3. **Isolated Worktrees:** Each subagent creates a `git worktree` to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix. This is a lesson I learnt in the past month and you can read in [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/).
 4. **Pull Requests:** When the tests pass, the subagent pushes the branch and creates a PR with a summary of its choices.
 
-### Chatting with Antigravity on Skill Specs
+### Chatting with AGY on SKILL Specs
 
 [Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) (SDD, not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan:
 
