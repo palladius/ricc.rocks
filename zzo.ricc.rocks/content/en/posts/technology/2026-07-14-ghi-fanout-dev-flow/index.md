@@ -213,13 +213,13 @@ What changed:
 
 Look how my 15 subagents are tokenmaxxing my Antigravity without breaking a sweat, and nicely populating 15 JSON files I can then review later:
 
-<video controls src="assets/videos/Screen Recording 2026-07-15 at 12.26.01.mov" title="21 subagents! Wooooot!!!"></video>
+<video controls src="assets/videos/Screen Recording 2026-07-15 at 12.26.01.mov" title="21 subagents! Wooooot!!! Capturing this video was hard but totally worth it!"></video>
 
 Let's check my second execution `uuid=D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-4.png" caption="Work in progress, 3 done and 13 still to go!" alt="Work in progress, 3 done and 13 still to go!" position="center" >}}
 
-## Who deleted my status folder?
+### Wait, who deleted my status folder?
 
 Woops - some solert agent decided to wipe out the whole status folder. Damn it!
 
