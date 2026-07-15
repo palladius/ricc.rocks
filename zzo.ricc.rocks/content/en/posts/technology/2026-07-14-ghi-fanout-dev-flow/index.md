@@ -221,7 +221,7 @@ Let's check my second execution `uuid=D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
 
 ### Wait, who deleted my status folder?
 
-Woops - some solert agent decided to wipe out the whole status folder. Damn it!
+Woops - some overly diligent agent decided to wipe out the whole status folder. Damn it!
 
 1. Fix the skill to say don't do it again, naughty boy!
 2. Rinse and repeat: 
