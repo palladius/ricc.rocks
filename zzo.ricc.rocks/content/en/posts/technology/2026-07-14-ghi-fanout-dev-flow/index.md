@@ -201,21 +201,42 @@ What changed:
   1. a **HITL threshold** to tell it "bother me only for important questions" and do 80% by yourself.
   2. *(minor)* A harness name to be put in the GHI signature.
 
-12:25: video
+### And it works!
+
+Look how my 15 subagents are tokenmaxxing my Antigravity without breaking a sweat, and nicely populating 15 JSON files I can then review later:
 
 <video controls src="assets/videos/Screen Recording 2026-07-15 at 12.26.01.mov" title="21 subagents! Wooooot!!!"></video>
 
-And i got execution `D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
+Let's check my second execution `uuid=D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-4.png" caption="alt text" alt="alt text" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-4.png" caption="Work in progress, 3 done and 13 still to go!" alt="Work in progress, 3 done and 13 still to go!" position="center" >}}
 
-## 12:52 Exec v3 -  471A394C-0CC3-413B-9457-26318ECAE38B
+## Who deleted my status folder?
+
+Woops - some solert agent decided to wipe out the whole status folder. Damn it!
+
+1. Fix the skill to say don't do it again, naughty boy!
+2. Rinse and repeat: 
+ 
+**12:52** Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
+
+Now the skill updated to `v1.5.4`.
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-5.png" caption="Prompt for second version, launching on Antigravity!" alt="Prompt for second version, launching on Antigravity!" position="center" >}}
+
+** **12:54**. Start with empty slate, third folder:
+
+```
+📊 Agent Status:
+  - ⏳ ghi-12: Pending
+  - ⏳ ghi-18: Pending
+  - ⏳ ghi-23: Pending
+  - ⏳ ghi-24: Pending
+[..]
+```
 
 
-
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-5.png" caption="second version exploded" alt="second version exploded" position="center" >}}
-
-12:54
+<!--  seems pretty boting, skipping 
 ```
 $ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B 
 =====================================================
@@ -247,10 +268,13 @@ Problem Reports (JSON): 0
 =====================================================
 ```
 
+-->
+
+
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-6.png" caption="v3 figata alla fine" alt="v3 figata alla fine" position="center" >}}
 
 <!-- ricc-mac.roam.internal: Wed Jul 15 13:07:06 2026 -->
-13:07 We're finished!
+* **13:07** And we're finished!
 ```
 $ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B
                                                                                                                                                                                          in 3.230s (0)
