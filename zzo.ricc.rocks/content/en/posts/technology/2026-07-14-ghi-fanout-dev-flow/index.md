@@ -119,7 +119,8 @@ I'm at Lido degli Estensi, <italy emoji>, coding with A/C on, and having a blast
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
-* Results are visible here: https://github.com/palladius/rails8-turbo-chat/issues/71
+Don't believe me? Results are visible here: https://github.com/palladius/rails8-turbo-chat/issues/71
+
 * **10:15**. Some missing JSON fields, update skill, rinse and repeat.
 ...
 * 11:30 we're ready to execute the newer version, shiny skill v1.5!
