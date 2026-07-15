@@ -6,7 +6,7 @@ title: "How I built a skill to fan out 20 workers to fix my old Rails App (steal
 date: 2026-07-14T09:00:00+02:00
 draft: false
 image: "/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png"
-description: "I wanted to fix an app which had 20 open GHI but I didnt want to spin up 20 agents. So I created a single prom pt to rule them all!"
+description: "I wanted to fix an app which had 20 open GH Issues but I didnt want to spin up 20 agents. So I created a single Antigravity prompt to rule them all!"
 categories: ["Antigravity", Rails ]
 tags: ["Google", "Antigravity", Ruby, Rails, Worktree, Agentic, Subagents ]
 author: "Riccardo Carlesso"
@@ -23,7 +23,7 @@ published_urls:
 
 > How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill!
 
-Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
+Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [💎 Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
 
 ---
 
