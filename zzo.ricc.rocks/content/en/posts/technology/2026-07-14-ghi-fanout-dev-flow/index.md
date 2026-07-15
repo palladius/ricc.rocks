@@ -42,6 +42,13 @@ I didn't want to spin up 20 separate agents manually, so I had an idea: what if 
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
 
+If you're a follower of mine, this might ring a bell! I just posted another Worktree + Conductor article here: 
+* http://localhost:1313/en/posts/technology/2026-07-03-crescendo-of-agents-part-1/
+* http://localhost:1313/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/
+* <!-- TODO make these links polymorphic into ricc.rocks and meidum, dont remember how we achieve this. -->
+* This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use HITL+Conductor as in article 2 instead.
+
+<!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
 ## My first solution
 
  Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
