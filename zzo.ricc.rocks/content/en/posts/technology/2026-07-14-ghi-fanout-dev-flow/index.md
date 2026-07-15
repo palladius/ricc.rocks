@@ -70,13 +70,17 @@ Some important notes:
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/turbo-mode.png" caption="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" alt="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" position="center" >}}
 
-But then I thought: this is so amazing, this is gonna change the world, this should be MORE than just a prompt. How do I maintain it? To quote Ali G, *"The world is bigger than Staines, and me gotta build a skill for it!"*
+This is off to a great start! But...
+
+Then I thought: this is so amazing, this is gonna change the world, this should be MORE than just a prompt. How do I maintain it? To quote Ali G, *"The world is bigger than Staines, and me gotta build a skill for it!"*
+
+In Italy we say that *appetite comes eating* and so why don't we raise the bar a bit?
 
 ## Let's make it more complex
 
 Who knows me call me "The Master in overcomplication", which is not a compliment. Since the [first version (commit `39f9f19`)](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
 
-To achieve this, I packaged the logic into a new skill: `ghi-fan-out-coding`. The workflow is simple:
+To achieve this, I packaged the logic into a new skill: TODO(permalink to skill) `ghi-fan-out-coding`. The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
 2. **Fan Out:** It invokes subagents, handing each one an issue.
 3. **Isolated Worktrees:** Each subagent creates a git worktree to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix.
@@ -176,7 +180,7 @@ A few lessons learnt.
 * **Devil is in the details**, some things will always fail. Authnetication, 
 * For everything else, Playwright is on our side. Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image.png" caption="Antigravity running a playwright script where an image says "it works!"" alt="Antigravity running a playwright script where an image says "it works!"" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
 
 Image: playwright_hello_8080.png
 
