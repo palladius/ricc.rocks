@@ -349,35 +349,7 @@ A few lessons learnt.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="banana agent" alt="banana agent" position="center" >}}
 
 
-```mermaid
-graph TD
-    MAIN["🧠 Main Agent<br/>7cf8c596...658a2"]
-    SA1["🎯 SA1<br/>ab7d1ea9...49c5"]
-    SA2["🎯 SA2<br/>53242514...219f"]
-    SA3["🎯 SA3<br/>89efcbeb...07dd"]
-    SA11["🎲 SA11<br/>bf82638b...c271"]
-    SA12["🎰 SA12<br/>ed8074f9...d8f6"]
-    SA13["🐈 SA13<br/>a699c454...1ed2"]
-    SA21["🃏 SA21<br/>a6eee4f2...97ad"]
-    SA22["🔢 SA22<br/>14a5ec4e...88d5"]
-    SA23["🏀 SA23<br/>8e68a505...588f"]
-    SA31["🍦 SA31<br/>ef2df0ec...be7d5"]
-    SA32["🦷 SA32<br/>5915764c...deae"]
-    SA33["🏀 SA33<br/>cdafa921...141b"]
-
-    MAIN --> SA1
-    MAIN --> SA2
-    MAIN --> SA3
-    SA1 --> SA11
-    SA1 --> SA12
-    SA1 --> SA13
-    SA2 --> SA21
-    SA2 --> SA22
-    SA2 --> SA23
-    SA3 --> SA31
-    SA3 --> SA32
-    SA3 --> SA33
-```
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/images/nested-subagents.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="alt text" alt="alt text" position="center" >}}
 
