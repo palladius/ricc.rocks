@@ -53,7 +53,7 @@ If you're a follower of mine, this might ring a bell! I just posted another Work
 This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use [🪨 HITL+Conductor skill as in article 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/) instead.
 
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
-## My first solution
+## 1. My first solution: a prompt
 
 So I started typing this fan-out prompt:
 
@@ -86,7 +86,11 @@ Then I thought: this is so amazing, this is gonna change the world, this should 
 
 In Italy we say that *appetite comes eating* and so why don't we raise the bar a bit?
 
-## Let's make it more complex
+<!-- 
+Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
+-->
+
+## 2. Let's make it a SKILL
 
 Who knows me call me "The Master in overcomplication", which is not a compliment. Since the first version ([#39f9f19](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19)) I"ve added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can bettere identify what went worng.
 
