@@ -16,7 +16,7 @@ PublishDate: "2026-07-14"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
 published_urls:
 - "https://ricc.rocks/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/" 
-#- "Medium TODO" 
+
 ---
 
 *I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!* Ok, if not 1000s maybe 1 or 2.
@@ -83,7 +83,7 @@ We're off to a great start! But...
 
 Then I thought: this is so amazing, this is gonna change the world, this should be MORE than just a prompt. How do I maintain it? To quote Ali G, *"The world is bigger than Staines, and me gotta build a skill for it!"*
 
-In  <TODO emoji flag italy> Italy we say that [*appetite comes with eating*](https://appetitomagazine.com/features/lappetito-vien-mangiando-why-appetite-comes-with-eating) and so why don't we raise the bar a bit?
+In 🇮🇹 Italy we say that [*appetite comes with eating*](https://appetitomagazine.com/features/lappetito-vien-mangiando-why-appetite-comes-with-eating) and so why don't we raise the bar a bit?
 
 <!-- 
 Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
@@ -96,7 +96,7 @@ Who knows me call me "The Master in overcomplication", which is not a compliment
 To achieve this, I packaged the logic into a [new skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding): [`ghi-fan-out-coding`](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding). The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
 2. **Fan Out:** It invokes subagents, handing each one an issue.
-3. **Isolated Worktrees:** Each subagent creates a `git worktree` to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix. This is a lesson I learnt in the poast month and you can read in TODO(article 2)
+3. **Isolated Worktrees:** Each subagent creates a `git worktree` to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix. This is a lesson I learnt in the past month and you can read in [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/).
 4. **Pull Requests:** When the tests pass, the subagent pushes the branch and creates a PR with a summary of its choices.
 
 ### Chatting with Antigravity on Specs
@@ -105,11 +105,11 @@ Spec Driven Development (SDD) couldn't be funnier and more productive! I love ho
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="Riccardo commenting on implementation plan" alt="Riccardo commenting on implementation plan" position="center" >}}
 
-Think about this: my best friend <emoji italian flag> Andrea is not a coder and *yet* he's building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
+Think about this: my best friend 🇮🇹 Andrea is not a coder and *yet* he's building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
 
 ## We're ready, let's start!
 
-I'm at Lido degli Estensi, <italy emoji>, coding with A/C on, and having a blast. Here's what happened, Jack Bower style:
+I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast. Here's what happened, Jack Bower style:
 
 * **09:41**: It all started. Here is a quick video of the agents working in parallel:
 
@@ -124,15 +124,15 @@ Don't believe me? Results are visible here: https://github.com/palladius/rails8-
 * **10:15**. Some missing JSON fields, update skill, rinse and repeat. 
   * I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. Ping me if this interesting to you.
 
-* 11:30 we're ready to execute the newer version, shiny skill `v1.5`! <TODO link skill 1.5 permalink>
-* 12:14 I've updated <TODO link to self :) >this article for you guys - so now I'm ready fot the second pass
+* 11:30 we're ready to execute the newer version, shiny skill `v1.5`! ([View on GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
+* 12:14 I've updated this article for you guys - so now I'm ready for the second pass
 
 
 ## Additional iterations
 
 ### No CLI, no party!
 
-I love having 20 json in my local computer, but I don't enjoy reading them manually (O write pomes in YAML - not JSON!) that means you can create a UI or a CLI to show you a synoptic. Let's do it!
+I love having 20 `.JSON` in my local computer, but I don't enjoy reading them manually (I write pomes in YAML - not JSON!) that means you can create a UI or a CLI to show you a synoptic. Let's do it!
 
 ```markdown
 Does the skill support some sort of CLI to get script status?
