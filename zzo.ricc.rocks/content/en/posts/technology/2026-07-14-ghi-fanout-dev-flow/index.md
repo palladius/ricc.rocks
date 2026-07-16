@@ -59,7 +59,7 @@ This article differs in the sense that it's LESS Conductor/Spec-Driven and so it
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
 ## 1. My first solution: a prompt
 
-So I started typing this fan-out prompt on <link to download for 2.,0>Antigravioty 2.0</link>:
+So I started typing this fan-out prompt on [Antigravity 2.0](https://antigravity.google/):
 
 ```markdown
 For every open GH issue, open a subagent for that issue. That subagent shall:
