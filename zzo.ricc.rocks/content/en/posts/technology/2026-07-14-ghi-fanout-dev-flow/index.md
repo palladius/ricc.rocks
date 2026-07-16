@@ -39,9 +39,13 @@ But let's not get ahead of ourselves.
 
 If you maintain an old project, you know the drill: you check the repository after a few months and find 20 open issues, dependabot alerts, and minor feature requests piling up. The thought of manually branching, fixing, testing, and opening PRs for each one is exhausting. 
 
+> **You want to solve those 20 issues, but NOT at the cost of actually READING them!**
+
+If only AI could safely solve them and, if not, leave the bug documented with a number of thourough questions for me to tackle? I want to wake up tomorrow with only 4 bugs open and some smart questions to "unblock" the agent, and yes, maybe one of them needs manual resolution, I can live with that!
+
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/image.png" caption="A bunch of open GitHub Issues for my old Rails8 app" alt="A bunch of open GitHub Issues for my old Rails8 app" position="center" >}}
 
-I didn't want to spin up 20 separate agents manually, so I had an idea: what if I wrote **a single prompt to rule them all**? A prompt that would fetch all open issues, spawn a dedicated worker for each, evaluate whether it could be solved autonomously, and then do the work in parallel worktrees! This is a breeze with Antigravity 2.0 as you can read in [Richard Seroter's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
+So I had an idea: what if I wrote **a single prompt to rule them all**? A prompt that would fetch all open issues, spawn a dedicated worker for each, evaluate whether it could be solved autonomously, and then do the work in parallel worktrees! This is a breeze with Antigravity 2.0 as you can read in [Richard Seroter's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
 
@@ -55,7 +59,7 @@ This article differs in the sense that it's LESS Conductor/Spec-Driven and so it
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
 ## 1. My first solution: a prompt
 
-So I started typing this fan-out prompt:
+So I started typing this fan-out prompt on <link to download for 2.,0>Antigravioty 2.0</link>:
 
 ```markdown
 For every open GH issue, open a subagent for that issue. That subagent shall:
@@ -345,9 +349,11 @@ A few lessons learnt.
 
 1. **Do it with Antigvraity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `python3 run_bonanza.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. Ullalla! 🚀*
 
-2. I'd love to investigate **Nested sub-agents**: TODO GHI
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="banana agent" alt="banana agent" position="center" >}}
+2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnterability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
 
+<!-- 
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="banana agent" alt="banana agent" position="center" >}}
+-->
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/images/nested-subagents.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
 
