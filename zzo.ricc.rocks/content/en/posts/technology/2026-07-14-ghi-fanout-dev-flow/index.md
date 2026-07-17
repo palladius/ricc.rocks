@@ -348,9 +348,9 @@ A few lessons learnt.
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-turbochat-login.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
 
-  * Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>". This is even easier on Antigravity UI, since you can just paste tje screenshot (`cmd V` and "look at this visual problem").
+* Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>". This is even easier on Antigravity UI, since you can just paste tje screenshot (`cmd V` and "look at this visual problem").
 
-* Do not try this in **production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without HITL unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, in my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3. As an SRE, [I've asked AGY to write a PoMo](https://github.com/palladius/rails8-turbo-chat/issues/89) so we can learn from it and fix the skill.
+* Do not try this in **production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without my approval unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, in my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3. As an SRE, [I've asked AGY to write a PoMo](https://github.com/palladius/rails8-turbo-chat/issues/89) so we can learn from it and fix the skill.
 
 * AI tries to cut corners. For example I've asked for a code quality ratio in v1.5.4 and the executor created a deterministic script which ended up rating them all 50%
 
