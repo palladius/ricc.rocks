@@ -198,11 +198,11 @@ Sounds familiar? It's a FIFO world where the first wins and all the others end w
 So I've worked on version `1.5` of the skill where **automated review** is happening *sequentially* (yes I'm not convinced parallelism would help here - plus reviewing should be faster than coding - hopefully).
 
 
-## Skill Second pass: automated review (v1.5.1)
+## Skill Second pass: automated review
 
-I've now created a review process which you can find here.
+I've now created a review process which is defined in a new [Sequential Review Agent Checklist](https://github.com/palladius/gemini-cli-palladius-public-goodies/blob/main/skills/ghi-fan-out-coding/references/REVIEW_AGENT_CHECKLIST.md).
 
-🪵 `12:21` I start this second prompt v1.5.1:
+🪵 `12:21` Let's test it with this second prompt (v1.5.1):
 
 ```markdown
 Read the `ghi-fan-out-coding` skill, then execute both phases:
