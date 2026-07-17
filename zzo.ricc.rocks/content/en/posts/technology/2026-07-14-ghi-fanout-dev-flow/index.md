@@ -13,6 +13,7 @@ author: "Riccardo Carlesso"
 version: "1.3"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-07-14"
+bug: "b/534594102"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
 published_urls:
 - "https://ricc.rocks/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/" 
@@ -30,7 +31,7 @@ Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emili
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" alt="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" position="center" >}}
 
 
-**YES**, it is possible, and [Antigravity](https://antigravity.google/) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
+**YES**, it is possible, and [Antigravity](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
 
 But let's not get ahead of ourselves.
 
@@ -60,7 +61,7 @@ This article differs in the sense that it's LESS Conductor/Spec-Driven and so it
 
 ## 1. My first solution: a prompt
 
-So I started typing this fan-out prompt on [Antigravity 2.0](https://antigravity.google/):
+So I started typing this fan-out prompt on [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog):
 
 ```markdown
 For every open GH issue, open a subagent for that issue. That subagent shall:
@@ -107,7 +108,7 @@ To achieve this, I packaged the logic into a [new skill](https://github.com/pall
 
 ### Chatting with AGY on SKILL Specs
 
-[Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) ([SDD](https://en.wikipedia.org/wiki/Specification-driven_development), not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan (which is an AGY [artifact](https://antigravity.google/docs/artifacts)):
+[Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) ([SDD](https://en.wikipedia.org/wiki/Specification-driven_development), not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan (which is an AGY [artifact](https://antigravity.google/docs/artifacts?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog)):
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="Riccardo commenting on implementation plan" alt="Riccardo commenting on implementation plan" position="center" >}}
 
@@ -361,7 +362,7 @@ A few lessons learnt.
 
 ## Next steps
 
-1. **Wrap this effort with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `./run_ricc_code.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. 🚀*
+1. **Wrap this effort with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `./run_ricc_code.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. 🚀*
 
 2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnerability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
 
