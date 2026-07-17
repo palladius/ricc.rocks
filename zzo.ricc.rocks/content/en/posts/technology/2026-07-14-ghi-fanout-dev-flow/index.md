@@ -375,8 +375,8 @@ A few lessons learnt.
 2 is nice, but 3 is best: 
  -->
 
-
-
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
+
+<TODO CTA again> What are you waiting? Go and try [ link ] Antigravity 2.0 now!</todo>
 
 *📝 This article will also be published on Medium — link coming soon.*
