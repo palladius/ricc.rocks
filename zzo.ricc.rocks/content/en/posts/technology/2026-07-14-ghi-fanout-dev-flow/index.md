@@ -133,7 +133,7 @@ Don't believe me? Results are visible [here](https://github.com/palladius/rails8
 
 🪵 `10:15` Some missing JSON fields, update skill, rinse and repeat. I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. <todo link to my linkedin>Ping me</todo> if this interesting to you.
 
-🪵 `11:30` We're ready to execute the newer version, shiny skill `v1.5`! ([View on GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
+🪵 `11:30` We're ready to execute the newer version, shiny skill `ghi-fan-out-coding v1.5`! ([GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
 🪵 `12:14` I've updated this article for you guys - so now I'm ready for the second pass
 
 
