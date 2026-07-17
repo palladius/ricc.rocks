@@ -367,10 +367,11 @@ A few lessons learnt.
 
 <!--
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/images/nested-subagents.png" caption="Nested Subagents Architecture Diagram credo banana" alt="Nested Subagents Architecture Diagram credo banana" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="I ran a 3x3 sub-agent test on Antigravity, it worked great!" alt="I ran a 3x3 sub-agent test on Antigravity, it worked great!" position="center" >}}
 
+2 is nice, but 3 is best: 
  -->
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="I ran a 3x3 sub-agent test on Antigravity, it worked great!" alt="I ran a 3x3 sub-agent test on Antigravity, it worked great!" position="center" >}}
 
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
