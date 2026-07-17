@@ -204,6 +204,7 @@ I've now created a review process which is defined in a new [Sequential Review A
 
 🪵 `12:21` Let's test it with this second prompt (v1.5.1):
 
+<!-- redundant 
 ```markdown
 Read the `ghi-fan-out-coding` skill, then execute both phases:
 • Phase 1: Follow `MAIN_AGENT_CHECKLIST.md` to fan-out parallel subagents.
@@ -212,8 +213,9 @@ Settings:
 • Harness: antigravity
 • HITL threshold: 80
 After Phase 2, create the [META] retrospective issue and call main_end with --retro-ghi.
-
 ```
+-->
+
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="prompt verbatim" alt="prompt verbatim" position="center" >}}
 
 What changed:
