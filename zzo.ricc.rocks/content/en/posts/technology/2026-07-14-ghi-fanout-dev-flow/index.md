@@ -334,9 +334,9 @@ As you can see I modernized the emoji report.
 
 ## Conclusion
 
-My favorite mantra in google SRE is "**Automate yourself out of the job**" and today I achieved something in that direction.
+My favorite mantra in google SRE is "**Automate yourself out of the job**" and today we achieved something in that direction.
 
-What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating. The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
+What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating (plus 20-30min of unsupervised work, of course). The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
 
 If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)!
 
