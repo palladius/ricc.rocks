@@ -226,7 +226,7 @@ What changed:
 
 ### .. and it works!
 
-Look how my 15 subagents are tokenmaxxing my Antigravity without breaking a sweat, and nicely populating 15 JSON files I can then review later:
+Look how my 15 subagents are *tokenmaxxing* my Antigravity without breaking a sweat, and nicely populating 15 JSON files I can then review later:
 
 <video controls src="assets/videos/Screen Recording 2026-07-15 at 12.26.01.mov" title="21 subagents! Wooooot!!! Capturing this video was hard but totally worth it!"></video>
 
