@@ -377,6 +377,6 @@ A few lessons learnt.
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
 
-<TODO CTA again> What are you waiting? Go and try [ link ] Antigravity 2.0 now!</todo>
+👉 What are you waiting for? Go and try [Antigravity 2.0](https://antigravity.google/product/antigravity?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) now! 👈
 
 *📝 This article will also be published on Medium — link coming soon.*
