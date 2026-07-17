@@ -370,7 +370,7 @@ A few lessons learnt.
 
  -->
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="banana agent" alt="banana agent" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="I ran a 3x3 sub-agent test on Antigravity, it worked great!" alt="I ran a 3x3 sub-agent test on Antigravity, it worked great!" position="center" >}}
 
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
