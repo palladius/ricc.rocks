@@ -198,7 +198,7 @@ Sounds familiar? It's a FIFO world where the first wins and all the others end w
 So I've worked on version `1.5` of the skill where **automated review** is happening *sequentially* (yes I'm not convinced parallelism would help here - plus reviewing should be faster than coding - hopefully).
 
 
-## 3. Skill Second pass: automated review
+## 3. Skill Second pass: automated synchronous review
 
 I've now created a review process which is defined in a new [Sequential Review Agent Checklist](https://github.com/palladius/gemini-cli-palladius-public-goodies/blob/main/skills/ghi-fan-out-coding/references/REVIEW_AGENT_CHECKLIST.md).
 
@@ -216,7 +216,7 @@ After Phase 2, create the [META] retrospective issue and call main_end with --re
 ```
 -->
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="prompt verbatim" alt="prompt verbatim" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="Testing v1.5.1 with synchronous Code Review after spawning N sub agents" alt="Testing v1.5.1 with synchronous Code Review after spawning N sub agents" position="center" >}}
 
 What changed:
 1. We have a **sequential review** phase following the main/subagent phase (not parallel to minimize merge/rebase pain).
