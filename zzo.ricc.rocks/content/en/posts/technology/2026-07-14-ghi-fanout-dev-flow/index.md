@@ -10,7 +10,7 @@ description: "I wanted to fix an app which had 20 open GH Issues but I didnt wan
 categories: ["Antigravity", Rails ]
 tags: ["Google", "Antigravity", Ruby, Rails, Worktree, Agentic, Subagents ]
 author: "Riccardo Carlesso"
-version: "1.0"
+version: "1.3"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-07-14"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
