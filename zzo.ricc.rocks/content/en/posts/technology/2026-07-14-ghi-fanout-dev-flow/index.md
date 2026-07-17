@@ -200,6 +200,8 @@ So I've worked on version `1.5` of the skill where **automated review** is happe
 
 ## Skill Second pass: automated review (v1.5.1)
 
+I've now created a review process which you can find here.
+
 🪵 `12:21` I start this second prompt v1.5.1:
 
 ```markdown
