@@ -50,7 +50,10 @@ So I had an idea: what if I wrote **a single prompt to rule them all**? A prompt
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
 
-> 👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
+If you're a follower of mine, this might ring a bell! I just posted another Worktree + Conductor article here: 
+
+* [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/)
+* [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)
 
 This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use [🪨 HITL+Conductor skill as in article 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/) instead.
 
@@ -375,5 +378,7 @@ A few lessons learnt.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
 
 👉 What are you waiting for? Go and try [Antigravity 2.0](https://antigravity.google/product/antigravity?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) now! 👈
+
+> 👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
 
 *📝 This article will also be published on Medium — link coming soon.*
