@@ -341,11 +341,11 @@ My favorite mantra in google SRE is "**Automate yourself out of the job**" and t
 
 What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating (plus 20-30min of unsupervised work, of course). The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
 
-<TODO CTA EMOJI , either orange error or right finger> If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)! <TODO maybe CTA closing emoji, left arrow/ left finger?>
+👉 If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)! 👈
 
 A few lessons learnt.
 
-* **Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo my-administrative-command`, OAuth flows, ..) is a good example. For everything else, Gemini can help.
+* **Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo` commands, OAuth flows, ..) is a good example. For everything else, Gemini can help.
 * **Browser flows**. Antigravity supports natively browsing the internet and your website. **Playwright** is on our side where Antigravity fails (and you can create nice *customized flows* for your app!). Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
 
 
