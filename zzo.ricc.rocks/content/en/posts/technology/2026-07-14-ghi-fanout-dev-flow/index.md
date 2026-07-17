@@ -129,10 +129,9 @@ I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast with
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
 
-Don't believe me? Results are visible here: https://github.com/palladius/rails8-turbo-chat/issues/71
+Don't believe me? Results are visible [here](https://github.com/palladius/rails8-turbo-chat/issues/71).
 
-🪵 `10:15` Some missing JSON fields, update skill, rinse and repeat. 
-  * I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. Ping me if this interesting to you.
+🪵 `10:15` Some missing JSON fields, update skill, rinse and repeat. I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. Ping me if this interesting to you.
 
 🪵 `11:30` We're ready to execute the newer version, shiny skill `v1.5`! ([View on GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
 🪵 `12:14` I've updated this article for you guys - so now I'm ready for the second pass
