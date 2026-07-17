@@ -242,7 +242,7 @@ Woops - some overly diligent agent decided to wipe out the whole status folder. 
 1. Fix the skill to say don't do it again, naughty boy!
 2. Rinse and repeat: 
  
-🪵 `12:52` Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
+🪵 `12:52` Exec a third time, with `uid=471A394C-0CC3-413B-9457-26318ECAE38B`.
 
 Now the skill is updated to `v1.5.4` (*don't delete JSON files you naughty boy!*)
 
