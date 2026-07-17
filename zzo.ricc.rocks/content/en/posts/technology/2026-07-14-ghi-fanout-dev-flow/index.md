@@ -338,7 +338,7 @@ My favorite mantra in google SRE is "**Automate yourself out of the job**" and t
 
 What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating (plus 20-30min of unsupervised work, of course). The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
 
-If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)!
+<TODO CTA EMOJI , either orange error or right finger> If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)! <TODO maybe CTA closing emoji, left arrow/ left finger?>
 
 A few lessons learnt.
 
