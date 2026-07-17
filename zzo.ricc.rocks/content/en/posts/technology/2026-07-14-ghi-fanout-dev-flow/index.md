@@ -243,7 +243,7 @@ Woops - some overly diligent agent decided to wipe out the whole status folder. 
  
 🪵 `12:52` Exec v3  `uid=471A394C-0CC3-413B-9457-26318ECAE38B`
 
-Now the skill updated to `v1.5.4`.
+Now the skill is updated to `v1.5.4` (*don't delete JSON files you naughty boy!*)
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-5.png" caption="Prompt for second version, launching on Antigravity!" alt="Prompt for second version, launching on Antigravity!" position="center" >}}
 
