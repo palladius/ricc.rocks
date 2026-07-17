@@ -242,7 +242,7 @@ Woops - some overly diligent agent decided to wipe out the whole status folder. 
 Easy fix: 
 
 1. Fix the skill to say don't do it again, you naughty boy! => v1.5.4.
-2. Rinse and repeat: 
+2. Rinse and repeat execution:
  
 🪵 `12:52` Exec a third time, with `uid=471A394C-0CC3-413B-9457-26318ECAE38B`.
 
