@@ -358,7 +358,7 @@ A few lessons learnt.
 * AI tries to cut corners. For example I've asked for a code quality ratio in v1.5.4 and the executor created a deterministic script which ended up rating them all 50%
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-8.png" caption="all code is 50% good and 50% bad, like a half Full glass" alt="all code is 50% good and 50% bad, like a half Full glass" position="center" >}}
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="50% political for everyone!" alt="50% political for everyone!" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="A "political" 50% for everyone! How's the code glass, half empty or half full?" alt="A "political" 50% for everyone! How's the code glass, half empty or half full?" position="center" >}}
 
 * **Feedback loops** everywhere!. Make sure to loop back your learnings back into your skill so to increase its ability. Use EVALS if you want to productionize your workflow.
 
