@@ -357,9 +357,11 @@ A few lessons learnt.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-8.png" caption="all code is 50% good and 50% bad, like a half Full glass" alt="all code is 50% good and 50% bad, like a half Full glass" position="center" >}}
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="50% political for everyone!" alt="50% political for everyone!" position="center" >}}
 
+* **Feedback loops** everywhere!. Make sure to loop back your learnings back into your skill so to increase its ability. Use EVALS if you want to productionize your workflow.
+
 ## Next steps
 
-1. **Do it with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `python3 run_bonanza.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. Ullalla! 🚀*
+1. **Wrap this effort with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `python3 run_bonanza.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. Ullalla! 🚀*
 
 2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnerability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
 
