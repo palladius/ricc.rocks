@@ -141,7 +141,9 @@ Don't believe me? Results are visible [here](https://github.com/palladius/rails8
 
 ### No CLI, no party!
 
-I love having 20 `.JSON` in my local computer, but I don't enjoy reading them manually (as a rubyist, I write poems in YAML - not JSON!) that means you can create a UI or a CLI to show you a synoptic. Let's do it!
+I love having 20 `.JSON` in my local computer, but I don't enjoy reading them manually (as a rubyist, I write poems in YAML - not JSON!) that means you can create a UI or a CLI to show you a synoptic.
+
+Let's do this:
 
 ```markdown
 Does the skill support some sort of CLI to get script status?
