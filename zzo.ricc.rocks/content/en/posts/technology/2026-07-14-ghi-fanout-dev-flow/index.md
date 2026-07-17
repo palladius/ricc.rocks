@@ -346,12 +346,12 @@ What used to take an entire weekend of context-switching and tedious git command
 A few lessons learnt.
 
 * **Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo my-administrative-command`, OAuth flows, ..) is a good example. For everything else, Gemini can help.
-* **Browser flows**. Antigravity supports natively browsing the itnernet and your website. **Playwright** is on our side where Antigravity fails (and you can create nice *customized flows* for your app!). Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
+* **Browser flows**. Antigravity supports natively browsing the internet and your website. **Playwright** is on our side where Antigravity fails (and you can create nice *customized flows* for your app!). Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
 
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-turbochat-login.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
 
-* Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>". This is even easier on Antigravity UI, since you can just paste tje screenshot (`cmd V` and "look at this visual problem").
+* Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>". This is even easier on Antigravity UI, since you can just paste the screenshot (`cmd V` and "look at this visual problem").
 
 * Do not try this in **production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without my approval unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, in my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3. As an SRE, [I've asked AGY to write a PoMo](https://github.com/palladius/rails8-turbo-chat/issues/89) so we can learn from it and fix the skill.
 
