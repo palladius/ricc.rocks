@@ -365,12 +365,12 @@ A few lessons learnt.
 
 2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnerability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
 
-<!-- 
+<!-- -->
+
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="banana agent" alt="banana agent" position="center" >}}
--->
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/images/nested-subagents.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/images/nested-subagents.png" caption="Nested Subagents Architecture Diagram credo banana" alt="Nested Subagents Architecture Diagram credo banana" position="center" >}}
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="alt text" alt="alt text" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
 
 *📝 This article will also be published on Medium — link coming soon.*
