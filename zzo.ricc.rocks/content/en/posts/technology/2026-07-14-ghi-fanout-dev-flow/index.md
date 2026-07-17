@@ -57,6 +57,7 @@ If you're a follower of mine, this might ring a bell! I just posted another Work
 This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use [🪨 HITL+Conductor skill as in article 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/) instead.
 
 <!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
+
 ## 1. My first solution: a prompt
 
 So I started typing this fan-out prompt on [Antigravity 2.0](https://antigravity.google/):
@@ -76,10 +77,11 @@ For every open GH issue, open a subagent for that issue. That subagent shall:
 ```
 
 
-### Some important notes (*ascolta un cretino*)
+### Some important notes
 
 * Use a **SMART, thoughtful model**. Today I've used Gemini 3.1 pro in high thinking mode for the main agent. You can spare a few pennies for this as it needs to set it up correctly.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/gemini31pro-thinking.png" caption="Use a Gemini PRo high-thinking mode for the main agent" alt="Use a Gemini PRo high-thinking mode for the main agent" position="center" >}}
+
 * **Enable Turbo mode**. What's the worst that can happen in your GH repo? After all, it's committed and revertable!
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/turbo-mode.png" caption="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" alt="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" position="center" >}}
