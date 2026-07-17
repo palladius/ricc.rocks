@@ -361,7 +361,7 @@ A few lessons learnt.
 
 ## Next steps
 
-1. **Wrap this effort with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `python3 run_bonanza.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. Ullalla! 🚀*
+1. **Wrap this effort with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `./run_ricc_code.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. 🚀*
 
 2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnerability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
 
