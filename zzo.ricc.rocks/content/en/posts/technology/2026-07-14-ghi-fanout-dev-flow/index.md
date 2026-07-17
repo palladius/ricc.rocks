@@ -75,7 +75,8 @@ For every open GH issue, open a subagent for that issue. That subagent shall:
    done, choices that have been taken, .. (b) a message for the user in the PR. 
 ```
 
-### Some important notes (*"ascolta un cretino"*)
+
+### Some important notes (*ascolta un cretino*)
 
 * Use a **SMART, thoughtful model**. Today I've used Gemini 3.1 pro in high thinking mode for the main agent. You can spare a few pennies for this as it needs to set it up correctly.
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/gemini31pro-thinking.png" caption="Use a Gemini PRo high-thinking mode for the main agent" alt="Use a Gemini PRo high-thinking mode for the main agent" position="center" >}}
