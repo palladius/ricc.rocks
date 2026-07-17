@@ -379,6 +379,6 @@ A few lessons learnt.
 
 👉 What are you waiting for? Go and try [Antigravity 2.0](https://antigravity.google/product/antigravity?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) now! 👈
 
-> 👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
+👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
 
 *📝 This article will also be published on Medium — link coming soon.*
