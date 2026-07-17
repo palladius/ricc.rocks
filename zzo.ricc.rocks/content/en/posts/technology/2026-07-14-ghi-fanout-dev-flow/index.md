@@ -198,7 +198,7 @@ Sounds familiar? It's a FIFO world where the first wins and all the others end w
 So I've worked on version `1.5` of the skill where **automated review** is happening *sequentially* (yes Im not convinced parallelism would help here - plus reviewing should be faste rthan coding - hopefully).
 
 
-## Skill Second pass: automated review (v1.5)
+## Skill Second pass: automated review (v1.5.1)
 
 🪵 `12:21` I start this second prompt v1.5.1:
 
