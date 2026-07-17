@@ -239,7 +239,9 @@ Let's check my second execution `uuid=D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
 
 Woops - some overly diligent agent decided to wipe out the whole status folder. Damn it!
 
-1. Fix the skill to say don't do it again, naughty boy!
+Easy fix: 
+
+1. Fix the skill to say don't do it again, you naughty boy! => v1.5.4.
 2. Rinse and repeat: 
  
 🪵 `12:52` Exec a third time, with `uid=471A394C-0CC3-413B-9457-26318ECAE38B`.
