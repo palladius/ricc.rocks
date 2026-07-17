@@ -342,7 +342,7 @@ What used to take an entire weekend of context-switching and tedious git command
 
 A few lessons learnt.
 
-* **Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo cmd-with-password`).
+* **Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo my-administrative-command`, OAuth flows, ..).
 * For everything else, **Playwright** is on our side. Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
