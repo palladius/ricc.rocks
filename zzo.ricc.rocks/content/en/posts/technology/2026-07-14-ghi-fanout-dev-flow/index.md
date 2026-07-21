@@ -1,6 +1,6 @@
 ---
 type: Article
-status: wip
+status: published
 priority: P2
 title: "How I built a skill to fan out 20 workers to fix my old Rails App on Antigravity (steal my prompt!)"
 date: 2026-07-14T09:00:00+02:00
@@ -14,17 +14,23 @@ version: "1.3"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-07-14"
 bug: "b/534594102"
+mediumurl: "https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09"
+canonicalURL: "https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09"
+ricc_signoff: "true"
 CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
 published_urls:
 - "https://ricc.rocks/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/" 
+gunningFog: 10.13
+slopScore: 32.61
+valescore: 45
 
 ---
 
-*I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!* Ok, if not 1000s maybe 1 or 2.
+*I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!* Ok, if not thousands maybe 1 or 2.
 
 > How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill, so you don't have to!
 
-Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (ie, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
+Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (that is, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
 
 ---
 
@@ -50,14 +56,14 @@ So I had an idea: what if I wrote **a single prompt to rule them all**? A prompt
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
 
-If you're a follower of mine, this might ring a bell! I just posted another Worktree + Conductor article here: 
+If you're a follower of mine, this might ring a bell! I just posted another **Worktree + Conductor article** in [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)
 
-* [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/)
-* [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)
 
-This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user". For a very serious project, I encourage you to use [🪨 HITL+Conductor skill as in article 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/) instead.
+Wait, Riccardo, are you repeating yourself? Wait, Riccardo, are you repeating yourself? 
 
-<!-- Maybe do a graph of article2 vs this one with how agents interact and when to choose one or the other.-->
+This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user." For a very serious project, I encourage you to use [🪨 HITL+Conductor skill described here](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/) instead.
+
+
 
 ## 1. My first solution: a prompt
 
@@ -92,13 +98,11 @@ Then I thought: this is so amazing, this is gonna change the world, this should 
 
 In 🇮🇹 Italy we say that [*appetite comes with eating*](https://appetitomagazine.com/features/lappetito-vien-mangiando-why-appetite-comes-with-eating) and so why don't we raise the bar a bit?
 
-<!-- 
-Actually, I've done better: I've packaged all in a skill so you can just say "Use Riccardo skill at [ghi-fan-out-coding](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding) to start an autofix bonanza for this repo". Boom!
--->
+
 
 ## 2. Let's make it a SKILL
 
-Who knows me call me "The Master in overcomplication", which is not a compliment. Since the first version ([#39f9f19](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19)) I've added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can better identify what went wrong.
+Who knows me call me "The Master in overcomplication," which is not a compliment. Since the first version ([#39f9f19](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19)) I've added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can better identify what went wrong.
 
 To achieve this, I packaged the logic into a [new skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding): [`ghi-fan-out-coding`](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding). The workflow is simple:
 1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
@@ -122,9 +126,7 @@ I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast with
 
 <figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/videos/subagents-working.mov" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>🎥 Subagents in action</strong></figcaption></figure>
 
-<!-- this is ugly, lets skip 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-working.gif" caption="🖼️ Subagents in action (GIF Version)" alt="🖼️ Subagents in action (GIF Version)" position="center" >}}
--->
+
 
 🪵 `10:04` 23 minutes later, all subagents but one have finished! Look:
 
@@ -205,17 +207,7 @@ I've now created a review process which is defined in a new [Sequential Review A
 
 🪵 `12:21` Let's test it with this second prompt (v1.5.1):
 
-<!-- redundant 
-```markdown
-Read the `ghi-fan-out-coding` skill, then execute both phases:
-• Phase 1: Follow `MAIN_AGENT_CHECKLIST.md` to fan-out parallel subagents.
-• Phase 2: Follow `REVIEW_AGENT_CHECKLIST.md` to sequentially review all PRs.
-Settings:
-• Harness: antigravity
-• HITL threshold: 80
-After Phase 2, create the [META] retrospective issue and call main_end with --retro-ghi.
-```
--->
+
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="Testing v1.5.1 with synchronous Code Review after spawning N sub agents" alt="Testing v1.5.1 with synchronous Code Review after spawning N sub agents" position="center" >}}
 
@@ -262,44 +254,12 @@ Now the skill is updated to `v1.5.4` (*don't delete JSON files you naughty boy!*
 ```
 
 
-<!--  seems pretty boting, skipping 
-```
-$ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B 
-=====================================================
-🚀 GHI Fan-Out Bonanza Dashboard | UUID: 471A394C-0CC3-413B-9457-26318ECAE38B
-   Skill: v1.5.4  #bac8f95
-   https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/bac8f95/skills/ghi-fan-out-coding
-=====================================================
-Total Issue Folders Created: 15
-Subagents Completed: 0 / 15
-PRs Created: 0
-Problem Reports (JSON): 0
-=====================================================
-📊 Agent Status:
-  - ⏳ ghi-12: Pending
-  - ⏳ ghi-18: Pending
-  - ⏳ ghi-23: Pending
-  - ⏳ ghi-24: Pending
-  - ⏳ ghi-25: Pending
-  - ⏳ ghi-26: Pending
-  - ⏳ ghi-27: Pending
-  - ⏳ ghi-34: Pending
-  - ⏳ ghi-38: Pending
-  - ⏳ ghi-40: Pending
-  - ⏳ ghi-41: Pending
-  - ⏳ ghi-44: Pending
-  - ⏳ ghi-72: Pending
-  - ⏳ ghi-73: Pending
-  - ⏳ ghi-74: Pending
-=====================================================
-```
-
--->
 
 
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-6.png" caption="Final v3 status (UI upgrade)" alt="Final v3 status (UI upgrade)" position="center" >}}
 
-<!-- ricc-mac.roam.internal: Wed Jul 15 13:07:06 2026 -->
+
+
+
 🪵 `13:07` And we're finished!
 ```
 $ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B
@@ -339,28 +299,28 @@ As you can see I modernized the emoji report.
 
 My favorite mantra in google SRE is "**Automate yourself out of the job**" and today we achieved something in that direction.
 
-What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating (plus 20-30min of unsupervised work, of course). The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge". 
+What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating (plus 20-30 min of unsupervised work, of course). The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge." 
 
 👉 If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)! 👈
 
 A few lessons learnt.
 
-* **Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo` commands, OAuth flows, ..) is a good example. For everything else, Gemini can help.
-* **Browser flows**. Antigravity supports natively browsing the internet and your website. **Playwright** is on our side where Antigravity fails (and you can create nice *customized flows* for your app!). Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
+**Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo` commands, OAuth flows, ..) is a good example. For everything else, Gemini can help.
 
+**Browser flows**. Antigravity supports natively browsing the internet and your website. **Playwright** is on our side where Antigravity fails (and you can create nice *customized flows* for your app!). Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-turbochat-login.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
 
-* Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>". This is even easier on Antigravity UI, since you can just paste the screenshot (`cmd V` and "look at this visual problem").
+**Vision capabilities**. Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>." This is even easier on Antigravity UI, since you can just paste the screenshot (`cmd V` and "look at this visual problem").
 
-* Do not try this in **production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without my approval unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, in my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3. As an SRE, [I've asked AGY to write a PoMo](https://github.com/palladius/rails8-turbo-chat/issues/89) so we can learn from it and fix the skill.
+**Do not try this in production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without my approval unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, in my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3. As an SRE, [I've asked AGY to write a PoMo](https://github.com/palladius/rails8-turbo-chat/issues/89) so we can learn from it and fix the skill.
 
-* AI tries to cut corners. For example I've asked for a code quality ratio in v1.5.4 and the executor created a deterministic script which ended up rating them all 50%
+**AI tries to cut corners**. For example I've asked for a code quality ratio in v1.5.4 and the executor created a deterministic script which ended up rating them all 50%
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-8.png" caption="all code is 50% good and 50% bad, like a half Full glass" alt="all code is 50% good and 50% bad, like a half Full glass" position="center" >}}
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="A 'political' 50% for everyone! How's the code glass, half empty or half full?" alt="A 'political' 50% for everyone! How's the code glass, half empty or half full?" position="center" >}}
 
-* **Feedback loops** everywhere!. Make sure to loop back your learnings back into your skill so to increase its ability. Use EVALS if you want to productionize your workflow.
+**Feedback loops** everywhere! Make sure to loop back your learnings back into your skill so to increase its ability. Use EVALS if you want to productionize your workflow.
 
 ## Next steps
 
@@ -368,12 +328,7 @@ A few lessons learnt.
 
 2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnerability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
 
-<!--
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/images/nested-subagents.png" caption="Nested Subagents Architecture Diagram credo banana" alt="Nested Subagents Architecture Diagram credo banana" position="center" >}}
-{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/nested-subagent-3x3-fan-out.jpg" caption="I ran a 3x3 sub-agent test on Antigravity, it worked great!" alt="I ran a 3x3 sub-agent test on Antigravity, it worked great!" position="center" >}}
 
-2 is nice, but 3 is best: 
- -->
 
 {{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
 
@@ -381,4 +336,4 @@ A few lessons learnt.
 
 👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
 
-*📝 This article will also be published on Medium — link coming soon.*
+*Read this article on Medium: <https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09>.*
