@@ -278,10 +278,7 @@ A few patterns that proved invaluable:
 
 Keep your tool responses concise. Models struggle with large, unstructured text dumps from tools (as seen in our model hang war story). Return only the essential metadata the agent needs to make its next decision, rather than full file contents or verbose logs.
 
-### Safe navigation for optional components
-```ruby
-@hooks&.emit(:ws_message, msg)  # If hooks is nil, does nothing
-```
+
 
 ### `ensure` for guaranteed cleanup
 ```ruby
@@ -313,7 +310,7 @@ puts "  ❌ FAIL".to_red
 
 ## What's Next
 
-The SDK is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
+The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
 
 | Feature                                         | Status    | Issue                                                              |
 | ----------------------------------------------- | --------- | ------------------------------------------------------------------ |
@@ -337,6 +334,8 @@ ruby examples/01_hello_world.rb
 ```
 
 I'm genuinely curious how you'd use this. Would you build a Slack bot? A Rails assistant? A CLI tool that learns from your codebase? Open an issue, send a PR, or just say hello.
+
+I'm currently looking for interetsing use cases for pre/post hooks and sidecars. If you have a neat use case, let me know: I might build it for you!
 
 And if you want to see what Guillaume built for Java, check out [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/) -- it's the post that started this whole Ruby adventure.
 
