@@ -307,17 +307,9 @@ end
 
 puts "  ✅ PASS".to_green
 puts "  ❌ FAIL".to_red
+
 ```
 
-### Regex case/when for state machines
-```ruby
-icon = case state
-       when /RUNNING/ then '🏃'
-       when /IDLE/    then '😴'
-       when /CANCEL/  then '🛑'
-       else '⏳'
-       end
-```
 
 ## What's Next
 
