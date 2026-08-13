@@ -1,49 +1,74 @@
 ---
 type: Article
-status: draft
-priority: P2
+status: done
+priority: P1
 title: "Building an Agentic Telegram Bot in Ruby with Google's Antigravity SDK"
-date: 2026-08-13T10:00:00+02:00
+date: 2026-08-13T15:45:00+02:00
 draft: false
-image: "/en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana/assets/hero.jpg"
-description: "What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it's doing -- all in a single terminal line? This is the story of building the unofficial Antigravity Ruby SDK, a Telegram bot, and an E2E test that generates images with bananas."
+image: "/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg"
+description: "What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it is doing in real-time? Introducing the Antigravity Ruby SDK for Google's agentic harness."
 categories: ["Antigravity", "Ruby"]
-tags: ["Google", "Antigravity", "Ruby", "SDK", "Telegram", "Agentic", "Skills", "Gemini"]
+tags: ["Google", "Antigravity", "Ruby", "Gemini", "Telegram", "Agentic", "SDK"]
 author: "Riccardo Carlesso"
-version: "1.0"
+version: "0.4.2"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-08-13"
-CTA: "https://github.com/palladius/antigravity-ruby-sdk"
+bug: "b545986615"
+# canonicalURL: (pending Medium publication)
 ricc_signoff: "true"
-published_urls:
-- "https://ricc.rocks/en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana/"
-
+CTA: "https://github.com/palladius/antigravity-ruby-sdk"
+gunningFog: 11.16
+slopScore: 28.5
+valescore: 45
 ---
 
 *What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it's doing -- all in a single terminal line?*
 
-![Hero: Ruby gemstone connected to Telegram and a terminal](assets/hero.jpg)
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg" caption="Hero: Ruby gemstone connected to Telegram and a terminal" alt="Hero: Ruby gemstone connected to Telegram and a terminal" position="center" >}}
 
 ## Introduction
 
-When [Guillaume Laforge](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/) built the unofficial Antigravity SDK for Java back in July, I thought: *"If Java gets one, Ruby deserves one too."* So I built one. And then I built a Telegram bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
+When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [🪨 Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
 
 This is that story.
 
-The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial Ruby wrapper around Google's Antigravity harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. It gives your Ruby code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability.
-
-<!--more-->
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial [🪨 Ruby](https://www.ruby-lang.org/) wrapper around Google's Antigravity harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. By connecting it to [Telegram](https://telegram.org/) and the Telegram Bot API, it gives your code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability right inside your chat window.
 
 ## How It Works
 
 The architecture is deliberately simple. Your Ruby process talks to a local Go binary (the "harness") over WebSocket. The harness handles the heavy lifting: authentication, model communication, tool execution, and safety policies. Your SDK just needs to speak JSON.
 
-![Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini](assets/architecture.jpg)
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
 
-```
-User --> Telegram --> Ruby Bot --> Antigravity SDK --> WebSocket --> Harness --> Gemini
-                                       |
-                                  Skills | Hooks | Tools
+```text
++------------------------------------------------------------------------------------+
+|                                 Telegram Application                               |
+|                                                                                    |
+|  Telegram User  <--->  Telegram API  <--->  Ruby Bot (ChatSession per chat ID)     |
++------------------------------------------------+-----------------------------------+
+                                                 |
+                                                 v
++------------------------------------------------------------------------------------+
+|                         Antigravity Ruby SDK (`antigravity-sdk`)                   |
+|                                                                                    |
+|  +--------------------------------+          +----------------------------------+  |
+|  | Antigravity::Agent             |          | Antigravity::Hooks               |  |
+|  | (asks, prompts, auto-connect)  |          | (pre_prompt, post_resp, events) |  |
+|  +--------------------------------+          +----------------------------------+  |
+|  | Antigravity::Conversation      |          | Antigravity::Connection          |  |
+|  | (chats, tool runner dispatch)  |          | (spawns & manages WebSocket)     |  |
+|  +--------------------------------+          +----------------------------------+  |
++------------------------------------------------+-----------------------------------+
+                                                 | (WebSocket on 127.0.0.1:<port>)
+                                                 v
++------------------------------------------------------------------------------------+
+|                          Core Go Binary (`localharness`)                           |
+|                                                                                    |
+|  - Manages agent session state, turns, and tool routing                            |
+|  - Connects to Google Antigravity & Gemini backends                                |
+|  - Sends JSON-RPC tool dispatch requests over WebSocket                            |
+|  - Streams token deltas, thought/reasoning deltas, and turn completions            |
++------------------------------------------------------------------------------------+
 ```
 
 ## Getting Started: 5 Lines to Your First Agent
@@ -52,9 +77,9 @@ User --> Telegram --> Ruby Bot --> Antigravity SDK --> WebSocket --> Harness -->
 require 'antigravity'
 
 agent = Antigravity::Agent.new
-agent.connect!
+agent.connect!  # Auto-connects if omitted
 response = agent.ask("What's the mass of the Sun?")
-puts response
+puts response.content
 ```
 
 That's it. The SDK spawns the harness, opens a WebSocket, sends your prompt, streams the response, and returns the full text. Under the hood, about 2000 lines of Ruby handle connection management, session lifecycle, tool routing, skill resolution, and structured logging.
@@ -84,6 +109,24 @@ Each Telegram chat gets its own `ChatSession` with its own Antigravity agent. Th
 > **User:** Where's my to-do file?
 > **Bot:** According to the skill, it's at `~/obsidian/TODOs/TODOz.md`
 
+*But I don't want to type on Telegram, I want to speak with microphone!* No worries, dude, we got you. I've tested the SDK with Italian and English and it worked great! You just need to add this to your .env:
+
+```
+# See .env.dist for more info
+TELEGRAM_BOT_TOKEN="<YOUR_BOT_TOKEN>"
+TELEGRAM_CHAT_ID=<YOUR_CHAT_ID>
+# [optional] Needed for Speech-to-Text translation, emojis are on us.
+GEMINI_API_KEY=<your-api-key-here>
+```
+
+Don't believe me? Here's the view from my CLI.
+
+![WhatsApp audio view from CLI](<images/telegram audio view from CLI.png>)
+
+And here's how it looks on my phone:
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-screenshot.png" caption="Telegram screenshot" alt="Telegram screenshot" position="center" >}}
+
 ## Skills: Superpowers for Your Agent
 
 Skills are the [Agent Skills](https://agentskills.io) standard -- a `SKILL.md` file with YAML frontmatter and markdown instructions. The SDK supports:
@@ -92,8 +135,8 @@ Skills are the [Agent Skills](https://agentskills.io) standard -- a `SKILL.md` f
 # Local paths
 agent = Antigravity::Agent.new(skills: ["/path/to/my-skill"])
 
-# GitHub URLs (auto-cloned to ~/.antigravity/cache/)
-agent = Antigravity::Agent.new(skills: ["https://github.com/org/skills-repo"])
+# GitHub URLs (auto-cloned to ~/.antigravity/cache/). Try our great SRE extension!
+agent = Antigravity::Agent.new(skills: ["https://github.com/gemini-cli-extensions/sre"])
 
 # Runtime discovery
 agent.add_skill("/discovered/path", skill_name: "new-skill")
@@ -107,6 +150,18 @@ agent.add_inline_skill(
 ```
 
 The runtime loading now attempts dynamic skill loading within the same session. If the model struggles to invoke the new skill, we fall back to a manual failsafe that reads the skill definition and executes it directly.
+
+Personally, I enable at startup a single meta-skill for skill discovery based on my skills ruby script agc` (like `npx skills` but better): https://github.com/palladius/agc
+
+Wanna try it? Just type this:
+
+```bash
+just rv-skill-telegram
+# which is equivalent of:
+rv run ruby examples/08_skill_telegram_bot.rb
+```
+
+My friend [Andre Arko](https://arko.net/) will be so happy to see I'm finally using [`rv`](https://github.com/spinel-coop/rv/) (yes, it's the ruby version of Astral `uv`, but faster!)
 
 ## The Hooks System: 3 Lines That Changed Everything
 
@@ -266,19 +321,21 @@ icon = case state
 
 The SDK is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
 
-| Feature | Status | Issue |
-|---------|--------|-------|
-| Mid-session skill loading | Shipped | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
-| MCP server support | Planning | -- |
-| Channel abstraction (Telegram/WhatsApp/Discord) | Planning | -- |
-| Protobuf handshake | Backlog | -- |
-| Rails integration | P4 Vision | -- |
+| Feature                                         | Status    | Issue                                                              |
+| ----------------------------------------------- | --------- | ------------------------------------------------------------------ |
+| Mid-session skill loading                       | Shipped   | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
+| MCP server support                              | Planning  | --                                                                 |
+| Channel abstraction (Telegram/WhatsApp/Discord) | Planning  | --                                                                 |
+| Protobuf handshake                              | Backlog   | --                                                                 |
+| Rails integration                               | P4 Vision | --                                                                 |
 
 ## Your Turn
 
-The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation. If you're a Rubyist who's been curious about building AI agents, this might be your entry point.
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with 5 downloads already! 💎) or clone the repository:
 
 ```bash
+gem install antigravity-sdk
+# OR clone the source
 git clone https://github.com/palladius/antigravity-ruby-sdk
 cd antigravity-ruby-sdk
 cp .env.dist .env  # add your config
@@ -294,3 +351,5 @@ And if you want to see what Guillaume built for Java, check out [his article](ht
 *Riccardo Carlesso is a Developer Advocate for Google Cloud, focusing on Open Source, Developer Experience, and occasionally building things that probably didn't need to exist but are wonderful anyway.*
 
 *The Antigravity Ruby SDK is an unofficial, community project. It is not an official Google product.*
+
+*📝 This article will also be published on Medium — link coming soon.*
