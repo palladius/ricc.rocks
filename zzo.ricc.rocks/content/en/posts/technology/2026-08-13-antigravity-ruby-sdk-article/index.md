@@ -195,15 +195,11 @@ agent.hooks.on(:ws_message) do |msg|
 end
 ```
 
+Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
+
 **Zero lines of debug code in the core SDK.** All observability is opt-in, external, and composable. This is the Ruby way.
 
-### Ruby idiom spotlight: `Hash.new` with default block
 
-```ruby
-@listeners = Hash.new { |h, k| h[k] = [] }
-```
-
-This auto-creates an empty array for any new event name. No `if @listeners[event].nil?` boilerplate. When you call `@listeners[:ws_message]`, it returns `[]` if the key doesn't exist yet. Chef's kiss.
 
 ## The Dynamic TUI Status Line
 
