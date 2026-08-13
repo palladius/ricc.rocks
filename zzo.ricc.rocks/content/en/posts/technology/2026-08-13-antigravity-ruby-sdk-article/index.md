@@ -32,7 +32,7 @@ When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](ht
 
 This is that story.
 
-The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial [🪨 Ruby](https://www.ruby-lang.org/) wrapper around Google's Antigravity harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. By connecting it to [Telegram](https://telegram.org/) and the Telegram Bot API, it gives your code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability right inside your chat window.
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial Ruby wrapper around Google's [Antigravity](https://antigravity.google/download) harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. By connecting it to [Telegram](https://telegram.org/) and the Telegram Bot API, it gives your code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability right inside your chat window.
 
 ## How It Works
 
@@ -121,11 +121,13 @@ GEMINI_API_KEY=<your-api-key-here>
 
 Don't believe me? Here's the view from my CLI.
 
-![WhatsApp audio view from CLI](<images/telegram audio view from CLI.png>)
+![WhatsApp audio view from CLI v2](<images/telegram audio view from CLI.png>)
 
 And here's how it looks on my phone:
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-screenshot.png" caption="Telegram screenshot" alt="Telegram screenshot" position="center" >}}
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-screenshot.png" caption="Telegram screenshot v2" alt="Telegram screenshot v2" position="center" >}}
+
+I think you can work the maths even if you don't speak Italian!
 
 ## Skills: Superpowers for Your Agent
 
@@ -147,6 +149,10 @@ agent.add_inline_skill(
   description: "Greets users in Italian",
   instructions: "Always greet the user with 'Bella vecchio!'"
 )
+
+# You can also count them
+agent.skills.count
+=> 16
 ```
 
 The runtime loading now attempts dynamic skill loading within the same session. If the model struggles to invoke the new skill, we fall back to a manual failsafe that reads the skill definition and executes it directly.
