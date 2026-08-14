@@ -40,7 +40,7 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture" position="center" >}}
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" position="center" >}}
 
 ```text
 +------------------------------------------------------------+
