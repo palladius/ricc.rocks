@@ -40,14 +40,9 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
 
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture" position="center" >}}
+
 ```text
-+------------------------------------------------------------+
-|                    Telegram Application                    |
-|                                                            |
-|  Telegram User <-> Telegram API <-> Ruby Bot (ChatSession) |
-+------------------------------+-----------------------------+
-                               |
-                               v
 +------------------------------------------------------------+
 |           Antigravity Ruby SDK (`antigravity-sdk`)         |
 |                                                            |
@@ -70,6 +65,8 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 |  - Streams token deltas, thoughts & turn completions       |
 +------------------------------------------------------------+
 ```
+
+
 
 ## Getting Started: 5 Lines to Your First Agent
 
@@ -262,7 +259,7 @@ The model sent exactly 5 thinking deltas at the 2-second mark, then went complet
 
 ### What we learned the hard way
 
-1. **Large tool results cause "thinking hangs".** Our `load_skill` tool was originally returning the entire 61-line `SKILL.md` content. This massive context dump overwhelmed the model, causing it to spin its wheels indefinitely. By optimizing the tool to return a concise 4-line summary (name, script path, description, usage hint), the model processed it instantly.
+1. **Large tool results cause "thinking hangs".** Our `load_skill` tool was originally returning the entire `SKILL.md` content. This massive context dump overwhelmed the model, causing it to spin its wheels indefinitely. By optimizing the tool to return a concise 4-line summary (name, script path, description, usage hint), the model processed it instantly.
 
 2. **Failsafes are better than session restarts.** We used to restart the entire session when loading a skill to ensure the model recognized it. Now, we use dynamic skill loading in the same session. If the model still times out in Phase 4 (acting on the new skill), our harness kicks in with a manual failsafe: it reads the `SKILL.md` and builds the `uv run` command directly, bypassing the agent loop entirely.
 
@@ -278,9 +275,10 @@ A few patterns that proved invaluable:
 
 Keep your tool responses concise. Models struggle with large, unstructured text dumps from tools (as seen in our model hang war story). Return only the essential metadata the agent needs to make its next decision, rather than full file contents or verbose logs.
 
-
-
 ### `ensure` for guaranteed cleanup
+
+`ensure` is a great pattern for ensuring that some code is always run, regardless of whether the code that precedes it raises an error. Read more [here](https://zetcode.com/ruby/ensure-keyword/).
+
 ```ruby
 def ask(text, wall_timeout: 180)
   @_status[:active] = true
@@ -292,6 +290,9 @@ end
 ```
 
 ### Monkey-patching for terminal aesthetics
+
+I like monkey-patching strings. No other language seems to allow it as gracefully as Ruby.
+
 ```ruby
 class String
   def to_bold    = "\e[1m#{self}\e[0m"
@@ -307,7 +308,6 @@ puts "  ❌ FAIL".to_red
 
 ```
 
-
 ## What's Next
 
 The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
@@ -319,6 +319,7 @@ The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4
 | Channel abstraction (Telegram/WhatsApp/Discord) | Planning  | --                                                                 |
 | Protobuf handshake                              | Backlog   | --                                                                 |
 | Rails integration                               | P4 Vision | --                                                                 |
+| Policy engine                                   | P2 Vision | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
 
 ## Next steps: A beautiful Policy Engine
 
@@ -350,8 +351,8 @@ And if you want to see what Guillaume built for Java, check out [his article](ht
 
 ---
 
-*Riccardo Carlesso is a Developer Advocate for Google Cloud, focusing on Open Source, Developer Experience, and occasionally building things that probably didn't need to exist but are wonderful anyway.*
 
-*The Antigravity Ruby SDK is an unofficial, community project. It is not an official Google product.*
+
+*The Antigravity Ruby SDK is an unofficial, community project. It is not an official Google product. But God this is good!*
 
 *📝 This article will also be published on Medium — link coming soon.*
