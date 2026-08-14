@@ -317,20 +317,38 @@ puts "  ❌ FAIL".to_red
 
 The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
 
-| Feature                                         | Status    | Issue                                                              |
-| ----------------------------------------------- | --------- | ------------------------------------------------------------------ |
-| Mid-session skill loading                       | Shipped   | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
-| MCP server support                              | Planning  | --                                                                 |
-| Channel abstraction (Telegram/WhatsApp/Discord) | Planning  | --                                                                 |
-| Protobuf handshake                              | Backlog   | --                                                                 |
-| Rails integration                               | P4 Vision | --                                                                 |
-| Policy engine                                   | P2 Vision | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
+| Feature                                         | Status          | Issue                                                              |
+| ----------------------------------------------- | --------------- | ------------------------------------------------------------------ |
+| Mid-session skill loading                       | Shipped         | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
+| Policy engine                                   | Shipped v0.5.0  | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
+| MCP server support                              | Planning        | --                                                                 |
+| Channel abstraction (Telegram/WhatsApp/Discord) | Planning        | --                                                                 |
+| Protobuf handshake                              | Backlog         | --                                                                 |
+| Rails integration                               | P4 Vision       | --                                                                 |
 
-And about that last one...
+And about that policy engine... **It is now shipped in v0.5.0!** 🎉
 
-## Next steps: A beautiful Policy Engine
+## Declarative Policy Engine (Shipped in v0.5.0!)
 
 Any language can define a good policy engine. Only Ruby, I might argue, can define a beautiful policy engine DSL. And Antigravity is the best partner in crime for this design!
+
+Check out how expressive, clean, and idiomatic it looks in actual Ruby code:
+
+```ruby
+# Use a built-in environment-aware preset (:cautious, :default, :turbo, or :auto)
+agent = Antigravity::Agent.new(policy: :cautious)
+
+# Or define your own custom policy DSL:
+policy = Antigravity::Policy.define do
+  deny_all
+  allow :view_file
+  allow :run_command,  when: cmd("echo", "git status")
+  confirm :write_to_file, when: path("*.rb", "*.yml")
+  deny  :run_command,  when: cmd("rm", "git reset --hard")
+end
+
+agent = Antigravity::Agent.new(policy: policy)
+```
 
 How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
 
