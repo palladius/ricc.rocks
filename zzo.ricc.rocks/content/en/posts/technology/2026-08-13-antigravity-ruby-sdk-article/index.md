@@ -336,6 +336,8 @@ How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) loo
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/beautiful-policy-engine.png" caption="Beautiful Policy Engine" alt="Beautiful Policy Engine" position="center" >}}
 
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit.gif" caption="Code Quality & Security Audit TUI Demo" alt="Code Quality & Security Audit TUI Demo" position="center" >}}
+
 
 ## Your Turn
 
