@@ -10,7 +10,7 @@ description: "What if your Ruby app could think, learn new skills at runtime, an
 categories: ["Antigravity", "Ruby"]
 tags: ["Google", "Antigravity", "Ruby", "Gemini", "Telegram", "Agentic", "SDK"]
 author: "Riccardo Carlesso"
-version: "0.4.2"
+version: "0.5.0"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-08-13"
 bug: "b545986615"
@@ -121,7 +121,7 @@ GEMINI_API_KEY=<your-api-key-here>
 
 Don't believe me? Here's the view from my CLI.
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-audio-view.png" caption="WhatsApp audio view from CLI v2" alt="WhatsApp audio view from CLI v2" position="center" >}}
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-audio-view.png" caption="Telegram audio view from CLI v2" alt="Telegram audio view from CLI v2" position="center" >}}
 
 And here's how it looks on my phone:
 
@@ -157,17 +157,17 @@ agent.skills.count
 
 The runtime loading now attempts dynamic skill loading within the same session. If the model struggles to invoke the new skill, we fall back to a manual failsafe that reads the skill definition and executes it directly.
 
-Personally, I enable at startup a single meta-skill for skill discovery based on my skills Ruby script [`agc`](https://github.com/palladius/agc) (like `npx skills` but better).
+Personally, I enable at startup a single meta-skill for skill discovery based on my skills Ruby script [`agc`](https://github.com/palladius/gemini-cli-custom-commands) (like `npx skills` but better).
 
 Wanna try it? Just type this:
 
 ```bash
 just rv-skill-telegram
-# which is equivalent of:
+# which is equivalent to:
 rv run ruby examples/08_skill_telegram_bot.rb
 ```
 
-My friend [Andre Arko](https://arko.net/) will be so happy to see I'm finally using [`rv`](https://github.com/spinel-coop/rv/) (yes, it's the Ruby version of Astral `uv`, but faster!)
+My friend [André Arko](https://arko.net/) will be so happy to see I'm finally using [`rv`](https://github.com/spinel-coop/rv/) (yes, it's the Ruby version of Astral `uv`, but faster!)
 
 ## The Hooks System: 3 Lines That Changed Everything
 
@@ -286,7 +286,7 @@ Keep your tool responses concise. Models struggle with large, unstructured text 
 
 ### `ensure` for guaranteed cleanup
 
-`ensure` is a great pattern for ensuring that some code is always run, regardless of whether the code that precedes it raises an error. Read more [here](https://zetcode.com/ruby/ensure-keyword/).
+`ensure` is a great pattern for guaranteeing that cleanup code always runs, regardless of whether the code that precedes it raises an error. Read more in [ZetCode's guide to the Ruby ensure keyword](https://zetcode.com/ruby/ensure-keyword/).
 
 ```ruby
 def ask(text, wall_timeout: 180)
@@ -319,7 +319,7 @@ puts "  ❌ FAIL".to_red
 
 ## What's Next
 
-The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
+The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.5.0 with all 9 E2E tests passing consistently. Here's what's coming:
 
 | Feature                                         | Status         | Issue                                                              |
 | ----------------------------------------------- | -------------- | ------------------------------------------------------------------ |
@@ -354,7 +354,7 @@ end
 agent = Antigravity::Agent.new(policy: policy)
 ```
 
-How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
+How does [Issue #21 (Policy Engine DSL)](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
 
 
 
