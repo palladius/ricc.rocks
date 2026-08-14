@@ -41,34 +41,34 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
 
 ```text
-+------------------------------------------------------------------------------------+
-|                                 Telegram Application                               |
-|                                                                                    |
-|  Telegram User  <--->  Telegram API  <--->  Ruby Bot (ChatSession per chat ID)     |
-+------------------------------------------------+-----------------------------------+
-                                                 |
-                                                 v
-+------------------------------------------------------------------------------------+
-|                         Antigravity Ruby SDK (`antigravity-sdk`)                   |
-|                                                                                    |
-|  +--------------------------------+          +----------------------------------+  |
-|  | Antigravity::Agent             |          | Antigravity::Hooks               |  |
-|  | (asks, prompts, auto-connect)  |          | (pre_prompt, post_resp, events) |  |
-|  +--------------------------------+          +----------------------------------+  |
-|  | Antigravity::Conversation      |          | Antigravity::Connection          |  |
-|  | (chats, tool runner dispatch)  |          | (spawns & manages WebSocket)     |  |
-|  +--------------------------------+          +----------------------------------+  |
-+------------------------------------------------+-----------------------------------+
-                                                 | (WebSocket on 127.0.0.1:<port>)
-                                                 v
-+------------------------------------------------------------------------------------+
-|                          Core Go Binary (`localharness`)                           |
-|                                                                                    |
-|  - Manages agent session state, turns, and tool routing                            |
-|  - Connects to Google Antigravity & Gemini backends                                |
-|  - Sends JSON-RPC tool dispatch requests over WebSocket                            |
-|  - Streams token deltas, thought/reasoning deltas, and turn completions            |
-+------------------------------------------------------------------------------------+
++------------------------------------------------------------+
+|                    Telegram Application                    |
+|                                                            |
+|  Telegram User <-> Telegram API <-> Ruby Bot (ChatSession) |
++------------------------------+-----------------------------+
+                               |
+                               v
++------------------------------------------------------------+
+|           Antigravity Ruby SDK (`antigravity-sdk`)         |
+|                                                            |
+|  +---------------------------+  +-----------------------+  |
+|  | Antigravity::Agent        |  | Antigravity::Hooks    |  |
+|  | (ask, prompt, auto-conn)  |  | (pre/post event hooks)|  |
+|  +---------------------------+  +-----------------------+  |
+|  | Antigravity::Conversation |  | Antigravity::Connect  |  |
+|  | (chats, tool runner)      |  | (WebSocket manager)   |  |
+|  +---------------------------+  +-----------------------+  |
++------------------------------+-----------------------------+
+                               | (WebSocket on 127.0.0.1)
+                               v
++------------------------------------------------------------+
+|               Core Go Binary (`localharness`)              |
+|                                                            |
+|  - Manages agent session state, turns & tool routing       |
+|  - Connects to Google Antigravity & Gemini backends        |
+|  - Sends JSON-RPC tool dispatch requests over WS           |
+|  - Streams token deltas, thoughts & turn completions       |
++------------------------------------------------------------+
 ```
 
 ## Getting Started: 5 Lines to Your First Agent
