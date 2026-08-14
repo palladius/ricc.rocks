@@ -262,6 +262,8 @@ With the TUI in place, we caught a fascinating bug. When loading a new skill dyn
 
 The model sent exactly 5 thinking deltas at the 2-second mark, then went completely silent. No `DONE`, no `FULLY_IDLE`, no error -- just nothing.
 
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit-cropped.gif" caption="Code Quality & Security Audit TUI Demo (Cropped)" alt="Code Quality & Security Audit TUI Demo (Cropped)" position="center" >}}
+
 ### What we learned the hard way
 
 1. **Large tool results cause "thinking hangs".** Our `load_skill` tool was originally returning the entire `SKILL.md` content. This massive context dump overwhelmed the model, causing it to spin its wheels indefinitely. By optimizing the tool to return a concise 4-line summary (name, script path, description, usage hint), the model processed it instantly.
@@ -317,14 +319,14 @@ puts "  ❌ FAIL".to_red
 
 The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4.2 with all 9 E2E tests passing consistently. Here's what's coming:
 
-| Feature                                         | Status          | Issue                                                              |
-| ----------------------------------------------- | --------------- | ------------------------------------------------------------------ |
-| Mid-session skill loading                       | Shipped         | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
-| Policy engine                                   | Shipped v0.5.0  | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
-| MCP server support                              | Planning        | --                                                                 |
-| Channel abstraction (Telegram/WhatsApp/Discord) | Planning        | --                                                                 |
-| Protobuf handshake                              | Backlog         | --                                                                 |
-| Rails integration                               | P4 Vision       | --                                                                 |
+| Feature                                         | Status         | Issue                                                              |
+| ----------------------------------------------- | -------------- | ------------------------------------------------------------------ |
+| Mid-session skill loading                       | Shipped        | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
+| Policy engine                                   | Shipped v0.5.0 | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
+| MCP server support                              | Planning       | --                                                                 |
+| Channel abstraction (Telegram/WhatsApp/Discord) | Planning       | --                                                                 |
+| Protobuf handshake                              | Backlog        | --                                                                 |
+| Rails integration                               | P4 Vision      | --                                                                 |
 
 And about that policy engine... **It is now shipped in v0.5.0!** 🎉
 
@@ -352,9 +354,8 @@ agent = Antigravity::Agent.new(policy: policy)
 
 How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/beautiful-policy-engine.png" caption="Beautiful Policy Engine" alt="Beautiful Policy Engine" position="center" >}}
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit.gif" caption="Code Quality & Security Audit TUI Demo" alt="Code Quality & Security Audit TUI Demo" position="center" >}}
+
 
 
 ## Your Turn
