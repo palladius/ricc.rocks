@@ -28,7 +28,7 @@ valescore: 45
 
 ## Introduction
 
-When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [🪨 Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
+When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
 
 This is that story.
 
@@ -72,7 +72,7 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 ```ruby
 require 'antigravity'
 
-agent = Antigravity::Agent.new
+agent = Antigravity::Agent.new(workspace: :here) # Idiomatic Ruby sugar for current folder!
 agent.connect!  # Auto-connects if omitted
 response = agent.ask("What's the mass of the Sun?")
 puts response.content
@@ -121,7 +121,7 @@ GEMINI_API_KEY=<your-api-key-here>
 
 Don't believe me? Here's the view from my CLI.
 
-![WhatsApp audio view from CLI v2](<images/telegram audio view from CLI.png>)
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-audio-view.png" caption="WhatsApp audio view from CLI v2" alt="WhatsApp audio view from CLI v2" position="center" >}}
 
 And here's how it looks on my phone:
 
@@ -204,6 +204,8 @@ end
 Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
 
 **Zero lines of debug code in the core SDK.** All observability is opt-in, external, and composable. This is the Ruby way.
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-lifecycle-hooks.gif" caption="Real-Time Terminal Observability with Lifecycle Hooks (`ANTIGRAVITY_LIFECYCLE=1`)" alt="Real-Time Terminal Observability with Lifecycle Hooks (`ANTIGRAVITY_LIFECYCLE=1`)" position="center" >}}
 
 
 
@@ -330,7 +332,7 @@ The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4
 
 And about that policy engine... **It is now shipped in v0.5.0!** 🎉
 
-## Declarative Policy Engine (Shipped in v0.5.0!)
+## Declarative Policy Engine
 
 Any language can define a good policy engine. Only Ruby, I might argue, can define a beautiful policy engine DSL. And Antigravity is the best partner in crime for this design!
 
@@ -360,13 +362,20 @@ How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) loo
 
 ## Your Turn
 
-The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with 5 downloads already! 💎) or clone the repository:
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with **5K** downloads already! 💎) or clone the repository:
 
 ```bash
 gem install antigravity-sdk
+irb
+ > require 'antigravity'
+ > agent = Antigravity::Agent.new
+ > agent.run("Hello, how are you?")
+
 # OR clone the source
+
 git clone https://github.com/palladius/antigravity-ruby-sdk
-cd antigravity-ruby-sdk
+cd antigravity-ruby-sdk/
+bundle install
 cp .env.dist .env  # add your config
 ruby examples/01_hello_world.rb
 ```
