@@ -215,6 +215,8 @@ The hooks system's first real consumer was a dynamic terminal status line for th
      🏃 running 💭💭💭 ⏳42s 7↕
 ```
 
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-duo-demo.gif" caption="Dynamic TUI Status Line progression recording" alt="Dynamic TUI Status Line progression recording" position="center" >}}
+
 The implementation uses ANSI escape codes (`\r\e[K`), a state emoji map, and a background ticker thread:
 
 ```ruby
