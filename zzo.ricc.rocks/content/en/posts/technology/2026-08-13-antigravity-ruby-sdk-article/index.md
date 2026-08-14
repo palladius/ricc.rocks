@@ -109,7 +109,7 @@ Each Telegram chat gets its own `ChatSession` with its own Antigravity agent. Th
 > **User:** Where's my to-do file?
 > **Bot:** According to the skill, it's at `~/obsidian/TODOs/TODOz.md`
 
-*But I don't want to type on Telegram, I want to speak with microphone!* No worries, dude, we got you. I've tested the SDK with Italian and English and it worked great! You just need to add this to your .env:
+*But I don't want to type on Telegram, I want to speak with a microphone!* No worries, dude, we got you. I've tested the SDK with Italian and English and it worked great! You just need to add this to your .env:
 
 ```
 # See .env.dist for more info
@@ -157,7 +157,7 @@ agent.skills.count
 
 The runtime loading now attempts dynamic skill loading within the same session. If the model struggles to invoke the new skill, we fall back to a manual failsafe that reads the skill definition and executes it directly.
 
-Personally, I enable at startup a single meta-skill for skill discovery based on my skills ruby script agc` (like `npx skills` but better): https://github.com/palladius/agc
+Personally, I enable at startup a single meta-skill for skill discovery based on my skills Ruby script [`agc`](https://github.com/palladius/agc) (like `npx skills` but better).
 
 Wanna try it? Just type this:
 
@@ -167,7 +167,7 @@ just rv-skill-telegram
 rv run ruby examples/08_skill_telegram_bot.rb
 ```
 
-My friend [Andre Arko](https://arko.net/) will be so happy to see I'm finally using [`rv`](https://github.com/spinel-coop/rv/) (yes, it's the ruby version of Astral `uv`, but faster!)
+My friend [Andre Arko](https://arko.net/) will be so happy to see I'm finally using [`rv`](https://github.com/spinel-coop/rv/) (yes, it's the Ruby version of Astral `uv`, but faster!)
 
 ## The Hooks System: 3 Lines That Changed Everything
 
@@ -211,12 +211,6 @@ Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
 
 The hooks system's first real consumer was a dynamic terminal status line for the E2E test. One line that overwrites itself in-place:
 
-```
-     🏃 running 💭💭💭 ⏳42s 7↕
-```
-
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-duo-demo.gif" caption="Dynamic TUI Status Line progression recording" alt="Dynamic TUI Status Line progression recording" position="center" >}}
-
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.gif" caption="Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide" alt="Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide" position="center" >}}
 
 The implementation uses ANSI escape codes (`\r\e[K`), a state emoji map, and a background ticker thread:
@@ -248,7 +242,11 @@ def _render_status
 end
 ```
 
-The result: you ALWAYS know what the agent is doing. Thinking? You see `💭💭💭`. Calling tools? You see `🔧 Find todo files`. Stuck? The timer keeps ticking: `⏳42s... ⏳43s... ⏳44s...`
+The result: you ALWAYS know what the agent is doing:
+
+*  Thinking? You see `💭💭💭`.
+*  Calling tools? You see `🔧 Find todo files`.
+*  Stuck? The timer keeps ticking: `⏳42s... ⏳43s... ⏳44s...`
 
 ## Debugging a Model Hang: A War Story
 
@@ -328,9 +326,11 @@ The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4
 | Rails integration                               | P4 Vision | --                                                                 |
 | Policy engine                                   | P2 Vision | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
 
+And about that last one...
+
 ## Next steps: A beautiful Policy Engine
 
-Any language can define a good policy engine. Only Ruby, I might argue, can define a beautiful policy engine DSL. And Atnigravity is the best partner in crime for this design!
+Any language can define a good policy engine. Only Ruby, I might argue, can define a beautiful policy engine DSL. And Antigravity is the best partner in crime for this design!
 
 How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
 
@@ -352,7 +352,7 @@ ruby examples/01_hello_world.rb
 
 I'm genuinely curious how you'd use this. Would you build a Slack bot? A Rails assistant? A CLI tool that learns from your codebase? Open an issue, send a PR, or just say hello.
 
-I'm currently looking for interetsing use cases for pre/post hooks and sidecars. If you have a neat use case, let me know: I might build it for you!
+I'm currently looking for interesting use cases for pre/post hooks and sidecars. If you have a neat use case, let me know: I might build it for you!
 
 And if you want to see what Guillaume built for Java, check out [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/) -- it's the post that started this whole Ruby adventure.
 
