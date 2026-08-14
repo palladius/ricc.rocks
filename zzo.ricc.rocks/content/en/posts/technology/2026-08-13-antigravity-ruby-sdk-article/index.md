@@ -320,6 +320,15 @@ The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.4
 | Protobuf handshake                              | Backlog   | --                                                                 |
 | Rails integration                               | P4 Vision | --                                                                 |
 
+## Next steps: A beautiful Policy Engine
+
+Any language can define a good policy engine. Only Ruby, I might argue, can define a beautiful policy engine DSL. And Atnigravity is the best partner in crime for this design!
+
+How does [this](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/beautiful-policy-engine.png" caption="Beautiful Policy Engine" alt="Beautiful Policy Engine" position="center" >}}
+
+
 ## Your Turn
 
 The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with 5 downloads already! 💎) or clone the repository:
