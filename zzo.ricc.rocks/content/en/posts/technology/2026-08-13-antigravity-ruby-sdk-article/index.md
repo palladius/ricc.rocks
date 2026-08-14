@@ -205,7 +205,7 @@ Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
 
 **Zero lines of debug code in the core SDK.** All observability is opt-in, external, and composable. This is the Ruby way.
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-lifecycle-hooks.gif" caption="Real-Time Terminal Observability with Lifecycle Hooks (`ANTIGRAVITY_LIFECYCLE=1`)" alt="Real-Time Terminal Observability with Lifecycle Hooks (`ANTIGRAVITY_LIFECYCLE=1`)" position="center" >}}
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-lifecycle-hooks.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Real-Time Terminal Observability with Lifecycle Hooks (`ANTIGRAVITY_LIFECYCLE=1`)</strong></figcaption></figure>
 
 
 
@@ -213,7 +213,7 @@ Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
 
 The hooks system's first real consumer was a dynamic terminal status line for the E2E test. One line that overwrites itself in-place:
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.gif" caption="Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide" alt="Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide" position="center" >}}
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide</strong></figcaption></figure>
 
 The implementation uses ANSI escape codes (`\r\e[K`), a state emoji map, and a background ticker thread:
 
@@ -264,7 +264,7 @@ With the TUI in place, we caught a fascinating bug. When loading a new skill dyn
 
 The model sent exactly 5 thinking deltas at the 2-second mark, then went completely silent. No `DONE`, no `FULLY_IDLE`, no error -- just nothing.
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit-cropped.gif" caption="Code Quality & Security Audit TUI Demo (Cropped)" alt="Code Quality & Security Audit TUI Demo (Cropped)" position="center" >}}
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit-cropped.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Code Quality & Security Audit TUI Demo (Cropped)</strong></figcaption></figure>
 
 ### What we learned the hard way
 
