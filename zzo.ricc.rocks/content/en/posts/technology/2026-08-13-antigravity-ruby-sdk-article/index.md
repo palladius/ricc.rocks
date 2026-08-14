@@ -38,7 +38,6 @@ The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is
 
 The architecture is deliberately simple. Your Ruby process talks to a local Go binary (the "harness") over WebSocket. The harness handles the heavy lifting: authentication, model communication, tool execution, and safety policies. Your SDK just needs to speak JSON.
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" position="center" >}}
 
@@ -83,7 +82,9 @@ That's it. The SDK spawns the harness, opens a WebSocket, sends your prompt, str
 
 ## Building a Telegram Bot
 
+
 The real fun starts when you connect the SDK to a messaging platform. Here's the core loop of our Telegram bot:
+
 
 ```ruby
 bot.listen do |message|
@@ -96,6 +97,8 @@ bot.listen do |message|
   bot.api.send_message(chat_id: message.chat.id, text: response)
 end
 ```
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
 
 Each Telegram chat gets its own `ChatSession` with its own Antigravity agent. The agent starts with a "metaskill" -- a skill that knows how to find and load other skills. Users can ask the bot to learn new capabilities on the fly:
 
