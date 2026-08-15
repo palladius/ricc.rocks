@@ -42,27 +42,10 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" position="center" >}}
 
 ```text
-+------------------------------------------------------------+
-|           Antigravity Ruby SDK (`antigravity-sdk`)         |
-|                                                            |
-|  +---------------------------+  +-----------------------+  |
-|  | Antigravity::Agent        |  | Antigravity::Hooks    |  |
-|  | (ask, prompt, auto-conn)  |  | (pre/post event hooks)|  |
-|  +---------------------------+  +-----------------------+  |
-|  | Antigravity::Conversation |  | Antigravity::Connect  |  |
-|  | (chats, tool runner)      |  | (WebSocket manager)   |  |
-|  +---------------------------+  +-----------------------+  |
-+------------------------------+-----------------------------+
-                               | (WebSocket on 127.0.0.1)
-                               v
-+------------------------------------------------------------+
-|               Core Go Binary (`localharness`)              |
-|                                                            |
-|  - Manages agent session state, turns & tool routing       |
-|  - Connects to Google Antigravity & Gemini backends        |
-|  - Sends JSON-RPC tool dispatch requests over WS           |
-|  - Streams token deltas, thoughts & turn completions       |
-+------------------------------------------------------------+
++------------------------------+             +------------------------------+
+|     Antigravity Ruby SDK     |  WebSocket  |     Core Go Localharness     |
+| (Agent, Hooks, ToolRunner)   | <=========> | (Session State, AI Routing)  |
++------------------------------+ (127.0.0.1) +------------------------------+
 ```
 
 
@@ -109,7 +92,7 @@ Each Telegram chat gets its own `ChatSession` with its own Antigravity agent. Th
 > **User:** Where's my to-do file?
 > **Bot:** According to the skill, it's at `~/obsidian/TODOs/TODOz.md`
 
-*But I don't want to type on Telegram, I want to speak with a microphone!* No worries, dude, we got you. I've tested the SDK with Italian and English and it worked great! You just need to add this to your .env:
+*Want to speak instead of type? You can send voice notes directly over Telegram.* I've tested the SDK with Italian and English audio notes and it works great! You just need to add this to your `.env`:
 
 ```
 # See .env.dist for more info
@@ -119,15 +102,11 @@ TELEGRAM_CHAT_ID=<YOUR_CHAT_ID>
 GEMINI_API_KEY=<your-api-key-here>
 ```
 
-Don't believe me? Here's the view from my CLI.
-
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-audio-view.png" caption="Telegram audio view from CLI v2" alt="Telegram audio view from CLI v2" position="center" >}}
-
-And here's how it looks on my phone:
+Here's how it looks on my phone:
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-screenshot.png" caption="Telegram screenshot v2" alt="Telegram screenshot v2" position="center" >}}
 
-I think you can work the maths even if you don't speak Italian!
+I think you can figure out the math even if you don't speak Italian!
 
 ## Skills: Superpowers for Your Agent
 
@@ -276,46 +255,19 @@ The model sent exactly 5 thinking deltas at the 2-second mark, then went complet
 
 With these improvements, all 9 E2E tests now pass consistently in around 73 seconds. This bug and its resolution are tracked in [Issue #16](https://github.com/palladius/antigravity-ruby-sdk/issues/16).
 
-## Ruby Tips for Agent Code
+## Ruby Idioms for Agent Code
 
-A few patterns that proved invaluable:
+A few Ruby-native patterns that proved invaluable for building agentic apps:
 
-### Tool Result Hygiene
-
-Keep your tool responses concise. Models struggle with large, unstructured text dumps from tools (as seen in our model hang war story). Return only the essential metadata the agent needs to make its next decision, rather than full file contents or verbose logs.
-
-### `ensure` for guaranteed cleanup
-
-`ensure` is a great pattern for guaranteeing that cleanup code always runs, regardless of whether the code that precedes it raises an error. Read more in [ZetCode's guide to the Ruby ensure keyword](https://zetcode.com/ruby/ensure-keyword/).
-
-```ruby
-def ask(text, wall_timeout: 180)
-  @_status[:active] = true
-  Timeout.timeout(wall_timeout) { ... }
-ensure
-  @_status[:active] = false  # ALWAYS runs, even on Timeout::Error
-  print "\r\e[K"             # Clear the status line
-end
-```
-
-### Monkey-patching for terminal aesthetics
-
-I like monkey-patching strings. No other language seems to allow it as gracefully as Ruby.
-
-```ruby
-class String
-  def to_bold    = "\e[1m#{self}\e[0m"
-  def to_cyan    = "\e[36m#{self}\e[0m"
-  def to_green   = "\e[32m#{self}\e[0m"
-  def to_gray    = "\e[90m#{self}\e[0m"
-  def to_red     = "\e[31m#{self}\e[0m"
-  def to_yellow  = "\e[33m#{self}\e[0m"
-end
-
-puts "  ✅ PASS".to_green
-puts "  ❌ FAIL".to_red
-
-```
+* **Tool Result Hygiene**: Keep tool responses concise. Models struggle with large, unstructured text dumps, so return only essential metadata to prevent thinking hangs.
+* **Guaranteed Cleanup with `ensure`**:
+  ```ruby
+  def ask(text) = (Timeout.timeout(180) { @agent.ask(text) } ensure @_status[:active] = false)
+  ```
+* **Ruby 3 Endless Methods for Terminal Color Oneliners**:
+  ```ruby
+  class String; def to_green = "\e[32m#{self}\e[0m"; def to_red = "\e[31m#{self}\e[0m"; end
+  ```
 
 ## What's Next
 
@@ -356,10 +308,6 @@ agent = Antigravity::Agent.new(policy: policy)
 
 How does [Issue #21 (Policy Engine DSL)](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
 
-
-
-
-
 ## Your Turn
 
 The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with **5K** downloads already! 💎) or clone the repository:
@@ -369,7 +317,7 @@ gem install antigravity-sdk
 irb
  > require 'antigravity'
  > agent = Antigravity::Agent.new
- > agent.run("Hello, how are you?")
+ > agent.ask("Hello, how are you?")
 
 # OR clone the source
 
