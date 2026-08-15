@@ -13,7 +13,7 @@ author: "Riccardo Carlesso"
 version: "0.5.1"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-08-13"
-bug: "b545986615"
+bug: "b/545986615"
 # canonicalURL: (pending Medium publication)
 ricc_signoff: "true"
 CTA: "https://github.com/palladius/antigravity-ruby-sdk"
