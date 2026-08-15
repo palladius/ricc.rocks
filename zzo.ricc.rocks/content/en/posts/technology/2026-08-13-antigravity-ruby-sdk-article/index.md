@@ -42,10 +42,10 @@ The architecture is deliberately simple. Your Ruby process talks to a local Go b
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" position="center" >}}
 
 ```text
-+------------------------------+             +------------------------------+
-|     Antigravity Ruby SDK     |  WebSocket  |     Core Go Localharness     |
-| (Agent, Hooks, ToolRunner)   | <=========> | (Session State, AI Routing)  |
-+------------------------------+ (127.0.0.1) +------------------------------+
++----------------------------+             +----------------------------+
+|    Antigravity Ruby SDK    |  WebSocket  |    Core Go Localharness    |
+| (Agent, Hooks, ToolRunner) | <=========> | (Session State, AI Engine) |
++----------------------------+ (127.0.0.1) +----------------------------+
 ```
 
 
