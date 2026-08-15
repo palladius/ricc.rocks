@@ -10,14 +10,14 @@ description: "What if your Ruby app could think, learn new skills at runtime, an
 categories: ["Antigravity", "Ruby"]
 tags: ["Google", "Antigravity", "Ruby", "Gemini", "Telegram", "Agentic", "SDK"]
 author: "Riccardo Carlesso"
-version: "0.5.0"
+version: "0.5.1"
 Platform: "Medium and ricc.rocks"
 PublishDate: "2026-08-13"
 bug: "b545986615"
 # canonicalURL: (pending Medium publication)
 ricc_signoff: "true"
 CTA: "https://github.com/palladius/antigravity-ruby-sdk"
-gunningFog: 11.16
+gunningFog: 12.02
 slopScore: 28.5
 valescore: 45
 ---
