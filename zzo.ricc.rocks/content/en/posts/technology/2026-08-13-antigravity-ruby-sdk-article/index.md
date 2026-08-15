@@ -88,7 +88,7 @@ Each Telegram chat gets its own `ChatSession` with its own Antigravity agent. Th
 > **User:** Find the riccardo-todo skill
 > **Bot:** Found `riccardo-todo` at `/path/to/skills/riccardo-todo`
 > **User:** Load it
-> **Bot:** *[restarts session with new skill]* Loaded! I now know about your to-do list.
+> **Bot:** *[dynamically loads skill in active session]* Loaded! I now know about your to-do list.
 > **User:** Where's my to-do file?
 > **Bot:** According to the skill, it's at `~/obsidian/TODOs/TODOz.md`
 
