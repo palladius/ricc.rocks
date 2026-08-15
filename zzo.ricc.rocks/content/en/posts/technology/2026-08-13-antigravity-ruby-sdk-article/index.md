@@ -34,7 +34,7 @@ When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](ht
 
 This is that story.
 
-The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial Ruby wrapper around Google's [Antigravity](https://antigravity.google/download) harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. By connecting it to [Telegram](https://telegram.org/) and the Telegram Bot API, it gives your code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability right inside your chat window.
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial Ruby wrapper around Google's [Antigravity](https://antigravity.google/download?utm_campaign=CDR_0x89ad3e41_awareness_b545986615&utm_medium=external&utm_source=blog) harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. By connecting it to [Telegram](https://telegram.org/) and the Telegram Bot API, it gives your code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability right inside your chat window.
 
 ## How It Works
 
