@@ -192,44 +192,15 @@ Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
 
 ## The Dynamic TUI Status Line
 
-The hooks system's first real consumer was a dynamic terminal status line for the E2E test. One line that overwrites itself in-place:
+The hooks system's first real consumer was a dynamic terminal status line for our E2E test suite. By pairing a background ticker thread with ANSI carriage returns (`\r\e[K`) and state emojis (`🏃`, `😴`, `🛑`, `⏳`), the terminal overwrites a single status line in-place on every event:
 
 <figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide</strong></figcaption></figure>
 
-The implementation uses ANSI escape codes (`\r\e[K`), a state emoji map, and a background ticker thread:
+The result: you ALWAYS know what the agent is doing in real time:
 
-```ruby
-# Background thread ticks every second
-@_ticker = Thread.new do
-  loop do
-    sleep 1
-    _render_status if @_status[:active]
-  end
-end
-
-def _render_status
-  icon = case @_status[:state]
-         when /RUNNING/ then '🏃'
-         when /IDLE/    then '😴'
-         when /CANCEL/  then '🛑'
-         else '⏳'
-         end
-
-  elapsed = (Time.now - @_status[:started]).to_i
-  line = "     #{icon} #{@_status[:state].downcase}"
-  line += " #{@_status[:dots]}" unless @_status[:dots].empty?
-  line += " ⏳#{elapsed}s #{@_status[:msg_count]}↕"
-
-  print "\r\e[K#{line[0, 79]}"
-  $stdout.flush
-end
-```
-
-The result: you ALWAYS know what the agent is doing:
-
-*  Thinking? You see `💭💭💭`.
-*  Calling tools? You see `🔧 Find todo files`.
-*  Stuck? The timer keeps ticking: `⏳42s... ⏳43s... ⏳44s...`
+* **Thinking?** You see `💭💭💭`.
+* **Calling tools?** You see `🔧 Find todo files`.
+* **Stuck?** The live timer keeps ticking: `⏳42s... ⏳43s... ⏳44s...`
 
 ## Debugging a Model Hang: A War Story
 
