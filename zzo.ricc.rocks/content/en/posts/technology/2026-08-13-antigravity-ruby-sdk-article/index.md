@@ -26,6 +26,8 @@ valescore: 45
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg" caption="Hero: Ruby gemstone connected to Telegram and a terminal" alt="Hero: Ruby gemstone connected to Telegram and a terminal" position="center" >}}
 
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide</strong></figcaption></figure>
+
 ## Introduction
 
 When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
