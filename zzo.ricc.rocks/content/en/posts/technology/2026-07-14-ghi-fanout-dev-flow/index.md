@@ -337,3 +337,6 @@ A few lessons learnt.
 👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
 
 *Read this article on Medium: <https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09>.*
+
+---
+**Posted on:** 🦋 [Bluesky](https://bsky.app/profile/did:plc:exxygrx4rcs2gbatfxzyxjut/post/3mr3jwp427a2l) | 💼 [LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7485218860854501378) | 🐦 [Twitter](https://x.com/17310864/status/2079216454587535643)
