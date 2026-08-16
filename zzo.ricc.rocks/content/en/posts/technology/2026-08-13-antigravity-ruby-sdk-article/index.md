@@ -24,7 +24,7 @@ valescore: 45
 
 *What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it's doing -- all in a [single terminal line](https://github.com/palladius/antigravity-ruby-sdk)?*
 
-**TL;DR:** Code on [GitHub](https://github.com/palladius/antigravity-ruby-sdk) 🚀 | Gem: [`antigravity-sdk` on RubyGems](https://rubygems.org/gems/antigravity-sdk) 💎
+**TL;DR:** Code on [GitHub](https://github.com/palladius/antigravity-ruby-sdk) 🚀 | Live Demo on [🪨 ricc.rocks](https://ricc.rocks/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/) 🎬
 
 {{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg" caption="Hero: Ruby gemstone connected to Telegram and a terminal" alt="Hero: Ruby gemstone connected to Telegram and a terminal" position="center" >}}
 
