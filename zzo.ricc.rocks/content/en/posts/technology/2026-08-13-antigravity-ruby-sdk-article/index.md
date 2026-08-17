@@ -32,7 +32,7 @@ valescore: 45
 
 ## Introduction
 
-When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
+When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/2026/07/31/the-unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
 
 This is that story.
 
@@ -307,7 +307,7 @@ I'm genuinely curious how you'd use this. Would you build a Slack bot? A Rails a
 
 I'm currently looking for interesting use cases for pre/post hooks and sidecars. If you have a neat use case, let me know: I might build it for you!
 
-And if you want to see what Guillaume built for Java, check out [his article](https://glaforge.dev/posts/unofficial-antigravity-sdk-for-java/) -- it's the post that started this whole Ruby adventure.
+And if you want to see what Guillaume built for Java, check out [his article](https://glaforge.dev/posts/2026/07/31/the-unofficial-antigravity-sdk-for-java/) -- it's the post that started this whole Ruby adventure.
 
 ---
 
