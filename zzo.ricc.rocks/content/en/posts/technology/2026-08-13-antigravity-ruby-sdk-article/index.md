@@ -283,6 +283,28 @@ agent = Antigravity::Agent.new(policy: policy)
 
 How does [Issue #21 (Policy Engine DSL)](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
 
+See the Policy Engine in action, from our interactive `Richard` console:
+
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/demos/richard-console/demo.gif" caption="Richard Console Demo — Policy Engine & Workspace Discovery" alt="Richard Console Demo — Policy Engine & Workspace Discovery" position="center" >}}
+
+### Dynamic Policy Injection
+
+Policies aren't just static. You can inject rules at runtime -- perfect for hardening your agent mid-session:
+
+```ruby
+# In IRB / Richard console:
+policy = agent.policy
+policy.add_deny :view_file, when: path('*.env', '*.pem', '*.key')
+policy.add_deny :run_command, when: cmd('cat .env', 'cat .key')
+
+# Now the agent CAN'T read your secrets, even if it tries!
+agent.ask("Show me the contents of .env")
+# => "Denied by policy" 🛡️
+```
+
+This is Ruby's killer feature for agent safety: **policies are objects, not config files**. You can compose, inherit, and mutate them like any Ruby object.
+
 ## Your Turn
 
 The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with **5K** downloads already! 💎) or clone the repository:
