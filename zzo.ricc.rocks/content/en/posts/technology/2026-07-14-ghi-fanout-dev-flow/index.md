@@ -1,0 +1,342 @@
+---
+type: Article
+status: published
+priority: P2
+title: "How I built a skill to fan out 20 workers to fix my old Rails App on Antigravity (steal my prompt!)"
+date: 2026-07-14T09:00:00+02:00
+draft: false
+image: "/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png"
+description: "I wanted to fix an app which had 20 open GH Issues but I didnt want to spin up 20 agents. So I created a single Antigravity prompt to rule them all! The prompt was so good, and ideas came flocking to me, that I constructed a skill for you to re-use! This has been tested on Antigravity, which is free to use for everyone!"
+categories: ["Antigravity", Rails ]
+tags: ["Google", "Antigravity", Ruby, Rails, Worktree, Agentic, Subagents ]
+author: "Riccardo Carlesso"
+version: "1.3"
+Platform: "Medium and ricc.rocks"
+PublishDate: "2026-07-14"
+bug: "b/534594102"
+mediumurl: "https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09"
+canonicalURL: "https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09"
+ricc_signoff: "true"
+CTA: "https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding"
+published_urls:
+- "https://ricc.rocks/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/" 
+gunningFog: 10.13
+slopScore: 32.61
+valescore: 45
+
+---
+
+*I hope this article is going to help and inspire thousands of lazy coders with a bunch of open issues in their repos!* Ok, if not thousands maybe 1 or 2.
+
+> How I tokenmaxxed 20 subagents to solve all of my GH issues at once... and packaged this into a skill, so you don't have to!
+
+Yesterday I was talking to my buddy [Emiliano](https://www.linkedin.com/in/emilianodellacasa) about a [Rails 8 App](https://rubyonrails.org) we built last year (that is, two *geological eras* ago in AI terms) and we decided to rebuild something new from scratch. I've also noticed the app had plenty of open issues on GitHub and I thought: lets fix them lightheartedly with Worktrees and agents and ZERO effort on my side; wait, is this even possible? And if it is, should I blog about it?
+
+---
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/hero_image.png" caption="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" alt="An old 2025 Rails app with plenty of open issues... nightmare! Can my agents fix it while I read the news?" position="center" >}}
+
+
+**YES**, it is possible, and [Antigravity](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) makes it easy! You just need a few guardrails and some **smart prompt** which you're welcome to **steal** (just scroll 2 paragraphs down)!
+
+But let's not get ahead of ourselves.
+
+
+## Riccardo, what problem are you trying to solve?
+
+If you maintain an old project, you know the drill: you check the repository after a few months and find 20 open issues, dependabot alerts, and minor feature requests piling up. The thought of manually branching, fixing, testing, and opening PRs for each one is exhausting. 
+
+> **You want to solve those 20 issues, but NOT at the cost of actually READING them!**
+
+If only AI could safely solve them and, if not, leave the bug documented with a number of thorough questions for me to tackle? I want to wake up tomorrow with only 4 bugs open and some smart questions to "unblock" the agent, and yes, maybe one of them needs manual resolution, I can live with that!
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/image.png" caption="A bunch of open GitHub Issues for my old Rails8 app" alt="A bunch of open GitHub Issues for my old Rails8 app" position="center" >}}
+
+So I had an idea: what if I wrote **a single prompt to rule them all**? A prompt that would fetch all open issues, spawn a dedicated worker for each, evaluate whether it could be solved autonomously, and then do the work in parallel worktrees! This is a breeze with Antigravity 2.0 as you can read in [Richard Seroter's article](https://seroter.com/2026/06/01/one-prompt-four-subagents-and-ninety-seconds-to-get-a-working-app/).
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/pr-boxers.jpg" caption="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." alt="A chaotic boxing ring with 5 boxers fighting over PRs, representing the violence of reconciling 20 worktrees into a single main branch. Riccardo stands happily in a yellow Google t-shirt saying 'I was lucky - I was first'." position="center" >}}
+
+If you're a follower of mine, this might ring a bell! I just posted another **Worktree + Conductor article** in [🪨 Orchestrating with Antigravity: A Crescendo of Agents - Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)
+
+
+Wait, Riccardo, are you repeating yourself? Wait, Riccardo, are you repeating yourself? 
+
+This article differs in the sense that it's LESS Conductor/Spec-Driven and so it's less guided and more "trying to get things done without bothering the user." For a very serious project, I encourage you to use [🪨 HITL+Conductor skill described here](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/) instead.
+
+
+
+## 1. My first solution: a prompt
+
+So I started typing this fan-out prompt on [Antigravity 2.0](https://antigravity.google/?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog):
+
+```markdown
+For every open GH issue, open a subagent for that issue. That subagent shall:
+1. identify if that is doable without human intervention.
+   Does it have all it takes for independently drive to resolution?
+2. If no, update that asking questions which can be answered by human
+   to answer yes at a next pass.
+3. If yes, then create a new worktree, read the conductor + worktree skill, 
+   and implement it independently. Add meaningful failing tests and implement
+   your way to make them not fail anymore (TDD). Tests need to fail first and
+   then not anymore! 
+4. When done, create a PR with the branch and: (a)  update GHI with what has been
+   done, choices that have been taken, .. (b) a message for the user in the PR. 
+```
+
+### Some important notes
+
+* Use a **SMART, thoughtful model**. Today I've used Gemini 3.1 pro in high thinking mode for the main agent. You can spare a few pennies for this as it needs to set it up correctly.
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/gemini31pro-thinking.png" caption="Use a Gemini PRo high-thinking mode for the main agent" alt="Use a Gemini PRo high-thinking mode for the main agent" position="center" >}}
+
+* **Enable Turbo mode**. What's the worst that can happen in your GH repo? After all, it's committed and revertable!
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/turbo-mode.png" caption="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" alt="Enable Turbo mode: fewer questions and more risk. This is how Proper Unresponsible Vibecoding is done" position="center" >}}
+
+We're off to a great start! But...
+
+Then I thought: this is so amazing, this is gonna change the world, this should be MORE than just a prompt. How do I maintain it? To quote Ali G, *"The world is bigger than Staines, and me gotta build a skill for it!"*
+
+In 🇮🇹 Italy we say that [*appetite comes with eating*](https://appetitomagazine.com/features/lappetito-vien-mangiando-why-appetite-comes-with-eating) and so why don't we raise the bar a bit?
+
+
+
+## 2. Let's make it a SKILL
+
+Who knows me call me "The Master in overcomplication," which is not a compliment. Since the first version ([#39f9f19](https://github.com/palladius/gemini-cli-palladius-public-goodies/commit/39f9f19)) I've added a bit of script to bring main and subagents "on rails" and add some forensics analysis with timestamps so we can better identify what went wrong.
+
+To achieve this, I packaged the logic into a [new skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding): [`ghi-fan-out-coding`](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding). The workflow is simple:
+1. **Analyze and Filter:** The orchestrator agent reads the GitHub issues and filters out ones that explicitly require human knowledge (or tags them for clarification).
+2. **Fan Out:** It invokes subagents, handing each one an issue.
+3. **Isolated Worktrees:** Each subagent creates a `git worktree` to avoid stepping on the others' toes, uses TDD to write failing tests, and then implements the fix. This is a lesson I learnt in the past month and you can read in [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/).
+4. **Pull Requests:** When the tests pass, the subagent pushes the branch and creates a PR with a summary of its choices.
+
+### Chatting with AGY on SKILL Specs
+
+[Spec Driven Development](https://en.wikipedia.org/wiki/Specification-driven_development) ([SDD](https://en.wikipedia.org/wiki/Specification-driven_development), not to be confused with SSD) couldn't be funnier and more productive! I love how Antigravity makes it easy for you to comment on an Implementation plan (which is an AGY [artifact](https://antigravity.google/docs/artifacts?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog)):
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/ricc-commenting-on-implementation-plan.png" caption="Riccardo commenting on implementation plan" alt="Riccardo commenting on implementation plan" position="center" >}}
+
+Think about this: my best friend 🇮🇹 Andrea is not a coder and *yet* he's building Finance and Hermes stuff every day with Antigravity 2.0 (and speaking Italian on his mike - guess who's learnt from!).
+
+## We're ready, let's start!
+
+I'm at Lido degli Estensi, 🇮🇹, coding with A/C on, and having a blast with my agents. Here's what happened, [Jack Bower](https://en.wikipedia.org/wiki/Jack_Bauer) style:
+
+🪵 `09:41` It all started. Here is a quick video of the agents working in parallel:
+
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/videos/subagents-working.mov" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>🎥 Subagents in action</strong></figcaption></figure>
+
+
+
+🪵 `10:04` 23 minutes later, all subagents but one have finished! Look:
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/screenshots/subagents-done.png" caption="10:04 all subagents but one are done" alt="10:04 all subagents but one are done" position="center" >}}
+
+Don't believe me? Results are visible [here](https://github.com/palladius/rails8-turbo-chat/issues/71).
+
+🪵 `10:15` Some missing JSON fields, update skill, rinse and repeat. I should probably write an article about `SKILL.md` meta-feedback loop and Skill lifecycle. [Ping me on LinkedIn](https://www.linkedin.com/in/riccardo-carlesso) if this interesting to you.
+
+🪵 `11:30` We're ready to execute the newer version, shiny skill `ghi-fan-out-coding v1.5`! ([GitHub](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding))
+🪵 `12:14` I've updated this article for you guys - so now I'm ready for the second pass
+
+
+## Additional iterations
+
+### No CLI, no party!
+
+I love having 20 `.JSON` in my local computer, but I don't enjoy reading them manually (as a rubyist, I write poems in YAML - not JSON!) that means you can create a UI or a CLI to show you a synoptic.
+
+Let's do this:
+
+```markdown
+Does the skill support some sort of CLI to get script status?
+I would love to see sth like: 
+`14 issues faced, 11 faced 3 skipped, 8 PR pendings, ..` 
+hopefully by just checking JSON in local and 
+sip caipirinha while observing "watch just cool-jsons"
+```
+
+A few minutes later, `scripts/dashboard.sh` is ready and integrated in my repo's  ([Justfile](https://github.com/palladius/rails8-turbo-chat/commit/4b08376c0f34b49e70505e14f192255ec2c34f58#diff-deb9bb56fb122db0b605aa5b63f95a4665c905b18dd670e1fa6c877576a94ff1)):
+
+```bash
+# Launching with skill v1.4
+$ just show-fanout-execution AC67EF98-9364-407A-A497-FD7DDD01EF98
+=====================================================
+🚀 GHI Fan-Out Bonanza Dashboard | UUID: AC67EF98-9364-407A-A497-FD7DDD01EF98
+=====================================================
+Total Issue Folders Created: 14
+Subagents Completed: 11 / 14
+PRs Created: 2
+Problem Reports (JSON): 2
+=====================================================
+📊 Agent Status:
+  - 🤷 ghi-10: NOOP (Already fixed/closed)
+  - ✅ ghi-12: Completed (Work finished (no explicit PR link))
+  - 🛑 ghi-18: Aborted (Requires human intervention)
+  - ⏳ ghi-23: In Progress / Interrupted
+  - ✅ ghi-24: Completed (Work finished (no explicit PR link))
+  - ⏳ ghi-25: In Progress / Interrupted
+  - ✅ ghi-26: Completed (Pending push approval)
+  - ⏳ ghi-27: In Progress / Interrupted
+  - 🛑 ghi-34: Aborted (Requires human intervention)
+  - ✅ ghi-38: Completed (Pending push approval)
+  - ✅ ghi-40: Completed (Work finished (no explicit PR link))
+  - ✅ ghi-41: Completed (Created PR #69)
+  - 🛑 ghi-42: Aborted (Requires human intervention)
+  - ✅ ghi-44: Completed (Created PR #66)
+⚠️ Problems Found:
+  - ghi-42:  missing_context
+  - ghi-34:  app_not_running, missing_playwright
+=====================================================
+```
+
+### Riccardo, what about Code Review?
+
+My `GEMINI.md` forbids my `agy` from `git push`ing, so I found myself with this issue... 20 PRs and the temptation to tell those agents to stop slacking off and just push to main already! I mean, what can possibly go wrong?
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/assets/boxeurs-candidates/boxers_pr_conflict_3_1784109131568.jpg" caption="Too many conflicts, too many PRs fighting for prime time" alt="Too many conflicts, too many PRs fighting for prime time" position="center" >}}
+
+Sounds familiar? It's a FIFO world where the first wins and all the others end with blood on their hands.
+
+So I've worked on version `1.5` of the skill where **automated review** is happening *sequentially* (yes I'm not convinced parallelism would help here - plus reviewing should be faster than coding - hopefully).
+
+
+## 3. Skill Second pass: automated synchronous review
+
+I've now created a review process which is defined in a new [Sequential Review Agent Checklist](https://github.com/palladius/gemini-cli-palladius-public-goodies/blob/main/skills/ghi-fan-out-coding/references/REVIEW_AGENT_CHECKLIST.md).
+
+🪵 `12:21` Let's test it with this second prompt (v1.5.1):
+
+
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-1.png" caption="Testing v1.5.1 with synchronous Code Review after spawning N sub agents" alt="Testing v1.5.1 with synchronous Code Review after spawning N sub agents" position="center" >}}
+
+What changed:
+1. We have a **sequential review** phase following the main/subagent phase (not parallel to minimize merge/rebase pain).
+2. We have a few parameters:
+  1. a **HITL threshold** to tell it "bother me only for important questions" and do 80% by yourself.
+  2. *(minor)* A harness name to be put in the GHI signature.
+
+### .. and it works!
+
+Look how my 15 subagents are *tokenmaxxing* my Antigravity without breaking a sweat, and nicely populating 15 JSON files I can then review later:
+
+<video controls src="assets/videos/Screen Recording 2026-07-15 at 12.26.01.mov" title="21 subagents! Wooooot!!! Capturing this video was hard but totally worth it!"></video>
+
+Let's check my second execution `uuid=D70F962C-9A6E-47E7-B3ED-118F450ABF0C`:
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-4.png" caption="Work in progress, 3 done and 13 still to go!" alt="Work in progress, 3 done and 13 still to go!" position="center" >}}
+
+### Wait, who deleted my status folder?
+
+Woops - some overly diligent agent decided to wipe out the whole status folder. Damn it!
+
+Easy fix: 
+
+1. Fix the skill to say don't do it again, you naughty boy! => v1.5.4.
+2. Rinse and repeat execution:
+ 
+🪵 `12:52` Exec a third time, with `uid=471A394C-0CC3-413B-9457-26318ECAE38B`.
+
+Now the skill is updated to `v1.5.4` (*don't delete JSON files you naughty boy!*)
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-5.png" caption="Prompt for second version, launching on Antigravity!" alt="Prompt for second version, launching on Antigravity!" position="center" >}}
+
+🪵 `12:54` Start with empty slate, third folder:
+
+```
+📊 Agent Status:
+  - ⏳ ghi-12: Pending
+  - ⏳ ghi-18: Pending
+  - ⏳ ghi-23: Pending
+  - ⏳ ghi-24: Pending
+[..]
+```
+
+
+
+
+
+
+
+
+🪵 `13:07` And we're finished!
+```
+$ just show-fanout-execution 471A394C-0CC3-413B-9457-26318ECAE38B
+=====================================================
+🚀 GHI Fan-Out Bonanza Dashboard | UUID: 471A394C-0CC3-413B-9457-26318ECAE38B
+   Skill: v1.5.4  #bac8f95
+   https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/bac8f95/skills/ghi-fan-out-coding
+=====================================================
+Total Issue Folders Created: 15
+Subagents Completed: 15 / 15
+PRs Created: 2
+Problem Reports (JSON): 0
+=====================================================
+📊 Agent Status:
+  🟢 ✅ ghi-12: Completed (Created PR #81) [🕵️ Review: HITL Required]
+  🔴 🛑 ghi-18: Aborted (NOOP_BAD) (Requires human intervention: Missing credentials. The issue requires the actual GCS_CREDENTIALS_JSON payload to create the Secret in Google Cloud Secret Manager.)
+  🟢 ✅ ghi-23: Completed (Created PR #87) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-24: Completed (Created PR #82) [🕵️ Review: HITL Required]
+  🔴 🛑 ghi-25: Aborted (NOOP_BAD) (Requires human intervention: Waiting for explicit user approval to push to remote.)
+  🟢 ✅ ghi-26: Completed (Created PR #78) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-27: Completed (Agent 27 forgot to write the json file, fixing it manually.) [🕵️ Review: HITL Required]
+  🟢 ♻️  ghi-34: NOOP (Good) (Issue #34 is already addressed by PR #62.)
+  🟢 ♻️  ghi-38: NOOP (Good) (PR #75 is already open and waiting for user manual review and merge. Tests passed. No code changes needed.)
+  🟢 ✅ ghi-40: Completed (Created PR #84) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-41: Completed (Created PR #85) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-44: Completed (Created PR #80) [🕵️ Review: HITL Required]
+  🟢 ✅ ghi-72: Completed (Created PR #83)
+  🔴 🛑 ghi-73: Aborted (NOOP_BAD) (Requires human intervention: Blocked from pushing to remote by user rule requiring explicit human approval.)
+  🟢 ✅ ghi-74: Completed (Created PR #79)
+=====================================================
+```
+
+As you can see I modernized the emoji report.
+
+
+## Conclusion
+
+My favorite mantra in google SRE is "**Automate yourself out of the job**" and today we achieved something in that direction.
+
+What used to take an entire weekend of context-switching and tedious git commands now takes 90 seconds of orchestrating (plus 20-30 min of unsupervised work, of course). The agents handle the boilerplate, the tests, and the PR creation, leaving me with the fun part: reviewing code and hitting "Merge." 
+
+👉 If you want to try it out yourself, check out the `ghi-fan-out-coding` [skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/tree/main/skills/ghi-fan-out-coding)! 👈
+
+A few lessons learnt.
+
+**Devil is in the details**, some things will always fail. Authentication (`gcloud auth login`, `sudo` commands, OAuth flows, ..) is a good example. For everything else, Gemini can help.
+
+**Browser flows**. Antigravity supports natively browsing the internet and your website. **Playwright** is on our side where Antigravity fails (and you can create nice *customized flows* for your app!). Here I was able to instruct my skill to login to the app with user and pass in `.env`. This might require some preparation and a few iterations..
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-turbochat-login.png" caption="Antigravity running a playwright script where an image says 'it works!'" alt="Antigravity running a playwright script where an image says 'it works!'" position="center" >}}
+
+**Vision capabilities**. Do not underestimate the **vision** capabilities of Gemini! I often take a screenshot (`cmd shift 4`) and tell my CLI Harness "check the latest screenshot in Desktop, as you can see <visual problem>." This is even easier on Antigravity UI, since you can just paste the screenshot (`cmd V` and "look at this visual problem").
+
+**Do not try this in production**. While Agentic AI is fun, I wouldn't let my agents do the dirty job without my approval unless it's a playground app or an idea to brainstorm. things **do** go wrong. For instance, in my second execution one subagent decided to wipe out the whole status JSON files, so I had to abort and restart session 3. As an SRE, [I've asked AGY to write a PoMo](https://github.com/palladius/rails8-turbo-chat/issues/89) so we can learn from it and fix the skill.
+
+**AI tries to cut corners**. For example I've asked for a code quality ratio in v1.5.4 and the executor created a deterministic script which ended up rating them all 50%
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-8.png" caption="all code is 50% good and 50% bad, like a half Full glass" alt="all code is 50% good and 50% bad, like a half Full glass" position="center" >}}
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-7.png" caption="A 'political' 50% for everyone! How's the code glass, half empty or half full?" alt="A 'political' 50% for everyone! How's the code glass, half empty or half full?" position="center" >}}
+
+**Feedback loops** everywhere! Make sure to loop back your learnings back into your skill so to increase its ability. Use EVALS if you want to productionize your workflow.
+
+## Next steps
+
+1. **Wrap this effort with Antigravity SDK**. It would be nice to try out the [Antigravity SDK](https://antigravity.google/product/antigravity-sdk?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) and try to implement this visionary tool: [#3 visionary tool](https://github.com/palladius/gemini-cli-palladius-public-goodies/issues/3).  *The vision is wild: `./run_ricc_code.py` → fully automated CLI with real-time guardrails, no human in the loop at all! The SDK would be your "autonomous bonanza launcher" with built-in safety nets. 🚀*
+
+2. **Nested sub-agents**. I'd love to investigate a more complex, **nested sub-agents** architecture; something like: `foreach i in github_issues(open: True):` and then a main agent fixing, another reviewing, another checking for vulnerability, style, etc.. and maybe a last one merging to main and cleaning up after themselves. With multilevel agents possibilities are endless. But wait, does Antigravity support multi-level agents? I've tested it for you and YES, it can! 
+
+
+
+{{< img src="/en/posts/technology/2026-07-14-ghi-fanout-dev-flow/image-9.png" caption="Nested Subagents Architecture Diagram" alt="Nested Subagents Architecture Diagram" position="center" >}}
+
+👉 What are you waiting for? Go and try [Antigravity 2.0](https://antigravity.google/product/antigravity?utm_campaign=CDR_0x89ad3e41_awareness_b534594102&utm_medium=external&utm_source=blog) now! 👈
+
+👉 **Missed the beginning of the story?** Catch up on how this all started in [🪨 Orchestrating with Antigravity: Part 1](/en/posts/technology/2026-06-16-crescendo-of-agents-part-1/) and [🪨 Part 2](/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/)! 👈
+
+*Read this article on Medium: <https://medium.com/@palladiusbonton/how-i-built-a-skill-to-fan-out-20-workers-to-fix-my-old-rails-app-on-antigravity-steal-my-prompt-b2a8402ecc09>.*
+
+---
+**Posted on:** 🦋 [Bluesky](https://bsky.app/profile/did:plc:exxygrx4rcs2gbatfxzyxjut/post/3mr3jwp427a2l) | 💼 [LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7485218860854501378) | 🐦 [Twitter](https://x.com/17310864/status/2079216454587535643)

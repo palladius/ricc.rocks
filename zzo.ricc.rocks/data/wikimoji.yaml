@@ -7,6 +7,14 @@ targets:
     emoji: "🪨"
     description: "Internal links to ricc.rocks"
 
+  - name: gemini
+    patterns:
+      - "geminicli.com"
+      - "github.com/google-gemini/gemini-cli"
+      - "github.com/google/gemini-cli"
+    svg_partial: "svgs/social/gemini.svg"
+    description: "Gemini CLI links"
+
   - name: github
     patterns:
       - "github.com"
@@ -84,3 +92,17 @@ targets:
       - "glaforge.appspot.com"
     emoji: "✍️"
     description: "Generic tech blogs (Seroter, Paul Datta, Guillaume Laforge)"
+
+  - name: ruby
+    patterns:
+      - "ruby-lang.org/en"
+      - "rubycon.it"
+      - "rubyonrails.org"
+    svg_partial: "svgs/social/ruby.svg"
+    description: "Ruby related links"
+
+  - name: antigravity
+    patterns:
+      - "antigravity.google"
+    svg_partial: "svgs/social/antigravity.svg"
+    description: "Antigravity links"
