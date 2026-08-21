@@ -1,0 +1,359 @@
+---
+type: Article
+status: done
+priority: P1
+title: "Building an Agentic Telegram Bot in Ruby with Google's Antigravity SDK"
+date: 2026-08-13T15:45:00+02:00
+draft: false
+image: "/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg"
+description: "What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it is doing in real-time? Introducing the Antigravity Ruby SDK for Google's agentic harness."
+categories: ["Antigravity", "Ruby"]
+tags: ["Google", "Antigravity", "Ruby", "Gemini", "Telegram", "Agentic", "SDK"]
+author: "Riccardo Carlesso"
+version: "0.5.1"
+Platform: "Medium and ricc.rocks"
+PublishDate: "2026-08-13"
+bug: "b/545986615"
+# canonicalURL: (pending Medium publication)
+ricc_signoff: "true"
+CTA: "https://github.com/palladius/antigravity-ruby-sdk"
+gunningFog: 12.02
+slopScore: 28.5
+valescore: 45
+---
+
+*What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it's doing -- all in a [single terminal line](https://github.com/palladius/antigravity-ruby-sdk)?*
+
+**TL;DR:** Code on [GitHub](https://github.com/palladius/antigravity-ruby-sdk) 🚀 | Demo: [Watch TUI Video MP4](images/tui-multiturn-demo.mp4) 🎬
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg" caption="Hero: Ruby gemstone connected to Telegram and a terminal" alt="Hero: Ruby gemstone connected to Telegram and a terminal" position="center" >}}
+
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide</strong></figcaption></figure>
+
+## Introduction
+
+When Guillaume Laforge built the [unofficial Antigravity SDK for ☕️ Java](https://github.com/glaforge/antigravity-java-sdk) (and documented it in [his article](https://glaforge.dev/posts/2026/07/31/the-unofficial-antigravity-sdk-for-java/)) back in July, I thought: *"If ☕️ Java gets one, [Ruby](https://www.ruby-lang.org/) deserves one too."* So I built one. And then I built a [Telegram](https://telegram.org/) bot on top of it. And then the bot learned to discover and load skills at runtime. And then I needed to debug why the model kept going silent after exactly 7 WebSocket messages.
+
+This is that story.
+
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is an unofficial Ruby wrapper around Google's [Antigravity](https://antigravity.google/download?utm_campaign=CDR_0x89ad3e41_awareness_b545986615&utm_medium=external&utm_source=blog) harness -- the same engine that powers Gemini CLI, Antigravity IDE, and Antigravity 2.0. By connecting it to [Telegram](https://telegram.org/) and the Telegram Bot API, it gives your code access to Gemini's full agentic capabilities: tool calling, skill loading, streaming responses, and now, a generic event system for real-time observability right inside your chat window.
+
+## How It Works
+
+The architecture is deliberately simple. Your Ruby process talks to a local Go binary (the "harness") over WebSocket. The harness handles the heavy lifting: authentication, model communication, tool execution, and safety policies. Your SDK just needs to speak JSON.
+
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/harness-infographic.png" caption="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" alt="Infographic: Antigravity Ruby SDK and Go Blackbox Harness Architecture with Gopher Running inside the Blackbox" position="center" >}}
+
+```text
++----------------------------+             +----------------------------+
+|    Antigravity Ruby SDK    |  WebSocket  |    Core Go Localharness    |
+| (Agent, Hooks, ToolRunner) | <=========> | (Session State, AI Engine) |
++----------------------------+ (127.0.0.1) +----------------------------+
+```
+
+```mermaid
+graph LR
+    U[User 📱] -->|message| T[Telegram API]
+    T -->|webhook| B[Ruby Bot 💎]
+    B -->|ask| SDK[Antigravity SDK]
+    SDK -->|WebSocket| H[Harness 🔧]
+    H -->|API| G[Gemini ✨]
+    SDK -.->|load| SK[Skills 📚]
+    SDK -.->|subscribe| HK[Hooks 🎣]
+    SDK -.->|register| TL[Tools 🛠️]
+```
+
+
+
+## Getting Started: 5 Lines to Your First Agent
+
+```ruby
+require 'antigravity'
+
+agent = Antigravity::Agent.new(workspace: :here) # Idiomatic Ruby sugar for current folder!
+agent.connect!  # Auto-connects if omitted
+response = agent.ask("What's the mass of the Sun?")
+puts response.content
+```
+
+That's it. The SDK spawns the harness, opens a WebSocket, sends your prompt, streams the response, and returns the full text. Under the hood, about 2000 lines of Ruby handle connection management, session lifecycle, tool routing, skill resolution, and structured logging.
+
+## Building a Telegram Bot
+
+
+The real fun starts when you connect the SDK to a messaging platform. Here's the core loop of our Telegram bot:
+
+
+```ruby
+bot.listen do |message|
+  session = sessions[message.chat.id] ||= ChatSession.new(
+    skills: SKILL_DIRS,
+    tools: [find_skills_tool, load_skill_tool]
+  )
+
+  response = session.ask(message.text)
+  bot.api.send_message(chat_id: message.chat.id, text: response)
+end
+```
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/architecture.jpg" caption="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" alt="Architecture: User -> Telegram -> Ruby Bot -> SDK -> WebSocket -> Harness -> Gemini" position="center" >}}
+
+Each Telegram chat gets its own `ChatSession` with its own Antigravity agent. The agent starts with a "metaskill" -- a skill that knows how to find and load other skills. Users can ask the bot to learn new capabilities on the fly:
+
+> **User:** Find the riccardo-todo skill
+> **Bot:** Found `riccardo-todo` at `/path/to/skills/riccardo-todo`
+> **User:** Load it
+> **Bot:** *[dynamically loads skill in active session]* Loaded! I now know about your to-do list.
+> **User:** Where's my to-do file?
+> **Bot:** According to the skill, it's at `~/obsidian/TODOs/TODOz.md`
+
+*Want to speak instead of type? You can send voice notes directly over Telegram.* I've tested the SDK with Italian and English audio notes and it works great! You just need to add this to your `.env`:
+
+```
+# See .env.dist for more info
+TELEGRAM_BOT_TOKEN="<YOUR_BOT_TOKEN>"
+TELEGRAM_CHAT_ID=<YOUR_CHAT_ID>
+# [optional] Needed for Speech-to-Text translation, emojis are on us.
+GEMINI_API_KEY=<your-api-key-here>
+```
+
+Here's how it looks on my phone:
+
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/telegram-screenshot.png" caption="Telegram screenshot v2" alt="Telegram screenshot v2" position="center" >}}
+
+I think you can figure out the math even if you don't speak Italian!
+
+## Skills: Superpowers for Your Agent
+
+Skills are the [Agent Skills](https://agentskills.io) standard -- a `SKILL.md` file with YAML frontmatter and markdown instructions. The SDK supports:
+
+```ruby
+# Local paths
+agent = Antigravity::Agent.new(skills: ["/path/to/my-skill"])
+
+# GitHub URLs (auto-cloned to ~/.antigravity/cache/). Try our great SRE extension!
+agent = Antigravity::Agent.new(skills: ["https://github.com/gemini-cli-extensions/sre"])
+
+# Runtime discovery
+agent.add_skill("/discovered/path", skill_name: "new-skill")
+
+# Inline skills (no files needed)
+agent.add_inline_skill(
+  name: "greeter",
+  description: "Greets users in Italian",
+  instructions: "Always greet the user with 'Bella vecchio!'"
+)
+
+# You can also count them
+agent.skills.count
+=> 16
+```
+
+The runtime loading now attempts dynamic skill loading within the same session. If the model struggles to invoke the new skill, we fall back to a manual failsafe that reads the skill definition and executes it directly.
+
+Personally, I enable at startup a single meta-skill for skill discovery based on my skills Ruby script [`agc`](https://github.com/palladius/gemini-cli-custom-commands) (like `npx skills` but better).
+
+Wanna try it? Just type this:
+
+```bash
+just rv-skill-telegram
+# which is equivalent to:
+rv run ruby examples/08_skill_telegram_bot.rb
+```
+
+My friend [André Arko](https://arko.net/) will be so happy to see I'm finally using [`rv`](https://github.com/spinel-coop/rv/) (yes, it's the Ruby version of Astral `uv`, but faster!)
+
+## The Hooks System: 3 Lines That Changed Everything
+
+This is where Ruby shines. We needed debug observability for the WebSocket traffic, but didn't want to pollute the core `Conversation` class. The solution: a generic pub/sub event system.
+
+**The entire core change:**
+
+```ruby
+# lib/antigravity/hooks.rb -- 2 methods added
+def on(event, &block)
+  @listeners[event.to_sym] << block if block_given?
+end
+
+def emit(event, *args)
+  @listeners[event.to_sym].each { |cb| cb.call(*args) }
+end
+
+# lib/antigravity/conversation.rb -- 1 line added
+@hooks&.emit(:ws_message, msg)
+```
+
+Here is the sequence of events when a message arrives:
+
+```mermaid
+sequenceDiagram
+    participant WS as WebSocket
+    participant Conv as Conversation
+    participant Hooks as Hooks
+    participant TUI as TUI Status
+
+    WS->>Conv: message (JSON)
+    Conv->>Hooks: emit(:ws_message, msg)
+    Hooks->>TUI: callback fires
+    TUI->>Terminal: print "\r\e[K🏃 running 💭 ⏳42s"
+```
+
+That's it. Three lines in the SDK. Everything else lives in the consumer:
+
+```ruby
+# In your app, test, or bot -- NOT in the SDK
+agent.hooks.on(:ws_message) do |msg|
+  if (s = msg[:stepUpdate])
+    puts "Tool: #{s[:textDelta]}" if s[:target] =~ /ENVIRONMENT/
+    print "." if s[:thinkingDelta]
+  end
+end
+```
+
+Instrumenting the TUI was never this easy! *Decorate this, Python!* :)
+
+**Zero lines of debug code in the core SDK.** All observability is opt-in, external, and composable. This is the Ruby way.
+
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-lifecycle-hooks.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Real-Time Terminal Observability with Lifecycle Hooks (`ANTIGRAVITY_LIFECYCLE=1`)</strong></figcaption></figure>
+
+
+
+## The Dynamic TUI Status Line
+
+The hooks system's first real consumer was a dynamic terminal status line for our E2E test suite. By pairing a background ticker thread with ANSI carriage returns (`\r\e[K`) and state emojis (`🏃`, `😴`, `🛑`, `⏳`), the terminal overwrites a single status line in-place on every event:
+
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-multiturn-demo.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Clean Multiturn TUI Demo: 6*7 and Hitchhiker's Guide</strong></figcaption></figure>
+
+The result: you ALWAYS know what the agent is doing in real time:
+
+* **Thinking?** You see `💭💭💭`.
+* **Calling tools?** You see `🔧 Find todo files`.
+* **Stuck?** The live timer keeps ticking: `⏳42s... ⏳43s... ⏳44s...`
+
+## Debugging a Model Hang: A War Story
+
+With the TUI in place, we caught a fascinating bug. When loading a new skill dynamically in Phase 3 of our E2E test, the model would sometimes hang -- every single time, with the exact same pattern:
+
+```
+     🏃 running 💭💭💭💭💭 ⏳2s 7↕
+     🏃 running 💭💭💭💭💭 ⏳3s 7↕
+     ...
+     🏃 running 💭💭💭💭💭 ⏳59s 7↕
+  ⚠️  Error: Wall-clock timeout after 60s
+```
+
+The model sent exactly 5 thinking deltas at the 2-second mark, then went completely silent. No `DONE`, no `FULLY_IDLE`, no error -- just nothing.
+
+<figure style="text-align: center; margin: 1.5rem auto;"><video controls autoplay loop muted style="max-width: 100%; height: auto; border-radius: 5px;"><source src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit-cropped.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption style="text-align: center; margin-top: 0.5rem;"><strong>Code Quality & Security Audit TUI Demo (Cropped)</strong></figcaption></figure>
+
+Here is the sequence of states in the E2E test pipeline and where the model could hang:
+
+```mermaid
+graph TD
+    P0[Phase 0: Sanity] -->|✅| P1[Phase 1: Connect]
+    P1 -->|✅| P2[Phase 2: Find Skills]
+    P2 -->|✅| P3[Phase 3: Load Skill]
+    P3 -->|restart| P4[Phase 4: Use Skill]
+    P4 -->|💀 HANG| RETRY{Retry?}
+    RETRY -->|attempt 2| P4
+    RETRY -->|attempt 3| P4
+    RETRY -->|give up| FAIL[❌ Known Bug #16]
+```
+
+### What we learned the hard way
+
+1. **Large tool results cause "thinking hangs".** Our `load_skill` tool was originally returning the entire `SKILL.md` content. This massive context dump overwhelmed the model, causing it to spin its wheels indefinitely. By optimizing the tool to return a concise 4-line summary (name, script path, description, usage hint), the model processed it instantly.
+
+2. **Failsafes are better than session restarts.** We used to restart the entire session when loading a skill to ensure the model recognized it. Now, we use dynamic skill loading in the same session. If the model still times out in Phase 4 (acting on the new skill), our harness kicks in with a manual failsafe: it reads the `SKILL.md` and builds the `uv run` command directly, bypassing the agent loop entirely.
+
+3. **Idle timeout != wall-clock timeout.** The SDK's `timeout:` parameter is a per-message idle timeout. If the model keeps sending tool calls, each response resets the timer. We added `Timeout.timeout()` as a hard wall-clock deadline.
+
+With these improvements, all 9 E2E tests now pass consistently in around 73 seconds. This bug and its resolution are tracked in [Issue #16](https://github.com/palladius/antigravity-ruby-sdk/issues/16).
+
+## Ruby Idioms for Agent Code
+
+A few Ruby-native patterns that proved invaluable for building agentic apps:
+
+* **Tool Result Hygiene**: Keep tool responses concise. Models struggle with large, unstructured text dumps, so return only essential metadata to prevent thinking hangs.
+* **Guaranteed Cleanup with `ensure`**:
+  ```ruby
+  def ask(text) = (Timeout.timeout(180) { @agent.ask(text) } ensure @_status[:active] = false)
+  ```
+* **Ruby 3 Endless Methods for Terminal Color Oneliners**:
+  ```ruby
+  class String; def to_green = "\e[32m#{self}\e[0m"; def to_red = "\e[31m#{self}\e[0m"; end
+  ```
+
+## What's Next
+
+The [Antigravity Ruby SDK](https://rubygems.org/gems/antigravity-sdk) is at v0.5.0 with all 9 E2E tests passing consistently. Here's what's coming:
+
+| Feature                                         | Status         | Issue                                                              |
+| ----------------------------------------------- | -------------- | ------------------------------------------------------------------ |
+| Mid-session skill loading                       | Shipped        | [#15](https://github.com/palladius/antigravity-ruby-sdk/issues/15) |
+| Policy engine                                   | Shipped v0.5.0 | [#21](https://github.com/palladius/antigravity-ruby-sdk/issues/21) |
+| MCP server support                              | Planning       | --                                                                 |
+| Channel abstraction (Telegram/WhatsApp/Discord) | Planning       | --                                                                 |
+| Protobuf handshake                              | Backlog        | --                                                                 |
+| Rails integration                               | P4 Vision      | --                                                                 |
+
+And about that policy engine... **It is now shipped in v0.5.0!** 🎉
+
+## Declarative Policy Engine
+
+Any language can define a good policy engine. Only Ruby, I might argue, can define a beautiful policy engine DSL. And Antigravity is the best partner in crime for this design!
+
+Check out how expressive, clean, and idiomatic it looks in actual Ruby code:
+
+```ruby
+# Use a built-in environment-aware preset (:cautious, :default, :turbo, or :auto)
+agent = Antigravity::Agent.new(policy: :cautious)
+
+# Or define your own custom policy DSL:
+policy = Antigravity::Policy.define do
+  deny_all
+  allow :view_file
+  allow :run_command,  when: cmd("echo", "git status")
+  confirm :write_to_file, when: path("*.rb", "*.yml")
+  deny  :run_command,  when: cmd("rm", "git reset --hard")
+end
+
+agent = Antigravity::Agent.new(policy: policy)
+```
+
+How does [Issue #21 (Policy Engine DSL)](https://github.com/palladius/antigravity-ruby-sdk/issues/21) look, my friends?
+
+## Your Turn
+
+The [Antigravity Ruby SDK](https://github.com/palladius/antigravity-ruby-sdk) is open source and ready for experimentation! You can install it directly via the [`antigravity-sdk` gem on RubyGems](https://rubygems.org/gems/antigravity-sdk) (published with **5K** downloads already! 💎) or clone the repository:
+
+```bash
+gem install antigravity-sdk
+irb
+ > require 'antigravity'
+ > agent = Antigravity::Agent.new
+ > agent.ask("Hello, how are you?")
+
+# OR clone the source
+
+git clone https://github.com/palladius/antigravity-ruby-sdk
+cd antigravity-ruby-sdk/
+bundle install
+cp .env.dist .env  # add your config
+ruby examples/01_hello_world.rb
+```
+
+I'm genuinely curious how you'd use this. Would you build a Slack bot? A Rails assistant? A CLI tool that learns from your codebase? Open an issue, send a PR, or just say hello.
+
+I'm currently looking for interesting use cases for pre/post hooks and sidecars. If you have a neat use case, let me know: I might build it for you!
+
+And if you want to see what Guillaume built for Java, check out [his article](https://glaforge.dev/posts/2026/07/31/the-unofficial-antigravity-sdk-for-java/) -- it's the post that started this whole Ruby adventure.
+
+---
+
+
+
+*The Antigravity Ruby SDK is an unofficial, community project. It is not an official Google product. But God this is good!*
+
+*📝 This article will also be published on Medium — link coming soon.*
