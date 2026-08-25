@@ -277,13 +277,16 @@ A few Ruby-native patterns that proved invaluable for building agentic apps:
 
 * **Tool Result Hygiene**: Keep tool responses concise. Models struggle with large, unstructured text dumps, so return only essential metadata to prevent thinking hangs.
 * **Guaranteed Cleanup with `ensure`**:
-  ```ruby
-  def ask(text) = (Timeout.timeout(180) { @agent.ask(text) } ensure @_status[:active] = false)
-  ```
+
+```ruby
+def ask(text) = (Timeout.timeout(180) { @agent.ask(text) } ensure @_status[:active] = false)
+```
+
 * **Ruby 3 Endless Methods for Terminal Color Oneliners**:
-  ```ruby
-  class String; def to_green = "\e[32m#{self}\e[0m"; def to_red = "\e[31m#{self}\e[0m"; end
-  ```
+
+```ruby
+class String; def to_green = "\e[32m#{self}\e[0m"; def to_red = "\e[31m#{self}\e[0m"; end
+```
 
 ## What's Next
 
