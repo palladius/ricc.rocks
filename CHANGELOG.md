@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.4.2] - 2026-09-11
+
+### ✨ Added
+- 📄 **Curriculum Vitae (PDF - English Executive Edition)**:
+  - Added One-Pager executive CV (`ricc-onepager.pdf` and `ricc-cv.pdf`) to `static/cv/`.
+  - Added CV link to footer (`footerLinks`) in English configuration.
+  - Added CV link to main navigation menu (`menus.en.yaml`).
+  - Linked CV PDF download in English "About Me" page (`content/en/about/`).
+
 ## [0.4.1] - 2026-07-05
 
 ### Fixed (by Gemini/Antigravity)

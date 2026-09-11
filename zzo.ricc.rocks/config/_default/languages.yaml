@@ -3,6 +3,14 @@ en:
   languageName: English
   weight: 1
   contentdir: content/en
+  params:
+    footerLinks:
+      - name: '📄 Curriculum Vitae (PDF)'
+        link: '/cv/ricc-onepager.pdf'
+      - name: '💼 Portfolio'
+        link: 'https://portfolio-app-272932496670.europe-west1.run.app/about'
+      - name: '🐙 GitHub'
+        link: 'https://github.com/palladius'
 it:
   title: "Riccardo 💛 el mi Blogghe"
   languageName: Italiano

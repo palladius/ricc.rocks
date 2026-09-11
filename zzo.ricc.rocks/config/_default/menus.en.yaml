@@ -51,6 +51,11 @@ main:
     url: https://portfolio-app-272932496670.europe-west1.run.app/about
     weight: 11
 
+  - identifier: cv
+    name: 📄Curriculum (PDF)
+    url: /cv/ricc-onepager.pdf
+    weight: 12
+
 
 
     # [Riccardo] This is AMAZING but still nothing to show.

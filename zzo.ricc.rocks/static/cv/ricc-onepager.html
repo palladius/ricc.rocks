@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riccardo Carlesso - Curriculum Vitae (One-Pager)</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 8mm 10mm;
+    }
+    :root {
+      --primary: #1a73e8;
+      --primary-dark: #1557b0;
+      --text: #202124;
+      --muted: #5f6368;
+      --border: #dadce0;
+      --accent: #e8f0fe;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 8.8pt;
+      line-height: 1.35;
+      color: var(--text);
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header.web-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+    .web-nav a, .web-nav button {
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .web-nav a:hover, .web-nav button:hover {
+      background: var(--accent);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .web-nav a.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      overflow: hidden;
+      margin: 20px auto;
+      background: #fff;
+      padding: 10mm 12mm;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .name-title h1 {
+      margin: 0;
+      font-size: 19pt;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .name-title .subtitle {
+      margin: 2px 0 0 0;
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+    .contacts {
+      text-align: right;
+      font-size: 7.8pt;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .contacts a { color: var(--primary); text-decoration: none; }
+    .contacts a:hover { text-decoration: underline; }
+    .icon-svg {
+      width: 10.5px;
+      height: 10.5px;
+      vertical-align: -1px;
+      margin-right: 2px;
+      display: inline-block;
+    }
+    .badge {
+      display: inline-block;
+      background: #e8f0fe;
+      color: #1967d2;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 7.2pt;
+      font-weight: 600;
+    }
+    h2.section-title {
+      font-size: 9.8pt;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 6px 0 3px 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .summary-text {
+      font-size: 8.4pt;
+      color: #3c4043;
+      margin: 0 0 4px 0;
+      text-align: justify;
+    }
+    .job { margin-bottom: 4px; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 8.6pt;
+    }
+    .job-sub {
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+    ul.compact {
+      margin: 1px 0 3px 0;
+      padding-left: 14px;
+    }
+    ul.compact li {
+      margin-bottom: 1px;
+      font-size: 8.2pt;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .skill-category {
+      font-size: 8pt;
+      margin-bottom: 2px;
+    }
+    .skill-category strong { color: var(--text); }
+    .speaking-item {
+      font-size: 8pt;
+      margin-bottom: 2px;
+    }
+    .speaking-item strong { color: #202124; }
+    .footer-note {
+      font-size: 7.2pt;
+      color: #70757a;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 3px;
+      margin-top: 4px;
+    }
+    @media print {
+      body { background: transparent; }
+      header.web-nav { display: none !important; }
+      .sheet {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="web-nav">
+    <div style="font-weight:700;">🦖 Riccardo Carlesso · CV One-Pager</div>
+    <div style="display:flex; gap:8px;">
+      <a href="index.html">📜 Long Master CV</a>
+      <a href="ricc-onepager.html" class="active">📄 One-Pager (A4)</a>
+      <a href="CV-Riccardo-Carlesso-EN.html">Standard EN</a>
+      <a href="CV-Riccardo-Carlesso-IT.html">Italiano</a>
+      <button onclick="window.print()">🖨️ Print 1-Page PDF</button>
+    </div>
+  </header>
+
+  <div class="sheet">
+    <div>
+      <!-- HEADER -->
+      <div class="header">
+        <div class="name-title">
+          <h1>Riccardo Carlesso</h1>
+          <div class="subtitle">Staff Developer Advocate (L6) · Site Reliability Engineering (SRE) · Cloud Architect</div>
+        </div>
+        <div class="contacts">
+          <div>Zurich, Switzerland · Italian Citizen · <strong>Google Zurich</strong></div>
+          <div><a href="mailto:riccardo.carlesso@gmail.com">riccardo.carlesso@gmail.com</a> · <a href="mailto:ricc@google.com">ricc@google.com</a></div>
+          <div>
+            <a href="https://ricc.rocks" target="_blank"><svg class="icon-svg" viewBox="0 0 24 24" style="fill:#1a73e8;"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38a16.64 16.64 0 0 0 0 4zm.81 2h2.95a15.65 15.65 0 0 0 1.38 3.56A8.03 8.03 0 0 1 5.07 16zm2.95-8H5.07a8.03 8.03 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm1.06 5.56A15.65 15.65 0 0 0 16.78 16h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14a16.64 16.64 0 0 0 0-4h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"/></svg>ricc.rocks</a> · 
+            <a href="https://linkedin.com/in/riccardocarlesso" target="_blank"><svg class="icon-svg" viewBox="0 0 24 24" style="fill:#0a66c2;"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn</a> · 
+            <a href="https://github.com/palladius" target="_blank"><svg class="icon-svg" viewBox="0 0 24 24" style="fill:#24292f;"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>GitHub</a> · 
+            <a href="https://medium.com/@palladiusbonton" target="_blank"><svg class="icon-svg" viewBox="0 0 24 24" style="fill:#000;"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>Medium</a>
+          </div>
+          <div><a href="https://g.dev/ricc">g.dev/ricc</a> · <a href="https://sessionize.com/riccardo-carlesso">sessionize.com/riccardo-carlesso</a></div>
+        </div>
+      </div>
+
+      <!-- EXECUTIVE SUMMARY -->
+      <div class="summary-text">
+        <strong>Executive Profile:</strong> Staff Developer Advocate and Principal Cloud Architect with 20+ years in distributed systems operations, SRE, and software engineering. Global co-owner of Google flagship <strong>"The Art of SLOs"</strong> curriculum (video on <a href="https://sre.google">sre.google</a>); international speaker at <strong>Google Cloud Next (Las Vegas)</strong>, <strong>Codemotion (Milan)</strong>, and <strong>SRE Day (Amsterdam Keynote)</strong>. Proven track record leading cloud architecture for EMEA top enterprises (Lufthansa, Deutsche Bank, SAP, Iponweb, Wix) and developing systems used by 1,000+ SREs. 2x full Ironman triathlete and classical pianist.
+      </div>
+
+      <!-- WORK EXPERIENCE -->
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <span>GOOGLE CLOUD</span>
+          <span>May 2012 – Present (14+ years)</span>
+        </div>
+        
+        <div class="job-sub">
+          <span>Staff Developer Advocate (L6) – SRE, Cloud Operations & Generative AI</span>
+          <span>2021 – Present · Zurich, Switzerland</span>
+        </div>
+        <ul class="compact">
+          <li><strong>"The Art of SLOs" Global Leadership:</strong> Global co-owner and lead of Google primary SRE enablement curriculum. Authored official video on <a href="https://sre.google/resources/practices-and-processes/art-of-slos/">sre.google</a>; architected modular curriculum and established an international trainer network; delivered multi-day workshops across Japan, UK, Germany, Spain, and Italy.</li>
+          <li><strong>Agentic SRE & Generative AI:</strong> Pioneered autonomous skill-based SRE agents integrating Gemini multimodal reasoning with Model Context Protocol (MCP) to automate metric regression analysis, live Kubernetes diagnostics, and incident postmortem drafting.</li>
+          <li><strong>Product Influence:</strong> Partnered directly with Cloud Deploy and Developer Experience teams; conducted systematic friction logging that reshaped developer onboarding and authored official multi-environment deployment tutorials.</li>
+        </ul>
+
+        <div class="job-sub">
+          <span>Strategic Customer Engineer (SCE) / TAM Lead – Professional Services (PSO) <em>(“Forward Deployed Engineers ante-litteram”)</em></span>
+          <span>2015 – 2021 · Zurich, Switzerland</span>
+        </div>
+        <ul class="compact">
+          <li><strong>Enterprise Client Leadership:</strong> Lead architect for top EMEA accounts: <strong>Lufthansa</strong> (HPC Operations Research infrastructure), <strong>Deutsche Bank</strong> (executive collaboration infrastructure), <strong>SAP</strong> (governed multiple delivery streams, resolving complex hybrid cloud networking), <strong>Iponweb</strong> (zero-downtime ad-tech migration from AWS to GCE), <strong>Wix</strong> (global Cloud DNS resilience).</li>
+          <li><strong>DACH Team Lead (2018–2019):</strong> Scoped enterprise engagements, allocated delivery staffing, and mentored SCEs across DACH.</li>
+          <li><strong>Tooling & Data Engineering:</strong> Conceived and built automated telemetry and operational data pipelines serving 1,000+ engineers globally. Led regional enablement frameworks and established Centers of Excellence across EMEA and APAC.</li>
+        </ul>
+
+        <div class="job-sub">
+          <span>Enterprise Technical Solutions Engineer (TSE) – Cloud Support</span>
+          <span>2012 – 2015 · Dublin & Zurich</span>
+        </div>
+        <ul class="compact">
+          <li>Supported early launch of Google Compute Engine (GCE), GAE, and Cloud Storage. Developed internal automation microservices; built resilient HA architectures on GCE; established quaternary pager rotations for Support and TAM teams.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span>PRE-GOOGLE ENGINEERING LEADERSHIP</span>
+          <span>2002 – 2012 (10 years)</span>
+        </div>
+        <ul class="compact">
+          <li><strong>Dell Inc. (2011–2012 | Cloud Senior Developer · Dublin):</strong> Core contributor to open-source <em>Crowbar</em> bare-metal cloud installer; automated hypervisors (KVM, Xen, Ganeti, ESXi) and early OpenStack (Nova, Swift); fully puppetized development Linux fleet.</li>
+          <li><strong>HEAnet (2009–2011 | Network Systems Developer · Dublin):</strong> Full-stack development in Ruby on Rails, Python, Perl, Bash; customized Request Tracker (RT) internals; administered HA Debian/Ubuntu server fleet; 24/7 NOC on-call engineer.</li>
+          <li><strong>Laboratori Guglielmo Marconi (2003–2008 | Senior Network Engineer · Bologna):</strong> Designed enterprise networks for 5,000+ users (PA/Healthcare); security expert and technical PM on European Union railway research consortia (<em>Euromain</em>, <em>Integrail</em>); 1-year NOC shift rota.</li>
+          <li><strong>Università di Bologna (2002–2003 | Academic Researcher):</strong> Assisted Prof. Massimo Ferri teaching <em>Vision Mathematics</em>; published post-graduate computer vision paper for ARCES on shadow removal in video surveillance.</li>
+        </ul>
+      </div>
+
+      <!-- SPEAKING & KEYNOTES -->
+      <h2 class="section-title">Keynote & International Conference Speaking</h2>
+      <div class="speaking-item">
+        <strong><a href="https://cloud.withgoogle.com/next?session=DEV302">Google Cloud Next Las Vegas (2024):</a></strong> <em>“Goodbye, Deployment Headaches: Cloud Deploy and Vertex AI Unite”</em> (Session DEV302 · <a href="https://www.youtube.com/watch?v=_NlGk9Ao_oA">Video</a> · <a href="https://assets.swoogo.com/uploads/3794522-661c3c8fe0cf9.pdf">Slides</a>).
+      </div>
+      <div class="speaking-item">
+        <strong>Codemotion Milan (2026):</strong> <em>“Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀”</em>.
+      </div>
+      <div class="speaking-item">
+        <strong>Keynotes:</strong> <strong>SRE Day Amsterdam (2024)</strong> & <strong>DevSecOps Day Bologna (2024):</strong> <em>“SRE Gone Wrong: Top 7 Errors (and How to Avoid Them)”</em>.
+      </div>
+      <div class="speaking-item">
+        <strong>Conferences & Workshops:</strong> CloudConf Turin (2025, 2024) · Euruko (Sarajevo 2024, Portugal 2025) · RubyDay Verona (2024) · George UX Conf Vienna (2023).
+      </div>
+
+      <!-- SKILLS & EDUCATION GRID -->
+      <div class="grid-2" style="margin-top: 4px;">
+        <div>
+          <h2 class="section-title" style="margin-top:2px;">Technical Skills & Certifications</h2>
+          <div class="skill-category"><strong>Core Domains:</strong> SRE, SLOs/Error Budgets, Agentic AI, Cloud Architecture, DevOps/CI-CD.</div>
+          <div class="skill-category"><strong>Languages:</strong> <strong>Ruby</strong> (advanced), <strong>Bash</strong> (expert), Python, Go, SQL (BigQuery/Dremel), C/C++.</div>
+          <div class="skill-category"><strong>Cloud & DevOps:</strong> GCP (GCE, Cloud Run, GKE, Vertex AI), K8s, Docker, Pulumi, Terraform, Git.</div>
+          <div class="skill-category"><strong>Certifications:</strong> GCP DevOps Engineer · GCP Cloud Architect · GCP Data Engineer · Cisco CCNA.</div>
+        </div>
+
+        <div>
+          <h2 class="section-title" style="margin-top:2px;">Education, Languages & Sports</h2>
+          <div class="skill-category"><strong>Education:</strong> Laurea Quinquennale Ingegneria Informatica (5-Yr BS+MS, 99/100, AI/Vision, Univ. Bologna) · Master Information Security (1500h) · State Engineer License (2002).</div>
+          <div class="skill-category"><strong>Honors:</strong> Scuola Normale Superiore Pisa (Cortona, top 150 students in Italy, 1994) · Maturità 60/60.</div>
+          <div class="skill-category"><strong>Languages:</strong> Italian (Native C2) · English (Fluent C1/C2) · Portuguese (B2) · French (B1) · German (A2).</div>
+          <div class="skill-category"><strong>Endurance & Art:</strong> <strong>2x Full Ironman finisher</strong> · Classical pianist · Created <em>goliardia.it</em> in 2002.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Detailed extended CV (20+ years complete archive): <a href="https://ricc.rocks">ricc.rocks</a> · GitHub: <a href="https://github.com/palladius">github.com/palladius</a> · Generated from doc/cv/ricc-onepager.md
+    </div>
+  </div>
+</body>
+</html>
