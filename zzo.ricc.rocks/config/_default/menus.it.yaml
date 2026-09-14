@@ -28,3 +28,8 @@ main:
     name: 💼Portfolio
     url: https://portfolio-app-272932496670.europe-west1.run.app/about
     weight: 11
+
+  - identifier: cv
+    name: 📄Curriculum (PDF)
+    url: /cv/ricc-onepager-it.pdf
+    weight: 12

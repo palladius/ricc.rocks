@@ -16,6 +16,14 @@ it:
   languageName: Italiano
   weight: 2
   contentdir: content/it
+  params:
+    footerLinks:
+      - name: '📄 Curriculum Vitae (PDF)'
+        link: '/cv/ricc-onepager-it.pdf'
+      - name: '💼 Portfolio'
+        link: 'https://portfolio-app-272932496670.europe-west1.run.app/about'
+      - name: '🐙 GitHub'
+        link: 'https://github.com/palladius'
 de:
   title: "Riccardo 💛 Das Blog"
   languageName: Deutsch

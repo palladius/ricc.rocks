@@ -2,7 +2,7 @@
 
 **Staff Developer Advocate (L6) | Agentic AI & SRE Specialist | Principal Cloud Architect | University Lecturer**  
 Location: Zurich, Switzerland · Citizenship: Italian · [Google Zurich](https://about.google/locations/zurich/)  
-Email: [riccardo.carlesso@gmail.com](mailto:riccardo.carlesso@gmail.com) · [ricc@google.com](mailto:ricc@google.com)  
+Email: [riccardo.carlesso@gmail.com](mailto:riccardo.carlesso@gmail.com)  
 
 ### Digital Footprint & Profiles
 - 🌐 **Technical Blog**: [https://ricc.rocks/](https://ricc.rocks/)

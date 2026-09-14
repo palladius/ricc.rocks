@@ -28,6 +28,7 @@ Been in Google for 11 years, and I've never found a way to write up all this ama
 
 * Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>
 * Google official page: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
+* **Curriculum Vitae**: [Scarica il CV Executive One-Page in Italiano (PDF)](/cv/ricc-onepager-it.pdf) · [English Version (PDF)](/cv/ricc-onepager.pdf)
 
 I speak about SRE, Operations, Culture at Google, GenAI, and Ruby.
 

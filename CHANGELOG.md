@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.4.6] - 2026-09-14
+
+### ✨ Added & Updated
+- 🇮🇹 **Italian Executive CV Published (`ricc-onepager-it.pdf`)**:
+  - Deployed Italian 1-page Executive CV (`/cv/ricc-onepager-it.pdf`, `/cv/ricc-cv-it.pdf`, `/cv/ricc-onepager-it.html`).
+  - Linked Italian CV in Italian top navigation (`menus.it.yaml`), Italian footer (`languages.yaml`), and Italian/English About pages (`content/it/about/index.md`, `content/en/about/index.md`).
+- 🛡️ **Privacy Update**: Removed corporate email address (`ricc@google.com`) from all English and Italian CV PDFs and HTMLs.
+
 ## [0.4.5] - 2026-09-14
 
 ### ✨ Updated
