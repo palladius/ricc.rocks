@@ -7,7 +7,7 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 8mm 10mm;
+      margin: 7.5mm 10mm;
     }
     :root {
       --primary: #1a73e8;
@@ -20,8 +20,8 @@
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 8.8pt;
-      line-height: 1.35;
+      font-size: 8.5pt;
+      line-height: 1.32;
       color: var(--text);
       background: #f8f9fa;
       margin: 0;
@@ -59,73 +59,64 @@
     }
     .web-nav a.active {
       background: var(--primary);
-      color: #fff;
+      color: white;
       border-color: var(--primary);
     }
     .sheet {
       width: 210mm;
       min-height: 297mm;
       max-height: 297mm;
-      overflow: hidden;
       margin: 20px auto;
-      background: #fff;
-      padding: 10mm 12mm;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: white;
+      padding: 9mm 11mm 7mm 11mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .header {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 6px;
-      margin-bottom: 6px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 5px;
+      margin-bottom: 5px;
     }
     .name-title h1 {
       margin: 0;
-      font-size: 19pt;
-      color: var(--primary);
-      font-weight: 800;
+      font-size: 18.5pt;
+      color: #1a73e8;
+      line-height: 1.1;
       letter-spacing: -0.5px;
     }
     .name-title .subtitle {
-      margin: 2px 0 0 0;
-      font-size: 9.5pt;
+      font-size: 9pt;
       font-weight: 600;
-      color: var(--primary-dark);
+      color: #3c4043;
+      margin-top: 2px;
     }
     .contacts {
       text-align: right;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       color: var(--muted);
-      line-height: 1.35;
+      line-height: 1.32;
     }
     .contacts a { color: var(--primary); text-decoration: none; }
     .contacts a:hover { text-decoration: underline; }
     .icon-svg {
-      width: 10.5px;
-      height: 10.5px;
+      width: 10px;
+      height: 10px;
       vertical-align: -1px;
       margin-right: 2px;
       display: inline-block;
     }
-    .badge {
-      display: inline-block;
-      background: #e8f0fe;
-      color: #1967d2;
-      padding: 1px 5px;
-      border-radius: 3px;
-      font-size: 7.2pt;
-      font-weight: 600;
-    }
     h2.section-title {
-      font-size: 9.8pt;
+      font-size: 9.4pt;
       color: var(--primary-dark);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin: 6px 0 3px 0;
+      margin: 4px 0 2px 0;
       border-bottom: 1px solid var(--border);
       padding-bottom: 1px;
       display: flex;
@@ -133,56 +124,58 @@
       gap: 5px;
     }
     .summary-text {
-      font-size: 8.4pt;
+      font-size: 8.1pt;
       color: #3c4043;
-      margin: 0 0 4px 0;
+      margin: 0 0 3px 0;
       text-align: justify;
     }
-    .job { margin-bottom: 4px; }
+    .job { margin-bottom: 3px; }
     .job-header {
       display: flex;
       justify-content: space-between;
       font-weight: 700;
-      font-size: 8.6pt;
+      font-size: 8.3pt;
     }
     .job-sub {
       display: flex;
       justify-content: space-between;
-      font-size: 8pt;
+      font-size: 7.8pt;
       color: var(--muted);
       font-style: italic;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     ul.compact {
-      margin: 1px 0 3px 0;
-      padding-left: 14px;
+      margin: 1px 0 2px 0;
+      padding-left: 13px;
     }
     ul.compact li {
       margin-bottom: 1px;
-      font-size: 8.2pt;
+      font-size: 7.9pt;
     }
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 9px;
     }
     .skill-category {
-      font-size: 8pt;
-      margin-bottom: 2px;
+      font-size: 7.8pt;
+      margin-bottom: 1.5px;
     }
     .skill-category strong { color: var(--text); }
     .speaking-item {
-      font-size: 8pt;
-      margin-bottom: 2px;
+      font-size: 7.8pt;
+      margin-bottom: 1.5px;
     }
     .speaking-item strong { color: #202124; }
+    .speaking-item a { color: var(--primary); text-decoration: none; }
+    .speaking-item a:hover { text-decoration: underline; }
     .footer-note {
-      font-size: 7.2pt;
+      font-size: 7pt;
       color: #70757a;
       text-align: center;
       border-top: 1px solid var(--border);
-      padding-top: 3px;
-      margin-top: 4px;
+      padding-top: 2px;
+      margin-top: 2px;
     }
     @media print {
       body { background: transparent; }
@@ -200,10 +193,11 @@
 </head>
 <body>
   <header class="web-nav">
-    <div style="font-weight:700;">🦖 Riccardo Carlesso · CV One-Pager</div>
+    <div style="font-weight:700;">🦖 Riccardo Carlesso · CV One-Pager (EN)</div>
     <div style="display:flex; gap:8px;">
       <a href="index.html">📜 Long Master CV</a>
-      <a href="ricc-onepager.html" class="active">📄 One-Pager (A4)</a>
+      <a href="ricc-onepager.html" class="active">📄 One-Pager (EN)</a>
+      <a href="ricc-onepager-it.html">📄 One-Pager (IT)</a>
       <a href="CV-Riccardo-Carlesso-EN.html">Standard EN</a>
       <a href="CV-Riccardo-Carlesso-IT.html">Italiano</a>
       <button onclick="window.print()">🖨️ Print 1-Page PDF</button>
@@ -216,7 +210,7 @@
       <div class="header">
         <div class="name-title">
           <h1>Riccardo Carlesso</h1>
-          <div class="subtitle">Staff Developer Advocate (L6) · Site Reliability Engineering (SRE) · Cloud Architect</div>
+          <div class="subtitle">Staff Developer Advocate (L6) · Agentic AI & SRE Specialist · Cloud Architect · University Lecturer</div>
         </div>
         <div class="contacts">
           <div>Zurich, Switzerland · Italian Citizen · <strong>Google Zurich</strong></div>
@@ -233,26 +227,26 @@
 
       <!-- EXECUTIVE SUMMARY -->
       <div class="summary-text">
-        <strong>Executive Profile:</strong> Staff Developer Advocate and Principal Cloud Architect with 20+ years in distributed systems operations, SRE, and software engineering. Global co-owner of Google flagship <strong>"The Art of SLOs"</strong> curriculum (video on <a href="https://sre.google">sre.google</a>); international speaker at <strong>Google Cloud Next (Las Vegas)</strong>, <strong>Codemotion (Milan)</strong>, and <strong>SRE Day (Amsterdam Keynote)</strong>. Proven track record leading cloud architecture for EMEA top enterprises (Lufthansa, Deutsche Bank, SAP, Iponweb, Wix) and developing systems used by 1,000+ SREs. 2x full Ironman triathlete and classical pianist.
+        <strong>Executive Profile:</strong> Staff Developer Advocate, Principal Cloud Architect, and AI Agentic Systems Engineer with 20+ years in distributed systems, SRE, and software engineering. Global co-owner of Google's flagship <strong>"The Art of SLOs"</strong> program (<a href="https://www.youtube.com/watch?v=E3ReKuJ8ewA">official video</a>); international speaker at <strong>Google Cloud Next (Las Vegas)</strong>, <strong>George UX Conf (Vienna)</strong>, <strong>Codemotion (Milan)</strong>, and <strong>SRE Day (Amsterdam Keynote)</strong>. Author of open-source agentic AI harnesses and SDKs (Model Context Protocol, Gemini API, Policy Engine DSL). University Lecturer at <strong>Hochschule Luzern (HSLU)</strong> teaching GCP Cloud Platform Management. 2x full Ironman triathlete & classical pianist.
       </div>
 
       <!-- WORK EXPERIENCE -->
-      <h2 class="section-title">Professional Experience</h2>
+      <h2 class="section-title">Professional & Academic Experience</h2>
 
       <div class="job">
         <div class="job-header">
-          <span>GOOGLE CLOUD</span>
+          <span>GOOGLE CLOUD · Zurich, Switzerland & Dublin, Ireland</span>
           <span>May 2012 – Present (14+ years)</span>
         </div>
         
         <div class="job-sub">
-          <span>Staff Developer Advocate (L6) – SRE, Cloud Operations & Generative AI</span>
+          <span>Staff Developer Advocate (L6) – Agentic AI, Site Reliability Engineering (SRE) & DevX</span>
           <span>2021 – Present · Zurich, Switzerland</span>
         </div>
         <ul class="compact">
-          <li><strong>"The Art of SLOs" Global Leadership:</strong> Global co-owner and lead of Google primary SRE enablement curriculum. Authored official video on <a href="https://sre.google/resources/practices-and-processes/art-of-slos/">sre.google</a>; architected modular curriculum and established an international trainer network; delivered multi-day workshops across Japan, UK, Germany, Spain, and Italy.</li>
-          <li><strong>Agentic SRE & Generative AI:</strong> Pioneered autonomous skill-based SRE agents integrating Gemini multimodal reasoning with Model Context Protocol (MCP) to automate metric regression analysis, live Kubernetes diagnostics, and incident postmortem drafting.</li>
-          <li><strong>Product Influence:</strong> Partnered directly with Cloud Deploy and Developer Experience teams; conducted systematic friction logging that reshaped developer onboarding and authored official multi-environment deployment tutorials.</li>
+          <li><strong>Agentic AI & Autonomous SRE Systems:</strong> Pioneered autonomous skill-based SRE agents integrating Gemini multimodal models with Model Context Protocol (MCP) and Agent Development Kit (ADK) for live Kubernetes diagnostics, metric regression analysis, and automated incident postmortems. Created open-source AI agent harnesses (<code>antigravity-ruby-sdk</code> with Policy Engine DSL, <code>sre-extension</code>).</li>
+          <li><strong>"The Art of SLOs" Global Leadership:</strong> Global co-owner and lead of Google's primary SRE enablement curriculum. Authored the official course (<a href="https://www.youtube.com/watch?v=E3ReKuJ8ewA">YouTube</a> · <a href="https://sre.google/resources/practices-and-processes/art-of-slos/">sre.google</a>); founded the international trainer network; delivered workshops across Japan, UK, Germany, Spain, and Italy.</li>
+          <li><strong>Product Influence & DevX:</strong> Partnered with Cloud Deploy and Vertex AI engineering teams; authored official multi-environment canary deployment blueprints (<a href="https://www.youtube.com/watch?v=0GfV5iMGG64">Video</a> · <a href="https://github.com/palladius/clouddeploy-platinum-path">GitHub</a>) and conducted systematic friction logs.</li>
         </ul>
 
         <div class="job-sub">
@@ -260,9 +254,8 @@
           <span>2015 – 2021 · Zurich, Switzerland</span>
         </div>
         <ul class="compact">
-          <li><strong>Enterprise Client Leadership:</strong> Lead architect for top EMEA accounts: <strong>Lufthansa</strong> (HPC Operations Research infrastructure), <strong>Deutsche Bank</strong> (executive collaboration infrastructure), <strong>SAP</strong> (governed multiple delivery streams, resolving complex hybrid cloud networking), <strong>Iponweb</strong> (zero-downtime ad-tech migration from AWS to GCE), <strong>Wix</strong> (global Cloud DNS resilience).</li>
-          <li><strong>DACH Team Lead (2018–2019):</strong> Scoped enterprise engagements, allocated delivery staffing, and mentored SCEs across DACH.</li>
-          <li><strong>Tooling & Data Engineering:</strong> Conceived and built automated telemetry and operational data pipelines serving 1,000+ engineers globally. Led regional enablement frameworks and established Centers of Excellence across EMEA and APAC.</li>
+          <li><strong>Enterprise Client Leadership:</strong> Lead architect for top EMEA accounts: <strong>Lufthansa</strong> (HPC Operations Research infrastructure), <strong>Deutsche Bank</strong> (executive cloud architecture), <strong>SAP</strong> (governed multi-stream delivery & hybrid cloud networking), <strong>Iponweb</strong> (zero-downtime ad-tech migration AWS to GCE), <strong>Wix</strong> (global Cloud DNS resilience).</li>
+          <li><strong>DACH Team Lead (2018–2019) & Tooling:</strong> Scoped enterprise engagements and mentored SCEs across DACH. Conceived and built automated telemetry and data pipelines serving 1,000+ engineers globally; established Centers of Excellence across EMEA and APAC.</li>
         </ul>
 
         <div class="job-sub">
@@ -270,60 +263,76 @@
           <span>2012 – 2015 · Dublin & Zurich</span>
         </div>
         <ul class="compact">
-          <li>Supported early launch of Google Compute Engine (GCE), GAE, and Cloud Storage. Developed internal automation microservices; built resilient HA architectures on GCE; established quaternary pager rotations for Support and TAM teams.</li>
+          <li>Supported initial launch of Google Compute Engine (GCE), GAE, and Cloud Storage. Built HA cloud architectures and internal automation microservices; established quaternary pager rotations for Support and TAM teams.</li>
         </ul>
       </div>
 
       <div class="job">
         <div class="job-header">
-          <span>PRE-GOOGLE ENGINEERING LEADERSHIP</span>
+          <span>HOCHSCHULE LUZERN (HSLU) – LUCERNE UNIVERSITY OF APPLIED SCIENCES AND ARTS</span>
+          <span>2022 – Present · Lucerne, Switzerland</span>
+        </div>
+        <ul class="compact">
+          <li><strong>University Lecturer – <a href="https://www.hslu.ch/de-ch/informatik/weiterbildung/technologies-and-methods/cas-cloud/">CAS Cloud and Platform Manager (CAS CPM)</a> & <a href="https://www.hslu.ch/en/lucerne-school-of-information-technology/continuing-education/technologies-and-methods/cas-cloud-architecture/">CAS Cloud Architecture</a>:</strong> External lecturer for executive continuing education programs. Teaches <strong>Google Cloud Platform (GCP)</strong> architecture, enterprise landing zones, cloud platform engineering, and SRE practices to IT leaders and cloud architects.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span>PRIOR ENGINEERING & SYSTEMS LEADERSHIP</span>
           <span>2002 – 2012 (10 years)</span>
         </div>
         <ul class="compact">
-          <li><strong>Dell Inc. (2011–2012 | Cloud Senior Developer · Dublin):</strong> Core contributor to open-source <em>Crowbar</em> bare-metal cloud installer; automated hypervisors (KVM, Xen, Ganeti, ESXi) and early OpenStack (Nova, Swift); fully puppetized development Linux fleet.</li>
-          <li><strong>HEAnet (2009–2011 | Network Systems Developer · Dublin):</strong> Full-stack development in Ruby on Rails, Python, Perl, Bash; customized Request Tracker (RT) internals; administered HA Debian/Ubuntu server fleet; 24/7 NOC on-call engineer.</li>
-          <li><strong>Laboratori Guglielmo Marconi (2003–2008 | Senior Network Engineer · Bologna):</strong> Designed enterprise networks for 5,000+ users (PA/Healthcare); security expert and technical PM on European Union railway research consortia (<em>Euromain</em>, <em>Integrail</em>); 1-year NOC shift rota.</li>
-          <li><strong>Università di Bologna (2002–2003 | Academic Researcher):</strong> Assisted Prof. Massimo Ferri teaching <em>Vision Mathematics</em>; published post-graduate computer vision paper for ARCES on shadow removal in video surveillance.</li>
+          <li><strong>Dell Inc. (2011–2012 | Cloud Senior Developer · Dublin):</strong> Core contributor to open-source <em>Crowbar</em> bare-metal cloud installer; automated hypervisors (KVM, Xen, Ganeti, ESXi) and early OpenStack (Nova, Swift); puppetized Linux dev fleet.</li>
+          <li><strong>HEAnet (2009–2011 | Network Systems Developer · Dublin):</strong> Full-stack Ruby on Rails, Python, Perl, Bash; Request Tracker (RT) internals; HA Debian/Ubuntu fleet; 24/7 NOC on-call engineer.</li>
+          <li><strong>Laboratori Guglielmo Marconi (2003–2008 | Senior Network Engineer · Bologna):</strong> Enterprise networks for 5,000+ users (PA/Healthcare); security expert & PM on EU railway research consortia (<em>Euromain</em>, <em>Integrail</em>); 1-year NOC shift rota.</li>
+          <li><strong>Università di Bologna (2002–2003 | Academic Researcher):</strong> Taught <em>Vision Mathematics</em> with Prof. Massimo Ferri; published ARCES computer vision paper on shadow removal in video surveillance.</li>
         </ul>
       </div>
 
       <!-- SPEAKING & KEYNOTES -->
-      <h2 class="section-title">Keynote & International Conference Speaking</h2>
+      <h2 class="section-title">Keynote & International Conference Speaking (with Videos & Slides)</h2>
       <div class="speaking-item">
-        <strong><a href="https://cloud.withgoogle.com/next?session=DEV302">Google Cloud Next Las Vegas (2024):</a></strong> <em>“Goodbye, Deployment Headaches: Cloud Deploy and Vertex AI Unite”</em> (Session DEV302 · <a href="https://www.youtube.com/watch?v=_NlGk9Ao_oA">Video</a> · <a href="https://assets.swoogo.com/uploads/3794522-661c3c8fe0cf9.pdf">Slides</a>).
+        <strong>Google Cloud Next Las Vegas (2024):</strong> <em>“Goodbye, Deployment Headaches: Cloud Deploy and Vertex AI Unite”</em> (<a href="https://cloud.withgoogle.com/next?session=DEV302">DEV302</a> · 🎥 <a href="https://www.youtube.com/watch?v=_NlGk9Ao_oA">YouTube Video</a> · 📑 <a href="https://assets.swoogo.com/uploads/3794522-661c3c8fe0cf9.pdf">PDF Slides</a>).
       </div>
       <div class="speaking-item">
-        <strong>Codemotion Milan (2026):</strong> <em>“Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀”</em>.
+        <strong>George UX Conf Vienna (2023):</strong> <em>“Reimagining Customer Services with GenAI and Multi-Modal Interaction”</em> (~1,800 attendees · 🎥 <a href="https://www.youtube.com/watch?v=WRNncVe5yJQ">YouTube Video</a>).
       </div>
       <div class="speaking-item">
-        <strong>Keynotes:</strong> <strong>SRE Day Amsterdam (2024)</strong> & <strong>DevSecOps Day Bologna (2024):</strong> <em>“SRE Gone Wrong: Top 7 Errors (and How to Avoid Them)”</em>.
+        <strong>DevSecOps Day Bologna (2024 Keynote):</strong> <em>“Where SRE Can Go Wrong / Dove l'SRE può andare storto”</em> (🎥 <a href="https://www.youtube.com/watch?v=OmrghN6Y9CQ">YouTube Video</a> · 🌐 <a href="https://www.devsecopsday.it/talks_speakers/">Speaker Page</a>).
       </div>
       <div class="speaking-item">
-        <strong>Conferences & Workshops:</strong> CloudConf Turin (2025, 2024) · Euruko (Sarajevo 2024, Portugal 2025) · RubyDay Verona (2024) · George UX Conf Vienna (2023).
+        <strong>SRE Day Amsterdam (2024 Keynote):</strong> <em>“SRE Gone Wrong: Top 7 Errors (and How to Avoid Them)”</em> (🌐 <a href="https://sreday.com/2024-amsterdam/#modal-speaker-0">Keynote Page</a> · 🎥 <a href="https://www.youtube.com/watch?v=i96qBPyn2dw">Related GDG Video</a>).
+      </div>
+      <div class="speaking-item">
+        <strong>RubyDay Verona (2024):</strong> <em>“News Crawler via LangChain.RB and Gemini APIs”</em> (🎥 <a href="https://www.youtube.com/watch?v=JhjM6Qi9I5U">YouTube Video</a>) · <strong>Rubycon Italy (2026):</strong> Co-organizer & MC (🎥 <a href="https://www.youtube.com/watch?v=EpuEfwT-QTM">Welcome Video</a>).
+      </div>
+      <div class="speaking-item">
+        <strong>Codemotion Milan (2026):</strong> <em>“Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀”</em> (<a href="https://ricc.rocks/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/">Article & Demo</a>) · <strong>CloudConf Turin (2025, 2024)</strong> · <strong>Euruko (Sarajevo 2024, Portugal 2025)</strong>.
       </div>
 
       <!-- SKILLS & EDUCATION GRID -->
-      <div class="grid-2" style="margin-top: 4px;">
+      <div class="grid-2" style="margin-top: 3px;">
         <div>
-          <h2 class="section-title" style="margin-top:2px;">Technical Skills & Certifications</h2>
-          <div class="skill-category"><strong>Core Domains:</strong> SRE, SLOs/Error Budgets, Agentic AI, Cloud Architecture, DevOps/CI-CD.</div>
-          <div class="skill-category"><strong>Languages:</strong> <strong>Ruby</strong> (advanced), <strong>Bash</strong> (expert), Python, Go, SQL (BigQuery/Dremel), C/C++.</div>
-          <div class="skill-category"><strong>Cloud & DevOps:</strong> GCP (GCE, Cloud Run, GKE, Vertex AI), K8s, Docker, Pulumi, Terraform, Git.</div>
-          <div class="skill-category"><strong>Certifications:</strong> GCP DevOps Engineer · GCP Cloud Architect · GCP Data Engineer · Cisco CCNA.</div>
+          <h2 class="section-title" style="margin-top:1px;">AI, Technical Skills & Certifications</h2>
+          <div class="skill-category"><strong>Generative & Agentic AI:</strong> Agentic Harnesses, Multi-Agent Orchestration, Model Context Protocol (MCP), Google ADK, Gemini API (Multimodal, Vision, Audio/TTS, Veo, Imagen 3, Lyria 3), RAG, LangChain / <code>langchain.rb</code>, Policy Guardrails.</div>
+          <div class="skill-category"><strong>Core SRE & Cloud:</strong> SRE, SLOs/Error Budgets, GCP (GCE, Cloud Run, GKE, Vertex AI, Cloud Deploy, BigQuery), K8s, Docker, Pulumi, Terraform.</div>
+          <div class="skill-category"><strong>Languages:</strong> <strong>Ruby</strong> (advanced / gem author), <strong>Bash</strong> (expert), Python, Go, SQL (BigQuery/Dremel), C/C++.</div>
+          <div class="skill-category"><strong>Certifications:</strong> GCP Professional DevOps Engineer · GCP Cloud Architect · GCP Data Engineer · Cisco CCNA.</div>
         </div>
 
         <div>
-          <h2 class="section-title" style="margin-top:2px;">Education, Languages & Sports</h2>
-          <div class="skill-category"><strong>Education:</strong> Laurea Quinquennale Ingegneria Informatica (5-Yr BS+MS, 99/100, AI/Vision, Univ. Bologna) · Master Information Security (1500h) · State Engineer License (2002).</div>
-          <div class="skill-category"><strong>Honors:</strong> Scuola Normale Superiore Pisa (Cortona, top 150 students in Italy, 1994) · Maturità 60/60.</div>
-          <div class="skill-category"><strong>Languages:</strong> Italian (Native C2) · English (Fluent C1/C2) · Portuguese (B2) · French (B1) · German (A2).</div>
-          <div class="skill-category"><strong>Endurance & Art:</strong> <strong>2x Full Ironman finisher</strong> · Classical pianist · Created <em>goliardia.it</em> in 2002.</div>
+          <h2 class="section-title" style="margin-top:1px;">Education, Languages & Personal</h2>
+          <div class="skill-category"><strong>University Education:</strong> Laurea Quinquennale Ingegneria Informatica (5-Yr BS+MS, 99/100, AI/Computer Vision thesis, Univ. Bologna) · Post-Grad Master in Information Security (1,500h) · State Engineering License (2002).</div>
+          <div class="skill-category"><strong>Academic Honors:</strong> Scuola Normale Superiore di Pisa (Selected for Cortona Orientation, top 150 students in Italy, 1994) · Maturità 60/60.</div>
+          <div class="skill-category"><strong>Languages:</strong> Italian (Native C2) · English (Fluent C1/C2) · Portuguese (B2) · French (B1) · German (A2/B1).</div>
+          <div class="skill-category"><strong>Endurance & Art:</strong> <strong>2x Full Ironman finisher</strong> (3.8k swim, 180k bike, 42.2k run) · Classical pianist (<a href="https://www.youtube.com/watch?v=4VBxd9n1dSU">YouTube</a>) · Built <em>goliardia.it</em> (2002).</div>
         </div>
       </div>
     </div>
 
     <div class="footer-note">
-      Detailed extended CV (20+ years complete archive): <a href="https://ricc.rocks">ricc.rocks</a> · GitHub: <a href="https://github.com/palladius">github.com/palladius</a> · Generated from doc/cv/ricc-onepager.md
+      Full interactive CV archive & articles: <a href="https://ricc.rocks">ricc.rocks</a> · Open Source & AI Harnesses: <a href="https://github.com/palladius">github.com/palladius</a> · Generated from doc/cv/ricc-onepager.html
     </div>
   </div>
 </body>

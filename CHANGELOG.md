@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.4.3] - 2026-09-14
+
+### ✨ Updated
+- 📄 **Curriculum Vitae (PDF & HTML)**:
+  - Added University Lecturer role at **Hochschule Luzern (HSLU)** teaching GCP in CAS Cloud and Platform Manager (CAS CPM) & CAS Cloud Architecture.
+  - Expanded Generative & Agentic AI competencies (open-source harnesses, `antigravity-ruby-sdk`, `sre-extension`, MCP, ADK, Gemini multimodal).
+  - Embedded direct YouTube video links (`🎥`) and speaker pages for Google Cloud Next, George UX Conf, DevSecOps Day Bologna, RubyDay Verona, Rubycon Italy 2026, GDG Budapest, and Cloud Deploy Canary.
+
 ## [0.4.2] - 2026-09-11
 
 ### ✨ Added

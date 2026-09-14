@@ -1,6 +1,6 @@
 # Riccardo Carlesso - Comprehensive Curriculum Vitae (Hyperlinked Master Edition)
 
-**Staff Developer Advocate (L6) | Site Reliability Engineering (SRE) | Principal Cloud Architect**  
+**Staff Developer Advocate (L6) | Agentic AI & SRE Specialist | Principal Cloud Architect | University Lecturer**  
 Location: Zurich, Switzerland · Citizenship: Italian · [Google Zurich](https://about.google/locations/zurich/)  
 Email: [riccardo.carlesso@gmail.com](mailto:riccardo.carlesso@gmail.com) · [ricc@google.com](mailto:ricc@google.com)  
 
@@ -19,14 +19,16 @@ Email: [riccardo.carlesso@gmail.com](mailto:riccardo.carlesso@gmail.com) · [ric
 
 ## 1. Executive Profile
 
-Staff Developer Advocate, Principal Cloud Architect, and Senior Systems Engineer with more than 
+Staff Developer Advocate, Principal Cloud Architect, and AI Agentic Systems Engineer with more than 
 20 years of continuous hands-on experience across distributed systems architecture, site reliability 
 engineering, large-scale enterprise cloud adoption, and software engineering.
 
-Recognized authority in **[Site Reliability Engineering (SRE)](https://sre.google/)**, **Generative AI & Agentic Systems ([Google Gemini](https://ai.google.dev/), [Model Context Protocol - MCP](https://modelcontextprotocol.io/), Multi-Agent Orchestration)**, **Enterprise Cloud Architecture**, and **Developer Operations (DevOps/CI-CD)**.
+Recognized authority in **[Site Reliability Engineering (SRE)](https://sre.google/)**, **Generative AI & Agentic Systems ([Google Gemini](https://ai.google.dev/), [Model Context Protocol - MCP](https://modelcontextprotocol.io/), Multi-Agent Harnesses)**, **Enterprise Cloud Architecture**, and **Developer Operations (DevOps/CI-CD)**.
 
 ### Career Highlights at a Glance
-- **International Speaker & Keynoter**: Featured speaker at **[Google Cloud Next (Las Vegas)](https://cloud.withgoogle.com/next?session=DEV302)**, **[Codemotion Milan](https://sessionize.com/app/speaker/session/1222188)**, **[SRE Day Amsterdam Keynote](https://sreday.com/2024-amsterdam/#modal-speaker-0)**, **[DevSecOps Day Bologna Keynote](https://www.devsecopsday.it/talks_speakers/)**, **[CloudConf Turin](https://2025.cloudconf.it/)**, and **[Euruko](https://2024.euruko.org/speakers/riccardo_carlesso)**.
+- **International Speaker & Keynoter**: Featured speaker at **[Google Cloud Next (Las Vegas)](https://cloud.withgoogle.com/next?session=DEV302)** ([Video](https://www.youtube.com/watch?v=_NlGk9Ao_oA)), **[George UX Conf Vienna](https://www.youtube.com/watch?v=WRNncVe5yJQ)**, **[Codemotion Milan](https://sessionize.com/app/speaker/session/1222188)**, **[SRE Day Amsterdam Keynote](https://sreday.com/2024-amsterdam/#modal-speaker-0)**, **[DevSecOps Day Bologna Keynote](https://www.youtube.com/watch?v=OmrghN6Y9CQ)**, **[RubyDay Verona](https://www.youtube.com/watch?v=JhjM6Qi9I5U)**, **[CloudConf Turin](https://2025.cloudconf.it/)**, and **[Euruko](https://2024.euruko.org/speakers/riccardo_carlesso)**.
+- **Open-Source Agentic AI Pioneer**: Author of production AI agent harnesses and SDKs including **[antigravity-ruby-sdk](https://github.com/palladius/antigravity-ruby-sdk)** (published on RubyGems with dynamic Policy Engine DSL & safety guardrails) and **[sre-extension](https://ricc.rocks/en/posts/technology/2026-06-05-ops-i-did-it-again-the-sre-extension-is-out/)** (MCP-based autonomous SRE investigation suite).
+- **University Lecturer at HSLU**: External lecturer at **[Hochschule Luzern (HSLU)](https://www.hslu.ch/de-ch/informatik/weiterbildung/technologies-and-methods/cas-cloud/)** teaching Google Cloud Platform (GCP) architecture and SRE in the **CAS Cloud and Platform Manager (CAS CPM)** and **CAS Cloud Architecture** continuing education programs.
 - **Global SRE Curriculum Co-Author**: Co-creator and global owner of Google flagship enablement program, **"[The Art of SLOs](https://sre.google/resources/practices-and-processes/art-of-slos/)"**, including the [official public training video](https://www.youtube.com/watch?v=E3ReKuJ8ewA) hosted on [sre.google](https://sre.google/) and an international train-the-trainer network across EMEA, APAC, and Americas.
 - **Strategic Enterprise Impact**: Led technical cloud strategy and complex migrations for top European enterprises, including **[Lufthansa Group](https://www.lufthansagroup.com/)** (HPC Operations Research infrastructure), **[Deutsche Bank](https://www.db.com/)** (strategic enterprise collaboration and cloud infrastructure), **[SAP](https://www.sap.com/)** (technical delivery governance across hybrid-cloud workstreams), **[Iponweb](https://www.iponweb.com/)** (zero-downtime migration of high-throughput ad-tech workloads from AWS to [Google Compute Engine](https://cloud.google.com/compute)), and **[Wix](https://www.wix.com/)** (global multi-region [Cloud DNS](https://cloud.google.com/dns) resilience).
 - **Tooling & Data Engineering Pioneer**: Conceived, built, and launched automated analytics and data warehouse pipelines for Google Professional Services supporting over 1,000 engineers globally.
@@ -39,7 +41,7 @@ Recognized authority in **[Site Reliability Engineering (SRE)](https://sre.googl
 
 ### Core Domains & Methodologies
 - **[Site Reliability Engineering (SRE)](https://sre.google/)**: SLI/SLO formulation, Error Budget policies, Incident Response & Commander rotations, Blameless Postmortems, Telemetry & Distributed Tracing, Chaos Engineering, Toil Reduction, SRE Organizational Adoption anti-patterns.
-- **Generative AI & Autonomous Agent Systems**: [Google Gemini 1.5/2.0 API](https://ai.google.dev/), [Model Context Protocol (MCP)](https://modelcontextprotocol.io/), [Agent Development Kit (ADK)](https://github.com/google/agent-development-kit), Multi-agent workflows, Function Calling / Tool Calling, Retrieval-Augmented Generation (RAG), [LangChain ecosystem](https://github.com/andreibondarev/langchainrb).
+- **Generative AI & Autonomous Agent Systems**: Autonomous Agentic Harnesses, Multi-Agent Orchestration, [Google Gemini 2.5 / 3 Pro & Flash API](https://ai.google.dev/), Multimodal Generation & Reasoning (Vision, Audio/TTS, [Veo Video](https://deepmind.google/technologies/veo/), [Imagen 3](https://deepmind.google/technologies/imagen-3/), [Lyria 3 Music](https://deepmind.google/technologies/lyria/)), [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers & clients, [Agent Development Kit (ADK)](https://github.com/google/agent-development-kit), Function/Tool Calling, Retrieval-Augmented Generation (RAG), Dynamic Policy Engine DSL & Security Guardrails, [LangChain & langchain.rb ecosystem](https://github.com/andreibondarev/langchainrb).
 - **Enterprise Cloud Architecture**: Multi-region landing zones, VPC Peering & Interconnect, [Identity & Access Management (IAM)](https://cloud.google.com/iam), Cloud Security Hardening, High-Performance Computing (HPC), Disaster Recovery, Microservices & Containerization.
 - **DevOps, CI/CD & Delivery**: Progressive delivery, Canary deployments, Automated rollback strategies, Infrastructure as Code (IaC), GitOps, Build automation.
 - **Systems & Telephony Engineering**: Linux kernel performance tuning, TCP/IP stack optimization, Embedded systems (MIPS/[BusyBox](https://busybox.net/)), PBX/VoIP telephony ([Asterisk](https://www.asterisk.org/), SIP, POTS), Storage architectures.
@@ -63,6 +65,9 @@ Recognized authority in **[Site Reliability Engineering (SRE)](https://sre.googl
 - **[Codemotion Milan 2026](https://sessionize.com/codemotion-milan-26)** (Milan, Italy)  
   **Topic**: *“[Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀](https://sessionize.com/app/speaker/session/1222188)”*  
   *Abstract*: In-depth exploration of how Google approaches next-generation incident management and operations. Demonstrates how to replace human grep-and-search toil with autonomous, skill-based AI agents powered by Gemini and the Model Context Protocol (MCP). Covers diagnostic tool chaining, metric regression analysis, safe Kubernetes mitigations, and automated post-mortem drafting in seconds.
+- **[Rubycon Italy 2026](https://rubycon.it/)** (Italy)  
+  **Role**: Co-Organizer & Master of Ceremonies  
+  *Resources*: 📹 **[Watch Welcome & Opening Address on YouTube](https://www.youtube.com/watch?v=EpuEfwT-QTM)**
 
 ### 2025
 - **[CloudConf Turin 2025](https://2025.cloudconf.it/en/schedule.html)** (Turin, Italy)  
@@ -77,22 +82,24 @@ Recognized authority in **[Site Reliability Engineering (SRE)](https://sre.googl
   *Resources*: 📹 **[YouTube Presentation Recording](https://www.youtube.com/watch?v=_NlGk9Ao_oA)** · 📑 **[PDF Presentation Slides](https://assets.swoogo.com/uploads/3794522-661c3c8fe0cf9.pdf)**  
   *Impact*: Mainstage Google Cloud Next developer presentation in Las Vegas to thousands of in-person attendees and global streaming viewers. Demonstrated zero-code automated MLOps delivery pipelines, idempotent release management, and instant model rollbacks.
 - **[SRE Day Amsterdam 2024](https://sreday.com/2024-amsterdam/)** (Amsterdam, Netherlands)  
-  **Keynote**: *“[SRE Gone Wrong: Top 7 Errors (and How to Avoid Them)](https://sreday.com/2024-amsterdam/#modal-speaker-0)”*  
+  **Keynote**: *“[SRE Gone Wrong: Top 7 Errors (and How to Avoid Them)](https://sreday.com/2024-amsterdam/#modal-speaker-0)”* · 📹 **[Related GDG Presentation Video](https://www.youtube.com/watch?v=i96qBPyn2dw)**  
   *Impact*: Opening keynote for international SRE leaders examining organizational dysfunctions, misplaced incentives, and practical recovery patterns in enterprise reliability engineering.
 - **[DevSecOps Day Bologna 2024](https://www.devsecopsday.it/talks_speakers/)** (Bologna, Italy)  
-  **Keynote**: *“[Dove l SRE può andare storto: Cultura, Processi e Trappole Comuni](https://www.devsecopsday.it/talks_speakers/)”*  
+  **Keynote**: *“[Dove l'SRE può andare storto: Cultura, Processi e Trappole Comuni](https://www.devsecopsday.it/talks_speakers/)”*  
+  *Resources*: 📹 **[Watch Keynote Recording on YouTube](https://www.youtube.com/watch?v=OmrghN6Y9CQ)** · 🌐 **[Official Speaker Page](https://www.devsecopsday.it/talks_speakers/)**  
   *Impact*: Keynote delivery on cross-functional alignment between security, operations, and software engineering.
 - **[Euruko Sarajevo 2024](https://2024.euruko.org/speakers/riccardo_carlesso)** (Sarajevo, Bosnia and Herzegovina)  
   **Topic**: *“[Workshop: Bring Your Ruby App into the Cloud with Modern GCP Primitives](https://2024.euruko.org/speakers/riccardo_carlesso)”*
 - **[RubyDay Verona 2024](https://2024.rubyday.it/talks_speakers/)** (Verona, Italy)  
   **Topic**: *“[News Crawler via LangChain.RB and Gemini APIs](https://sessionize.com/s/riccardo-carlesso/news-crawler-via-langchainrb-and-gemini-apis/80101)”*  
+  *Resources*: 📹 **[Watch Presentation Recording on YouTube](https://www.youtube.com/watch?v=JhjM6Qi9I5U)**  
   *Focus*: Integrating Google Gemini APIs into the Ruby ecosystem for autonomous content classification, sentiment extraction, and semantic indexing.
 - **[GDG Devfest Pescara 2024](https://sessionize.com/devfest-pescara-2024/) & [GDG Devfest Modena 2024](https://sessionize.com/app/speaker/session/745608)** (Italy)  
   **Topic**: *“Generative AI in Practice: LangChain.RB Meets Gemini”*
 - **[CloudConf Turin 2024](https://2024.cloudconf.it/index.html)** (Turin, Italy)  
   **Topic**: *“Software Development with Google: Culture, Tooling, and Operations”*
-- **[GDG Budapest 2024](https://www.youtube.com/watch?v=i96qBPyn2dw)** (Remote / Hungary)  
-  **Topic**: *“SRE Jumpstart: Establishing Reliability from Ground Zero”*
+- **[GDG Cloud](https://www.youtube.com/watch?v=a1nVcokJcNo)**  
+  **Topic**: *“Introduction to SRE & Deploying Landing Zone via Fabric FAST”* (📹 **[Watch on YouTube](https://www.youtube.com/watch?v=a1nVcokJcNo)**)
 - **Railshöck Zurich 2024** (Zurich, Switzerland)  
   **Topic**: *“Building Gemini-Powered Applications with Ruby”*
 
@@ -162,6 +169,14 @@ Recognized authority in **[Site Reliability Engineering (SRE)](https://sre.googl
   - Established and led quaternary pager rotations for Cloud Support and TAM teams, defining standard operating procedures and severity runbooks.
   - Created the internal *Big Cluster* documentation hub; technical reviewer for public GCE documentation.
   - Relocated from Google Dublin to Google Zurich in November 2012.
+
+---
+
+### [Hochschule Luzern (HSLU) – Lucerne University of Applied Sciences and Arts](https://www.hslu.ch/)
+**Lucerne, Switzerland** · *2022 – Present*  
+**University Lecturer (Docente a Contratto) – [CAS Cloud and Platform Manager (CAS CPM)](https://www.hslu.ch/de-ch/informatik/weiterbildung/technologies-and-methods/cas-cloud/) & [CAS Cloud Architecture](https://www.hslu.ch/en/lucerne-school-of-information-technology/continuing-education/technologies-and-methods/cas-cloud-architecture/)**
+- **Executive University Education**: Lecturer in postgraduate Certificate of Advanced Studies (CAS) programs at the Lucerne School of Information Technology (Informatik Weiterbildung).
+- **Google Cloud Platform (GCP) Curriculum**: Designed and delivers specialized modules on **Google Cloud Platform (GCP)** architecture, enterprise landing zones, IAM/security governance, cloud platform engineering, and Site Reliability Engineering (SRE) practices for experienced IT leaders, enterprise architects, and senior engineers.
 
 ---
 
