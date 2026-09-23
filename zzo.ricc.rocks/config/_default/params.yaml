@@ -118,6 +118,7 @@ enableLangChange: true
 enableThemeChange: true
 googleTagManager: ''
 baiduAnalytics: ''
+cloudflareAnalyticsToken: ''
 enableBusuanzi: false
 busuanziSiteUV: true
 busuanziSitePV: true

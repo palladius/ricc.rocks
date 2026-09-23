@@ -83,3 +83,13 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - Changed `google-plus` to `''` and `youtube` to absolute URL `https://www.youtube.com/palladiusbonton` in `params.yaml`.
   - Created `zzo.ricc.rocks/static/_redirects` with specific redirects for Redux posts, `/index.json`, and wildcard redirect patterns to map missing taxonomies/posts/gallery paths to safe parent listing pages.
   - Replaced broken relative links in markdown posts with code formatting.
+
+## Web Analytics Integration - Cloudflare & Google Analytics (2026-09-23)
+**IMPLEMENTED (by Gemini/Antigravity)**:
+- **Context & Issue**: Netlify charges $9/month for edge CDN analytics. To avoid recurring costs on static Hugo hosting, free client-side analytics (Cloudflare Web Analytics & GA4) were integrated (GitHub Issue [#7](https://github.com/palladius/ricc.rocks/issues/7)).
+- **Architecture**:
+  - `zzo2` theme previously omitted `google-analytics` in `themes/zzo2/layouts/partials/head/services.html`.
+  - Created layout override `zzo.ricc.rocks/layouts/partials/head/services.html` chaining Google Analytics, Google Tag Manager, Cloudflare Web Analytics, Baidu, and Busuanzi.
+  - Added `zzo.ricc.rocks/layouts/partials/service/cloudflare-analytics.html` injecting Cloudflare beacon conditionally when `cloudflareAnalyticsToken` is defined in `params.yaml` and not running on local server (`not .Site.IsServer`).
+  - Added `cloudflareAnalyticsToken: ''` parameter to `zzo.ricc.rocks/config/_default/params.yaml`.
+  - Configured Hugo to support GA4 Measurement ID in `zzo.ricc.rocks/config/_default/config.yaml` (`googleAnalytics: ''`).
