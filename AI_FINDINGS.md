@@ -93,3 +93,15 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - Added `zzo.ricc.rocks/layouts/partials/service/cloudflare-analytics.html` injecting Cloudflare beacon conditionally when `cloudflareAnalyticsToken` is defined in `params.yaml` and not running on local server (`not .Site.IsServer`).
   - Added `cloudflareAnalyticsToken: ''` parameter to `zzo.ricc.rocks/config/_default/params.yaml`.
   - Configured Hugo to support GA4 Measurement ID in `zzo.ricc.rocks/config/_default/config.yaml` (`googleAnalytics: ''`).
+
+## Cloud Run Custom Tracking Pixel (2026-09-23)
+**IMPLEMENTED (by Gemini/Antigravity)**:
+- **Location**: `services/pixel-tracker/` (Sinatra + Puma on Cloud Run + Dockerfile + justfile).
+- **Features**:
+  - Responds with 43-byte transparent 1x1 GIF (`/pixel.gif`, `/p.gif`, `/track`) with no-cache headers.
+  - Generates structured JSON log to stdout with timestamp, page, referrer, user agent, IP, and geo-country.
+  - Automatically ingested into Google Cloud Logging; zero external database needed.
+  - Can be exported to BigQuery with 1-click Log Router sink.
+- **Hugo Integration**:
+  - Created layout override `zzo.ricc.rocks/layouts/partials/body/custom-body.html` injecting pixel tag when `pixelAnalyticsUrl` is set in `params.yaml` and not on local server (`not .Site.IsServer`).
+  - Added `pixelAnalyticsUrl: ''` to `zzo.ricc.rocks/config/_default/params.yaml`.

@@ -1,0 +1,24 @@
+# Justfile for Pixel Tracker on Cloud Run
+
+default:
+    just -l
+
+# Run locally on port 8080
+dev:
+    bundle exec puma -p 8080 app.rb
+
+# Deploy to Cloud Run (Europe West 1)
+deploy project="":
+    gcloud run deploy ricc-pixel-tracker \
+      --source . \
+      {{ if project != "" { "--project " + project } else { "" } }} \
+      --region europe-west1 \
+      --allow-unauthenticated \
+      --memory 128Mi \
+      --cpu 1 \
+      --min-instances 0 \
+      --max-instances 10
+
+# Tail production logs
+logs:
+    gcloud beta run services logs tail ricc-pixel-tracker --region europe-west1

@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.4.8] - 2026-09-23
+
+### ✨ Added
+- 📸 **Cloud Run Tracking Pixel Service (`services/pixel-tracker/`)**:
+  - Implemented lightweight Ruby Sinatra / Puma service serving a 1x1 transparent GIF with cache-busting headers.
+  - Generates structured JSON log records for Cloud Logging (capturing page, referrer, user agent, IP, and geo headers).
+  - Includes `Dockerfile`, `Gemfile`, `config.ru`, `README.md`, and `justfile` for 1-command deployment (`just deploy`).
+  - Added layout override [`layouts/partials/body/custom-body.html`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/layouts/partials/body/custom-body.html) and `pixelAnalyticsUrl` in `params.yaml` for zero-JS tracking in Hugo.
+
 ## [0.4.7] - 2026-09-23
 
 ### ✨ Added
