@@ -14,7 +14,11 @@ curl-localhost:
   curl -s http://localhost:1313/
 
 test:
+  ruby tests/homepage_links_test.rb
   ruby tests/compliance_test.rb
+
+test-homepage:
+  ruby tests/homepage_links_test.rb
 
 test-page path:
   ruby tests/compliance_test.rb {{path}}

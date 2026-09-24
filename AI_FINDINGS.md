@@ -103,5 +103,19 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - Automatically ingested into Google Cloud Logging; zero external database needed.
   - Can be exported to BigQuery with 1-click Log Router sink.
 - **Hugo Integration**:
-  - Created layout override `zzo.ricc.rocks/layouts/partials/body/custom-body.html` injecting pixel tag when `pixelAnalyticsUrl` is set in `params.yaml` and not on local server (`not .Site.IsServer`).
+  - Created layout override `zzo.ricc.rocks/layouts/partials/body/custom-body.html` injecting pixel tag when `pixelAnalyticsUrl` is set in `params.yaml` and not on local server (`not hugo.IsServer`).
   - Added `pixelAnalyticsUrl: ''` to `zzo.ricc.rocks/config/_default/params.yaml`.
+
+## Homepage & Essential Links Test Suite + Navbar `/cv/` 404 Fix (2026-09-24)
+**IMPLEMENTED & FIXED (by Gemini/Antigravity in worktree `.worktrees/homepage-link-tests`)**:
+1. **Created `zzo.ricc.rocks/tests/homepage_links_test.rb` (73 assertions)**:
+   - Wired into `just test` and `just test-homepage`.
+   - Validates EN & IT homepages (`public/en/index.html`, `public/it/index.html`), root redirect (`public/index.html`), and EN & IT About pages (`public/en/about/index.html`, `public/it/about/index.html`).
+   - Checks **Apps Portfolio** links (`https://portfolio-app-272932496670.europe-west1.run.app/about`) in Desktop Navbar, Mobile Navbar, Footer, and About pages.
+   - Checks **CV Links (EN & IT)** (`/cv/ricc-onepager.pdf`, `/cv/ricc-onepager-it.pdf`, `/cv/ricc-cv.pdf`, `/cv/ricc-cv-it.pdf`, `/cv/`) on both EN and IT homepages and verifies all static CV artifacts exist on disk in `public/cv/` with valid sizes.
+   - Checks **Social & Identity Links** (GitHub, LinkedIn, YouTube, Medium, StackOverflow, Twitter/X, Instagram, Email, Bio Avatar).
+   - Verifies **zero broken local links** (`<a href>`, `<img src>`, `<img data-src>`) and **zero leaked Hugo shortcodes**.
+2. **Root Causes Discovered & Fixed**:
+   - **`relLangURL` corrupting `/cv/` links**: `nav-menu.html` and `nav-menu-mobile.html` previously passed `/cv/ricc-onepager.pdf` through `relLangURL`, generating `/en/cv/ricc-onepager.pdf` and `/it/cv/ricc-onepager-it.pdf` which returned 404 because `static/cv/` is output at root `public/cv/`. Updated `nav-menu.html` and `nav-menu-mobile.html` to preserve `/cv`, `/en/`, and `http` URLs without prepending language prefixes, and added `/en/cv/*` & `/it/cv/*` redirects in `static/_redirects`.
+   - **Hugo v0.166+ `.Site.IsServer` crash**: Replaced `.Site.IsServer` with `hugo.IsServer` in `layouts/partials/` and `themes/zzo2/layouts/partials/service/`.
+   - **Missing Social Links & Broken IT Links**: Populated `linkedin`, `medium`, and `instagram` in `params.yaml`, pointed Italian `gallery` and `posts` menu entries to `/en/gallery` and `/en/posts`, and fixed broken `{ { < img > } }` shortcode in `content/it/about/index.md`.

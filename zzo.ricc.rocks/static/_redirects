@@ -10,6 +10,8 @@
 
 # Redirect specific translation/content mismatches
 /en/posts/travel/202211-raja-ampat/                       /en/posts/medium/2022-10-01-raja-ampat/                                 301
+/en/cv/*                                                  /cv/:splat                                                              301
+/it/cv/*                                                  /cv/:splat                                                              301
 
 # ----------------------------------------------------
 # 2. GENERAL WILDCARD FALLBACKS (Only triggered if file doesn't exist)

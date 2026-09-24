@@ -1,4 +1,4 @@
-{{ if and ($.Site.Params.pixelAnalyticsUrl) (not .Site.IsServer) }}
+{{ if and ($.Site.Params.pixelAnalyticsUrl) (not hugo.IsServer) }}
 <!-- Custom Tracking Pixel (Cloud Run / Self-hosted) -->
 <img src="{{ $.Site.Params.pixelAnalyticsUrl }}?p={{ .RelPermalink | urlquery }}" width="1" height="1" style="display:none;" alt="" loading="eager" />
 <!-- End Custom Tracking Pixel -->

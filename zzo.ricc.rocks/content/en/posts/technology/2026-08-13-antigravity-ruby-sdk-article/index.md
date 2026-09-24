@@ -7,6 +7,7 @@ date: 2026-08-13T15:45:00+02:00
 draft: false
 image: "/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/hero.jpg"
 description: "What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it is doing in real-time? Introducing the Antigravity Ruby SDK for Google's agentic harness."
+summary: "What if your Ruby app could think, learn new skills at runtime, and tell you exactly what it is doing in real-time? Introducing the Antigravity Ruby SDK for Google's agentic harness, connecting Ruby and Telegram to Gemini's full agentic capabilities."
 categories: ["Antigravity", "Ruby"]
 tags: ["Google", "Antigravity", "Ruby", "Gemini", "Telegram", "Agentic", "SDK"]
 author: "Riccardo Carlesso"
@@ -330,7 +331,7 @@ How does [Issue #21 (Policy Engine DSL)](https://github.com/palladius/antigravit
 See the Policy Engine in action, from our interactive `Richard` console:
 
 
-{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/demos/richard-console/demo.gif" caption="Richard Console Demo — Policy Engine & Workspace Discovery" alt="Richard Console Demo — Policy Engine & Workspace Discovery" position="center" >}}
+{{< img src="/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/images/tui-security-audit-cropped.gif" caption="Richard Console Demo — Policy Engine & Workspace Discovery" alt="Richard Console Demo — Policy Engine & Workspace Discovery" position="center" >}}
 
 ### Dynamic Policy Injection
 

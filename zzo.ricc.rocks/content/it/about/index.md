@@ -28,19 +28,18 @@ Been in Google for 11 years, and I've never found a way to write up all this ama
 
 * Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>
 * Google official page: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
-* **Curriculum Vitae**: [Scarica il CV Executive One-Page in Italiano (PDF)](/cv/ricc-onepager-it.pdf) · [English Version (PDF)](/cv/ricc-onepager.pdf)
+* **Portfolio App & Talk**: [Portfolio di App e Conferenze](https://portfolio-app-272932496670.europe-west1.run.app/about)
+* **Curriculum Vitae**: [Scarica il CV Executive One-Page in Italiano (PDF)](/cv/ricc-onepager-it.pdf) · [English Version (PDF)](/cv/ricc-onepager.pdf) · [CV Esteso Interattivo (HTML)](/cv/)
 
 I speak about SRE, Operations, Culture at Google, GenAI, and Ruby.
 
 ## Personal
 
-I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland, and in 2011 I moved to Switzerland where I currently live with my kind and caring wife Kate and two amazeballs kids: *AJ* and *Sebowski*. You can find us on Instagram, or in the family gallery.
+I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland, and in 2011 I moved to Switzerland where I currently live with my kind and caring wife Kate and two amazeballs kids: *AJ* and *Sebowski*. You can find us on [Instagram](https://www.instagram.com/palladius/), or in the [family gallery](/en/gallery/riccardo-family/).
 
 Of course, I live in Switzerland.
 
-{ { <
-img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center"
-> } }
+{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center" >}}
 
 ## Hobbies
 

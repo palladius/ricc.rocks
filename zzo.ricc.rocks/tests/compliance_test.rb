@@ -155,8 +155,11 @@ def verify_wikimojis(file_path, site_root, wikimoji_config)
   return errors unless wikimoji_config && wikimoji_config['enabled']
 
   content = File.read(file_path)
+  body = content.sub(/\A---.*?---/m, '').strip
+  clean_body = body.gsub(/```.*?```/m, '').gsub(/`[^`\n]+`/, '')
   links = []
-  content.scan(/\[([^\]]+)\]\(([^)]+)\)/) do |text, url|
+  clean_body.scan(/(?<!\!)\[([^\[\]\n]+)\]\(([^)\n]+)\)/) do |text, url|
+    next if text.strip.start_with?('![')
     links << { text: text, url: url.strip }
   end
 
@@ -283,8 +286,10 @@ end
 # Build the site to ensure public/ is fresh for HTML-based tests
 if wikimoji_config && wikimoji_config['enabled']
   puts "Building Hugo site to verify HTML output..."
+  nvm_bins = Dir.glob(File.expand_path('~/.nvm/versions/node/*/bin')).last
+  env_path = [nvm_bins, '/home/linuxbrew/.linuxbrew/bin', File.expand_path('~/.local/bin'), ENV['PATH']].compact.join(':')
   build_cmd = "which hugo >/dev/null 2>&1 && hugo --quiet || npx -y hugo-extended --quiet"
-  system("cd #{File.expand_path("..", __dir__)} && #{build_cmd}")
+  system({ 'PATH' => env_path }, "cd #{File.expand_path("..", __dir__)} && #{build_cmd}")
 end
 
 all_errors = {}

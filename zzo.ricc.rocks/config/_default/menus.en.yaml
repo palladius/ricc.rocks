@@ -55,6 +55,26 @@ main:
     name: 📄Curriculum (PDF)
     url: /cv/ricc-onepager.pdf
     weight: 12
+  - parent: cv
+    name: 🇬🇧 1-Page CV (EN PDF)
+    url: /cv/ricc-onepager.pdf
+    weight: 1
+  - parent: cv
+    name: 🇮🇹 1-Page CV (IT PDF)
+    url: /cv/ricc-onepager-it.pdf
+    weight: 2
+  - parent: cv
+    name: 🇬🇧 Full CV (EN PDF)
+    url: /cv/ricc-cv.pdf
+    weight: 3
+  - parent: cv
+    name: 🇮🇹 Full CV (IT PDF)
+    url: /cv/ricc-cv-it.pdf
+    weight: 4
+  - parent: cv
+    name: 🌐 Extended CV (HTML)
+    url: /cv/
+    weight: 5
 
 
 

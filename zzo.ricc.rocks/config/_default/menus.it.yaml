@@ -9,14 +9,14 @@ main:
     weight: 2
   - identifier: gallery
     name: 🖼️Foto
-    url: gallery
+    url: /en/gallery
     weight: 3
   # - parent: gallery
   #   name: fiverr
   #   url: gallery/mine
   - identifier: posts
     name:  📪Articoli
-    url: posts
+    url: /en/posts
     weight: 4
 
   - identifier: ricc_zzo_prod
@@ -33,3 +33,23 @@ main:
     name: 📄Curriculum (PDF)
     url: /cv/ricc-onepager-it.pdf
     weight: 12
+  - parent: cv
+    name: 🇮🇹 CV 1-Pagina (IT PDF)
+    url: /cv/ricc-onepager-it.pdf
+    weight: 1
+  - parent: cv
+    name: 🇬🇧 CV 1-Page (EN PDF)
+    url: /cv/ricc-onepager.pdf
+    weight: 2
+  - parent: cv
+    name: 🇮🇹 CV Completo (IT PDF)
+    url: /cv/ricc-cv-it.pdf
+    weight: 3
+  - parent: cv
+    name: 🇬🇧 CV Completo (EN PDF)
+    url: /cv/ricc-cv.pdf
+    weight: 4
+  - parent: cv
+    name: 🌐 CV Esteso (HTML)
+    url: /cv/
+    weight: 5

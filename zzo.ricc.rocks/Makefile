@@ -1,3 +1,4 @@
+export PATH := $(shell ls -d $(HOME)/.nvm/versions/node/*/bin 2>/dev/null | tail -n 1):/home/linuxbrew/.linuxbrew/bin:$(HOME)/.local/bin:$(PATH)
 
 run:
 	@which hugo >/dev/null 2>&1 && hugo server --disableFastRender || npx -y hugo-extended server --disableFastRender

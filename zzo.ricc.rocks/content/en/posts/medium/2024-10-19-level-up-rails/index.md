@@ -17,6 +17,7 @@ Tags:
 canonicalURL: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
 image: "/en/posts/medium/2024-10-19-level-up-rails/ricc-qwiklab-video.png"
 medium-site: https://medium.com/@palladiusbonton/ruby-on-rails-with-postgresql-on-cloud-run-bdaaf0b26e0b
+summary: "Are you familiar with Cloud Skills Boost (formerly known as Qwiklabs)? In this video and article, I walk you through executing the steps in the Ruby on Rails with PostgreSQL on Cloud Run codelab, encountering a few bumps along the road, fixing them, and demonstrating my personal developer toolchain."
 ---
 
 

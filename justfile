@@ -31,6 +31,9 @@ gsm-update-funge:
 test:
     cd zzo.ricc.rocks && just test
 
+test-homepage:
+    cd zzo.ricc.rocks && just test-homepage
+
 test-page path:
     cd zzo.ricc.rocks && just test-page {{path}}
 
