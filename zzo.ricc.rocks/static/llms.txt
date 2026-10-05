@@ -1,0 +1,37 @@
+# Riccardo Carlesso's Blog (ricc.rocks) — LLM & Agent Index
+
+> This site is the personal and technical blog of Riccardo Carlesso (Palladius / RiccardinoCM26 🦖), Google Cloud Developer Advocate, SRE, and AI / Agentic systems practitioner.
+
+## 🌐 Supported Languages
+The blog natively supports **two primary languages**:
+1. **English (EN)**: `https://ricc.rocks/en/` (Default & main technical articles)
+2. **Italian (IT)**: `https://ricc.rocks/it/` (Italian posts, personal musings & localized bio)
+
+Additional experimental locales: German (`/de/`), French (`/fr/`), Japanese (`/jp/`).
+
+---
+
+## 🔎 How to Search Posts
+AI Agents and search crawlers can discover and query all posts through the following structured endpoints:
+
+### 1. JSON Search Index Feeds
+- **English Posts Index**: [`https://ricc.rocks/en/index.json`](https://ricc.rocks/en/index.json)
+- **Italian Posts Index**: [`https://ricc.rocks/it/index.json`](https://ricc.rocks/it/index.json)
+Each entry in the JSON feed contains: `title`, `uri`, `description`, `tags`, `section`, and full text `content`.
+
+### 2. RSS & Section Feeds
+- **English Feed**: `https://ricc.rocks/en/index.xml` or `https://ricc.rocks/en/posts/index.xml`
+- **Italian Feed**: `https://ricc.rocks/it/index.xml` or `https://ricc.rocks/it/posts/index.xml`
+
+### 3. Key Categories & Tags
+- Antigravity / Agents: `https://ricc.rocks/en/tags/antigravity/`
+- Ruby / Rails: `https://ricc.rocks/en/tags/ruby/`
+- SRE & Cloud: `https://ricc.rocks/en/tags/sre/`
+- Google Cloud: `https://ricc.rocks/en/tags/google/`
+
+---
+
+## 📄 Executive One-Pagers & CVs
+- **English CV (PDF)**: `https://ricc.rocks/cv/ricc-onepager.pdf`
+- **Italian CV (PDF)**: `https://ricc.rocks/cv/ricc-onepager-it.pdf`
+- **Full CV Suite & Markdown Source**: `https://github.com/palladius/ricc-cv`
