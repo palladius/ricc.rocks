@@ -1,7 +1,6 @@
 ---
-# TODO🚧
-title: Su di me
-description: "This is the Hugo/ZZO version of Riccardo Rocks ring: https://ricc.rocks/"
+title: "Chi Sono (About me)"
+description: "La versione Hugo/ZZO del sito personale di Riccardo: https://ricc.rocks/"
 type: "about"
 date: "2023-02-01"
 image: /gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg
@@ -11,65 +10,53 @@ tags:
 - site
 - italy
 - ricc
-
+- me
 ---
 
-Bella regaz
+Bella regaz! 👋
 
-Hi! I'm Riccardo, and I go by <tt>Palladius</tt> or just Ricc.
+Ciao! Sono Riccardo, noto sul web come <tt>Palladius</tt> o semplicemente **Ricc**.
 
-## Work
+## Lavoro 💼
 
-![Riccardo innaturally handsome at his wedding](image.png)
+![Riccardo al matrimonio](image.png)
 
-I'm Developer Advocate for [Google Cloud](http://cloud.google.com/). This blog has a bit of personal and work-related stuff: from sports to travel, family and technology.
+Sono **Developer Advocate per [Google Cloud](https://cloud.google.com/)**, con focus su SRE, Intelligenza Artificiale Agentica, Open Source e Developer Experience.
 
-Been in Google for 11 years, and I've never found a way to write up all this amazing journey. It has to have fruitful content, italian drama and cool pics. The latter is taking me time to write. Some of my
+Questo blog raccoglie una sintesi delle mie passioni: dallo sport ai viaggi, dalla famiglia alla tecnologia.
 
-* Linkedin: <https://www.linkedin.com/in/riccardocarlesso/>
-* Google official page: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
-* **Curriculum Vitae**: [Scarica il CV Executive One-Page in Italiano (PDF)](/cv/ricc-onepager-it.pdf) · [English Version (PDF)](/cv/ricc-onepager.pdf)
+* **LinkedIn**: <https://www.linkedin.com/in/riccardocarlesso/>
+* **Pagina Ufficiale Google**: <https://cloud.google.com/developers/advocates/riccardo-carlesso>
+* **Curriculum Vitae**: [Scarica il CV Executive 1-Pagina in Italiano (PDF)](/cv/ricc-onepager-it.pdf) · [English Version (PDF)](/cv/ricc-onepager.pdf)
 
-I speak about SRE, Operations, Culture at Google, GenAI, and Ruby.
+Parlo e scrivo di SRE, Operations, Cultura ingegneristica in Google, GenAI / Agentic harnesses e Ruby / Rails.
 
-## Personal
+## Vita Personale 🇨🇭
 
-I'm Italian, except I'm mostly on time. I've lived in Italy 32 years, then moved to Ireland, and in 2011 I moved to Switzerland where I currently live with my kind and caring wife Kate and two amazeballs kids: *AJ* and *Sebowski*. You can find us on Instagram, or in the family gallery.
+Sono italiano, ma quasi sempre puntuale! Ho vissuto in Italia per 32 anni, poi mi sono trasferito in Irlanda (2008) e nel 2011 in Svizzera dove vivo attualmente con mia moglie Kate e i miei due splendidi bimbi: *AJ* e *Sebowski*. Ci trovi su [Instagram](https://www.instagram.com/palladius/) o nella [Galleria di famiglia](/it/gallery/riccardo-family/).
 
-Of course, I live in Switzerland.
+Ovviamente, adoro la Svizzera.
 
-{ { <
-img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vineyard in Meilen (Zurisee)" caption="I love cycling, swimming, wine and Zurich. Except you can't see the bike I'm holding while taking this pic." alt="wineyard in Zurich" width="800px" position="center"
-> } }
+{{< img src="/gallery/riccardo-sport/zurich-descent-wineyard-lake.jpeg" title="Vigneto a Meilen (Zurigo)" caption="Adoro andare in bici, nuotare, il buon vino e Zurigo. Si vede tutto qui, tranne la bici che tengo con una mano mentre scatto!" alt="Vigneto a Zurigo" width="800px" position="center" >}}
 
-## Hobbies
+## Hobbies & Passioni 🏃‍♂️🎹
 
-To quote Graham, *I used to have hobbies, now I have kids*. My hobbies used to be around sport, music, travel, nerdiness and include:
+Per citare un detto: *Prima avevo degli hobby, ora ho dei figli*. Le mie passioni ruotano attorno allo sport, alla musica, ai viaggi e al nerdiness:
 
-* **Piano** playing (mostly playing Genesis of Peter Gabriel era, or Dream Theater)
-* Doing **triathlons** (I completed two full **Ironman**, both in Zurich, and 5-6 half-distance around EMEA).
-* Playing **Magic the Gathering** (on Arena or with my kids, with disastrous effects - but at least Ale is learning to count to 20!)
-* **Cooking** with my Thermomix (they say it's cheating). And blogging about American cooking Italian stuff.
-* **Travel**. I hold a spreadsheet of countries visited for me and my buddy Andrea. Currently around 61. Andrea hates me since I went on a cruise around caribbeans and got +5 in a week.
-* **Computers**. I love Ruby on Rails, Linux, bash scripting and mixing family with my coding. Dont believe me?
-  * See [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=en&predilige=portrait) on how to teach alphabet letters to your kids with known images.
-  * See 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧 where I store our trips (WIP) and ability for my wife to vote for me. (She calls me puffin).
+* 🎹 **Pianoforte**: suono soprattutto Genesis dell'era Peter Gabriel e Dream Theater.
+* 🏊 **Triathlon**: ho completato due **Ironman** completi (entrambi a Zurigo) e diversi 70.3 in EMEA.
+* 🃏 **Magic the Gathering**: su Arena o con i bimbi (con effetti disastrosi, ma almeno Ale impara a contare fino a 20!).
+* 🍲 **Cucina**: con il Thermomix e sperimentando piatti italo-americani.
+* ✈️ **Viaggi**: tengo un foglio di calcolo dei paesi visitati con il mio amico Andrea (siamo a quota 61+).
+* 💻 **Coding & Automazione**: adoro Ruby on Rails, Linux, scripting Bash e unire la famiglia al codice:
+  * [aj-alphabet-dev.palladi.us](http://aj-alphabet-dev.palladi.us/alfabeto?alphabet=it&cells_per_row=6&locale=it&predilige=portrait): per insegnare le lettere dell'alfabeto ai bimbi.
+  * 🚧 [PuffinTours](https://puffintours-prod-rjjr63dzrq-ew.a.run.app/) 🚧: diario di viaggio di famiglia.
 
-## This site
-
+## Questo Sito 🌍
 
 {{< boxmd >}}
-This site is built in Hugo (of course I'd prefer Jekyll, but I followed the lead from my colleagues) with [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([docs](https://zzo-docs.vercel.app/zzo)). If you wonder why I chose this, it was a couple of weekends trying out 5 different things. The lessons learnt are here:
+Questo sito è generato con Hugo e il tema [ZZO](https://github.com/zzossig/hugo-theme-zzo) ([documentazione](https://zzo-docs.vercel.app/zzo)).
 {{< /boxmd >}}
 
-Lessons learnt:
-
-* <https://github.com/palladius/ricc.rocks>. Readme contains links to all alternative sites, like Ananke,
-  Boostrap, Stack, Papermod, and Coder. Stack was my wife's favorite, Bootstrap was my favorite, until I found out it had a smissing thing which I can't remember. So I went for ZZO, which reminds me of the Italian **zzo vuoi?**, which is fun.
-
-Alternative sites:
-
-* Ananke: <https://hugo-ananke-vecchiume.netlify.app/>
-* Bootstrap: <https://hugo-bootstrap-ricc-rocks.netlify.app/>
-* Comparison symlink: <https://hugo-bootstrap-ricc-rocks.netlify.app/posts/posts/2023-01-29-symlinked-themes-compared.d/>
-
+Repository e sorgenti:
+* GitHub: <https://github.com/palladius/ricc.rocks>
