@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.10] - 2026-10-06
+
+### 📈 Configured
+- **Cloudflare Web Analytics Token Activated**:
+  - Configured `cloudflareAnalyticsToken` (`e1555d61535f4e47960cca85c859c05b`) in `params.yaml`.
+  - Updated beacon tag in `cloudflare-analytics.html` with `type='module' defer`.
+
 ## [0.4.9] - 2026-09-23
 
 ### 📄 Updated
