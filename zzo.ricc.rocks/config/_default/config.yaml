@@ -14,7 +14,10 @@ pagination:
   pagerSize: 13
 rssLimit: 100
 enableGitInfo: false
-googleAnalytics: ''
+googleAnalytics: 'G-VWD1Q8QN2X'
+services:
+  googleAnalytics:
+    id: 'G-VWD1Q8QN2X'
 markup:
   goldmark:
     renderer:

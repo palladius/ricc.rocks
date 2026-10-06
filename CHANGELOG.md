@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.11] - 2026-10-06
+
+### 📈 Configured
+- **Google Analytics 4 (GA4) Measurement ID Activated**:
+  - Configured `googleAnalytics: 'G-VWD1Q8QN2X'` and `services.googleAnalytics.id` in `config/_default/config.yaml`.
+  - Both Cloudflare and Google Analytics 4 are now fully configured and active.
+
 ## [0.4.10] - 2026-10-06
 
 ### 📈 Configured
