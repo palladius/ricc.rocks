@@ -1,4 +1,3 @@
-
 # TODO : import from Makefile..
 list:
     @echo "1. just -l. "
@@ -13,15 +12,13 @@ dev:
 curl-localhost:
   curl -s http://localhost:1313/
 
-test:
-  ruby tests/homepage_links_test.rb
+test: test-links
   ruby tests/compliance_test.rb
 
-test-homepage:
+test-links:
   ruby tests/homepage_links_test.rb
+
+test-homepage: test-links
 
 test-page path:
   ruby tests/compliance_test.rb {{path}}
-
-
-

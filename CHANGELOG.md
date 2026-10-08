@@ -5,24 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.0] - 2026-09-24
+## [0.5.0] - 2026-10-08
 
 ### 🧪 Added & Fixed (by Gemini/Antigravity)
 - 🧪 **Homepage & Essential Links Test Suite (`tests/homepage_links_test.rb`)**:
-  - Added 73 automated assertions wired into `just test` and `just test-homepage` verifying:
+  - Added comprehensive automated assertions wired into `just test`, `just test-links`, and `just test-homepage` verifying:
     1. **Apps Portfolio Links (`💼 Portfolio`)**: Verified presence in Desktop Navbar (`navbar__menu-item--portfolio`), Mobile Navbar (`navbarm__menu--item--portfolio`), Footer (`footer__link`), and EN/IT About pages.
     2. **Curriculum Vitae (CV) Links (EN & IT + Extended HTML)**: Verified that both EN and IT homepages link to `/cv/ricc-onepager.pdf` (EN), `/cv/ricc-onepager-it.pdf` (IT), `/cv/ricc-cv.pdf` (EN Full), `/cv/ricc-cv-it.pdf` (IT Full), and `/cv/` (Extended HTML CV), and verified all static files exist on disk in `public/cv/` with non-trivial byte sizes.
     3. **Social & Author Identity Links**: Verified GitHub, LinkedIn, YouTube, Medium, StackOverflow, Twitter/X, Instagram, Email, and Bio Avatar (`/images/ricc-logo.png`) on EN & IT homepages.
-    4. **Zero Broken Local Links & Shortcodes**: Verified all 160+ local `<a href>` and `<img src>` references across EN/IT homepages and About pages resolve to real files in `public/`, and zero raw Hugo shortcodes leak into HTML.
-- 🐛 **Fixed Broken Navbar Static `/cv/` Links (`relLangURL` bug)**:
-  - Fixed `layouts/partials/navbar/nav-menu.html` and `nav-menu-mobile.html` where `.URL | relLangURL` was rewriting `/cv/ricc-onepager.pdf` to `/en/cv/ricc-onepager.pdf` and `/it/cv/ricc-onepager-it.pdf` (which 404'd because `static/cv/` is served at `/cv/`).
+    4. **EN/IT Parity, WebMCP, `llms.txt` & Zero Broken Local Links**: Verified Archive/Gallery pages, WebMCP `search_ricc_posts`, `/llms.txt`, and all 160+ local `<a href>` and `<img src>` references across EN/IT homepages and About pages resolve to real files in `public/` with zero raw Hugo shortcodes.
+- 🐛 **Fixed Navbar Static `/cv/` Links & Expanded CV Dropdowns**:
   - Added CV dropdown items (EN 1-Page, IT 1-Page, EN Full, IT Full, Extended HTML) to `menus.en.yaml`, `menus.it.yaml`, and `languages.yaml` (`footerLinks`).
   - Added `/en/cv/*` and `/it/cv/*` 301 redirect rules to `static/_redirects`.
+  - Populated `linkedin`, `medium`, and `instagram` in `params.yaml` `socialOptions`.
 - 🐛 **Fixed Hugo v0.166+ `.Site.IsServer` Deprecation Crash**:
   - Replaced removed `.Site.IsServer` with `hugo.IsServer` across `layouts/partials/body/custom-body.html`, `layouts/partials/service/cloudflare-analytics.html`, and `themes/zzo2/layouts/partials/service/*.html`.
-- 🐛 **Fixed Italian Navbar & About Page Shortcode**:
-  - Pointed Italian `gallery` (`🖼️Foto`) and `posts` (`📪Articoli`) menu links to `/en/gallery` and `/en/posts` so they don't 404, and fixed broken `{ { < img ... > } }` shortcode on `content/it/about/index.md`.
-  - Populated `linkedin`, `medium`, and `instagram` in `params.yaml` `socialOptions`.
+
+## [0.4.11] - 2026-10-06
+
+### 📈 Configured
+- **Google Analytics 4 (GA4) Measurement ID Activated**:
+  - Configured `googleAnalytics: 'G-VWD1Q8QN2X'` and `services.googleAnalytics.id` in `config/_default/config.yaml`.
+  - Both Cloudflare and Google Analytics 4 are now fully configured and active.
+
+## [0.4.10] - 2026-10-06
+
+### 📈 Configured
+- **Cloudflare Web Analytics Token Activated**:
+  - Configured `cloudflareAnalyticsToken` (`e1555d61535f4e47960cca85c859c05b`) in `params.yaml`.
+  - Updated beacon tag in `cloudflare-analytics.html` with `type='module' defer`.
 
 ## [0.4.9] - 2026-09-23
 

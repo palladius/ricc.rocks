@@ -3,3 +3,66 @@
 <img src="{{ $.Site.Params.pixelAnalyticsUrl }}?p={{ .RelPermalink | urlquery }}" width="1" height="1" style="display:none;" alt="" loading="eager" />
 <!-- End Custom Tracking Pixel -->
 {{ end }}
+
+<!-- WebMCP (Web Model Context Protocol) In-Browser Agent Tools -->
+<script>
+(function() {
+  if (typeof navigator !== 'undefined' && 'modelContext' in navigator && typeof navigator.modelContext.registerTool === 'function') {
+    try {
+      navigator.modelContext.registerTool({
+        name: "search_ricc_posts",
+        description: "Search Riccardo's technical articles and posts. Supports both English (EN) and Italian (IT) languages.",
+        parameters: {
+          type: "object",
+          properties: {
+            query: {
+              type: "string",
+              description: "Search term or keyword to match against article title, content, or tags"
+            },
+            lang: {
+              type: "string",
+              enum: ["en", "it"],
+              description: "Language to search in ('en' for English, 'it' for Italian). Defaults to current page language."
+            }
+          },
+          required: ["query"]
+        },
+        execute: async function(args) {
+          var lang = args.lang || (document.documentElement.lang || "en").substring(0, 2);
+          var endpoint = "/" + lang + "/index.json";
+          try {
+            var res = await fetch(endpoint);
+            var data = await res.json();
+            var q = args.query.toLowerCase();
+            var matches = data.filter(function(item) {
+              return (item.title && item.title.toLowerCase().indexOf(q) !== -1) ||
+                     (item.description && item.description.toLowerCase().indexOf(q) !== -1) ||
+                     (item.tags && item.tags.some(function(t) { return t.toLowerCase().indexOf(q) !== -1; })) ||
+                     (item.content && item.content.toLowerCase().indexOf(q) !== -1);
+            }).slice(0, 5).map(function(item) {
+              return {
+                title: item.title,
+                url: item.uri,
+                description: item.description,
+                tags: item.tags,
+                section: item.section
+              };
+            });
+            return {
+              status: "success",
+              language: lang,
+              query: args.query,
+              count: matches.length,
+              results: matches
+            };
+          } catch (err) {
+            return { status: "error", message: err.toString() };
+          }
+        }
+      });
+    } catch (e) {
+      console.debug("WebMCP registration not enabled in this browser/environment:", e);
+    }
+  }
+})();
+</script>

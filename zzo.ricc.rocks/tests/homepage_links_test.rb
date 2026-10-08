@@ -1,22 +1,24 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Ruby test suite to validate homepage & about page links in zzo.ricc.rocks:
-# 1. Apps Portfolio link (Desktop navbar, Mobile navbar, Footer, About page)
-# 2. Curriculum Vitae (CV) links in both EN & IT (1-pager PDF, Full PDF, Extended HTML) + file existence
-# 3. Social & Identity links (GitHub, LinkedIn, YouTube, Medium, StackOverflow, Twitter/X, Instagram, Email, Avatar)
-# 4. Core Navigation, Language Switcher, RSS/Search Indexes, and Repo attribution
-# 5. Zero broken local links (`<a href>`, `<img src>`, `<img data-src>`) and zero leaked shortcodes
+# Comprehensive Ruby test suite to validate homepage, about, archive, gallery, and essential links
+# across both EN and IT locales in zzo.ricc.rocks:
+# 1. Root, EN & IT Homepages, About, Archive, and Gallery Hub pages exist and render
+# 2. Apps Portfolio link (Desktop navbar, Mobile navbar, Footer, About page)
+# 3. Curriculum Vitae (CV) links in both EN & IT (1-pager PDF, Full PDF, Extended HTML) + file existence
+# 4. Social & Identity links (GitHub, LinkedIn, YouTube, Medium, StackOverflow, Twitter/X, Instagram, Email, Avatar)
+# 5. Core Navigation, Language Switcher, RSS/Search Indexes, WebMCP (search_ricc_posts), llms.txt & Repo attribution
+# 6. Zero broken local links (`<a href>`, `<img src>`, `<img data-src>`) and zero leaked shortcodes
 
 require 'uri'
 
-SITE_ROOT   = File.expand_path('..', __dir__)
-PUBLIC_DIR  = File.join(SITE_ROOT, 'public')
+SITE_ROOT     = File.expand_path('..', __dir__)
+PUBLIC_DIR    = File.join(SITE_ROOT, 'public')
 PORTFOLIO_URL = 'https://portfolio-app-272932496670.europe-west1.run.app/about'
 
 # Build site unless --no-build is passed
 unless ARGV.include?('--no-build')
-  puts '🔨 Building Hugo site (public/) for homepage link verification...'
+  puts '🔨 Building Hugo site (public/) for homepage & EN/IT parity verification...'
   nvm_bins = Dir.glob(File.expand_path('~/.nvm/versions/node/*/bin')).last
   env_path = [nvm_bins, '/home/linuxbrew/.linuxbrew/bin', File.expand_path('~/.local/bin'), ENV['PATH']].compact.join(':')
   build_cmd = 'which hugo >/dev/null 2>&1 && hugo --minify --quiet || npx -y hugo-extended --minify --quiet'
@@ -73,27 +75,39 @@ def local_target_exists?(url_path, page_file)
   clean = url_path.split('?').first.split('#').first
   return true if clean.nil? || clean.empty?
 
-  target = if clean.start_with?('/')
-             File.join(PUBLIC_DIR, clean)
-           else
-             File.expand_path(clean, File.dirname(page_file))
-           end
+  decoded = URI.decode_www_form_component(clean) rescue clean
 
-  File.file?(target) || File.file?(File.join(target, 'index.html'))
+  [clean, decoded].uniq.any? do |candidate_path|
+    target = if candidate_path.start_with?('/')
+               File.join(PUBLIC_DIR, candidate_path)
+             else
+               File.expand_path(candidate_path, File.dirname(page_file))
+             end
+
+    File.file?(target) || File.file?(File.join(target, 'index.html'))
+  end
 end
 
-puts "\n\e[1;36m=== 1. Root & Language Homepages Existence ===\e[0m"
+puts "\n\e[1;36m=== 1. Root & Language Homepages, About, Archive & Gallery Hub Existence ===\e[0m"
 root_index = File.join(PUBLIC_DIR, 'index.html')
 en_home    = File.join(PUBLIC_DIR, 'en/index.html')
 it_home    = File.join(PUBLIC_DIR, 'it/index.html')
 en_about   = File.join(PUBLIC_DIR, 'en/about/index.html')
 it_about   = File.join(PUBLIC_DIR, 'it/about/index.html')
+en_archive = File.join(PUBLIC_DIR, 'en/archive/index.html')
+it_archive = File.join(PUBLIC_DIR, 'it/archive/index.html')
+en_gallery = File.join(PUBLIC_DIR, 'en/gallery/index.html')
+it_gallery = File.join(PUBLIC_DIR, 'it/gallery/index.html')
 
 assert_test('Root public/index.html exists and redirects to /en/', File.file?(root_index) && File.read(root_index).include?('/en/'))
 assert_test('English homepage (public/en/index.html) exists', File.file?(en_home) && File.size(en_home) > 1000)
 assert_test('Italian homepage (public/it/index.html) exists', File.file?(it_home) && File.size(it_home) > 1000)
 assert_test('English About page (public/en/about/index.html) exists', File.file?(en_about) && File.size(en_about) > 1000)
 assert_test('Italian About page (public/it/about/index.html) exists', File.file?(it_about) && File.size(it_about) > 1000)
+assert_test('English Archive page (public/en/archive/index.html) exists', File.file?(en_archive) && File.size(en_archive) > 1000)
+assert_test('Italian Archive page (public/it/archive/index.html) exists', File.file?(it_archive) && File.size(it_archive) > 1000)
+assert_test('English Gallery Hub (public/en/gallery/index.html) exists', File.file?(en_gallery) && File.size(en_gallery) > 1000)
+assert_test('Italian Gallery Hub (public/it/gallery/index.html) exists', File.file?(it_gallery) && File.size(it_gallery) > 1000)
 
 en_html = File.file?(en_home) ? File.read(en_home) : ''
 it_html = File.file?(it_home) ? File.read(it_home) : ''
@@ -220,18 +234,17 @@ assert_test(
   'Missing /images/ricc-logo.png in HTML or public/images/'
 )
 
-puts "\n\e[1;36m=== 5. Core Navigation, Feeds, Search Index & Repo Attribution ===\e[0m"
+puts "\n\e[1;36m=== 5. Core Navigation, Feeds, Search Index, WebMCP, llms.txt & Repo Attribution ===\e[0m"
 ['about', 'archive', 'gallery', 'posts'].each do |section|
   assert_test("EN Homepage: has /en/#{section} navigation link", en_hrefs.include?("/en/#{section}"))
+  assert_test("IT Homepage: has /it/#{section} navigation link", it_hrefs.include?("/it/#{section}"))
 end
-assert_test('IT Homepage: has /it/about navigation link', it_hrefs.include?('/it/about'))
-assert_test('IT Homepage: has /it/archive navigation link', it_hrefs.include?('/it/archive'))
-assert_test('IT Homepage: has working Gallery link (/en/gallery or /it/gallery)', it_hrefs.include?('/en/gallery') || it_hrefs.include?('/it/gallery'))
-assert_test('IT Homepage: has working Posts link (/en/posts or /it/posts)', it_hrefs.include?('/en/posts') || it_hrefs.include?('/it/posts'))
 
 assert_test('EN Homepage: links to RSS feed (https://ricc.rocks/en/index.xml)', en_hrefs.include?('https://ricc.rocks/en/index.xml') && File.file?(File.join(PUBLIC_DIR, 'en/index.xml')))
 assert_test('IT Homepage: links to RSS feed (https://ricc.rocks/it/index.xml)', it_hrefs.include?('https://ricc.rocks/it/index.xml') && File.file?(File.join(PUBLIC_DIR, 'it/index.xml')))
 assert_test('Search JSON indexes exist (public/en/index.json & public/it/index.json)', File.file?(File.join(PUBLIC_DIR, 'en/index.json')) && File.file?(File.join(PUBLIC_DIR, 'it/index.json')))
+assert_test('WebMCP search_ricc_posts tool registered in EN & IT homepages', en_html.include?('search_ricc_posts') && it_html.include?('search_ricc_posts'))
+assert_test('Agentic discovery file public/llms.txt exists', File.file?(File.join(PUBLIC_DIR, 'llms.txt')))
 assert_test('Footer links to source repository (https://github.com/palladius/ricc.rocks)', en_hrefs.include?('https://github.com/palladius/ricc.rocks') && it_hrefs.include?('https://github.com/palladius/ricc.rocks'))
 
 puts "\n\e[1;36m=== 6. Zero Broken Local Links & Zero Unrendered Shortcodes ===\e[0m"
@@ -267,7 +280,7 @@ end
 
 puts "\n" + ('-' * 60)
 if $failed.zero?
-  puts "\e[1;32m✅ All #{$passed} homepage & essential link tests passed!\e[0m"
+  puts "\e[1;32m✅ All #{$passed} homepage, EN/IT parity & essential link tests passed!\e[0m"
   exit(0)
 else
   puts "\e[1;31m❌ #{$failed} test(s) failed (#{$passed} passed):\e[0m"

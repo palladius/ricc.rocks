@@ -16,25 +16,32 @@
       {{ $active = or $active (eq (lower $menu.URL) (lower $current.Title)) }}
       {{ $active = or $active (eq (lower $menu.URL) (lower $current.Type)) }}
 
-      {{ $itemUrl := cond (or (hasPrefix $menu.URL "/cv") (hasPrefix $menu.URL "/en/") (hasPrefix $menu.URL "http")) ($menu.URL | safeURL) ($menu.URL | relLangURL) }}
+      {{ $menuURL := $menu.URL | relLangURL }}
+      {{ if or (hasPrefix $menu.URL "http://") (hasPrefix $menu.URL "https://") (hasPrefix $menu.URL "/cv") (hasPrefix $menu.URL "/en/") (hasSuffix $menu.URL ".pdf") }}
+        {{ $menuURL = $menu.URL | relURL }}
+      {{ end }}
+
       {{ if $menu.HasChildren }}
         <li class="navbarm__menu--item {{ if $active }}active{{ end }} {{ if eq $menu.Identifier "portfolio" }}navbarm__menu--item--portfolio{{ end }}">
-          <a href="{{ $itemUrl }}">
+          <a href="{{ $menuURL }}">
             {{ safeHTML $menu.Name }}
             {{ partial "svgs/arrow/keyboard-arrow-down.svg" (dict "width" 18 "height" 18) }}
           </a>
         </li>
 
         {{ range .Children }}
-          {{ $childUrl := cond (or (hasPrefix .URL "/cv") (hasPrefix .URL "/en/") (hasPrefix .URL "http")) (.URL | safeURL) (.URL | relLangURL) }}
+          {{ $childURL := .URL | relLangURL }}
+          {{ if or (hasPrefix .URL "http://") (hasPrefix .URL "https://") (hasPrefix .URL "/cv") (hasPrefix .URL "/en/") (hasSuffix .URL ".pdf") }}
+            {{ $childURL = .URL | relURL }}
+          {{ end }}
           <li class="navbarm__menu--item navbarm__menu--subitem">
-            <a href="{{ $childUrl }}">{{ safeHTML .Name }}</a>
+            <a href="{{ $childURL }}">{{ safeHTML .Name }}</a>
           </li>
         {{ end }}
 
       {{ else }}
         <li class="navbarm__menu--item {{ if $active }}active{{ end }} {{ if eq $menu.Identifier "portfolio" }}navbarm__menu--item--portfolio{{ end }}">
-          <a href="{{ $itemUrl }}">{{ safeHTML $menu.Name }}</a>
+          <a href="{{ $menuURL }}">{{ safeHTML $menu.Name }}</a>
         </li>
       {{ end }}
       

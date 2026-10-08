@@ -118,7 +118,7 @@ enableLangChange: true
 enableThemeChange: true
 googleTagManager: ''
 baiduAnalytics: ''
-cloudflareAnalyticsToken: ''
+cloudflareAnalyticsToken: 'e1555d61535f4e47960cca85c859c05b'
 pixelAnalyticsUrl: ''
 enableBusuanzi: false
 busuanziSiteUV: true
