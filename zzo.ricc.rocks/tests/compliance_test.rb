@@ -235,9 +235,8 @@ end
 # Resolve files to test
 if ARGV.empty?
   site_root  = File.expand_path("..", __dir__)   # zzo.ricc.rocks/
-  posts_dir  = File.join(site_root, "content/en/posts")
   # Use git ls-files to respect .gitignore (skips public/, resources/, etc.)
-  git_files = `git -C #{site_root} ls-files content/en/posts/`.strip.split("\n")
+  git_files = `git -C #{site_root} ls-files content/en/posts/ content/it/posts/`.strip.split("\n")
   if $?.success? && !git_files.empty?
     md_files = git_files
       .select { |f| f.end_with?('.md') }
@@ -245,10 +244,10 @@ if ARGV.empty?
       .map    { |f| File.join(site_root, f) }
   else
     # Fallback: plain glob (may include ignored dirs)
-    md_files = Dir.glob("#{posts_dir}/**/*.md")
+    md_files = Dir.glob("#{site_root}/content/{en,it}/posts/**/*.md")
     md_files.reject! { |f| File.basename(f).start_with?('_') || f.include?('removeme') }
   end
-  puts "Running compliance tests on #{md_files.count} posts (git-tracked only)..."
+  puts "Running compliance tests on #{md_files.count} posts (EN & IT, git-tracked only)..."
 else
   repo_root = File.expand_path("../..", __dir__) # Root of the git repository
   md_files = ARGV.map do |arg|

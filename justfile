@@ -41,3 +41,9 @@ test-page path:
 
 curl-localhost:
     curl http://localhost:1313/en/
+
+# Query GA4 analytics for ricc.rocks and goliardia
+stats:
+    UV_INDEX_URL="https://pypi.org/simple" uv run bin/get_analytics.py
+
+analytics: stats

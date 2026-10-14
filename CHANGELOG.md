@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2026-10-14
+
+### ✨ Added (by Riccardo & Gemini/Antigravity)
+- 🇮🇹 **New Italian Blog Post (`content/it/posts/2026-10-07-vite-vere-gemini-flash/`)**:
+  - Published *"Oltre l'Hype: Come l'App 'Vite Vere' usa Gemini Flash per Regalare Autonomia"* (DevFest Modena story on Flutter + Gemini Flash for cognitive accessibility).
+- 🎈 **New English Article Draft (`content/en/posts/technology/2026-10-09-integrating-jev-with-antigravity-ruby-sdk/`)**:
+  - Added *"Integrating Jev with my Ruby SDK for Antigravity"* (System One / System Two routing & shell guardrails with JEV + Gemini, `rujev` demo assets).
+- 📊 **GA4 CLI Analytics Script (`bin/get_analytics.py` & `just stats` / `just analytics`)**:
+  - Added `uv`-powered Python script to query Google Analytics 4 Realtime and 7-day reports for `ricc.rocks` and `goliardia`.
+- 🧪 **Expanded Compliance Test Coverage (`tests/compliance_test.rb`)**:
+  - Updated `compliance_test.rb` to validate both `content/en/posts/` and `content/it/posts/` (34 total tracked posts).
+
 ## [0.5.0] - 2026-10-08
 
 ### 🧪 Added & Fixed (by Gemini/Antigravity)
