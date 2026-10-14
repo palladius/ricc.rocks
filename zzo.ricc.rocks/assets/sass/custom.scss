@@ -108,3 +108,38 @@ h1 {
 h2 {
   color: #d5c796 !important; /* Soft, muted wheat-gold (easy on the eyes) */
 }
+
+/* Typewriter subtitle on Home */
+.typewriter-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+  color: #d1d5db;
+  font-weight: 400;
+  max-width: 850px;
+  text-align: center;
+  padding: 0 1rem;
+
+  p {
+    margin: 0;
+  }
+
+  em {
+    font-style: italic;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  a {
+    color: #ffd700 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+    &:hover {
+      color: #ff8c00 !important;
+      text-decoration-color: #ff8c00 !important;
+    }
+  }
+}

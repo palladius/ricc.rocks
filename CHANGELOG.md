@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2026-10-14
+
+### ✨ Added (by Gemini/Antigravity)
+- 🦄 Added Barney Stinson quote and bot takeover link under homepage typewriter header:
+  - Added tagline in `zzo.ricc.rocks/content/en/_index.md`: "Wait, are you an actual *human*?!? What a [refreshing change of pace](https://youtu.be/0MC55lU_L2E?t=47s)! ([why?](https://www.cnet.com/tech/tech-industry/bots-now-outnumber-humans-online-heres-why-it-matters/) 🤖)".
+  - Created layout override in `zzo.ricc.rocks/layouts/partials/header/header-typewriter.html` to support subtitles or page Markdown content below typewriter animation.
+  - Added responsive styles in `zzo.ricc.rocks/assets/sass/custom.scss` with theme gold links.
+
 ## [0.5.0] - 2026-10-08
+
 
 ### 🧪 Added & Fixed (by Gemini/Antigravity)
 - 🧪 **Homepage & Essential Links Test Suite (`tests/homepage_links_test.rb`)**:
@@ -97,7 +106,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added CV link to main navigation menu (`menus.en.yaml`).
   - Linked CV PDF download in English "About Me" page (`content/en/about/`).
 
+## [0.4.2] - 2026-10-14
+
+### ✨ Added (by Gemini/Antigravity)
+- 🦄 Added Barney Stinson quote and bot takeover link under homepage typewriter header:
+  - Added tagline in `zzo.ricc.rocks/content/en/_index.md`: "Wait, are you an actual *human*?!? What a [refreshing change of pace](https://youtu.be/0MC55lU_L2E?t=47s)! ([why?](https://www.cnet.com/tech/tech-industry/bots-now-outnumber-humans-online-heres-why-it-matters/) 🤖)".
+  - Created layout override in `zzo.ricc.rocks/layouts/partials/header/header-typewriter.html` to support subtitles or page Markdown content below typewriter animation.
+  - Added responsive styles in `zzo.ricc.rocks/assets/sass/custom.scss` with theme gold links.
+
 ## [0.4.1] - 2026-07-05
+
 
 ### Fixed (by Gemini/Antigravity)
 - 🐛 Fixed Google Search indexing 404 bugs:
