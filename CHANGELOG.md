@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.2] - 2026-10-15
+
+### ⚡ Optimized & Fixed (by Gemini/Antigravity)
+- 🪶 **Optimized `antigravity.svg` (Issue #6)**:
+  - Reduced `zzo.ricc.rocks/layouts/partials/svgs/social/antigravity.svg` size from ~896 KB to 10 KB (>98% reduction), eliminating massive HTML bloat when wikimoji links are rendered inline.
+  - Added support for dynamic `width="{{ .width | default 120 }}"` and `height="{{ .height | default 120 }}"` attributes.
+- 🧪 **Test Suite Locale Hardening**:
+  - Added explicit UTF-8 external/internal encoding defaults in `tests/homepage_links_test.rb` and `tests/compliance_test.rb` to prevent US-ASCII encoding crashes under non-UTF8 shell locales.
+
 ## [0.5.1] - 2026-10-14
 
 ### ✨ Added (by Gemini/Antigravity)
