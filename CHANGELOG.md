@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.2] - 2026-10-15
+
+### 🏰🚽 Added (by Riccardo & Gemini/Antigravity)
+- 🇬🇧 **Unlisted (`under_review`) English Post (`content/en/posts/technology/2026-10-15-carchess3d-family-chess/`)**:
+  - Added *"🏰🚽 Carlesso al Cesso: How an Autonomous Agent Swarm Built a 3D Battle Chess Game While I Celebrated My 10th Wedding Anniversary in Colmar"* with `build: { list: never, render: always }` so the full permalink renders for review while remaining completely invisible on the homepage, `/posts/`, `/archive/`, RSS feeds, and search index.
+  - Includes the Naples *bufalina* lunch origin story at Fabio Biondi's Gemini Day with Niccolò, the `niccolo-game-design` skill, the Colmar 10th anniversary photo with Kate, SRE telemetry across `pupurabbux` + `derek`, and the daily autonomous Antigravity UAT review loop (`label:gemini-uat`).
+
 ## [0.5.1] - 2026-10-14
 
 ### ✨ Added (by Riccardo & Gemini/Antigravity)
