@@ -113,3 +113,7 @@ header:
         subtitleFontSize: 16
         spaceBetweenTitleSubtitle: 20
 ---
+
+Wait, are you an actual *human*?!? What a [refreshing change of pace](https://youtu.be/0MC55lU_L2E?t=47s)! ([why?](https://www.cnet.com/tech/tech-industry/bots-now-outnumber-humans-online-heres-why-it-matters/) 🤖)
+
+

@@ -84,6 +84,7 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - Created `zzo.ricc.rocks/static/_redirects` with specific redirects for Redux posts, `/index.json`, and wildcard redirect patterns to map missing taxonomies/posts/gallery paths to safe parent listing pages.
   - Replaced broken relative links in markdown posts with code formatting.
 
+<<<<<<< HEAD
 ## Web Analytics Integration - Cloudflare & Google Analytics (2026-09-23)
 **IMPLEMENTED (by Gemini/Antigravity)**:
 - **Context & Issue**: Netlify charges $9/month for edge CDN analytics. To avoid recurring costs on static Hugo hosting, free client-side analytics (Cloudflare Web Analytics & GA4) were integrated (GitHub Issue [#7](https://github.com/palladius/ricc.rocks/issues/7)).
@@ -119,3 +120,13 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
    - **`relLangURL` corrupting `/cv/` links**: `nav-menu.html` and `nav-menu-mobile.html` previously passed `/cv/ricc-onepager.pdf` through `relLangURL`, generating `/en/cv/ricc-onepager.pdf` and `/it/cv/ricc-onepager-it.pdf` which returned 404 because `static/cv/` is output at root `public/cv/`. Updated `nav-menu.html` and `nav-menu-mobile.html` to preserve `/cv`, `/en/`, and `http` URLs without prepending language prefixes, and added `/en/cv/*` & `/it/cv/*` redirects in `static/_redirects`.
    - **Hugo v0.166+ `.Site.IsServer` crash**: Replaced `.Site.IsServer` with `hugo.IsServer` in `layouts/partials/` and `themes/zzo2/layouts/partials/service/`.
    - **Missing Social Links & Broken IT Links**: Populated `linkedin`, `medium`, and `instagram` in `params.yaml`, pointed Italian `gallery` and `posts` menu entries to `/en/gallery` and `/en/posts`, and fixed broken `{ { < img > } }` shortcode in `content/it/about/index.md`.
+
+## Homepage Human Tagline & Typewriter Subtitle (2026-10-14)
+**IMPLEMENTED (by Gemini/Antigravity)**:
+- Added Barney Stinson HIMYM quote line ("Wait, are you an actual *human*?!? What a refreshing change of pace!") linking to YouTube clip (`https://youtu.be/0MC55lU_L2E?t=47s`) and linking to CNET's article about bots and AI agents outnumbering humans online (`https://www.cnet.com/tech/tech-industry/bots-now-outnumber-humans-online-heres-why-it-matters/`) via a short and punchy `([why?](...) 🤖)`.
+- Layout Override: Created `zzo.ricc.rocks/layouts/partials/header/header-typewriter.html` so that typewriter headers support rendering subtitles or page Markdown content dynamically (`or .subtitle $.Content`).
+- Content: Added the tagline to `zzo.ricc.rocks/content/en/_index.md`.
+- Styles: Added `.typewriter-subtitle` styles in `zzo.ricc.rocks/assets/sass/custom.scss` featuring gold links matching the theme, clean spacing, and responsiveness.
+- Wikimoji integration: Automatically attaches 🎥 to the YouTube video link.
+- Bumped version to `0.5.1`.
+
