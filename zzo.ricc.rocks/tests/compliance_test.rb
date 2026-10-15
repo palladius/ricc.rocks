@@ -8,6 +8,9 @@ require 'date'
 require 'fileutils'
 require 'uri'
 
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 def tagged_as_medium?(front_matter)
   tags = front_matter['tags'] || front_matter['Tags'] || []
   if tags.is_a?(Array)

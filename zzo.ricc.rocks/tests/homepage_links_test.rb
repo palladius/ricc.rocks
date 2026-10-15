@@ -12,6 +12,9 @@
 
 require 'uri'
 
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 SITE_ROOT     = File.expand_path('..', __dir__)
 PUBLIC_DIR    = File.join(SITE_ROOT, 'public')
 PORTFOLIO_URL = 'https://portfolio-app-272932496670.europe-west1.run.app/about'
