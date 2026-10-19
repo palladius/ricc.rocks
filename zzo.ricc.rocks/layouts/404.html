@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="main">
+  <div class="not-found">
+    <h1 class="h1 title">404</h1>
+    <h6 class="h6 subtitle">Page not found</h6>
+    <p style="margin-top: 1.5rem;"><a href="{{ "/" | relLangURL }}" style="text-decoration: underline;">← Back to Homepage</a></p>
+  </div>
+</main>
+<script>
+  (function() {
+    // Track 404 error event in Google Analytics 4
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_not_found', {
+        event_category: 'error',
+        invalid_url: window.location.pathname + window.location.search,
+        referrer: document.referrer || 'direct'
+      });
+    }
+    if (window.console && console.warn) {
+      console.warn('404 Not Found:', window.location.pathname, 'Referrer:', document.referrer || 'direct');
+    }
+  })();
+</script>
+{{ partial "script/home-script" . }}
+{{ end }}

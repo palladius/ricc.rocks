@@ -130,3 +130,13 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
 - Wikimoji integration: Automatically attaches 🎥 to the YouTube video link.
 - Bumped version to `0.5.1`.
 
+## GA4 404 Error Tracking & Search Console 301 Redirects (2026-10-19)
+**IMPLEMENTED (by Gemini/Antigravity)**:
+- **GA4 404 Tracking**: Created layout override `zzo.ricc.rocks/layouts/404.html` dispatching a `page_not_found` event with parameters `invalid_url` and `referrer` to Google Analytics 4.
+- **Search Console 301 Redirects**: Added specific 301 redirects in `zzo.ricc.rocks/static/_redirects` for broken URLs surfaced in Google Search Console:
+  - `/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/` ➔ `/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/`
+  - `/en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana/` ➔ `/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/`
+  - `/it/posts/gemini/original-work/travel/202211-raja-ampat/` ➔ `/en/posts/medium/2022-10-01-raja-ampat/`
+  - `/it/gallery/202302-madeira/riccardocarlesso` ➔ `/en/gallery/202302-madeira/`
+  - `/en/showcase/test-wavedrom/riccardocarlesso` ➔ `/en/`
+- Bumped version to `0.5.3`.

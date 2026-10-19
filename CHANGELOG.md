@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.3] - 2026-10-19
+
+### 🔍 Added & Fixed (by Gemini/Antigravity)
+- 📊 **GA4 404 Error Tracking (`layouts/404.html`)**:
+  - Created layout override [`zzo.ricc.rocks/layouts/404.html`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/layouts/404.html) dispatching a `page_not_found` custom event to Google Analytics 4 whenever a missing page is requested. Captures `invalid_url` and `referrer`.
+- 🔀 **301 Redirects for Renamed & Broken URLs (`static/_redirects`)**:
+  - Added specific 301 redirects for broken URLs surfaced in Google Search Console:
+    - `/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/` ➔ `/en/posts/technology/2026-07-03-crescendo-of-agents-part-2/`
+    - `/en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana/` ➔ `/en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/`
+    - `/it/posts/gemini/original-work/travel/202211-raja-ampat/` ➔ `/en/posts/medium/2022-10-01-raja-ampat/`
+    - `/it/gallery/202302-madeira/riccardocarlesso` ➔ `/en/gallery/202302-madeira/`
+    - `/en/showcase/test-wavedrom/riccardocarlesso` ➔ `/en/`
+
 ## [0.5.2] - 2026-10-15
 
 ### 🏰🚽 Added (by Riccardo & Gemini/Antigravity)

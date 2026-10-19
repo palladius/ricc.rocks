@@ -10,6 +10,14 @@
 
 # Redirect specific translation/content mismatches
 /en/posts/travel/202211-raja-ampat/                       /en/posts/medium/2022-10-01-raja-ampat/                                 301
+/it/posts/gemini/original-work/travel/202211-raja-ampat/*  /en/posts/medium/2022-10-01-raja-ampat/                                 301
+/it/posts/gemini/original-work/travel/202211-raja-ampat    /en/posts/medium/2022-10-01-raja-ampat/                                 301
+/en/posts/technology/2026-06-16-crescendo-of-agents-part-2/* /en/posts/technology/2026-07-03-crescendo-of-agents-part-2/         301
+/en/posts/technology/2026-06-16-crescendo-of-agents-part-2   /en/posts/technology/2026-07-03-crescendo-of-agents-part-2/         301
+/en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana/* /en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/  301
+/en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana    /en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/  301
+/it/gallery/202302-madeira/riccardocarlesso               /en/gallery/202302-madeira/                                             301
+/en/showcase/test-wavedrom/riccardocarlesso               /en/                                                                    301
 /en/cv/*                                                  /cv/:splat                                                              301
 /it/cv/*                                                  /cv/:splat                                                              301
 
