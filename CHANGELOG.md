@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.4] - 2026-10-27
+
+### 🧹 Added (by Gemini/Antigravity)
+- 🧹 **`just clean` target (`justfile`)**:
+  - Added `clean` recipe to [`justfile`](file:///usr/local/google/home/ricc/git/ricc.rocks/justfile) to remove generated Hugo artifacts (`zzo.ricc.rocks/public`, `zzo.ricc.rocks/resources/_gen`, `.venv`).
+
 ## [0.5.3] - 2026-10-19
 
 ### 🔍 Added & Fixed (by Gemini/Antigravity)

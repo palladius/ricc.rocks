@@ -47,3 +47,7 @@ stats:
     UV_INDEX_URL="https://pypi.org/simple" uv run bin/get_analytics.py
 
 analytics: stats
+
+# 🧹 Clean Hugo generated public/ folder (~1.1 GB) and caches
+clean:
+    rm -rf zzo.ricc.rocks/public zzo.ricc.rocks/resources/_gen .venv
