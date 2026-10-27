@@ -9,6 +9,10 @@ list:
 dev:
 	@which hugo >/dev/null 2>&1 && hugo server --disableFastRender || npx -y hugo-extended server --disableFastRender
 
+# Clean generated Hugo public/ and resources/_gen/ directories
+clean:
+	make clean
+
 curl-localhost:
   curl -s http://localhost:1313/
 

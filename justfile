@@ -48,6 +48,8 @@ stats:
 
 analytics: stats
 
-# 🧹 Clean Hugo generated public/ folder (~1.1 GB) and caches
+# 🧹 Clean Hugo generated public/ folder (~1.1 GB) and caches across all subprojects
 clean:
-    rm -rf zzo.ricc.rocks/public zzo.ricc.rocks/resources/_gen .venv
+    cd zzo.ricc.rocks && just clean
+    rm -rf */public */resources/_gen .venv
+    @echo "🧹 Cleaned all Hugo public/ and resources/_gen/ build folders!"
