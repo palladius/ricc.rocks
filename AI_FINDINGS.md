@@ -140,3 +140,10 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - `/it/gallery/202302-madeira/riccardocarlesso` ➔ `/en/gallery/202302-madeira/`
   - `/en/showcase/test-wavedrom/riccardocarlesso` ➔ `/en/`
 - Bumped version to `0.5.3`.
+
+
+## New Blog Article & Interactive Demo: 2,049 Fourier Epicycles Italian Puffin (2026-11-03)
+**ADDED (by Riccardo & Gemini/Antigravity)**:
+- Published `zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md` with hero HTML5 `<video>` (`italian_puffin_fourier_epicycles.mp4`, 1080p60 `-tune animation -movflags +faststart`) at the top of the post, standalone Lyria 3.5 `<audio>` player, 4 stage stills, and the two-part prompt showcase.
+- Deployed interactive HTML5 Canvas Fourier Studio at `zzo.ricc.rocks/static/demos/fourier-italian-puffin/index.html`.
+- Verified `ruby tests/compliance_test.rb` passes 100%.

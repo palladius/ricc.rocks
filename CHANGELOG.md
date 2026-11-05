@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.6] - 2026-11-03
+
+### 🐧 Added (by Riccardo & Gemini/Antigravity)
+- 🎬 **New Blog Post & Native 1080p60 MP4 Video (`2026-11-03-fourier-epicycles-italian-puffin`)**:
+  - Published *"🐧🚴‍♂️🇮🇹 Drawing an Italian Puffin in a Google-Colored Tri-Suit with 2,049 Fourier Epicycles & Lyria 3.5"* at [`zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md).
+  - Embedded native HTML5 `<video>` (`italian_puffin_fourier_epicycles.mp4`, `-tune animation -movflags +faststart`, 1080p60 + stereo AAC 192 kbps) right at the top of the article.
+  - Added interactive HTML5 Canvas Fourier Studio at [`zzo.ricc.rocks/static/demos/fourier-italian-puffin/index.html`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/static/demos/fourier-italian-puffin/index.html) and cross-linked with the companion public GitHub repository [`palladius/public-demos-fourier-epicycle-italian-puffin`](https://github.com/palladius/public-demos-fourier-epicycle-italian-puffin).
+
 ## [0.5.5] - 2026-10-27
 
 ### ⚡ Optimized & Fixed (by Riccardo & Gemini/Antigravity)
