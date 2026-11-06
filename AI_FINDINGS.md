@@ -150,6 +150,8 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
 ## Local `~/.local/bin/hugo` Symlink Fix (`hugo-extended`) & Stale `s` Cleanup (2026-11-06)
 **FIXED (by Gemini/Antigravity)**:
 - **Root Cause of Local Build Hang**: `~/.local/bin/hugo` was symlinked to `hugo-bin/vendor/hugo` (standard non-extended v0.152.2), which failed on SCSS (`TOCSS: failed to transform "main_parsed.scss"`) and fell back to `npx -y hugo-extended`, hanging on corporate npm registry access.
-- **Fix**: Repointed `~/.local/bin/hugo` to cached `~/.npm/_npx/453bbf31fcfeac2f/node_modules/hugo-extended/bin/hugo` (`hugo v0.169.0+extended`). Local builds and `just test-links` / `just test-page` now finish in ~3.5s.
+- **Fix**: Installed `hugo v0.128.2+extended` at `~/.local/bin/hugo` (matching `HUGO_VERSION = "0.128.2"` in `netlify.toml` so `content/it/gallery -> ../en/gallery/` symlink also works locally). Local builds and `just test-links` / `just test-page` now finish in ~3s.
 - **Stale `s` file**: Removed untracked `s` (a saved `git diff --cc` output from Aug 21 for a merge conflict in `2026-08-13-antigravity-ruby-sdk-article/index.md` that was already resolved in commit `2eec135`).
-- **Puffin Article 404**: At the time of check on Nov 5, commit `0.5.6 article puffin` was local-only (`main` ahead of `origin/main`). After pushing `2b1c9d8` to `origin/main`, both `/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/` and `/demos/fourier-italian-puffin/` return `HTTP/2 200` on Netlify.
+- **Puffin Article 404 & KaTeX LaTeX Equations (`v0.5.8`)**:
+  - Enabled `libraries: [katex]` in `2026-11-03-fourier-epicycles-italian-puffin/index.md` and `2026-10-15-carchess3d-family-chess/index.md`.
+  - Converted the 4 plain-text `<pre>` equations (`z_n`, `X_k`, `z_M(t)`, `Error(M)`) into real KaTeX display math (`<div class="math-block">$$ ... $$</div>`) and inline math (`$...$`), styled `.math-block` in `custom.scss`, and added Rule 5 to `compliance_test.rb` to enforce `libraries: [katex]` whenever a post contains LaTeX math.

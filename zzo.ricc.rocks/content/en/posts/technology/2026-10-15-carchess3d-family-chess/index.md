@@ -9,6 +9,7 @@ build:
 author: Riccardo
 libraries:
   - mermaid
+  - katex
 featured_image: assets/gallery/family_orbit_poster.jpg
 images:
   - assets/gallery/family_orbit_poster.jpg

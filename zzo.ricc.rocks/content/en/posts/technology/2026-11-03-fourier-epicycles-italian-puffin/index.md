@@ -6,6 +6,8 @@ summary: "Inspired by François Beaufort's viral Fourier epicycle showcase, we r
 draft: false
 enableToc: true
 tocLevels: ["h2", "h3"]
+libraries:
+  - katex
 image: "/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/images/stage4_google_trisuit_color_reveal.png"
 categories:
   - AI
@@ -81,34 +83,42 @@ il prompt che ti ho dato va messo nella sua gloria nel readme e nell'articolo: i
 
 ## 🧮 How the Math Works: 2,049 Spinning Circles
 
-Any closed 2D contour sampled at `N = 2,049` uniform arc-length points (centered on its exact geometric centroid so the $k=0$ DC offset vanishes) can be represented as a discrete complex signal:
+Any closed 2D contour sampled at $N = 2049$ uniform arc-length points (centered on its exact geometric centroid so the $k = 0$ DC offset vanishes) can be represented as a discrete complex signal:
 
-```text
-z[n] = x[n] + i * y[n],    for n in {0, 1, ..., N - 1}
-```
+<div class="math-block">
+$$
+z_n = x_n + i\,y_n, \quad n \in \{0, 1, \dots, N - 1\}
+$$
+</div>
 
-Using the **Discrete Fourier Transform (DFT)** across symmetric frequencies `k in [-1024, +1024]`, we compute each complex harmonic coefficient `X[k]`:
+Using the **Discrete Fourier Transform (DFT)** across symmetric frequencies $k \in [-1024, +1024]$, we compute each complex harmonic coefficient $X_k$:
 
-```text
-X[k] = (1 / N) * sum_{n=0..N-1} z[n] * exp(-i * 2*pi * k * n / N) = A[k] * exp(i * phi[k])
-```
+<div class="math-block">
+$$
+X_k = \frac{1}{N} \sum_{n=0}^{N-1} z_n \, e^{-i \frac{2\pi}{N} k n} = A_k \, e^{i \varphi_k}
+$$
+</div>
 
 where:
-- **`A[k] = |X[k]|`** is the **radius** of the `k`-th epicycle circle,
-- **`phi[k] = arg(X[k])`** is its **initial phase angle**, and
-- **`k`** is the **angular velocity** (in revolutions per cycle, spinning counterclockwise for `k > 0` and clockwise for `k < 0`).
+- $A_k = |X_k|$ is the **radius** of the $k$-th epicycle circle,
+- $\varphi_k = \arg(X_k)$ is its **initial phase angle**, and
+- $k$ is the **angular velocity** (in revolutions per cycle, spinning counterclockwise for $k > 0$ and clockwise for $k < 0$).
 
-Sorting all `2,049` harmonics by descending amplitude (`A[k_1] >= A[k_2] >= ... >= A[k_2049]`) allows us to reconstruct a partial contour `z_M(t)` using only the top `M` circles:
+Sorting all $2049$ harmonics by descending amplitude ($A_{k_1} \ge A_{k_2} \ge \dots \ge A_{k_{2049}}$) allows us to reconstruct a partial contour $z_M(t)$ using only the top $M$ circles:
 
-```text
-z_M(t) = sum_{m=1..M} X[k_m] * exp(i * 2*pi * k_m * t),    for t in [0, 1)
-```
+<div class="math-block">
+$$
+z_M(t) = \sum_{m=1}^{M} X_{k_m} \, e^{i \, 2\pi k_m t}, \quad t \in [0, 1)
+$$
+</div>
 
-By **Parseval's Theorem**, the relative L2 reconstruction error at harmonic truncation `M` is simply the energy fraction residing in the unrendered tail harmonics `m > M`:
+By **Parseval's Theorem**, the relative $L_2$ reconstruction error at harmonic truncation $M$ is simply the energy fraction residing in the unrendered tail harmonics $m > M$:
 
-```text
-Error(M) = sqrt( sum_{m=M+1..2049} |X[k_m]|^2  /  sum_{m=2..2049} |X[k_m]|^2 ) * 100%
-```
+<div class="math-block">
+$$
+\text{Error}(M) = \sqrt{\frac{\sum_{m=M+1}^{2049} |X_{k_m}|^2}{\sum_{m=1}^{2049} |X_{k_m}|^2}} \times 100\%
+$$
+</div>
 
 ### Convergence Table Across the Slow-Reveal
 

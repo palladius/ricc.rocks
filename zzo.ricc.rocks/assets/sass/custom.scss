@@ -143,3 +143,18 @@ h2 {
     }
   }
 }
+
+/* KaTeX Display Math Block styling */
+.math-block {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #38bdf8;
+  border-radius: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  .katex-display {
+    margin: 0.25rem 0 !important;
+  }
+}

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.8] - 2026-11-06
+
+### 🧮 KaTeX LaTeX Math Rendering Fix (by Gemini/Antigravity)
+- 📐 **Enabled KaTeX (`libraries: [katex]`) & Native LaTeX Equations on Puffin Fourier Article**:
+  - Added `libraries: [katex]` to [`zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md) and [`zzo.ricc.rocks/content/en/posts/technology/2026-10-15-carchess3d-family-chess/index.md`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/content/en/posts/technology/2026-10-15-carchess3d-family-chess/index.md).
+  - Replaced plain-text `<pre><code>` (` ```text `) pseudo-equations in the Puffin Fourier article with real LaTeX display equations (`$$ ... $$`) wrapped in `.math-block` containers and styled in [`custom.scss`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/assets/sass/custom.scss).
+- 🧪 **Added Rule 5 to [`compliance_test.rb`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/tests/compliance_test.rb)**:
+  - Automatically fails if any post uses LaTeX math (`$...$` or `$$...$$`) without declaring `libraries: [katex]` (or `mathjax`) in its YAML frontmatter.
+- 🔧 **Pinned Local `~/.local/bin/hugo` to `v0.128.2+extended`**:
+  - Matches `netlify.toml` (`HUGO_VERSION = "0.128.2"`) 1:1 so `content/it/gallery` symlink and all 79 homepage/parity checks pass identically to production.
+
 ## [0.5.7] - 2026-11-06
 
 ### 🧹 Chore & Local Tooling Fix (by Gemini/Antigravity)

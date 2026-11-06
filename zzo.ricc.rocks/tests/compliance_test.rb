@@ -150,6 +150,15 @@ def check_post_compliance(file_path)
     end
   end
 
+  # --- Rule 5: LaTeX math expressions require libraries: [katex] or [mathjax] ---
+  body_without_code = body.gsub(/```.*?```/m, '').gsub(/`[^`\n]+`/, '')
+  if body_without_code =~ /\$\$[\s\S]+?\$\$|\$[^$\n]*\\(?:in|sum|frac|sqrt|varphi|pi|ge|le|dots|times|arg|sigma)\b[^$\n]*\$/
+    libs = Array(front_matter['libraries'] || front_matter['Libraries']).map { |l| l.to_s.downcase }
+    unless libs.include?('katex') || libs.include?('mathjax')
+      errors << "Rule 5 Violation: Post contains LaTeX math ($...$ or $$...$$) but 'libraries: [katex]' is missing from frontmatter."
+    end
+  end
+
   errors
 end
 
