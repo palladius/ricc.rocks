@@ -44,10 +44,12 @@ When you read this, you'll first read `AI_FINDINGS.md` to get up to speed, then 
 * Note that an article pointing to this URL: http://localhost:1313/en/posts/medium/2022-09-12-gcp-cb-trigger-with-pulumi-python/"
   can be found in files here: `zzo.ricc.rocks/content/en/posts/medium/2022-09-12-GCP-CB-trigger-with-pulumi-python`. So the
   mapping is quite deterministic.
-* do NOT commit before ensuring the ZZO ricc.rocks is working (`cd zzo.ricc.rocks && make test`).
+* do NOT commit before ensuring the ZZO ricc.rocks is working (`just test`).
+* **CRITICAL DISK HYGIENE**: Always run `just clean` immediately after `just test` finishes! Building the Hugo site generates `zzo.ricc.rocks/public/` (~920 MB), which bloats the disk (especially across git worktrees) if left behind.
 
 ## DOs
 
 * Use `gitmoji` for commits.
 * Keep a `VERSION` and a track of its changes onto `CHANGELOG.md`. Make the comment emoji-based (with gitmoji semantics if possible).
   Sign yourself as Gemini/Antigravity if needed, to discrminate from author (Riccardo).
+* When running tests (`just test`), ALWAYS run `just clean` right after the tests complete so generated `public/` and `resources/_gen/` folders (~935 MB) do not bloat the disk.
