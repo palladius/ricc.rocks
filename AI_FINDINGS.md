@@ -84,7 +84,6 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - Created `zzo.ricc.rocks/static/_redirects` with specific redirects for Redux posts, `/index.json`, and wildcard redirect patterns to map missing taxonomies/posts/gallery paths to safe parent listing pages.
   - Replaced broken relative links in markdown posts with code formatting.
 
-<<<<<<< HEAD
 ## Web Analytics Integration - Cloudflare & Google Analytics (2026-09-23)
 **IMPLEMENTED (by Gemini/Antigravity)**:
 - **Context & Issue**: Netlify charges $9/month for edge CDN analytics. To avoid recurring costs on static Hugo hosting, free client-side analytics (Cloudflare Web Analytics & GA4) were integrated (GitHub Issue [#7](https://github.com/palladius/ricc.rocks/issues/7)).
@@ -147,3 +146,10 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
 - Published `zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md` with hero HTML5 `<video>` (`italian_puffin_fourier_epicycles.mp4`, 1080p60 `-tune animation -movflags +faststart`) at the top of the post, standalone Lyria 3.5 `<audio>` player, 4 stage stills, and the two-part prompt showcase.
 - Deployed interactive HTML5 Canvas Fourier Studio at `zzo.ricc.rocks/static/demos/fourier-italian-puffin/index.html`.
 - Verified `ruby tests/compliance_test.rb` passes 100%.
+
+## Local `~/.local/bin/hugo` Symlink Fix (`hugo-extended`) & Stale `s` Cleanup (2026-11-06)
+**FIXED (by Gemini/Antigravity)**:
+- **Root Cause of Local Build Hang**: `~/.local/bin/hugo` was symlinked to `hugo-bin/vendor/hugo` (standard non-extended v0.152.2), which failed on SCSS (`TOCSS: failed to transform "main_parsed.scss"`) and fell back to `npx -y hugo-extended`, hanging on corporate npm registry access.
+- **Fix**: Repointed `~/.local/bin/hugo` to cached `~/.npm/_npx/453bbf31fcfeac2f/node_modules/hugo-extended/bin/hugo` (`hugo v0.169.0+extended`). Local builds and `just test-links` / `just test-page` now finish in ~3.5s.
+- **Stale `s` file**: Removed untracked `s` (a saved `git diff --cc` output from Aug 21 for a merge conflict in `2026-08-13-antigravity-ruby-sdk-article/index.md` that was already resolved in commit `2eec135`).
+- **Puffin Article 404**: At the time of check on Nov 5, commit `0.5.6 article puffin` was local-only (`main` ahead of `origin/main`). After pushing `2b1c9d8` to `origin/main`, both `/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/` and `/demos/fourier-italian-puffin/` return `HTTP/2 200` on Netlify.
