@@ -160,7 +160,9 @@
     <div class="btn-row">
       <button id="playBtn">▶ Play Choreography + Lyria 3.5</button>
       <button id="modeBtn" class="active">Auto Slow-Reveal: ON</button>
-      <button id="juxtaposeBtn" class="active" title="Toggle the raster Puffin &amp; Google Tri-Suit image overlay ON/OFF to inspect pure Fourier math curves">🖼️ Juxtapose Final Puffin: YES</button>
+      <button id="mathOverlayBtn" title="Toggle the 15s background mathematical diagram (f(t) = Σ c_n e^{int}, R₁, R₂, V_cycle) ON/OFF so it never appears">📐 15s Math Layover (f(t), R₁, R₂): NO (Never)</button>
+      <button id="juxtaposeBtn" class="active" title="Toggle the 20s raster Puffin &amp; Google Tri-Suit image overlay ON/OFF to inspect pure Fourier math curves">🖼️ Juxtapose Final Puffin (20s): YES</button>
+      <button id="epicyclesBtn" class="active" title="Cycle live Fourier epicycle circles &amp; white contour trace: Always ON / Hide after 15s / Never">⭕ Live Fourier Curve: YES</button>
       <button id="colorBtn">🎨 Reveal Google Tri-Suit Colors</button>
     </div>
     <div class="ctrl-box">
@@ -195,7 +197,9 @@
     const imgAccents = new Image(); imgAccents.src = '/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/images/layer_italia_accents.png';
 
     let autoReveal = true;
-    let juxtaposePuffin = true;
+    let showMathOverlay = false; // Default NO (Never): prevents 15s f(t)/R1/R2 math diagram from ever appearing
+    let juxtaposePuffin = true;  // Controls 20s final Puffin layover
+    let fourierCurveMode = 'all'; // 'all' | 'before15s' | 'never'
     let manualColorReveal = false;
     let simTime = 0.0;
     let lastFrameTime = performance.now();
@@ -203,18 +207,52 @@
 
     const playBtn = document.getElementById('playBtn');
     const modeBtn = document.getElementById('modeBtn');
+    const mathOverlayBtn = document.getElementById('mathOverlayBtn');
     const juxtaposeBtn = document.getElementById('juxtaposeBtn');
+    const epicyclesBtn = document.getElementById('epicyclesBtn');
     const colorBtn = document.getElementById('colorBtn');
     const mSlider = document.getElementById('mSlider');
     const tSlider = document.getElementById('tSlider');
     const mVal = document.getElementById('mVal');
     const tVal = document.getElementById('tVal');
 
+    // Tight silhouette clip polygon in 1408x768 space that keeps ONLY the Puffin & Bicycle
+    // while masking out all outer mathematical annotations (f(t) = Σ c_n e^{int}, R₁, R₂, V_cycle, construction arcs)
+    const PUFFIN_BIKE_CLIP_POLY = [
+      [348, 560], [358, 478], [420, 425], [515, 425], [590, 460],
+      [575, 395], [525, 375], [482, 350], [530, 315], [585, 248],
+      [655, 198], [765, 180], [775, 118], [820, 85],  [885, 90],
+      [932, 140], [946, 205], [940, 224], [880, 224], [848, 215],
+      [818, 288], [828, 325], [938, 358], [942, 455], [905, 465],
+      [975, 442], [1030, 495], [1044, 565], [1025, 640], [965, 692],
+      [880, 700], [805, 675], [760, 605], [750, 555], [710, 585],
+      [685, 622], [635, 622], [600, 668], [535, 700], [450, 700],
+      [382, 658]
+    ];
+
+    function updateMathOverlayBtn() {
+      mathOverlayBtn.classList.toggle('active', showMathOverlay);
+      mathOverlayBtn.textContent = showMathOverlay
+        ? '📐 15s Math Layover (f(t), R₁, R₂): YES'
+        : '📐 15s Math Layover (f(t), R₁, R₂): NO (Never)';
+    }
+
     function updateJuxtaposeBtn() {
       juxtaposeBtn.classList.toggle('active', juxtaposePuffin);
       juxtaposeBtn.textContent = juxtaposePuffin
-        ? '🖼️ Juxtapose Final Puffin: YES'
-        : '🖼️ Juxtapose Final Puffin: NO (Pure Math)';
+        ? '🖼️ Juxtapose Final Puffin (20s): YES'
+        : '🖼️ Juxtapose Final Puffin (20s): NO (Pure Math)';
+    }
+
+    function updateEpicyclesBtn() {
+      epicyclesBtn.classList.toggle('active', fourierCurveMode !== 'never');
+      if (fourierCurveMode === 'all') {
+        epicyclesBtn.textContent = '⭕ Live Fourier Curve: YES';
+      } else if (fourierCurveMode === 'before15s') {
+        epicyclesBtn.textContent = '⭕ Live Fourier Curve: Hide at 15s+';
+      } else {
+        epicyclesBtn.textContent = '⭕ Live Fourier Curve: NO (Never)';
+      }
     }
 
     playBtn.addEventListener('click', () => {
@@ -235,9 +273,21 @@
       modeBtn.textContent = autoReveal ? 'Auto Slow-Reveal: ON' : 'Manual Slider Mode';
     });
 
+    mathOverlayBtn.addEventListener('click', () => {
+      showMathOverlay = !showMathOverlay;
+      updateMathOverlayBtn();
+    });
+
     juxtaposeBtn.addEventListener('click', () => {
       juxtaposePuffin = !juxtaposePuffin;
       updateJuxtaposeBtn();
+    });
+
+    epicyclesBtn.addEventListener('click', () => {
+      if (fourierCurveMode === 'all') fourierCurveMode = 'before15s';
+      else if (fourierCurveMode === 'before15s') fourierCurveMode = 'never';
+      else fourierCurveMode = 'all';
+      updateEpicyclesBtn();
     });
 
     colorBtn.addEventListener('click', () => {
@@ -253,13 +303,11 @@
       autoReveal = false;
       modeBtn.classList.remove('active');
       modeBtn.textContent = 'Manual Slider Mode';
-      trail = [];
     });
 
     tSlider.addEventListener('input', () => {
       simTime = parseFloat(tSlider.value);
       if (!audio.paused) audio.currentTime = simTime;
-      trail = [];
     });
 
     function smoothstep(e0, e1, x) {
@@ -273,8 +321,8 @@
       totalVar += COEFFS[i][1]*COEFFS[i][1] + COEFFS[i][2]*COEFFS[i][2];
     }
 
-    // Incremental closed M-harmonic curve cache (z_M(tau) for tau in [0, 1))
-    const CURVE_SAMPLES = 1200;
+    // Exact 2,049-sample Nyquist-rate closed M-harmonic curve cache (z_M(tau) for tau in [0, 1))
+    const CURVE_SAMPLES = 2049;
     const curveX = new Float32Array(CURVE_SAMPLES);
     const curveY = new Float32Array(CURVE_SAMPLES);
     let computedM = 0;
@@ -316,8 +364,6 @@
       addHarmonicRange(computedM, targetM);
       computedM = targetM;
     }
-
-    let trail = [];
 
     function render(now) {
       const dt = (now - lastFrameTime) / 1000.0;
@@ -362,107 +408,141 @@
       for (let y = 120; y < 1080; y += 120) { ctx.moveTo(0, y); ctx.lineTo(1920, y); }
       ctx.stroke();
 
-      // Draw underlying monochrome & Google 4-Color Tri-Suit layers (ONLY when juxtaposePuffin is true)
-      if (juxtaposePuffin) {
-        const monoAlpha = manualColorReveal ? 1.0 : smoothstep(13.5, 19.5, simTime);
-        if (monoAlpha > 0.01 && imgMono.complete) {
-          ctx.save();
-          ctx.translate(OFF_X, OFF_Y);
-          ctx.scale(SCALE, SCALE);
-          ctx.globalAlpha = monoAlpha;
-          ctx.drawImage(imgMono, 0, 0);
+      // 1. Raster Layers:
+      //    - 15s Math Backdrop (`layer_mono.png` outer equations f(t), R₁, R₂, V_cycle): controlled by `showMathOverlay`
+      //    - 20s Final Puffin + Google 4-Color Tri-Suit: controlled by `juxtaposePuffin`
+      const mathBackdropAlpha = showMathOverlay
+        ? (manualColorReveal ? 1.0 : smoothstep(13.5, 19.5, simTime))
+        : 0.0;
+      const puffinBodyAlpha = juxtaposePuffin
+        ? (manualColorReveal ? 1.0 : (showMathOverlay ? smoothstep(13.5, 19.5, simTime) : smoothstep(19.8, 21.0, simTime)))
+        : 0.0;
 
+      if ((mathBackdropAlpha > 0.01 || puffinBodyAlpha > 0.01) && imgMono.complete) {
+        ctx.save();
+        ctx.translate(OFF_X, OFF_Y);
+        ctx.scale(SCALE, SCALE);
+
+        // If 15s Math Layover is OFF, clip strictly to the Puffin+Bicycle silhouette so f(t), R₁, R₂, V_cycle NEVER appear
+        if (!showMathOverlay) {
+          ctx.beginPath();
+          ctx.moveTo(PUFFIN_BIKE_CLIP_POLY[0][0], PUFFIN_BIKE_CLIP_POLY[0][1]);
+          for (let i = 1; i < PUFFIN_BIKE_CLIP_POLY.length; i++) {
+            ctx.lineTo(PUFFIN_BIKE_CLIP_POLY[i][0], PUFFIN_BIKE_CLIP_POLY[i][1]);
+          }
+          ctx.closePath();
+          ctx.clip();
+        }
+
+        const baseAlpha = showMathOverlay ? Math.max(mathBackdropAlpha, puffinBodyAlpha) : puffinBodyAlpha;
+        if (baseAlpha > 0.01) {
+          ctx.globalAlpha = baseAlpha;
+          ctx.drawImage(imgMono, 0, 0);
+        }
+
+        if (juxtaposePuffin) {
           const aBlue   = manualColorReveal ? 1.0 : smoothstep(20.0, 21.1, simTime);
           const aRed    = manualColorReveal ? 1.0 : smoothstep(21.1, 22.2, simTime);
           const aYellow = manualColorReveal ? 1.0 : smoothstep(22.2, 23.3, simTime);
           const aGreen  = manualColorReveal ? 1.0 : smoothstep(23.3, 24.4, simTime);
           const aAcc    = manualColorReveal ? 1.0 : smoothstep(24.4, 25.6, simTime);
 
-          if (aBlue > 0.01 && imgBlue.complete)   { ctx.globalAlpha = aBlue; ctx.drawImage(imgBlue, 0, 0); }
-          if (aRed > 0.01 && imgRed.complete)     { ctx.globalAlpha = aRed; ctx.drawImage(imgRed, 0, 0); }
+          if (aBlue > 0.01 && imgBlue.complete)     { ctx.globalAlpha = aBlue; ctx.drawImage(imgBlue, 0, 0); }
+          if (aRed > 0.01 && imgRed.complete)       { ctx.globalAlpha = aRed; ctx.drawImage(imgRed, 0, 0); }
           if (aYellow > 0.01 && imgYellow.complete) { ctx.globalAlpha = aYellow; ctx.drawImage(imgYellow, 0, 0); }
-          if (aGreen > 0.01 && imgGreen.complete) { ctx.globalAlpha = aGreen; ctx.drawImage(imgGreen, 0, 0); }
-          if (aAcc > 0.01 && imgAccents.complete) { ctx.globalAlpha = aAcc; ctx.drawImage(imgAccents, 0, 0); }
-          ctx.restore();
+          if (aGreen > 0.01 && imgGreen.complete)   { ctx.globalAlpha = aGreen; ctx.drawImage(imgGreen, 0, 0); }
+          if (aAcc > 0.01 && imgAccents.complete)   { ctx.globalAlpha = aAcc; ctx.drawImage(imgAccents, 0, 0); }
         }
+        ctx.restore();
       }
 
-      // Draw full closed M-harmonic reconstructed Fourier contour z_M(tau)
-      ctx.strokeStyle = juxtaposePuffin ? 'rgba(56, 189, 248, 0.38)' : 'rgba(56, 189, 248, 0.78)';
-      ctx.lineWidth = juxtaposePuffin ? 1.5 : 2.1;
-      ctx.beginPath();
-      ctx.moveTo(curveX[0], curveY[0]);
-      for (let idx = 1; idx < CURVE_SAMPLES; idx++) {
-        ctx.lineTo(curveX[idx], curveY[idx]);
-      }
-      ctx.closePath();
-      ctx.stroke();
+      // 2. Live Canvas Fourier Epicycles & Reconstructed Contour Curve
+      const curveFade = fourierCurveMode === 'never'
+        ? 0.0
+        : (fourierCurveMode === 'before15s' ? (1.0 - smoothstep(14.0, 15.5, simTime)) : 1.0);
 
-      // Evaluate spinning epicycles at current phase
-      const phase = (simTime / 6.5333) % 1.0;
-      const twoPiT = 2 * Math.PI * phase;
-      let curX = CX_ORIG;
-      let curY = CY_ORIG;
+      if (curveFade > 0.01) {
+        ctx.save();
+        ctx.globalAlpha = curveFade;
 
-      const joints = [[OFF_X + curX * SCALE, OFF_Y + curY * SCALE]];
-      for (let i = 1; i < M; i++) {
-        const [k, re, im, amp] = COEFFS[i];
-        const ang = twoPiT * k;
-        const ca = Math.cos(ang), sa = Math.sin(ang);
-        const prevX = OFF_X + curX * SCALE;
-        const prevY = OFF_Y + curY * SCALE;
-        curX += re * ca - im * sa;
-        curY += re * sa + im * ca;
-        const nextX = OFF_X + curX * SCALE;
-        const nextY = OFF_Y + curY * SCALE;
-        joints.push([nextX, nextY]);
-
-        if (i < 180 && amp * SCALE > 1.2) {
-          ctx.strokeStyle = `rgba(115, 210, 255, ${Math.min(0.45, 0.12 + 1.5 / (i + 3))})`;
-          ctx.lineWidth = i < 12 ? 1.5 : 1.0;
-          ctx.beginPath();
-          ctx.arc(prevX, prevY, amp * SCALE, 0, 2 * Math.PI);
-          ctx.stroke();
-        }
-      }
-
-      // Radius vector chain
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
-      ctx.lineWidth = 1.2;
-      ctx.beginPath();
-      ctx.moveTo(joints[0][0], joints[0][1]);
-      for (let i = 1; i < Math.min(joints.length, 250); i++) {
-        ctx.lineTo(joints[i][0], joints[i][1]);
-      }
-      ctx.stroke();
-
-      const tip = joints[joints.length - 1];
-      trail.push([tip[0], tip[1]]);
-      if (trail.length > 650) trail.shift();
-
-      // Draw glowing active tip trace
-      if (trail.length > 2) {
-        ctx.strokeStyle = 'rgba(240, 252, 255, 0.94)';
-        ctx.lineWidth = 2.4;
+        // Draw full closed M-harmonic reconstructed Fourier contour z_M(tau)
+        ctx.strokeStyle = juxtaposePuffin ? 'rgba(56, 189, 248, 0.42)' : 'rgba(56, 189, 248, 0.82)';
+        ctx.lineWidth = juxtaposePuffin ? 1.5 : 2.1;
         ctx.beginPath();
-        ctx.moveTo(trail[0][0], trail[0][1]);
-        for (let i = 1; i < trail.length; i++) {
-          ctx.lineTo(trail[i][0], trail[i][1]);
+        ctx.moveTo(curveX[0], curveY[0]);
+        for (let idx = 1; idx < CURVE_SAMPLES; idx++) {
+          ctx.lineTo(curveX[idx], curveY[idx]);
+        }
+        ctx.closePath();
+        ctx.stroke();
+
+        // Evaluate spinning epicycles at current phase
+        const phase = (simTime / 6.5333) % 1.0;
+        const twoPiT = 2 * Math.PI * phase;
+        let curX = CX_ORIG;
+        let curY = CY_ORIG;
+
+        const joints = [[OFF_X + curX * SCALE, OFF_Y + curY * SCALE]];
+        for (let i = 1; i < M; i++) {
+          const [k, re, im, amp] = COEFFS[i];
+          const ang = twoPiT * k;
+          const ca = Math.cos(ang), sa = Math.sin(ang);
+          const prevX = OFF_X + curX * SCALE;
+          const prevY = OFF_Y + curY * SCALE;
+          curX += re * ca - im * sa;
+          curY += re * sa + im * ca;
+          const nextX = OFF_X + curX * SCALE;
+          const nextY = OFF_Y + curY * SCALE;
+          joints.push([nextX, nextY]);
+
+          if (i < 180 && amp * SCALE > 1.2) {
+            ctx.strokeStyle = `rgba(115, 210, 255, ${Math.min(0.45, 0.12 + 1.5 / (i + 3))})`;
+            ctx.lineWidth = i < 12 ? 1.5 : 1.0;
+            ctx.beginPath();
+            ctx.arc(prevX, prevY, amp * SCALE, 0, 2 * Math.PI);
+            ctx.stroke();
+          }
+        }
+
+        // Radius vector chain
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.moveTo(joints[0][0], joints[0][1]);
+        for (let i = 1; i < Math.min(joints.length, 250); i++) {
+          ctx.lineTo(joints[i][0], joints[i][1]);
         }
         ctx.stroke();
-      }
 
-      // Tip dot
-      ctx.fillStyle = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(tip[0], tip[1], 3.5, 0, 2 * Math.PI);
-      ctx.fill();
+        // Nyquist-accurate glowing white contour segment leading up to the current tip
+        const tip = joints[joints.length - 1];
+        const headIdx = Math.floor(phase * CURVE_SAMPLES) % CURVE_SAMPLES;
+        const tailLen = Math.floor(CURVE_SAMPLES * 0.28);
+        ctx.strokeStyle = 'rgba(240, 252, 255, 0.92)';
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        for (let step = tailLen; step >= 0; step--) {
+          const idx = (headIdx - step + CURVE_SAMPLES) % CURVE_SAMPLES;
+          if (step === tailLen) ctx.moveTo(curveX[idx], curveY[idx]);
+          else ctx.lineTo(curveX[idx], curveY[idx]);
+        }
+        ctx.lineTo(tip[0], tip[1]);
+        ctx.stroke();
+
+        // Tip dot
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(tip[0], tip[1], 3.5, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.restore();
+      }
 
       // HUD Box
       ctx.fillStyle = 'rgba(10, 14, 24, 0.84)';
-      ctx.fillRect(36, 32, 485, 168);
+      ctx.fillRect(36, 32, 495, 190);
       ctx.strokeStyle = '#4285F4';
-      ctx.strokeRect(36, 32, 485, 168);
+      ctx.strokeRect(36, 32, 495, 190);
 
       ctx.fillStyle = '#8ab4f8';
       ctx.font = 'bold 14px monospace';
@@ -472,13 +552,16 @@
       ctx.fillText(`CIRCLES: ${M.toLocaleString()} / 2,049`, 54, 100);
       ctx.fillStyle = errPct < 1.5 ? '#34A853' : '#FBBC05';
       ctx.font = 'bold 20px monospace';
-      ctx.fillText(`APPROX ERROR: ${errPct.toFixed(2)}%`, 54, 134);
+      ctx.fillText(`APPROX ERROR: ${errPct.toFixed(2)}%`, 54, 132);
+      ctx.fillStyle = showMathOverlay ? '#FBBC05' : '#34A853';
+      ctx.font = 'bold 13px monospace';
+      ctx.fillText(`15s MATH LAYOVER (f(t), R₁, R₂): ${showMathOverlay ? 'YES' : 'NO (HIDDEN)'}`, 54, 156);
       ctx.fillStyle = juxtaposePuffin ? '#8ab4f8' : '#38bdf8';
       ctx.font = 'bold 13px monospace';
-      ctx.fillText(`PUFFIN LAYOVER: ${juxtaposePuffin ? 'YES (Juxtaposed)' : 'NO (Pure Fourier Curve)'}`, 54, 158);
+      ctx.fillText(`20s PUFFIN LAYOVER: ${juxtaposePuffin ? 'YES (JUXTAPOSED)' : 'NO (PURE MATH)'}`, 54, 178);
       ctx.fillStyle = '#9aa0a6';
       ctx.font = '13px monospace';
-      ctx.fillText('z_M(t) = Σ c_k exp(i·2π·k·t)  [k ∈ -1024..+1024]', 54, 182);
+      ctx.fillText('z_M(t) = Σ c_k exp(i·2π·k·t)  [k ∈ -1024..+1024]', 54, 202);
 
       requestAnimationFrame(render);
     }

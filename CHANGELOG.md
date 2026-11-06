@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.10] - 2026-11-06
+
+### 📐 15s Math Layover Toggle (`NO (Never)` Default) & Nyquist Contour Trace (by Gemini/Antigravity)
+- 📐 **Added `📐 15s Math Layover (f(t), R₁, R₂): NO (Never) / YES` Toggle (`static/demos/fourier-italian-puffin/index.html`)**:
+  - Defaults to **`NO (Never)`** so the `13.5s–19.5s` (~15s) background mathematical diagram (`f(t) = \sum c_n e^{int}`, $R_1$, $R_2$, $V_{\text{cycle}}$ in `layer_mono.png`) never appears unless explicitly toggled ON.
+  - Added a tight 41-vertex silhouette clip polygon (`PUFFIN_BIKE_CLIP_POLY`) so that when `🖼️ Juxtapose Final Puffin (20s): YES` is active while `📐 15s Math Layover` is `NO (Never)`, only the Puffin & Bicycle appear at 20s and the outer $f(t)$, $R_1$, $R_2$, $V_{\text{cycle}}$ math annotations remain 100% masked out.
+- ⭕ **Added `⭕ Live Fourier Curve: YES / Hide at 15s+ / NO (Never)` Toggle & 2,049-Sample Nyquist Trace**:
+  - Upgraded `CURVE_SAMPLES` to `2,049` (the exact arc-length parameterized contour resolution) and replaced the 60fps aliased `trail` buffer with a Nyquist-accurate contour slice so high-harmonic curves never alias across the Puffin.
+
 ## [0.5.9] - 2026-11-06
 
 ### 🎛️ Interactive Fourier Studio Toggle: Juxtapose Final Puffin YES/NO (by Gemini/Antigravity)
