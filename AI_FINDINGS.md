@@ -152,6 +152,7 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
 - **Root Cause of Local Build Hang**: `~/.local/bin/hugo` was symlinked to `hugo-bin/vendor/hugo` (standard non-extended v0.152.2), which failed on SCSS (`TOCSS: failed to transform "main_parsed.scss"`) and fell back to `npx -y hugo-extended`, hanging on corporate npm registry access.
 - **Fix**: Installed `hugo v0.128.2+extended` at `~/.local/bin/hugo` (matching `HUGO_VERSION = "0.128.2"` in `netlify.toml` so `content/it/gallery -> ../en/gallery/` symlink also works locally). Local builds and `just test-links` / `just test-page` now finish in ~3s.
 - **Stale `s` file**: Removed untracked `s` (a saved `git diff --cc` output from Aug 21 for a merge conflict in `2026-08-13-antigravity-ruby-sdk-article/index.md` that was already resolved in commit `2eec135`).
-- **Puffin Article 404 & KaTeX LaTeX Equations (`v0.5.8`)**:
+- **Puffin Article 404 & KaTeX LaTeX Equations (`v0.5.8` – `v0.5.9`)**:
   - Enabled `libraries: [katex]` in `2026-11-03-fourier-epicycles-italian-puffin/index.md` and `2026-10-15-carchess3d-family-chess/index.md`.
   - Converted the 4 plain-text `<pre>` equations (`z_n`, `X_k`, `z_M(t)`, `Error(M)`) into real KaTeX display math (`<div class="math-block">$$ ... $$</div>`) and inline math (`$...$`), styled `.math-block` in `custom.scss`, and added Rule 5 to `compliance_test.rb` to enforce `libraries: [katex]` whenever a post contains LaTeX math.
+  - Added `🖼️ Juxtapose Final Puffin: YES / NO (Pure Math)` toggle button and full closed $M$-harmonic contour rendering ($z_M(\tau)$ across 1,200 points) to `zzo.ricc.rocks/static/demos/fourier-italian-puffin/index.html`.

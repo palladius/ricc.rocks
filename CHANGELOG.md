@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.9] - 2026-11-06
+
+### 🎛️ Interactive Fourier Studio Toggle: Juxtapose Final Puffin YES/NO (by Gemini/Antigravity)
+- 🖼️ **Added `🖼️ Juxtapose Final Puffin: YES / NO (Pure Math)` Toggle Button (`static/demos/fourier-italian-puffin/index.html`)**:
+  - Allows toggling the raster Puffin & Google Tri-Suit image layover (`layer_mono.png` + 4 Google color layers) ON or OFF at any timestamp (including $t > 20\text{s}$).
+  - Added incremental $1,200$-point closed $M$-harmonic Fourier curve evaluation ($z_M(\tau)$ for $\tau \in [0, 1)$) so that in **Pure Math (`NO`)** mode, you see 100% pure Fourier epicycles and the exact $M$-harmonic mathematical contour without any raster overlay.
+
 ## [0.5.8] - 2026-11-06
 
 ### 🧮 KaTeX LaTeX Math Rendering Fix (by Gemini/Antigravity)
