@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.11] - 2026-11-06
+
+### 📝 Extracted YouTube Encoding Pro-Tip to `protip.md` (by Gemini/Antigravity)
+- ✂️ Removed the `💡 Pro-Tip: Why Fourier Epicycle Videos Look Pixelated on YouTube (and How to Fix It)` section from [`zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/index.md) and moved it to a standalone [`protip.md`](file:///usr/local/google/home/ricc/git/ricc.rocks/zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/protip.md) inside the article folder.
+
 ## [0.5.10] - 2026-11-06
 
 ### 📐 15s Math Layover Toggle (`NO (Never)` Default) & Nyquist Contour Trace (by Gemini/Antigravity)
