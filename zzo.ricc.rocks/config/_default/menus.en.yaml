@@ -78,11 +78,10 @@ main:
 
 
 
-    # [Riccardo] This is AMAZING but still nothing to show.
-  # - identifier: showcase
-  #   name: Showcase
-  #   url: showcase
-  #   weight: 6
+  - identifier: showcase
+    name: 🧪Demos
+    url: showcase
+    weight: 6
 
     # [Riccardo] This is AMAZING but still nothing to show.
   # - identifier: publication

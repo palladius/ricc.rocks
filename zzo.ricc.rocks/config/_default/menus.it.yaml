@@ -29,6 +29,11 @@ main:
     url: posts
     weight: 5
 
+  - identifier: showcase
+    name: 🧪Demos
+    url: showcase
+    weight: 6
+
   - identifier: ricc_zzo_prod
     name: 🌍Blog
     url: https://ricc.rocks/

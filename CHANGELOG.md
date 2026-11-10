@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.12] - 2026-11-10
+
+### 🧪 Enabled `🧪Demos` Showcase Section (`/en/showcase/` & `/it/showcase/`)
+- 🧭 Activated the `showcase` top navigation menu item (`🧪Demos`) in both `menus.en.yaml` and `menus.it.yaml`.
+- 🗂️ Replaced template placeholders in `content/en/showcase/` and `content/it/showcase/` with Riccardo's Top 4 Open-Source Demos (`2,049 Fourier Epicycles Italian Puffin`, `Antigravity Ruby SDK`, `Agentic SRE Extension`, and `Rails 8 on Google Cloud Codelab`), complete with direct links to GitHub repositories, live interactive demos/codelabs, and blog articles.
+
 ## [0.5.11] - 2026-11-06
 
 ### 📝 Extracted YouTube Encoding Pro-Tip to `protip.md` (by Gemini/Antigravity)
