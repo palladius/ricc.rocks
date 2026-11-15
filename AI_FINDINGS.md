@@ -158,3 +158,19 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   - Added `🖼️ Juxtapose Final Puffin: YES / NO (Pure Math)` toggle button and full closed $M$-harmonic contour rendering ($z_M(\tau)$ across 1,200 points) to `zzo.ricc.rocks/static/demos/fourier-italian-puffin/index.html`.
   - **15s Math Layover Toggle (`v0.5.10`)**: Added `📐 15s Math Layover (f(t), R₁, R₂): NO (Never) / YES` (default `NO (Never)`), `PUFFIN_BIKE_CLIP_POLY` silhouette clipping (so even at 20s when the Puffin is juxtaposed, the outer `f(t) = \sum c_n e^{int}`, `R_1`, `R_2`, `V_{cycle}` annotations never appear unless toggled ON), `⭕ Live Fourier Curve: YES / Hide at 15s+ / NO (Never)`, and upgraded the active trace to use the 2,049-sample Nyquist contour.
   - **YouTube Pro-Tip Extracted (`v0.5.11`)**: Moved the `💡 Pro-Tip: Why Fourier Epicycle Videos Look Pixelated on YouTube` section out of `index.md` into `zzo.ricc.rocks/content/en/posts/technology/2026-11-03-fourier-epicycles-italian-puffin/protip.md`.
+
+## Netlify MCP Audit: Recurring Errors & Unused Free Features (2026-11-15)
+**INVESTIGATED & FIXED (`v0.5.13`, by Gemini/Antigravity)**:
+- **Account & Plan**: Team `palladius` (`63d2227b5ee4b40ebc84416e`), `Free` (`nf_team_dev`), 14 projects total.
+- **Prod (`ricc-zzo` / `https://ricc.rocks`)**:
+  - Current deploy (`6af46f64362d02d1c85b2db7`, commit `cc0a98e`) is **READY** (23s deploy time, 44 redirect rules, 0 header rules, 0 functions/edge functions).
+  - Recurring HTTP 404s in edge logs: `/robots.txt` (`enableRobotsTXT: true` was missing in `zzo.ricc.rocks/config/_default/config.yaml`), `/en/tags/netlify/palladiusbonton` (multi-segment legacy social path not caught by `:tag`), `/en/showcase/shortcodes`, and `/en/showcase/test-js-sequence-diagrams/`.
+  - Low edge cache hit rate (~12% hit vs 85% miss) and 0 custom HTTP headers (`[[headers]]` missing in `netlify.toml`).
+- **Recurring Deploy Failures on Sister Projects (triggered on every push to `main`!)**:
+  - `hugo-bootstrap-ricc-rocks` (`0441c68e-...`) & `hugo-ananke-vecchiume` (`9c6fdacc-...`): fail on **every** git push to `palladius/ricc.rocks` with `exit code: 2` because root `netlify.toml` forces `base = "zzo.ricc.rocks"` or their themes/submodules fail, burning free build minutes on every commit.
+  - `ricc-papermod` (`0a8f5af3-...`): fails on **every** push during `preparing repo` with `git@github.com: Permission denied (publickey) : exit status 128` (broken deploy key).
+- **Fixes Applied (`v0.5.13`)**:
+  1. Enabled `enableRobotsTXT: true` in `zzo.ricc.rocks/config/_default/config.yaml` so Hugo generates `/robots.txt` with `Sitemap: https://ricc.rocks/sitemap.xml`.
+  2. Added 8 `[[headers]]` blocks in `netlify.toml` for security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) and immutable/long-lived `Cache-Control` on `/js/*`, `/css/*`, `/sass/*`, `/fonts/*`, `/favicon*`, `/images/*`, and `/gallery/*`.
+  3. Enabled `enableBusuanzi: true` in `zzo.ricc.rocks/config/_default/params.yaml` to activate the built-in 👀 page-view and footer UV/PV counters.
+  4. Added 301 redirect rules in `zzo.ricc.rocks/static/_redirects` for `/*/palladiusbonton`, `/*/riccardocarlesso`, `/en/showcase/shortcodes*`, and `/en/showcase/test-*`.

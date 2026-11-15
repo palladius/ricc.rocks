@@ -10,6 +10,7 @@ buildFuture: true
 copyright: '&copy;{year}, Ricky C, few Rights Reserved'
 timeout: 10000
 enableEmoji: true
+enableRobotsTXT: true
 pagination:
   pagerSize: 13
 rssLimit: 100

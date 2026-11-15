@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.13] - 2026-11-15
+
+### 🛡️⚡👀 Netlify MCP Audit: Robots.txt, Edge Cache/Security Headers & Busuanzi Page-View Counter (by Gemini/Antigravity)
+- 🤖 **Enabled `enableRobotsTXT: true` ([`config.yaml`](file:///home/riccardo/git/ricc.rocks/zzo.ricc.rocks/config/_default/config.yaml))**:
+  - Automatically generates `/robots.txt` with `Sitemap: https://ricc.rocks/sitemap.xml`, resolving the recurring `/robots.txt` 404 errors surfaced in Netlify Edge Logs.
+- ⚡🛡️ **Added 8 `[[headers]]` Blocks in [`netlify.toml`](file:///home/riccardo/git/ricc.rocks/netlify.toml)**:
+  - Configured security headers (`X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy`) across `/*`.
+  - Added immutable & long-lived `Cache-Control` headers for `/js/*`, `/css/*`, `/sass/*`, `/fonts/*`, `/favicon*`, `/images/*`, and `/gallery/*` to boost Netlify Edge cache hit rates (previously ~12%).
+- 👀 **Activated Free Busuanzi Page-View & Site UV/PV Counter ([`params.yaml`](file:///home/riccardo/git/ricc.rocks/zzo.ricc.rocks/config/_default/params.yaml))**:
+  - Set `enableBusuanzi: true` so articles display the live `👀` view counter and the footer displays site-wide Unique Visitors (`UV`) and Page Views (`PV`).
+- 🔀 **Added 301 Redirects for Residual Edge 404s ([`_redirects`](file:///home/riccardo/git/ricc.rocks/zzo.ricc.rocks/static/_redirects))**:
+  - Added redirects for `/*/palladiusbonton`, `/*/riccardocarlesso`, `/en/showcase/shortcodes*`, and `/en/showcase/test-*`.
+
 ## [0.5.12] - 2026-11-10
 
 ### 🧪 Enabled `🧪Demos` Showcase Section (`/en/showcase/` & `/it/showcase/`)

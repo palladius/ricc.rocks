@@ -18,6 +18,12 @@
 /en/posts/technology/2026-08-13-antigravity-ruby-sdk-nanobanana    /en/posts/technology/2026-08-13-antigravity-ruby-sdk-article/  301
 /it/gallery/202302-madeira/riccardocarlesso               /en/gallery/202302-madeira/                                             301
 /en/showcase/test-wavedrom/riccardocarlesso               /en/                                                                    301
+/en/showcase/shortcodes*                                  /en/showcase/                                                           301
+/en/showcase/test-*                                       /en/showcase/                                                           301
+/it/showcase/shortcodes*                                  /it/showcase/                                                           301
+/it/showcase/test-*                                       /it/showcase/                                                           301
+/*/palladiusbonton                                        /en/                                                                    301
+/*/riccardocarlesso                                       /en/                                                                    301
 /en/cv/*                                                  /cv/:splat                                                              301
 /it/cv/*                                                  /cv/:splat                                                              301
 
