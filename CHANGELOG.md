@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.14] - 2026-11-16
+
+### ⚡👀 Fix Busuanzi `...` Counter via First-Party Netlify Function Proxy (by Gemini/Antigravity)
+- 🐛 **Root Cause of `...` in Chrome**: `busuanzi.ibruce.info`'s JSONP endpoint responds with `Content-Type: application/json` inside a cross-origin `<script>` tag, which modern Chrome blocks via **ORB (`net::ERR_BLOCKED_BY_ORB` — Opaque Response Blocking)** (and ad-blockers block `busuanzi.ibruce.info`).
+- ⚡ **Added First-Party Netlify Serverless Function ([`zzo.ricc.rocks/netlify/functions/busuanzi.mjs`](file:///home/riccardo/git/ricc.rocks/zzo.ricc.rocks/netlify/functions/busuanzi.mjs))**:
+  - Proxies `busuanzi.ibruce.info` server-side from `/.netlify/functions/busuanzi` (first-party on `ricc.rocks`), strips the JSONP wrapper, preserves the `busuanziId` UV cookie, and returns clean `application/json` to `fetch()`.
+- 🔧 **Created Layout Override ([`zzo.ricc.rocks/layouts/partials/service/busuanzi.html`](file:///home/riccardo/git/ricc.rocks/zzo.ricc.rocks/layouts/partials/service/busuanzi.html))**:
+  - Replaces `<script src="https://busuanzi.ibruce.info/...">` with a same-origin `fetch('/.netlify/functions/busuanzi?url=...')` call that populates `#busuanzi_value_site_uv`, `#busuanzi_value_site_pv`, and `#busuanzi_value_page_pv` without ORB or ad-blocker interference.
+
 ## [0.5.13] - 2026-11-15
 
 ### 🛡️⚡👀 Netlify MCP Audit: Robots.txt, Edge Cache/Security Headers & Busuanzi Page-View Counter (by Gemini/Antigravity)

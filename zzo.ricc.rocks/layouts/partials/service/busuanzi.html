@@ -1,0 +1,37 @@
+{{ if .Site.Params.enableBusuanzi }}
+<script>
+(function() {
+  function formatCount(n) {
+    var num = Number(n);
+    return isFinite(num) ? num.toLocaleString('en-US') : String(n);
+  }
+  function applyCounts(data) {
+    if (!data) return;
+    var keys = ['site_pv', 'page_pv', 'site_uv'];
+    keys.forEach(function(k) {
+      if (data[k] !== undefined && data[k] !== null) {
+        var el = document.getElementById('busuanzi_value_' + k);
+        if (el) el.textContent = formatCount(data[k]);
+        var container = document.getElementById('busuanzi_container_' + k);
+        if (container) container.style.display = 'inline';
+      }
+    });
+  }
+  function loadCounters() {
+    var endpoint = '/.netlify/functions/busuanzi?url=' + encodeURIComponent(window.location.href);
+    fetch(endpoint, { credentials: 'same-origin' })
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(applyCounts)
+      .catch(function() {});
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadCounters);
+  } else {
+    loadCounters();
+  }
+})();
+</script>
+{{ end }}

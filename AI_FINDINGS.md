@@ -174,3 +174,7 @@ Created an automated link icons framework ("wikimoji") to dynamically prepend em
   2. Added 8 `[[headers]]` blocks in `netlify.toml` for security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) and immutable/long-lived `Cache-Control` on `/js/*`, `/css/*`, `/sass/*`, `/fonts/*`, `/favicon*`, `/images/*`, and `/gallery/*`.
   3. Enabled `enableBusuanzi: true` in `zzo.ricc.rocks/config/_default/params.yaml` to activate the built-in 👀 page-view and footer UV/PV counters.
   4. Added 301 redirect rules in `zzo.ricc.rocks/static/_redirects` for `/*/palladiusbonton`, `/*/riccardocarlesso`, `/en/showcase/shortcodes*`, and `/en/showcase/test-*`.
+
+- **Busuanzi `...` Chrome ORB Fix (`v0.5.14`)**:
+  - **Root Cause**: `busuanzi.ibruce.info/busuanzi?jsonpCallback=...` returns `Content-Type: application/json` to a `<script>` tag, which modern Chrome blocks with `ERR_BLOCKED_BY_ORB` (Opaque Response Blocking), leaving `#busuanzi_value_site_uv` and `#busuanzi_value_site_pv` stuck on `...`.
+  - **Fix**: Created a zero-dependency Netlify Serverless Function (`zzo.ricc.rocks/netlify/functions/busuanzi.mjs`) + Hugo layout override (`zzo.ricc.rocks/layouts/partials/service/busuanzi.html`) that fetches `/.netlify/functions/busuanzi` same-origin via `fetch()`.
