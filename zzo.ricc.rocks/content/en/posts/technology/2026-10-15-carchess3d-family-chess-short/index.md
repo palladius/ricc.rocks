@@ -64,7 +64,9 @@ At **10:31** on Saturday morning, right before heading out into Colmar's cobbled
 
 [![Geneviève Huskens' "Desk Racer" prompt: /grill-me first, then ask for a plan and a /goal — click to watch the video on LinkedIn](assets/concept/genevieve_desk_racer_prompt.jpg)](https://lnkd.in/p/e_Vk3W64)
 
-> 💡 **Geneviève's two tips** (click the screenshot to watch her *Desk Racer* demo):
+▶️ **[Watch Geneviève's 2-minute "Desk Racer" demo on LinkedIn](https://lnkd.in/p/e_Vk3W64)** — she builds a 3D go-kart game on top of her own desk with exactly this prompt.
+
+> 💡 **Geneviève's two tips**:
 > 1. **Start with `/grill-me`**: *"ask me questions, then give me a plan I can review."* Let the agent interview you until the plan is solid.
 > 2. **Ask for the `/goal` as a deliverable**: *"…and a `/goal` I can set to keep you running for a long time."* The agent writes its own long-running meta-prompt. You fire it and walk away. That is why I could spend the weekend in Colmar.
 
