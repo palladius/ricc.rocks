@@ -1,5 +1,5 @@
 ---
-title: "🏰🚽 CarChess3D: How I Built a 3D Family Chess Game with Gemini 4 Argon and an Autonomous Agent Swarm While Celebrating My 10th Wedding Anniversary in Colmar"
+title: "🏰🚽 CarChess3D: A 3D Family Chess Game Built by Gemini 4 Argon While I Was in Colmar (Lab Notebook Edition)"
 date: 2026-10-15T12:30:00+02:00
 draft: false
 status: under_review
@@ -30,6 +30,8 @@ categories:
 ---
 
 *By **Riccardo "Palladius" Carlesso** — proud dad to Ale & Seby and improvised 3D game designer. Built hands-off with [**Gemini 4**](https://deepmind.google/models/gemini/) inside [**Antigravity**](https://antigravity.google/) and the [**Niccolò Game Design** skill](https://github.com/palladius/gemini-cli-palladius-public-goodies/blob/main/skills/niccolo-game-design/SKILL.md). Zurich & Colmar, October 2026.*
+
+> 🧭 *This is the long, lab-notebook edition with every number and every engine. The short version is [here](/en/posts/technology/2026-10-15-carchess3d-family-chess-short/).*
 
 ![CarChess3D: a 12-second camera orbit around the Carlesso family — Seby, Ale, Dad, Mum — on the 3D board](assets/gallery/family_orbit_hero.gif)
 

@@ -1,11 +1,8 @@
 ---
-title: "🏰🚽 CarChess3D: How I Built a 3D Family Chess Game with Gemini 4 Argon and an Autonomous Agent Swarm While Celebrating My 10th Wedding Anniversary in Colmar"
+title: "🏰🚽 CarChess3D: A 3D Family Chess Game Built by Gemini 4 Argon While I Was in Colmar"
 date: 2026-10-15T12:31:00+02:00
 draft: false
-status: under_review
-build:
-  list: never
-  render: always
+status: published
 author: Riccardo
 libraries:
   - mermaid
@@ -161,7 +158,7 @@ Turning a casual photo into a textured, metrically grounded `.glb` that runs at 
 
 **Judge.** My first King looked like a generic, clean-shaven doll. I complained. The agent built a *likeness critic* with my reference photos (eight facial traits, from the white tuft in the left eyebrow to the two-day stubble) and projected my real face onto the mesh until the critic was satisfied.
 
-Two of my favourite before/after cards, concept → procedural placeholder → reconstructed 3D:
+Two of my favourite before/after cards, concept → procedural placeholder → reconstructed 3D (created after Abbazia di Pomposa and San Gennaro, Saint Patron of Naples):
 
 ![Classic Rook Evolution: 2D Concept -> Low-Poly Procedural -> Reconstructed 3D](assets/gallery/classic_rook_evolution_card_en.png)
 
